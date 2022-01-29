@@ -1,27 +1,49 @@
 import * as React from 'react'
 import { useEffect, useState, useRef, useCallback } from 'react'
 import { motion, useAnimation } from 'framer-motion'
+import * as CSS from 'csstype'
 import VisuallyHidden from '../VisuallyHidden'
 
 interface Props {
   id: string;
+  className: string
   tooltipText: string;
   tooltipVisuallyHiddenText?: string;
 }
 
+const wrapper: CSS.Properties = {
+  position: 'relative',
+};
+
+const tooltip: CSS.Properties = {
+  color: '#fff',
+  background: '#282A36',
+  boxShadow: '#222',
+  borderRadius: '5px',
+  position: 'absolute',
+  bottom: '-90%',
+  fontWeight: 'inherit',
+  fontSize: 'inherit',
+  display: 'flex',
+  padding: '4px 10px',
+  zIndex: 5,
+  whiteSpace: 'nowrap',
+  pointerEvents: 'none',
+  userSelect: 'none',
+};
 
 const Tooltip: React.FC<Props> = (props) => {
-  const { children, id, tooltipText, tooltipVisuallyHiddenText } = props;
-  const [dimensions, setDimensions] = useState({
+  const { children, id, className, tooltipText, tooltipVisuallyHiddenText } = props;
+  const [dimensions, setDimensions] = React.useState({
     height: typeof window !== 'undefined' ? window.innerHeight : 0,
     width: typeof window !== 'undefined' ? window.innerWidth : 0,
   });
 
   const controls = useAnimation();
 
-  const tooltipRef = useRef<HTMLSpanElement>(null);
+  const tooltipRef = React.useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     function handleResize() {
       setDimensions({
         height: window.innerHeight,
@@ -45,12 +67,12 @@ const Tooltip: React.FC<Props> = (props) => {
         if (tooltipRect.left < 0) {
           current.style.left = '0';
           current.style.right = 'auto';
-          current.style.transform = `translateX(${-tooltipRect.x - 40}px)`;
+          current.style.transform = `translateX(${-tooltipRect.x - 10}px)`;
         } else if (tooltipRect.right > dimensions.width) {
           current.style.left = 'auto';
           current.style.right = '0';
           current.style.transform = `translateX(${
-            dimensions.width - tooltipRect.right + 40
+            dimensions.width - tooltipRect.right + 10
           }px)`;
         }
       }
@@ -99,7 +121,8 @@ const Tooltip: React.FC<Props> = (props) => {
 
   return (
     <motion.div
-      className='wrapper'
+      style={wrapper}  
+      className={className}
       initial="idle"
       animate={controls}
       onMouseEnter={showTooltip}
@@ -115,10 +138,10 @@ const Tooltip: React.FC<Props> = (props) => {
       }}
     >
       {children}
-      {/* {ReactDOM.createPortal( */}
       <motion.span
         id={id}
-        className='tooltip'
+        style={tooltip} 
+        className={className}
         aria-hidden={true}
         ref={tooltipRef}
         variants={tipVariants}
@@ -132,8 +155,6 @@ const Tooltip: React.FC<Props> = (props) => {
           <VisuallyHidden as="p">{tooltipVisuallyHiddenText}</VisuallyHidden>
         ) : null}
       </motion.span>
-      {/* ,document.body
-      )} */}
     </motion.div>
   );
 };

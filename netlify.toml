@@ -3,14 +3,6 @@
   command = "npm run build"
 [build.environment]
   NODE_VERSION = "14.17.1"
-  YARN_VERSION = "1.17.0"
-  YARN_FLAGS = "--no-ignore-optional"
-[template.environment]
-  FAUNADB_SERVER_SECRET = "fnAEOBWeBxACRIF_fi1wGuYMupRnm_U-h9Wf7Ib4"
-[[plugins]]
-package = "@netlify/plugin-lighthouse"
-  [plugins.inputs]
-  output_path = "reports/lighthouse.html"
 [[plugins]]
   package = "@netlify/plugin-gatsby" 
 [[headers]]

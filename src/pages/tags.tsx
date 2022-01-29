@@ -57,8 +57,8 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import ScrollIndicator from '@/components/scroll-indicator'
 
-import Image from '@/svg/undraw/undraw_Windows_re_uo4w.svg'
-import OGImage from '@/images/undraw/undraw_Windows_re_uo4w.png'
+import Image from '../../static/svg/undraw/undraw_Windows_re_uo4w.svg'
+import OGImage from '../../static/images/undraw/undraw_Windows_re_uo4w.png'
 
 const patterns = [
   steelBeams('#9c92ac', 0.5),

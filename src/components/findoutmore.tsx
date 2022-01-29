@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import GatsbyImage from '@/svg/undraw/undraw_gatsbyjs_st4g.svg'
-import TailwindImage from '@/svg/undraw/undraw_tailwind_css_1egw.svg'
-import ReactImage from '@/svg/undraw/undraw_react_y-7-wq.svg'
+import GatsbyImage from '../../static/svg/undraw/undraw_gatsbyjs_st4g.svg'
+import TailwindImage from '../../static/svg/undraw/undraw_tailwind_css_1egw.svg'
+import ReactImage from '../../static/svg/undraw/undraw_react_y-7-wq.svg'
 
 const callouts = [
   {

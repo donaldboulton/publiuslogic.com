@@ -10,8 +10,6 @@ import GetPosts from '@/utils/getposts'
 
 import Tags from '@/components/tags'
 
-import Img from '@/components/img'
-
 interface BlogRollProps {
   tag?: string
 }
@@ -62,13 +60,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
                     duration: 0.5,
                   }}
                 >
-                  <Link to={`/${post.slug}`}>
-                    <Img
-                      image={post.frontmatter.image}
-                      alt={post.frontmatter.title + ' featured image'}
-                      className="cover-list"
-                      imgClassName="cover-list"
-                    />
+                  <Link to={`/${post.slug}`}>                    
                   <p className="sr-only">{post.frontmatter.title}</p>
                   </Link>
                   <div className="p-6">

@@ -2,7 +2,6 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 
 import Tags from '@/components/tags'
-import Img from '@/components/img'
 
 import GetPosts from '@/utils/getposts'
 
@@ -33,13 +32,7 @@ export default function LatestArticles() {
           <div className="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-2 xl:grid-cols-3 lg:gap-x-6">
             <div className="mb-4 lg:mb-0  p-4 lg:p-0 relative rounded-lg block xl:col-span-2 text-white">
               <Link to={`/${post.slug}`}>
-                <span className="sr-only">{post.frontmatter.title}</span>
-                <Img
-                  image={post.frontmatter.image}
-                  alt={post.frontmatter.title + ' featured image'}
-                  className="object-contain md:object-scale-down"
-                  imgClassName="rounded-lg"
-                />
+                <span className="sr-only">{post.frontmatter.title}</span>                
               </Link>
               <div className="mt-4">
                 <Tags tags={post.frontmatter.tags} />
@@ -62,12 +55,6 @@ export default function LatestArticles() {
               {otherPosts.map(post => (
                 <Link to={`/${post.slug}`}>
                   <div className="w-full md:grid md:grid-cols-3 mb-10 p-2 rounded-lg bg-gray-800 text-white">
-                    <Img
-                      image={post.frontmatter.image}
-                      alt={post.frontmatter.title + ' featured image'}
-                      className="block lg:block w-auto md:w-auto h-auto md:h-auto m-1 md:m-0 rounded-lg"
-                      imgClassName="object-fit"
-                    />
                     <div className="text-gray-200 rounded px-4 md:col-span-2">
                       <Tags tags={post.frontmatter.tags} />
                       <div className="md:mt-0 text-white font-semibold text-xl mb-2">{post.frontmatter.title}</div>

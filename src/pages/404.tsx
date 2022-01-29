@@ -7,8 +7,8 @@ import PageHero from '@/components/PageHero'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 
-import Image from '@/svg/undraw/undraw_page_not_found_re_e9o6.svg'
-import OGImage from '@/images/undraw/undraw_Page_not_found_re_e9o6.png'
+import Image from '../../static/svg/undraw/undraw_page_not_found_re_e9o6.svg'
+import OGImage from '../../static/images/undraw/undraw_Page_not_found_re_e9o6.png'
 
 const NotFoundPage = () => {
   const ogimage = {

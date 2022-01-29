@@ -44,15 +44,15 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-image',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/static/images`,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -181,7 +181,7 @@ module.exports = {
         background_color: '#ffffff',
         theme_color: '#660099',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby/publiuslogic-logo.png', // This path is relative to the root of the site.
+        icon: 'static/images/gatsby/publiuslogic-logo.png', // This path is relative to the root of the site.
       },
     },
     {

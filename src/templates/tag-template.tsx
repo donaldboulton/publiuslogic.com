@@ -5,8 +5,8 @@ import SEO from '@/components/seo'
 import PageHero from '@/components/PageHero'
 import BlogRoll from '@/components/blogroll'
 
-import Image from '@/svg/undraw/undraw_building_websites_i78t.svg'
-import OGImage from '@/images/undraw/undraw_building_websites_i78t.png'
+import Image from '../../static/svg/undraw/undraw_building_websites_i78t.svg'
+import OGImage from '../../static/images/undraw/undraw_building_websites_i78t.png'
 
 interface TagProps {
   pageContext: {

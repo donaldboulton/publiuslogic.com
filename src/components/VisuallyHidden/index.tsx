@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as CSS from 'csstype'
 
 interface Props {
   as: React.ElementType;
@@ -6,7 +7,7 @@ interface Props {
   id?: string;
 }
 
-const visuallyHiddenClass = {
+const visuallyHiddenClass: CSS.Properties = {
   border: '0 !important',
   clip: 'rect(1px, 1px, 1px, 1px) !important',
   clipPath: 'inset(50%) !important',
@@ -20,7 +21,7 @@ const visuallyHiddenClass = {
 };
 
 const VisuallyHidden = ({ as: Component, ...props }: Props) => (
-  <Component {...props} className={visuallyHiddenClass}>
+  <Component {...props} style={visuallyHiddenClass}>
     {props.children}
   </Component>
 );

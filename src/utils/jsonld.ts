@@ -2,7 +2,7 @@ import { Article, BreadcrumbList, Organization, Person, WebSite } from 'schema-d
 import { helmetJsonLdProp } from 'react-schemaorg'
 import SiteMetadata from '@/utils/sitemetadata'
 
-import Logo from '@/images/gatsby/publiuslogic-monogram.png'
+import Logo from '../../static/images/gatsby/publiuslogic-monogram.png'
 
 interface JsonLDProps {
   type: string

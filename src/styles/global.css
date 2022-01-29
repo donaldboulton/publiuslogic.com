@@ -35,6 +35,10 @@ pre {
 }
 .prose a {
  text-decoration: none;
+ color: white;
+}
+.gatsby-resp-image-image {
+  border-radius: 12px;
 }
 .ais-Snippet {
   margin-left: 30px !important;
@@ -80,38 +84,18 @@ pre {
   border: 2px solid rgb(67, 56, 202, 0.25);
   box-shadow: 6px 5px 5px rgb(67, 56, 202, 0.75);
   color: rgb(214, 222, 235);
- }
- .summary {
+}
+.summary {
   background: rgb(147, 51, 234);
   border: 2px solid rgb(147, 51, 234, 0.25);
   box-shadow: rgb(147, 51, 234, 0.75);
   color: rgb(214, 222, 235);
- }
+}
 .danger {
   background: rgb(150, 2, 2);
   border: 2px solid rgb(158, 11, 11, 0.25);
   box-shadow: 6px 5px 5px rgb(158, 11, 11, 0.75);
   color: rgb(214, 222, 235);
- }
-.tooltip-wrapper {
-  position: 'relative';
-}
-
-.tooltip {
-  color: '#fff';
-  background: '#171717';
-  box-shadow: '#000';
-  border-radius: '3px';
-  position: 'absolute';
-  bottom: '-60%';
-  font-weight: 'normal';
-  font-size: '14px';
-  display: 'flex';
-  padding: '4px 10px';
-  z-index: 30;
-  white-space: 'nowrap';
-  pointer-events: 'none';
-  user-select: 'none';
 }
 mark {
   background-color: rgb(147 51 234);

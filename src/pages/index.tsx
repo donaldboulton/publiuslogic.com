@@ -8,7 +8,7 @@ import BioTypist from '@/components/bio-typist'
 import SEO from '@/components/seo'
 import GithubProfile from '@/components/github-profile'
 import Header from '@/components/header'
-import Features from '@/components/features'
+import FindOutMore from '@/components/findoutmore'
 import LatestArticles from '@/components/latestarticles'
 import Footer from '@/components/footer'
 import ScrollIndicator from '@/components/scroll-indicator'
@@ -16,7 +16,7 @@ import { CodeIcon, CloudIcon, BookOpenIcon, CheckCircleIcon } from '@heroicons/r
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 
-import OGImage from '@/images/jpg/dbbg.jpg'
+import OGImage from '../../static/images/jpg/dbbg.jpg'
 
 const container = {
   enter: {
@@ -150,7 +150,7 @@ export default function Home() {
               <StaticImage
                 className="cover object-contain"
                 formats={["auto", "webp"]}
-                src="../images/jpg/dbbg.jpg"
+                src="../../static/images/jpg/dbbg.jpg"
                 quality={95}
                 alt="Landing Image"
               />
@@ -384,7 +384,11 @@ export default function Home() {
                   key={0}
                 >
                   <div className="relative flex flex-col min-w-0 break-words text-white w-full mb-6 shadow-lg rounded-lg bg-rose-600">
-                    <StaticImage className="w-full align-middle rounded-t-lg" src='../images/jpg/digital_box_1400-compressor.jpg' alt='PubliusLogic' />                  
+                    <StaticImage 
+                      className="w-full align-middle rounded-t-lg" 
+                      src='../../static/images/jpg/digital_box_1400-compressor.jpg' 
+                      alt='PubliusLogic' 
+                    />                  
                     <blockquote className="relative p-8 mb-4">
                       <svg
                         preserveAspectRatio="none"
@@ -445,7 +449,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeIn" }}
               key={1}
             >
-              <Features /> 
+              <FindOutMore /> 
             </motion.div>
           </div>
         </motion.section>

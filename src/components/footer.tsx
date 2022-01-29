@@ -3,12 +3,12 @@ import { Link } from 'gatsby'
 import SiteMetadata from '@/utils/sitemetadata'
 import A from '@/components/a'
 import Subscriptions from '@/components/subscriptions'
-import Logo from '../images/gatsby/publiuslogic-monogram.png'
-import LinkedIn from '@/svg/icons/linkedin.inline.svg'
-import Facebook from '@/svg/icons/facebook.inline.svg'
-import Instagram from '@/svg/icons/instagram.inline.svg'
-import Twitter from '@/svg/icons/twitter.inline.svg'
-import Github from '@/svg/icons/github.inline.svg'
+import Logo from '../../static/images/gatsby/publiuslogic-monogram.png'
+import LinkedIn from '../../static/svg/icons/linkedin.inline.svg'
+import Facebook from '../../static/svg/icons/facebook.inline.svg'
+import Instagram from '../../static/svg/icons/instagram.inline.svg'
+import Twitter from '../../static/svg/icons/twitter.inline.svg'
+import Github from '../../static/svg/icons/github.inline.svg'
 
 export default function IndexFooter() {
   const metadata = SiteMetadata().siteMetadata

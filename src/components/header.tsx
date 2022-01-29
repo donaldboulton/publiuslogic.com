@@ -6,12 +6,13 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { MenuIcon, XIcon, XCircleIcon } from '@heroicons/react/outline'
 import DarkModeToggle from '@/components/dark-mode-toggle'
+import Tooltip from '@/components/Tooltip'
 import SearchIcon from "@/components/icons/search"
 import Control from "@/components/icons/control"
 import HeaderPopover from '@/components/header-popover'
 
-import Logo from '../../static/assets/publiuslogic-logo.png'
-import PrimaryLogo from '../../static/assets/publiuslogic-monogram.png'
+import Logo from '../../static/images/gatsby/publiuslogic-logo.png'
+import PrimaryLogo from '../../static/images/gatsby/publiuslogic-monogram.png'
 
 const navigation = [
   { name: 'About', href: '/about', current: false },
@@ -44,10 +45,15 @@ export default function Navigation() {
                 </div>
                 <div className="flex-1 flex items-center text-lg justify-center sm:items-stretch sm:justify-start">
                   <div className="flex-shrink-0 flex items-center">
-                    <Link to='/' title='Home Page'>
-                      <img className="block md:hidden h-8 w-auto" src={Logo} alt="Logo" />
-                      <img className="hidden md:block h-8 w-auto" src={PrimaryLogo} alt="Logo" />
-                    </Link>
+                  <Tooltip
+                    id="logoTooltip"
+                    tooltipText="Home Page"                    
+                  >
+                      <Link to='/'>
+                        <img className="block md:hidden h-8 w-auto" src={Logo} alt="Logo" aria-describedby="logoTooltip" />
+                        <img className="hidden md:block h-8 w-auto" src={PrimaryLogo} alt="Logo" aria-describedby="logoTooltip" />
+                      </Link>
+                    </Tooltip>
                   </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">

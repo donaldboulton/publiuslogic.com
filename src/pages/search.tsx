@@ -9,8 +9,8 @@ import PageHero from '@/components/PageHero'
 import { ArrowLeftIcon } from '@heroicons/react/outline'
 import ScrollIndicator from '@/components/scroll-indicator'
 
-import Image from '@/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
-import OGImage from '@/images/undraw/undraw_Super_thank_you_re_f8bo.png'
+import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
+import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
 
 const searchIndices = [{ name: `Posts`, title: `Posts` }]
 

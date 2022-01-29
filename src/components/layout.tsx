@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import CookieConsent, { Cookies } from "react-cookie-consent"
 import { MDXProvider } from "@mdx-js/react"
 import FindOutMore from '@/components/findoutmore'
+import Features from './features'
 import Cta from '@/components/cta'
 import VideoPlayer from '@/components/Video/VideoPlayer'
 
@@ -16,6 +17,7 @@ const shortcodes = {
   FindOutMore,
   Cta,
   VideoPlayer,
+  Features,
 }
 
 const Layout = ({ children, path }: LayoutProps) => {

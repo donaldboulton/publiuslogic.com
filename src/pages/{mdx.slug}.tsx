@@ -8,11 +8,12 @@ import Bio from '@/components/bio'
 import ScrollDown from '@/components/scroll-down'
 import Scroll from '@/components/scroll'
 import PostHero from '@/components/PostHero'
-import { CalendarIcon, ClockIcon } from '@heroicons/react/outline'
+import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/outline'
 import ScrollIndicator from '@/components/scroll-indicator'
-import { ImgType } from '@/components/img'
+
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import Tags from '@/components/tags'
 
 const components = { Link }
 
@@ -24,7 +25,6 @@ interface BlogPostProps {
         description: string
         author: string
         date: string
-        image: ImgType
         tags: string[]
       }
       slug: string
@@ -48,48 +48,43 @@ const BlogPost = ({ data }: BlogPostProps) => {
         description={frontmatter.description}
         date={frontmatter.date}
         lastUpdated={data.mdx.parent.modifiedTime}
-        image={frontmatter.image.childImageSharp.resize}
         keywords={frontmatter.tags}
         pathname={pathname}
       />
       <Header />
       <ScrollIndicator />
-      <main className="mt-10">
+      <main>
         <article className="mb-10">
-          <header>
-            <PostHero
-              image={frontmatter.image}
-              title={frontmatter.title}
-              tags={frontmatter.tags}
-            />
-          </header>
-          <section className="px-4 lg:px-0 mt-12 mb-20 max-w-screen-lg mx-auto text-white light:text-black prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500">
-            <div>
-              <h2 className="text-lg font-medium italic text-white light:text-black text-center">{frontmatter.description}</h2>              
-              <div className="flex items-center flex-wrap mb-10 lg:place-content-start md:place-content-center sm:place-content-center">                
-                <span className="text-white light:text-black mr-3 inline-flex items-center leading-none text-base pl-3 pr-3 py-1">
+          <section className="px-4 lg:px-0 mt-8 mb-20 max-w-screen-lg mx-auto text-white light:text-black prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500">
+            <div>   
+              <h1 className="text-4xl font-bold text-white leading-tight l-2 text-center">{frontmatter.title}</h1>                                         
+              <h2 className="text-lg font-medium italic text-white light:text-black text-center">{frontmatter.description}</h2>            
+              <div className="flex items-center flex-wrap mb-10 lg:place-content-start md:place-content-center sm:place-content-center">                                
+                <span className="text-white light:text-black mr-2 ml-3 inline-flex items-center leading-none text-base py-1">
+                  <TagIcon className='w-6 h-6 mr-1' /><Tags className='py-1 px-2 text-gray-200' tags={frontmatter.tags} />
+                </span>
+                <span className="text-white light:text-black mr-2 inline-flex items-center leading-none text-base py-1">
                   <CalendarIcon className="w-6 h-6 mr-1" />
                   {frontmatter.date}
-                </span>
-                <span className="text-white light:text-black mr-3 inline-flex items-center leading-none text-base pl-3 pr-3 py-1">
+                </span>                
+                <span className="text-white light:text-black mr-3 inline-flex items-center leading-none text-base">
                   <ClockIcon className="w-6 h-6 mr-1" />
                   {timeToRead} min read
                 </span>
               </div>
             </div>
-            <ScrollDown
-              className='scroll-down z-20 right-4 md:right-3'
-              direction='down' 
-              to={100}
-              showAbove={1500}
-              size={40}
-              css='position: fixed; color: gray; width: 40px; height: 40px; top: 4.5em;'
-            />
-            <Bio />
+            <div className='mb-2'>
+              <Bio />
+            </div>
             <MDXRenderer localImages={frontmatter.image} components={components}>
               {data.mdx.body}
             </MDXRenderer>     
           </section>
+          <ScrollDown
+            className='scroll z-20 right-4 md:right-3 top-20'
+            size={40}
+            css='position: fixed; color: gray; width: 40px; height: 40px;'
+          />
           <Scroll
             className='scroll z-20 right-4 md:right-3 bottom-4'
             showBelow={1500}
@@ -112,18 +107,6 @@ export const query = graphql`
         author
         path
         date(formatString: "YYYY-MM-DD")
-        image {
-          childImageSharp {
-            gatsbyImageData(width: 2048)
-            resize(width: 1200) {
-              src
-              width
-              height
-              aspectRatio
-              originalName
-            }
-          }
-        }
         tags
         category
       }
