@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { StaticImage } from 'gatsby-plugin-image'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { MenuIcon, XIcon, XCircleIcon } from '@heroicons/react/outline'
+import { MenuIcon, XIcon, XCircleIcon, UserGroupIcon, PhotographIcon } from '@heroicons/react/outline'
 import DarkModeToggle from '@/components/dark-mode-toggle'
 import Tooltip from '@/components/Tooltip'
 import SearchIcon from "@/components/icons/search"
@@ -81,21 +81,33 @@ export default function Navigation() {
                   className="p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
                   <span className="sr-only">Dark Light Modes</span>
-                    <DarkModeToggle aria-hidden="true" />
+                  <Tooltip
+                    id="darkModeTooltip"
+                    tooltipText="Dark/Light Mode" 
+                    className="pt-1"                   
+                  >
+                    <DarkModeToggle aria-hidden="true" aria-describedby="darkModeTooltip" />
+                  </Tooltip>
                 </div>
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
                   <div>
-                    <Menu.Button className="flex text-sm rounded-full focus:outline-none">                      
-                      <Control className='text-gray-300 hover:text-gray-200 light:text-gray-200 text-opacity-70' aria-hidden="true" /> 
-                      <ChevronDownIcon
-                        className={`${open ? 'text-gray-200 transform rotate-180' : 'text-opacity-70'}
-                        w-5 h-5 -mr-1 mt-1 text-gray-300 hover:text-gray-200 group-hover:text-opacity-80 transition ease-in-out duration-150`}
-                        aria-hidden="true"
-                      />
-                      <span className="sr-only">Open Control Menu</span>
-                    </Menu.Button>
+                    <Tooltip
+                      id="controlTooltip"
+                      tooltipText="Command Center" 
+                      className="pt-1"                   
+                    >
+                      <Menu.Button className="flex text-sm rounded-full focus:outline-none">                      
+                        <Control className='text-gray-300 hover:text-gray-200 light:text-gray-200 text-opacity-70' aria-hidden="true" aria-describedby="controlTooltip" /> 
+                        <ChevronDownIcon
+                          className={`${open ? 'text-gray-200 transform rotate-180' : 'text-opacity-70'}
+                          first-letter:w-5 h-5 -mr-1 mt-1 text-gray-300 hover:text-gray-200 group-hover:text-opacity-80 transition ease-in-out duration-150`}
+                          aria-hidden="true"
+                        />
+                        <span className="sr-only">Open Control Menu</span>
+                      </Menu.Button>
+                    </Tooltip>
                   </div>
                   <Transition
                     as={Fragment}
@@ -113,7 +125,7 @@ export default function Navigation() {
                             to="/profile"
                             className={classNames(active ? 'bg-rose-500' : '', 'block px-3 py-2 mr-1 ml-1 rounded-md text-lg font-medium hover:bg-purple-700 hover:text-white')}
                           >
-                            Profile
+                            <span className="flex items-center justify-center flex-shrink-0 text-lg pr-2"><UserGroupIcon className="block h-8 w-8 pr-2"  aria-hidden="true" /><span>Profile</span></span>
                           </Link>
                         )}
                       </Menu.Item>
@@ -123,7 +135,7 @@ export default function Navigation() {
                             to="/gallery"
                             className={classNames(active ? 'bg-rose-500' : '', 'block px-3 py-2 ml-1 mr-1 rounded-md text-lg font-medium hover:bg-purple-700 hover:text-white')}
                           >
-                            Gallery
+                            <span className="flex items-center justify-center flex-shrink-0 text-lg pr-2"><PhotographIcon className="block h-8 w-8 pr-2" aria-hidden="true" /><span>Gallery</span></span>
                           </Link>
                         )}
                       </Menu.Item>
