@@ -1,0 +1,251 @@
+const siteAcronyms = require('./gatsby-site-acronyms')
+const queries = require(`./src/utils/algolia-queries`)
+
+require('dotenv').config();
+
+module.exports = {
+  siteMetadata: {
+    title: 'PubliusLogic',
+    author: {
+      name: 'Donald Boulton',
+      url: 'https://publiuslogic.com',
+      summary:
+        'Who Resides in OKC.',
+    },
+    description: 'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
+    siteUrl: 'https://publiuslogic.com',
+    location: 'OKC, Middle Earth',
+    social: {
+      email: 'mailto:donaldboulton@gmail.com',
+      phone: 'tel:+4056231494',
+      facebook: 'https://www.facebook.com/donboulton',
+      instagram: 'https://www.instagram.com/boulton3662',
+      twitter: 'https://twitter.com/donboulton',
+      linkedin: 'https://www.linkedin.com/donboulton',
+      github: 'https://github.com/donaldboulton/',
+    },
+  },
+  plugins: [
+    `gatsby-plugin-netlify`,
+    {
+      resolve: 'gatsby-plugin-react-leaflet',
+      options: {
+        linkStyles: true, // (default: true) Enable/disable loading stylesheets via CDN
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-image',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images`,
+      },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static/assets/`,
+        name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static/img/`,
+        name: `img`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'mdx',
+        path: `${__dirname}/src/mdx/`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 2048,
+              showCaptions: true,
+              linkImagesToOriginal: false,
+              backgroundColor: 'none',
+              disableBgImage: true,
+              withWebp: true,
+              loading: "lazy",
+            },
+          },
+          `gatsby-remark-static-images`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: `64`,
+              icon: `<svg fill="#6d28d9" x="10px" class="inline-block ml-3 h-6 w-6 bottom-1 text-violet-600" fill-rule="evenodd" clip-rule="evenodd"><path d="M14.851 11.923c-.179-.641-.521-1.246-1.025-1.749-1.562-1.562-4.095-1.563-5.657 0l-4.998 4.998c-1.562 1.563-1.563 4.095 0 5.657 1.562 1.563 4.096 1.561 5.656 0l3.842-3.841.333.009c.404 0 .802-.04 1.189-.117l-4.657 4.656c-.975.976-2.255 1.464-3.535 1.464-1.28 0-2.56-.488-3.535-1.464-1.952-1.951-1.952-5.12 0-7.071l4.998-4.998c.975-.976 2.256-1.464 3.536-1.464 1.279 0 2.56.488 3.535 1.464.493.493.861 1.063 1.105 1.672l-.787.784zm-5.703.147c.178.643.521 1.25 1.026 1.756 1.562 1.563 4.096 1.561 5.656 0l4.999-4.998c1.563-1.562 1.563-4.095 0-5.657-1.562-1.562-4.095-1.563-5.657 0l-3.841 3.841-.333-.009c-.404 0-.802.04-1.189.117l4.656-4.656c.975-.976 2.256-1.464 3.536-1.464 1.279 0 2.56.488 3.535 1.464 1.951 1.951 1.951 5.119 0 7.071l-4.999 4.998c-.975.976-2.255 1.464-3.535 1.464-1.28 0-2.56-.488-3.535-1.464-.494-.495-.863-1.067-1.107-1.678l.788-.785z"/></svg>`,
+              maintainCase: true,
+              enableCustomId: true,
+              removeAccents: true,
+              isIconAfterHeader: true,
+              elements: [`h1`, `h2`, `h3`, `h4`],
+            },
+          },
+          {
+            resolve: "gatsby-remark-embed-video",
+            options: {
+              width: 800,
+              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+              height: 400, // Optional: Overrides optional.ratio
+              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
+              noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
+              loadingStrategy: 'lazy', //Optional: Enable support for lazy-load offscreen iframes. Default is disabled.
+              containerClass: "embedVideo-container", //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
+              iframeId: false, //Optional: if true, iframe's id will be set to what is provided after 'video:' (YouTube IFrame player API requires iframe id)
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-acronyms`,
+            options: {
+              acronyms: siteAcronyms,
+            },
+          },
+          { resolve: `gatsby-remark-smartypants` },
+          {
+            resolve: `gatsby-remark-custom-blocks`,
+            options: {
+              blocks: {
+                danger: {
+                  classes: `danger`,
+                },
+                success: {
+                  classes: `success`,
+                },
+                sunny: {
+                  classes: `sunny`,
+                },
+                dark: {
+                  classes: `dark`,
+                },                
+                code: {
+                  classes: `code`,
+                },
+                summary: {
+                  classes: `summary`,
+                },
+                info: {
+                  title: `optional`,
+                  details: `true`,
+                },
+              },
+            },
+          },
+          {
+            resolve: `gatsby-remark-external-links`,
+            options: {
+              target: `_blank`,
+              rel: `noopener`,
+            },
+          },         
+        ],
+        remarkPlugins: [
+          { resolve: 'remark-slug' },
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'PubliusLogic',
+        short_name: 'PubliusLogic',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: '#660099',
+        display: 'minimal-ui',
+        icon: 'src/images/gatsby/publiuslogic-logo.png', // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+        queries,
+        chunkSize: 10000, // default: 1000
+        skipIndexing: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: 'UA-24847941-1', // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-google-analytics', // default
+          anonymize: true, // default
+          allowAdFeatures: false // default
+        },
+        googleTagManager: {
+          trackingId: 'GTM-WLCMLLP', // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-google-tagmanager', // default
+          dataLayerName: 'dataLayer', // default
+        },
+        facebookPixel: {
+          pixelId: 'YOUR_FACEBOOK_PIXEL_ID', // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-facebook-pixel', // default
+        },
+        tikTokPixel: {
+          pixelId: 'YOUR_TIKTOK_PIXEL_ID', // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-tiktok-pixel', // default
+        },
+        hotjar: {
+          hjid: '2721625',
+          hjsv: '6',
+          cookieName: 'gatsby-gdpr-hotjar', // default
+        },
+        // defines the environments where the tracking should be available  - default is ["production"]
+        environments: ['production', 'development']
+      },
+    },
+    {
+      resolve: `gatsby-source-cloudinary`,
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`,
+        prefix: `photos/`,
+        context: true,
+        tags: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/`, `about`, `/contact`, `/blog/*`],
+        workboxConfig: {
+          importWorkboxFrom: `cdn`,
+        },
+      },
+    },
+  ],
+}
