@@ -15,6 +15,7 @@ import Logo from '../../static/images/gatsby/publiuslogic-logo.png'
 import PrimaryLogo from '../../static/images/gatsby/publiuslogic-monogram.png'
 
 const navigation = [
+  { name: 'About', href: '/about', current: false },
   { name: 'Blog', href: '/blog', current: false },
 ]
 
