@@ -30,7 +30,7 @@ To make your Gatsby site compliant there are two parts you need to implement.
 Allow or prevent user data to be collected based on user choice.
 Give the user a choice to opt-in or opt-out to have their data collected.
 
-### CONTROL WHEN USERS DATA IS COLLECTED
+### Control When Users Data Is Collected
 
 To be compliant with GDPR, no user data can be collected unless the user gave an explicit consent. When it comes to tracking scripts that means the scripts can’t be activated before the user gives the consent.
 
@@ -85,7 +85,7 @@ module.exports = {
 };
 ```
 
-### COLLECT USER CONSENT
+### Collect User Consent
 
 Giving the user a way to give consent for their data to be collected can be done by building your own form and setting the cookies (gatsby-gdpr-google-analytics and gatsby-gdpr-facebook-pixel).
 
@@ -162,4 +162,6 @@ import CookieConsent, { Cookies } from "react-cookie-consent";
 
 Hopefully this helped you making your Gatsby site GDPR compliant.
 
-Cookie's Explained In  [Privacy Page](/privacy/#cookies-beacons)
+> Without external scripts or API Calls
+
+Cookie's Explained In  [Privacy Page](http://publiuslogic.com/privacy#cookies-beacons)

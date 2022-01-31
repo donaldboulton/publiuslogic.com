@@ -2,10 +2,11 @@ import * as React from 'react'
 import { useState, Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { usePopper } from 'react-popper'
-import { ChevronRightIcon } from '@heroicons/react/solid'
-import { ViewListIcon, XCircleIcon } from '@heroicons/react/outline'
+import { ViewListIcon } from '@heroicons/react/outline'
 import Tooltip from '@/components/Tooltip'
+import WavyHr from '@/components/WavyHr'
 
+// https://haseebmajid.dev/blog/toc-in-gatsby#toc
 const headings = [
    {
       value: "h2",
@@ -27,15 +28,16 @@ export type HeadingType = {
 }
   
 type HeadingQueryType = {
-    allMdx: {
-      headings: {
-        value: string
-        depth: number
-      }[]
-    }
+  allMdx: {
+    headings: {
+      value: string
+      depth: number
+    }[]
+  }
 }
 
-const TableOfContent = ({ headings }: TableOfContentProps) => {
+const TableOfContent = ({ headings }: TableOfContentProps) => { 
+  // https://headlessui.dev/react/popover#positioning-the-panel
   let [referenceElement, setReferenceElement] = useState()
   let [popperElement, setPopperElement] = useState()
   let { styles, attributes } = usePopper(referenceElement, popperElement)
@@ -50,21 +52,14 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
             >
               <Popover.Button 
                 ref={setReferenceElement}
-                className='bg-gray-700 w-auto h-auto rounded-r-md pr-1 pt-2 pb-0 text-gray-200'
+                className='bg-gray-700 w-auto h-auto rounded-r-md pr-2 pt-2 pb-0 -ml-1 text-gray-200'
                 aria-describedby="tocTooltip"
               >              
                 <span className='inline-flex items-center'>
-                  <span>
-                    <ViewListIcon 
-                      className='w-8 h-8 ml-2 text-gray-200' 
-                      />
-                  </span>
-                  <ChevronRightIcon
-                    className={`${open ? 'transform rotate-90 text-red-600' : ''}
-                    h-5 w-5 text-gray-200 group-hover:text-opacity-80 transition ease-in-out duration-150`}
-                    aria-hidden="true"
+                  <ViewListIcon 
+                    className='w-8 h-8 ml-2 text-gray-200' 
                   />
-                </span>
+                </span>                  
               </Popover.Button>
             </Tooltip>
             <Popover.Overlay
@@ -87,17 +82,9 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
                 style={styles.popper}
                 {...attributes.popper}
               >
-                <div className="rounded-lg shadow-lg ring-1 bg-gray-700  ring-black ring-opacity-5">
-                  <div className='text-right mt-2 mr-2'>
-                    {({ close }) => (
-                      <button
-                        onClick={close()}
-                      >
-                        <XCircleIcon className='w-6 h-6' />
-                       </button>
-                      )}
-                  </div>
+                <div className="rounded-lg shadow-lg ring-1 mt-2 ml-2 mr-2 bg-gray-700  ring-black ring-opacity-5">                  
                   <div className='text-gray-200 text-lg text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Table Of Contents</div>
+                  <WavyHr className='mt-1 mb-1' />
                   <nav className='overflow-y-auto overflow-x-hidden nav-scroll h-96 w-auto'>
                     <ul className='flex flex-col'>        
                       {headings.map((heading) => {
@@ -113,7 +100,8 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
                             >
                               {heading.value}
                             </a>
-                          </li>
+                            <WavyHr className='mt-1 mb-1 text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600' />
+                          </li>                          
                         );
                       })}        
                     </ul>

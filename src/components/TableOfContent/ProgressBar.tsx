@@ -1,16 +1,16 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion'
+import * as CSS from 'csstype'
 
-const ProgressBarWrapper = {
+const ProgressBarWrapper: CSS.Properties = {
   height: 'calc(88vh - 40px)',
-  maxHeight: '425px',
+  maxHeight: '300px',
   width: '2px',
   backgroundColor: 'gray',
 }
 
 const ProgressBar = ({ progress }: { progress: number }) => {
-  const [visibility, setVisibility] = useState(true);
+  const [visibility, setVisibility] = React.useState(true);
   const shouldReduceMotion = useReducedMotion();
 
   const progressBarWrapperVariants = {
@@ -22,7 +22,7 @@ const ProgressBar = ({ progress }: { progress: number }) => {
     }),
   };
 
-  useEffect(() => setVisibility(progress >= 0.07 && progress <= 0.95), [
+  React.useEffect(() => setVisibility(progress >= 0.07 && progress <= 0.95), [
     progress,
   ]);
 
@@ -46,7 +46,7 @@ const ProgressBar = ({ progress }: { progress: number }) => {
         data-testprogress={progress}
       />
     </motion.div>
-  );
-};
+  )
+}
 
-export default ProgressBar;
+export default ProgressBar
