@@ -8,24 +8,10 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://publiuslogic.com/about</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <image:image><image:loc>https://publiuslogic.com/static/images/about.jpg</image:loc><image:caption>about.jpg</image:caption></image:image>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://publiuslogic.com/contact</loc>
   <lastmod>2020-11-26T22:27:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <image:image><image:loc>https://publiuslogic.com/static/images/contact.jpg</image:loc><image:caption>contact.jpg</image:caption></image:image>
   <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://publiuslogic.com/privacy</loc>
-  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <image:image><image:loc>https://publiuslogic.com/static/images/privacy.jpg</image:loc><image:caption>privacy.jpg</image:caption></image:image>
-  <priority>0.51</priority>
 </url>
 </urlset>

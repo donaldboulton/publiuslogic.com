@@ -84,7 +84,7 @@ export default function IndexFooter() {
                   <li>
                     <Link 
                       className="text-rose-700 hover:text-rose-500 font-semibold block pb-2 text-sm"
-                      to="/about">About Us
+                      to="/blog/about">About Us
                     </Link>
                   </li>
                   <li>
@@ -123,13 +123,13 @@ export default function IndexFooter() {
                   <li>
                     <Link 
                       className="text-rose-700 hover:text-rose-500 font-semibold block pb-2 text-sm"
-                      to="/privacy">Terms
+                      to="/blog/privacy">Terms
                     </Link>
                   </li>
                   <li>
                     <Link
                       className="text-rose-700 hover:text-rose-500 font-semibold block pb-2 text-sm"
-                      to="/privacy">Privacy Policy
+                      to="/blog/privacy">Privacy Policy
                     </Link>
                   </li>
                   <li>

@@ -95,3 +95,14 @@
       vibrate=(self),
       vr=(self)
     '''
+[[redirects]]
+  from = "/privacy"
+  to = "/blog/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about"
+  to = "/blog/about"
+  status = 301
+  force = true  
