@@ -10,10 +10,10 @@ import Scroll from '@/components/scroll'
 import PostHero from '@/components/PostHero'
 import { CalendarIcon, ClockIcon, TagIcon } from '@heroicons/react/outline'
 import ScrollIndicator from '@/components/scroll-indicator'
-
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Tags from '@/components/tags'
+import TableOfContent from '@/components/TableOfContent'
 
 const components = { Link }
 
@@ -52,26 +52,27 @@ const BlogPost = ({ data }: BlogPostProps) => {
         pathname={pathname}
       />
       <Header />
-      <ScrollIndicator />
+      <TableOfContent headings={data.mdx.headings} />
+      <ScrollIndicator />      
       <main>
         <article className="mb-10">
           <section className="px-4 lg:px-0 mt-8 mb-20 max-w-screen-lg mx-auto text-white light:text-black prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500">
             <div>   
               <h1 className="text-4xl font-bold text-white leading-tight l-2 text-center">{frontmatter.title}</h1>                                         
-              <h2 className="text-lg font-medium italic text-white light:text-black text-center">{frontmatter.description}</h2>            
+              <h2 className="text-lg font-medium italic text-white light:text-black text-center">{frontmatter.description}</h2>
               <div className="flex items-center flex-wrap mb-10 lg:place-content-start md:place-content-center sm:place-content-center">                                
-                <span className="text-white light:text-black mr-2 ml-3 inline-flex items-center leading-none text-base py-1">
+                <div className="text-white light:text-black mr-2 ml-3 inline-flex items-center leading-none text-base py-1">
                   <TagIcon className='w-6 h-6 mr-1' /><Tags className='py-1 px-2 text-gray-200' tags={frontmatter.tags} />
-                </span>
-                <span className="text-white light:text-black mr-2 inline-flex items-center leading-none text-base py-1">
+                </div>
+                <div className="text-white light:text-black mr-2 inline-flex items-center leading-none text-base py-1">
                   <CalendarIcon className="w-6 h-6 mr-1" />
                   {frontmatter.date}
-                </span>                
-                <span className="text-white light:text-black mr-3 inline-flex items-center leading-none text-base">
+                </div>                
+                <div className="text-white light:text-black mr-3 inline-flex items-center leading-none text-base">
                   <ClockIcon className="w-6 h-6 mr-1" />
                   {timeToRead} min read
-                </span>
-              </div>
+                </div>
+              </div>              
             </div>
             <div className='mb-2'>
               <Bio />
@@ -79,7 +80,7 @@ const BlogPost = ({ data }: BlogPostProps) => {
             <MDXRenderer localImages={frontmatter.image} components={components}>
               {data.mdx.body}
             </MDXRenderer>     
-          </section>
+          </section>          
           <ScrollDown
             className='scroll z-20 right-4 md:right-3 top-20'
             size={40}
@@ -109,6 +110,10 @@ export const query = graphql`
         date(formatString: "YYYY-MM-DD")
         tags
         category
+      }
+      headings {
+        value
+        depth
       }
       slug
       timeToRead

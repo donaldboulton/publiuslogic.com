@@ -51,3 +51,4 @@ const useScrollspy = (
   
     return [currentIntersectingElementIndex];
 };
+export default useScrollspy
