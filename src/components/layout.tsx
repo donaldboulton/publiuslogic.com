@@ -8,6 +8,7 @@ import FindOutMore from '@/components/findoutmore'
 import Features from './features'
 import Cta from '@/components/cta'
 import WavyHr from '@/components/WavyHr'
+import Tweet from '@/components/Tweet'
 import VideoPlayer from '@/components/Video/VideoPlayer'
 
 interface LayoutProps {
@@ -20,6 +21,7 @@ const shortcodes = {
   VideoPlayer,
   Features,
   WavyHr,
+  Tweet,
 }
 
 const Layout = ({ children, path }: LayoutProps) => {
