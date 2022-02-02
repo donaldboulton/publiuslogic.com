@@ -64,6 +64,7 @@
     "gatsby-remark-smartypants": "^5.6.0",
     "gatsby-source-cloudinary": "^0.1.14",
     "gatsby-source-filesystem": "^4.6.0",
+    "gatsby-source-twitter": "^4.0.1",
     "gatsby-transformer-sharp": "^4.6.0",
     "hero-patterns": "^2.1.0",
     "http-proxy-middleware": "^2.0.1",
