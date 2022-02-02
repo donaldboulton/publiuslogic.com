@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useEffect } from 'react'
 import { Helmet } from "react-helmet"
+import CookieConsent, { Cookies } from "react-cookie-consent"
 import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -650,7 +651,42 @@ export default function Home() {
             </div>
           </div>
         </motion.section>
-      </motion.main>      
+      </motion.main> 
+      <CookieConsent
+        enableDeclineButton 
+        flipButtons
+        location="bottom"
+        buttonText="Accept"
+        declineButtonText="Decline"
+        ariaAcceptLabel="Accept Cookies"
+        ariaDeclineLabel='Decline Cookies'        
+        cookieName="gatsby-gdpr-google-analytics"
+          style={{
+            background: "linear-gradient(to right, #4338ca, transparent, #4338ca)",
+            textShadow: "2px 2px black",
+          }}
+          buttonStyle={{
+            background: "radial-gradient(circle at top right, #4338ca, transparent)",
+            color: "white",
+            fontWeight: "bolder",
+            borderRadius: '3px',
+            border: "1px black",
+            textShadow: "2px 2px black",
+          }}
+        >
+          PubliusLogic uses cookies for user experience.{" "}
+          <span 
+            style={{ 
+              fontSize: "14px",
+              textAlign: "center",
+              marginLeft: "20px"
+            }}
+          > 
+            <Link to='/blog/privacy' className='text-gray-200' alt='Privacy Page'>
+              Privacy Page
+            </Link>
+          </span>
+        </CookieConsent>
       <Footer />
     </>
   );

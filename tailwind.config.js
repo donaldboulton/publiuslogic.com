@@ -26,9 +26,9 @@ module.exports = {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 }
         },
-      },
+      },      
       colors: {
-        primary: { dark: `#16181d`, light: `#ada6a9` },
+        primary: { dark: `#141936`, light: `#ada6a9` },
         transparent: `transparent`,
         pre: `#fcfcfc`,
         code: `#fcfcfc`,
@@ -39,6 +39,38 @@ module.exports = {
       fontFamily: {
         sans: `DM Sans`,
         serif: `Lora`,
+      },
+      p: {
+        '&::before': {
+          content: 'none !important',
+        },
+        '&::after': {
+          content: 'none !important',
+        },
+      },
+      typography: (theme) => {
+        return {
+          DEFAULT: {
+            css: {
+              listStyleType: {
+                none: 'none',
+                square: 'square',
+                roman: 'upper-roman',
+              },
+              a: {
+                color: theme(`colors.gray.200`),
+                textDecoration: null,
+                "&:hover": {
+                  textDecoration: `underline`,
+                },
+              },
+              "code::before": null,
+              "code::after": null,
+              "blockquote p:first-of-type::before": null,
+              "blockquote p:last-of-type::after": null,
+            },
+          },
+        }
       },
     },
   },

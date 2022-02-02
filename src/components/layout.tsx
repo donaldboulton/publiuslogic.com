@@ -59,11 +59,11 @@ const Layout = ({ children, path }: LayoutProps) => {
         ariaDeclineLabel='Decline Cookies'        
         cookieName="gatsby-gdpr-google-analytics"
           style={{
-            background: "linear-gradient(to right, #171717, transparent, #171717)",
+            background: "linear-gradient(to right, #4338ca, transparent, #4338ca)",
             textShadow: "2px 2px black",
           }}
           buttonStyle={{
-            background: "radial-gradient(circle at top right, #222, transparent)",
+            background: "radial-gradient(circle at top right, #4338ca, transparent)",
             color: "white",
             fontWeight: "bolder",
             borderRadius: '3px',
@@ -79,7 +79,7 @@ const Layout = ({ children, path }: LayoutProps) => {
               marginLeft: "20px"
             }}
           > 
-            <Link to='/privacy' alt='Privacy Page'>
+            <Link to='/blog/privacy' className='text-gray-200' alt='Privacy Page'>
               Privacy Page
             </Link>
           </span>
