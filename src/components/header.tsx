@@ -4,10 +4,9 @@ import { Link } from "gatsby"
 import { StaticImage } from 'gatsby-plugin-image'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { MenuIcon, XIcon, XCircleIcon, UserGroupIcon, PhotographIcon } from '@heroicons/react/outline'
+import { SearchIcon, MenuIcon, XIcon, XCircleIcon, UserGroupIcon, PhotographIcon, CloudIcon } from '@heroicons/react/outline'
 import DarkModeToggle from '@/components/dark-mode-toggle'
 import Tooltip from '@/components/Tooltip'
-import SearchIcon from "@/components/icons/search"
 import Control from "@/components/icons/control"
 import HeaderPopover from '@/components/header-popover'
 
@@ -120,12 +119,23 @@ export default function Navigation() {
                   >
                     <Menu.Items className="origin-top-right absolute right-0 mt-3 w-48 rounded-md shadow-lg py-1 bg-gray-700 light:bg-primary-light text-gray-200 light:text-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none opacity-75 hover:opacity-100">
                       <Menu.Item>
+                        {({ active }) => (                          
+                          <Link 
+                            target="_blank"
+                            to='https://publiuslogic-com.admin.datocms.com/'
+                            className={classNames(active ? 'bg-rose-500' : '', 'block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-purple-700 hover:text-white')}
+                          >
+                            <span className="flex items-center flex-shrink-0 text-lg pr-2"><CloudIcon className="block h-9 w-9 pr-2 text-red-500" aria-hidden="true" /><span>Login</span></span>
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
                         {({ active }) => (
                           <Link
                             to="/profile"
                             className={classNames(active ? 'bg-rose-500' : '', 'block px-3 py-2 mr-1 ml-1 rounded-md text-lg font-medium hover:bg-purple-700 hover:text-white')}
                           >
-                            <span className="flex items-center justify-center flex-shrink-0 text-lg pr-2"><UserGroupIcon className="block h-8 w-8 pr-2"  aria-hidden="true" /><span>Profile</span></span>
+                            <span className="flex items-center flex-shrink-0 text-lg pr-2"><UserGroupIcon className="block h-8 w-8 pr-2 text-purple-500"  aria-hidden="true" /><span>Profile</span></span>
                           </Link>
                         )}
                       </Menu.Item>
@@ -133,9 +143,9 @@ export default function Navigation() {
                         {({ active }) => (
                           <Link
                             to="/gallery"
-                            className={classNames(active ? 'bg-rose-500' : '', 'block px-3 py-2 ml-1 mr-1 rounded-md text-lg font-medium hover:bg-purple-700 hover:text-white')}
+                            className={classNames(active ? 'bg-rose-500' : '', 'block px-3 py-2 ml-0 mr-1 rounded-md text-lg font-medium hover:bg-purple-700 hover:text-white')}
                           >
-                            <span className="flex items-center justify-center flex-shrink-0 text-lg pr-2"><PhotographIcon className="block h-8 w-8 pr-2" aria-hidden="true" /><span>Gallery</span></span>
+                            <span className="flex items-center flex-shrink-0 text-lg pr-2"><PhotographIcon className="block h-8 w-9 pr-2 text-fuchsia-500" aria-hidden="true" /><span>Gallery</span></span>
                           </Link>
                         )}
                       </Menu.Item>
@@ -145,7 +155,7 @@ export default function Navigation() {
                             to='/search'
                             className={classNames(active ? 'bg-rose-500' : '', 'block px-3 py-2 ml-1 mr-1 rounded-md text-lg font-medium items-center justify-center hover:bg-purple-700 hover:text-white')}
                           >
-                            <span className="flex items-center justify-center flex-shrink-0 text-lg pr-2"><SearchIcon aria-hidden="true" /><span>Search</span></span>
+                            <span className="flex items-center flex-shrink-0 text-lg pr-2"><SearchIcon className="block h-8 w-9 pr-2 text-indigo-500" aria-hidden="true" /><span>Search</span></span>
                           </Link>
                         )}
                       </Menu.Item>

@@ -26,7 +26,6 @@ module.exports = {
     },
   },
   plugins: [
-    `gatsby-plugin-netlify`,
     {
       resolve: 'gatsby-plugin-react-leaflet',
       options: {
@@ -227,11 +226,34 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        // It's under the Settings > API tokens
+        apiToken: `2da8a520b7441c5ceafc058776a194`,
+        // Preview the latest version of records instead of the published one:
+        previewMode: false,
+        // Automatic reloading of content when some change occurs on DatoCMS:
+        disableLiveReload: false,
+      },
+    },
+    {
       resolve: `gatsby-plugin-offline`,
       options: {
         precachePages: [`/`, `about`, `/contact`, `/blog/*`],
         workboxConfig: {
           importWorkboxFrom: `cdn`,
+        },
+      },
+    },
+    {
+      // Needs to be last
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          '/*': [
+            // Opt-out of Google's FLoC
+            'Permissions-Policy: interest-cohort=()',
+          ],
         },
       },
     },

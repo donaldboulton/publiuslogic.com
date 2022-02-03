@@ -9,6 +9,7 @@ module.exports = {
   BPG: 'Beggar Preacher God',
   CD: 'Continuous Deployment',
   CDN: 'Content Delivery Network',
+  CMS: 'Content Management System',
   CRUD: "Create Read Update Delete",
   CMS: 'Content Management System',
   CTP: 'Community Technology Preview',

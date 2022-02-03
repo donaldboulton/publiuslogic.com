@@ -156,7 +156,7 @@ export default function Home() {
                 alt="Landing Image"
               />
               <div className="p-4 absolute top-16 left-3 z-20">
-              <h1 className="text-4xl font-bold text-white leading-tight italic">PubliusLogic</h1>
+              <h1 className="text-4xl font-bold text-white leading-tight italic">Publiuslogic</h1>
               <h2 className="text-xl font-medium italic text-gray-300">publiuslogic.com</h2>
             </div>
           </div>
@@ -202,7 +202,7 @@ export default function Home() {
                       <Link to='/blog/commandments' className='text-rose-500'>Planetary Laws</Link>
                     </h6>
                     <p className="mt-2 mb-4 text-white">
-                      The Laws of man have strayed far from the truth of Creation and Gods Laws. Under Gods Law all Life is precious and should be preserved at all cost. Mans laws care nothing for life; you kill your, "Unborn children"!
+                      The Laws of man have strayed far from the truth of Creation and Gods Laws. Under Gods Law all Life is precious and should be preserved at all cost. Mans laws care nothing for life; you kill your, "Unborn Children"!
                     </p>
                   </div>
                 </div>
