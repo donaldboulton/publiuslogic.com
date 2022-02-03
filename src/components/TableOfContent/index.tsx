@@ -95,12 +95,11 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
                         return (
                           <li className='p-1 ml-1 mb-4 mt-2 mr-1 list-none' key={heading.value}>
                             <a
-                              className='hover:text-gray-300 transition duration-300 no-underline'
+                              className='hover:text-gray-300 transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'
                               href={`#${heading.value.replace(/\s+/g, "-").toLowerCase()}`}
                             >
                               {heading.value}
-                            </a>
-                            <WavyHr className='mt-1 mb-1 text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600' />
+                            </a>                            
                           </li>                          
                         );
                       })}        
