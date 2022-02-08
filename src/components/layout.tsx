@@ -7,8 +7,9 @@ import { MDXProvider } from "@mdx-js/react"
 import FindOutMore from '@/components/findoutmore'
 import Features from './features'
 import Cta from '@/components/cta'
-import WavyHr from '@/components/WavyHr'
 import Tweet from '@/components/Tweet'
+import Callout from '@/components/Callout'
+import WavyHr from '@/components/WavyHr'
 import VideoPlayer from '@/components/Video/VideoPlayer'
 
 interface LayoutProps {
@@ -21,6 +22,7 @@ const shortcodes = {
   VideoPlayer,
   Features,
   WavyHr,
+  Callout,
   Tweet,
 }
 

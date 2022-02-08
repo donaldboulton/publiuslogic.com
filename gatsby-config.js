@@ -90,7 +90,6 @@ module.exports = {
               loading: "lazy",
             },
           },
-          `gatsby-remark-static-images`,
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
@@ -223,17 +222,6 @@ module.exports = {
         },
         // defines the environments where the tracking should be available  - default is ["production"]
         environments: ['production', 'development']
-      },
-    },
-    {
-      resolve: `gatsby-source-datocms`,
-      options: {
-        // It's under the Settings > API tokens
-        apiToken: `2da8a520b7441c5ceafc058776a194`,
-        // Preview the latest version of records instead of the published one:
-        previewMode: false,
-        // Automatic reloading of content when some change occurs on DatoCMS:
-        disableLiveReload: false,
       },
     },
     {
