@@ -1,6 +1,4 @@
 import React from 'react';
-import Flex from '../Flex';
-import { StyledButton, StyledIconButton } from './Styles';
 import { ButtonProps } from './types';
 import * as CSS from 'csstype'
 
@@ -20,21 +18,21 @@ const StyledButton: CSS.Properties = {
   border: '0',
   font: 'inherit',
   /* Constant properties */
-  fontSize: 'var(--font-size-2)',
-  fontWeight: 'var(--font-weight-3)',
+  fontSize: 'inherit',
+  fontWeight: 'inherit',
   height: '44px',
   width: 'max-content',
   padding: '11px 16px',
   transition: 'background 0.2s, transform 0.2s, color 0.2s, box-shadow 0.3s',
-  borderRadius: 'var(--border-radius-1)',
+  borderRadius: '5px',
   /* Computed properties */
-  background: 'var(--background, white)',
-  color: 'var(--color, black)',
+  background: '#fff',
+  color: '#000',
   transform: 'scale(var(--button-scale, 1)) translateZ(0)',
-  boxShadow: 'var(--shadow, none)',
-  opacity: 'var(--opacity, 1)',
+  boxShadow: 'inherit',
+  opacity: '0.25',
   '--shadow-hover-primary':
-    '0 2px 40px -4px var(--maximeheckel-form-input-focus)',
+    '0 2px 40px -4px #ccc',
 
   '&:active': {
     '--button-scale': '0.95',
@@ -46,11 +44,11 @@ const StyledButton: CSS.Properties = {
   variants: {
     variant: {
       primary: {
-        '--background': 'var(--maximeheckel-colors-brand)',
-        '--color': 'hsl(var(--palette-gray-00))',
+        '--background': '#171717',
+        '--color': '#ccc',
         '&:disabled': {
-          '--background': 'var(--maximeheckel-form-input-disabled)',
-          '--color': 'var(--maximeheckel-colors-typeface-tertiary)',
+          '--background': '#171717',
+          '--color': '#ccc',
         },
 
         '&:hover': {
@@ -64,8 +62,8 @@ const StyledButton: CSS.Properties = {
         },
       },
       secondary: {
-        '--background': 'var(--maximeheckel-colors-emphasis)',
-        '--color': 'var(--maximeheckel-colors-brand)',
+        '--background': '#171717',
+        '--color': '#ccc',
         '&:disabled': {
           '--background': 'var(--maximeheckel-form-input-disabled)',
           '--color': 'var(--maximeheckel-colors-typeface-tertiary)',
@@ -105,10 +103,10 @@ const StyledIconButton: CSS.Properties = {
   background: 'transparent',
   transition: 'color 0.3s ease, transform 0.3s ease',
   borderRadius: 'var(--border-radius-1)',
-  color: 'var(--color, var(--maximeheckel-colors-typeface-secondary))',
+  color: '#ccc',
   transform: 'scale(var(--button-content-scale, 1)) translateZ(0)',
   '--shadow-hover-primary':
-    '0 2px 40px -4px var(--maximeheckel-form-input-focus)',
+    '0 2px 40px -4px var(--form-input-focus)',
 
   '&::after': {
     zIndex: '0',
@@ -120,32 +118,32 @@ const StyledIconButton: CSS.Properties = {
     borderRadius: 'var(--corner, var(--border-radius-1))',
     transition:
       'box-shadow 0.3s ease, border-color 0.2s, background 0.3s ease,\n      transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-    background: 'var(--background, var(--maximeheckel-colors-foreground))',
+    background: '#171717',
     transform: 'scale(var(--button-background-scale, 1)) translateZ(0)',
     border:
-      '2px solid var(--border-color, var(--maximeheckel-colors-foreground))',
+      '2px solid #000',
     boxShadow: 'var(--shadow, none)',
   },
 
   '&:disabled': {
     cursor: 'not-allowed',
-    '--background': 'var(--maximeheckel-form-input-disabled)',
-    '--color': 'var(--maximeheckel-colors-typeface-tertiary)',
+    '--background': '#171717',
+    '--color': '#ccc',
   },
 
   '&:hover': {
     '&:not(:disabled)': {
-      '--border-color': 'var(--maximeheckel-colors-brand)',
-      '--color': 'var(--maximeheckel-colors-brand)',
+      '--border-color': 'var(--colors-brand)',
+      '--color': 'var(--colors-brand)',
       '--corner': 'calc(var(--border-radius-1) + 2px)',
       '--button-background-scale': '0.92',
-      '--shadow': 'var(--shadow-hover-primary)',
+      '--shadow': '#000',
     },
   },
 
   '&:focus-visible': {
-    '--border-color': 'var(--maximeheckel-colors-brand)',
-    '--color': 'var(--maximeheckel-colors-brand)',
+    '--border-color': '#171717',
+    '--color': '#000',
     '--corner': 'calc(var(--border-radius-1) + 2px)',
     '--button-background-scale': 0.92,
     '--shadow': 'var(--shadow-hover-primary)',
@@ -174,13 +172,14 @@ const Button = <T extends object>(
   if (variant === 'icon') {
     return (
       <StyledIconButton variant={variant} as={Component} ref={ref} {...rest}>
-        <Flex
-          css={{
+        <div
+          className='flex'
+          style={{
             zIndex: 1,
           }}
         >
           {icon}
-        </Flex>
+        </div>
       </StyledIconButton>
     );
   }
@@ -188,23 +187,25 @@ const Button = <T extends object>(
   return (
     <StyledButton variant={variant} as={Component} ref={ref} {...rest}>
       {startIcon ? (
-        <Flex
-          css={{
+        <div
+          className='flex'
+          style={{
             marginRight: '8px',
           }}
         >
           {startIcon}
-        </Flex>
+        </div>
       ) : null}
       {children}
       {endIcon ? (
-        <Flex
+        <div
+          className='flex'
           css={{
             marginLeft: '8px',
           }}
         >
           {endIcon}
-        </Flex>
+        </div>
       ) : null}
     </StyledButton>
   );
@@ -220,4 +221,4 @@ export const WrappedButton = <T,>({
   <ForwardedButton {...rest} ref={ref} />
 );
 
-export default WrappedButton;
+export default WrappedButton

@@ -46,7 +46,13 @@ export default function FindOutMore() {
                   />
                 </div>
                 <h3 className="mt-6 text-2xl">
-                  <a href={callout.href}>
+                  <a 
+                    className='text-indigo-500 hover:text-indigo-600'
+                    href={callout.href}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    area-label="Find Out More"
+                  >
                     <span className="absolute inset-0" />
                     {callout.name}
                   </a>

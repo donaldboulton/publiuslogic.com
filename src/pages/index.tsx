@@ -140,16 +140,12 @@ export default function Home() {
       <Header transparent />
       <motion.main className="font-sans" variants={container}>
         <div 
-          className="relative flex content-center items-center justify-center"
-          style={{
-            minHeight: "75vh"
-          }}
+          className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center"
         >
-          <div className="absolute top-0 bg-center">          
-            <ScrollIndicator />
+          <div className="absolute top-0 bg-center">         
             <div className="absolute left-0 bottom-0 md:mb-0 w-full h-full z-10 bg-gradient-to-b from-gray-700 opacity-50"></div>
               <StaticImage
-                className="cover object-contain"
+                className="cover object-contain h-96"
                 formats={["auto", "webp"]}
                 src="../../static/images/jpg/dbbg.jpg"
                 quality={95}
@@ -161,8 +157,8 @@ export default function Home() {
             </div>
           </div>
             <div
-              className="top-auto mt-4 -mb-5 bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
-              style={{ height: "70px" }}
+              className="top-auto mt-4 -mb-10 lg-mb-10 bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
+              style={{ height: "80px" }}
             >
             <svg
               className="absolute bottom-0 overflow-hidden"
@@ -687,6 +683,7 @@ export default function Home() {
             </Link>
           </span>
         </CookieConsent>
+        <ScrollIndicator />
       <Footer />
     </>
   );
