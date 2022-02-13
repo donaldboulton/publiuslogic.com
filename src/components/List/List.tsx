@@ -3,7 +3,7 @@ import * as CSS from 'csstype'
 import ListItem from './Item'
 import { ListProps } from './types'
 
-const liststyle: CSS.Properties = {
+const listStyle: CSS.Properties = {
     margin: '0 0 1.45rem 0',
     padding: '0',
     color: 'inherit',
@@ -28,7 +28,7 @@ const liststyle: CSS.Properties = {
   
             '&:before': {
               content: "counters(li, '.') '. '",
-              color: 'var(--maximeheckel-colors-brand)',
+              color: 'blue',
               marginRight: '8px',
             },
           },
@@ -45,7 +45,7 @@ const List = (props: ListProps) => {
   const Component = variant === 'ordered' ? 'ol' : 'ul';
 
   return (
-    <div style={liststyle} as={Component} variant={variant} {...rest}>
+    <div style={listStyle} as={Component} variant={variant} {...rest}>
       {children}
     </div>
   );

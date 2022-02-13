@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as CSS from 'csstype'
 import { EnterArrowIcon } from '../icons/enter';
 
-const list: CSS.Properties = {
+const listItem: CSS.Properties = {
     listStyle: 'none',
     display: 'flex',
     marginBottom: 'calc(1.45rem / 2)',
@@ -35,7 +35,7 @@ const list: CSS.Properties = {
   const { children, ...rest } = props;
 
   return (
-    <li style={wrapper} {...rest}>
+    <li style={listItem} {...rest}>
       <span data-list-item>
         <EnterArrowIcon stroke="text-indigo-600" />
       </span>
