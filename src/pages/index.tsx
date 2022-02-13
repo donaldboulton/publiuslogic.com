@@ -7,7 +7,6 @@ import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import BioTypist from '@/components/bio-typist'
 import SEO from '@/components/seo'
-import GithubProfile from '@/components/github-profile'
 import Header from '@/components/header'
 import FindOutMore from '@/components/findoutmore'
 import LatestArticles from '@/components/latestarticles'
@@ -497,14 +496,14 @@ export default function Home() {
                 >
                   <div className="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg">
                     <div className="flex-auto p-5 m-2 lg:p-10t text-white light:text-black">
-                      <h4 className="text-2xl font-semibold text-gray-200">
+                      <h4 className="text-2xl mb-2 font-semibold text-gray-200 underline underline-offset-3 decoration-wavy decoration-fuchsia-600">
                         Up Coming Episodes!
                       </h4>
                       <p className="leading-relaxed mt-1 mb-4 text-gray-200">
                         Before the End of this Month I will be a little more explanatory on the Creation of all and Virtue!
                       </p>
                       <p className="leading-relaxed mt-1 mb-4 text-gray-200">
-                        On Easter I will Give you the Final Trinity Works. The Trinity Of Man!
+                        On Easter I will Give you the Final Trinity Works. <span className='underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>The Trinity Of Man!</span>
                       </p>
                       <div className="mt-5 lg:mt-0 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-white light:text-black">
                         <List variant="unordered">
@@ -533,7 +532,7 @@ export default function Home() {
                             variant="secondary"
                           >
                             As A Species you will not Effectivity Do anything about climate control. That would Mean limiting playtime and entertainment and you have been set up 
-                            to focus on only playtime pursuits. Playtime and Over population through heat from every one of you, is what is creating the climate crisis!. 📝
+                            to focus on only playtime pursuits. Playtime and Over population through heat from every one of you, is what is creating the <span className='underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Climate Crisis</span>! 📝
                           </p>
                           </List.Item>
                         </List>                      
