@@ -156,27 +156,8 @@ export default function Home() {
               <h2 className="text-xl font-medium italic text-gray-300">publiuslogic.com</h2>
             </div>
           </div>
-            <div
-              className="top-auto mt-4 -mb-10 lg-mb-10 bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
-              style={{ height: "80px" }}
-            >
-            <svg
-              className="absolute bottom-0 overflow-hidden"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              version="1.1"
-              viewBox="0 0 2560 100"
-              x="0"
-              y="0"
-            >
-              <polygon
-                className="text-gray-700 light:text-gray-200 fill-current"
-                points="2560 0 2560 100 0 100"
-              ></polygon>
-            </svg>
-          </div>
         </div>
-        <motion.section variants={item} className="pb-10 bg-gray-700 light:bg-gray-200 text-gray-800 light:text-gray-200 transition-all duration-200 -mt-20">
+        <motion.section variants={item} className="pb-10 bg-gray-700 light:bg-gray-200 text-gray-800 light:text-gray-200 transition-all duration-200 -mt-10">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap">
               <div className="lg:pt-12 pt-4 w-full md:w-4/12 px-4 text-center">
