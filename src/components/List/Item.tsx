@@ -1,9 +1,9 @@
 import * as React from 'react'
 import * as CSS from 'csstype'
-import { EnterArrowIcon } from '../icons/enter';
 
 const listItem: CSS.Properties = {
     listStyle: 'none',
+    marginRight: '8px',
     display: 'flex',
     marginBottom: 'calc(1.45rem / 2)',
     lineHeight: '1.9',
@@ -37,7 +37,27 @@ const listItem: CSS.Properties = {
   return (
     <li style={listItem} {...rest}>
       <span data-list-item>
-        <EnterArrowIcon stroke="text-indigo-600" />
+        <svg
+          className='w-6 h-6 mr-2 ml-1 inline-block items-center text-indigo-400'
+          viewBox="0 0 25 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke="currentColor"
+          {...props}
+        >
+          <path
+            d="M5 12H19"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M14.0829 6.42532L19 12L14.0829 17.5747"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </span>
       <div>{children}</div>
     </li>
@@ -46,4 +66,4 @@ const listItem: CSS.Properties = {
 
 ListItem.displayName = 'ListItem';
 
-export default ListItem;
+export default ListItem

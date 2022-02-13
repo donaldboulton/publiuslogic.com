@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useEffect } from 'react'
 import { Helmet } from "react-helmet"
 import CookieConsent, { Cookies } from "react-cookie-consent"
-import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
+import { NetlifyForm, Honeypot } from 'react-netlify-forms'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import BioTypist from '@/components/bio-typist'
@@ -13,6 +13,7 @@ import FindOutMore from '@/components/findoutmore'
 import LatestArticles from '@/components/latestarticles'
 import Footer from '@/components/footer'
 import ScrollIndicator from '@/components/scroll-indicator'
+import List from '@/components/List';
 import { CodeIcon, CloudIcon, BookOpenIcon, CheckCircleIcon } from '@heroicons/react/outline'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
@@ -494,133 +495,49 @@ export default function Home() {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   key={3}
                 >
-                  <div className="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg bg-gray-700 light:bg-gray-200 text-white light:text-black">
-                    <div className="flex-auto p-5 lg:p-10">
-                    <h4 className="text-2xl font-semibold">
-                      Email Me!
-                    </h4>
-                    <p className="leading-relaxed mt-1 mb-4">
-                      Complete this form and we will get back to you Soon.
-                    </p>
-                    <div className="mt-5 lg:mt-0 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-white light:text-black">
-                      <NetlifyForm
-                        name='homecontact'
-                        data-netlify='true'
-                        honeypotName='bot-field'
-                        enableRecaptcha
-                        onSuccess={(response, context) => {
-                          console.log('Successfully sent form data to Netlify Server')
-                          context.formRef.current.reset()
-                        }}
-                      >
-                        {({ handleChange, success, error }) => (
-                          <>
-                            <Honeypot />   
-                            <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />                                                                  
-                              <p className="hidden">
-                                <label>Don not fill this out if you are human: <input name="bot-field" /></label>
-                              </p>
-                            <div className="shadow overflow-hidden sm:rounded-md">
-                              <div className="px-4 py-5 bg-gray-800 light:bg-gray-400 text-white light:text-black sm:p-6">
-                                <div className="grid grid-cols-6 gap-6">
-                                  <div className="col-span-6 sm:col-span-6">
-                                    <label htmlFor="name" className="block text-sm font-medium">
-                                      Name
-                                    </label>
-                                    <input
-                                      type="text"
-                                      name="name"
-                                      autoComplete="off"
-                                      required
-                                      placeholder="Enter your Name here."
-                                      className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 focus:shadow-fuchsia-500/50 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
-                                      onChange={handleChange}
-                                    />
-                                  </div>
-                                  <div className="col-span-6">
-                                    <label htmlFor="email" className="block text-sm font-medium text-white light:text-black">
-                                      Email address
-                                    </label>
-                                    <input
-                                      type="email"
-                                      name="email"
-                                      autoComplete="off"
-                                      required
-                                      placeholder="Enter your Email here."
-                                      className="mt-1 bg-gray-700 light:bg-gray-200 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
-                                      onChange={handleChange}
-                                    />
-                                  </div>
-                                  <div className="col-span-6">
-                                    <label htmlFor="phone" className="block text-sm font-medium text-white light:text-black">
-                                      Phone
-                                    </label>
-                                    <input
-                                      type="tel"
-                                      name="phone"
-                                      autoComplete="off"
-                                      placeholder="Enter Phone Number here."
-                                      className="mt-1 bg-gray-700 light:bg-gray-200 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
-                                      onChange={handleChange}
-                                    />
-                                  </div>
-                                  <div className="col-span-6">
-                                    <label htmlFor="subject" className="block text-sm font-medium text-white light:text-black">
-                                      Subject
-                                    </label>
-                                    <input
-                                      type="text"
-                                      name="subject"
-                                      autoComplete="on"
-                                      required
-                                      placeholder="Enter your Subject here."
-                                      className="mt-1 bg-gray-700 light:bg-gray-200 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
-                                      onChange={handleChange}
-                                    />
-                                  </div>
+                  <div className="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg">
+                    <div className="flex-auto p-5 m-2 lg:p-10t text-white light:text-black">
+                      <h4 className="text-2xl font-semibold text-gray-200">
+                        Up Coming Episodes!
+                      </h4>
+                      <p className="leading-relaxed mt-1 mb-4 text-gray-200">
+                        Before the End of this Month I will be a little more explanatory on the Creation of all and Virtue!
+                      </p>
+                      <p className="leading-relaxed mt-1 mb-4 text-gray-200">
+                        On Easter I will Give you the Final Trinity Works. The Trinity Of Man!
+                      </p>
+                      <div className="mt-5 lg:mt-0 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-white light:text-black">
+                        <List variant="unordered">
+                          <List.Item>
+                            <p
+                              className='mb-1'
+                              variant="secondary"
+                            >
+                              The Devil is Controlling most all of your Government Officials! {' '}
 
-                                  <div className="col-span-6">
-                                    <label htmlFor="text" className="block text-sm font-medium text-white light:text-black">
-                                      Message
-                                    </label>
-                                    <textarea
-                                      className="form-textarea mt-1 block w-full h-32 bg-gray-700 light:bg-gray-200 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 shadow-sm sm:text-sm border-gray-800 rounded-md"
-                                      rows={5}
-                                      name="text"
-                                      required
-                                      placeholder="Enter your message here." 
-                                      onChange={handleChange}                   
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="px-4 py-3 text-right sm:px-6">
-                                {success && (
-                                  <p 
-                                    className='text-rose-500'
-                                  >
-                                    Thanks for Subscribing!
-                                  </p>
-                                )}
-                                {error && (
-                                  <p 
-                                    className='text-rose-500'
-                                  >
-                                    Sorry, we could not reach our servers.
-                                  </p>
-                                )} 
-                                <button
-                                  type="submit"
-                                  className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 shadow-lg shadow-fuchsia-500/50 hover:shadow-fuchsia-700/50 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 duration-300 ..."
-                                >
-                                  Send
-                                </button>
-                              </div>
-                            </div>
-                          </>
-                        )}
-                      </NetlifyForm> 
-                    </div>
+                              Details on how to fight off the Devil! 😈
+                            </p>
+                          </List.Item>
+                        <List.Item>
+                          <p
+                            className='mb-1'
+                            variant="secondary"
+                          >
+                            Your Children are being brainwashed for Devilish total control! {' '}
+                            Stand Up and fight for there future and freedom now! 🤫
+                          </p>
+                        </List.Item>
+                        <List.Item>
+                          <p
+                            className='mb-1'
+                            variant="secondary"
+                          >
+                            As A Species you will not Effectivity Do anything about climate control. That would Mean limiting playtime and entertainment and you have been set up 
+                            to focus on only playtime pursuits. Playtime and Over population through heat from every one of you, is what is creating the climate crisis!. 📝
+                          </p>
+                          </List.Item>
+                        </List>                      
+                      </div>
                     </div>
                   </div>
                 </motion.div>

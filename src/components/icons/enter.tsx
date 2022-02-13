@@ -1,6 +1,7 @@
-import { SVGAttributes } from 'react'
+import * as React from "react";
 
-export const EnterArrowIcon = (props: SVGAttributes<SVGElement>) => (
+const Enter: React.FC = () => {
+  return (
     <svg
       width="22"
       height="22"
@@ -24,3 +25,6 @@ export const EnterArrowIcon = (props: SVGAttributes<SVGElement>) => (
       />
     </svg>
   );
+}
+
+export default Enter
