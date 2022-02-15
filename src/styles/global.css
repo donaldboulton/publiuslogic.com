@@ -91,9 +91,9 @@ pre {
   color: rgb(214, 222, 235);
 }
 .danger {
-  background: rgb(150, 2, 2);
+  background: rgb(150, 2, 2, 0.5);
   border: 2px solid rgb(158, 11, 11, 0.25);
-  box-shadow: 6px 5px 5px rgb(158, 11, 11, 0.75);
+  box-shadow: 6px 5px 5px rgb(150, 2, 2, 0.5);
   color: rgb(214, 222, 235);
 }
 mark {

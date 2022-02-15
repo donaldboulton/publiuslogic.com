@@ -1,11 +1,10 @@
 import * as React from "react"
 
-const AlertIcon: React.FC = () => {
+const Alert: React.FC = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="22"
-      height="22"
+      className="w-6 h-6"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -21,4 +20,4 @@ const AlertIcon: React.FC = () => {
   )
 }
 
-export default AlertIcon
+export default Alert

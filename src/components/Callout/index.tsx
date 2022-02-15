@@ -1,28 +1,56 @@
 import * as React from 'react'
 import * as CSS from 'csstype'
-import { CalloutProps } from './types';
+import { CalloutProps } from './types'
+import { getVariantIcon } from '../../utils/utils'
 
 export const callOutWrapper: CSS.Properties = {
+  ['--icon-color' as info]: '#9333ea',
+  ['--icon-color' as danger]: '#fa383826',
   position: 'absolute',
   display: 'flex',
   top: '-24px',
   right: '-20px',
   borderRadius: '50%',
   padding: '6px',
-  color: '#fff',
+  color: '#9333ea',
   border: '6px solid transparent',
-  background: '#282a36',
+  background: '#141936',
 
   variants: {
     variant: {
       info: {
-        background: 'blue',
+        '--icon-color': 'info',
       },
       danger: {
-        background: 'red',
+        background: '#fa383826',
       },
     },
-  },
+  }
+}
+
+export const calloutLabelWrapper: CSS.Properties = {
+  position: 'absolute',
+  display: 'flex',
+  top: '-24px',
+  right: '-8px',
+  borderRadius: '6px',
+  padding: '8px',
+  color: '#fff',
+  fontSize: 'inherit',
+  fontWeight: 'inherit',
+  userSelect: 'none',
+  background: '#9333ea',
+
+  variants: {
+    variant: {
+      info: {
+        background: '#9333ea',
+      },
+      danger: {
+        background: '#fa383826',
+      },
+    },
+  }
 }
 
 const callout: CSS.Properties = {
@@ -31,54 +59,52 @@ const callout: CSS.Properties = {
   },
 
   position: 'relative',
-  padding: '30px 30px',
+  padding: '10px 25px',
   marginBottom: '2.25rem',
-  marginTop: '20px',
+  marginTop: '2.25rem',
   borderRadius: '12px',
+  fontSize: '1.25em',
   color: '#fff',
-  border: '2px solid #9333ea',
-  background: '#9333ea',
+  border: '2px solid rgb(147, 51, 234, 0.5)',
+  background: 'rgb(147, 51, 234)',
+  boxShadow: '6px 5px 5px rgb(147, 51, 234, 0.75)',
 
   variants: {
     variant: {
       info: {
-        background: 'blue',
+        background: '#9333ea',
       },
       danger: {
-        background: 'red',
+        background: '#fa383826',
       },
     },
-  },
+  }
 }
 
 
 
 const Callout: React.FC<CalloutProps> = (props) => {
-  const { children, variant, ...rest } = props;
+  const { children, variant, label, ...rest } = props;
+
+  const icon = label ? null : getVariantIcon(variant);
+
   return (
     <div
       style={callout} 
       variant={variant} 
       {...rest}
-    >      
+    > 
+    {icon ? (     
         <aside style={callOutWrapper} variant={variant}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className='w-6 h-6 text-indigo-500'
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            {...props}
-          >
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="16" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-          </svg>
+          {icon}
         </aside>
-          {children}
+      ) : null}
+      {label ? (
+        <aside style={calloutLabelWrapper} variant={variant}>
+          {label}
+        </aside>
+      ) : null}
+        {children}
     </div>
   )
 }

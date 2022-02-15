@@ -23,8 +23,6 @@ const CommandCenterButton = (props: Props) => {
     <Tooltip
       id="commandCenterTooltip"
       tooltipText="  Show command center"
-      tooltipVisuallyHiddenText={`Opens a modal to allow you to quickly search for the content of this
-    blog and access links to my portfolio, Twitter account, and email.`}
     >
       <Button<MotionProps>
         as={motion.button}
