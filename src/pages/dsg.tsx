@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-
+import Callout from '@/components/Callout'
 import { Helmet } from "react-helmet"
 import SEO from '@/components/seo'
 import PageHero from '@/components/PageHero'
@@ -40,12 +40,12 @@ export default function DSG (props) {
               />
             </header> 
             <div className="mt-6 mb-16 flex flex-col items-center">
-              <div className=" text-white light:text-black">                                
+              <div className="text-white light:text-black">                                
                 <Link to='/blog/gatsby-version-four'>Back to Post</Link><br />
                 <h1 className="text-4xl font-bold mt-2 mb-2 leading-tight">
                   DSG: Deferred Static Generation
                 </h1>
-                <p>This page was generated At Runtime!</p>
+                <Callout variant='danger'>This page was generated At Runtime!</Callout>
               </div>
             </div>  
           </article>

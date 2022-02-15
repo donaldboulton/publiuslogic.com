@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const WavyHr = ({ className}) => {
+const WavyHr = () => {
   return (
     <div className='text-center'>
       <hr 
@@ -8,7 +8,7 @@ const WavyHr = ({ className}) => {
           textAlign: 'text-center',
           textDecoration: 'underline'
         }}
-        className={className}
+        className='underline underline-offset-2 decoration-wavy decoration-fuchsia-600'
       />
     </div>
   )
