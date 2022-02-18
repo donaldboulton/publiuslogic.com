@@ -42,7 +42,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
   let [popperElement, setPopperElement] = useState()
   let { styles, attributes } = usePopper(referenceElement, popperElement)
   return ( 
-    <div className='fixed left-1 md:left-1 z-10 top-1/4 w-32 h-2/4'> 
+    <div className='fixed left-1 md:left-1 z-10 top-2/4 w-32 h-2/4'> 
       <Popover as="div">
         {({ open }) => (
           <>
