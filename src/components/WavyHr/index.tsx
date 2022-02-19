@@ -1,6 +1,11 @@
 import * as React from 'react'
 
-const WavyHr = () => {
+interface Props {
+  className: string
+}
+
+const WavyHr: React.FC<Props> = (props) => {
+  const { children, className } = props;
   return (
     <div className='text-center'>
       <hr 
@@ -8,8 +13,9 @@ const WavyHr = () => {
           textAlign: 'text-center',
           textDecoration: 'underline'
         }}
-        className='underline underline-offset-2 decoration-wavy decoration-fuchsia-600'
+        className={className}
       />
+      {children}
     </div>
   )
 }

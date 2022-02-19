@@ -1,6 +1,8 @@
 const siteAcronyms = require('./gatsby-site-acronyms')
 const queries = require(`./src/utils/algolia-queries`)
 
+const { githubApiQuery } = require('./src/api/github-api')
+
 require('dotenv').config();
 
 module.exports = {
@@ -222,6 +224,23 @@ module.exports = {
         },
         // defines the environments where the tracking should be available  - default is ["production"]
         environments: ['production', 'development']
+      },
+    },
+    {
+      resolve: `gatsby-source-github-api`,
+      options: {
+        url: "https://api.github.com/graphql", // default Github GraphQL v4 API endpoint
+  
+        // token: required by the GitHub API
+        token: process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
+  
+        // GraphQLquery: defaults to a search query
+        graphQLQuery: githubApiQuery,
+  
+        // variables: defaults to variables needed for a search query
+        variables: {
+          github_login: process.env.GITHUB_LOGIN
+        },
       },
     },
     {

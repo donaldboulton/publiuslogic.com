@@ -1,5 +1,7 @@
 import * as React from 'react'
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
+import { Disclosure, Transition } from '@headlessui/react'
+import { ChevronUpIcon } from '@heroicons/react/outline'
 import axios from "axios";
 
 function GithubProfile() {
@@ -23,12 +25,12 @@ function GithubProfile() {
   }, []);
 
   return (
-    <section className="text-center p-6 min-w-min">
+    <section className="w-full shadow-lg pt-8 mt-10 rounded-lg bg-gray-800 light:bg-gray-200 mb-6 p-6">
       {isLoading ? (
         <div>Loading...</div>
       ) : (
         <>
-          <article className="shadow-lg py-10 rounded-lg bg-gray-800 light:bg-gray-200 text-zinc-200 light:text-zinc-800 mb-10">
+          <div className="py-10 mb-4 w-full">
             <img
               className="w-20 h-20 mx-auto mb-3 ring ring-indigo-200 rounded-full"
               src={user.photo}
@@ -88,14 +90,44 @@ function GithubProfile() {
                 </a>
               </div>
             </div>
-          </article>
-          <h1 className="text-3xl font-bold mb-6">Formatted Response</h1>
+          </div>
+          <div className="w-full px-4 pt-16">
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-400 bg-purple-900 rounded-lg hover:bg-purple-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">                                  
+                    <span>Json Un-formatted Response</span>
+                      <ChevronUpIcon
+                        className={`${
+                        open ? 'transform rotate-180' : ''
+                        } w-5 h-5 text-purple-500`}
+                      />
+                    </Disclosure.Button>
 
-          <pre className="text-left text-xs p-3 bg-gray-800 light:bg-gray-300 text-gray-200 hover:text-gray-400 light:text-gray-800 light:hover:text-gray-700 overflow-auto rounded-lg">
-            {JSON.stringify(user, null, 2)}
-          </pre>
+                    <Transition
+                      show={open}
+                      enter="transition duration-100 ease-out"
+                      enterFrom="transform scale-95 opacity-0"
+                      enterTo="transform scale-100 opacity-100"
+                      leave="transition duration-75 ease-out"
+                      leaveFrom="transform scale-100 opacity-100"
+                      leaveTo="transform scale-95 opacity-0"
+                    >
+                      <Disclosure.Panel 
+                        className='px-4 pt-4 pb-2'
+                      >
+                      <pre className="text-left text-xs p-3 bg-gray-800 light:bg-gray-300 text-gray-200 hover:text-gray-400 light:text-gray-800 light:hover:text-gray-700 overflow-auto rounded-lg">
+                        {JSON.stringify(user, null, 2)}
+                      </pre>
+                     </Disclosure.Panel>
+                    </Transition>
+                  </>
+                )}
+              </Disclosure>
+          </div>
         </>
       )}
+      
     </section>
   );
 }

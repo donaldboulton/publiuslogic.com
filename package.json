@@ -63,6 +63,7 @@
     "gatsby-remark-responsive-iframe": "^5.7.0",
     "gatsby-remark-smartypants": "^5.7.0",
     "gatsby-source-filesystem": "^4.7.0",
+    "gatsby-source-github-api": "^1.0.0",
     "gatsby-transformer-sharp": "^4.7.0",
     "hero-patterns": "^2.1.0",
     "http-proxy-middleware": "^2.0.1",
