@@ -30,10 +30,10 @@ function Profile (props) {
                  Repos Newest
               </h2>
               <Projects />
-            </div> 
-            <WavyHr className='text-indigo-600' />
-          </article>          
+            </div>             
+          </article>                  
         </main>
+        <WavyHr className='text-indigo-600' />  
         <Footer />
       </Layout>
     </>

@@ -50,8 +50,19 @@ function Projects() {
           {
             repos.map(repo =>
               <li key={repo.id}>
-                <a href={repo.url}><h2 className="font-bold text-2xl text-indigo-400">{repo.name}</h2></a>
+                <a 
+                  href={repo.url} 
+                  target='_blank' 
+                  alt='Repos' 
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  area-label="Social Link"
+                >
+                  <h2 className="font-bold text-2xl text-indigo-400">{repo.name}</h2>
+                </a>
                 <div className="ml-4">{repo.description}</div>
+                <div className="ml-4">Updated Time: {repo.updatedAt}</div>
+                <div className="ml-4">Code Language: {repo.primaryLanguage.name}</div>                
               </li>
             )
           }
