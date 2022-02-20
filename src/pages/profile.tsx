@@ -16,8 +16,8 @@ function Profile (props) {
         <Header />
         <ScrollIndicator />
         <main>
-          <article className='grid grid-cols-2 gap-4 mb-10 ml-10 mr-10'>
-            <div className="mt-6 mb-6 text-center">
+          <article className='flex flex-wrap m-10'>
+            <div className="basis-1/2 mt-6 mb-6 text-center">
               <h2 className="text-4xl font-bold mt-2 mb-2 leading-tight">
                  Github Profile
               </h2>
@@ -25,15 +25,15 @@ function Profile (props) {
                 <GithubProfile />
               </div>              
             </div> 
-            <div className='mt-6 mb-6'>
+            <div className='basis-1/2 mt-6 mb-6'>
               <h2 className="text-4xl font-bold mt-2 mb-2 leading-tight text-center">
                  Repos Newest
               </h2>
               <Projects />
             </div>             
-          </article>                  
-        </main>
-        <WavyHr className='text-indigo-600' />  
+          </article>
+          <WavyHr className='text-indigo-600' />                    
+        </main>        
         <Footer />
       </Layout>
     </>

@@ -10,6 +10,7 @@ import SEO from '@/components/seo'
 import Header from '@/components/header'
 import FindOutMore from '@/components/findoutmore'
 import LatestArticles from '@/components/latestarticles'
+import WavyHr from '@/components/WavyHr'
 import Footer from '@/components/footer'
 import ScrollIndicator from '@/components/scroll-indicator'
 import List from '@/components/List';
@@ -341,7 +342,7 @@ export default function Home() {
                     href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
                     className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
                   >
-                    Gatsby Starter Basic Instructions v4.4.0!
+                    Gatsby Starter Basic Instructions v4.7.2
                   </a>
                 </p>
                 <p className="text-lg font-light leading-relaxed mt-0 mb-4">
@@ -349,7 +350,7 @@ export default function Home() {
                     href="https://github.com/donaldboulton/gatsby-starter-dimension-v4"
                     className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
                   >
-                    Gatsby Starter Dimension v4.4.0!
+                    Gatsby Starter Dimension v4.7.2
                   </a>
                 </p>
               </div>              
@@ -542,6 +543,7 @@ export default function Home() {
                 </motion.div>
               </div>
             </div>
+            <WavyHr className='ml-4 text-indigo-600' />  
           </div>
         </motion.section>
       </motion.main> 
