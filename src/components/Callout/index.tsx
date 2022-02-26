@@ -22,7 +22,7 @@ export const callOutWrapper: CSS.Properties = {
         '--icon-color': 'info',
       },
       danger: {
-        background: '#fa383826',
+        '--icon-color': 'danger',
       },
     },
   }
