@@ -26,7 +26,7 @@ export default function Navigation() {
 
   return (
     <>
-      <Disclosure as="nav" className='bg-gradient-to-r from-gray-800 via-transparent to-gray-800 sticky top-0 z-40'>
+      <Disclosure as="nav" className='bg-gradient-to-r from-gray-800 via-transparent to-gray-800 sticky top-0 z-10 overflow-none'>
         {({ open }) => (
           <>
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -80,23 +80,12 @@ export default function Navigation() {
                   className="p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
                   <span className="sr-only">Dark Light Modes</span>
-                  <Tooltip
-                    id="darkModeTooltip"
-                    tooltipText="Dark/Light Mode" 
-                    className="pt-1"                   
-                  >
                     <DarkModeToggle aria-hidden="true" aria-describedby="darkModeTooltip" />
-                  </Tooltip>
                 </div>
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative">
-                  <div>
-                    <Tooltip
-                      id="controlTooltip"
-                      tooltipText="Command Center" 
-                      className="pt-1"                   
-                    >
+                <Menu as="div" className="ml-3 relative z-40">
+                  <div>                    
                       <Menu.Button className="flex text-sm rounded-full focus:outline-none">                      
                         <Control className='text-gray-300 hover:text-gray-200 light:text-gray-200 text-opacity-70' aria-hidden="true" aria-describedby="controlTooltip" /> 
                         <ChevronDownIcon
@@ -106,7 +95,6 @@ export default function Navigation() {
                         />
                         <span className="sr-only">Open Control Menu</span>
                       </Menu.Button>
-                    </Tooltip>
                   </div>
                   <Transition
                     as={Fragment}

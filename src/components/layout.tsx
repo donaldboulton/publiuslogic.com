@@ -12,6 +12,7 @@ import Callout from '@/components/Callout'
 import WavyHr from '@/components/WavyHr'
 import VideoPlayer from '@/components/Video/VideoPlayer'
 import List from '@/components/List'
+import Tooltip from '@/components/Tooltip'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -26,6 +27,7 @@ const shortcodes = {
   Callout,
   Tweet,
   List,
+  Tooltip,
 }
 
 const Layout = ({ children, path }: LayoutProps) => {

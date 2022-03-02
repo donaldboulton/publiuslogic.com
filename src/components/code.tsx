@@ -13,9 +13,6 @@ import useSound from 'use-sound'
 import clapping from '../../static/audio/clapping.mp3'
 import Title from "@/components/title"
 
-// eslint-disable-next-line valid-typeof
-if (typeof document !== undefined) { require('ahooks') }
-
 const config = {
   angle: 90,
   spread: 360,
@@ -229,10 +226,13 @@ export const Code = ({ codeString, className, children, metastring, ...props }) 
     )
   } else {
     return (
-      <Wrapper ref={ref}> 
+      <Wrapper 
+        ref={ref}
+        className='overscroll-contain'
+      > 
         <Disclosure>
           {({ open }) => (
-          <>            
+            <>            
               <ButtonWrapper className='flex place-content-between'>          
                 <div>
                 <Disclosure.Button
@@ -355,46 +355,46 @@ export const Code = ({ codeString, className, children, metastring, ...props }) 
               <Title className="code-title p-2" text={title}>
                 {language}
               </Title>
-        <Highlight
-          {...defaultProps}
-          code={codeString}          
-          language={language}
-          theme={dracula}
-        >
-          {({ className, style, tokens, getLineProps, getTokenProps }) => (
-            <Disclosure.Panel className="gatsby-highlight nav-scroll" data-language={language}>                                                                 
-              <pre
-                className={className}
-                data-language={language}
-                style={{
-                  ...style,
-                  ...ifTitle,
-                  padding: '2rem',
-                  position: 'relative',
-                  maxHeight: '400px',
-                }}
-              >                
-                {tokens.map((line, i) => {
-                  const lineProps = getLineProps({ line, key: i })
-                  const shouldExclude = highlightLine(line, lineProps)
-                  if (shouldHighlightLine(i)) { lineProps.className = `${lineProps.className} highlight-line` }
-                  return !shouldExclude ? (
-                    <div {...lineProps} key={i}>
-                      <span className="line-number-style">{i + 1}</span>
-                      {line.map((token, key) => (
-                        <span {...getTokenProps({ token, key })} />
-                      ))}
-                    </div>
-                  ) : null
-                })}
-              </pre>
-            </Disclosure.Panel>
-            )}
-          </Highlight>
-          <ConfettiWrapper>
-            <Confetti active={isCopied} config={config} />
-          </ConfettiWrapper>
-        </>
+              <Highlight
+                {...defaultProps}
+                code={codeString}          
+                language={language}
+                theme={dracula}
+              >
+                {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                  <Disclosure.Panel className="gatsby-highlight nav-scroll" data-language={language}>                                                                 
+                    <pre
+                      className={className}
+                      data-language={language}
+                      style={{
+                        ...style,
+                        ...ifTitle,
+                        padding: '2rem',
+                        position: 'relative',
+                        maxHeight: '400px',
+                      }}
+                    >                
+                      {tokens.map((line, i) => {
+                        const lineProps = getLineProps({ line, key: i })
+                        const shouldExclude = highlightLine(line, lineProps)
+                        if (shouldHighlightLine(i)) { lineProps.className = `${lineProps.className} highlight-line` }
+                          return !shouldExclude ? (
+                            <div {...lineProps} key={i}>
+                              <span className="line-number-style">{i + 1}</span>
+                                {line.map((token, key) => (
+                              <span {...getTokenProps({ token, key })} />
+                          ))}
+                         </div>
+                        ) : null
+                      })}
+                    </pre>
+                  </Disclosure.Panel>
+                )}
+              </Highlight>
+              <ConfettiWrapper>
+                <Confetti active={isCopied} config={config} />
+              </ConfettiWrapper>
+            </>
           )}
         </Disclosure>
       </Wrapper>

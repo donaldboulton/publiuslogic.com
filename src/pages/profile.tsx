@@ -5,15 +5,28 @@ import GithubProfile from '@/components/github-profile'
 import Projects from '@/components/Projects'
 import WavyHr from '@/components/WavyHr'
 import ScrollIndicator from '@/components/scroll-indicator'
-
+import SEO from '@/components/seo'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 
+import OGImage from '../../static/images/jpg/dbbg.jpg'
+
 function Profile (props) {
+  const ogimage = {
+    src: OGImage,
+    width: 1342,
+    height: 531,
+  }
   return (
     <>
       <Layout>
-        <Header />
+      <SEO
+        type="Profile"
+        title="Profile"
+        description="Github Profile"
+        image={ogimage}
+        />
+        <Header transparent />        
         <ScrollIndicator />
         <main>
           <article className='flex flex-wrap m-10'>

@@ -104,7 +104,7 @@ function classNames(...classes) {
 
 function HeaderPopover() {
   return (
-    <div className="w-full max-w-sm px-2 z-20">
+    <div className="w-full max-w-sm px-2 z-40">
       <Popover className="relative">
         {({ open }) => (
           <>
@@ -129,7 +129,7 @@ function HeaderPopover() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute z-10 w-screen max-w-md lg:ml-20 px-4 mt-2 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-4xl">                
+              <Popover.Panel className="absolute z-40 w-screen max-w-md lg:ml-20 px-4 mt-2 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-4xl">                
                 <div className="overflow-hidden rounded-lg shadow-lg ring-1 bg-gray-700  ring-black ring-opacity-5">
                   <nav className='nav-scroll'>
                     <div className="relative h-96 max-h-full md:max-h-screen grid gap-8 bg-gray-700 p-7 lg:grid-cols-3">                    

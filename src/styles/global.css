@@ -113,7 +113,7 @@ fieldset, ol, ul {
   color: rgb(168 85 247);
 }
 html {
-    @apply transition-all duration-200 ease-linear antialiased;
+    @apply transition-all duration-200 ease-linear antialiased overflow-x-hidden;
 
     background: var(--bg);
     font-family: "DM Sans", sans-serif;
@@ -269,7 +269,6 @@ fieldset, ol, ul {
   margin: 10px !important;
 }
 .scroll-down {  
-  z-index: 2;
   background: transparent;
   color: #777;
   width: 40px;
@@ -285,7 +284,6 @@ fieldset, ol, ul {
   background: transparent;
 }
 .scroll {
-  z-index: 2;
   background: transparent;
   color: #777;
   width: 40px;
