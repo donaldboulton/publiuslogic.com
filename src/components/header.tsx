@@ -26,7 +26,7 @@ export default function Navigation() {
 
   return (
     <>
-      <Disclosure as="nav" className='bg-gradient-to-r from-gray-800 via-transparent to-gray-800 sticky top-0 z-10 overflow-none'>
+      <Disclosure as="nav" className='bg-gradient-to-r from-gray-800 via-transparent to-gray-800 sticky top-0 z-40'>
         {({ open }) => (
           <>
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -79,15 +79,15 @@ export default function Navigation() {
                 <div
                   className="p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
-                  <span className="sr-only">Dark Light Modes</span>
-                    <DarkModeToggle aria-hidden="true" aria-describedby="darkModeTooltip" />
+                  <span className="sr-only">Dark Light Modes</span>                  
+                    <DarkModeToggle aria-hidden="true" />
                 </div>
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative z-40">
+                <Menu as="div" className="ml-3 relative">
                   <div>                    
                       <Menu.Button className="flex text-sm rounded-full focus:outline-none">                      
-                        <Control className='text-gray-300 hover:text-gray-200 light:text-gray-200 text-opacity-70' aria-hidden="true" aria-describedby="controlTooltip" /> 
+                        <Control className='text-gray-300 hover:text-gray-200 light:text-gray-200 text-opacity-70' aria-hidden="true" /> 
                         <ChevronDownIcon
                           className={`${open ? 'text-gray-200 transform rotate-180' : 'text-opacity-70'}
                           first-letter:w-5 h-5 -mr-1 mt-1 text-gray-300 hover:text-gray-200 group-hover:text-opacity-80 transition ease-in-out duration-150`}
