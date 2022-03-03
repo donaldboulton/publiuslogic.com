@@ -5,7 +5,6 @@ import { Disclosure } from '@headlessui/react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
-import { CodeIcon, ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/outline'
 import dracula from 'prism-react-renderer/themes/dracula'
 import rangeParser from 'parse-numeric-range'
 import Confetti from 'react-dom-confetti'
@@ -275,7 +274,6 @@ export const Code = ({ codeString, className, children, metastring, ...props }) 
                   </motion.svg>
                 </Disclosure.Button>
                 </div>
-                <div className='flex items-center'><ArrowLeftIcon className='h-5 w-5 mr-2 text-indigo-400' /> Open <CodeIcon className='h-7 w-7 ml-2 mr-2 text-yellow-500' /> Copy <ArrowRightIcon className='h-5 w-5 ml-2 text-indigo-400' /></div>
                 <div>
                 <Button
                   css={{

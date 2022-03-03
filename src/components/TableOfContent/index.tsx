@@ -3,7 +3,6 @@ import { useState, Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { usePopper } from 'react-popper'
 import { ViewListIcon } from '@heroicons/react/outline'
-import Tooltip from '@/components/Tooltip'
 import WavyHr from '@/components/WavyHr'
 
 // https://haseebmajid.dev/blog/toc-in-gatsby#toc
@@ -46,10 +45,6 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
       <Popover as="div">
         {({ open }) => (
           <>
-            <Tooltip
-              id="tocTooltip"
-              tooltipText="Table Of Contents"                    
-            >
               <Popover.Button 
                 ref={setReferenceElement}
                 className='bg-gray-700 w-auto h-auto rounded-r-md pr-2 pt-2 pb-0 -ml-1 text-gray-200'
@@ -61,7 +56,6 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
                   />
                 </span>                  
               </Popover.Button>
-            </Tooltip>
             <Popover.Overlay
               className={`${
                 open ? 'opacity-30 fixed inset-0' : 'opacity-0'
