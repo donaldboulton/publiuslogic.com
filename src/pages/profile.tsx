@@ -2,7 +2,6 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import Layout from '@/components/layout'
 import GithubProfile from '@/components/github-profile'
-import Projects from '@/components/Projects'
 import WavyHr from '@/components/WavyHr'
 import ScrollIndicator from '@/components/scroll-indicator'
 import SEO from '@/components/seo'
@@ -30,19 +29,13 @@ function Profile (props) {
         <ScrollIndicator />
         <main>
           <article className='flex flex-wrap m-10'>
-            <div className="basis-1/2 mt-6 mb-6 text-center">
+            <div className="mt-6 mb-6 text-center">
               <h2 className="text-4xl font-bold mt-2 mb-2 leading-tight">
                  Github Profile
               </h2>
               <div className="mt-6 mb-6 text-center">
                 <GithubProfile />
               </div>              
-            </div> 
-            <div className='basis-1/2 mt-6 mb-6'>
-              <h2 className="text-4xl font-bold mt-2 mb-2 leading-tight text-center">
-                 Repos Newest
-              </h2>
-              <Projects />
             </div>             
           </article>
           <WavyHr className='text-indigo-600' />                    
