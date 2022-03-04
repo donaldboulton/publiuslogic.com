@@ -36,7 +36,6 @@
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/typography": "^0.5.2",
-    "ahooks": "^3.1.6",
     "algoliasearch": "^4.12.1",
     "axios": "^0.25.0",
     "csstype": "^3.0.10",
@@ -145,9 +144,10 @@
     "deploy": "gatsby build && gh-pages -d public -b main"
   },
   "engines": {
-    "node": ">=14.17.1"
+    "node": ">=16.10.0"
   },
   "AWS_LAMBDA_JS_RUNTIME": {
-    "node": ">=14.17.1"
-  }
+    "node": ">=16.10.0"
+  },
+  "packageManager": "yarn@1.22.17"
 }

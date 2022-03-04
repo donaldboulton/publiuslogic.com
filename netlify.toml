@@ -2,7 +2,7 @@
   publish = "public"
   command = "npm run build"
 [build.environment]
-  NODE_VERSION = "14.17.1"
+  NODE_VERSION = "16.10.0"
 [[plugins]]
   package = "@netlify/plugin-gatsby" 
 [[headers]]
