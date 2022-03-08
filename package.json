@@ -103,7 +103,7 @@
     "use-sound": "^4.0.1"
   },
   "devDependencies": {
-    "@netlify/functions": "^0.11.0",
+    "@netlify/functions": "^1.0.0",
     "@netlify/plugin-gatsby": "^2.0.2",
     "@types/leaflet": "^1.7.9",
     "@types/mdx-js__react": "^1.5.5",

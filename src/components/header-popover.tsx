@@ -3,7 +3,7 @@ import { useState, Fragment } from 'react'
 import { Link } from "gatsby"
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { BanIcon, BeakerIcon, BriefcaseIcon, CakeIcon, CloudIcon, CodeIcon, ClockIcon, HandIcon, HeartIcon, LibraryIcon, LinkIcon, NewspaperIcon, PresentationChartLineIcon, ShieldCheckIcon, ShieldExclamationIcon, SparklesIcon, PuzzleIcon, PresentationChartBarIcon, QuestionMarkCircleIcon } from '@heroicons/react/outline'
+import { GlobeAltIcon, BanIcon, BeakerIcon, BriefcaseIcon, CakeIcon, CloudIcon, CodeIcon, ClockIcon, HandIcon, HeartIcon, LibraryIcon, LinkIcon, PresentationChartLineIcon, ShieldCheckIcon, ShieldExclamationIcon, SparklesIcon, PuzzleIcon, PresentationChartBarIcon, QuestionMarkCircleIcon } from '@heroicons/react/outline'
 
 const posts = [
     {
@@ -19,10 +19,10 @@ const posts = [
       icon: CodeIcon,
     },
     {
-      name: 'Government',
-      description: 'United People of America',
+      name: 'War Machine',
+      description: 'Kiddy Playtime War Toys',
       href: '/blog/government',
-      icon: LibraryIcon,
+      icon: GlobeAltIcon,
     },
     {
       name: 'Virtue',
@@ -73,10 +73,10 @@ const posts = [
       icon: BeakerIcon,
     },
     {
-      name: 'Protesting',
-      description: 'Bunch of Un Ruled Children',
-      href: '/blog/protesting',
-      icon: NewspaperIcon,
+      name: 'Government',
+      description: 'United People of America',
+      href: '/blog/government',
+      icon: LibraryIcon,
     },
     {
       name: 'Trinity of Angels',
