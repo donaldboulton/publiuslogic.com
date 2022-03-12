@@ -11,7 +11,7 @@ import Control from "@/components/icons/control"
 import HeaderPopover from '@/components/header-popover'
 
 import Logo from '../../static/images/gatsby/publiuslogic-logo.png'
-import PrimaryLogo from '../../static/images/gatsby/publiuslogic-monogram.png'
+import PrimaryLogo from '../../static/images/gatsby/publiuslogic-monogram-182-32.png'
 
 const navigation = [
   { name: 'About', href: '/blog/about', current: false },
