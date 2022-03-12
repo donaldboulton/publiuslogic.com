@@ -21,7 +21,7 @@ const posts = [
     {
       name: 'War Machine',
       description: 'Kiddy Playtime War Toys',
-      href: '/blog/government',
+      href: '/blog/war-machine',
       icon: GlobeAltIcon,
     },
     {
