@@ -99,6 +99,7 @@
     "remark-html": "^15.0.1",
     "remark-slug": "^7.0.1",
     "schema-dts": "^1.1.0",
+    "tsparticles-preset-stars": "^1.42.4",
     "use-click-outside": "^2.0.0",
     "use-sound": "^4.0.1"
   },
