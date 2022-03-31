@@ -1,8 +1,9 @@
+import * as React from 'react'
 import Particles from "react-tsparticles"
 import type { Engine } from "tsparticles"
 import { loadStarsPreset } from "tsparticles-preset-stars"
 
-export class ParticlesContainer extends React.PureComponent<IProps> {
+class ParticlesContainer extends React.PureComponent<IProps> {
   // this customizes the component tsParticles installation
   async customInit(engine: Engine): Promise<void> {
     // this adds the preset to tsParticles, you can safely use the
@@ -11,9 +12,27 @@ export class ParticlesContainer extends React.PureComponent<IProps> {
 
   render() {
     const options = {
+      background: {
+        color: {
+          value: "transparent",
+        },
+      },
+      particles: {
+        shape: {
+          type: "circle",
+        },
+      },
       preset: "stars",
     };
 
-    return <Particles options={options} init={this.customInit} />;
+    return (
+      <Particles 
+        className="background" 
+        options={options} 
+        init={this.customInit} 
+      />
+    )
   }
 }
+
+export default ParticlesContainer
