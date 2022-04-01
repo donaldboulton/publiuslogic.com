@@ -7,6 +7,7 @@ import ScrollIndicator from '@/components/scroll-indicator'
 import SEO from '@/components/seo'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import Stars from '@/components/Stars'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 
@@ -28,6 +29,7 @@ function Profile (props) {
         <Header transparent />        
         <ScrollIndicator />
         <main>
+          <Stars />
           <article className='flex flex-wrap m-10'>
             <div className="mt-6 mb-6 text-center">
               <h2 className="text-4xl font-bold mt-2 mb-2 leading-tight">

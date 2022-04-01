@@ -14,6 +14,7 @@ import WavyHr from '@/components/WavyHr'
 import Footer from '@/components/footer'
 import ScrollIndicator from '@/components/scroll-indicator'
 import List from '@/components/List';
+import Stars from '@/components/Stars';
 import { CodeIcon, CloudIcon, BookOpenIcon, CheckCircleIcon } from '@heroicons/react/outline'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
@@ -64,6 +65,14 @@ export default function Home() {
     triggerOnce: true,
     rootMargin: '-100px 0px',
   });
+  const cardVariants = {
+    hover: {
+      scale: 1.05,
+    },
+    initial: {
+      scale: 1,
+    },
+  };
   const variants = {
     visible: {
       opacity: 1,
@@ -140,6 +149,7 @@ export default function Home() {
       </Helmet>
       <Header transparent />
       <motion.main className="font-sans" variants={container}>
+        <Stars />
         <div 
           className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center"
         >
@@ -162,7 +172,15 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap">
               <div className="lg:pt-12 pt-4 w-full md:w-4/12 px-4 text-center">
-                <div className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-gray-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg">
+                <motion.div 
+                  className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-gray-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg"
+                  variants={cardVariants}
+                  transition={{
+                    ease: 'easeOut',
+                    delay: 0.15,
+                    duration: 0.5,
+                  }}
+                >
                   <div className="px-4 py-5 flex-auto">
                     <div className="bg-blue-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg shadow-blue-700/50 rounded-full">
                       <StaticImage
@@ -183,10 +201,18 @@ export default function Home() {
                       The Laws of man have strayed far from the truth of Creation and Gods Laws. Under Gods Law all Life is precious and should be preserved at all cost. Mans laws care nothing for life; you kill your, "Unborn Children"!
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </div>
               <div className="w-full md:w-4/12 px-4 text-center">
-                <div className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-gray-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg">
+              <motion.div 
+                className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-gray-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg"
+                variants={cardVariants}
+                  transition={{
+                    ease: 'easeOut',
+                    delay: 0.15,
+                    duration: 0.5,
+                  }}
+                >
                   <div className="px-4 py-5 flex-auto">
                     <div className="bg-purple-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg shadow-purple-500/50 rounded-full">
                       <StaticImage
@@ -207,10 +233,18 @@ export default function Home() {
                       The Creation of the All, was formed through song that started the dance of life from a blank and formless verse, bringing forth life to all. For all to formalize there, "Own Song"!
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </div>
               <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-                <div className="relative flex flex-col min-w-0 break-words bg-purple-600 text-gray-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg">
+                <motion.div 
+                className="relative flex flex-col min-w-0 break-words bg-purple-600 text-gray-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg"
+                variants={cardVariants}
+                  transition={{
+                    ease: 'easeOut',
+                    delay: 0.15,
+                    duration: 0.5,
+                  }}
+                >
                   <div className="px-4 py-5 flex-auto">
                     <div className="bg-fuchsia-600 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg shadow-fuchsia-600/50 rounded-full">
                       <StaticImage
@@ -231,7 +265,7 @@ export default function Home() {
                       PubliusLogic is a Static site using JAMstack architecture. Built using Gatsby, React, MDX, Tailwind and Typescript on Netlify Servers for, "Ultimate Performance"!
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
             <div className="text-zinc-200 light:text-zinc-800 mb-10">
@@ -342,7 +376,7 @@ export default function Home() {
                     href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
                     className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
                   >
-                    Gatsby Starter Basic Instructions v4.7.2
+                    Gatsby Starter Basic Instructions v4.11.0
                   </a>
                 </p>
                 <p className="text-lg font-light leading-relaxed mt-0 mb-4">
@@ -350,7 +384,7 @@ export default function Home() {
                     href="https://github.com/donaldboulton/gatsby-starter-dimension-v4"
                     className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
                   >
-                    Gatsby Starter Dimension v4.7.2
+                    Gatsby Starter Dimension v4.11.0
                   </a>
                 </p>
               </div>              
