@@ -225,6 +225,12 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-offline`,
       options: {
         precachePages: [`/`, `about`, `/contact`, `/blog/*`],

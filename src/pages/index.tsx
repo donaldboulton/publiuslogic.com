@@ -154,7 +154,7 @@ export default function Home() {
           className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center"
         >
           <div className="absolute top-0 bg-center">         
-            <div className="absolute left-0 bottom-0 md:mb-0 w-full h-full z-10 bg-gradient-to-b from-gray-700 opacity-50"></div>
+            <div className="absolute left-0 bottom-0 md:mb-0 w-full h-full z-10 bg-gradient-to-b from-gray-700 opacity-70"></div>
               <StaticImage
                 className="cover object-contain h-96"
                 formats={["auto", "webp"]}
