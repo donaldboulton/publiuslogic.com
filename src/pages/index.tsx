@@ -14,7 +14,6 @@ import WavyHr from '@/components/WavyHr'
 import Footer from '@/components/footer'
 import ScrollIndicator from '@/components/scroll-indicator'
 import List from '@/components/List';
-import Stars from '@/components/Stars';
 import { CodeIcon, CloudIcon, BookOpenIcon, CheckCircleIcon } from '@heroicons/react/outline'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
@@ -149,7 +148,6 @@ export default function Home() {
       </Helmet>
       <Header transparent />
       <motion.main className="font-sans" variants={container}>
-        <Stars />
         <div 
           className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center"
         >
