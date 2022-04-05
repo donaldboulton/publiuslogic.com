@@ -575,7 +575,6 @@ export default function Home() {
                 </motion.div>
               </div>
             </div>
-            <WavyHr className='ml-4 text-indigo-600' />  
           </div>
         </motion.section>
       </motion.main> 
