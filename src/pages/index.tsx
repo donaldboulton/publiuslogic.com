@@ -550,23 +550,23 @@ export default function Home() {
                               Details on how to fight off the Devil! 😈
                             </p>
                           </List.Item>
-                        <List.Item>
-                          <p
-                            className='mb-1'
-                            variant="secondary"
-                          >
-                            Your Children are being brainwashed for Devilish total control! {' '}
-                            Stand Up and fight for there future and freedom now! 🤫
-                          </p>
-                        </List.Item>
-                        <List.Item>
-                          <p
-                            className='mb-1'
-                            variant="secondary"
-                          >
-                            As A Species you will not Effectivity Do anything about climate control. That would Mean limiting playtime and entertainment and you have been set up 
-                            to focus on only playtime pursuits. Playtime and Over population through heat from every one of you, is what is creating the <span className='underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Climate Crisis</span>! 📝
-                          </p>
+                          <List.Item>
+                            <p
+                              className='mb-1'
+                              variant="secondary"
+                            >
+                              Your Children are being brainwashed for Devilish total control! {' '}
+                              Stand Up and fight for there future and freedom now! 🤫
+                            </p>
+                          </List.Item>
+                          <List.Item>
+                            <p
+                              className='mb-1'
+                              variant="secondary"
+                            >
+                              As A Species you will not Effectivity Do anything about climate control. That would Mean limiting playtime and entertainment and you have been set up 
+                              to focus on only playtime pursuits. Playtime and Over population through heat from every one of you, is what is creating the <span className='underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Climate Crisis</span>! 📝
+                            </p>
                           </List.Item>
                         </List>                      
                       </div>
