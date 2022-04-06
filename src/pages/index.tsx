@@ -180,7 +180,7 @@ export default function Home() {
                   }}
                 >
                   <div className="px-4 py-5 flex-auto">
-                    <div className="bg-blue-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg shadow-blue-700/50 rounded-full">
+                    <div className="bg-blue-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-blue-700/50 rounded-full">
                       <StaticImage
                         layout="fixed"
                         width={24}
@@ -212,7 +212,7 @@ export default function Home() {
                   }}
                 >
                   <div className="px-4 py-5 flex-auto">
-                    <div className="bg-purple-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg shadow-purple-500/50 rounded-full">
+                    <div className="bg-purple-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-purple-500/50 rounded-full">
                       <StaticImage
                         layout="fixed"
                         width={24}
@@ -244,7 +244,7 @@ export default function Home() {
                   }}
                 >
                   <div className="px-4 py-5 flex-auto">
-                    <div className="bg-fuchsia-600 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg shadow-fuchsia-600/50 rounded-full">
+                    <div className="bg-fuchsia-600 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-fuchsia-600/50 rounded-full">
                       <StaticImage
                         layout="fixed"
                         width={24}
