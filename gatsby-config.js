@@ -1,5 +1,10 @@
 const siteAcronyms = require('./gatsby-site-acronyms')
 const queries = require(`./src/utils/algolia-queries`)
+const resolveConfig = require("tailwindcss/resolveConfig");
+const tailwindConfig = require("./tailwind.config.js");
+
+const fullConfig = resolveConfig(tailwindConfig);
+
 
 require('dotenv').config();
 
@@ -40,7 +45,6 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
@@ -176,8 +180,8 @@ module.exports = {
         name: 'PubliusLogic',
         short_name: 'PubliusLogic',
         start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#660099',
+        background_color: fullConfig.theme.colors.gray["800"],
+        theme_color: fullConfig.theme.colors.gray["800"],
         display: 'minimal-ui',
         icon: 'static/images/gatsby/publiuslogic-logo.png', // This path is relative to the root of the site.
       },
@@ -228,6 +232,18 @@ module.exports = {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
         devMode: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require(`tailwindcss`)(tailwindConfig),
+          require(`autoprefixer`),
+          ...(process.env.NODE_ENV === `production`
+            ? [require(`cssnano`)]
+            : []),
+        ],
       },
     },
     {

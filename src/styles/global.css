@@ -26,6 +26,22 @@ pre {
   border-bottom-right-radius: 12px !important;
   border-bottom-left-radius: 12px !important;
 }
+h1 {
+  font-size: 45px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.2;
+  margin: 0 0 15px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.2;
+  opacity: 0.75;
+  margin: 0;
+}
 .prose p, .prose ol, .prose ul, .prose li::before, .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6, .prose strong {
   color: var(--textNormal) !important;
 }

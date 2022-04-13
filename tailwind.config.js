@@ -5,6 +5,12 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class', // or 'media' or 'class'
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+    defaultLineHeights: true, 
+    standardFontWeights: true,
+  },
   theme: {
     screens: {
       'sm': '640px',

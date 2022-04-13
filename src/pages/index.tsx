@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Helmet } from "react-helmet"
 import CookieConsent, { Cookies } from "react-cookie-consent"
 import { NetlifyForm, Honeypot } from 'react-netlify-forms'
@@ -17,6 +17,7 @@ import List from '@/components/List';
 import { CodeIcon, CloudIcon, BookOpenIcon, CheckCircleIcon } from '@heroicons/react/outline'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
+import AnimatedText from "@/components/AnimatedText"
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 
@@ -54,6 +55,31 @@ const useAnimateOnInView = () => {
 }
 
 export default function Home() {
+  const [replay, setReplay] = useState(true)
+  // Placeholder text data, as if from API
+  const placeholderText = [
+    { type: "heading1", text: "PubliusLogic.com" },
+    {
+      type: "heading2",
+      text: "We Publish Logic!"
+    }
+  ];
+
+  const headingContainer = {
+    visible: {
+      transition: {
+        staggerChildren: 0.025
+      }
+    }
+  };
+
+  // Quick and dirt for the example
+  const handleReplay = () => {
+    setReplay(!replay);
+    setTimeout(() => {
+      setReplay(true);
+    }, 600);
+  };
   const SITE_RECAPTCHA_KEY = (process.env.GATSBY_SITE_RECAPTCHA_KEY)
   const ogimage = {
     src: OGImage,
@@ -160,10 +186,19 @@ export default function Home() {
                 quality={95}
                 alt="Landing Image"
               />
-              <div className="p-4 absolute top-16 left-3 z-20">
-              <h1 className="text-4xl font-bold text-white leading-tight italic">Publiuslogic</h1>
-              <h2 className="text-xl font-medium italic text-gray-300">publiuslogic.com</h2>
-            </div>
+              <motion.div
+                className="p-4 absolute top-16 left-3 z-20"
+                initial="hidden"
+                // animate="visible"
+                animate={replay ? "visible" : "hidden"}
+                variants={headingContainer}
+              >
+                <div className="container">
+                  {placeholderText.map((item, index) => {
+                    return <AnimatedText {...item} key={index} />
+                  })}
+                </div>
+            </motion.div>
           </div>
         </div>
         <motion.section variants={item} className="pb-10 bg-gray-700 light:bg-gray-200 text-gray-800 light:text-gray-200 transition-all duration-200 -mt-10">

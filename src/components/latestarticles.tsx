@@ -54,7 +54,7 @@ export default function LatestArticles() {
               </div>              
               <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 xl:grid-cols-3 lg:gap-x-6 lg:mt-0 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-white light:text-black">
                 <List variant="unordered">
-                  <h2 className='ml-12 mb-4 transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>God and Creation</h2>
+                  <span className='ml-12 mb-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>God and Creation</span>
                   <List.Item>
                     <div>
                       <Link href="/blog/creation-of-all">
@@ -99,7 +99,7 @@ export default function LatestArticles() {
                     </List.Item>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
                   </List>
                         <List variant="unordered">
-                          <h2 className='ml-12 mb-4 transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Government Law</h2>
+                          <span className='ml-12 mb-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Government Law</span>
                           <List.Item>
                             <div>
                               <Link href="/blog/cyber-attack">
@@ -144,7 +144,7 @@ export default function LatestArticles() {
                       </List.Item>                          
                     </List>
                     <List variant="unordered">
-                      <h2 className='ml-12 mb-4 transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Programming</h2>
+                      <span className='ml-12 mb-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Programming</span>
                       <List.Item>
                         <div>
                           <Link href="/blog/applause-use-sound-confetti">
