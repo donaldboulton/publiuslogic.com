@@ -22,6 +22,13 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://publiuslogic.com/blog/bullshit</loc>
+  <lastmod>2022-04-10T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/bullshit.jpg</image:loc><image:caption>bullshit.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://publiuslogic.com/blog/applause-use-sound-confetti</loc>
   <lastmod>2020-10-10T22:27:18+00:00</lastmod>
   <changefreq>weekly</changefreq>

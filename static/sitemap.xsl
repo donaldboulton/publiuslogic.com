@@ -78,10 +78,10 @@
             <body>
                 <div id="content">
                     <h1>PubliusLogic Sitemap's Index</h1>
-                    <p className="desc">
+                    <div className="desc">
                         Sitemap Index's of Pages, Posts, Tags and Categories
-                        <p><a href="/">Back to Home Page</a></p>
-                    </p>
+                        <div><a href="/">Back to Home Page</a></div>
+                    </div>
                     <xsl:if test="count(sitemap:sitemapindex/sitemap:sitemap) &gt; 0">
                         <table id="sitemap" cellpadding="3">
                             <thead>

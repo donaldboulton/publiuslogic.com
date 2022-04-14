@@ -17,14 +17,14 @@ export default function LatestArticles() {
           <div className="flex flex-row items-center">
             <h2 className="text-2xl md:text-4xl font-extrabold text-white">Latest Articles</h2>
             <Link
-              to={'/blog'}
-              className="inline-block px-2 py-2 md:px-6 md:py-3 mt-2 ml-4 text-gray-800 hover:text-gray-200 font-bold text-base md:text-lg rounded-md transition ease-in-out delay-150 bg-fuchsia-300 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-500 duration-300 ..."
+              to="/blog"
+              className="inline-block px-2 py-2 md:px-6 md:py-3 mt-2 ml-4 text-gray-800 hover:text-gray-200 font-bold text-base md:text-lg rounded-md transition ease-in-out delay-150 bg-fuchsia-300 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-500 duration-300"
             >
               Articles
             </Link>
             <Link
-              to={'/tags'}
-              className="inline-block px-2 py-2 md:px-6 md:py-3 mt-2 ml-4 rounded-md text-white font-bold text-base md:text-lg transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 duration-300 ..."
+              to="/tags"
+              className="inline-block px-2 py-2 md:px-6 md:py-3 mt-2 ml-4 rounded-md text-white font-bold text-base md:text-lg transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 duration-300"
             >
               Tags
             </Link>
@@ -43,7 +43,7 @@ export default function LatestArticles() {
                   {post.frontmatter.title}
                 </h1>
               </Link>
-              <p>{post.frontmatter.description}</p>
+              <div>{post.frontmatter.description}</div>
               <Link
                 to={`/${post.slug}`}
                 className="inline-block px-6 py-3 mt-2 rounded-md bg-fuchsia-600 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-600/50 hover:shadow-fuchsia-700/50 text-white"
@@ -57,7 +57,7 @@ export default function LatestArticles() {
                   <span className='ml-12 mb-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>God and Creation</span>
                   <List.Item>
                     <div>
-                      <Link href="/blog/creation-of-all">
+                      <Link to="/blog/creation-of-all">
                         <h4>
                           <span className='text-fuchsia-500 hover:text-fuchsia-600'>
                             Creation Of All
@@ -71,7 +71,7 @@ export default function LatestArticles() {
                     </List.Item>
                     <List.Item>
                       <div>
-                        <Link href="/blog/virtue">
+                        <Link to="/blog/virtue">
                           <h4>
                             <span className='text-fuchsia-500 hover:text-fuchsia-600'>
                               Virtue
@@ -85,7 +85,7 @@ export default function LatestArticles() {
                     </List.Item>
                     <List.Item>
                       <div>
-                        <Link href="/blog/immorality-abortion">
+                        <Link to="/blog/immorality-abortion">
                           <h4>
                             <span className='text-fuchsia-500 hover:text-fuchsia-600'>
                               Immorality Abortion
@@ -102,7 +102,7 @@ export default function LatestArticles() {
                           <span className='ml-12 mb-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Government Law</span>
                           <List.Item>
                             <div>
-                              <Link href="/blog/cyber-attack">
+                              <Link to="/blog/cyber-attack">
                                 <h4>
                                   <span className='text-fuchsia-500 hover:text-fuchsia-600'>
                                     Cyber Attack
@@ -116,7 +116,7 @@ export default function LatestArticles() {
                           </List.Item>
                           <List.Item>
                             <div>
-                              <Link href="/blog/usa-election">
+                              <Link to="/blog/usa-election">
                                 <h4>                                                                    
                                   <span className='text-fuchsia-500 hover:text-fuchsia-600'>
                                     USA Election
@@ -130,7 +130,7 @@ export default function LatestArticles() {
                           </List.Item>
                           <List.Item>
                             <div>
-                             <Link href="/blog/philosophy">
+                             <Link to="/blog/philosophy">
                               <h4>
                                 <span className='text-fuchsia-500 hover:text-fuchsia-600'>
                                   Philosophy
@@ -147,7 +147,7 @@ export default function LatestArticles() {
                       <span className='ml-12 mb-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Programming</span>
                       <List.Item>
                         <div>
-                          <Link href="/blog/applause-use-sound-confetti">
+                          <Link to="/blog/applause-use-sound-confetti">
                             <h4>                                                                                               
                               <span className='text-fuchsia-500 hover:text-fuchsia-600'>
                                 Applause useSound                                                                                                 
@@ -161,7 +161,7 @@ export default function LatestArticles() {
                       </List.Item>
                       <List.Item>
                         <div>
-                          <Link href="/blog/cookies">
+                          <Link to="/blog/cookies">
                             <h4>                                                                                               
                               <span className='text-fuchsia-500 hover:text-fuchsia-600'>
                                 Cookies GDPR                                                                                               
@@ -175,7 +175,7 @@ export default function LatestArticles() {
                       </List.Item>
                       <List.Item>
                         <div>
-                          <Link href="/blog/react-netlify-forms">
+                          <Link to="/blog/react-netlify-forms">
                             <h4>                                                                                               
                               <span className='text-fuchsia-500 hover:text-fuchsia-600'>
                                 Netlify Forms                                                                                               

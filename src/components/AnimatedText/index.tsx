@@ -9,7 +9,7 @@ const WordWrapper = (props) => {
 
 // Map API "type" vaules to JSX tag names
 const tagMap = {
-  paragraph: "p",
+  paragraph: "span",
   heading1: "h1",
   heading2: "h2"
 };

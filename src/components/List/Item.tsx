@@ -9,7 +9,7 @@ const listItem: CSS.Properties = {
     lineHeight: '1.9',
     letterSpacing: '0.3px',
   
-    'span[data-list-item]': {
+    'span[dataListItem]': {
       paddingRight: '8px',
       transform: 'translateY(4px)',
     },
@@ -36,7 +36,7 @@ const listItem: CSS.Properties = {
 
   return (
     <li style={listItem} {...rest}>
-      <span data-list-item>
+      <span dataListItem>
         <svg
           className='w-6 h-6 mr-2 ml-1 inline-block items-center text-indigo-400'
           viewBox="0 0 25 24"

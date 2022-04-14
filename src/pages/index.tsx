@@ -403,15 +403,15 @@ export default function Home() {
                   I have Seven indoor Cats and feed a dozen or more of stray kitty's. I have always had a cat!
                   From Me and the Cats some Gatsby Starters.
                 </p>
-                <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-black">
-                  <p><span className='text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4'> JAMStack</span>&nbsp;Starters for your pleasure.</p>
+                <div className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-black">
+                  <div><span className='text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4'> JAMStack</span>&nbsp;Starters for your pleasure.</div>
                   <a
                     href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
                     className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
                   >
                     Gatsby Starter Basic Instructions v4.11.0
                   </a>
-                </p>
+                </div>
                 <p className="text-lg font-light leading-relaxed mt-0 mb-4">
                   <a
                     href="https://github.com/donaldboulton/gatsby-starter-dimension-v4"
