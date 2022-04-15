@@ -47,7 +47,7 @@ const Layout = ({ children, path }: LayoutProps) => {
               type: "spring",
               mass: 0.35,
               stiffness: 75,
-              duration: 0.3,
+              duration: 0.6,
             }}
           >
             <MDXProvider components={shortcodes}>

@@ -393,7 +393,7 @@ export default function Home() {
                   Hanging out with Cats
                 </h3>
                 <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-white light:text-black">
-                  I have Seven indoor Cats and feed a dozen or more of stray kitty's. I have always had a cat!
+                  I have Seven indoor Cats and feed a dozen or more stray kitty's. I have always had a cat!
                   From Me and the Cats some Gatsby Starters.
                 </p>
                 <div className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-black">

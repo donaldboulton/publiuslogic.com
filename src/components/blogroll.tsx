@@ -49,10 +49,14 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
       <div className="space-y-12 lg:space-y-0 flex flex-wrap mb-4">
         {posts.slice(offset, offset + POSTS_PER_PAGE).map(post => (
           <section className="p-4 md:w-1/2 lg:w-1/3">
-            <motion.div className='relative' initial="initial" whileHover="hover">
+            <motion.div 
+              className='relative opacity-75' 
+              initial="initial" 
+              whileHover="hover"
+            >
               <div>
                 <motion.div 
-                  className="h-full border-1 border-gray-800 light:border-gray-300 bg-gray-700 light:bg-offwhite text-gray-800 light:text-gray-200 rounded-lg shadow-xl overflow-hidden p-2"
+                  className="h-full border-1 border-gray-800 light:border-gray-300 bg-gray-700 light:bg-offwhite text-gray-800 light:text-gray-200 rounded-lg shadow-xl overflow-hidden p-2 opacity-75"
                   variants={cardVariants}
                   transition={{
                     ease: 'easeOut',
@@ -66,7 +70,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
                   <div className="p-6">
                     {post.frontmatter.tags ? <Tags tags={post.frontmatter.tags} /> : ''}                
                       <Link to={`/${post.slug}`}>
-                        <h1 className="title-font text-xl font-bold text-white light:text-black hover:text-fuchsia-600 mt-2">
+                        <h1 className="title-font text-xl font-bold text-white light:text-black hover:text-fuchsia-400 mt-2">
                           {post.frontmatter.title}
                         </h1>
                       </Link>
