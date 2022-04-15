@@ -58,10 +58,10 @@ export default function Home() {
   const [replay, setReplay] = useState(true)
   // Placeholder text data, as if from API
   const placeholderText = [
-    { type: "heading1", text: "PubliusLogic.com" },
+    { type: "heading1", text: "At PubliusLogic.com" },
     {
       type: "heading2",
-      text: "We Publish Logic!"
+      text: "We Publish Logic & Gods Truth!"
     }
   ];
 
@@ -73,13 +73,6 @@ export default function Home() {
     }
   };
 
-  // Quick and dirt for the example
-  const handleReplay = () => {
-    setReplay(!replay);
-    setTimeout(() => {
-      setReplay(true);
-    }, 600);
-  };
   const SITE_RECAPTCHA_KEY = (process.env.GATSBY_SITE_RECAPTCHA_KEY)
   const ogimage = {
     src: OGImage,
@@ -105,7 +98,7 @@ export default function Home() {
     },
     hidden: {
       opacity: 0,
-      x: -100,
+      x: -400,
     },
   };
   const [ref1, isVisible1] = useInView({
@@ -156,7 +149,7 @@ export default function Home() {
     },
     hidden: {
       opacity: 0,
-      x: -100,
+      x: -300,
     },
   };
 
