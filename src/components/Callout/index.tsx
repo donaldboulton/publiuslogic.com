@@ -86,7 +86,6 @@ const callout: CSS.Properties = {
 
 const Callout: React.FC<CalloutProps> = (props) => {
   const { children, variant, label, ...rest } = props;
-
   const icon = label ? null : getVariantIcon(variant);
 
   return (

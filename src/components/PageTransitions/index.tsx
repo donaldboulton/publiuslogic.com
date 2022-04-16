@@ -10,7 +10,8 @@ const animationConfiguration = {
   animate: { opacity: 1 },
   exit: { opacity: 0 },
 }
-const PageTransitions = ({ children, path }: PageTransitionsProps) => {
+const PageTransitions = ({ path }: PageTransitionsProps) => {
+	const { children, ...rest } = props;
 	return (
 		<motion.div
 		    key={path}
@@ -19,6 +20,7 @@ const PageTransitions = ({ children, path }: PageTransitionsProps) => {
 			animate="animate"
 			exit="exit"
 			transition={{ duration: 6 }}
+			{...rest}
 		>
 			{children}
 		</motion.div>
