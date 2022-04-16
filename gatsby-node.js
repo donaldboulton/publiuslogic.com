@@ -31,6 +31,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
   `)
 }
+
 const tagTemplate = path.resolve('src/templates/tag-template.tsx')
 
 exports.createPages = async ({ actions, graphql, reporter }) => {

@@ -13,6 +13,7 @@ import WavyHr from '@/components/WavyHr'
 import VideoPlayer from '@/components/Video/VideoPlayer'
 import List from '@/components/List'
 import Tooltip from '@/components/Tooltip'
+import PageTransitions from '@/components/PageTransitions'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -28,6 +29,7 @@ const shortcodes = {
   Tweet,
   List,
   Tooltip,
+  PageTransitions,
 }
 
 const Layout = ({ children, path }: LayoutProps) => {

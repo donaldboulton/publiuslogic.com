@@ -193,7 +193,7 @@ export default function LatestArticles() {
             <div className="w-full">
               {otherPosts.map(post => (
                 <Link to={`/${post.slug}`}>
-                  <div className="w-full md:grid md:grid-cols-3 mb-10 p-2 rounded-lg bg-gray-800 text-white">
+                  <div className="w-full md:grid md:grid-cols-2 mb-10 p-2 rounded-lg bg-gray-800 text-white">
                     <div className="text-gray-200 rounded px-4 md:col-span-2">
                       <Tags tags={post.frontmatter.tags} />
                       <div className="md:mt-0 text-white font-semibold text-xl mb-2">{post.frontmatter.title}</div>

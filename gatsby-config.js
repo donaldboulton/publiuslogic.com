@@ -5,7 +5,6 @@ const tailwindConfig = require("./tailwind.config.js");
 
 const fullConfig = resolveConfig(tailwindConfig);
 
-
 require('dotenv').config();
 
 module.exports = {
