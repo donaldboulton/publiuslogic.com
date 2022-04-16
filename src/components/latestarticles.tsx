@@ -196,7 +196,7 @@ export default function LatestArticles() {
                   <div className="w-full md:grid md:grid-cols-2 mb-10 p-2 rounded-lg bg-gray-800 text-white">
                     <div className="text-gray-200 rounded px-4 md:col-span-2">
                       <Tags tags={post.frontmatter.tags} />
-                      <div className="md:mt-0 text-white hover:text-fuchsia-600 font-semibold text-xl mb-2">{post.frontmatter.title}</div>
+                      <div className="md:mt-0 text-white hover:text-fuchsia-600 underline underline-offset-2 decoration-wavy decoration-fuchsia-600 font-semibold text-xl mb-2">{post.frontmatter.title}</div>
                       <p className="block p-2 pl-0 pt-1 text-sm">
                         {post.frontmatter.description}
                       </p>
