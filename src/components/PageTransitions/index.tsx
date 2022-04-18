@@ -11,20 +11,20 @@ const animationConfiguration = {
   exit: { opacity: 0 },
 }
 const PageTransitions = ({ path }: PageTransitionsProps) => {
-	const { children, ...rest } = props;
-	return (
-		<motion.div
-		    key={path}
-			variants={animationConfiguration}
-			initial="initial"
-			animate="animate"
-			exit="exit"
-			transition={{ duration: 6 }}
-			{...rest}
-		>
-			{children}
-		</motion.div>
-	)
+  const { children, ...rest } = props;
+  return (
+	<motion.div
+	    key={path}
+	    variants={animationConfiguration}
+	    initial="initial"
+		animate="animate"
+		exit="exit"
+		transition={{ duration: 6 }}
+		{...rest}
+	>
+		{children}
+	</motion.div>
+  )
 }
 
 export default PageTransitions

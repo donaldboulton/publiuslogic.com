@@ -13,7 +13,7 @@ const WavyHr: React.FC<Props> = (props) => {
           textAlign: 'text-center',
           textDecoration: 'underline'
         }}
-        className={className}
+        className="text-purple-600 mt-2 mb-2"
       />
       {children}
     </div>

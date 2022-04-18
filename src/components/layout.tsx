@@ -11,7 +11,10 @@ import Tweet from '@/components/Tweet'
 import Callout from '@/components/Callout'
 import WavyHr from '@/components/WavyHr'
 import VideoPlayer from '@/components/Video/VideoPlayer'
+import A from '@/components/a'
 import List from '@/components/List'
+import ListItem from '@/components/List/ListItem'
+import ListGrid from '@/components/ListGrid'
 import Tooltip from '@/components/Tooltip'
 
 interface LayoutProps {
@@ -19,6 +22,7 @@ interface LayoutProps {
 }
 
 const shortcodes = {
+  A,
   FindOutMore,
   Cta,
   VideoPlayer,
@@ -27,6 +31,8 @@ const shortcodes = {
   Callout,
   Tweet,
   List,
+  ListItem,
+  ListGrid,
   Tooltip,
 }
 

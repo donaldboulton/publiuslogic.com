@@ -13,7 +13,7 @@ import LatestArticles from '@/components/latestarticles'
 import WavyHr from '@/components/WavyHr'
 import Footer from '@/components/footer'
 import ScrollIndicator from '@/components/scroll-indicator'
-import List from '@/components/List';
+import List from '@/components/List'
 import { CodeIcon, CloudIcon, BookOpenIcon, CheckCircleIcon } from '@heroicons/react/outline'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'

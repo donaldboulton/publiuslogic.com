@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as CSS from 'csstype'
-import ListItem from './Item'
+import ListItem from './ListItem'
 import { ListProps } from './types'
 
 const listStyle: CSS.Properties = {
