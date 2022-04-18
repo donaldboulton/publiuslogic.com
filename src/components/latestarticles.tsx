@@ -68,10 +68,10 @@ export default function LatestArticles() {
                           Last Testament to the Holy Bible. Intro Enclosed is the creation of all, how To Pray to The Holy Trinity
                         </span>
                       </div>
-                    </List.Item>
-                    <List.Item>
-                      <div>
-                        <Link to="/blog/virtue">
+                  </List.Item>
+                  <List.Item>
+                    <div>
+                      <Link to="/blog/virtue">
                           <h4>
                             <span className='text-fuchsia-500 hover:text-fuchsia-600'>
                               Virtue
@@ -81,111 +81,111 @@ export default function LatestArticles() {
                           <span>
                             For My Children Since 2000 Here I am going to reflect on what The Christian Bible, Sufism as Tasawwuf
                           </span>
-                      </div>
-                    </List.Item>
+                    </div>
+                  </List.Item>
+                  <List.Item>
+                    <div>
+                      <Link to="/blog/immorality-abortion">
+                        <h4>
+                          <span className='text-fuchsia-500 hover:text-fuchsia-600'>
+                            Immorality Abortion
+                          </span>
+                        </h4>
+                      </Link>
+                      <span>
+                        Prelude As in all my writings are written for my Children born since 2000. Only there purity can cleanse the
+                      </span>
+                    </div>
+                  </List.Item>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                </List>
+                <List variant="unordered">
+                  <span className='ml-12 mb-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Government Law</span>
                     <List.Item>
                       <div>
-                        <Link to="/blog/immorality-abortion">
+                        <Link to="/blog/cyber-attack">
                           <h4>
                             <span className='text-fuchsia-500 hover:text-fuchsia-600'>
-                              Immorality Abortion
+                              Cyber Attack
                             </span>
                           </h4>
                         </Link>
                         <span>
-                          Prelude As in all my writings are written for my Children born since 2000. Only there purity can cleanse the
+                          Warning Attack! Shelter Your Minds! Prelude The below is kind of like last years playtime post, it's not very
                         </span>
                       </div>
-                    </List.Item>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                  </List>
-                        <List variant="unordered">
-                          <span className='ml-12 mb-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Government Law</span>
-                          <List.Item>
-                            <div>
-                              <Link to="/blog/cyber-attack">
-                                <h4>
-                                  <span className='text-fuchsia-500 hover:text-fuchsia-600'>
-                                    Cyber Attack
-                                  </span>
-                                </h4>
-                              </Link>
-                              <span>
-                                Warning Attack! Shelter Your Minds! Prelude The below is kind of like last years playtime post, it's not very
-                              </span>
-                            </div>
-                          </List.Item>
-                          <List.Item>
-                            <div>
-                              <Link to="/blog/usa-election">
-                                <h4>                                                                    
-                                  <span className='text-fuchsia-500 hover:text-fuchsia-600'>
-                                    USA Election
-                                  </span>                                                                        
-                                </h4>
-                              </Link>                                                                        
-                              <span>
-                                USA Election Our 2020 election was the most major Racketeering scheme ever, using foreigners
-                              </span>                                                                           
-                            </div>
-                          </List.Item>
-                          <List.Item>
-                            <div>
-                             <Link to="/blog/philosophy">
-                              <h4>
-                                <span className='text-fuchsia-500 hover:text-fuchsia-600'>
-                                  Philosophy
-                                </span>
-                              </h4>
-                            </Link>
-                            <span>
-                              To Sophistry My writing of God in the past got interpreted as philosophy. I will make it real clear what                                                                                                           
+                    </List.Item>
+                    <List.Item>
+                      <div>
+                        <Link to="/blog/usa-election">
+                          <h4>                                                                    
+                            <span className='text-fuchsia-500 hover:text-fuchsia-600'>
+                                USA Election
+                            </span>                                                                        
+                          </h4>
+                        </Link>                                                                        
+                        <span>
+                          USA Election Our 2020 election was the most major Racketeering scheme ever, using foreigners
+                        </span>                                                                           
+                      </div>
+                    </List.Item>
+                    <List.Item>
+                      <div>
+                        <Link to="/blog/philosophy">
+                          <h4>
+                            <span className='text-fuchsia-500 hover:text-fuchsia-600'>
+                              Philosophy
                             </span>
-                        </div>
-                      </List.Item>                          
-                    </List>
-                    <List variant="unordered">
-                      <span className='ml-12 mb-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Programming</span>
-                      <List.Item>
-                        <div>
-                          <Link to="/blog/applause-use-sound-confetti">
-                            <h4>                                                                                               
-                              <span className='text-fuchsia-500 hover:text-fuchsia-600'>
-                                Applause useSound                                                                                                 
-                              </span>
-                            </h4>
-                          </Link>
-                          <span>
-                            Applause Button Click the  flowers 🎉 for claps in the Bio Section above and see an hear the Magic. 🤟
-                          </span>                                                                                                      
-                        </div>
-                      </List.Item>
-                      <List.Item>
-                        <div>
-                          <Link to="/blog/cookies">
-                            <h4>                                                                                               
-                              <span className='text-fuchsia-500 hover:text-fuchsia-600'>
-                                Cookies GDPR                                                                                               
-                              </span>
-                            </h4>
-                          </Link>
-                          <span>
-                            GDPR cookie consent with Gatsby using modules gatsby-plugin-gdpr-cookies and cookie-consent
-                          </span>                                                                                                      
-                        </div>
-                      </List.Item>
-                      <List.Item>
-                        <div>
-                          <Link to="/blog/react-netlify-forms">
-                            <h4>                                                                                               
-                              <span className='text-fuchsia-500 hover:text-fuchsia-600'>
-                                Netlify Forms                                                                                               
-                              </span>
-                            </h4>
-                          </Link>
-                          <span>
-                            React Netlify Forms, is easy with Bot fields and invisible reCaptcha including dropZone for image upload
-                          </span>                                                                                                      
-                        </div>
+                          </h4>
+                        </Link>
+                        <span>
+                          To Sophistry My writing of God in the past got interpreted as philosophy. I will make it real clear what                                                                                                           
+                        </span>
+                    </div>
+                  </List.Item>                          
+                </List>
+                <List variant="unordered">
+                  <span className='ml-12 mb-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Programming</span>
+                  <List.Item>
+                    <div>
+                      <Link to="/blog/applause-use-sound-confetti">
+                        <h4>                                                                                               
+                          <span className='text-fuchsia-500 hover:text-fuchsia-600'>
+                            Applause useSound                                                                                                 
+                          </span>
+                        </h4>
+                      </Link>
+                      <span>
+                        Applause Button Click the  flowers 🎉 for claps in the Bio Section above and see an hear the Magic. 🤟
+                      </span>                                                                                                      
+                    </div>
+                  </List.Item>
+                  <List.Item>
+                    <div>
+                      <Link to="/blog/cookies">
+                        <h4>                                                                                               
+                          <span className='text-fuchsia-500 hover:text-fuchsia-600'>
+                            Cookies GDPR                                                                                               
+                          </span>
+                        </h4>
+                      </Link>
+                      <span>
+                        GDPR cookie consent with Gatsby using modules gatsby-plugin-gdpr-cookies and cookie-consent
+                      </span>                                                                                                      
+                    </div>
+                  </List.Item>
+                  <List.Item>
+                    <div>
+                      <Link to="/blog/react-netlify-forms">
+                        <h4>                                                                                               
+                          <span className='text-fuchsia-500 hover:text-fuchsia-600'>
+                            Netlify Forms                                                                                               
+                          </span>
+                        </h4>
+                      </Link>
+                      <span>
+                        React Netlify Forms, is easy with Bot fields and invisible reCaptcha including dropZone for image upload
+                      </span>                                                                                                      
+                    </div>
                   </List.Item>
                 </List>                         
               </div>

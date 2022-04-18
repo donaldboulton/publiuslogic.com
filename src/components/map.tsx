@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react'
-import L from 'leaflet';
+import L from 'leaflet'
 import { MapContainer, TileLayer, Circle, LayerGroup, FeatureGroup, Rectangle, Tooltip, Marker, Popup } from 'react-leaflet'
 import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js'
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css'

@@ -19,6 +19,7 @@ import Stars from '@/components/Stars';
 
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
+import { Helmet } from 'react-helmet'
 
 function ContactUs() {
   const ogimage = {
@@ -48,6 +49,15 @@ function ContactUs() {
         image={ogimage}
         pathname="/contact"
       />
+      <Helmet>
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIp\
+          tF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""
+        />
+      </Helmet>
       <Header />
       <ScrollIndicator />
       <main className="mt-10">
@@ -62,7 +72,7 @@ function ContactUs() {
         </article>
         <Map />
 
-        <div className="mt-10 sm:mt-0 p-8 bg-gray-700 light:bg-offwhite text-white light:text-black">
+        <div className="mt-10 sm:mt-0 p-8 text-white light:text-black">
           <Stars />
           <div className="lg:grid lg:grid-cols-3 lg:gap-6">
             <div className="lg:col-span-1">
@@ -103,7 +113,7 @@ function ContactUs() {
                        <label>Don not fill this out if you are human: <input name="bot-field" /></label>
                     </p>
                     <div className="shadow overflow-hidden sm:rounded-md">
-                      <div className="px-4 py-5 bg-gray-800 light:bg-gray-200 text-white light:text-black sm:p-6">
+                      <div className="px-4 py-5 text-white light:text-black sm:p-6">
                         <div className="grid grid-cols-6 gap-6">
                           <div className="col-span-6 sm:col-span-6">
                             <label htmlFor="name" className="block text-sm font-medium">

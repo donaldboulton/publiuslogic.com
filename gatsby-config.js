@@ -33,7 +33,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-react-leaflet',
       options: {
-        linkStyles: true, // (default: true) Enable/disable loading stylesheets via CDN
+        linkStyles: false, // (default: true) Enable/disable loading stylesheets via CDN
       },
     },
     {
@@ -130,7 +130,12 @@ module.exports = {
               acronyms: siteAcronyms,
             },
           },
-          { resolve: `gatsby-remark-smartypants` },
+          {
+            resolve: `gatsby-remark-smartypants`,
+            options: {
+              dashes: `oldschool`,
+            },
+          },
           {
             resolve: `gatsby-remark-custom-blocks`,
             options: {
