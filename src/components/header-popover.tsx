@@ -3,7 +3,7 @@ import { useState, Fragment } from 'react'
 import { Link } from "gatsby"
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { GlobeAltIcon, BanIcon, BeakerIcon, BriefcaseIcon, CakeIcon, CloudIcon, CodeIcon, ClockIcon, HandIcon, HeartIcon, LibraryIcon, LinkIcon, PresentationChartLineIcon, ShieldCheckIcon, ShieldExclamationIcon, SparklesIcon, PuzzleIcon, PresentationChartBarIcon, QuestionMarkCircleIcon } from '@heroicons/react/outline'
+import { GlobeAltIcon, BanIcon, BeakerIcon, BriefcaseIcon, CakeIcon, CloudIcon, CodeIcon, ClockIcon, HandIcon, HeartIcon, LibraryIcon, LinkIcon, PresentationChartLineIcon, ShieldCheckIcon, ShieldExclamationIcon, SparklesIcon, PuzzleIcon, PresentationChartBarIcon, QuestionMarkCircleIcon, UserGroupIcon } from '@heroicons/react/outline'
 
 const posts = [
     {
@@ -61,10 +61,10 @@ const posts = [
       icon: ShieldExclamationIcon,
     },
     {
-      name: 'Works Of Flesh',
-      description: 'Old Testament Works',
-      href: '/blog/works-of-flesh',
-      icon: BriefcaseIcon,
+      name: 'Trinity of Man',
+      description: 'The Holy, Lost, & Evil Ones',
+      href: '/blog/trinity-of-man',
+      icon: UserGroupIcon,
     },
     {
       name: 'React Netlify Forms',
