@@ -1,9 +1,9 @@
-import { Marker, MarkerProps } from "react-leaflet";
-import { DivIcon } from "leaflet";
+import { Marker, MarkerProps } from "react-leaflet"
+import { DivIcon } from "leaflet"
 
-import L from "leaflet";
-import { createPortal } from "react-dom";
-import React, { useEffect } from "react";
+import L from "leaflet"
+import { createPortal } from "react-dom"
+import React, { useEffect } from "react"
 
 type ReactProps = { key: string | number } & { children: JSX.Element };
 

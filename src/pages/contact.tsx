@@ -21,6 +21,12 @@ import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
 import { Helmet } from 'react-helmet'
 
+function refreshPage() {
+  if (typeof window !== undefined) {
+    window.location.reload(false);
+  }
+}
+
 function ContactUs() {
   const ogimage = {
     src: OGImage,
@@ -50,13 +56,10 @@ function ContactUs() {
         pathname="/contact"
       />
       <Helmet>
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIp\
-          tF7tcCzusKFjFw2yuvEpDL9wQ=="
-          crossorigin=""
-        />
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin=""
+      />
       </Helmet>
       <Header />
       <ScrollIndicator />
@@ -67,15 +70,17 @@ function ContactUs() {
               title="Contact Us"
               description="Our presence is real and digital. Contact us through the following ways."
               image={Image}
-            />
+            />            
           </header>
         </article>
-        <Map />
-
+        <Map />        
         <div className="mt-10 sm:mt-0 p-8 text-white light:text-black">
           <Stars />
           <div className="lg:grid lg:grid-cols-3 lg:gap-6">
             <div className="lg:col-span-1">
+              <div className='m-0'>
+                <button type="button" className="p-1 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50" onClick={refreshPage}>Click for Map's Display</button>
+              </div>
               <div className="px-4 sm:px-0">
                 {contactMethods.map(method =>
                   method.link ? (

@@ -1,12 +1,15 @@
 import * as React from 'react'
 import { useState } from 'react'
-import L from 'leaflet';
+import L from "leaflet"
+import { icon, DivIcon } from 'leaflet'
 import { MapContainer, TileLayer, Circle, LayerGroup, FeatureGroup, Rectangle, Tooltip, Marker, Popup } from 'react-leaflet'
 import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js'
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css'
 import MarkerClusterGroup from 'react-leaflet-markercluster'
+import './leaflet.css'
 
 function Map() {
+  const divIcon = { DivIcon }
   const center = [35.590607, -97.439130]
   const rectangle = [
     [35.507745, -97.583310],
@@ -20,6 +23,7 @@ function Map() {
   const fillRedOptions = { fillColor: 'red' }
   const greenOptions = { color: 'green', fillColor: 'green' }
   const purpleOptions = { color: 'purple' }
+  
   if (typeof window !== 'undefined') {
     return (
       <MapContainer 
@@ -61,6 +65,17 @@ function Map() {
         <MarkerClusterGroup>
           <Marker 
             position={blueMarkerPosition}
+            icon={L.divIcon({
+              iconUrl: "./images/leaf-green.png",
+              shadowUrl: './images/leaf-shadow.png',
+              iconSize:     [38, 95], // size of the icon
+              shadowSize:   [50, 64], // size of the shadow
+              iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+              shadowAnchor: [4, 62],
+              popupAnchor:  [-3, -76],
+              className: 'leaflet-marker-icon-green leaflet-marker-icon-shadow',
+              html: "😁",
+            })}            
           >
             <Popup>
               My Home!
