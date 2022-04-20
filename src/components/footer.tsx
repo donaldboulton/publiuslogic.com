@@ -22,7 +22,7 @@ export default function IndexFooter() {
   ]
 
   return (
-    <footer className="relative bg-gray-300 pt-8 pb-6">
+    <footer className="relative bg-gray-600 pt-8 pb-6">
       <div
         className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
         style={{ height: '80px' }}
@@ -36,14 +36,14 @@ export default function IndexFooter() {
           x="0"
           y="0"
         >
-          <polygon className="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
+          <polygon className="text-gray-600 fill-current" points="2560 0 2560 100 0 100"></polygon>
         </svg>
       </div>
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap">
           <div className="w-full lg:w-6/12 px-4">
-            <h4 className="text-3xl font-semibold text-gray-800">Let's keep in touch!</h4>
-            <h5 className="text-lg mt-0 mb-2 text-gray-700">
+            <h4 className="text-3xl font-semibold text-gray-200">Let's keep in touch!</h4>
+            <h5 className="text-lg mt-0 mb-2 text-gray-100">
               Find us on any of these platforms, we respond 1-2 business days.
             </h5>
             <div className="mt-4">
@@ -61,32 +61,35 @@ export default function IndexFooter() {
               </span>
             </div>
             <div className="mt-4">
-              <h4 className="text-3xl font-semibold text-gray-800">Subscriptions</h4>
-              <h5 className="text-lg mt-0 mb-2 text-gray-800">Get exclusive newsletter-only content now and then</h5>
+              <h4 className="text-3xl font-semibold text-gray-200">Subscriptions</h4>
+              <h5 className="text-lg mt-0 mb-2 text-gray-200">Get exclusive newsletter-only content now and then</h5>
               <Subscriptions />
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
             <div className="flex flex-wrap items-top mb-6">
               <div className="w-full lg:w-4/12 px-4 ml-auto">
-                <span className="block uppercase text-gray-600 text-sm font-semibold mb-2">Useful Links</span>
+                <span className="block uppercase text-gray-200 text-sm font-semibold mb-2">Useful Links</span>
                 <ul className="list-unstyled">
                   <li>
                     <Link
-                      className="text-rose-700 hover:text-rose-500 font-semibold block pb-2 text-sm"
+                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/blog/about"
                     >
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link className="text-rose-700 hover:text-rose-500 font-semibold block pb-2 text-sm" to="/blog">
+                    <Link
+                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      to="/blog"
+                    >
                       Blog
                     </Link>
                   </li>
                   <li>
                     <a
-                      className="text-rose-700 hover:text-rose-500 font-semibold block pb-2 text-sm"
+                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       rel="noopener noreferrer"
                       target="_blank"
                       area-label="Github"
@@ -97,7 +100,7 @@ export default function IndexFooter() {
                   </li>
                   <li>
                     <a
-                      className="text-rose-700 hover:text-rose-500 font-semibold block pb-2 text-sm"
+                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       rel="noopener noreferrer"
                       target="_blank"
                       area-label="Gatsby Starter Basic Instructions"
@@ -109,11 +112,11 @@ export default function IndexFooter() {
                 </ul>
               </div>
               <div className="w-full lg:w-4/12 px-4">
-                <span className="block uppercase text-gray-600 text-sm font-semibold mb-2">Other Resources</span>
+                <span className="block uppercase text-gray-100 text-sm font-semibold mb-2">Other Resources</span>
                 <ul className="list-unstyled">
                   <li>
                     <Link
-                      className="text-rose-700 hover:text-rose-500 font-semibold block pb-2 text-sm"
+                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/blog/0bsd-licence"
                     >
                       BSD License
@@ -121,7 +124,7 @@ export default function IndexFooter() {
                   </li>
                   <li>
                     <Link
-                      className="text-rose-700 hover:text-rose-500 font-semibold block pb-2 text-sm"
+                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/blog/privacy"
                     >
                       Terms
@@ -129,14 +132,17 @@ export default function IndexFooter() {
                   </li>
                   <li>
                     <Link
-                      className="text-rose-700 hover:text-rose-500 font-semibold block pb-2 text-sm"
+                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/blog/privacy"
                     >
                       Privacy Policy
                     </Link>
                   </li>
                   <li>
-                    <Link className="text-rose-700 hover:text-rose-500 font-semibold block pb-2 text-sm" to="/contact">
+                    <Link
+                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      to="/contact"
+                    >
                       Contact Us
                     </Link>
                   </li>
@@ -148,14 +154,14 @@ export default function IndexFooter() {
         <hr className="my-6 border-gray-400" />
         <div className="flex flex-wrap items-center md:justify-between justify-center">
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
-            <div className="text-sm text-gray-900 font-semibold py-1">
+            <div className="text-sm text-gray-200 font-semibold py-1">
               Copyright © {new Date().getFullYear()} Publiuslogic by{' '}
               <a
                 href="https://donboulton.com"
                 rel="noopener noreferrer"
                 target="_blank"
                 area-label="Donald Boulton Web Site"
-                className="text-rose-700 hover:text-rose-500"
+                className="text-fuchsia-600 hover:text-fuchsia-500"
               >
                 Donald Boulton
               </a>

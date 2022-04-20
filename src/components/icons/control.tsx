@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { motion, useAnimation, useMotionValue } from 'framer-motion'
+import { motion, useMotionValue } from 'framer-motion'
 
 interface Props {
   onClick: () => void

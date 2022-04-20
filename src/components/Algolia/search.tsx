@@ -6,12 +6,6 @@ import SearchBox from './search-box'
 import SearchResult from './search-result'
 import useClickOutside from 'use-click-outside'
 
-const theme = {
-  foreground: '#fff',
-  background: '#171717',
-  faded: 'gray',
-}
-
 function Search({ indices }) {
   const rootRef = createRef()
   const [query, setQuery] = useState()

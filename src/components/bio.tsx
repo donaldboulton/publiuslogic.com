@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Applause from '@/components/applause'
 import { StaticImage } from 'gatsby-plugin-image'
 import BioTypist from '@/components/bio-typist'
