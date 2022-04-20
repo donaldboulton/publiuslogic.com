@@ -2,15 +2,15 @@ import * as React from 'react'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
 
-export function wrapPageElement({ element, props }) {
-  return <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>;
+export function wrapPageElement({ element }) {
+  return <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
 }
 export const wrapRootElement = wrap
 
-export function onRenderBody ({ setPreBodyComponents }) {
+export function onRenderBody({ setPreBodyComponents }) {
   setPreBodyComponents([
-    React.createElement("script", {
-      key: "gatsby-dark-mode",
+    React.createElement('script', {
+      key: 'gatsby-dark-mode',
       dangerouslySetInnerHTML: {
         __html: `
 void function() {
@@ -44,6 +44,5 @@ void function() {
     `,
       },
     }),
-  ]);
+  ])
 }
-

@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 
 const Enter: React.FC = () => {
   return (
@@ -11,20 +11,10 @@ const Enter: React.FC = () => {
       stroke="currentColor"
       {...props}
     >
-      <path
-        d="M5 12H19"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M14.0829 6.42532L19 12L14.0829 17.5747"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M5 12H19" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M14.0829 6.42532L19 12L14.0829 17.5747" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
-  );
+  )
 }
 
 export default Enter

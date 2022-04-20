@@ -4,53 +4,53 @@ import ListItem from './ListItem'
 import { ListProps } from './types'
 
 const listStyle: CSS.Properties = {
-    margin: '0 0 1.45rem 0',
-    padding: '0',
-    color: 'inherit',
-    listStylePosition: 'outside',
-    listStyleImage: 'none',
-  
-    variants: {
-      variant: {
-        unordered: {
-          li: {
-            // We use List.Item to render the proper style
-            listStyle: 'none',
-          },
+  margin: '0 0 1.45rem 0',
+  padding: '0',
+  color: 'inherit',
+  listStylePosition: 'outside',
+  listStyleImage: 'none',
+
+  variants: {
+    variant: {
+      unordered: {
+        li: {
+          // We use List.Item to render the proper style
+          listStyle: 'none',
         },
-        ordered: {
-          li: {
-            counterIncrement: 'li',
-  
-            svg: {
-              display: 'none',
-            },
-  
-            '&:before': {
-              content: "counters(li, '.') '. '",
-              color: 'blue',
-              marginRight: '8px',
-            },
+      },
+      ordered: {
+        li: {
+          counterIncrement: 'li',
+
+          svg: {
+            display: 'none',
+          },
+
+          '&:before': {
+            content: "counters(li, '.') '. '",
+            color: 'blue',
+            marginRight: '8px',
           },
         },
       },
     },
-    defaultVariants: {
-      variant: 'unordered',
-    },
+  },
+  defaultVariants: {
+    variant: 'unordered',
+  },
 }
 const List = (props: ListProps) => {
-  const { variant = 'unordered', children, ...rest } = props;
+  const { variant = 'unordered', children, ...rest } = props
 
-  const Component = variant === 'ordered' ? 'ol' : 'ul';
+  const Component = variant === 'ordered' ? 'ol' : 'ul'
 
   return (
     <div style={listStyle} as={Component} variant={variant} {...rest}>
       {children}
     </div>
-  );
-};
+  )
+}
 
-List.Item = ListItem;
+List.Item = ListItem
 
-export default List;
+export default List

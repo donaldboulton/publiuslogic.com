@@ -8,7 +8,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import ScrollIndicator from '@/components/scroll-indicator'
 import ScrollDown from '@/components/scroll-down'
-import Stars from '@/components/Stars';
+import Stars from '@/components/Stars'
 
 import Image from '../../static/svg/undraw/undraw_blog_post_re_fy5x.svg'
 import OGImage from '../../static/images/undraw/undraw_Blog_post_re_fy5x.png'
@@ -41,9 +41,9 @@ const BlogPage = () => {
         <BlogRoll />
       </main>
       <ScrollDown
-        className='scroll z-20 right-4 md:right-3 top-20'
+        className="scroll z-20 right-4 md:right-3 top-20"
         size={40}
-        css='position: fixed; color: gray; width: 40px; height: 40px;'
+        css="position: fixed; color: gray; width: 40px; height: 40px;"
       />
       <Footer />
     </Layout>

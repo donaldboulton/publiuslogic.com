@@ -1,4 +1,4 @@
-import { SVGAttributes } from 'react';
+import { SVGAttributes } from 'react'
 
 export const TwitterIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -22,4 +22,4 @@ export const TwitterIcon = (props: SVGAttributes<SVGElement>) => (
       strokeLinejoin="round"
     />
   </svg>
-);
+)

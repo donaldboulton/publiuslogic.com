@@ -7,7 +7,7 @@ path: /blog/cookies
 date: 2021-11-15
 description: How-to setup GDPR cookie consent with Gatsby using modules gatsby-plugin-gdpr-cookies and cookie-consent
 tags: [Cookies, Gdpr]
-category: Tech 
+category: Tech
 image: ../../../static/assets/cookies.jpg
 ---
 
@@ -119,7 +119,7 @@ Or Taylor it to you needs
 ```tsx:title=src/components/CookieConsent.tsx {8-18}
 
   <CookieConsent
-    enableDeclineButton 
+    enableDeclineButton
     flipButtons
     location="bottom"
     buttonText="Accept"
@@ -139,9 +139,9 @@ Or Taylor it to you needs
   >
     This website uses cookies for user experience.{" "}
     <span style={{ fontSize: "10px" }}>
-      <Link 
-        to='/privacy' 
-        alt='Privacy Page' 
+      <Link
+        to='/privacy'
+        alt='Privacy Page'
         area-label="Privacy">
           Privacy Page
       </Link>
@@ -169,4 +169,4 @@ Hopefully this helped you making your Gatsby site GDPR compliant.
 
 Cookie's Explained In [Privacy Page](http://publiuslogic.com/privacy#cookies-beacons)
 
-<WavyHr className='mt-1 mb-1 text-fuchsia-600' />
+<WavyHr className="mt-1 mb-1 text-fuchsia-600" />

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { AnchorProps } from './types';
-import { getIconString } from './utils';
+import { AnchorProps } from './types'
+import { getIconString } from './utils'
 import * as CSS from 'csstype'
 
 export const StyledAnchor: CSS.Properties = {
@@ -116,38 +116,28 @@ export const StyledAnchor: CSS.Properties = {
   },
 }
 
-const Anchor = React.forwardRef(
-  (props: AnchorProps, ref: React.Ref<HTMLAnchorElement>) => {
-    const {
-      children,
-      href,
-      arrow,
-      underline,
-      favicon,
-      discreet,
-      ...rest
-    } = props;
+const Anchor = React.forwardRef((props: AnchorProps, ref: React.Ref<HTMLAnchorElement>) => {
+  const { children, href, arrow, underline, favicon, discreet, ...rest } = props
 
-    const icon = getIconString(href, arrow);
+  const icon = getIconString(href, arrow)
 
-    return (
-      <StyledAnchor
-        arrow={arrow}
-        css={{
-          '--icon': `url(${icon})`,
-        }}
-        discreet={discreet}
-        favicon={favicon}
-        href={href}
-        underline={underline}
-        ref={ref}
-        {...rest}
-      >
-        {children}
-      </StyledAnchor>
-    );
-  }
-);
+  return (
+    <StyledAnchor
+      arrow={arrow}
+      css={{
+        '--icon': `url(${icon})`,
+      }}
+      discreet={discreet}
+      favicon={favicon}
+      href={href}
+      underline={underline}
+      ref={ref}
+      {...rest}
+    >
+      {children}
+    </StyledAnchor>
+  )
+})
 
 Anchor.displayName = 'Anchor'
 

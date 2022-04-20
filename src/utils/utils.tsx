@@ -6,8 +6,8 @@ import { CalloutVariant } from '../types/index'
 export const getVariantIcon = (variant: CalloutVariant): React.ReactNode => {
   switch (variant) {
     case 'info':
-      return <Info />;
+      return <Info />
     case 'danger':
-      return <Alert />;
+      return <Alert />
   }
-};
+}

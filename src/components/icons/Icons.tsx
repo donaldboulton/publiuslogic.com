@@ -1,4 +1,4 @@
-import { SVGAttributes } from 'react';
+import { SVGAttributes } from 'react'
 
 export const TwitterIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -22,7 +22,7 @@ export const TwitterIcon = (props: SVGAttributes<SVGElement>) => (
       strokeLinejoin="round"
     />
   </svg>
-);
+)
 
 export const GithubIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -39,7 +39,7 @@ export const GithubIcon = (props: SVGAttributes<SVGElement>) => (
   >
     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
   </svg>
-);
+)
 
 export const ArrowIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -57,7 +57,7 @@ export const ArrowIcon = (props: SVGAttributes<SVGElement>) => (
     <line x1="5" y1="12" x2="19" y2="12"></line>
     <polyline points="12 5 19 12 12 19"></polyline>
   </svg>
-);
+)
 
 export const EnterArrowIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -69,20 +69,10 @@ export const EnterArrowIcon = (props: SVGAttributes<SVGElement>) => (
     stroke="currentColor"
     {...props}
   >
-    <path
-      d="M5 12H19"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M14.0829 6.42532L19 12L14.0829 17.5747"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M5 12H19" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M14.0829 6.42532L19 12L14.0829 17.5747" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
-);
+)
 
 export const ExternalIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -94,20 +84,10 @@ export const ExternalIcon = (props: SVGAttributes<SVGElement>) => (
     stroke="currentColor"
     {...props}
   >
-    <path
-      d="M7.73242 17.4224L17.7324 7.42236"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M7.73242 7.42236H17.7324V17.4224"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M7.73242 17.4224L17.7324 7.42236" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M7.73242 7.42236H17.7324V17.4224" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
-);
+)
 
 export const EnterIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -132,7 +112,7 @@ export const EnterIcon = (props: SVGAttributes<SVGElement>) => (
       strokeLinejoin="round"
     />
   </svg>
-);
+)
 
 export const MapIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -151,7 +131,7 @@ export const MapIcon = (props: SVGAttributes<SVGElement>) => (
     <line x1="8" y1="2" x2="8" y2="18"></line>
     <line x1="16" y1="6" x2="16" y2="22"></line>
   </svg>
-);
+)
 
 export const RSSIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -182,7 +162,7 @@ export const RSSIcon = (props: SVGAttributes<SVGElement>) => (
       strokeLinejoin="round"
     />
   </svg>
-);
+)
 
 export const ContactIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -194,12 +174,7 @@ export const ContactIcon = (props: SVGAttributes<SVGElement>) => (
     stroke="currentColor"
     {...props}
   >
-    <path
-      d="M22.4355 2.73096L11.4355 13.731"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M22.4355 2.73096L11.4355 13.731" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     <path
       d="M22.4355 2.73096L15.4355 22.731L11.4355 13.731L2.43555 9.73096L22.4355 2.73096Z"
       strokeWidth="2"
@@ -207,7 +182,7 @@ export const ContactIcon = (props: SVGAttributes<SVGElement>) => (
       strokeLinejoin="round"
     />
   </svg>
-);
+)
 
 export const PortfolioIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -226,7 +201,7 @@ export const PortfolioIcon = (props: SVGAttributes<SVGElement>) => (
       strokeLinejoin="round"
     />
   </svg>
-);
+)
 
 export const PlayIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -243,7 +218,7 @@ export const PlayIcon = (props: SVGAttributes<SVGElement>) => (
   >
     <polygon points="5 3 19 12 5 21 5 3"></polygon>
   </svg>
-);
+)
 
 export const PauseIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -261,7 +236,7 @@ export const PauseIcon = (props: SVGAttributes<SVGElement>) => (
     <rect x="6" y="4" width="4" height="16"></rect>
     <rect x="14" y="4" width="4" height="16"></rect>
   </svg>
-);
+)
 
 export const RepeatIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -281,7 +256,7 @@ export const RepeatIcon = (props: SVGAttributes<SVGElement>) => (
     <polyline points="7 23 3 19 7 15"></polyline>
     <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
   </svg>
-);
+)
 
 export const InfoIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -300,7 +275,7 @@ export const InfoIcon = (props: SVGAttributes<SVGElement>) => (
     <line x1="12" y1="16" x2="12" y2="12"></line>
     <line x1="12" y1="8" x2="12.01" y2="8"></line>
   </svg>
-);
+)
 
 export const AlertIcon = (props: SVGAttributes<SVGElement>) => (
   <svg
@@ -319,4 +294,4 @@ export const AlertIcon = (props: SVGAttributes<SVGElement>) => (
     <line x1="12" y1="8" x2="12" y2="12"></line>
     <line x1="12" y1="16" x2="12.01" y2="16"></line>
   </svg>
-);
+)

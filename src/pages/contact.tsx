@@ -15,7 +15,7 @@ import Twitter from '../../static/svg/icons/twitter.inline.svg'
 import Github from '../../static/svg/icons/github.inline.svg'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import Stars from '@/components/Stars';
+import Stars from '@/components/Stars'
 
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
@@ -23,7 +23,7 @@ import { Helmet } from 'react-helmet'
 
 function refreshPage() {
   if (typeof window !== undefined) {
-    window.location.reload(false);
+    window.location.reload(false)
   }
 }
 
@@ -35,7 +35,7 @@ function ContactUs() {
   }
 
   const metadata = SiteMetadata().siteMetadata
-  const SITE_RECAPTCHA_KEY = (process.env.GATSBY_SITE_RECAPTCHA_KEY)
+  const SITE_RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 
   const contactMethods = [
     { name: 'Email', link: 'email' in metadata.social ? metadata.social.email : null, image: Email },
@@ -56,10 +56,12 @@ function ContactUs() {
         pathname="/contact"
       />
       <Helmet>
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-        crossorigin=""
-      />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+          crossorigin=""
+        />
       </Helmet>
       <Header />
       <ScrollIndicator />
@@ -70,16 +72,22 @@ function ContactUs() {
               title="Contact Us"
               description="Our presence is real and digital. Contact us through the following ways."
               image={Image}
-            />            
+            />
           </header>
         </article>
-        <Map />        
+        <Map />
         <div className="mt-10 sm:mt-0 p-8 text-white light:text-black">
           <Stars />
           <div className="lg:grid lg:grid-cols-3 lg:gap-6">
             <div className="lg:col-span-1">
-              <div className='m-0'>
-                <button type="button" className="p-1 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50" onClick={refreshPage}>Click for Map's Display</button>
+              <div className="m-0">
+                <button
+                  type="button"
+                  className="p-1 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
+                  onClick={refreshPage}
+                >
+                  Click for Map's Display
+                </button>
               </div>
               <div className="px-4 sm:px-0">
                 {contactMethods.map(method =>
@@ -87,7 +95,13 @@ function ContactUs() {
                     <p key={method.name} className="mt-2 flex items-center text-sm text-white light:text-black">
                       <method.image className=" h-5 w-5" />
                       <span>&nbsp;{method.name}:&nbsp;</span>
-                      <a href={method.link} className="text-rose-600 hover:text-rose-500" rel="noopener noreferrer" target="_blank" area-label="Github">
+                      <a
+                        href={method.link}
+                        className="text-rose-600 hover:text-rose-500"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        area-label="Github"
+                      >
                         {method.link}
                       </a>
                     </p>
@@ -98,10 +112,10 @@ function ContactUs() {
               </div>
             </div>
 
-            <div className="mt-5 lg:mt-0 lg:col-span-2 mb-24 rounded-lg bg-gray-800 light:bg-gray-300 text-gray-200 light:text-gray-800">              
+            <div className="mt-5 lg:mt-0 lg:col-span-2 mb-24 rounded-lg bg-gray-800 light:bg-gray-300 text-gray-200 light:text-gray-800">
               <NetlifyForm
                 method="POST"
-                name='contact'
+                name="contact"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 enableRecaptcha
@@ -111,11 +125,13 @@ function ContactUs() {
                 }}
               >
                 {({ handleChange, success, error }) => (
-                 <> 
-                    <Honeypot />   
-                    <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />                                                                  
+                  <>
+                    <Honeypot />
+                    <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
                     <p className="hidden">
-                       <label>Don not fill this out if you are human: <input name="bot-field" /></label>
+                      <label>
+                        Don not fill this out if you are human: <input name="bot-field" />
+                      </label>
                     </p>
                     <div className="shadow overflow-hidden sm:rounded-md">
                       <div className="px-4 py-5 text-white light:text-black sm:p-6">
@@ -133,7 +149,7 @@ function ContactUs() {
                               placeholder="Enter your Name here."
                               className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
                               onChange={handleChange}
-                            />                            
+                            />
                           </div>
 
                           <div className="col-span-6">
@@ -141,9 +157,9 @@ function ContactUs() {
                               Email address
                             </label>
                             <input
-                              type='email'
-                              name='email'
-                              id='email'
+                              type="email"
+                              name="email"
+                              id="email"
                               autoComplete="off"
                               required
                               placeholder="Enter your Email here."
@@ -197,27 +213,15 @@ function ContactUs() {
                               name="text"
                               required
                               placeholder="Enter your message here."
-                              onChange={handleChange}                         
+                              onChange={handleChange}
                             />
                           </div>
                         </div>
-                       </div>
+                      </div>
 
                       <div className="px-4 py-3 text-right sm:px-6 bg-gray-800 light:bg-gray-200">
-                        {success && (
-                          <p 
-                            className='text-rose-500'
-                          >
-                            Thanks for Subscribing!
-                          </p>
-                        )}
-                        {error && (
-                          <p 
-                            className='text-rose-500'
-                          >
-                            Sorry, we could not reach our servers.
-                          </p>
-                        )}         
+                        {success && <p className="text-rose-500">Thanks for Subscribing!</p>}
+                        {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
                         <button
                           type="submit"
                           className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
@@ -225,10 +229,10 @@ function ContactUs() {
                           Send
                         </button>
                       </div>
-                    </div> 
-                  </>                                  
+                    </div>
+                  </>
                 )}
-              </NetlifyForm> 
+              </NetlifyForm>
             </div>
           </div>
         </div>

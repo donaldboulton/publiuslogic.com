@@ -36,13 +36,12 @@ const CustomWrapper = ({ children, onClick }) => (
 )
 
 const ImageGallery: React.FC<PageProps> = ({ data }) => {
-
   const ogimage = {
     src: OGImage,
     width: 1342,
     height: 1024,
   }
-  const images = data.images.edges.map(({ node }, index, name) => ({
+  const images = data.images.edges.map(({ node }, index) => ({
     ...node.childImageSharp,
     // Generate name based on the index as caption.
     caption: `Image ${index}`,
@@ -65,28 +64,18 @@ const ImageGallery: React.FC<PageProps> = ({ data }) => {
 
   return (
     <Layout>
-      <SEO
-        type="Gallery"
-        title="Gallery: Images"
-        description="History Pics"
-        image={ogimage}
-        pathname="/gallery"
-      />
+      <SEO type="Gallery" title="Gallery: Images" description="History Pics" image={ogimage} pathname="/gallery" />
       <Header />
-      <PageHero
-        title="Gallery: Images"
-        description="My personal Images from History!"
-        image={Image}
-      />
+      <PageHero title="Gallery: Images" description="My personal Images from History!" image={Image} />
       <ScrollIndicator />
       <main className="mt-10">
         <Stars />
         <article className="post">
           <div className="max-w-7xl mt-16 mb-32 mx-auto bg-gray-900 light:bg-gray-300 text-white light:text-black rounded-xl shadow-md overflow-hidden md:max-w-5xl">
             <div className="md:flex">
-              <div className="container mx-auto">                                   
+              <div className="container mx-auto">
                 <Gallery
-                  className='rounded-lg'
+                  className="rounded-lg"
                   images={images}
                   lightboxOptions={lightboxOptions}
                   customWrapper={CustomWrapper}
@@ -104,18 +93,11 @@ const ImageGallery: React.FC<PageProps> = ({ data }) => {
 
 export const pageQuery = graphql`
   query ImagesForGallery {
-    images: allFile(
-      filter: { relativeDirectory: { eq: "gallery" } }
-      sort: { fields: name }
-    ) {
+    images: allFile(filter: { relativeDirectory: { eq: "gallery" } }, sort: { fields: name }) {
       edges {
         node {
           childImageSharp {
-            thumb: gatsbyImageData(
-              width: 250
-              height: 250
-              placeholder: BLURRED
-            )
+            thumb: gatsbyImageData(width: 250, height: 250, placeholder: BLURRED)
             full: gatsbyImageData(layout: FULL_WIDTH)
           }
           name

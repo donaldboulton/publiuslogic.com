@@ -63,7 +63,7 @@ This is starter template for a full featured marketing and blog website based on
 - Support for code syntax highlighting
 - Manifest and offline support
 - Contact form using sendgrid email and Gatsby functions
-- Full SEO support (via React Helmet) including Open Graph, Twitter   Cards and Schema.org via JSON-LD
+- Full SEO support (via React Helmet) including Open Graph, Twitter Cards and Schema.org via JSON-LD
 - Tailwind Css v3.0.7, for super styling
 
 ## How to use the starter
@@ -159,8 +159,6 @@ My Netlify CMS backend will build and add Pages, Posts, My layout components wit
 - Share Support
 - Elastic-Lunr Search
 - Pagination for Blog
-
-
 
 #### Demo
 

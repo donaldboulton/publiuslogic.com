@@ -1,15 +1,15 @@
 import * as React from 'react'
-import { createRef, useState, useMemo } from "react"
-import algoliasearch from "algoliasearch/lite"
-import { InstantSearch } from "react-instantsearch-dom"
+import { createRef, useState, useMemo } from 'react'
+import algoliasearch from 'algoliasearch/lite'
+import { InstantSearch } from 'react-instantsearch-dom'
 import SearchBox from './search-box'
 import SearchResult from './search-result'
-import useClickOutside from "use-click-outside"
+import useClickOutside from 'use-click-outside'
 
 const theme = {
-  foreground: "#fff",
-  background: "#171717",
-  faded: "gray",
+  foreground: '#fff',
+  background: '#171717',
+  faded: 'gray',
 }
 
 function Search({ indices }) {
@@ -17,11 +17,7 @@ function Search({ indices }) {
   const [query, setQuery] = useState()
   const [hasFocus, setFocus] = useState(false)
   const searchClient = useMemo(
-    () =>
-      algoliasearch(
-        process.env.GATSBY_ALGOLIA_APP_ID,
-        process.env.GATSBY_ALGOLIA_SEARCH_KEY
-      ),
+    () => algoliasearch(process.env.GATSBY_ALGOLIA_APP_ID, process.env.GATSBY_ALGOLIA_SEARCH_KEY),
     []
   )
 
@@ -34,12 +30,9 @@ function Search({ indices }) {
           searchClient={searchClient}
           indexName={indices[0].name}
           onSearchStateChange={({ query }) => setQuery(query)}
-        >         
+        >
           <SearchBox onFocus={() => setFocus(true)} hasFocus={hasFocus} />
-          <SearchResult
-            show={query && query.length > 0 && hasFocus}
-            indices={indices}
-          />
+          <SearchResult show={query && query.length > 0 && hasFocus} indices={indices} />
         </InstantSearch>
       </div>
     </div>

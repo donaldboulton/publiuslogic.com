@@ -25,7 +25,7 @@ export const callOutWrapper: CSS.Properties = {
         '--icon-color': 'danger',
       },
     },
-  }
+  },
 }
 
 export const calloutLabelWrapper: CSS.Properties = {
@@ -50,7 +50,7 @@ export const calloutLabelWrapper: CSS.Properties = {
         background: '#fa383826',
       },
     },
-  }
+  },
 }
 
 const callout: CSS.Properties = {
@@ -79,22 +79,16 @@ const callout: CSS.Properties = {
         background: '#fa383826',
       },
     },
-  }
+  },
 }
 
-
-
-const Callout: React.FC<CalloutProps> = (props) => {
-  const { children, variant, label, ...rest } = props;
-  const icon = label ? null : getVariantIcon(variant);
+const Callout: React.FC<CalloutProps> = props => {
+  const { children, variant, label, ...rest } = props
+  const icon = label ? null : getVariantIcon(variant)
 
   return (
-    <div
-      style={callout} 
-      variant={variant} 
-      {...rest}
-    > 
-    {icon ? (     
+    <div style={callout} variant={variant} {...rest}>
+      {icon ? (
         <aside style={callOutWrapper} variant={variant}>
           {icon}
         </aside>
@@ -104,7 +98,7 @@ const Callout: React.FC<CalloutProps> = (props) => {
           {label}
         </aside>
       ) : null}
-        {children}
+      {children}
     </div>
   )
 }

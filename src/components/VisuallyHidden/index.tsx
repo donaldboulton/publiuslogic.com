@@ -2,9 +2,9 @@ import * as React from 'react'
 import * as CSS from 'csstype'
 
 interface Props {
-  as: React.ElementType;
-  children?: React.ReactNode;
-  id?: string;
+  as: React.ElementType
+  children?: React.ReactNode
+  id?: string
 }
 
 const visuallyHiddenClass: CSS.Properties = {
@@ -18,12 +18,12 @@ const visuallyHiddenClass: CSS.Properties = {
   position: 'absolute !important',
   width: '1px !important',
   whiteSpace: 'nowrap !important',
-};
+}
 
 const VisuallyHidden = ({ as: Component, ...props }: Props) => (
   <Component {...props} style={visuallyHiddenClass}>
     {props.children}
   </Component>
-);
+)
 
 export default VisuallyHidden

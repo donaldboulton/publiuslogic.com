@@ -10,7 +10,7 @@ module.exports = {
   CD: 'Continuous Deployment',
   CDN: 'Content Delivery Network',
   CMS: 'Content Management System',
-  CRUD: "Create Read Update Delete",
+  CRUD: 'Create Read Update Delete',
   CMS: 'Content Management System',
   CTP: 'Community Technology Preview',
   DIY: 'Do It Yourself',
@@ -64,7 +64,7 @@ module.exports = {
   SNK: 'Strong Name Key',
   SMS: 'Short Message Service',
   SPA: 'Single Page Application',
-  SSG: "Static Site Generation",
+  SSG: 'Static Site Generation',
   SSR: 'Server Side Rendering',
   SVGA: 'Super Video Graphics Array',
   SXGA: 'Super Extended Graphics Array',
@@ -97,4 +97,4 @@ module.exports = {
   XHTML: 'Extensible Hypertext Markup Language',
   XML: 'Extensible Markup Language',
   YAML: "YAML Ain't Markup Language",
-};
+}

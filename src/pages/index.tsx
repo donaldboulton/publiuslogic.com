@@ -1,34 +1,30 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { Helmet } from "react-helmet"
-import CookieConsent, { Cookies } from "react-cookie-consent"
-import { NetlifyForm, Honeypot } from 'react-netlify-forms'
+import { Helmet } from 'react-helmet'
+import CookieConsent from 'react-cookie-consent'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import BioTypist from '@/components/bio-typist'
 import SEO from '@/components/seo'
 import Header from '@/components/header'
 import FindOutMore from '@/components/findoutmore'
 import LatestArticles from '@/components/latestarticles'
-import WavyHr from '@/components/WavyHr'
 import Footer from '@/components/footer'
 import ScrollIndicator from '@/components/scroll-indicator'
 import List from '@/components/List'
-import { CodeIcon, CloudIcon, BookOpenIcon, CheckCircleIcon } from '@heroicons/react/outline'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
-import AnimatedText from "@/components/AnimatedText"
+import AnimatedText from '@/components/AnimatedText'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 
 const container = {
   enter: {
     transition: {
-      when: "beforeChildren",
+      when: 'beforeChildren',
       staggerChildren: 0.3,
     },
   },
-};
+}
 const item = {
   initial: { y: 20, opacity: 0 },
   enter: {
@@ -38,42 +34,40 @@ const item = {
 }
 
 const useAnimateOnInView = () => {
-  const controls = useAnimation();
-  const { ref, inView } = useInView();
-  
-  useEffect(() => {
-      if (inView) {
-        controls.start("visible");
-      }
-      if (!inView) {
-        controls.start("hidden");
-      }
-    }, [controls, inView]);
-  
+  const controls = useAnimation()
+  const { ref, inView } = useInView()
 
-   return { ref };
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+    if (!inView) {
+      controls.start('hidden')
+    }
+  }, [controls, inView])
+
+  return { ref }
 }
 
 export default function Home() {
   const [replay, setReplay] = useState(true)
   // Placeholder text data, as if from API
   const placeholderText = [
-    { type: "heading1", text: "At PubliusLogic.com" },
+    { type: 'heading1', text: 'At PubliusLogic.com' },
     {
-      type: "heading2",
-      text: "We Publish Logic & Gods Truth!"
-    }
-  ];
+      type: 'heading2',
+      text: 'We Publish Logic & Gods Truth!',
+    },
+  ]
 
   const headingContainer = {
     visible: {
       transition: {
-        staggerChildren: 0.025
-      }
-    }
-  };
+        staggerChildren: 0.025,
+      },
+    },
+  }
 
-  const SITE_RECAPTCHA_KEY = (process.env.GATSBY_SITE_RECAPTCHA_KEY)
   const ogimage = {
     src: OGImage,
     width: 1342,
@@ -82,7 +76,7 @@ export default function Home() {
   const [ref, isVisible] = useInView({
     triggerOnce: true,
     rootMargin: '-100px 0px',
-  });
+  })
   const cardVariants = {
     hover: {
       scale: 1.05,
@@ -90,7 +84,7 @@ export default function Home() {
     initial: {
       scale: 1,
     },
-  };
+  }
   const variants = {
     visible: {
       opacity: 1,
@@ -100,11 +94,11 @@ export default function Home() {
       opacity: 0,
       x: -400,
     },
-  };
+  }
   const [ref1, isVisible1] = useInView({
     triggerOnce: true,
     rootMargin: '-100px 0px',
-  });
+  })
   const variants1 = {
     hidden: {
       opacity: 0,
@@ -114,16 +108,16 @@ export default function Home() {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: 'spring',
         delay: 0.4,
       },
     },
-  };
+  }
 
   const [ref2, isVisible2] = useInView({
     triggerOnce: true,
     rootMargin: '-100px 0px',
-  });
+  })
   const variants2 = {
     hidden: {
       opacity: 0,
@@ -133,15 +127,15 @@ export default function Home() {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: 'spring',
         delay: 0.6,
       },
     },
-  };
+  }
   const [ref3, isVisible3] = useInView({
     triggerOnce: true,
     rootMargin: '-100px 0px',
-  });
+  })
   const variants3 = {
     visible: {
       opacity: 1,
@@ -151,7 +145,7 @@ export default function Home() {
       opacity: 0,
       x: -300,
     },
-  };
+  }
 
   return (
     <>
@@ -163,42 +157,43 @@ export default function Home() {
       />
       <Helmet>
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />        
+        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Helmet>
       <Header transparent />
       <motion.main className="font-sans" variants={container}>
-        <div 
-          className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center"
-        >
-          <div className="absolute top-0 bg-center">         
+        <div className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center">
+          <div className="absolute top-0 bg-center">
             <div className="absolute left-0 bottom-0 md:mb-0 w-full h-full z-10 bg-gradient-to-b from-gray-700 opacity-70"></div>
-              <StaticImage
-                className="cover object-contain h-96"
-                formats={["auto", "webp"]}
-                src="../../static/images/jpg/dbbg.jpg"
-                quality={95}
-                alt="Landing Image"
-              />
-              <motion.div
-                className="p-4 absolute top-16 left-3 z-20"
-                initial="hidden"
-                // animate="visible"
-                animate={replay ? "visible" : "hidden"}
-                variants={headingContainer}
-              >
-                <div className="container">
-                  {placeholderText.map((item, index) => {
-                    return <AnimatedText {...item} key={index} />
-                  })}
-                </div>
+            <StaticImage
+              className="cover object-contain h-96"
+              formats={['auto', 'webp']}
+              src="../../static/images/jpg/dbbg.jpg"
+              quality={95}
+              alt="Landing Image"
+            />
+            <motion.div
+              className="p-4 absolute top-16 left-3 z-20"
+              initial="hidden"
+              // animate="visible"
+              animate={replay ? 'visible' : 'hidden'}
+              variants={headingContainer}
+            >
+              <div className="container">
+                {placeholderText.map((item, index) => {
+                  return <AnimatedText {...item} key={index} />
+                })}
+              </div>
             </motion.div>
           </div>
         </div>
-        <motion.section variants={item} className="pb-10 bg-gray-700 light:bg-gray-200 text-gray-800 light:text-gray-200 transition-all duration-200 -mt-10">
+        <motion.section
+          variants={item}
+          className="pb-10 bg-gray-700 light:bg-gray-200 text-gray-800 light:text-gray-200 transition-all duration-200 -mt-10"
+        >
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap">
               <div className="lg:pt-12 pt-4 w-full md:w-4/12 px-4 text-center">
-                <motion.div 
+                <motion.div
                   className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-gray-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg"
                   variants={cardVariants}
                   transition={{
@@ -214,25 +209,29 @@ export default function Home() {
                         width={24}
                         height={24}
                         className="icon"
-                        formats={["auto", "webp"]}
+                        formats={['auto', 'webp']}
                         src="../../static/img/apple-touch-icon-32x32.png"
                         quality={95}
                         alt="prayer"
                       />
                     </div>
                     <h6 className="text-xl font-semibold">
-                      <Link to='/blog/commandments' className='text-rose-500'>Planetary Laws</Link>
+                      <Link to="/blog/commandments" className="text-rose-500">
+                        Planetary Laws
+                      </Link>
                     </h6>
                     <p className="mt-2 mb-4 text-white">
-                      The Laws of man have strayed far from the truth of Creation and Gods Laws. Under Gods Law all Life is precious and should be preserved at all cost. Mans laws care nothing for life; you kill your, "Unborn Children"!
+                      The Laws of man have strayed far from the truth of Creation and Gods Laws. Under Gods Law all Life
+                      is precious and should be preserved at all cost. Mans laws care nothing for life; you kill your,
+                      "Unborn Children"!
                     </p>
                   </div>
                 </motion.div>
               </div>
               <div className="w-full md:w-4/12 px-4 text-center">
-              <motion.div 
-                className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-gray-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg"
-                variants={cardVariants}
+                <motion.div
+                  className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-gray-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg"
+                  variants={cardVariants}
                   transition={{
                     ease: 'easeOut',
                     delay: 0.15,
@@ -246,25 +245,28 @@ export default function Home() {
                         width={24}
                         height={24}
                         className="icon"
-                        formats={["auto", "webp"]}
+                        formats={['auto', 'webp']}
                         src="../../static/img/prayer-150-150.png"
                         quality={95}
                         alt="prayer"
                       />
                     </div>
                     <h6 className="text-xl font-semibold">
-                      <Link to='/blog/creation-of-all' className='text-rose-500'>Breath Of Life</Link>
+                      <Link to="/blog/creation-of-all" className="text-rose-500">
+                        Breath Of Life
+                      </Link>
                     </h6>
                     <p className="mt-2 mb-4 text-white">
-                      The Creation of the All, was formed through song that started the dance of life from a blank and formless verse, bringing forth life to all. For all to formalize there, "Own Song"!
+                      The Creation of the All, was formed through song that started the dance of life from a blank and
+                      formless verse, bringing forth life to all. For all to formalize there, "Own Song"!
                     </p>
                   </div>
                 </motion.div>
               </div>
               <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-                <motion.div 
-                className="relative flex flex-col min-w-0 break-words bg-purple-600 text-gray-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg"
-                variants={cardVariants}
+                <motion.div
+                  className="relative flex flex-col min-w-0 break-words bg-purple-600 text-gray-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg"
+                  variants={cardVariants}
                   transition={{
                     ease: 'easeOut',
                     delay: 0.15,
@@ -278,27 +280,36 @@ export default function Home() {
                         width={24}
                         height={24}
                         className="icon"
-                        formats={["auto", "webp"]}
+                        formats={['auto', 'webp']}
                         src="../../static/img/jamstack-150-150.png"
                         quality={95}
                         alt="prayer"
                       />
                     </div>
                     <h6 className="text-xl font-semibold">
-                     <a href='https://jamstack.org/' rel="noopener noreferrer" target="_blank" area-label="JAMstack" className='text-rose-500'><h6>JAMStack Technology</h6></a>
+                      <a
+                        href="https://jamstack.org/"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        area-label="JAMstack"
+                        className="text-rose-500"
+                      >
+                        <h6>JAMStack Technology</h6>
+                      </a>
                     </h6>
                     <p className="mt-2 mb-4 text-gray-200">
-                      PubliusLogic is a Static site using JAMstack architecture. Built using Gatsby, React, MDX, Tailwind and Typescript on Netlify Servers for, "Ultimate Performance"!
+                      PubliusLogic is a Static site using JAMstack architecture. Built using Gatsby, React, MDX,
+                      Tailwind and Typescript on Netlify Servers for, "Ultimate Performance"!
                     </p>
                   </div>
                 </motion.div>
               </div>
             </div>
             <div className="text-zinc-200 light:text-zinc-800 mb-10">
-              <div className='flex justify-center'>
+              <div className="flex justify-center">
                 <StaticImage
                   className="max-w-xs m-auto w-20 h-20 mx-auto mb-3 ring ring-indigo-500 ring-offset-4 rounded-full"
-                  formats={["auto", "webp"]}
+                  formats={['auto', 'webp']}
                   src="../../static/assets/donald-boulton.jpg"
                   quality={95}
                   alt="Profile picture"
@@ -314,8 +325,12 @@ export default function Home() {
                 https://donboulton.com
               </a>
               <div className="justify-center max-w-xl m-auto text-gray-200 hover:text-gray-400 light:text-gray-800 light:hover:text-gray-700 my-2 mb-6">
-                 <div className="text-center justify-items-center">Left Hand of Father God since the beginning of time! </div>
-                 <p className="text-center justify-items-center">Self Taught Full Stack Developer. Gatsby, MDX, TypeScript Tailwind CSS.</p>
+                <div className="text-center justify-items-center">
+                  Left Hand of Father God since the beginning of time!{' '}
+                </div>
+                <p className="text-center justify-items-center">
+                  Self Taught Full Stack Developer. Gatsby, MDX, TypeScript Tailwind CSS.
+                </p>
               </div>
               <div className="flex justify-center max-w-xs m-auto">
                 <div className="grid grid-flow-col auto-cols-min gap-4">
@@ -367,7 +382,7 @@ export default function Home() {
         <motion.section variants={item} className="relative py-20 bg-gray-900 light:bg-white">
           <div
             className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-            style={{ height: "80px" }}
+            style={{ height: '80px' }}
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
@@ -378,88 +393,86 @@ export default function Home() {
               x="0"
               y="0"
             >
-              <polygon
-                className="text-gray-900 light:text-white fill-current"
-                points="2560 0 2560 100 0 100"
-              ></polygon>
+              <polygon className="text-gray-900 light:text-white fill-current" points="2560 0 2560 100 0 100"></polygon>
             </svg>
           </div>
 
           <div className="container mx-auto px-4">
-            <div className="items-center flex flex-wrap bg-gray-900 light:bg-white text-gray-800 light:text-gray-300">              
+            <div className="items-center flex flex-wrap bg-gray-900 light:bg-white text-gray-800 light:text-gray-300">
               <div className="flex flex-wrap items-center mt-8">
-              <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mb-6">
-                <h3 className="text-3xl text-white light:text-black mb-2 font-semibold leading-normal">
-                  Hanging out with Cats
-                </h3>
-                <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-white light:text-black">
-                  I have Seven indoor Cats and feed a dozen or more stray kitty's. I have always had a cat!
-                  From Me and the Cats some Gatsby Starters.
-                </p>
-                <div className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-black">
-                  <div><span className='text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4'> JAMStack</span>&nbsp;Starters for your pleasure.</div>
-                  <a
-                    href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
-                    className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
-                  >
-                    Gatsby Starter Basic Instructions v4.11.0
-                  </a>
-                </div>
-                <p className="text-lg font-light leading-relaxed mt-0 mb-4">
-                  <a
-                    href="https://github.com/donaldboulton/gatsby-starter-dimension-v4"
-                    className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
-                  >
-                    Gatsby Starter Dimension v4.11.0
-                  </a>
-                </p>
-              </div>              
-              <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">                
-                <motion.div
-                  ref={ref}
-                  variants={variants}
-                  animate={isVisible ? "visible" : "hidden"}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  key={0}
-                >
-                  <div className="relative flex flex-col min-w-0 break-words text-white w-full mb-6 shadow-lg rounded-lg bg-rose-600">
-                    <StaticImage 
-                      className="w-full align-middle rounded-t-lg" 
-                      src='../../static/images/jpg/digital_box_1400-compressor.jpg' 
-                      alt='PubliusLogic' 
-                    />                  
-                    <blockquote className="relative p-8 mb-4">
-                      <svg
-                        preserveAspectRatio="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 583 95"
-                        className="absolute left-0 w-full block"
-                        style={{
-                          height: "95px",
-                          top: "-94px"
-                        }}
-                      >
-                        <polygon
-                          points="-30,95 583,95 583,65"
-                          className="text-rose-600 shadow-lg shadow-rose-500/50 fill-current"
-                        ></polygon>
-                      </svg>
-                      <h4 className="text-xl font-bold text-white">
-                        Lost in a Digital Box
-                      </h4>
-                      <p className="text-md font-light mt-2 text-white">
-                         Over the last year the events, and destruction of my county by the Democrats in power, have
-                         me pissed off and wondering why the USA does nothing about it.
-                         So to getting lost in a Digital Box. 
-                      </p>
-                    </blockquote>                  
+                <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mb-6">
+                  <h3 className="text-3xl text-white light:text-black mb-2 font-semibold leading-normal">
+                    Hanging out with Cats
+                  </h3>
+                  <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-white light:text-black">
+                    I have Seven indoor Cats and feed a dozen or more stray kitty's. I have always had a cat! From Me
+                    and the Cats some Gatsby Starters.
+                  </p>
+                  <div className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-black">
+                    <div>
+                      <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4"> JAMStack</span>
+                      &nbsp;Starters for your pleasure.
+                    </div>
+                    <a
+                      href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
+                      className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
+                    >
+                      Gatsby Starter Basic Instructions v4.11.0
+                    </a>
                   </div>
-                </motion.div>               
+                  <p className="text-lg font-light leading-relaxed mt-0 mb-4">
+                    <a
+                      href="https://github.com/donaldboulton/gatsby-starter-dimension-v4"
+                      className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
+                    >
+                      Gatsby Starter Dimension v4.11.0
+                    </a>
+                  </p>
+                </div>
+                <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
+                  <motion.div
+                    ref={ref}
+                    variants={variants}
+                    animate={isVisible ? 'visible' : 'hidden'}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    key={0}
+                  >
+                    <div className="relative flex flex-col min-w-0 break-words text-white w-full mb-6 shadow-lg rounded-lg bg-rose-600">
+                      <StaticImage
+                        className="w-full align-middle rounded-t-lg"
+                        src="../../static/images/jpg/digital_box_1400-compressor.jpg"
+                        alt="PubliusLogic"
+                      />
+                      <blockquote className="relative p-8 mb-4">
+                        <svg
+                          preserveAspectRatio="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 583 95"
+                          className="absolute left-0 w-full block"
+                          style={{
+                            height: '95px',
+                            top: '-94px',
+                          }}
+                        >
+                          <polygon
+                            points="-30,95 583,95 583,65"
+                            className="text-rose-600 shadow-lg shadow-rose-500/50 fill-current"
+                          ></polygon>
+                        </svg>
+                        <h4 className="text-xl font-bold text-white">Lost in a Digital Box</h4>
+                        <p className="text-md font-light mt-2 text-white">
+                          Over the last year the events, and destruction of my county by the Democrats in power, have me
+                          pissed off and wondering why the USA does nothing about it. So to getting lost in a Digital
+                          Box.
+                        </p>
+                      </blockquote>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
-            </div>
               <div
                 className="top-auto mt-4 bottom-0 left-0 bg-gray-800 light:bg-offwhite right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
-                style={{ height: "70px" }}
+                style={{ height: '70px' }}
               >
                 <svg
                   className="absolute bottom-0 overflow-hidden"
@@ -484,18 +497,18 @@ export default function Home() {
             <motion.div
               ref={ref1}
               variants={variants1}
-              animate={isVisible1 ? "visible" : "hidden"}
-              transition={{ duration: 0.8, ease: "easeIn" }}
+              animate={isVisible1 ? 'visible' : 'hidden'}
+              transition={{ duration: 0.8, ease: 'easeIn' }}
               key={1}
             >
-              <FindOutMore /> 
+              <FindOutMore />
             </motion.div>
           </div>
         </motion.section>
         <motion.section variants={item} className="py-20 relative block bg-primary-dark">
           <div
             className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-            style={{ height: "80px" }}
+            style={{ height: '80px' }}
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
@@ -517,15 +530,15 @@ export default function Home() {
             <motion.div
               ref={ref2}
               variants={variants2}
-              animate={isVisible2 ? "visible" : "hidden"}
-              transition={{ duration: 0.6, ease: "easeIn" }}
+              animate={isVisible2 ? 'visible' : 'hidden'}
+              transition={{ duration: 0.6, ease: 'easeIn' }}
               key={2}
             >
               <LatestArticles />
-            </motion.div>            
+            </motion.div>
             <div
               className="top-auto mt-4 bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
-              style={{ height: "70px" }}
+              style={{ height: '70px' }}
             >
               <svg
                 className="absolute bottom-0 overflow-hidden"
@@ -551,8 +564,8 @@ export default function Home() {
                 <motion.div
                   ref={ref3}
                   variants={variants3}
-                  animate={isVisible3 ? "visible" : "hidden"}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  animate={isVisible3 ? 'visible' : 'hidden'}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
                   key={3}
                 >
                   <div className="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg">
@@ -561,42 +574,42 @@ export default function Home() {
                         Up Coming Episodes!
                       </h4>
                       <p className="leading-relaxed mt-1 mb-4 text-gray-200">
-                        Before the End of this Month I will be a little more explanatory on the Creation of all and Virtue!
+                        Before the End of this Month I will be a little more explanatory on the Creation of all and
+                        Virtue!
                       </p>
                       <p className="leading-relaxed mt-1 mb-4 text-gray-200">
-                        On Easter I will Give you the Final Trinity Works. <span className='underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>The Trinity Of Man!</span>
+                        On Easter I will Give you the Final Trinity Works.{' '}
+                        <span className="underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
+                          The Trinity Of Man!
+                        </span>
                       </p>
                       <div className="mt-5 lg:mt-0 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-white light:text-black">
                         <List variant="unordered">
                           <List.Item>
-                            <p
-                              className='mb-1'
-                              variant="secondary"
-                            >
-                              The Devil is Controlling most all of your Government Officials! {' '}
-
-                              Details on how to fight off the Devil! 😈
+                            <p className="mb-1" variant="secondary">
+                              The Devil is Controlling most all of your Government Officials! Details on how to fight
+                              off the Devil! 😈
                             </p>
                           </List.Item>
                           <List.Item>
-                            <p
-                              className='mb-1'
-                              variant="secondary"
-                            >
-                              Your Children are being brainwashed for Devilish total control! {' '}
-                              Stand Up and fight for there future and freedom now! 🤫
+                            <p className="mb-1" variant="secondary">
+                              Your Children are being brainwashed for Devilish total control! Stand Up and fight for
+                              there future and freedom now! 🤫
                             </p>
                           </List.Item>
                           <List.Item>
-                            <p
-                              className='mb-1'
-                              variant="secondary"
-                            >
-                              As A Species you will not Effectivity Do anything about climate control. That would Mean limiting playtime and entertainment and you have been set up 
-                              to focus on only playtime pursuits. Playtime and Over population through heat from every one of you, is what is creating the <span className='underline underline-offset-2 decoration-wavy decoration-fuchsia-600'>Climate Crisis</span>! 📝
+                            <p className="mb-1" variant="secondary">
+                              As A Species you will not Effectivity Do anything about climate control. That would Mean
+                              limiting playtime and entertainment and you have been set up to focus on only playtime
+                              pursuits. Playtime and Over population through heat from every one of you, is what is
+                              creating the{' '}
+                              <span className="underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
+                                Climate Crisis
+                              </span>
+                              ! 📝
                             </p>
                           </List.Item>
-                        </List>                      
+                        </List>
                       </div>
                     </div>
                   </div>
@@ -605,44 +618,44 @@ export default function Home() {
             </div>
           </div>
         </motion.section>
-      </motion.main> 
+      </motion.main>
       <CookieConsent
-        enableDeclineButton 
+        enableDeclineButton
         flipButtons
         location="bottom"
         buttonText="Accept"
         declineButtonText="Decline"
         ariaAcceptLabel="Accept Cookies"
-        ariaDeclineLabel='Decline Cookies'        
+        ariaDeclineLabel="Decline Cookies"
         cookieName="gatsby-gdpr-google-analytics"
+        style={{
+          background: 'linear-gradient(to right, #4338ca, transparent, #4338ca)',
+          textShadow: '2px 2px black',
+        }}
+        buttonStyle={{
+          background: 'radial-gradient(circle at top right, #4338ca, transparent)',
+          color: 'white',
+          fontWeight: 'bolder',
+          borderRadius: '3px',
+          border: '1px black',
+          textShadow: '2px 2px black',
+        }}
+      >
+        PubliusLogic uses cookies for user experience.{' '}
+        <span
           style={{
-            background: "linear-gradient(to right, #4338ca, transparent, #4338ca)",
-            textShadow: "2px 2px black",
-          }}
-          buttonStyle={{
-            background: "radial-gradient(circle at top right, #4338ca, transparent)",
-            color: "white",
-            fontWeight: "bolder",
-            borderRadius: '3px',
-            border: "1px black",
-            textShadow: "2px 2px black",
+            fontSize: '14px',
+            textAlign: 'center',
+            marginLeft: '20px',
           }}
         >
-          PubliusLogic uses cookies for user experience.{" "}
-          <span 
-            style={{ 
-              fontSize: "14px",
-              textAlign: "center",
-              marginLeft: "20px"
-            }}
-          > 
-            <Link to='/blog/privacy' className='text-gray-200' alt='Privacy Page'>
-              Privacy Page
-            </Link>
-          </span>
-        </CookieConsent>
-        <ScrollIndicator />
+          <Link to="/blog/privacy" className="text-gray-200" alt="Privacy Page">
+            Privacy Page
+          </Link>
+        </span>
+      </CookieConsent>
+      <ScrollIndicator />
       <Footer />
     </>
-  );
+  )
 }

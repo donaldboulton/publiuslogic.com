@@ -1,10 +1,10 @@
-import { format } from 'date-fns';
-import { TransformedTweet } from '../../types/tweet';
+import { format } from 'date-fns'
+import { TransformedTweet } from '../../types/tweet'
 
 import * as CSS from 'csstype'
 
 interface Props {
-  tweet: TransformedTweet;
+  tweet: TransformedTweet
 }
 
 export const singleImage: CSS.Properties = {
@@ -15,49 +15,29 @@ export const singleImage: CSS.Properties = {
   Note: this is heavily inspired by https://github.com/leerob/leerob.io/blob/main/components/Tweet.js 
 */
 const Tweet = (props: Props) => {
-  const { tweet } = props;
+  const { tweet } = props
 
   // TODO: There's a race condition happening where the tweet might end up being undefined at first
   if (!tweet) {
-    return null;
+    return null
   }
 
-  const {
-    author,
-    media,
-    created_at,
-    public_metrics,
-    id,
-    text,
-    referenced_tweets,
-  } = tweet;
+  const { author, media, created_at, public_metrics, id, text, referenced_tweets } = tweet
 
-  const authorURL = `https://twitter.com/${author.username}`;
-  const likeURL = `https://twitter.com/intent/like?tweet_id=${id}`;
-  const retweetURL = `https://twitter.com/intent/retweet?tweet_id=${id}`;
-  const replyURL = `https://twitter.com/intent/tweet?in_reply_to=${id}`;
-  const tweetURL = `https://twitter.com/${author.username}/status/${id}`;
-  const createdAt = new Date(created_at);
+  const authorURL = `https://twitter.com/${author.username}`
+  const likeURL = `https://twitter.com/intent/like?tweet_id=${id}`
+  const retweetURL = `https://twitter.com/intent/retweet?tweet_id=${id}`
+  const replyURL = `https://twitter.com/intent/tweet?in_reply_to=${id}`
+  const tweetURL = `https://twitter.com/${author.username}/status/${id}`
+  const createdAt = new Date(created_at)
 
-  const quoteTweet =
-    referenced_tweets && referenced_tweets.find((t) => t.type === 'quoted');
+  const quoteTweet = referenced_tweets && referenced_tweets.find(t => t.type === 'quoted')
 
   return (
     <div className="tweet rounded border border-gray-800 light:border-gray-300 px-6 py-4 my-4 w-full">
       <div className="flex items-center">
-        <a
-          className="flex h-12 w-12"
-          href={authorUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            alt={author.username}
-            height={48}
-            width={48}
-            src={author.profile_image_url}
-            className="rounded-full"
-          />
+        <a className="flex h-12 w-12" href={authorUrl} target="_blank" rel="noopener noreferrer">
+          <img alt={author.username} height={48} width={48} src={author.profile_image_url} className="rounded-full" />
         </a>
         <a
           href={authorUrl}
@@ -65,10 +45,7 @@ const Tweet = (props: Props) => {
           rel="noopener noreferrer"
           className="author flex flex-col ml-4 !no-underline"
         >
-          <span
-            className="flex items-center font-bold text-gray-200 light:text-gray-900 leading-5"
-            title={author.name}
-          >
+          <span className="flex items-center font-bold text-gray-200 light:text-gray-900 leading-5" title={author.name}>
             {author.name}
             {author.verified ? (
               <svg
@@ -86,18 +63,8 @@ const Tweet = (props: Props) => {
             @{author.username}
           </span>
         </a>
-        <a
-          className="ml-auto"
-          href={authorUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            viewBox="328 355 335 276"
-            height="24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+        <a className="ml-auto" href={authorUrl} target="_blank" rel="noopener noreferrer">
+          <svg viewBox="328 355 335 276" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M 630, 425    A 195, 195 0 0 1 331, 600    A 142, 142 0 0 0 428, 570    A  70,  70 0 0 1 370, 523    A  70,  70 0 0 0 401, 521    A  70,  70 0 0 1 344, 455    A  70,  70 0 0 0 372, 460    A  70,  70 0 0 1 354, 370    A 195, 195 0 0 0 495, 442    A  67,  67 0 0 1 611, 380    A 117, 117 0 0 0 654, 363    A  65,  65 0 0 1 623, 401    A 117, 117 0 0 0 662, 390    A  65,  65 0 0 1 630, 425    Z"
               style={{ fill: '#3BA9EE' }}
@@ -116,29 +83,14 @@ const Tweet = (props: Props) => {
               : 'inline-grid grid-cols-2 gap-x-2 gap-y-2 my-2'
           }
         >
-          {media.map((m) => (
-            <img
-              key={m.media_key}
-              alt={text}
-              height={m.height}
-              width={m.width}
-              src={m.url}
-              className="rounded"
-            />
+          {media.map(m => (
+            <img key={m.media_key} alt={text} height={m.height} width={m.width} src={m.url} className="rounded" />
           ))}
         </div>
       ) : null}
       {quoteTweet ? <Tweet {...quoteTweet} /> : null}
-      <a
-        className="text-gray-500 text-sm hover:!underline"
-        href={tweetUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <time
-          title={`Time Posted: ${createdAt.toUTCString()}`}
-          dateTime={createdAt.toISOString()}
-        >
+      <a className="text-gray-500 text-sm hover:!underline" href={tweetUrl} target="_blank" rel="noopener noreferrer">
+        <time title={`Time Posted: ${createdAt.toUTCString()}`} dateTime={createdAt.toISOString()}>
           {format(createdAt, 'h:mm a - MMM d, y')}
         </time>
       </a>
@@ -169,9 +121,7 @@ const Tweet = (props: Props) => {
               d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z"
             />
           </svg>
-          <span>
-            {new Number(public_metrics.retweet_count).toLocaleString()}
-          </span>
+          <span>{new Number(public_metrics.retweet_count).toLocaleString()}</span>
         </a>
         <a
           className="flex items-center text-gray-500 hover:text-red-600 transition hover:!underline"
@@ -189,7 +139,7 @@ const Tweet = (props: Props) => {
         </a>
       </div>
     </div>
-  );
+  )
 }
 
 export default Tweet

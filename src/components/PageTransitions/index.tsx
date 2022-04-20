@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion'
 
 interface PageTransitionsProps {
   children: React.ReactNode
@@ -11,19 +11,19 @@ const animationConfiguration = {
   exit: { opacity: 0 },
 }
 const PageTransitions = ({ path }: PageTransitionsProps) => {
-  const { children, ...rest } = props;
+  const { children, ...rest } = props
   return (
-	<motion.div
-	    key={path}
-	    variants={animationConfiguration}
-	    initial="initial"
-		animate="animate"
-		exit="exit"
-		transition={{ duration: 6 }}
-		{...rest}
-	>
-		{children}
-	</motion.div>
+    <motion.div
+      key={path}
+      variants={animationConfiguration}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 6 }}
+      {...rest}
+    >
+      {children}
+    </motion.div>
   )
 }
 

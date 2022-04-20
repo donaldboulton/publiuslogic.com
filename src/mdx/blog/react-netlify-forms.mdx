@@ -40,11 +40,13 @@ Either install with NPM via:
 ```bash:title=node
 npm install --save react-netlify-forms
 ```
+
 ### Yarn Install
 
 ```bash:title=node
 yarn add react-netlify-forms
 ```
+
 ## Usage
 
 In the following example a contact form with two inputs, a form hidden input for Netlify form handling reCaptcha v2 invisible and a honeypot for extra spam prevention is shown. It also works without JavaScript by falling back to a serverside-rendered form which just submits data with an usual POST request:
@@ -58,6 +60,7 @@ Adding to the form for image upload
 ```tsx:title=src/page/page.tsx
 enctype="multipart/form-data"
 ```
+
 ## Basic Form
 
 ```tsx:title=src/components/comments.tsx {3,6-13,32-33}
@@ -146,15 +149,15 @@ function Contact() {
     >
       {({ handleChange, success, error }) => (
         <>
-          <div 
+          <div
             className='box'
           >
             <Honeypot />
-            
+
             {success && (
-              <p 
-                style={{ 
-                  color: '#00FF00', 
+              <p
+                style={{
+                  color: '#00FF00',
                   marginLeft: '2em'
                 }}
               >
@@ -162,8 +165,8 @@ function Contact() {
               </p>
             )}
             {error && (
-              <p 
-                style={{ 
+              <p
+                style={{
                   color: '#0000FF',
                   marginLeft: '2em'
                 }}
@@ -189,10 +192,10 @@ function Contact() {
                   placeholder='Your Name'
                   className='input'
                   required
-                  style={{ 
+                  style={{
                     marginTop: '2em',
                   }}
-                />                
+                />
                   <FormInput
                     type='email'
                     name='email'
@@ -200,13 +203,13 @@ function Contact() {
                     className='input'
                     placeholder='Email Address'
                     required
-                    style={{ 
+                    style={{
                       marginTop: '2em',
-                    }}              
+                    }}
                   />
             </div>
-            <div 
-              style={{ 
+            <div
+              style={{
                 marginTop: '2em',
                 marginRight: '2em',
                 marginLeft: '1.6em',
@@ -230,8 +233,8 @@ function Contact() {
                 }}
                 required
               />
-            </div>            
-            <div               
+            </div>
+            <div
               style={{
                 width: '90%',
                 padding: '0.9em',
@@ -248,16 +251,16 @@ function Contact() {
                   }
               </div>
             </div>
-            <div 
-              style={{ 
-                marginBottom: '1em'  
+            <div
+              style={{
+                marginBottom: '1em'
               }}
             >
               <Recaptcha siteKey={ process.env.GATSBY_SITE_RECAPTCHA_KEY } invisible />
-              <div 
-                style={{ 
+              <div
+                style={{
                   marginRight: '1em',
-                  marginLeft: '2em'  
+                  marginLeft: '2em'
                 }}
               >
                 <button type='submit' className='button'>
@@ -317,15 +320,15 @@ function Contact() {
     >
       {({ handleChange, success, error }) => (
         <>
-          <div 
+          <div
             className='box'
           >
             <Honeypot />
-            
+
             {success && (
-              <p 
-                style={{ 
-                  color: '#00FF00', 
+              <p
+                style={{
+                  color: '#00FF00',
                   marginLeft: '2em'
                 }}
               >
@@ -333,8 +336,8 @@ function Contact() {
               </p>
             )}
             {error && (
-              <p 
-                style={{ 
+              <p
+                style={{
                   color: '#0000FF',
                   marginLeft: '2em'
                 }}
@@ -361,10 +364,10 @@ function Contact() {
                   placeholder='Your Name'
                   className='input'
                   required
-                  style={{ 
+                  style={{
                     marginTop: '2em',
                   }}
-                />                
+                />
                   <FormInput
                     type='email'
                     name='email'
@@ -372,13 +375,13 @@ function Contact() {
                     className='input'
                     placeholder='Email Address'
                     required
-                    style={{ 
+                    style={{
                       marginTop: '2em',
-                    }}              
+                    }}
                   />
             </div>
-            <div 
-              style={{ 
+            <div
+              style={{
                 marginTop: '2em',
                 marginRight: '2em',
                 marginLeft: '1.6em',
@@ -403,8 +406,8 @@ function Contact() {
                 }}
                 required
               />
-            </div>            
-            <div               
+            </div>
+            <div
               style={{
                 width: '90%',
                 padding: '0.9em',
@@ -414,16 +417,16 @@ function Contact() {
             >
               <Previews />
             </div>
-            <div 
-              style={{ 
-                marginBottom: '1em'  
+            <div
+              style={{
+                marginBottom: '1em'
               }}
             >
               <Recaptcha siteKey={ process.env.GATSBY_SITE_RECAPTCHA_KEY } invisible />
-              <div 
-                style={{ 
+              <div
+                style={{
                   marginRight: '1em',
-                  marginLeft: '2em'  
+                  marginLeft: '2em'
                 }}
               >
                 <button type='submit' className='button'>
@@ -492,7 +495,7 @@ export default function Previews(props) {
       })));
     }
   });
-  
+
   const thumbs = files.map(file => (
     <div style={thumb} key={file.name}>
       <div style={thumbInner}>
@@ -531,4 +534,4 @@ For more examples please browse the below website.
 
 Thanks to [create-react-library](https://www.npmjs.com/package/create-react-library) for providing quick setup for NPM packages.
 
-<WavyHr className='mt-1 mb-1 text-fuchsia-600' />
+<WavyHr className="mt-1 mb-1 text-fuchsia-600" />

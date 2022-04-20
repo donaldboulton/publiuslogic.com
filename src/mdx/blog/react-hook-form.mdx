@@ -7,7 +7,7 @@ path: /blog/react-hook-form
 date: 2019-04-23
 category: Tech
 image: ../../../static/assets/react-hook-form.jpg
-tags: [React, Hooks,Validation]
+tags: [React, Hooks, Validation]
 description: I chose this module to validate my forms, its lightweight and integrates with yup schemas
 ---
 
@@ -21,7 +21,7 @@ You can see this form validation in action on my contact page and on my email fo
 
 🔗 [简体中文](https://github.com/bluebill1049/react-hook-form/blob/master/docs/README.zh-CN.md")
 
-![Logo](../../../static/img/react-hook-form.png "React Hook Form")
+![Logo](../../../static/img/react-hook-form.png 'React Hook Form')
 
 🔗 [React Hooks Form](https://react-hook-form.com/get-started)
 
@@ -45,7 +45,7 @@ You can see this form validation in action on my contact page and on my email fo
     $ npm install yup
 
     $ yarn add yup
-```    
+```
 
 ### Yup at [code sandbox](https://codesandbox.io/s/yyyqp7y8x)
 
@@ -77,12 +77,12 @@ export default function App() {
     <form onSubmit={handleSubmit(onSubmit)}>
       {/* register your input into the hook by invoking the "register" function */}
       <input defaultValue="test" {...register("example")} />
-      
+
       {/* include validation with required or other standard HTML validation rules */}
       <input {...register("exampleRequired", { required: true })} />
       {/* errors will return when field validation fails  */}
       {errors.exampleRequired && <span>This field is required</span>}
-      
+
       <input type="submit" />
     </form>
   );
@@ -114,10 +114,10 @@ export default function App() {
     <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register("firstName")} />
       <p>{errors.firstName?.message}</p>
-        
+
       <input {...register("age")} />
       <p>{errors.age?.message}</p>
-      
+
       <input type="submit" />
     </form>
   );
@@ -132,4 +132,4 @@ Thanks goes to these wonderful people:
 🔗 [garthmcrae](https://github.com/garthmcrae)
 🔗 [erikras](https://github.com/erikras)
 
-<WavyHr className='mt-1 mb-1 text-fuchsia-600' />
+<WavyHr className="mt-1 mb-1 text-fuchsia-600" />

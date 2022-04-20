@@ -1,106 +1,119 @@
 import * as React from 'react'
-import { useState, Fragment } from 'react'
-import { Link } from "gatsby"
+import { Fragment } from 'react'
+import { Link } from 'gatsby'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { GlobeAltIcon, BanIcon, BeakerIcon, BriefcaseIcon, CakeIcon, CloudIcon, CodeIcon, ClockIcon, HandIcon, HeartIcon, LibraryIcon, LinkIcon, PresentationChartLineIcon, ShieldCheckIcon, ShieldExclamationIcon, SparklesIcon, PuzzleIcon, PresentationChartBarIcon, QuestionMarkCircleIcon, UserGroupIcon } from '@heroicons/react/outline'
+import {
+  GlobeAltIcon,
+  BanIcon,
+  BeakerIcon,
+  CakeIcon,
+  CloudIcon,
+  CodeIcon,
+  HandIcon,
+  HeartIcon,
+  LibraryIcon,
+  LinkIcon,
+  PresentationChartLineIcon,
+  ShieldCheckIcon,
+  ShieldExclamationIcon,
+  SparklesIcon,
+  QuestionMarkCircleIcon,
+  UserGroupIcon,
+} from '@heroicons/react/outline'
 
 const posts = [
-    {
-      name: 'Creation',
-      description: 'Creation of All Things',
-      href: '/blog/creation-of-all',
-      icon: SparklesIcon,
-    },
-    {
-      name: 'Gatsby v4',
-      description: 'Gatsby v4 with SSR and DSG',
-      href: '/blog/gatsby-version-four',
-      icon: CodeIcon,
-    },
-    {
-      name: 'War Machine',
-      description: 'Kiddy Playtime War Toys',
-      href: '/blog/war-machine',
-      icon: GlobeAltIcon,
-    },
-    {
-      name: 'Virtue',
-      description: 'What is Needed Virtue',
-      href: '/blog/virtue',
-      icon: HeartIcon,
-    },
-    {
-      name: 'Applause',
-      description: 'Applause useSound Confetti',
-      href: '/blog/applause-use-sound-confetti',
-      icon: HandIcon,
-    },
-    {
-      name: 'USA Election',
-      description: 'Scandal-Less Non Sense',
-      href: '/blog/usa-election',
-      icon: QuestionMarkCircleIcon,
-    },
-    {
-      name: 'Abortion',
-      description: 'Immorality Abortion Is A Sin',
-      href: '/blog/immorality-abortion',
-      icon: BanIcon,
-    },
-    {
-      name: 'Cookie Consent',
-      description: 'Gatsby GDPR Cookie Consent',
-      href: '/blog/cookies',
-      icon: ShieldCheckIcon,
-    },
-    {
-      name: 'Cyber Attack',
-      description: 'My Cyber Attack',
-      href: '/blog/cyber-attack',
-      icon: ShieldExclamationIcon,
-    },
-    {
-      name: 'Trinity of Man',
-      description: 'The Holy, Lost, & Evil Ones',
-      href: '/blog/trinity-of-man',
-      icon: UserGroupIcon,
-    },
-    {
-      name: 'React Netlify Forms',
-      description: 'Secured Netlify Forms',
-      href: '/blog/react-netlify-forms',
-      icon: BeakerIcon,
-    },
-    {
-      name: 'Government',
-      description: 'United People of America',
-      href: '/blog/government',
-      icon: LibraryIcon,
-    },
-    {
-      name: 'Trinity of Angels',
-      description: 'My God Given Trinity',
-      href: '/blog/trinity-of-angels',
-      icon: CloudIcon,
-    },
-    {
-      name: 'React Hook Form',
-      description: 'Secured React Forms',
-      href: '/blog/react-hook-form',
-      icon: CakeIcon,
-    },
-    {
-      name: 'Vaccination',
-      description: 'No Do Not Do It',
-      href: '/blog/vaccination',
-      icon: PresentationChartLineIcon,
-    },
+  {
+    name: 'Creation',
+    description: 'Creation of All Things',
+    href: '/blog/creation-of-all',
+    icon: SparklesIcon,
+  },
+  {
+    name: 'Gatsby v4',
+    description: 'Gatsby v4 with SSR and DSG',
+    href: '/blog/gatsby-version-four',
+    icon: CodeIcon,
+  },
+  {
+    name: 'War Machine',
+    description: 'Kiddy Playtime War Toys',
+    href: '/blog/war-machine',
+    icon: GlobeAltIcon,
+  },
+  {
+    name: 'Virtue',
+    description: 'What is Needed Virtue',
+    href: '/blog/virtue',
+    icon: HeartIcon,
+  },
+  {
+    name: 'Applause',
+    description: 'Applause useSound Confetti',
+    href: '/blog/applause-use-sound-confetti',
+    icon: HandIcon,
+  },
+  {
+    name: 'USA Election',
+    description: 'Scandal-Less Non Sense',
+    href: '/blog/usa-election',
+    icon: QuestionMarkCircleIcon,
+  },
+  {
+    name: 'Abortion',
+    description: 'Immorality Abortion Is A Sin',
+    href: '/blog/immorality-abortion',
+    icon: BanIcon,
+  },
+  {
+    name: 'Cookie Consent',
+    description: 'Gatsby GDPR Cookie Consent',
+    href: '/blog/cookies',
+    icon: ShieldCheckIcon,
+  },
+  {
+    name: 'Cyber Attack',
+    description: 'My Cyber Attack',
+    href: '/blog/cyber-attack',
+    icon: ShieldExclamationIcon,
+  },
+  {
+    name: 'Trinity of Man',
+    description: 'The Holy, Lost, & Evil Ones',
+    href: '/blog/trinity-of-man',
+    icon: UserGroupIcon,
+  },
+  {
+    name: 'React Netlify Forms',
+    description: 'Secured Netlify Forms',
+    href: '/blog/react-netlify-forms',
+    icon: BeakerIcon,
+  },
+  {
+    name: 'Government',
+    description: 'United People of America',
+    href: '/blog/government',
+    icon: LibraryIcon,
+  },
+  {
+    name: 'Trinity of Angels',
+    description: 'My God Given Trinity',
+    href: '/blog/trinity-of-angels',
+    icon: CloudIcon,
+  },
+  {
+    name: 'React Hook Form',
+    description: 'Secured React Forms',
+    href: '/blog/react-hook-form',
+    icon: CakeIcon,
+  },
+  {
+    name: 'Vaccination',
+    description: 'No Do Not Do It',
+    href: '/blog/vaccination',
+    icon: PresentationChartLineIcon,
+  },
 ]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 function HeaderPopover() {
   return (
@@ -129,11 +142,11 @@ function HeaderPopover() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute z-10 w-screen max-w-md lg:ml-20 px-4 mt-2 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-4xl">                
+              <Popover.Panel className="absolute z-10 w-screen max-w-md lg:ml-20 px-4 mt-2 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-4xl">
                 <div className="overflow-hidden rounded-lg shadow-lg ring-1 bg-gray-700  ring-black ring-opacity-5">
-                  <nav className='nav-scroll'>
-                    <div className="relative h-96 max-h-full md:max-h-screen grid gap-8 bg-gray-700 p-7 lg:grid-cols-3">                    
-                      {posts.map((item) => (
+                  <nav className="nav-scroll">
+                    <div className="relative h-96 max-h-full md:max-h-screen grid gap-8 bg-gray-700 p-7 lg:grid-cols-3">
+                      {posts.map(item => (
                         <Link
                           key={item.name}
                           to={item.href}
@@ -143,15 +156,11 @@ function HeaderPopover() {
                             <item.icon aria-hidden="true" />
                           </div>
                           <div className="ml-4">
-                            <p className="text-sm font-medium text-rose-500 hover:text-rose-600">
-                              {item.name}
-                            </p>
-                            <p className="text-sm text-gray-300">
-                              {item.description}
-                            </p>
+                            <p className="text-sm font-medium text-rose-500 hover:text-rose-600">{item.name}</p>
+                            <p className="text-sm text-gray-300">{item.description}</p>
                           </div>
                         </Link>
-                      ))}                    
+                      ))}
                     </div>
                   </nav>
                   <div className="p-4 bg-purple-800 hover:bg-purple-900">
@@ -163,7 +172,10 @@ function HeaderPopover() {
                     >
                       <span className="flex items-center">
                         <span className="text-lg font-medium text-gray-200">
-                          <span className="flex items-center"><LinkIcon className="w-6 h-6 text-fuchsia-400 hover:text-fuchsia-500" />&nbsp; Books Of Enoch</span>
+                          <span className="flex items-center">
+                            <LinkIcon className="w-6 h-6 text-fuchsia-400 hover:text-fuchsia-500" />
+                            &nbsp; Books Of Enoch
+                          </span>
                         </span>
                       </span>
                       <span className="block text-sm text-gray-200">

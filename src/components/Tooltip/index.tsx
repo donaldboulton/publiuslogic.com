@@ -5,15 +5,15 @@ import * as CSS from 'csstype'
 import VisuallyHidden from '../VisuallyHidden'
 
 interface Props {
-  id: string;
+  id: string
   className: string
-  tooltipText: string;
-  tooltipVisuallyHiddenText?: string;
+  tooltipText: string
+  tooltipVisuallyHiddenText?: string
 }
 
 const wrapper: CSS.Properties = {
   position: 'relative',
-};
+}
 
 const tooltip: CSS.Properties = {
   color: '#fff',
@@ -30,79 +30,77 @@ const tooltip: CSS.Properties = {
   whiteSpace: 'nowrap',
   pointerEvents: 'none',
   userSelect: 'none',
-};
+}
 
-const Tooltip: React.FC<Props> = (props) => {
-  const { children, id, className, tooltipText, tooltipVisuallyHiddenText } = props;
-  const [dimensions, setDimensions] = React.useState({
+const Tooltip: React.FC<Props> = props => {
+  const { children, id, className, tooltipText, tooltipVisuallyHiddenText } = props
+  const [dimensions, setDimensions] = useState({
     height: typeof window !== 'undefined' ? window.innerHeight : 0,
     width: typeof window !== 'undefined' ? window.innerWidth : 0,
-  });
+  })
 
-  const controls = useAnimation();
+  const controls = useAnimation()
 
-  const tooltipRef = React.useRef<HTMLSpanElement>(null);
+  const tooltipRef = useRef<HTMLSpanElement>(null)
 
-  React.useEffect(() => {
+  useEffect(() => {
     function handleResize() {
       setDimensions({
         height: window.innerHeight,
         width: window.innerWidth,
-      });
+      })
     }
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize)
 
     return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   const handlePosition = useCallback(
     (tooltipRef: React.RefObject<HTMLSpanElement>) => {
-      const { current } = tooltipRef!;
+      const { current } = tooltipRef!
 
       if (current) {
-        const tooltipRect = current.getBoundingClientRect();
+        const tooltipRect = current.getBoundingClientRect()
         if (tooltipRect.left < 0) {
-          current.style.left = '0';
-          current.style.right = 'auto';
-          current.style.transform = `translateX(${-tooltipRect.x - 10}px)`;
+          current.style.left = '0'
+          current.style.right = 'auto'
+          current.style.transform = `translateX(${-tooltipRect.x - 10}px)`
         } else if (tooltipRect.right > dimensions.width) {
-          current.style.left = 'auto';
-          current.style.right = '0';
-          current.style.transform = `translateX(${
-            dimensions.width - tooltipRect.right + 10
-          }px)`;
+          current.style.left = 'auto'
+          current.style.right = '0'
+          current.style.transform = `translateX(${dimensions.width - tooltipRect.right + 10}px)`
         }
       }
     },
     [dimensions]
-  );
+  )
 
   const resetPosition = (tooltipRef: React.RefObject<HTMLSpanElement>) => {
-    const { current } = tooltipRef!;
+    const { current } = tooltipRef!
 
     if (current) {
-      current.style.removeProperty('left');
-      current.style.removeProperty('right');
-      current.style.removeProperty('transform');
+      current.style.removeProperty('left')
+      current.style.removeProperty('right')
+      current.style.removeProperty('transform')
     }
-  };
+  }
 
   const showTooltip = () => {
     if (tooltipRef.current) {
-      tooltipRef.current.setAttribute('aria-hidden', 'false');
-      controls.start('hover');
-      handlePosition(tooltipRef);
+      tooltipRef.current.setAttribute('aria-hidden', 'false')
+      controls.start('hover')
+      handlePosition(tooltipRef)
     }
-  };
+  }
 
   function hideTooltip() {
     if (tooltipRef.current) {
-      tooltipRef.current.setAttribute('aria-hidden', 'true');
-      controls.start('idle');
-      resetPosition(tooltipRef);
+      tooltipRef.current.setAttribute('aria-hidden', 'true')
+      controls.start('idle')
+      resetPosition(tooltipRef)
     }
   }
 
@@ -117,11 +115,11 @@ const Tooltip: React.FC<Props> = (props) => {
       y: 10,
       opacity: 0,
     },
-  };
+  }
 
   return (
     <motion.div
-      style={wrapper}  
+      style={wrapper}
       className={className}
       initial="idle"
       animate={controls}
@@ -129,18 +127,18 @@ const Tooltip: React.FC<Props> = (props) => {
       onMouseLeave={hideTooltip}
       onFocus={showTooltip}
       onBlur={hideTooltip}
-      onKeyDown={(event) => {
+      onKeyDown={event => {
         if (event.which === 27) {
-          event.preventDefault();
-          hideTooltip();
-          return false;
+          event.preventDefault()
+          hideTooltip()
+          return false
         }
       }}
     >
       {children}
       <motion.span
         id={id}
-        style={tooltip} 
+        style={tooltip}
         className={className}
         aria-hidden={true}
         ref={tooltipRef}
@@ -151,12 +149,10 @@ const Tooltip: React.FC<Props> = (props) => {
         role="tooltip"
       >
         {tooltipText}
-        {tooltipVisuallyHiddenText ? (
-          <VisuallyHidden as="p">{tooltipVisuallyHiddenText}</VisuallyHidden>
-        ) : null}
+        {tooltipVisuallyHiddenText ? <VisuallyHidden as="p">{tooltipVisuallyHiddenText}</VisuallyHidden> : null}
       </motion.span>
     </motion.div>
-  );
-};
+  )
+}
 
 export default Tooltip

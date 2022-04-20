@@ -70,6 +70,7 @@ yarn-error.log
 .pnp.js
 .pnp.cjs
 .pnp.loader.mjs
+yarn.lock
 # Yarn Integrity file
 .yarn-integrity
 .yarnrc.yml

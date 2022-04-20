@@ -1,14 +1,7 @@
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
 import * as React from 'react'
 
-import {
-  connectStateResults,
-  Highlight,
-  Hits,
-  Index,
-  Snippet,
-  PoweredBy,
-} from "react-instantsearch-dom"
+import { connectStateResults, Highlight, Hits, Index, Snippet, PoweredBy } from 'react-instantsearch-dom'
 
 const HitCount = connectStateResults(({ searchResults }) => {
   const hitCount = searchResults && searchResults.nbHits
@@ -16,7 +9,7 @@ const HitCount = connectStateResults(({ searchResults }) => {
   return hitCount > 0 ? (
     <div className="HitCount ml-3">
       <div className="text-gray-200 light:text-gray-800 mt-3 mb-2">Search Posts Listed Below</div>
-      {hitCount} result{hitCount !== 1 ? `s` : ``}
+      {hitCount} result{hitCount !== 1 ? 's' : ''}
     </div>
   ) : null
 })
@@ -44,7 +37,7 @@ const SearchResult = ({ indices, className }) => (
     {indices.map(index => (
       <HitsInIndex index={index} key={index.name} />
     ))}
-    <PoweredBy className='text-gray-300 rounded-md mr-5 p-2 bg-purple-600' />
+    <PoweredBy className="text-gray-300 rounded-md mr-5 p-2 bg-purple-600" />
   </div>
 )
 

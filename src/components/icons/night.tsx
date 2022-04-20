@@ -1,18 +1,9 @@
-import * as React from "react";
+import * as React from 'react'
 
 const Night: React.FC = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="34"
-      height="34"
-      viewBox="0 0 51 51"
-    >
-      <g
-        id="prefix__Group_144"
-        data-name="Group 144"
-        transform="translate(-15 -13)"
-      >
+    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 51 51">
+      <g id="prefix__Group_144" data-name="Group 144" transform="translate(-15 -13)">
         <circle
           id="prefix__Ellipse_20"
           cx="25.5"
@@ -33,7 +24,7 @@ const Night: React.FC = () => {
         />
       </g>
     </svg>
-  );
-};
+  )
+}
 
-export default Night;
+export default Night

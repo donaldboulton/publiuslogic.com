@@ -13,17 +13,15 @@ const confettiConfig = {
   dragFriction: 0.12,
   duration: 3000,
   stagger: 3,
-  width: "10px",
-  height: "10px",
-  perspective: "500px",
-  colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
-};
+  width: '10px',
+  height: '10px',
+  perspective: '500px',
+  colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
+}
 
 const Wrapper = props => <span style={{ position: 'relative' }} {...props} />
 
-const ConfettiWrapper = props => (
-  <span style={{ position: 'absolute', top: 0, right: 0 }} {...props} />
-)
+const ConfettiWrapper = props => <span style={{ position: 'absolute', top: 0, right: 0 }} {...props} />
 const API = 'https://api.applause-button.com'
 const VERSION = '3.0.0'
 const url = typeof window !== 'undefined' ? window.location.href : ''
@@ -32,7 +30,7 @@ const HEADERS = {
   'Content-Type': 'text/plain',
 }
 
-const getClaps = async (url) => {
+const getClaps = async url => {
   const query = url ? `?url=${url}` : ''
   // eslint-disable-next-line no-return-await
   return await axios.get(`${API}/get-claps${query}`, {
@@ -44,10 +42,9 @@ const updateClaps = async (url, claps = 1) => {
   console.log(claps)
   const query = url ? `?url=${url}` : ''
   // eslint-disable-next-line no-return-await
-  return await axios.post(`${API}/update-claps${query}`,
-    JSON.stringify(`${claps},${VERSION}`), {
-      headers: HEADERS,
-    })
+  return await axios.post(`${API}/update-claps${query}`, JSON.stringify(`${claps},${VERSION}`), {
+    headers: HEADERS,
+  })
 }
 
 const ApplauseButton = ({ props }) => {
@@ -60,7 +57,7 @@ const ApplauseButton = ({ props }) => {
       const callBackend = async () => {
         const result = await updateClaps(url, 1)
         setCount(result.data)
-        setIsClapped(true)        
+        setIsClapped(true)
       }
       callBackend()
     }
@@ -70,30 +67,31 @@ const ApplauseButton = ({ props }) => {
     const fetchData = async () => {
       const result = await getClaps(url)
       console.log(result)
-      setCount(result.data)      
+      setCount(result.data)
     }
     fetchData()
   }, [])
 
-  return <Wrapper><span
-    style={{
-      cursor: 'pointer',
-      padding: '1em',
-    }} onClick={() => {
-      doApplause();
-      play();
-    }}>
-    {
-      isClapped ? '🤟🎉' : '🎉'
-    }
-    {` ${count}`}
-       </span>
-          <ConfettiWrapper>
-            <Confetti active={isClapped} config={confettiConfig} 
-            {...props}
-            />
-          </ConfettiWrapper>
+  return (
+    <Wrapper>
+      <span
+        style={{
+          cursor: 'pointer',
+          padding: '1em',
+        }}
+        onClick={() => {
+          doApplause()
+          play()
+        }}
+      >
+        {isClapped ? '🤟🎉' : '🎉'}
+        {` ${count}`}
+      </span>
+      <ConfettiWrapper>
+        <Confetti active={isClapped} config={confettiConfig} {...props} />
+      </ConfettiWrapper>
     </Wrapper>
+  )
 }
 
 export default ApplauseButton

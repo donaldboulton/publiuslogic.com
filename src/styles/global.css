@@ -1,17 +1,17 @@
 @tailwind base;
 
 html.light {
-    --bg: #fcfcfc;
-    --textNormal: #4a5568;
-    --textLink: #1a202c;
-    --project-card: #bdbdbd;
+  --bg: #fcfcfc;
+  --textNormal: #4a5568;
+  --textLink: #1a202c;
+  --project-card: #bdbdbd;
 }
 
 html.dark {
-    --bg: #141936;
-    --textNormal: #fff;
-    --textLink: #fff;
-    --project-card: #3546a8;
+  --bg: #141936;
+  --textNormal: #fff;
+  --textLink: #fff;
+  --project-card: #3546a8;
 }
 .background {
   position: absolute;
@@ -42,23 +42,38 @@ h2 {
   opacity: 0.75;
   margin: 0;
 }
-.prose p, .prose ol, .prose ul, .prose li::before, .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6, .prose strong {
+.prose p,
+.prose ol,
+.prose ul,
+.prose li::before,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
+.prose strong {
   color: var(--textNormal) !important;
 }
 .prose li:before {
   color: rgb(168 85 247);
   background-image: url(enter.svg);
 }
-.prose h2, .prose h3, .prose h4, .prose h5, .prose h6, .prose a {
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
+.prose a {
   padding-right: 2px;
-  padding-left: 2px
+  padding-left: 2px;
 }
 .prose li {
   padding: 1px;
 }
 .prose a {
- text-decoration: none;
- color: white;
+  text-decoration: none;
+  color: white;
 }
 .gatsby-resp-image-image {
   border-radius: 12px;
@@ -82,7 +97,7 @@ h2 {
   padding-right: 15px;
   border-radius: 12px;
 }
-.custom-block-heading{
+.custom-block-heading {
   color: rgb(204, 45, 45);
 }
 .dark {
@@ -125,7 +140,9 @@ mark {
   border-radius: 3px;
   padding: 1px 2px;
 }
-fieldset, ol, ul {
+fieldset,
+ol,
+ul {
   margin: 0px !important;
   padding: 0px !important;
 }
@@ -136,47 +153,33 @@ fieldset, ol, ul {
   color: rgb(168 85 247);
 }
 html {
-    @apply transition-all duration-200 ease-linear antialiased overflow-x-hidden;
+  @apply transition-all duration-200 ease-linear antialiased overflow-x-hidden;
 
-    background: var(--bg);
-    font-family: "DM Sans", sans-serif;
-    scrollbar-color: linear-gradient(to bottom, #201c29, #100e17);
-    scrollbar-width: 10px;
-    overflow-x: hidden;
+  background: var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  scrollbar-color: linear-gradient(to bottom, #201c29, #100e17);
+  scrollbar-width: 10px;
+  overflow-x: hidden;
 }
-  
+
 html::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
-  
+
 html::-webkit-scrollbar-thumb {
-  background: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#201c29),
-      to(#100e17)
-    );
-    background: linear-gradient(to bottom, #201c29, #100e17);
-    border-radius: 10px;
-    -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25),
-      inset -2px -2px 2px rgba(0, 0, 0, 0.25);
-    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25),
-      inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  background: -webkit-gradient(linear, left top, left bottom, from(#201c29), to(#100e17));
+  background: linear-gradient(to bottom, #201c29, #100e17);
+  border-radius: 10px;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
-  
+
 html::-webkit-scrollbar-track {
-    background: linear-gradient(
-      to right,
-      #201c29,
-      #201c29 1px,
-      #100e17 1px,
-      #100e17
-    );
+  background: linear-gradient(to right, #201c29, #201c29 1px, #100e17 1px, #100e17);
 }
 html::-webkit-scrollbar-resizer {
-  background:rgb(1, 22, 39);
+  background: rgb(1, 22, 39);
 }
 pre::-webkit-scrollbar {
   width: 10px;
@@ -192,10 +195,10 @@ pre::-webkit-scrollbar-track {
 }
 pre::-webkit-scrollbar-resizer {
   background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
-}  
+}
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #1d1d1d inset !important;
   box-shadow: 0 0 0 30px #1d1d1d inset !important;
@@ -207,26 +210,26 @@ input:-webkit-autofill {
 }
 .nav-scroll {
   overflow-y: auto;
-  scrollbar-color: linear-gradient(to bottom,#201c29,#100e17);
+  scrollbar-color: linear-gradient(to bottom, #201c29, #100e17);
   scrollbar-width: 10px;
   overflow-x: hidden;
 }
 ul li > .active {
-  color: rgb(67, 56, 202)
+  color: rgb(67, 56, 202);
 }
 .nav-scroll::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 .nav-scroll::-webkit-scrollbar-thumb {
-  background: -webkit-gradient(linear,left top,left bottom,from(#201c29),to(#100e17));
-  background: linear-gradient(to bottom,#201c29,#100e17);
+  background: -webkit-gradient(linear, left top, left bottom, from(#201c29), to(#100e17));
+  background: linear-gradient(to bottom, #201c29, #100e17);
   border-radius: 10px;
-  -webkit-box-shadow: inset 2px 2px 2px rgba(255,255,255,.25),inset -2px -2px 2px rgba(0,0,0,.25);
-  box-shadow: inset 2px 2px 2px rgba(255,255,255,.25),inset -2px -2px 2px rgba(0,0,0,.25);
+  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
 .nav-scroll::-webkit-scrollbar-track {
-  background: linear-gradient(to right,#201c29,#201c29 1px,#100e17 1px,#100e17);
+  background: linear-gradient(to right, #201c29, #201c29 1px, #100e17 1px, #100e17);
   border-bottom: 10px;
   border-top: 10px;
 }
@@ -251,14 +254,14 @@ article figure {
 .cover {
   margin-bottom: 1em;
   border-radius: 0px;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 .cover-list {
   border-radius: 8px;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -277,18 +280,20 @@ article figure {
   margin-right: 10px;
   font-size: 80%;
 }
-fieldset, ol, ul {
+fieldset,
+ol,
+ul {
   margin: 10px !important;
   padding: 10px !important;
 }
 .ais-Highlight-nonHighlighted {
   margin: 20px !important;
-  color:rgb(255, 88, 116);
+  color: rgb(255, 88, 116);
 }
 .ais-Snippet {
   margin: 10px !important;
 }
-.scroll-down {  
+.scroll-down {
   background: transparent;
   color: #777;
   width: 40px;
@@ -340,7 +345,7 @@ fieldset, ol, ul {
   display: inline-block;
 }
 .a.anchor {
-  opacity: "0";
+  opacity: '0';
 }
 .a.anchor:hover {
   fill: rgb(109, 40, 217);
@@ -349,8 +354,8 @@ fieldset, ol, ul {
 .a.anchor:active {
   fill: rgb(109, 40, 217);
   color: rgb(109, 40, 217);
-  margin-left: "20px";
-  padding-left: "20px";
+  margin-left: '20px';
+  padding-left: '20px';
 }
 p > code,
 li > code {
@@ -364,8 +369,8 @@ li > code {
   position: relative;
   -webkit-overflow-scrolling: touch;
 }
-gatsby-highlight > code[class*="language-"],
-.gatsby-highlight > pre[class*="language-"] {
+gatsby-highlight > code[class*='language-'],
+.gatsby-highlight > pre[class*='language-'] {
   word-spacing: normal;
   word-break: normal;
   overflow-wrap: normal;
@@ -373,21 +378,21 @@ gatsby-highlight > code[class*="language-"],
   tab-size: 4;
   hyphens: none;
 }
-.gatsby-highlight pre[class*="language-"]::before {
+.gatsby-highlight pre[class*='language-']::before {
   top: 0;
 }
-.gatsby-highlight pre[class="language-js"]::before {
-  content: "js";
+.gatsby-highlight pre[class='language-js']::before {
+  content: 'js';
   background: #f7df1e;
   color: black;
 }
-.gatsby-highlight pre[class="language-jsx"]::before {
-  content: "jsx";
+.gatsby-highlight pre[class='language-jsx']::before {
+  content: 'jsx';
   background: #da3941;
   color: white;
 }
-.gatsby-highlight pre[class="language-tsx"]::before {
-  content: "tsx";
+.gatsby-highlight pre[class='language-tsx']::before {
+  content: 'tsx';
   background: #2989c0;
   color: white;
 }
@@ -398,9 +403,8 @@ gatsby-highlight > code[class*="language-"],
 .gatsby-highlight pre::-webkit-scrollbar-thumb {
   background: #201c29;
   border-radius: 10px;
-  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25),
-  inset -2px -2px 2px rgba(0, 0, 0, 0.25);
-}  
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
 .gatsby-highlight pre::-webkit-scrollbar-track {
   background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
 }
@@ -429,7 +433,7 @@ gatsby-highlight > code[class*="language-"],
   filter: blur(15px);
   border-radius: 12px;
 }
-.divider-wrapper{
+.divider-wrapper {
   margin: 72px auto;
   max-width: 200px;
 }
@@ -511,7 +515,5 @@ gatsby-highlight > code[class*="language-"],
   border-left: 0.1em solid #d23669;
 }
 
-
 @tailwind components;
 @tailwind utilities;
-

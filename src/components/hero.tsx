@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from 'gatsby-plugin-image'
 
 export default function Hero() {
   return (
@@ -25,9 +25,11 @@ export default function Hero() {
                 <span className="block text-gray-400 xl:inline">.com</span>
               </h1>
               <p className="mt-3 text-base sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 text-gray-400">
-                At PubliusLogic we Publish Logic as Common Sense. Publius was taken from The Federalist Papers and my extensive studies Of the USA Books at Large = Us Congressional Reports most of my focus was on Books I and II. 
+                At PubliusLogic we Publish Logic as Common Sense. Publius was taken from The Federalist Papers and my
+                extensive studies Of the USA Books at Large = Us Congressional Reports most of my focus was on Books I
+                and II.
               </p>
-              <p className="mt-3 text-base sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 text-gray-400"> 
+              <p className="mt-3 text-base sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 text-gray-400">
                 Logic came from Thomas Payne's book, "Common Sense", = Logic.
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
@@ -55,10 +57,10 @@ export default function Hero() {
         </div>
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-opacity-25">
-        <StaticImage 
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" 
-          src='../../static/images/jpg/digital_box_1400-compressor.jpg' 
-          alt='PubliusLogic' 
+        <StaticImage
+          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+          src="../../static/images/jpg/digital_box_1400-compressor.jpg"
+          alt="PubliusLogic"
         />
       </div>
     </div>

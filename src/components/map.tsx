@@ -1,20 +1,18 @@
 import * as React from 'react'
-import { useState } from 'react'
-import L from 'leaflet'
-import { MapContainer, TileLayer, Circle, LayerGroup, FeatureGroup, Rectangle, Tooltip, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Circle, LayerGroup, FeatureGroup, Rectangle, Marker, Popup } from 'react-leaflet'
 import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js'
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css'
 import MarkerClusterGroup from 'react-leaflet-markercluster'
 
 function Map() {
-  const center = [35.590607, -97.439130]
+  const center = [35.590607, -97.43913]
   const rectangle = [
-    [35.507745, -97.583310],
+    [35.507745, -97.58331],
     [35.500509, -97.578358],
   ]
-  
+
   const greenMarkerPosition = [35.609775, -97.549442]
-  const blueMarkerPosition = [35.590607, -97.439130]
+  const blueMarkerPosition = [35.590607, -97.43913]
   const redMarkerPosition = [35.501429, -97.581642]
   const fillBlueOptions = { fillColor: 'blue' }
   const fillRedOptions = { fillColor: 'red' }
@@ -22,11 +20,11 @@ function Map() {
   const purpleOptions = { color: 'purple' }
   if (typeof window !== 'undefined') {
     return (
-      <MapContainer 
+      <MapContainer
         className="markercluster-map"
-        center={center} 
-        zoom={11} 
-        fullscreenControl={true} 
+        center={center}
+        zoom={11}
+        fullscreenControl={true}
         scrollWheelZoom={false}
       >
         <TileLayer
@@ -34,23 +32,10 @@ function Map() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <LayerGroup>
-          <Circle 
-            center={center} 
-            pathOptions={fillBlueOptions} 
-            radius={300} 
-          />
-          <Circle
-            center={center}
-            pathOptions={fillRedOptions}
-            radius={100}
-            stroke={false}
-          />
+          <Circle center={center} pathOptions={fillBlueOptions} radius={300} />
+          <Circle center={center} pathOptions={fillRedOptions} radius={100} stroke={false} />
           <LayerGroup>
-            <Circle
-              center={[35.609775, -97.549442]}
-              pathOptions={greenOptions}
-              radius={200}
-            />
+            <Circle center={[35.609775, -97.549442]} pathOptions={greenOptions} radius={200} />
           </LayerGroup>
         </LayerGroup>
         <FeatureGroup pathOptions={purpleOptions}>
@@ -59,26 +44,14 @@ function Map() {
           <Rectangle bounds={rectangle} />
         </FeatureGroup>
         <MarkerClusterGroup>
-          <Marker 
-            position={blueMarkerPosition}
-          >
-            <Popup>
-              My Home!
-            </Popup>
+          <Marker position={blueMarkerPosition}>
+            <Popup>My Home!</Popup>
           </Marker>
-          <Marker 
-            position={greenMarkerPosition}
-          >
-            <Popup>
-              My Work Place!
-            </Popup>
+          <Marker position={greenMarkerPosition}>
+            <Popup>My Work Place!</Popup>
           </Marker>
-          <Marker 
-            position={redMarkerPosition}
-          >
-            <Popup>
-              My Hang out!
-            </Popup>
+          <Marker position={redMarkerPosition}>
+            <Popup>My Hang out!</Popup>
           </Marker>
         </MarkerClusterGroup>
       </MapContainer>
@@ -87,4 +60,4 @@ function Map() {
     return <div className="h-96" />
   }
 }
- export default Map
+export default Map

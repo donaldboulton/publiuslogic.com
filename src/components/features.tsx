@@ -18,7 +18,7 @@ const features = [
     name: 'Saving Mankind',
     description:
       'The destruction of all Humanity is eminent. You are over populating the Planet at a accelerating rate. If you do not stop soon you will all be destroyed. Mother Earth is a Fallen Angel, the Devil, and Her job is to give life for mankind. You are completely disrespecting Her. She is in the process of culling or eliminating your species. You have no idea how many times this species of man called humanity has been reset. To the Recycle Bin. The negative effect and energy force your planet is producing is effecting the Whole Verse. It will not be allowed to continue, the other forms of man will see to it. GOV if you havent noticed there in the process of that now. None of your little boys with there war toys can not stop them! Everything has a off switch, the other forms of Man know how to activate yours, without turning off other things. Quite simple actually!',
-      icon: ClockIcon,
+    icon: ClockIcon,
   },
   {
     name: 'Internet Programming',
@@ -34,11 +34,11 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 className="text-base font-semibold tracking-wide uppercase">PubliusLogic</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">
-            Topics and Discussions
-          </p>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">Topics and Discussions</p>
           <p className="mt-4 max-w-2xl text-xl lg:mx-auto">
-            PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.
+            PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the
+            Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your
+            Soul and Spirit you deny.
           </p>
         </div>
 

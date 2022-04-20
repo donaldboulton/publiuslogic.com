@@ -3,7 +3,7 @@ import { MDXProvider } from '@mdx-js/react'
 import { Code } from './src/components/code'
 import { preToCodeBlock } from 'mdx-utils'
 
-const Acronym = (props) => <abbr style={{ color: '#8b5cf6' }} {...props} />;
+const Acronym = props => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
 // components is its own object outside of render so that the references to
 // components are stable
@@ -20,8 +20,4 @@ const components = {
     }
   },
 }
-export const wrapRootElement = ({ element, props }) => (
-  <MDXProvider components={components}>
-    {element}
-  </MDXProvider>
-)
+export const wrapRootElement = ({ element }) => <MDXProvider components={components}>{element}</MDXProvider>

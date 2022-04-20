@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import { Link } from 'gatsby'
 import Applause from '@/components/applause'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -13,23 +13,26 @@ const Bio = () => {
           <StaticImage
             className="bio-avatar mb-4 ring ring-purple-500 ring-offset-4"
             layout="fixed"
-            formats={["auto", "webp"]}
+            formats={['auto', 'webp']}
             src="../../static/assets/donald-boulton.jpg"
             width={48}
             height={48}
             quality={95}
             alt="Profile picture"
-          />  
+          />
         </div>
         <div className="-mt-1 text-center sm:mt-0 sm:ml-4 sm:text-left">
           <div className="text-base leading-6">
-            <WavingHand /> <span className="font-medium text-gray-300 light:text-gray-800"> Developed and Written by: </span> <span className='italic font-medium text-gray-300 light:text-gray-800'>Donald Boulton</span><Applause />
+            <WavingHand />{' '}
+            <span className="font-medium text-gray-300 light:text-gray-800"> Developed and Written by: </span>{' '}
+            <span className="italic font-medium text-gray-300 light:text-gray-800">Donald Boulton</span>
+            <Applause />
           </div>
           <div className="mt-1 text-base">
             <BioTypist />
           </div>
         </div>
-      </div>       
+      </div>
     </>
   )
 }

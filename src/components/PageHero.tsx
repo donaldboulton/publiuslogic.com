@@ -16,7 +16,7 @@ const PageHero = ({ title, description, image }: PageHeroProps) => (
       alt="featured image"
       className="absolute left-0 top-0 w-full h-full z-0 object-contain"
     />
-    
+
     <div className="p-4 absolute bottom-0 left-0 z-20">
       <h1 className="text-4xl font-bold text-gray-300 leading-tight">{title}</h1>
       <h2 className="text-xl font-medium italic text-gray-300">{description}</h2>

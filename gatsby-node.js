@@ -6,8 +6,8 @@
  */
 
 // const fs = require(`fs`)
-const path = require(`path`)
-const _ = require("lodash")
+const path = require('path')
+const _ = require('lodash')
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -36,7 +36,7 @@ const tagTemplate = path.resolve('src/templates/tag-template.tsx')
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  
+
   const result = await graphql(`
     {
       tagsGroup: allMdx(limit: 2000) {

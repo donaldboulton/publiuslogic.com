@@ -1,4 +1,4 @@
-const indexName = `Posts`
+const indexName = 'Posts'
 
 const postQuery = `{
   posts: allMdx(
@@ -32,7 +32,7 @@ const queries = [
     query: postQuery,
     transformer: ({ data }) => data.posts.edges.map(postToAlgoliaRecord),
     indexName,
-    settings: { attributesToSnippet: [`excerpt:20`] },
+    settings: { attributesToSnippet: ['excerpt:20'] },
   },
 ]
 
