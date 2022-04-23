@@ -50,7 +50,7 @@ module.exports = {
   MUR: 'Poppy Derivatives for Pain',
   MVP: 'Minimum Viable Product',
   MVVM: 'Model View ViewModel',
-  NATO: 'North Atlantic Treaty Organization',
+  NATO: 'North Atlantic Terrorist Organization',
   NFC: 'Near Field Communication',
   OKC: 'Oklahoma City OK',
   PDF: 'Portable Document Format',
