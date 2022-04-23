@@ -134,6 +134,10 @@ h2 {
   box-shadow: 6px 5px 5px rgb(150, 2, 2, 0.5);
   color: rgb(214, 222, 235);
 }
+.sto {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
 mark {
   background-color: rgb(147 51 234);
   color: white !important;

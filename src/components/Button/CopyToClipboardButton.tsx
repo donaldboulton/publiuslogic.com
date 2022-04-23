@@ -27,7 +27,7 @@ const CopyButton = {
       },
     },
   },
-}),
+},
 
 const CopyToClipboardButton = (props: { text: string; title?: string }) => {
   const duration = 0.4;

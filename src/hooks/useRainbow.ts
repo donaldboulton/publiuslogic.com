@@ -1,5 +1,6 @@
 /* eslint-disable array-callback-return */
 import * as React from 'react'
+import { useEffect, useRef } from "react"
 
 import { range, generateId } from '../utils'
 import useIncrementingNumber from './useIncrementingNumber'
@@ -37,10 +38,10 @@ const useRainbow = ({ intervalDelay = 2000 }) => {
 
   const isEnabled = hasBrowserSupport && prefersReducedMotion.matches;
 
-  const { current: uniqueId } = React.useRef(generateId());
+  const { current: uniqueId } = useRef(generateId());
 
   // Register all custom properties
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isEnabled) {
       return;
     }

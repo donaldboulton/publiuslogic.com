@@ -56,9 +56,9 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
                   <div className="p-6">
                     {post.frontmatter.tags ? <Tags tags={post.frontmatter.tags} /> : ''}
                     <Link to={`/${post.slug}`}>
-                      <h1 className="title-font text-xl font-bold text-white light:text-black hover:text-fuchsia-400 mt-2">
+                      <h2 className="title-font text-xl font-bold text-white light:text-black hover:text-fuchsia-400 mt-2">
                         {post.frontmatter.title}
-                      </h1>
+                      </h2>
                     </Link>
                     <div className="flex items-center flex-wrap ">
                       <span className="text-white light:text-black mr-3 inline-flex items-center leading-none text-xs pr-3 py-1 border-r-2 border-fuchsia-200">

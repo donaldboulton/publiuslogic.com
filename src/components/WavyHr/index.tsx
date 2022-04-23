@@ -8,12 +8,8 @@ const WavyHr: React.FC<Props> = props => {
   const { children } = props
   return (
     <div className="text-center">
-      <hr
-        style={{
-          textAlign: 'text-center',
-          textDecoration: 'underline',
-        }}
-        className="text-purple-600 mt-2 mb-2"
+      <hr        
+        className="text-center text-purple-600 mt-2 mb-2 underline"
       />
       {children}
     </div>

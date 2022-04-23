@@ -97,7 +97,7 @@ const StyledIconButton: CSS.Properties = {
   height: '44px',
   background: 'transparent',
   transition: 'color 0.3s ease, transform 0.3s ease',
-  borderRadius: 'var(--border-radius-1)',
+  borderRadius: '3px',
   color: '#ccc',
   transform: 'scale(var(--button-content-scale, 1)) translateZ(0)',
   '--shadow-hover-primary': '0 2px 40px -4px var(--form-input-focus)',

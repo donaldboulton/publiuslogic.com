@@ -92,10 +92,10 @@ export default function IndexFooter() {
                       className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       rel="noopener noreferrer"
                       target="_blank"
-                      area-label="Github"
-                      href="https://www.github.com/donaldboulton"
+                      area-label="Gatsby Starter Basic Instructions"
+                      href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
                     >
-                      Github
+                      Free Starters
                     </a>
                   </li>
                   <li>
@@ -103,11 +103,27 @@ export default function IndexFooter() {
                       className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       rel="noopener noreferrer"
                       target="_blank"
-                      area-label="Gatsby Starter Basic Instructions"
-                      href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
+                      area-label="Github"
+                      href="https://www.github.com/donaldboulton"
                     >
-                      Free Starters
+                      Github
                     </a>
+                  </li>                  
+                  <li>
+                    <Link
+                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      to="/profile"
+                    >
+                      Profile
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      to="/sitemap.xml"
+                    >
+                      Sitemap XML
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -125,6 +141,22 @@ export default function IndexFooter() {
                   <li>
                     <Link
                       className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      to="/contact"
+                    >
+                      Contact Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      to="/search"
+                    >
+                      Search Page
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/blog/privacy"
                     >
                       Terms
@@ -137,13 +169,13 @@ export default function IndexFooter() {
                     >
                       Privacy Policy
                     </Link>
-                  </li>
+                  </li>                  
                   <li>
                     <Link
                       className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                      to="/contact"
+                      to="/rss.xml"
                     >
-                      Contact Us
+                      Site Rss
                     </Link>
                   </li>
                 </ul>

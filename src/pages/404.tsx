@@ -48,7 +48,7 @@ const NotFoundPage = () => {
               >
                 Notify Us of the Error
               </Link>
-              <h1 className="text-4xl font-bold mt-2 mb-2 leading-tight">404: Not Found</h1>
+              <h2 className="text-4xl font-bold mt-2 mb-2 leading-tight">404: Not Found</h2>
               <div>You just hit a route that doesn&#39;t exist... the sadness.</div>
             </div>
           </div>
