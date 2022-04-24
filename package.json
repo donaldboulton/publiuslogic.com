@@ -63,6 +63,7 @@
     "gatsby-remark-smartypants": "^5.12.1",
     "gatsby-source-filesystem": "^4.12.1",
     "gatsby-source-github-api": "^1.0.0",
+    "gatsby-source-spotify": "^2.0.0",
     "gatsby-transformer-sharp": "^4.12.1",
     "hero-patterns": "^2.1.0",
     "http-proxy-middleware": "^2.0.1",

@@ -14,6 +14,7 @@ import Footer from '@/components/footer'
 import Tags from '@/components/tags'
 import TableOfContent from '@/components/TableOfContent'
 import Stars from '@/components/Stars'
+import NowPlaying from '@/components/PlayList'
 
 const components = { Link }
 
@@ -75,6 +76,9 @@ const BlogPost = ({ data }: BlogPostProps) => {
                 <div className="text-white light:text-black mr-3 inline-flex items-center leading-none text-base">
                   <ClockIcon className="w-6 h-6 mr-1" />
                   {timeToRead} min read
+                </div>
+                <div className="text-white light:text-black mr-3 inline-flex items-center leading-none text-base">
+                  <NowPlaying />
                 </div>
               </div>
             </div>

@@ -1,9 +1,9 @@
 // TODO: Modernize
 /* eslint-disable */
 export const range = function(start, end, step) {
-    var range = [];
-    var typeofStart = typeof start;
-    var typeofEnd = typeof end;
+    const range = [];
+    const typeofStart = typeof start;
+    const typeofEnd = typeof end;
   
     if (step === 0) {
       throw TypeError('Step cannot be zero.');
@@ -116,9 +116,9 @@ export const range = function(start, end, step) {
   };
   
   export const pick = (obj, keys) => {
-    var o = {};
-    var i = 0;
-    var key;
+    const o = {};
+    const i = 0;
+    const key;
   
     keys = Array.isArray(keys) ? keys : [keys];
   
@@ -131,9 +131,9 @@ export const range = function(start, end, step) {
   };
   
   export const omit = function(obj, key) {
-    var newObj = {};
+    const newObj = {};
   
-    for (var name in obj) {
+    for (const name in obj) {
       if (name !== key) {
         newObj[name] = obj[name];
       }

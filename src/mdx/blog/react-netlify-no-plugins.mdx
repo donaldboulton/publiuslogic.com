@@ -183,11 +183,11 @@ itemtype="https://schema.org/WebPage">
 <script src="../admin/cms/preview-templates/PrivacyPagePreview.js"></script>
 
 <script>
-  var PostPreview = createClass({
+  const PostPreview = createClass({
       render: function() {
-        var entry = this.props.entry;
-        var image = entry.getIn(['data', 'image']);
-        var bg = image && this.props.getMedia(image);
+        const entry = this.props.entry;
+        const image = entry.getIn(['data', 'image']);
+        const bg = image && this.props.getMedia(image);
         return h('div', {},
           h('div', {className: "hero"},
             h('h1', {}, entry.getIn(['data', 'title'])),
