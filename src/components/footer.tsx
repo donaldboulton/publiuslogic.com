@@ -88,27 +88,21 @@ export default function IndexFooter() {
                     </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      area-label="Gatsby Starter Basic Instructions"
-                      href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
+                      to="/search"
                     >
-                      Free Starters
-                    </a>
+                      Search Page
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      area-label="Github"
-                      href="https://www.github.com/donaldboulton"
+                      to="/contact"
                     >
-                      Github
-                    </a>
-                  </li>                  
+                      Contact Us
+                    </Link>
+                  </li>
                   <li>
                     <Link
                       className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
@@ -139,21 +133,28 @@ export default function IndexFooter() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <a
                       className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                      to="/contact"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      area-label="Github"
+                      href="https://www.github.com/donaldboulton"
                     >
-                      Contact Us
-                    </Link>
-                  </li>
+                      Github
+                    </a>
+                  </li> 
                   <li>
-                    <Link
+                    <a
                       className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                      to="/search"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      area-label="Gatsby Starter Basic Instructions"
+                      href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
                     >
-                      Search Page
-                    </Link>
+                      Free Starters
+                    </a>
                   </li>
+                  
                   <li>
                     <Link
                       className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
