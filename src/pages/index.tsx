@@ -75,7 +75,7 @@ export default function Home() {
   }
   const [ref, isVisible] = useInView({
     triggerOnce: true,
-    rootMargin: '-100px 0px',
+    rootMargin: '-200px 0px',
   })
   const cardVariants = {
     hover: {
@@ -92,9 +92,10 @@ export default function Home() {
     },
     hidden: {
       opacity: 0,
-      x: -400,
+      x: -200,
     },
   }
+
   const [ref1, isVisible1] = useInView({
     triggerOnce: true,
     rootMargin: '-100px 0px',
