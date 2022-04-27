@@ -53,7 +53,7 @@ export default function Home() {
   const [replay, setReplay] = useState(true)
   // Placeholder text data, as if from API
   const placeholderText = [
-    { type: 'heading1', text: 'At PubliusLogic.com' },
+    { type: 'heading1', text: 'PubliusLogic.com' },
     {
       type: 'heading2',
       text: 'We Publish Logic & Gods Truth!',
