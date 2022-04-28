@@ -74,7 +74,7 @@ yarn.lock
 # Yarn Integrity file
 .yarn-integrity
 .yarnrc.yml
-.yarn.lock
+yarn.lock
 
 # VS Code workspace
 *.code-workspace
