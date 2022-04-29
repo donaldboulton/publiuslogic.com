@@ -8,7 +8,7 @@ import {
   BanIcon,
   BeakerIcon,
   CakeIcon,
-  CloudIcon,
+  ScaleIcon,
   CodeIcon,
   HandIcon,
   HeartIcon,
@@ -96,10 +96,10 @@ const posts = [
     icon: LibraryIcon,
   },
   {
-    name: 'Trinity of Angels',
-    description: 'My God Given Trinity',
-    href: '/blog/trinity-of-angels',
-    icon: CloudIcon,
+    name: 'Commandments',
+    description: 'Commandments',
+    href: '/blog/commandments',
+    icon: ScaleIcon,
   },
   {
     name: 'React Hook Form',
