@@ -142,7 +142,7 @@ export default function IndexFooter() {
                     >
                       Github
                     </a>
-                  </li> 
+                  </li>
                   <li>
                     <a
                       className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
@@ -154,7 +154,7 @@ export default function IndexFooter() {
                       Free Starters
                     </a>
                   </li>
-                  
+
                   <li>
                     <Link
                       className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
@@ -170,7 +170,7 @@ export default function IndexFooter() {
                     >
                       Privacy Policy
                     </Link>
-                  </li>                  
+                  </li>
                   <li>
                     <Link
                       className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"

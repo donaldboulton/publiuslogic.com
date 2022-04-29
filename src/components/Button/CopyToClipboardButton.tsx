@@ -27,10 +27,10 @@ const CopyButton = {
       },
     },
   },
-},
+}
 
 const CopyToClipboardButton = (props: { text: string; title?: string }) => {
-  const duration = 0.4;
+  const duration = 0.4
   const svgVariants = {
     hover: (isChecked: boolean) => ({
       scale: isChecked ? 1 : 1.05,
@@ -41,40 +41,40 @@ const CopyToClipboardButton = (props: { text: string; title?: string }) => {
     idle: {
       scale: 1,
     },
-  };
+  }
 
   const boxVariants = {
     checked: { opacity: 0 },
     unchecked: { opacity: 1 },
-  };
+  }
 
   const tickVariants = {
     pressed: (isChecked: boolean) => ({ pathLength: isChecked ? 0.85 : 0.05 }),
     checked: { pathLength: 1 },
     unchecked: { pathLength: 0 },
-  };
+  }
 
-  const [isChecked, setIsChecked] = React.useState(false);
-  const pathLength = useMotionValue(0);
-  const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1]);
+  const [isChecked, setIsChecked] = React.useState(false)
+  const pathLength = useMotionValue(0)
+  const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1])
 
   const copyToClipboard = (content: string) => {
-    const el = document.createElement(`textarea`);
-    el.value = content;
-    el.setAttribute(`readonly`, ``);
-    el.style.position = `absolute`;
-    el.style.left = `-9999px`;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand(`copy`);
-    document.body.removeChild(el);
-  };
+    const el = document.createElement(`textarea`)
+    el.value = content
+    el.setAttribute(`readonly`, ``)
+    el.style.position = `absolute`
+    el.style.left = `-9999px`
+    document.body.appendChild(el)
+    el.select()
+    document.execCommand(`copy`)
+    document.body.removeChild(el)
+  }
 
   useEffect(() => {
     if (isChecked) {
-      setTimeout(() => setIsChecked(false), 3000);
+      setTimeout(() => setIsChecked(false), 3000)
     }
-  }, [isChecked]);
+  }, [isChecked])
 
   return (
     <CopyButton
@@ -82,8 +82,8 @@ const CopyToClipboardButton = (props: { text: string; title?: string }) => {
       aria-label="Copy to clipboard"
       disabled={isChecked}
       onClick={() => {
-        copyToClipboard(props.text);
-        setIsChecked(true);
+        copyToClipboard(props.text)
+        setIsChecked(true)
       }}
     >
       <motion.svg

@@ -26,6 +26,15 @@ module.exports = {
         spinSlow: 'spin 3s linear infinite',
       },
       keyframes: {
+        comeInOut: {
+          '0%': { transform: 'scale(0)' },
+          '50%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(0)' },
+        },
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(180deg)' },
+        },
         spinSlow: {
           '0%, 100%': { transform: 'rotate(360deg)' },
           '50%': { transform: 'rotate(360deg)' },

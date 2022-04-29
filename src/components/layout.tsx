@@ -16,6 +16,7 @@ import List from '@/components/List'
 import ListItem from '@/components/List/ListItem'
 import ListGrid from '@/components/ListGrid'
 import Tooltip from '@/components/Tooltip'
+import Sparkles from '@/components/Sparkles'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -34,6 +35,7 @@ const shortcodes = {
   ListItem,
   ListGrid,
   Tooltip,
+  Sparkles,
 }
 
 const Layout = ({ children, path }: LayoutProps) => {
