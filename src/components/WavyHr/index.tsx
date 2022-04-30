@@ -1,18 +1,17 @@
 import * as React from 'react'
 
-interface Props {
+type Props = {
   className: string
   children?: React.ReactNode
 }
 
-const WavyHr: React.FC<Props> = props => {
-  const { children } = props
-  return (
+const WavyHr: React.FC<Props> = ({
+  className,
+  children,
+  }) => (
     <div className="text-center">
-      <hr className="text-center text-purple-600 mt-2 mb-2 underline" />
-      {children}
+      <hr className={children}></hr>
     </div>
-  )
-}
+)
 
 export default WavyHr

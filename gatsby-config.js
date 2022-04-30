@@ -22,7 +22,7 @@ module.exports = {
     location: 'OKC, Middle Earth',
     social: {
       email: 'mailto:donaldboulton@gmail.com',
-      phone: 'tel:+4056231494',
+      phone: 'tel:+405-863-2165',
       facebook: 'https://www.facebook.com/donboulton',
       instagram: 'https://www.instagram.com/boulton3662',
       twitter: 'https://twitter.com/donboulton',
