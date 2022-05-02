@@ -42,10 +42,10 @@ const posts = [
     icon: GlobeAltIcon,
   },
   {
-    name: 'Virtue',
-    description: 'What is Needed Virtue',
-    href: '/blog/virtue',
-    icon: HeartIcon,
+    name: 'Commandments',
+    description: 'Commandments',
+    href: '/blog/commandments',
+    icon: ScaleIcon,
   },
   {
     name: 'Applause',
@@ -96,10 +96,10 @@ const posts = [
     icon: LibraryIcon,
   },
   {
-    name: 'Commandments',
-    description: 'Commandments',
-    href: '/blog/commandments',
-    icon: ScaleIcon,
+    name: 'Virtue',
+    description: 'What is Needed Virtue',
+    href: '/blog/virtue',
+    icon: HeartIcon,
   },
   {
     name: 'React Hook Form',
