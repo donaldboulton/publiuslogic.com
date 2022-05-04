@@ -218,9 +218,8 @@ function ContactUs() {
                           </div>
                         </div>
                       </div>
-
                       <div className="px-4 py-3 text-right sm:px-6 bg-gray-800 light:bg-gray-200">
-                        {success && <p className="text-rose-500">Thanks for Subscribing!</p>}
+                        {success && <p className="text-rose-500">Will get back to you A.S.A.P!</p>}
                         {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
                         <button
                           type="submit"

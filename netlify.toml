@@ -92,10 +92,7 @@
       midi=(self),
       payment=(self),
       picture-in-picture=*,
-      speaker=*,
       usb=(self),
-      vibrate=(self),
-      vr=(self)
     '''
 [[redirects]]
   from = "/privacy"

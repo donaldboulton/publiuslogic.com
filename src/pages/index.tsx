@@ -14,6 +14,7 @@ import List from '@/components/List'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
+import WavyHr from '@/components/WavyHr'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 
@@ -418,7 +419,7 @@ export default function Home() {
                       href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
                       className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
                     >
-                      Gatsby Starter Basic Instructions v4.11.0
+                      Gatsby Starter Basic Instructions v4.13.1
                     </a>
                   </div>
                   <p className="text-lg font-light leading-relaxed mt-0 mb-4">
@@ -426,7 +427,7 @@ export default function Home() {
                       href="https://github.com/donaldboulton/gatsby-starter-dimension-v4"
                       className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
                     >
-                      Gatsby Starter Dimension v4.11.0
+                      Gatsby Starter Dimension v4.13.1
                     </a>
                   </p>
                 </div>

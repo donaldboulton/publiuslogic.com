@@ -4,11 +4,12 @@ import { Link } from 'gatsby'
 import Tags from '@/components/tags'
 import List from '@/components/List'
 import GetPosts from '@/utils/getposts'
+import WavyHr from './WavyHr'
 
 export default function LatestArticles() {
   const posts = GetPosts()
   const post = posts[0]
-  const otherPosts = posts.slice(1, 5)
+  const otherPosts = posts.slice(1, 6)
 
   return (
     <div>
@@ -44,17 +45,19 @@ export default function LatestArticles() {
                 <div>{post.frontmatter.description}</div>
                 <Link
                   to={`/${post.slug}`}
-                  className="inline-block px-6 py-3 mt-2 rounded-md bg-fuchsia-600 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-600/50 hover:shadow-fuchsia-700/50 text-white"
+                  className="inline-block px-6 py-3 mt-2 rounded-md bg-fuchsia-600 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-600/50 hover:shadow-fuchsia-700/50 text-gray-300"
                 >
                   Read more
                   <span className="sr-only">{post.frontmatter.title}</span>
                 </Link>
               </div>
+              <WavyHr className='mb-4' />
+              <h2 className='mb-4 mt-4'>Featured Articles by Topics</h2>
               <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 xl:grid-cols-3 lg:gap-x-6 lg:mt-0 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-white light:text-black">
                 <List variant="unordered">
-                  <span className="ml-12 mb-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
+                  <div className="ml-12 mb-6 mt-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
                     God and Creation
-                  </span>
+                  </div>
                   <List.Item>
                     <div>
                       <Link to="/blog/creation-of-all">
@@ -96,9 +99,9 @@ export default function LatestArticles() {
                   </List.Item>
                 </List>
                 <List variant="unordered">
-                  <span className="ml-12 mb-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
+                  <div className="ml-12 mb-6 mt-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
                     Government Law
-                  </span>
+                  </div>
                   <List.Item>
                     <div>
                       <Link to="/blog/cyber-attack">
@@ -139,9 +142,9 @@ export default function LatestArticles() {
                   </List.Item>
                 </List>
                 <List variant="unordered">
-                  <span className="ml-12 mb-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
+                  <div className="ml-12 mb-6 mt-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
                     Programming
-                  </span>
+                  </div>
                   <List.Item>
                     <div>
                       <Link to="/blog/applause-use-sound-confetti">
