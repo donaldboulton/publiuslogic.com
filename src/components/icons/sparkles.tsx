@@ -2,12 +2,7 @@ import * as React from 'react'
 
 const Sparkles: React.FC = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" 
-      width="100" 
-      height="100" 
-      version="1.1" 
-      viewBox="0 0 400 327.273"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" version="1.1" viewBox="0 0 400 327.273">
       <g fillRule="evenodd" stroke="none">
         <path
           fill="#f9d573"

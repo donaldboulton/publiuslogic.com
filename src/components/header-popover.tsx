@@ -174,7 +174,7 @@ function HeaderPopover() {
                         <span className="text-lg font-medium text-gray-200">
                           <span className="flex items-center">
                             <LinkIcon className="w-6 h-6 text-fuchsia-400 hover:text-fuchsia-500" />
-                            &nbsp; Books Of Enoch and The Last Testament 
+                            &nbsp; Books Of Enoch and The Last Testament
                           </span>
                         </span>
                       </span>

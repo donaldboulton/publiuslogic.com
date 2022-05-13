@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react'
-import styled, {keyframes} from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion'
 import useRandomInterval from '../../hooks/useRandomInterval'
 
@@ -84,7 +84,7 @@ const comeInOut = keyframes`
   100% {
     transform: scale(0);
   }
-`;
+`
 const spin = keyframes`
   0% {
     transform: rotate(0deg);
@@ -92,28 +92,28 @@ const spin = keyframes`
   100% {
     transform: rotate(180deg);
   }
-`;
+`
 const Wrapper = styled.span`
   display: inline-block;
   position: relative;
-`;
+`
 const SparkleWrapper = styled.span`
   position: absolute;
   display: block;
   @media (prefers-reduced-motion: no-preference) {
     animation: ${comeInOut} 700ms forwards;
   }
-`;
+`
 const SparkleSvg = styled.svg`
   display: block;
   @media (prefers-reduced-motion: no-preference) {
     animation: ${spin} 1000ms linear;
   }
-`;
+`
 const ChildWrapper = styled.strong`
   position: relative;
   z-index: 1;
   font-weight: bold;
-`;
+`
 
 export default Sparkles

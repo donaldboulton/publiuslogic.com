@@ -27,7 +27,7 @@ const Bio = () => {
             <span className="italic font-medium text-gray-300 light:text-gray-800">Donald Boulton</span>
             <Applause />
           </div>
-          <div className="mt-1 text-base">
+          <div className="mt-1 ml-4 text-base">
             <BioTypist />
           </div>
         </div>
