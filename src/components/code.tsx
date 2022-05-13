@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { useState, useRef, useEffect } from 'react'
 import { Disclosure } from '@headlessui/react'
-
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import { motion, useMotionValue, useTransform } from 'framer-motion'

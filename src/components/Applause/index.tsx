@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import useSound from 'use-sound'
-import clapping from '../../static/audio/clapping.mp3'
+import clapping from '../../../static/audio/clapping.mp3'
 import Confetti from 'react-dom-confetti'
 import axios from 'axios'
 

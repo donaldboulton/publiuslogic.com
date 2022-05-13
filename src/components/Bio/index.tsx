@@ -1,7 +1,7 @@
 import React from 'react'
-import Applause from '@/components/applause'
+import Applause from '@/components/Applause'
 import { StaticImage } from 'gatsby-plugin-image'
-import BioTypist from '@/components/bio-typist'
+import BioTypist from '@/components/BioTypest'
 import WavingHand from '@/components/waving-hand'
 
 const Bio = () => {
@@ -13,7 +13,7 @@ const Bio = () => {
             className="bio-avatar mb-4 ring ring-purple-500 ring-offset-4"
             layout="fixed"
             formats={['auto', 'webp']}
-            src="../../static/assets/donald-boulton.jpg"
+            src="../../../static/assets/donald-boulton.jpg"
             width={48}
             height={48}
             quality={95}
