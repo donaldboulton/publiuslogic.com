@@ -43,6 +43,13 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://publiuslogic.com/blog/baby-formula</loc>
+  <lastmod>2022-05-14T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/baby-formula.jpg</image:loc><image:caption>baby-formula.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://publiuslogic.com/blog/bullshit</loc>
   <lastmod>2022-04-10T22:27:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
