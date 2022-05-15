@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import { motion } from 'framer-motion'
 import CookieConsent from 'react-cookie-consent'
 import { MDXProvider } from '@mdx-js/react'
 import FindOutMore from '@/components/findoutmore'
@@ -17,6 +16,9 @@ import ListItem from '@/components/List/ListItem'
 import ListGrid from '@/components/ListGrid'
 import Tooltip from '@/components/Tooltip'
 import Sparkles from '@/components/Sparkles'
+import { LazyMotion, m } from 'framer-motion'
+
+const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 interface LayoutProps {
   children: React.ReactNode
@@ -40,13 +42,13 @@ const shortcodes = {
 
 const Layout = ({ children, path }: LayoutProps) => {
   return (
-    <>
+    <LazyMotion features={loadFeatures}>
       <Helmet>
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Helmet>
       <div className="max-w-screen-xl mx-auto bg-primary-dark light:bg-offwhite text-white light:text-black transition-all duration-200 ease-linear antialiased font-sans">
-        <motion.main
+        <m.main
           key={path}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -59,7 +61,7 @@ const Layout = ({ children, path }: LayoutProps) => {
           }}
         >
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
-        </motion.main>
+        </m.main>
       </div>
       <CookieConsent
         enableDeclineButton
@@ -96,7 +98,7 @@ const Layout = ({ children, path }: LayoutProps) => {
           </Link>
         </span>
       </CookieConsent>
-    </>
+    </LazyMotion>
   )
 }
 

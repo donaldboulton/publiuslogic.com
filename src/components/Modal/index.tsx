@@ -19,7 +19,7 @@ export default function Modal() {
           type="button"
           onClick={() => setOpen(true)}
           type="button"
-          className="p-1 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"                 
+          className="p-1 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
         >
           Show Map Message
         </button>
@@ -68,7 +68,8 @@ export default function Modal() {
                         </Dialog.Title>
                         <div className="mt-2">
                           <p className="text-sm text-gray-500">
-                            Clicking Show Map will refresh the page and show a Map of My Location's Home Work and Hangout.
+                            Clicking Show Map will refresh the page and show a Map of My Location's Home Work and
+                            Hangout.
                           </p>
                         </div>
                       </div>

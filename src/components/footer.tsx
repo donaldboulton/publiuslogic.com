@@ -73,7 +73,7 @@ export default function IndexFooter() {
                 <ul className="list-unstyled">
                   <li>
                     <Link
-                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/blog/about"
                     >
                       About Us
@@ -81,7 +81,7 @@ export default function IndexFooter() {
                   </li>
                   <li>
                     <Link
-                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/blog"
                     >
                       Blog
@@ -89,23 +89,15 @@ export default function IndexFooter() {
                   </li>
                   <li>
                     <Link
-                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                      to="/search"
-                    >
-                      Search Page
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/contact"
                     >
                       Contact Us
                     </Link>
-                  </li>
+                  </li>                 
                   <li>
                     <Link
-                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/profile"
                     >
                       Profile
@@ -113,7 +105,15 @@ export default function IndexFooter() {
                   </li>
                   <li>
                     <Link
-                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      to="/search"
+                    >
+                      Search Page
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/sitemap.xml"
                     >
                       Sitemap XML
@@ -126,7 +126,7 @@ export default function IndexFooter() {
                 <ul className="list-unstyled">
                   <li>
                     <Link
-                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/blog/0bsd-licence"
                     >
                       BSD License
@@ -134,7 +134,7 @@ export default function IndexFooter() {
                   </li>
                   <li>
                     <a
-                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       rel="noopener noreferrer"
                       target="_blank"
                       area-label="Github"
@@ -145,7 +145,7 @@ export default function IndexFooter() {
                   </li>
                   <li>
                     <a
-                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       rel="noopener noreferrer"
                       target="_blank"
                       area-label="Gatsby Starter Basic Instructions"
@@ -157,7 +157,7 @@ export default function IndexFooter() {
 
                   <li>
                     <Link
-                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/blog/privacy"
                     >
                       Terms
@@ -165,7 +165,7 @@ export default function IndexFooter() {
                   </li>
                   <li>
                     <Link
-                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/blog/privacy"
                     >
                       Privacy Policy
@@ -173,7 +173,7 @@ export default function IndexFooter() {
                   </li>
                   <li>
                     <Link
-                      className="text-fuchsia-600 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
+                      className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
                       to="/rss.xml"
                     >
                       Site Rss
@@ -194,7 +194,7 @@ export default function IndexFooter() {
                 rel="noopener noreferrer"
                 target="_blank"
                 area-label="Donald Boulton Web Site"
-                className="text-fuchsia-600 hover:text-fuchsia-500"
+                className="text-gray-200 hover:text-fuchsia-500"
               >
                 Donald Boulton
               </a>

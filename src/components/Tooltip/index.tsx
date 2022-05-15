@@ -3,6 +3,9 @@ import { useEffect, useState, useRef, useCallback } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import * as CSS from 'csstype'
 import VisuallyHidden from '../VisuallyHidden'
+import { LazyMotion, m } from 'framer-motion'
+
+const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 interface Props {
   id: string
@@ -118,40 +121,42 @@ const Tooltip: React.FC<Props> = props => {
   }
 
   return (
-    <motion.div
-      style={wrapper}
-      className={className}
-      initial="idle"
-      animate={controls}
-      onMouseEnter={showTooltip}
-      onMouseLeave={hideTooltip}
-      onFocus={showTooltip}
-      onBlur={hideTooltip}
-      onKeyDown={event => {
-        if (event.which === 27) {
-          event.preventDefault()
-          hideTooltip()
-          return false
-        }
-      }}
-    >
-      {children}
-      <motion.span
-        id={id}
-        style={tooltip}
+    <LazyMotion features={loadFeatures}>
+      <m.div
+        style={wrapper}
         className={className}
-        aria-hidden={true}
-        ref={tooltipRef}
-        variants={tipVariants}
-        transition={{
-          delay: 0.15,
+        initial="idle"
+        animate={controls}
+        onMouseEnter={showTooltip}
+        onMouseLeave={hideTooltip}
+        onFocus={showTooltip}
+        onBlur={hideTooltip}
+        onKeyDown={event => {
+          if (event.which === 27) {
+            event.preventDefault()
+            hideTooltip()
+            return false
+          }
         }}
-        role="tooltip"
       >
-        {tooltipText}
-        {tooltipVisuallyHiddenText ? <VisuallyHidden as="p">{tooltipVisuallyHiddenText}</VisuallyHidden> : null}
-      </motion.span>
-    </motion.div>
+        {children}
+        <m.span
+          id={id}
+          style={tooltip}
+          className={className}
+          aria-hidden={true}
+          ref={tooltipRef}
+          variants={tipVariants}
+          transition={{
+            delay: 0.15,
+          }}
+          role="tooltip"
+        >
+          {tooltipText}
+          {tooltipVisuallyHiddenText ? <VisuallyHidden as="p">{tooltipVisuallyHiddenText}</VisuallyHidden> : null}
+        </m.span>
+      </m.div>
+    </LazyMotion>
   )
 }
 

@@ -12,11 +12,12 @@ import Footer from '@/components/footer'
 import ScrollIndicator from '@/components/scroll-indicator'
 import List from '@/components/List'
 import { useInView } from 'react-intersection-observer'
-import { motion } from 'framer-motion'
+import { LazyMotion, motion, m } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
 import WavyHr from '@/components/WavyHr'
-
 import OGImage from '../../static/images/jpg/dbbg.jpg'
+
+const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 const container = {
   enter: {
@@ -150,7 +151,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <LazyMotion features={loadFeatures}>
       <SEO
         type="homepage"
         title="Home"
@@ -162,7 +163,7 @@ export default function Home() {
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Helmet>
       <Header transparent />
-      <motion.main className="font-sans" variants={container}>
+      <m.main className="font-sans" variants={container}>
         <div className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center">
           <div className="absolute top-0 bg-center">
             <div className="absolute left-0 bottom-0 md:mb-0 w-full h-full z-10 bg-gradient-to-b from-gray-700 opacity-70"></div>
@@ -188,14 +189,14 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-        <motion.section
+        <m.section
           variants={item}
           className="pb-10 bg-gray-700 light:bg-gray-200 text-gray-800 light:text-gray-200 transition-all duration-200 -mt-10"
         >
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap">
               <div className="lg:pt-12 pt-4 w-full md:w-4/12 px-4 text-center">
-                <motion.div
+                <m.div
                   className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-gray-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg"
                   variants={cardVariants}
                   transition={{
@@ -228,10 +229,10 @@ export default function Home() {
                       "Unborn Children"!
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               </div>
               <div className="w-full md:w-4/12 px-4 text-center">
-                <motion.div
+                <m.div
                   className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-gray-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg"
                   variants={cardVariants}
                   transition={{
@@ -263,10 +264,10 @@ export default function Home() {
                       formless verse, bringing forth life to all. For all to formalize there, "Own Song"!
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               </div>
               <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-                <motion.div
+                <m.div
                   className="relative flex flex-col min-w-0 break-words bg-purple-600 text-gray-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg"
                   variants={cardVariants}
                   transition={{
@@ -304,7 +305,7 @@ export default function Home() {
                       Tailwind and Typescript on Netlify Servers for, "Ultimate Performance"!
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               </div>
             </div>
             <div className="text-zinc-200 light:text-zinc-800 mb-10">
@@ -380,8 +381,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </motion.section>
-        <motion.section variants={item} className="relative py-20 bg-gray-900 light:bg-white">
+        </m.section>
+        <m.section variants={item} className="relative py-20 bg-gray-900 light:bg-white">
           <div
             className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
             style={{ height: '80px' }}
@@ -432,7 +433,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
-                  <motion.div
+                  <m.div
                     ref={ref}
                     variants={variants}
                     animate={isVisible ? 'visible' : 'hidden'}
@@ -469,7 +470,7 @@ export default function Home() {
                         </p>
                       </blockquote>
                     </div>
-                  </motion.div>
+                  </m.div>
                 </div>
               </div>
               <div
@@ -493,10 +494,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </motion.section>
-        <motion.section variants={item} className="py-20 bg-gray-700 light:bg-gray-300">
+        </m.section>
+        <m.section variants={item} className="py-20 bg-gray-700 light:bg-gray-300">
           <div className="container mx-auto px-4">
-            <motion.div
+            <m.div
               ref={ref1}
               variants={variants1}
               animate={isVisible1 ? 'visible' : 'hidden'}
@@ -504,10 +505,10 @@ export default function Home() {
               key={1}
             >
               <FindOutMore />
-            </motion.div>
+            </m.div>
           </div>
-        </motion.section>
-        <motion.section variants={item} className="py-20 relative block bg-primary-dark">
+        </m.section>
+        <m.section variants={item} className="py-20 relative block bg-primary-dark">
           <div
             className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
             style={{ height: '80px' }}
@@ -529,7 +530,7 @@ export default function Home() {
           </div>
 
           <div className="container mx-auto px-4 lg:pt-12 lg:pb-28">
-            <motion.div
+            <m.div
               ref={ref2}
               variants={variants2}
               animate={isVisible2 ? 'visible' : 'hidden'}
@@ -537,7 +538,7 @@ export default function Home() {
               key={2}
             >
               <LatestArticles />
-            </motion.div>
+            </m.div>
             <div
               className="top-auto mt-4 bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
               style={{ height: '70px' }}
@@ -558,12 +559,12 @@ export default function Home() {
               </svg>
             </div>
           </div>
-        </motion.section>
-        <motion.section variants={item} className="relative block py-20 lg:pt-0">
+        </m.section>
+        <m.section variants={item} className="relative block py-20 lg:pt-0">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap justify-center lg:-mt-64 -mt-48">
               <div className="w-full lg:w-6/12 px-4">
-                <motion.div
+                <m.div
                   ref={ref3}
                   variants={variants3}
                   animate={isVisible3 ? 'visible' : 'hidden'}
@@ -615,12 +616,12 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
               </div>
             </div>
           </div>
-        </motion.section>
-      </motion.main>
+        </m.section>
+      </m.main>
       <CookieConsent
         enableDeclineButton
         flipButtons
@@ -658,6 +659,6 @@ export default function Home() {
       </CookieConsent>
       <ScrollIndicator />
       <Footer />
-    </>
+    </LazyMotion>
   )
 }
