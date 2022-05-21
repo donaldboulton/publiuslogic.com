@@ -80,10 +80,7 @@ export default function IndexFooter() {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
-                      to="/blog"
-                    >
+                    <Link className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm" to="/blog">
                       Blog
                     </Link>
                   </li>
@@ -94,7 +91,7 @@ export default function IndexFooter() {
                     >
                       Contact Us
                     </Link>
-                  </li>                 
+                  </li>
                   <li>
                     <Link
                       className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"

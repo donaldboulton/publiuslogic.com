@@ -12,7 +12,7 @@ const postQuery = graphql`
           description
           author
           date(formatString: "YYYY-MM-DD")
-          tags        
+          tags
         }
         slug
       }
@@ -39,6 +39,6 @@ type PostQueryType = {
 const GetPosts = (tag?: string) => {
   const data: PostQueryType = useStaticQuery(postQuery)
   const posts = data.allMdx.nodes.filter(node => new Date(node.frontmatter.date) <= new Date())
-  return tag ? posts.filter(node => node.frontmatter.tags.includes(tag)) : posts; 
+  return tag ? posts.filter(node => node.frontmatter.tags.includes(tag)) : posts
 }
 export default GetPosts
