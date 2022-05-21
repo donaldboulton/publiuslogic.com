@@ -30,7 +30,7 @@ const features = [
 
 export default function Features() {
   return (
-    <div className="pt-8 pb-8 bg-gray-800 light:bg-gray-300 text-gray-200 light:text-gray-900 rounded-lg">
+    <div className="pt-8 pb-8 text-gray-200 light:text-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 className="text-base font-semibold tracking-wide uppercase">PubliusLogic</h2>

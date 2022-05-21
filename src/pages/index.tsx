@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import SEO from '@/components/seo'
 import Header from '@/components/header'
-import FindOutMore from '@/components/findoutmore'
+import Features from '@/components/Features'
 import LatestArticles from '@/components/latestarticles'
 import Footer from '@/components/footer'
 import ScrollIndicator from '@/components/scroll-indicator'
@@ -14,7 +14,7 @@ import List from '@/components/List'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, motion, m } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
-import WavyHr from '@/components/WavyHr'
+
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
@@ -162,7 +162,7 @@ export default function Home() {
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </Helmet>
-      <Header transparent />
+      <Header />
       <m.main className="font-sans" variants={container}>
         <div className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center">
           <div className="absolute top-0 bg-center">
@@ -504,7 +504,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: 'easeIn' }}
               key={1}
             >
-              <FindOutMore />
+              <Features />
             </m.div>
           </div>
         </m.section>
