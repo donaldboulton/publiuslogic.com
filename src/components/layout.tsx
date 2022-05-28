@@ -42,27 +42,29 @@ const shortcodes = {
 
 const Layout = ({ children, path }: LayoutProps) => {
   return (
-    <LazyMotion features={loadFeatures}>
-      <Helmet>
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </Helmet>
-      <div className="max-w-screen-xl mx-auto bg-primary-dark light:bg-offwhite text-white light:text-black transition-all duration-200 ease-linear antialiased font-sans">
-        <m.main
-          key={path}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{
-            type: 'spring',
-            mass: 0.35,
-            stiffness: 75,
-            duration: 0.6,
-          }}
-        >
-          <MDXProvider components={shortcodes}>{children}</MDXProvider>
-        </m.main>
-      </div>
+    <>
+      <LazyMotion features={loadFeatures}>
+        <Helmet>
+          <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+          <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+        </Helmet>
+        <div className="max-w-screen-xl mx-auto bg-primary-dark light:bg-offwhite text-white light:text-black transition-all duration-200 ease-linear antialiased font-sans">
+          <m.main
+            key={path}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              type: 'spring',
+              mass: 0.35,
+              stiffness: 75,
+              duration: 0.6,
+            }}
+          >
+            <MDXProvider components={shortcodes}>{children}</MDXProvider>
+          </m.main>
+        </div>
+      </LazyMotion>
       <CookieConsent
         enableDeclineButton
         flipButtons
@@ -98,7 +100,8 @@ const Layout = ({ children, path }: LayoutProps) => {
           </Link>
         </span>
       </CookieConsent>
-    </LazyMotion>
+      <div id="modal"></div>
+    </>
   )
 }
 
