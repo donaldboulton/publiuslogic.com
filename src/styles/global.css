@@ -518,6 +518,22 @@ gatsby-highlight > code[class*='language-'],
   padding-left: 0.75em;
   border-left: 0.1em solid #d23669;
 }
+giscus-widget {
+  display: flex;
+  margin: auto;
+  max-width: 640px;
+}
+
+#comments::part(iframe) {
+  max-width: 640px;
+  margin: auto;
+  display: flex;
+}
+
+.comments-container {
+  max-height: 640px;
+  overflow-y: scroll;
+}
 
 @tailwind components;
 @tailwind utilities;

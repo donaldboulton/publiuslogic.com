@@ -22,7 +22,7 @@ export const Backdrop = styled.div`
 
 export const StyledModal = styled.div`
   z-index: 100;
-  background: #171717;
+  background: #1f2937;
   color: #fff
   position: relative;
   margin: auto;

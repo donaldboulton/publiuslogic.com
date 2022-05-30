@@ -23,9 +23,13 @@ export const Message = styled.div`
 
 export const YesButton = styled.button`
   width: 6rem;
+  background: #c026d3;
+  color: #fff;
 `
 
 export const NoButton = styled.button`
   width: 3rem;
+  background: #c026d3;
+  color: #fff;
   margin-left: 10px;
 `

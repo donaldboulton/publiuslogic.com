@@ -15,6 +15,7 @@ import Tags from '@/components/tags'
 import TableOfContent from '@/components/TableOfContent'
 import Stars from '@/components/Stars'
 import NowPlaying from '@/components/PlayList'
+import GiscusComments from '@/components/GiscusComments'
 
 const components = { Link }
 
@@ -88,6 +89,7 @@ const BlogPost = ({ data }: BlogPostProps) => {
             <MDXRenderer localImages={frontmatter.image} components={components}>
               {data.mdx.body}
             </MDXRenderer>
+            <GiscusComments mapping={pathname} />
           </section>
           <ScrollDown
             className="scroll z-20 right-4 md:right-3 top-20"
