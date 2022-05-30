@@ -108,7 +108,7 @@
   },
   "devDependencies": {
     "@netlify/functions": "^1.0.0",
-    "@netlify/plugin-gatsby": "^3.0.0",
+    "@netlify/plugin-gatsby": "^3.1.0",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.0.1",
     "@types/leaflet": "^1.7.10",

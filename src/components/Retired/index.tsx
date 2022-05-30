@@ -5,7 +5,7 @@ const times = [
   {
     name: 'Retired',
     description:
-      'Been Retired Since Birth, refused get to work until I was 65, so on November 15th 2020, I come out of retirement and Judgement of Man takes place between Nov 15th and the end of the times, "Dec 31st 2020"!',
+      'Been Retired Since Birth, refused get to work until I was 65, so on November 15th 2022, I will come out of retirement and Judgement of Man takes place between Nov 15th and the end of the times, "Dec 31st 2020"!',
     icon: ClockIcon,
   },
   {
