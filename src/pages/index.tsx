@@ -474,7 +474,7 @@ export default function Home() {
                 </div>
               </div>
               <div
-                className="top-auto mt-4 bottom-0 left-0 bg-gray-800 light:bg-offwhite right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
+                className="top-auto mt-4 bottom-0 left-0 bg-gray-900 light:bg-offwhite right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
                 style={{ height: '70px' }}
               >
                 <svg
