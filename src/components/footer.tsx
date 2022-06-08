@@ -215,11 +215,7 @@ export default function IndexFooter() {
         hide={toggle}
         headerText="Confirmation"
         modalContent={
-          <ConfirmationModal
-            onConfirm={onConfirm}
-            onCancel={onCancel}
-            message="Donald Boulton at donboulton.com?"
-          >
+          <ConfirmationModal onConfirm={onConfirm} onCancel={onCancel} message="Donald Boulton at donboulton.com?">
             <a
               href="https://donboulton.com"
               rel="noopener noreferrer"

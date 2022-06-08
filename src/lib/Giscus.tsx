@@ -17,15 +17,15 @@ export default function Giscus({
   lang,
   loading,
 }: GiscusProps) {
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    if (mounted) return;
-    import('giscus');
-    setMounted(true);
-  }, []);
+    if (mounted) return
+    import('giscus')
+    setMounted(true)
+  }, [])
 
-  if (!mounted) return null;
+  if (!mounted) return null
 
   return (
     <giscus-widget
@@ -43,5 +43,5 @@ export default function Giscus({
       lang={lang}
       loading={loading}
     />
-  );
+  )
 }
