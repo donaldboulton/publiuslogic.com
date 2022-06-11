@@ -86,9 +86,9 @@ export default function LatestArticles() {
                   </List.Item>
                   <List.Item>
                     <div>
-                      <Link to="/blog/immorality-abortion">
+                      <Link to="/blog/trinity-of-man">
                         <h4>
-                          <span className="text-fuchsia-500 hover:text-fuchsia-600">Immorality Abortion</span>
+                          <span className="text-fuchsia-500 hover:text-fuchsia-600">Trinity of Man</span>
                         </h4>
                       </Link>
                       <span>

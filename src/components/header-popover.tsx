@@ -60,9 +60,9 @@ const posts = [
     icon: QuestionMarkCircleIcon,
   },
   {
-    name: 'Abortion',
-    description: 'Immorality Abortion Is A Sin',
-    href: '/blog/immorality-abortion',
+    name: 'Trinity of Man',
+    description: 'Trinity of Man',
+    href: '/blog/trinity-of-man',
     icon: BanIcon,
   },
   {
