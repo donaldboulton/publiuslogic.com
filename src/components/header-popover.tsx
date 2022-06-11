@@ -60,9 +60,9 @@ const posts = [
     icon: QuestionMarkCircleIcon,
   },
   {
-    name: 'Trinity of Man',
-    description: 'Trinity of Man',
-    href: '/blog/trinity-of-man',
+    name: 'Jew Who',
+    description: 'Who are the Jewish People',
+    href: '/blog/jew-who',
     icon: BanIcon,
   },
   {
