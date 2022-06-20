@@ -11,13 +11,15 @@ import { CalendarIcon, UserCircleIcon } from '@heroicons/react/outline'
 import GetPosts from '@/utils/getposts'
 
 import Tags from '@/components/tags'
+import Category from '@/components/categories'
 
 interface BlogRollProps {
   tag?: string
+  category?: string
 }
 const POSTS_PER_PAGE = 12
 
-const BlogRoll = ({ tag }: BlogRollProps) => {
+const BlogRoll = ({ tag, category }: BlogRollProps) => {
   const posts = GetPosts(tag)
   const [offset, setOffset] = useState(0)
 

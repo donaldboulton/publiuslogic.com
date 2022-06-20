@@ -33,34 +33,50 @@ exports.createSchemaCustomization = ({ actions }) => {
 }
 
 const tagTemplate = path.resolve('src/templates/tag-template.tsx')
+const categoryTemplate = path.resolve('src/templates/category-template.tsx')
 
-exports.createPages = async ({ actions, graphql, reporter }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  // Destructure the createPage function from the actions object
   const { createPage } = actions
-
-  const result = await graphql(`
-    {
-      tagsGroup: allMdx(limit: 2000) {
+  // Use the graphql group command to get a list of each tag and category
+  // fieldValue is the tag/category name
+  const { data, errors } = await graphql(`
+    query {
+      categories: allMdx {
+        group(field: frontmatter___category) {
+          fieldValue
+        }
+      }
+      tags: allMdx {
         group(field: frontmatter___tags) {
           fieldValue
         }
       }
     }
   `)
-  // handle errors
-  if (result.errors) {
-    reporter.panicOnBuild('Error while running GraphQL query.')
-    return
+  if (errors) {
+    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
-  // Extract tag data from query
-  const tags = result.data.tagsGroup.group
-  // Make tag pages
-  tags.forEach(tag => {
+  // Loop over every category and create a page for each one
+  const categories = data.categories.group
+  categories.forEach(({ fieldValue }) =>
     createPage({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
-      component: tagTemplate,
+      path: `category/${fieldValue}`.toLowerCase(),
+      component: categoryTemplate,
       context: {
-        tag: tag.fieldValue,
+        category: fieldValue,
       },
     })
-  })
+  )
+  // Same for tags
+  const tags = data.tags.group
+  tags.forEach(({ fieldValue }) =>
+    createPage({
+      path: `tags/${fieldValue}`.toLowerCase(),
+      component: tagTemplate,
+      context: {
+        tag: fieldValue,
+      },
+    })
+  )
 }

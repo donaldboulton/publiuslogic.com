@@ -5,7 +5,7 @@ const features = [
   {
     name: 'Creation of All',
     description:
-      'Been waiting around to prompted for 63 years to start this. Kind of got complacent. Then next thing I know the Trinity was together and I was on my way! Matthew 6 But when you pray, go into your room, close the door and pray to your Father, who is unseen. Then your Father, who sees what is done in secret, will reward you. Your room or heart is inside of you, lose out this world and sleep, for only in your sleep is when you can communicate with father in, "A Secret", from you and all others. To a secret sleep with love and truth in your hearts!',
+      'Been waiting around all of my life to start this. Kind of got complacent. Then next thing I know the Trinity was together and I was on my way! Matthew 6 But when you pray, go into your room, close the door and pray to your Father, who is unseen. Then your Father, who sees what is done in secret, will reward you. Your room or heart is inside of you, lose out this world and sleep, for only in your sleep is when you can communicate with father in, "A Secret", from you and all others. To a secret sleep with love and truth in your hearts!',
     icon: SparklesIcon,
   },
   {
@@ -36,7 +36,7 @@ export default function Features() {
           <h2 className="text-base font-semibold tracking-wide uppercase">PubliusLogic</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">Topics and Discussions</p>
           <p className="mt-4 max-w-2xl text-xl lg:mx-auto">
-            PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the
+            PubliusLogic has Topics on God/Creation, Law, USA and World Governments, Life Matters. Our Main focus is the
             Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your
             Soul and Spirit you deny.
           </p>

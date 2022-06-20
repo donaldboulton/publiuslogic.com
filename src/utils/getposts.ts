@@ -13,6 +13,7 @@ const postQuery = graphql`
           author
           date(formatString: "YYYY-MM-DD")
           tags
+          category
         }
         slug
       }
@@ -26,6 +27,7 @@ export type PostType = {
     description: string
     author: string
     date: string
+    category: string
     tags: string[]
   }
   slug: string
