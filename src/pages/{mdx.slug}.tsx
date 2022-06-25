@@ -121,7 +121,6 @@ export const query = graphql`
         path
         date(formatString: "YYYY-MM-DD")
         tags
-        category
       }
       headings {
         value

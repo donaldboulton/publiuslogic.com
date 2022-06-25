@@ -33,7 +33,6 @@ exports.createSchemaCustomization = ({ actions }) => {
 }
 
 const tagTemplate = path.resolve('src/templates/tag-template.tsx')
-const categoryTemplate = path.resolve('src/templates/category-template.tsx')
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
@@ -57,17 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
-  // Loop over every category and create a page for each one
-  const categories = data.categories.group
-  categories.forEach(({ fieldValue }) =>
-    createPage({
-      path: `category/${fieldValue}`.toLowerCase(),
-      component: categoryTemplate,
-      context: {
-        category: fieldValue,
-      },
-    })
-  )
+  
   // Same for tags
   const tags = data.tags.group
   tags.forEach(({ fieldValue }) =>

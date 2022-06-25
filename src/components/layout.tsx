@@ -9,13 +9,13 @@ import Cta from '@/components/CTA'
 import Tweet from '@/components/Tweet'
 import Callout from '@/components/Callout'
 import WavyHr from '@/components/WavyHr'
-import VideoPlayer from '@/components/Video/VideoPlayer'
 import A from '@/components/A'
 import List from '@/components/List'
 import ListItem from '@/components/List/ListItem'
 import ListGrid from '@/components/ListGrid'
 import Tooltip from '@/components/Tooltip'
 import Sparkles from '@/components/Sparkles'
+import { VideoPlayer } from "@/components/VideoPlayer"
 import { LazyMotion, m } from 'framer-motion'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
@@ -28,7 +28,6 @@ const shortcodes = {
   A,
   FindOutMore,
   Cta,
-  VideoPlayer,
   Features,
   WavyHr,
   Callout,
