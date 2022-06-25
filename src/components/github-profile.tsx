@@ -27,7 +27,7 @@ function GithubProfile() {
         <div>Loading...</div>
       ) : (
         <>
-          <div className="py-10 mb-4 w-full">
+          <div className="py-6 mb-4 w-full">
             <img
               className="w-20 h-20 mx-auto mb-3 ring ring-indigo-200 rounded-full"
               src={user.photo}
@@ -37,7 +37,7 @@ function GithubProfile() {
             <a className="text-rose-400 hover:text-rose-500" href={user.blog_url} target="_blank" rel="noreferrer">
               {user.blog_url}
             </a>
-            <p className="flex justify-center max-w-xs m-auto text-gray-200 hover:text-gray-400 light:text-gray-800 light:hover:text-gray-700 my-2 mb-6">
+            <p className="flex justify-center max-w-md m-auto text-gray-200 hover:text-gray-400 light:text-gray-800 light:hover:text-gray-700 my-2 mb-6">
               {user.bio}
             </p>
             <div className="flex justify-center max-w-xs m-auto">
@@ -84,34 +84,6 @@ function GithubProfile() {
                 </a>
               </div>
             </div>
-          </div>
-          <div className="justify-center ml-20">
-            <Disclosure className="text-center justify-center">
-              {({ open }) => (
-                <>
-                  <Disclosure.Button className="flex justify-between w-72 px-4 py-2 text-sm font-medium text-left text-purple-400 bg-purple-900 rounded-lg hover:bg-purple-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
-                    <span>Json Un-formatted Response</span>
-                    <ChevronUpIcon className={`${open ? 'transform rotate-180' : ''} w-5 h-5 text-purple-500`} />
-                  </Disclosure.Button>
-
-                  <Transition
-                    show={open}
-                    enter="transition duration-100 ease-out"
-                    enterFrom="transform scale-95 opacity-0"
-                    enterTo="transform scale-100 opacity-100"
-                    leave="transition duration-75 ease-out"
-                    leaveFrom="transform scale-100 opacity-100"
-                    leaveTo="transform scale-95 opacity-0"
-                  >
-                    <Disclosure.Panel className="px-4 pt-4 pb-2">
-                      <pre className="text-left w-64 text-xs p-3 bg-gray-800 light:bg-gray-300 text-gray-200 hover:text-gray-400 light:text-gray-800 light:hover:text-gray-700 overflow-auto rounded-lg">
-                        {JSON.stringify(user, null, 2)}
-                      </pre>
-                    </Disclosure.Panel>
-                  </Transition>
-                </>
-              )}
-            </Disclosure>
           </div>
         </>
       )}

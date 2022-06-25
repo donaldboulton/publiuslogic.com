@@ -56,7 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
-  
+
   // Same for tags
   const tags = data.tags.group
   tags.forEach(({ fieldValue }) =>

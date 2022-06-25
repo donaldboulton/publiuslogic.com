@@ -7,6 +7,7 @@ import SEO from '@/components/seo'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Stars from '@/components/Stars'
+import CloudinaryVideo from '@/components/CloudinaryVideo'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 
@@ -24,16 +25,22 @@ function Profile() {
         <ScrollIndicator />
         <main>
           <Stars />
-          <article className="flex flex-wrap m-10">
+          <article className="m-10">
             <div className="mt-6 mb-6 text-center">
               <h2 className="text-4xl font-bold mt-2 mb-2 leading-tight">Github Profile</h2>
               <div className="mt-6 mb-6 text-center">
                 <GithubProfile />
               </div>
             </div>
+            <div className="mb-10">
+              <CloudinaryVideo />
+            </div>
+            <div className="mb-20">
+              <WavyHr className="text-indigo-600" />
+            </div>
           </article>
-          <WavyHr className="text-indigo-600" />
         </main>
+        
         <Footer />
       </Layout>
     </>
