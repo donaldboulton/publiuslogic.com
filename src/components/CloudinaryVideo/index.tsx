@@ -1,32 +1,33 @@
 import * as React from 'react'
-import { Video, Transformation } from 'cloudinary-react'
+import { useRef } from 'react'
+import { AdvancedVideo, Transformation } from '@cloudinary/react'
+import { CloudinaryVideo } from '@cloudinary/url-gen'
+import { videoCodec } from "@cloudinary/url-gen/actions/transcode"
+import { auto, vp9 } from '@cloudinary/url-gen/qualifiers/videoCodec'
+import VideoWrapper from './wrapper'
 
-const CloudinaryVideo = () => {
+const Video = () => {
+  const vid = new CloudinaryVideo('videos/angelina_jordan_suspicious_minds', {cloudName: 'mansbooks'})
+	const videoEl = useRef()
+	const sources = [
+		{
+			type: 'mp4',
+			codecs: ['avc1.4d002a'],
+			transcode: videoCodec(auto())
+		},
+		{
+			type: 'webm',
+			codecs: ['vp8', 'vorbis'],
+			transcode: videoCodec(vp9())
+		}];
+
   return (
     <>
-      <Video
-        publicId="videos/angelina_jordan_suspicious_minds"
-        cloudName="mansbooks"
-        controls={true}
-        fluid={true}
-        preload="none"
-        crop="scale"
-        className="w-full"
-        fallbackContent="Your browser does not support HTML5 video tags"
-        poster={{
-          gravity: 'north',
-          startOffset: '28',
-          transformation: [{ effect: 'sepia', fetchFormat: 'auto' }],
-        }}
-        sourceTransformation={{
-          webm: { quality: '70' },
-          mp4: { overlay: 'text:verdana_30:Ange!' },
-        }}
-      >
-        <Transformation overlay="text:arial_20:Angelina%20Jordan" color="red" gravity="north" y="12" />
-      </Video>
+      <VideoWrapper>        
+        <AdvancedVideo cldVid={vid} sources={sources} className="w-full" ref={videoEl} controls />         
+      </VideoWrapper>
     </>
   )
 }
 
-export default CloudinaryVideo
+export default Video

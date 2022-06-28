@@ -29,6 +29,8 @@ interface BlogPostProps {
         author: string
         date: string
         tags: string[]
+        publicId: string
+        videoTitle: string
       }
       slug: string
       parent: {
@@ -119,6 +121,8 @@ export const query = graphql`
         description
         author
         path
+        publicId
+        videoTitle
         date(formatString: "YYYY-MM-DD")
         tags
       }

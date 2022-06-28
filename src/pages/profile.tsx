@@ -40,7 +40,7 @@ function Profile() {
             </div>
           </article>
         </main>
-        
+
         <Footer />
       </Layout>
     </>

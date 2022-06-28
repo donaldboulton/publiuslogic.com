@@ -1,9 +1,8 @@
 import * as React from 'react'
 import { useEffect, useState, useRef, useCallback } from 'react'
-import { motion, useAnimation } from 'framer-motion'
 import * as CSS from 'csstype'
 import VisuallyHidden from '../VisuallyHidden'
-import { LazyMotion, m } from 'framer-motion'
+import { LazyMotion, m, useAnimation } from 'framer-motion'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
