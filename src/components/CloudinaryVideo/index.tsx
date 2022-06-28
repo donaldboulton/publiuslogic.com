@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useRef } from 'react'
-import { AdvancedVideo, Transformation } from '@cloudinary/react'
+import { AdvancedVideo, Transformation, lazyload } from '@cloudinary/react'
 import { CloudinaryVideo } from '@cloudinary/url-gen'
 import { videoCodec } from "@cloudinary/url-gen/actions/transcode"
 import { auto, vp9 } from '@cloudinary/url-gen/qualifiers/videoCodec'
@@ -24,7 +24,7 @@ const Video = () => {
   return (
     <>
       <VideoWrapper>        
-        <AdvancedVideo cldVid={vid} sources={sources} className="w-full" ref={videoEl} controls />         
+        <AdvancedVideo cldVid={vid} sources={sources} className="w-full" ref={videoEl} controls autoPlay loop plugins={[lazyload()]} />         
       </VideoWrapper>
     </>
   )
