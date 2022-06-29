@@ -176,6 +176,26 @@ But then by the iron fist scenario, I would have missed the dance of human life.
 
 > So no matter how much torture; I had to go for it!
 
+## Angelina Jordan Suspicious Minds
+
+Listen to the most Amazing song by Angelina Jordan with my streaming Cloudinary service with the latest types and codecs.
+
+@cloudinary Advanced Video type WebM / codecs 'vp8', 'vorbis' / transcode: videoCodec(vp9())
+
 <CloudinaryVideo />
+
+```jsx:title=Codecs Transcode
+  const sources = [
+	{
+		type: 'mp4',
+		codecs: ['avc1.4d002a'],
+		transcode: videoCodec(auto())
+	},
+	{
+		type: 'webm',
+		codecs: ['vp8', 'vorbis'],
+		transcode: videoCodec(vp9())
+	}];
+```    
 
 <WavyHr className="mt-1 mb-1 text-fuchsia-600" />
