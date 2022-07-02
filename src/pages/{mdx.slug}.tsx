@@ -13,7 +13,6 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Tags from '@/components/tags'
 import TableOfContent from '@/components/TableOfContent'
-import Stars from '@/components/Stars'
 import NowPlaying from '@/components/PlayList'
 import GiscusComments from '@/components/GiscusComments'
 import WavyHr from '@/components/WavyHr'
@@ -60,7 +59,6 @@ const BlogPost = ({ data }: BlogPostProps) => {
       <TableOfContent headings={data.mdx.headings} />
       <ScrollIndicator />
       <main>
-        <Stars />
         <article className="mb-10">
           <section className="px-4 lg:px-0 mt-8 mb-20 max-w-screen-lg mx-auto text-white light:text-black prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500">
             <div>

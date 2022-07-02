@@ -9,7 +9,6 @@ import SEO from '@/components/seo'
 import PageHero from '@/components/PageHero'
 import OGImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
 import PageImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
-import Stars from '@/components/Stars'
 
 export default function DSG() {
   const ogimage = {
@@ -45,7 +44,6 @@ export default function DSG() {
               </div>
             </div>
           </article>
-          <Stars />
         </main>
         <Footer />
       </Layout>

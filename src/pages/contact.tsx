@@ -15,7 +15,6 @@ import Twitter from '../../static/svg/icons/twitter.inline.svg'
 import Github from '../../static/svg/icons/github.inline.svg'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import Stars from '@/components/Stars'
 
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
@@ -77,7 +76,6 @@ function ContactUs() {
         </article>
         <Map />
         <div className="mt-10 sm:mt-0 p-8 text-white light:text-black">
-          <Stars />
           <div className="lg:grid lg:grid-cols-3 lg:gap-6">
             <div className="lg:col-span-1">
               <div className="m-0">
