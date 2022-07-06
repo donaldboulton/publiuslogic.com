@@ -610,11 +610,7 @@ export default function Home() {
         ariaAcceptLabel="Accept Cookies"
         ariaDeclineLabel="Decline Cookies"
         cookieName="gatsby-gdpr-google-analytics"
-        onAccept={() => {
-          if (typeof window !== 'undefined') {
-              window[gtmDatalayerName].push({ event: 'gatsbyRouteChange' })
-          }
-        }}
+        onAccept={() => window.location.reload()}
         style={{
           background: 'linear-gradient(to right, #4338ca, transparent, #4338ca)',
           textShadow: '2px 2px black',
