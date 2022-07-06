@@ -509,26 +509,6 @@ export default function Home() {
           </div>
         </m.section>
         <m.section variants={item} className="py-20 relative block bg-primary-dark">
-          <div
-            className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-            style={{ height: '80px' }}
-          >
-            <svg
-              className="absolute bottom-0 overflow-hidden"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              version="1.1"
-              viewBox="0 0 2560 100"
-              x="0"
-              y="0"
-            >
-              <polygon
-                className="bg-primary-dark text-primary-dark fill-current"
-                points="2560 0 2560 100 0 100"
-              ></polygon>
-            </svg>
-          </div>
-
           <div className="container mx-auto px-4 lg:pt-12 lg:pb-28">
             <m.div
               ref={ref2}
@@ -539,23 +519,19 @@ export default function Home() {
             >
               <LatestArticles />
             </m.div>
-            <div
-              className="top-auto mt-4 bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
-              style={{ height: '70px' }}
-            >
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
               <svg
-                className="absolute bottom-0 overflow-hidden"
                 xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none"
-                version="1.1"
-                viewBox="0 0 2560 100"
-                x="0"
-                y="0"
+                xlink="http://www.w3.org/1999/xlink"
+                width="2560"
+                height="200"
+                viewBox="0 0 2560 200"
+                className="stroke-red-500 dark:stroke-red-600 fill-gray-800"
               >
-                <polygon
-                  className="text-gray-800 light:text-white fill-current"
-                  points="2560 0 2560 100 0 100"
-                ></polygon>
+                <path
+                  stroke-width="2"
+                  d="M26 106 0 23-7-1v211h2577V23l-32 118-27-8-27-50-27-19-28 33-27 68-26 15-28-55-26 16-27-27-27-43-27 47-27 18-28-60-25 89-29 8-26-40-27-69-29-32-25-8-27 47-28 38-27-12-27-44h-27l-26 18-27 43-27 15-27-24-28-67-26-28-28-7-25 93-26-32-29-4-28 100-26-24-27 37-27-28-27-16-27 53-28-60-26 23-27-23-27-8-27 42-27 26-27-77-28 17-27-13-26 58-28-11-27 11-27-31-27-22-27 42-27-11-27 28-26 15-27-66-28-13-26-71-27 10-28-21-27 109-27-30-27 8-26 84-27-19-28-93-27-59-26-20-27 68-27-59-27 55-27 35h-27l-28-50-26-8-28 97-27-23-26 51-27-114-26 86-28-102-27 53-27-48-27 27-28 61-27-22-27-8-27 39-27-83-27 44Z"
+                ></path>
               </svg>
             </div>
           </div>
@@ -580,13 +556,13 @@ export default function Home() {
                         Before the End of this Month I will be a little more explanatory on the Creation of all and
                         Virtue!
                       </p>
-                      <p className="leading-relaxed mt-1 mb-4 text-gray-200">
+                      <p className="leading-relaxed mt-1 mb-20 text-gray-200">
                         On Easter I will Give you the Final Trinity Works.{' '}
                         <span className="underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
                           The Trinity Of Man!
                         </span>
                       </p>
-                      <div className="mt-5 lg:mt-0 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-white light:text-black">
+                      <div className="mt-20 lg:mt-0 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-white light:text-black">
                         <List variant="unordered">
                           <List.Item>
                             <p className="mb-1" variant="secondary">

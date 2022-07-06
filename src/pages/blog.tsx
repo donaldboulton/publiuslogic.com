@@ -1,5 +1,4 @@
 import * as React from 'react'
-
 import Layout from '@/components/layout'
 import SEO from '@/components/seo'
 import PageHero from '@/components/PageHero'
@@ -8,6 +7,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import ScrollIndicator from '@/components/scroll-indicator'
 import ScrollDown from '@/components/scroll-down'
+import Stars from '@/components/Stars'
 
 import Image from '../../static/svg/undraw/undraw_blog_post_re_fy5x.svg'
 import OGImage from '../../static/images/undraw/undraw_Blog_post_re_fy5x.png'
@@ -31,6 +31,7 @@ const BlogPage = () => {
       <Header />
       <ScrollIndicator />
       <main className="mt-10">
+        <Stars />
         <article className="post">
           <header>
             <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />

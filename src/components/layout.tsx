@@ -2,11 +2,10 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import CookieConsent from 'react-cookie-consent'
-import {MDXProvider} from '@mdx-js/react'
+import { MDXProvider } from '@mdx-js/react'
 import FindOutMore from '@/components/findoutmore'
 import Features from '@/components/Features'
 import Cta from '@/components/CTA'
-import Tweet from '@/components/Tweet'
 import Callout from '@/components/Callout'
 import WavyHr from '@/components/WavyHr'
 import A from '@/components/A'
@@ -31,7 +30,6 @@ const shortcodes = {
   Features,
   WavyHr,
   Callout,
-  Tweet,
   List,
   ListItem,
   ListGrid,

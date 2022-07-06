@@ -42,7 +42,7 @@ typings/
 # Optional npm cache directory
 .npm
 .yarn
-
+yarn-lock
 # Optional eslint cache
 .eslintcache
 
@@ -71,6 +71,7 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 .yarnrc.yml
-
+yarn-lock
+.yarn-lock
 # VS Code workspace
 *.code-workspace
