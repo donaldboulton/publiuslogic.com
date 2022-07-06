@@ -233,6 +233,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-posthog`,
+        options: {
+        // Specify the API key for your PostHog Project (required)
+        apiKey: "phc_4EkE0WJeqTjHXjjvZsp2TNqcBf9FZNLOK1iEhxjGk8I",
+        // Specify the app host if self-hosting (optional, default: https://app.posthog.com)
+        apiHost: "https://app.posthog.com",
+        // Puts tracking script in the head instead of the body (optional, default: true)
+        head: true,
+        // Enable posthog analytics tracking during development (optional, default: false)
+        isEnabledDevMode: true
+      },
+    },
+    {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
         devMode: true,
