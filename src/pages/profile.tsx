@@ -47,7 +47,7 @@ function Profile() {
             </div>
             <div className="mb-10">
               <CloudinaryVideo />
-            </div>            
+            </div>
             <div className="mb-20">
               <WavyHr className="text-indigo-600" />
             </div>

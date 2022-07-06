@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import CookieConsent from 'react-cookie-consent'
+import CookieConsent, { Cookies, getCookieConsentValue } from 'react-cookie-consent'
 import { MDXProvider } from '@mdx-js/react'
 import FindOutMore from '@/components/findoutmore'
 import Features from '@/components/Features'
@@ -39,6 +39,8 @@ const shortcodes = {
 }
 
 const Layout = ({ children, path }: LayoutProps) => {
+  console.log(getCookieConsentValue());
+  getCookieConsentValue("gatsby-gdpr-google-analytics")
   return (
     <>
       <LazyMotion features={loadFeatures}>
@@ -72,6 +74,11 @@ const Layout = ({ children, path }: LayoutProps) => {
         ariaAcceptLabel="Accept Cookies"
         ariaDeclineLabel="Decline Cookies"
         cookieName="gatsby-gdpr-google-analytics"
+        onAccept={() => {
+          if (typeof window !== 'undefined') {
+              window[gtmDatalayerName].push({ event: 'gatsbyRouteChange' })
+          }
+        }}
         style={{
           background: 'linear-gradient(to right, #4338ca, transparent, #4338ca)',
           textShadow: '2px 2px black',

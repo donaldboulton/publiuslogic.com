@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
-import CookieConsent from 'react-cookie-consent'
+import CookieConsent, { Cookies, getCookieConsentValue } from 'react-cookie-consent'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import SEO from '@/components/seo'
@@ -16,6 +16,7 @@ import { LazyMotion, motion, m } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
+
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -52,6 +53,8 @@ const useAnimateOnInView = () => {
 }
 
 export default function Home() {
+  console.log(getCookieConsentValue());
+  getCookieConsentValue("gatsby-gdpr-google-analytics")
   const [replay, setReplay] = useState(true)
   // Placeholder text data, as if from API
   const placeholderText = [
@@ -607,6 +610,11 @@ export default function Home() {
         ariaAcceptLabel="Accept Cookies"
         ariaDeclineLabel="Decline Cookies"
         cookieName="gatsby-gdpr-google-analytics"
+        onAccept={() => {
+          if (typeof window !== 'undefined') {
+              window[gtmDatalayerName].push({ event: 'gatsbyRouteChange' })
+          }
+        }}
         style={{
           background: 'linear-gradient(to right, #4338ca, transparent, #4338ca)',
           textShadow: '2px 2px black',

@@ -224,7 +224,7 @@ module.exports = {
           cookieName: 'gatsby-gdpr-tiktok-pixel', // default
         },
         hotjar: {
-          hjid: '2721625',
+          hjid: '1328362',
           hjsv: '6',
           cookieName: 'gatsby-gdpr-hotjar', // default
         },
