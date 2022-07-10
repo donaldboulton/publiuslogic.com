@@ -16,6 +16,7 @@ import Tooltip from '@/components/Tooltip'
 import Sparkles from '@/components/Sparkles'
 import { LazyMotion, m } from 'framer-motion'
 import CloudinaryVideo from '@/components/CloudinaryVideo'
+import VideoTwo from '@/components/CloudinaryVideo/videoTwo'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -36,6 +37,7 @@ const shortcodes = {
   Tooltip,
   Sparkles,
   CloudinaryVideo,
+  VideoTwo,
 }
 
 const Layout = ({ children, path }: LayoutProps) => {
