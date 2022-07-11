@@ -9,6 +9,7 @@ import Cta from '@/components/CTA'
 import Callout from '@/components/Callout'
 import WavyHr from '@/components/WavyHr'
 import A from '@/components/A'
+import Center from '@/components/Center'
 import List from '@/components/List'
 import ListItem from '@/components/List/ListItem'
 import ListGrid from '@/components/ListGrid'
@@ -27,6 +28,7 @@ interface LayoutProps {
 const shortcodes = {
   A,
   FindOutMore,
+  Center,
   Cta,
   Features,
   WavyHr,
