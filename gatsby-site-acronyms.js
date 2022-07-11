@@ -54,6 +54,7 @@ module.exports = {
   NFC: 'Near Field Communication',
   OKC: 'Oklahoma City OK',
   OCU: 'Oklahoma City University',
+  OSU: 'Oklahoma State University',
   PDF: 'Portable Document Format',
   PG: 'Preacher God',
   PGP: 'Pretty Good Privacy',
