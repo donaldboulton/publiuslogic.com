@@ -522,7 +522,7 @@ export default function Home() {
             >
               <LatestArticles />
             </m.div>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
+            <div className="mt-10 bottom-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xlink="http://www.w3.org/1999/xlink"

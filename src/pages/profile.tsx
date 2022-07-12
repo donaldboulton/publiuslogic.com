@@ -23,14 +23,14 @@ function Profile() {
         <Header transparent />
         <ScrollIndicator />
         <main>
-          <article className="m-10">
+          <article className="mb-11">
             <div className="mt-6 mb-6 text-center">
               <h2 className="text-4xl font-bold mt-2 mb-2 leading-tight">Github Profile</h2>
               <div className="mt-6 mb-6 text-center">
                 <GithubProfile />
               </div>
             </div>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+            <div className="mt-10 pt-10 bottom-8 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xlink="http://www.w3.org/1999/xlink"
