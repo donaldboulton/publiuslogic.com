@@ -55,6 +55,7 @@ module.exports = {
   OKC: 'Oklahoma City OK',
   OCU: 'Oklahoma City University',
   OSU: 'Oklahoma State University',
+  OU: 'Oklahoma University Slut School',
   PDF: 'Portable Document Format',
   PG: 'Preacher God',
   PGP: 'Pretty Good Privacy',
