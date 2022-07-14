@@ -21,7 +21,8 @@ align-items: center;
 -webkit-box-pack: center;
 background: radial-gradient(
   circle farthest-corner at center center,
-  #e11d48,
+  #a855f7,
+  #9333ea,
   #be185d
 ) no-repeat;
 -webkit-background-clip: text;

@@ -9,12 +9,18 @@ import Footer from '@/components/footer'
 import CloudinaryVideo from '@/components/CloudinaryVideo'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
+import Spacer200 from '../../static/img//spacer-200.jpg'
 
 function Profile() {
   const ogimage = {
     src: OGImage,
     width: 1342,
     height: 531,
+  }
+  const spacer200 = {
+    src: Spacer200,
+    width: 1342,
+    height: 200,
   }
   return (
     <>
@@ -30,14 +36,15 @@ function Profile() {
                 <GithubProfile />
               </div>
             </div>
-            <div className="mt-10 pt-10 bottom-8 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
+            <div image={spacer200} className="my-10 pt-10 right-0 w-full absolute overflow-hidden bg-transparent"></div> 
+            <div className="mt-10 pt-10 right-0 bottom-10 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xlink="http://www.w3.org/1999/xlink"
                 width="2560"
                 height="200"
                 viewBox="0 0 2560 200"
-                className="fill-blue-50 stroke-blue-500 dark:fill-gray-800"
+                className="fill-blue-50 stroke-blue-500 dark:fill-transparent"
               >
                 <path
                   stroke-width="2"
