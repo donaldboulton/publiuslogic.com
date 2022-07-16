@@ -17,7 +17,6 @@ import AnimatedText from '@/components/AnimatedText'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 
-
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 const container = {
@@ -53,8 +52,8 @@ const useAnimateOnInView = () => {
 }
 
 export default function Home() {
-  console.log(getCookieConsentValue());
-  getCookieConsentValue("gatsby-gdpr-google-analytics")
+  console.log(getCookieConsentValue())
+  getCookieConsentValue('gatsby-gdpr-google-analytics')
   const [replay, setReplay] = useState(true)
   // Placeholder text data, as if from API
   const placeholderText = [

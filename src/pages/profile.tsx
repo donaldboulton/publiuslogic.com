@@ -36,7 +36,7 @@ function Profile() {
                 <GithubProfile />
               </div>
             </div>
-            <div image={spacer200} className="my-10 pt-10 right-0 w-full absolute overflow-hidden bg-transparent"></div> 
+            <div image={spacer200} className="my-10 pt-10 right-0 w-full absolute overflow-hidden bg-transparent"></div>
             <div className="mt-10 pt-10 right-0 bottom-10 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

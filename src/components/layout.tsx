@@ -43,8 +43,8 @@ const shortcodes = {
 }
 
 const Layout = ({ children, path }: LayoutProps) => {
-  console.log(getCookieConsentValue());
-  getCookieConsentValue("gatsby-gdpr-google-analytics")
+  console.log(getCookieConsentValue())
+  getCookieConsentValue('gatsby-gdpr-google-analytics')
   return (
     <>
       <LazyMotion features={loadFeatures}>
