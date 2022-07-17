@@ -186,11 +186,14 @@ Cloudinary Advanced Video type WebM / codecs 'vp8', 'vorbis' / transcode: videoC
 
 <CloudinaryVideo />
 
-```jsx:title=Codecs Transcode
-  // Modules
-  "@cloudinary/react": "^1.4.1",
-  "@cloudinary/url-gen": "^1.8.0",
-  // Types and Codecs
+```jsx:title=Codecs-Transcode {3-4,8-18}
+// Modules
+
+   "@cloudinary/react": "^1.4.1",
+   "@cloudinary/url-gen": "^1.8.0",
+
+// Types and Codecs
+
   const sources = [
 	{
 		type: 'mp4',
