@@ -422,7 +422,7 @@ export default function Home() {
                       href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
                       className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
                     >
-                      Gatsby Starter Basic Instructions v4.18.0
+                      Gatsby Starter Basic Instructions v4.19.0
                     </a>
                   </div>
                   <p className="text-lg font-light leading-relaxed mt-0 mb-4">
@@ -430,7 +430,7 @@ export default function Home() {
                       href="https://github.com/donaldboulton/gatsby-starter-dimension-v4"
                       className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
                     >
-                      Gatsby Starter Dimension v4.18.0
+                      Gatsby Starter Dimension v4.19.0
                     </a>
                   </p>
                 </div>

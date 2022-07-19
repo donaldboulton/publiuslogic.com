@@ -7,6 +7,7 @@ import SEO from '@/components/seo'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import CloudinaryVideo from '@/components/CloudinaryVideo'
+import Center from '@/components/Center'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 import Spacer200 from '../../static/img//spacer-200.jpg'
@@ -53,7 +54,9 @@ function Profile() {
               </svg>
             </div>
             <div className="mb-10">
-              <CloudinaryVideo />
+              <Center>
+                <CloudinaryVideo />
+              </Center>
             </div>
             <div className="mb-20">
               <WavyHr className="text-indigo-600" />

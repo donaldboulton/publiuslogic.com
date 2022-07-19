@@ -16,8 +16,9 @@ import ListGrid from '@/components/ListGrid'
 import Tooltip from '@/components/Tooltip'
 import Sparkles from '@/components/Sparkles'
 import { LazyMotion, m } from 'framer-motion'
-import CloudinaryVideo from '@/components/CloudinaryVideo'
+import VideoOne from '@/components/CloudinaryVideo/videoOne'
 import VideoTwo from '@/components/CloudinaryVideo/videoTwo'
+import CloudinaryVideo from '@/components/CloudinaryVideo'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -40,6 +41,7 @@ const shortcodes = {
   Sparkles,
   CloudinaryVideo,
   VideoTwo,
+  VideoOne,
 }
 
 const Layout = ({ children, path }: LayoutProps) => {
