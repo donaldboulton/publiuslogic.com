@@ -422,7 +422,7 @@ export default function Home() {
                       href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
                       className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
                     >
-                      Gatsby Starter Basic Instructions v4.13.1
+                      Gatsby Starter Basic Instructions v4.18.0
                     </a>
                   </div>
                   <p className="text-lg font-light leading-relaxed mt-0 mb-4">
@@ -430,7 +430,7 @@ export default function Home() {
                       href="https://github.com/donaldboulton/gatsby-starter-dimension-v4"
                       className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
                     >
-                      Gatsby Starter Dimension v4.13.1
+                      Gatsby Starter Dimension v4.18.0
                     </a>
                   </p>
                 </div>
@@ -467,7 +467,7 @@ export default function Home() {
                         <h4 className="text-xl font-bold text-white">Lost in a Digital Box</h4>
                         <p className="text-md font-light mt-2 text-white">
                           Over the last year the events, and destruction of my county by the Democrats in power, have me
-                          pissed off and wondering why the USA does nothing about it. So to getting lost in a Digital
+                          pissed off and wondering why the people of the USA does nothing about it. So to getting lost in a Digital
                           Box.
                         </p>
                       </blockquote>
