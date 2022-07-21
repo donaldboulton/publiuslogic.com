@@ -124,7 +124,7 @@ function HeaderPopover() {
             <Popover.Button
               className={`
                 ${open ? '' : 'text-opacity-90'}
-                text-white group px-3 py-2 inline-flex items-center text-lg hover:text-opacity-100 hover:bg-gray-700 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-opacity-75`}
+                text-white group px-3 py-2 inline-flex items-center text-lg hover:text-opacity-100 hover:bg-gray-800 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-opacity-75`}
             >
               <span>Featured</span>
               <ChevronDownIcon

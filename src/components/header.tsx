@@ -17,6 +17,19 @@ const navigation = [
   { name: 'Blog', href: '/blog', current: false },
 ]
 
+const subNavigation = [
+  { name: 'About', href: '/blog/about', current: false },
+  { name: 'Blog', href: '/blog', current: false },
+  { name: 'Biblical Writings Playtime', href: '/blog/playtime', current: false },
+  { name: 'Creation of All', href: '/blog/creation-of-all', current: false },
+  { name: 'Virtue', href: '/blog/virtue', current: false },
+  { name: 'Trinity of Angels', href: '/blog/trinity-of-angels', current: false },
+  { name: 'Trinity Of Man', href: '/blog/trinity-of-man', current: false },
+  { name: 'Experiments', href: '/blog/experiments', current: false },
+  { name: 'Works of Flesh', href: '/blog/works-of-flesh', current: false },
+  { name: 'Song', href: '/blog/song', current: false },
+  { name: 'The Day The I', href: '/blog/the-day-the-i', current: false },
+]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -31,7 +44,7 @@ export default function Navigation() {
               <div className="relative flex items-center justify-between h-16">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                   {/* Mobile menu button*/}
-                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple">
+                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -67,14 +80,14 @@ export default function Navigation() {
                             key={item.name}
                             to={item.href}
                             className={classNames(
-                              item.current ? 'text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                              item.current ? 'text-white' : 'text-gray-300 hover:bg-gray-800 hover:text-white',
                               'px-3 py-2 rounded-md text-lg font-medium'
                             )}
                             aria-current={item.current ? 'page' : undefined}
                           >
                             {item.name}
-                          </Link>
-                        ))}
+                          </Link>                          
+                        ))}                        
                         <HeaderPopover />
                       </>
                     </div>
