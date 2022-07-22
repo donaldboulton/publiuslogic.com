@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 
 export const ConfirmationButtons = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-center;
 `
 
 export const Message = styled.div`

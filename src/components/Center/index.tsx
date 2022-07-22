@@ -5,7 +5,6 @@ const CenterStyledH2 = styled.h2`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
   align-content: center;
   align-items: center;
   margin-top: 0.5em;
@@ -15,7 +14,7 @@ const CenterStyledH2 = styled.h2`
   z-index: 22;
   background-position: 50% 50%;
   text-align: center;
-  justify-content: center;
+  justify-content: flex-center;
   align-content: center;
   align-items: center;
   -webkit-box-pack: center;
