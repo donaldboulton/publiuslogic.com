@@ -1697,6 +1697,11 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fontsource/kaushan-script@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/kaushan-script/-/kaushan-script-4.5.8.tgz#755ac53cd7519a9824ec0ba8fda0fba0f0e21171"
+  integrity sha512-DQhBra0WB6dVhj6+5LedKtVo2M5DqN9shaseOImH7nMPWnRHbMnpbkkL10GbpavzTVigMGpdNlhTjoPdQo1ZrA==
+
 "@gatsbyjs/parcel-namer-relative-to-cwd@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/parcel-namer-relative-to-cwd/-/parcel-namer-relative-to-cwd-1.4.0.tgz#e1c225952922b03088a37649d06cf51b86ba4616"

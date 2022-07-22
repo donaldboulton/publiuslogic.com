@@ -5,16 +5,14 @@ const CenterStyledH2 = styled.h2`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-content: center;
-  align-items: center;
   margin-top: 0.5em;
   font-size: 32px;
-  font-family: kaushan-script;
+  font-family: Kaushan Script;
   text-transform: uppercase;
   z-index: 22;
   background-position: 50% 50%;
   text-align: center;
-  justify-content: flex-center;
+  justify-content: center;
   align-content: center;
   align-items: center;
   -webkit-box-pack: center;
