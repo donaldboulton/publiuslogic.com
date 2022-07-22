@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import { Link } from 'gatsby'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { SearchIcon, MenuIcon, XIcon, UserGroupIcon, PhotographIcon, CloudIcon } from '@heroicons/react/outline'
+import { SearchIcon, MenuIcon, XIcon, UserGroupIcon, PhotographIcon, CloudIcon, MapIcon } from '@heroicons/react/outline'
 import DarkModeToggle from '@/components/dark-mode-toggle'
 import Tooltip from '@/components/Tooltip'
 import Control from '@/components/icons/control'
@@ -170,6 +170,23 @@ export default function Navigation() {
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
                                 <PhotographIcon className="block h-8 w-9 pr-2 text-fuchsia-500" aria-hidden="true" />
                                 <span>Gallery</span>
+                              </span>
+                            </Link>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
+                              target="_blank"
+                              to="https://publiuslogic.com/sitemap.xml"
+                              className={classNames(
+                                active ? 'bg-rose-500' : '',
+                                'block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-purple-700 hover:text-white'
+                              )}
+                            >
+                              <span className="flex items-center flex-shrink-0 text-lg pr-2">
+                                <MapIcon className="block h-9 w-9 pr-2 text-red-500" aria-hidden="true" />
+                                <span>Sitemap</span>
                               </span>
                             </Link>
                           )}
