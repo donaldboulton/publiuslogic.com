@@ -467,8 +467,8 @@ export default function Home() {
                         <h4 className="text-xl font-bold text-white">Lost in a Digital Box</h4>
                         <p className="text-md font-light mt-2 text-white">
                           Over the last year the events, and destruction of my county by the Democrats in power, have me
-                          pissed off and wondering why the people of the USA does nothing about it. So to getting lost in a Digital
-                          Box.
+                          pissed off and wondering why the people of the USA does nothing about it. So to getting lost
+                          in a Digital Box.
                         </p>
                       </blockquote>
                     </div>

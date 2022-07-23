@@ -4,14 +4,49 @@
   <loc>https://publiuslogic.com</loc>
   <lastmod>2020-11-26T22:27:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
-  <image:image><image:loc>https://publiuslogic.com/static/images/home-back-right.jpg</image:loc><image:caption>home-back-right.jpg</image:caption></image:image>
+  <image:image><image:loc>https://publiuslogic.com/static/images/jpg/dbbg.jpg</image:loc><image:caption>dbbg.jpg</image:caption></image:image>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://publiuslogic.com/contact</loc>
   <lastmod>2020-11-26T22:27:18+00:00</lastmod>
   <changefreq>weekly</changefreq>
-  <image:image><image:loc>https://publiuslogic.com/static/images/contact.jpg</image:loc><image:caption>contact.jpg</image:caption></image:image>
+  <image:image><image:loc>https://publiuslogic.com/static/images/undraw/undraw_contact_us_15o2.png</image:loc><image:caption>undraw_contact_us_15o2.png</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/dsg</loc>
+  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/DSG_for_blog_article_and_G4_overview_page.jpg</image:loc><image:caption>static/assets/DSG_for_blog_article_and_G4_overview_page.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/gallery</loc>
+  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/images/undraw/undraw_Portfolio_re_qwm5.png</image:loc><image:caption>undraw_Portfolio_re_qwm5.png</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/profile</loc>
+  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/images/jpg/dbbg.jpg</image:loc><image:caption>dbbg.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/ssr</loc>
+  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/assets/SSR_for_blog_article_and_G4_overview_page.jpg</image:loc><image:caption>SSR_for_blog_article_and_G4_overview_page.jpg</image:caption></image:image>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://publiuslogic.com/search</loc>
+  <lastmod>2020-11-26T22:27:18+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <image:image><image:loc>https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png</image:loc><image:caption>aundraw_Super_thank_you_re_f8bo.png</image:caption></image:image>a
   <priority>0.80</priority>
 </url>
 </urlset>

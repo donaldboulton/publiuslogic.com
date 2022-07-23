@@ -3,7 +3,15 @@ import { Fragment } from 'react'
 import { Link } from 'gatsby'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { SearchIcon, MenuIcon, XIcon, UserGroupIcon, PhotographIcon, CloudIcon, MapIcon } from '@heroicons/react/outline'
+import {
+  SearchIcon,
+  MenuIcon,
+  XIcon,
+  UserGroupIcon,
+  PhotographIcon,
+  CloudIcon,
+  MapIcon,
+} from '@heroicons/react/outline'
 import DarkModeToggle from '@/components/dark-mode-toggle'
 import Tooltip from '@/components/Tooltip'
 import Control from '@/components/icons/control'
@@ -86,8 +94,8 @@ export default function Navigation() {
                             aria-current={item.current ? 'page' : undefined}
                           >
                             {item.name}
-                          </Link>                          
-                        ))}                        
+                          </Link>
+                        ))}
                         <HeaderPopover />
                       </>
                     </div>
