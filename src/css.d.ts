@@ -9,6 +9,6 @@ declare module 'csstype' {
 
     // Add a CSS Custom Property
     ['--icon-color' as info]: '#9333ea',
-    ['--icon-color' as danger]: '#fa383826',
+    ['--icon-color' as danger]: '#be123c',
   }
 }

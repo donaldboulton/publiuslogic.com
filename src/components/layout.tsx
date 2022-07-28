@@ -15,7 +15,6 @@ import List from '@/components/List'
 import ListItem from '@/components/List/ListItem'
 import ListGrid from '@/components/ListGrid'
 import Tooltip from '@/components/Tooltip'
-import Sparkles from '@/components/Sparkles'
 import { LazyMotion, m } from 'framer-motion'
 import VideoOne from '@/components/CloudinaryVideo/videoOne'
 import VideoTwo from '@/components/CloudinaryVideo/videoTwo'
@@ -39,7 +38,6 @@ const shortcodes = {
   ListItem,
   ListGrid,
   Tooltip,
-  Sparkles,
   CloudinaryVideo,
   VideoTwo,
   VideoOne,

@@ -1,13 +1,8 @@
 import * as React from 'react'
 
-type Props = {
-  className: string
-  children?: React.ReactNode
-}
-
-const WavyHr: React.FC<Props> = ({ className, children }) => (
+const WavyHr: React.FC<Props> = () => (
   <div className="text-center">
-    <hr className={children}></hr>
+    <hr className='text-purple-500 flex justify-center'></hr>
   </div>
 )
 
