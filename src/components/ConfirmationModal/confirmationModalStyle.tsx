@@ -1,6 +1,10 @@
 import * as React from 'react'
 import * as CSS from 'csstype'
 
+export const Wrapper: CSS.Properties = {
+  width: '60%',
+}
+
 export const ConfirmationButtons: CSS.Properties = {
   display: 'flex',
   justifyContent: 'flex-center',

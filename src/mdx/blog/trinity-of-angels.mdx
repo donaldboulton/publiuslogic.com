@@ -196,19 +196,24 @@ Cloudinary Advanced Video type WebM / codecs 'vp8', 'vorbis' / transcode: videoC
 
 Suspicious Minds
 
-I will be editing the below to the exact words Angelina added.
-Making it even more Beautiful than Elvis's version of which I saw live along time ago.
+Only change in song is verse 1, to, "Heart of a Child", from, "We're are caught in a trap 
+
+<Center>I Already Know Angie</Center>
+
+Way more Beautiful than Elvis's version of which I saw live along time ago. 1962 or 63?
 
 [Bridge]
 
 Oh, let our love survive
 I'll dry the tears from your eyes
+
 Let's don't let a good thing die
 When, honey, you know I've never lied to you
 
-[Verse 1]
+[Verse 1] 
 
-We're caught in a trap, I can't walk out
+Heart Of A Child, I can't walk out
+
 Because I love you too much, baby
 Why can't you see, what you're doin' to me
 When you don't believe a word I say?
@@ -228,26 +233,21 @@ Here we go again, asking where I've been
 You can't see the tears are real, I'm cryin'
 
 [Chorus]
+
 We can't go on together
 With suspicious minds
 And we can't build our dreams
 On suspicious minds
 
 [Bridge]
+
 Oh, let our love survive
 I'll dry the tears from your eyes
 Let's don't let a good thing die
 When, honey, you know I've never lied to you.
 
-### Credits
-
-Produced By: Mery Zamani
-Written By: Mark James
-Piano: Rob Christie
-Vocals: Angelina Jordan
-Release Date: June 22, 2022
-Suspicious Minds Is A Cover Of
-Suspicious Minds by Elvis Presley
+[[info | Credits!]]
+|> Vocals: Angelina Jordan, Produced By: Mery Zamani, Written By: Mark James, Piano: Rob Christie, Release Date: June 22, 2022, Suspicious Minds Is A Cover Of, Suspicious Minds by Elvis Presley
 
 ```tsx:title=Codecs-Transcode {3-4,8-18}
 // Modules
@@ -258,6 +258,12 @@ Suspicious Minds by Elvis Presley
 // Types and Codecs
 
   const sources = [
+    // Wish I could use 4k Full HD but that requires more $ than I can afford
+	{
+      type: 'hls',
+      codecs: ['4k', 'full_hd', 'full_hd_wifi', 'full_hd_lean', 'hd, hd_lean', 'sd'],
+      transcode: videoCodec(auto()),
+    },
 	{
 		type: 'mp4',
 		codecs: ['avc1.4d002a'],
