@@ -198,7 +198,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
     )
   } else {
     return (
-      <Wrapper ref={ref} className="overscroll-contain">
+      <Wrapper ref={ref} className="overscroll-contain opacity-75">
         <Disclosure>
           {({ open }) => (
             <>
@@ -209,7 +209,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
                       baseProfile="tiny"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 307.8 230.9"
-                      className="h-10 w-10 m-2"
+                      className="h-10 w-10 m-2 active:stroke-0"
                     >
                       <motion.path
                         fill="#FFF"
