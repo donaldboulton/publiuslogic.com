@@ -521,10 +521,13 @@ gatsby-highlight > code[class*='language-'],
 giscus-widget {
   display: flex;
   margin: auto;
-  max-width: 800px;
+  max-width: 1000px;
+}
+.giscus, .giscus-frame {
+  width: 100%;
 }
 #comments::part(iframe) {
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
   display: flex;
 }
