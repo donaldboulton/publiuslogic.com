@@ -100,7 +100,7 @@ export default function LatestArticles() {
                 </List>
                 <List variant="unordered">
                   <div className="ml-12 mb-6 mt-4 text-lg transition duration-300 underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
-                    Government Law
+                    Law and Logic
                   </div>
                   <List.Item>
                     <div>
@@ -110,7 +110,7 @@ export default function LatestArticles() {
                         </h4>
                       </Link>
                       <span>
-                        Warning Attack! Shelter Your Minds! Prelude The below is kind of like last years playtime post,
+                        Warning Attack! Shelter Your Minds! Kind of like last years playtime post,
                         it's not very
                       </span>
                     </div>

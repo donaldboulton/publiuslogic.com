@@ -262,7 +262,7 @@ export default function Home() {
                       </Link>
                     </h6>
                     <p className="mt-2 mb-4 text-white">
-                      The Creation of the All, was formed through song that started the dance of life from a blank and
+                      Creation Of All, was formed through song that started the dance of life from a blank and
                       formless verse, bringing forth life to all. For all to formalize there, "Own Song"!
                     </p>
                   </div>
@@ -407,30 +407,33 @@ export default function Home() {
               <div className="flex flex-wrap items-center mt-8">
                 <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mb-6">
                   <h3 className="text-3xl text-white light:text-black mb-2 font-semibold leading-normal">
-                    Hanging out with Cats
+                    Coming Out of Retirement
                   </h3>
                   <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-white light:text-black">
-                    I have Seven indoor Cats and feed a dozen or more stray kitty's. I have always had a cat! From Me
-                    and the Cats some Gatsby Starters.
+                    I have been Retired till I become 65, then I am getting to work, start singing, finding somewhere the people like to talk about God, Life, Love, Truth! Starting my Loves's church on Earth.
                   </p>
                   <div className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-black">
                     <div>
-                      <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4"> JAMStack</span>
-                      &nbsp;Starters for your pleasure.
+                      <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4"> Mans Books Of Life</span>
+                      <p><span className='text-white light:text-black'> Will be compared to Gods Books Of Life in one years time.</span></p>
                     </div>
                     <a
-                      href="https://github.com/donaldboulton/gatsby-starter-basic-instructions"
+                      href="https://mansbooks.com"
                       className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
                     >
-                      Gatsby Starter Basic Instructions v4.19.0
+                      https://mansbooks.com
                     </a>
                   </div>
-                  <p className="text-lg font-light leading-relaxed mt-0 mb-4">
+                  <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-gray-800">
+                  <div>
+                      <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4"> Basic Instructions Books While On Earth</span>
+                      <p>Human Instruction Manuel the Last Testament to the Holy Bible.</p>
+                    </div>
                     <a
-                      href="https://github.com/donaldboulton/gatsby-starter-dimension-v4"
+                      href="https://bibwoe.com"
                       className="font-bold text-rose-600 hover:text-rose-500 hover:shadow-rose-500/50 mt-4"
                     >
-                      Gatsby Starter Dimension v4.19.0
+                      https://bibwoe.com.
                     </a>
                   </p>
                 </div>
@@ -445,7 +448,7 @@ export default function Home() {
                     <div className="relative flex flex-col min-w-0 break-words text-white w-full mb-6 shadow-lg rounded-lg bg-rose-600">
                       <StaticImage
                         className="w-full align-middle rounded-t-lg"
-                        src="../../static/images/jpg/digital_box_1400-compressor.jpg"
+                        src="../../static/img/jesus.jpg"
                         alt="PubliusLogic"
                       />
                       <blockquote className="relative p-8 mb-4">
@@ -464,11 +467,9 @@ export default function Home() {
                             className="text-rose-600 shadow-lg shadow-rose-500/50 fill-current"
                           ></polygon>
                         </svg>
-                        <h4 className="text-xl font-bold text-white">Lost in a Digital Box</h4>
-                        <p className="text-md font-light mt-2 text-white">
-                          Over the last year the events, and destruction of my county by the Democrats in power, have me
-                          pissed off and wondering why the people of the USA does nothing about it. So to getting lost
-                          in a Digital Box.
+                        <h4 className="text-xl font-bold text-white">Fruition is Soon, "Nov 15 2022"!</h4>
+                        <p className="text-lg font-light mt-2 text-white">
+                          All Time will be coming to fruition. Revelation 22:12, And, behold, I come quickly; and my reward is with me, to give every man according as his work shall be.
                         </p>
                       </blockquote>
                     </div>

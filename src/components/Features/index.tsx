@@ -11,19 +11,19 @@ const features = [
   {
     name: 'Laws of this World',
     description:
-      'At PubliusLogic we Publish Logic as Common Sense. Publius was taken from The Federalist Papers and my extensive studies Of the USA Books at Large = Us Congressional Reports most of my focus was on Books I and II, including a lot of Notes and Letters from our Founding Fathers as well as reading all of our Founding Fathers Publius publications and extensively studying the true intent of some. Logic part of the name came from Thomas Payne his book, "Common Sense", = Logic',
+      'At PubliusLogic we Publish Logic as Common Sense. Publius was taken from The Federalist Papers and my extensive studies Of the USA Books at Large = USA Congressional Reports most of my focus was on Books I and II, including a lot of Notes and Letters from our Founding Fathers as well as reading all of our Founding Fathers Publius publications and extensively studying the true intent of some. Logic part of the name came from Thomas Payne in his book, "Common Sense", = Logic',
     icon: PuzzleIcon,
   },
   {
     name: 'Saving Mankind',
     description:
-      'The destruction of all Humanity is eminent. You are over populating the Planet at a accelerating rate. If you do not stop soon you will all be destroyed. Mother Earth is a Fallen Angel, the Devil, and Her job is to give life for mankind. You are completely disrespecting Her. She is in the process of culling or eliminating your species. You have no idea how many times this species of man called humanity has been reset. To the Recycle Bin. The negative effect and energy force your planet is producing is effecting the Whole Verse. It will not be allowed to continue, the other forms of man will see to it. GOV if you havent noticed there in the process of that now. None of your little boys with there war toys can not stop them! Everything has a off switch, the other forms of Man know how to activate yours, without turning off other things. Quite simple actually!',
+      'The destruction of all Humanity is eminent. You are over populating the Planet at a accelerating rate. If you do not stop soon you will all be destroyed. Mother Earth is a Fallen Angel, the Devil, Her job as Earth is to give life for mankind as your flesh. You are completely disrespecting Her. She is in the process of culling or eliminating your species. The negative effect and energy force your planet is producing is effecting the Whole Verse. It will not be allowed to continue, the other forms of man will see to it. GOV if you havent noticed there in the process of that now. None of your little boys with there war toys can not stop them! Everything has a off switch, the other forms of Man know how to activate yours, without turning off other things!',
     icon: ClockIcon,
   },
   {
     name: 'Internet Programming',
     description:
-      'PubliusLogic is a Static site using JAMstack architecture. Built using Gatsby, React and Typescript for ultimate performance. Served on Netlify via Cloudflare CDN, on Global Server nodes with a continuous deployment (CD,) workflow. Pull requests are automatically built into preview apps, while commits to the master branch trigger the production build and deploy onto Netlify CDN edge node infrastructure. Since the whole site is just a bunch of static files copied onto multiple CDN nodes around the world, time to first byte (TTFB) is consistently fast at around 1ms to 2ms. Instant Notifications through my Slack Bots or GMail and phone text notifications, using Netlify Functions for my Mansbooks.com - publiuslogic.com workspace.',
+      'PubliusLogic is a Static site using JAMstack architecture. Built using Gatsby, React and Typescript for ultimate performance. Served on Netlify via Cloudflare CDN, on Global Server nodes with a continuous deployment (CD,) workflow. Pull requests are automatically built into preview apps, while commits to the master branch trigger the production build and deploy onto Netlify CDN edge node infrastructure. Since the whole site is just a bunch of static files copied onto multiple CDN nodes around the world, time to first byte (TTFB) is consistently fast at around 1ms to 2ms. Instant Notifications through my Slack Bots or GMail and phone text notifications, using Netlify Functions for my mansbooks.com - publiuslogic.com workspace.',
     icon: PresentationChartBarIcon,
   },
 ]
