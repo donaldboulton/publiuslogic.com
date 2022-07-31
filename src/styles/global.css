@@ -523,7 +523,8 @@ giscus-widget {
   margin: auto;
   max-width: 1000px;
 }
-.giscus, .giscus-frame {
+.giscus,
+.giscus-frame {
   width: 100%;
 }
 #comments::part(iframe) {

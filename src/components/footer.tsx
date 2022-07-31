@@ -8,17 +8,10 @@ import Facebook from '../../static/svg/icons/facebook.inline.svg'
 import Instagram from '../../static/svg/icons/instagram.inline.svg'
 import Twitter from '../../static/svg/icons/twitter.inline.svg'
 import Github from '../../static/svg/icons/github.inline.svg'
-import { Modal } from '@/components/UsableModal'
-import { ConfirmationModal } from '@/components/ConfirmationModal'
-import { useModal } from '@/hooks/useModal'
 
 export default function IndexFooter() {
   const metadata = SiteMetadata().siteMetadata
   const social = metadata.social
-  const { isShown, toggle } = useModal()
-
-  const onConfirm = () => toggle()
-  const onCancel = () => toggle()
 
   const socialLinks = [
     { name: 'LinkedIn', link: 'linkedin' in social ? social.linkedin : null, image: LinkedIn },
@@ -75,7 +68,7 @@ export default function IndexFooter() {
               </div>
             </div>
             <div className="w-full lg:w-6/12 px-4">
-              <div className="flex flex-wrap items-top mb-6">
+              <div className="flex flex-wrap items-top -mb-2">
                 <div className="w-full lg:w-4/12 px-4 ml-auto">
                   <span className="block uppercase text-gray-200 text-sm font-semibold mb-2">Useful Links</span>
                   <ul className="list-unstyled">
@@ -162,7 +155,6 @@ export default function IndexFooter() {
                         Free Starters
                       </a>
                     </li>
-
                     <li>
                       <Link
                         className="text-gray-200 hover:text-fuchsia-500 font-semibold block pb-2 text-sm"
@@ -190,6 +182,9 @@ export default function IndexFooter() {
                   </ul>
                 </div>
               </div>
+              <div className="text-center -ml-2 -mt-2">
+                <div class="powr-hit-counter" id="0bb5796d_1659309938"></div>
+              </div>
             </div>
           </div>
           <hr className="my-6 border-gray-400" />
@@ -197,37 +192,20 @@ export default function IndexFooter() {
             <div className="w-full md:w-4/12 px-4 mx-auto text-center">
               <div className="text-sm text-gray-200 font-semibold py-1">
                 © {new Date().getFullYear()} Publiuslogic by{' '}
-                <button
-                  onClick={toggle}
+                <a
+                  href="https://donboulton.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
                   area-label="Donald Boulton Web Site"
-                  className="border-0 bg-transparent padding-0 margin-0 text-gray-200 hover:text-fuchsia-500"
+                  className="text-gray-200 hover:text-fuchsia-500"
                 >
-                  Donald Boulton
-                </button>
-                .
+                  Donald W. Boulton
+                </a>
               </div>
             </div>
           </div>
         </div>
       </footer>
-      <Modal
-        isShown={isShown}
-        hide={toggle}
-        headerText="Confirmation"
-        modalContent={
-          <ConfirmationModal onConfirm={onConfirm} onCancel={onCancel} message="Donald Boulton at donboulton.com?">
-            <a
-              href="https://donboulton.com"
-              rel="noopener noreferrer"
-              target="_blank"
-              area-label="Donald Boulton Web Site"
-              className="text-gray-200 hover:text-fuchsia-500"
-            >
-              Donald Boulton at donboulton.com
-            </a>
-          </ConfirmationModal>
-        }
-      />
     </>
   )
 }

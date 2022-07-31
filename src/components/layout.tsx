@@ -52,6 +52,7 @@ const Layout = ({ children, path }: LayoutProps) => {
         <Helmet>
           <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
           <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+          <script src="https://www.powr.io/powr.js?platform=react"></script>
         </Helmet>
         <div className="max-w-screen-xl mx-auto bg-primary-dark light:bg-offwhite text-white light:text-black transition-all duration-200 ease-linear antialiased font-sans">
           <m.main

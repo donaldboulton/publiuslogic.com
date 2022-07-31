@@ -262,8 +262,8 @@ export default function Home() {
                       </Link>
                     </h6>
                     <p className="mt-2 mb-4 text-white">
-                      Creation Of All, was formed through song that started the dance of life from a blank and
-                      formless verse, bringing forth life to all. For all to formalize there, "Own Song"!
+                      Creation Of All, was formed through song that started the dance of life from a blank and formless
+                      verse, bringing forth life to all. For all to formalize there, "Own Song"!
                     </p>
                   </div>
                 </m.div>
@@ -410,12 +410,21 @@ export default function Home() {
                     Coming Out of Retirement
                   </h3>
                   <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-white light:text-black">
-                    I have been Retired till I become 65, then I am getting to work, start singing, finding somewhere the people like to talk about God, Life, Love, Truth! Starting my Loves's church on Earth.
+                    I have been Retired till I become 65, then I am getting to work, start singing, finding somewhere
+                    the people like to talk about God, Life, Love, Truth! Starting my Loves's church on Earth.
                   </p>
                   <div className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-black">
                     <div>
-                      <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4"> Mans Books Of Life</span>
-                      <p><span className='text-white light:text-black'> Will be compared to Gods Books Of Life in one years time.</span></p>
+                      <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4">
+                        {' '}
+                        Mans Books Of Life
+                      </span>
+                      <p>
+                        <span className="text-white light:text-black">
+                          {' '}
+                          Will be compared to Gods Books Of Life in one years time.
+                        </span>
+                      </p>
                     </div>
                     <a
                       href="https://mansbooks.com"
@@ -425,8 +434,11 @@ export default function Home() {
                     </a>
                   </div>
                   <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-gray-800">
-                  <div>
-                      <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4"> Basic Instructions Books While On Earth</span>
+                    <div>
+                      <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4">
+                        {' '}
+                        Basic Instructions Books While On Earth
+                      </span>
                       <p>Human Instruction Manuel the Last Testament to the Holy Bible.</p>
                     </div>
                     <a
@@ -469,7 +481,8 @@ export default function Home() {
                         </svg>
                         <h4 className="text-xl font-bold text-white">Fruition is Soon, "Nov 15 2022"!</h4>
                         <p className="text-lg font-light mt-2 text-white">
-                          All Time will be coming to fruition. Revelation 22:12, And, behold, I come quickly; and my reward is with me, to give every man according as his work shall be.
+                          All Time will be coming to fruition. Revelation 22:12, And, behold, I come quickly; and my
+                          reward is with me, to give every man according as his work shall be.
                         </p>
                       </blockquote>
                     </div>

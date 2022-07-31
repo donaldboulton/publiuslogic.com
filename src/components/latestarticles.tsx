@@ -110,8 +110,7 @@ export default function LatestArticles() {
                         </h4>
                       </Link>
                       <span>
-                        Warning Attack! Shelter Your Minds! Kind of like last years playtime post,
-                        it's not very
+                        Warning Attack! Shelter Your Minds! Kind of like last years playtime post, it's not very
                       </span>
                     </div>
                   </List.Item>

@@ -13,12 +13,8 @@ export const ConfirmationModal: React.FC<ConfirmationModalProps> = props => {
       <Wrapper>
         <Message>{props.message}</Message>
         <ConfirmationButtons>
-          <YesButton onClick={props.onConfirm}>
-            Yes
-          </YesButton>
-          <NoButton onClick={props.onCancel}>
-            No
-          </NoButton>
+          <YesButton onClick={props.onConfirm}>Yes</YesButton>
+          <NoButton onClick={props.onCancel}>No</NoButton>
         </ConfirmationButtons>
       </Wrapper>
     </>
