@@ -12,13 +12,13 @@ import {
   CloudIcon,
   MapIcon,
 } from '@heroicons/react/outline'
-import DarkModeToggle from '@/components/dark-mode-toggle'
+import DarkModeToggle from '@/components/DarkModeToggle'
 import Tooltip from '@/components/Tooltip'
 import Control from '@/components/icons/control'
-import HeaderPopover from '@/components/header-popover'
+import HeaderPopover from '@/components/HeaderPopover'
 
-import Logo from '../../static/images/gatsby/publiuslogic-logo.png'
-import PrimaryLogo from '../../static/images/gatsby/publiuslogic-monogram-182-32.png'
+import Logo from '../../../static/images/gatsby/publiuslogic-logo.png'
+import PrimaryLogo from '../../../static/images/gatsby/publiuslogic-monogram-182-32.png'
 
 const navigation = [
   { name: 'About', href: '/blog/about', current: false },

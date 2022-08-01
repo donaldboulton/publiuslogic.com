@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import GatsbyImage from '../../static/svg/undraw/undraw_gatsbyjs_st4g.svg'
-import TailwindImage from '../../static/svg/undraw/undraw_tailwind_css_1egw.svg'
-import ReactImage from '../../static/svg/undraw/undraw_react_y-7-wq.svg'
-import WavyHr from './WavyHr'
+import GatsbyImage from '../../../static/svg/undraw/undraw_gatsbyjs_st4g.svg'
+import TailwindImage from '../../../static/svg/undraw/undraw_tailwind_css_1egw.svg'
+import ReactImage from '../../../static/svg/undraw/undraw_react_y-7-wq.svg'
+import WavyHr from '@/components/WavyHr'
 
 const callouts = [
   {

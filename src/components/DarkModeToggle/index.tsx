@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import Day from './icons/day'
-import Night from './icons/night'
+import Day from '../icons/day'
+import Night from '../icons/night'
 
 const DarkModeToggle: React.FC = () => {
   const [theme, setTheme] = useState(undefined)

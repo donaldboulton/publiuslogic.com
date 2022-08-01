@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 
-import Tags from '@/components/tags'
+import Tags from '@/components/Tags'
 import List from '@/components/List'
 import GetPosts from '@/utils/getposts'
-import WavyHr from './WavyHr'
+import WavyHr from '@/components/WavyHr'
 
 export default function LatestArticles() {
   const posts = GetPosts()

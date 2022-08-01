@@ -10,7 +10,7 @@ const loadFeatures = () => import('@/components/FramerFeatures').then(res => res
 import { CalendarIcon, UserCircleIcon } from '@heroicons/react/outline'
 import GetPosts from '@/utils/getposts'
 
-import Tags from '@/components/tags'
+import Tags from '@/components/Tags'
 
 interface BlogRollProps {
   tag?: string

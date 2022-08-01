@@ -8,8 +8,8 @@ import dracula from 'prism-react-renderer/themes/dracula'
 import rangeParser from 'parse-numeric-range'
 import Confetti from 'react-dom-confetti'
 import useSound from 'use-sound'
-import clapping from '../../static/audio/clapping.mp3'
-import Title from '@/components/title'
+import clapping from '../../../static/audio/clapping.mp3'
+import Title from '@/components/CodeTitle'
 
 const config = {
   angle: 90,

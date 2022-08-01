@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import '@fontsource/kaushan-script'
 import CookieConsent, { Cookies, getCookieConsentValue } from 'react-cookie-consent'
 import { MDXProvider } from '@mdx-js/react'
-import FindOutMore from '@/components/findoutmore'
+import FindOutMore from '@/components/FindOutMore'
 import Features from '@/components/Features'
 import Cta from '@/components/CTA'
 import Callout from '@/components/Callout'
@@ -52,7 +52,6 @@ const Layout = ({ children, path }: LayoutProps) => {
         <Helmet>
           <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
           <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-          <script src="https://www.powr.io/powr.js?platform=react"></script>
         </Helmet>
         <div className="max-w-screen-xl mx-auto bg-primary-dark light:bg-offwhite text-white light:text-black transition-all duration-200 ease-linear antialiased font-sans">
           <m.main
@@ -64,7 +63,7 @@ const Layout = ({ children, path }: LayoutProps) => {
               type: 'spring',
               mass: 0.35,
               stiffness: 75,
-              duration: 0.6,
+              duration: 0.2,
             }}
           >
             <MDXProvider components={shortcodes}>{children}</MDXProvider>

@@ -3,11 +3,11 @@ import { Link } from 'gatsby'
 import SiteMetadata from '@/utils/sitemetadata'
 import A from '@/components/A'
 import Subscriptions from '@/components/Subscriptions'
-import LinkedIn from '../../static/svg/icons/linkedin.inline.svg'
-import Facebook from '../../static/svg/icons/facebook.inline.svg'
-import Instagram from '../../static/svg/icons/instagram.inline.svg'
-import Twitter from '../../static/svg/icons/twitter.inline.svg'
-import Github from '../../static/svg/icons/github.inline.svg'
+import LinkedIn from '../../../static/svg/icons/linkedin.inline.svg'
+import Facebook from '../../../static/svg/icons/facebook.inline.svg'
+import Instagram from '../../../static/svg/icons/instagram.inline.svg'
+import Twitter from '../../../static/svg/icons/twitter.inline.svg'
+import Github from '../../../static/svg/icons/github.inline.svg'
 
 export default function IndexFooter() {
   const metadata = SiteMetadata().siteMetadata
@@ -181,9 +181,6 @@ export default function IndexFooter() {
                     </li>
                   </ul>
                 </div>
-              </div>
-              <div className="text-center -ml-2 -mt-2">
-                <div class="powr-hit-counter" id="0bb5796d_1659309938"></div>
               </div>
             </div>
           </div>

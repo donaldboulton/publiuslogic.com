@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import SiteMetadata from '@/utils/sitemetadata'
 import JsonLD from '@/utils/jsonld'
 
-import defaultImage from '../../static/images/jpg/dbbg.jpg'
+import defaultImage from '../../../static/images/jpg/dbbg.jpg'
 
 interface SEOProps {
   type: string

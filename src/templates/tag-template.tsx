@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import Layout from '@/components/layout'
-import SEO from '@/components/seo'
+import Layout from '@/components/Layout'
+import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
-import BlogRoll from '@/components/blogroll'
+import BlogRoll from '@/components/BlogRoll'
 
 import Image from '../../static/svg/undraw/undraw_building_websites_i78t.svg'
 import OGImage from '../../static/images/undraw/undraw_building_websites_i78t.png'

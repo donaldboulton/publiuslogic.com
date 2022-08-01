@@ -2,7 +2,7 @@ import React from 'react'
 import Applause from '@/components/Applause'
 import { StaticImage } from 'gatsby-plugin-image'
 import BioTypist from '@/components/BioTypest'
-import WavingHand from '@/components/waving-hand'
+import WavingHand from '@/components/WavingHand'
 
 const Bio = () => {
   return (

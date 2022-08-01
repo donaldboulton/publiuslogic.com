@@ -4,8 +4,8 @@ import React from 'react'
 import kebabCase from 'lodash/kebabCase'
 
 // Components
-import Layout from '@/components/layout'
-import SEO from '@/components/seo'
+import Layout from '@/components/Layout'
+import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import { Link } from 'gatsby'
 import {
@@ -53,9 +53,9 @@ import {
 
 import GetTags from '@/utils/gettags'
 
-import Header from '@/components/header'
-import Footer from '@/components/footer'
-import ScrollIndicator from '@/components/scroll-indicator'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import ScrollIndicator from '@/components/ScrollIndicator'
 
 import Image from '../../static/svg/undraw/undraw_Windows_re_uo4w.svg'
 import OGImage from '../../static/images/undraw/undraw_Windows_re_uo4w.png'
