@@ -121,9 +121,7 @@ const calculateLinesToHighlight = meta => {
 
 export const Code = ({ codeString, className, metastring, ...props }) => {
   const ref = useRef()
-
   const [isClicked, setIsClicked] = useState(false)
-
   // https://blog.maximeheckel.com/posts/guide-animations-spark-joy-framer-motion/'
   const duration = 0.4
   const svgVariants = {
