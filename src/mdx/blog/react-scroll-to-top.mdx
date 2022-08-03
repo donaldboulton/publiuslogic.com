@@ -3,7 +3,7 @@ tpublished: true
 featuredpost: false
 author: Donald Boulton
 title: React Scroll toTop
-path: /blog/react-scroll-toTop
+path: /blog/react-scroll-to-top
 date: 2019-04-22
 category: Tech
 image: ../../../static/assets/top.jpg
@@ -236,7 +236,7 @@ export const Arrow = styled(Up).attrs(({ direction, size }) => ({
 
 Only my post's are long enough to need scroll down
 
-```jsx:title=src/components/ScrollDawon.jsx {3,11,24}
+```jsx:title=src/components/ScrollDown.jsx {3,11,24}
   <ScrollDown
     direction='down' to={15}
     showAbove={1500}
@@ -245,5 +245,9 @@ Only my post's are long enough to need scroll down
 ```
 
 Scroll down is visible at the top of the page and is fixed. I think its cool and somewhat original. Not static like the Netlify build page has scroll to bottom of the build log or back to top which is pretty Cool.
+
+```js react-live
+<Center text="whatever" />
+```
 
 <WavyHr className="mt-1 mb-1 text-fuchsia-600" />

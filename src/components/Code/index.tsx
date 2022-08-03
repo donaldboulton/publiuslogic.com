@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useState, useRef, useEffect } from 'react'
+import { useMDXScope } from 'gatsby-plugin-mdx/context'
 import { Disclosure } from '@headlessui/react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
@@ -48,9 +49,9 @@ const copyToClipboard = str => {
   document.body.removeChild(el)
 }
 
-const ButtonWrapper = props => <div style={{ position: 'relative', alignItems: 'center', top: '68px' }} {...props} />
+const ButtonWrapper = props => <div style={{ backgroundColor: '#282A36', borderTopRightRadius: '12px', borderTopLeftRadius: '12px', position: 'relative', alignItems: 'center' }} {...props} />
 
-const Wrapper = props => <div style={{ position: 'relative' }} {...props} />
+const Wrapper = props => <div style={{ position: 'relative', borderBottomRightRadius: '12px', borderBottomLeftRadius: '12px', }} {...props} />
 
 const ConfettiWrapper = props => <div style={{ position: 'absolute', top: 0, right: 0 }} {...props} />
 
@@ -187,10 +188,11 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
       setTimeout(() => setIsClicked(false), 3000)
     }
   }, [isClicked])
-
+  // https://www.christopherbiscardi.com/post/using-mdx-scope-in-react-live-scope
+  const components = useMDXScope()
   if (props['react-live']) {
     return (
-      <LiveProvider code={codeString} noInline={true}>
+      <LiveProvider code={codeString} scope={components}>
         <LiveEditor />
         <LiveError />
         <LivePreview />
