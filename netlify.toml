@@ -80,7 +80,6 @@
     '''
     Access-Control-Allow-Credentials = "true"
     Access-Control-Allow-Headers = "Content-Type, Authorization, Time-Zone"
-    Access-Control-Allow-Credentials = "true"
     Access-Control-Max-Age = "3600"
     Vary = "Accept-Encoding"
     Permissions-Policy = '''
