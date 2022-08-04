@@ -186,6 +186,17 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
       setTimeout(() => setIsClicked(false), 3000)
     }
   }, [isClicked])
+  // buttonRef to separate code open and copy buttons from same onClick function
+  const buttonRef = useRef(null)
+
+  const handleClick = event => {
+    buttonRef.current.disabled = true
+
+    console.log('button clicked')
+  };
+  const handleCopy = event => {
+    buttonRef.current.disabled = false;
+  };
   // https://www.christopherbiscardi.com/post/using-mdx-scope-in-react-live-scope
   const components = useMDXScope()
   if (props['react-live']) {
@@ -204,7 +215,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
             <>
               <ButtonWrapper className="flex place-content-between">
                 <div>
-                  <Disclosure.Button className="h-10 w-10 ml-3" aria-label="Show Code">
+                  <Disclosure.Button ref={buttonRef} className="h-10 w-10 ml-3" aria-label="Show Code">
                     <motion.svg
                       baseProfile="tiny"
                       xmlns="http://www.w3.org/2000/svg"
@@ -220,6 +231,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
                         transition={{ duration }}
                         onClick={async () => {
                           open()
+                          handleClick()
                         }}
                       />
                       <path
@@ -236,6 +248,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
                         transition={{ duration }}
                         onClick={async () => {
                           close()
+                          handleClick()
                         }}
                       />
                     </motion.svg>
@@ -262,6 +275,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
                       setTimeout(() => setIsCopied(false), 3000)
                       doApplause()
                       play()
+                      handleCopy()
                     }}
                   >
                     <motion.svg
