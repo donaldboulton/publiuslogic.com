@@ -10,6 +10,8 @@ export type SiteMetadataType = {
     }
     description: string
     siteUrl: string
+    siteRss: string
+    siteSitemap: string
     location: string
     social: {
       email: string
@@ -38,6 +40,8 @@ const SiteMetadata = (): SiteMetadataType => {
             }
             description
             siteUrl
+            siteRss
+            siteSitemap
             location
             social {
               email

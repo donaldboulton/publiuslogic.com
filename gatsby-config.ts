@@ -2,7 +2,7 @@
 const siteAcronyms = require('./gatsby-site-acronyms')
 const queries = require('./src/utils/algolia-queries')
 const resolveConfig = require('tailwindcss/resolveConfig')
-const tailwindConfig = require('./tailwind.config.js')
+const tailwindConfig = require('./tailwind.config.ts')
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -13,12 +13,14 @@ module.exports = {
     title: 'PubliusLogic',
     author: {
       name: 'Donald Boulton',
-      url: 'https://publiuslogic.com',
+      url: 'https://donboulton.com',
       summary: 'Who Resides in OKC.',
     },
     description:
       'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
     siteUrl: 'https://publiuslogic.com',
+    siteRss: 'https://publiuslogic.com/rss.sml',
+    siteSitemap: 'https://publiuslogic.com/sitemap.xml',
     location: 'OKC, Middle Earth',
     social: {
       email: 'mailto:donaldboulton@gmail.com',

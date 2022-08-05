@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import React from 'react'
+import * as React from 'react'
 import Helmet from 'react-helmet'
 import SiteMetadata from '@/utils/sitemetadata'
 import JsonLD from '@/utils/jsonld'
@@ -30,6 +30,8 @@ const SEO = ({
   type,
   title,
   description,
+  siteRss,
+  siteSitemap,
   date,
   lastUpdated,
   image,
@@ -41,12 +43,14 @@ const SEO = ({
   const { siteMetadata, buildTime } = SiteMetadata()
   const metaTitle = type == 'homepage' ? title : title + ' | ' + siteMetadata.title
   const metaDescription = description || siteMetadata.description
+  const metaSiteRss = siteRss || siteMetadata.siteRss
+  const metaSiteSitemap = siteSitemap || siteMetadata.siteSitemap
   const metaDate = date ? date : buildTime
   const metaLastUpdated = lastUpdated ? lastUpdated : buildTime
   const metaImage = {
     src: image ? `${siteMetadata.siteUrl}${image.src}` : defaultImage,
     width: (image ? image.width : 1342).toString(),
-    height: (image ? image.height : 1024).toString(),
+    height: (image ? image.height : 450).toString(),
   }
   const metaUrl = `${siteMetadata.siteUrl}${pathname}`
   const canonical = pathname ? `${siteMetadata.siteUrl}${pathname}` : siteMetadata.siteUrl
@@ -119,6 +123,8 @@ const SEO = ({
       script={JsonLD({
         title: title,
         description: metaDescription,
+        siteRss: metaSiteRss,
+        siteSitemap: metaSiteSitemap,
         type: type,
         date: metaDate,
         lastUpdated: metaLastUpdated,

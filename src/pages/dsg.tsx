@@ -4,18 +4,19 @@ import Layout from '@/components/Layout'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Callout from '@/components/Callout'
-import { Helmet } from 'react-helmet'
 import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
+
 import OGImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
 import PageImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
 
+const ogimage = {
+  src: OGImage,
+  width: 1342,
+  height: 531,
+}
+
 export default function DSG() {
-  const ogimage = {
-    src: OGImage,
-    width: 1342,
-    height: 531,
-  }
   return (
     <>
       <Layout>
@@ -24,11 +25,8 @@ export default function DSG() {
           title="Deferred Static Generation"
           description="PubliusLogic topics on Law Congress Programing and Human Anything."
           image={ogimage}
+          pathname="/dsg"
         />
-        <Helmet>
-          <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-          <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-        </Helmet>
         <Header />
         <main>
           <article>

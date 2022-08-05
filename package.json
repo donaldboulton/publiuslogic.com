@@ -17,7 +17,6 @@
     "blog"
   ],
   "license": "0BSD",
-  "main": "n/a",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/donaldboulton/publiuslogic.com.git"

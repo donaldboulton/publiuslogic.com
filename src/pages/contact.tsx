@@ -1,4 +1,5 @@
 import * as React from 'react'
+import type { HeadProps } from "gatsby"
 import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
 import SiteMetadata from '@/utils/sitemetadata'
 import Layout from '@/components/Layout'
@@ -19,7 +20,6 @@ import Stars from '@/components/Stars'
 
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
-import { Helmet } from 'react-helmet'
 
 function refreshPage() {
   if (typeof window !== undefined) {
@@ -55,14 +55,6 @@ function ContactUs() {
         image={ogimage}
         pathname="/contact"
       />
-      <Helmet>
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-          crossorigin=""
-        />
-      </Helmet>
       <Header />
       <ScrollIndicator />
       <main className="mt-10">
@@ -242,3 +234,14 @@ function ContactUs() {
 }
 
 export default ContactUs
+
+export function Head(props: HeadProps) {
+  return (
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+  )
+}

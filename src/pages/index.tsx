@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet'
 import CookieConsent, { Cookies, getCookieConsentValue } from 'react-cookie-consent'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -16,6 +15,12 @@ import { LazyMotion, motion, m } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
+
+const ogimage = {
+  src: OGImage,
+  width: 1342,
+  height: 531,
+}
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -72,11 +77,6 @@ export default function Home() {
     },
   }
 
-  const ogimage = {
-    src: OGImage,
-    width: 1342,
-    height: 531,
-  }
   const [ref, isVisible] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',
@@ -153,17 +153,14 @@ export default function Home() {
   }
 
   return (
-    <LazyMotion features={loadFeatures}>
+    <LazyMotion features={loadFeatures}>   
       <SEO
         type="homepage"
         title="Home"
         description="PubliusLogic topics on Law Congress Programing and Human Anything."
         image={ogimage}
+        pathname="/"
       />
-      <Helmet>
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </Helmet>
       <Header />
       <m.main className="font-sans" variants={container}>
         <div className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center">

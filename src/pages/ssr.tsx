@@ -5,7 +5,6 @@ import Layout from '@/components/Layout'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
-import { Helmet } from 'react-helmet'
 import SEO from '@/components/Seo'
 
 import OGImage from '../../static/assets/SSR_for_blog_article_and_G4_overview_page.jpg'
@@ -22,7 +21,7 @@ function SSR(props) {
   const ogimage = {
     src: OGImage,
     width: 1342,
-    height: 531,
+    height: 450,
   }
 
   return (
@@ -34,10 +33,6 @@ function SSR(props) {
           description="PubliusLogic topics on Law Congress Programing and Human Anything."
           image={ogimage}
         />
-        <Helmet>
-          <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-          <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-        </Helmet>
         <Header />
         <main>
           <article>
