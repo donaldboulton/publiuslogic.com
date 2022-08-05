@@ -1,4 +1,5 @@
 import * as React from 'react'
+import type { HeadProps } from 'gatsby'
 import fetch from 'isomorphic-fetch'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
@@ -91,4 +92,13 @@ export async function getServerData() {
       image: data.message,
     },
   }
+}
+
+export function Head(props: HeadProps) {
+  return (
+    <>
+      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+    </>
+  )
 }

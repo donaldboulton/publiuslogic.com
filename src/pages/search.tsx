@@ -1,4 +1,5 @@
 import * as React from 'react'
+import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -55,3 +56,12 @@ const SearchPage = () => {
 }
 
 export default SearchPage
+
+export function Head(props: HeadProps) {
+  return (
+    <>
+      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+    </>
+  )
+}

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
+import type { HeadProps } from 'gatsby'
 import CookieConsent, { Cookies, getCookieConsentValue } from 'react-cookie-consent'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -153,7 +154,7 @@ export default function Home() {
   }
 
   return (
-    <LazyMotion features={loadFeatures}>   
+    <LazyMotion features={loadFeatures}>
       <SEO
         type="homepage"
         title="Home"
@@ -649,5 +650,14 @@ export default function Home() {
       <ScrollIndicator />
       <Footer />
     </LazyMotion>
+  )
+}
+
+export function Head(props: HeadProps) {
+  return (
+    <>
+      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+    </>
   )
 }

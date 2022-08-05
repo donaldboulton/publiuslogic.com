@@ -1,5 +1,5 @@
 import * as React from 'react'
-import type { HeadProps } from "gatsby"
+import type { HeadProps } from 'gatsby'
 import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
 import SiteMetadata from '@/utils/sitemetadata'
 import Layout from '@/components/Layout'
@@ -222,11 +222,15 @@ export default ContactUs
 
 export function Head(props: HeadProps) {
   return (
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-      crossorigin=""
-    />
+    <>
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin=""
+      />
+      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+    </>
   )
 }

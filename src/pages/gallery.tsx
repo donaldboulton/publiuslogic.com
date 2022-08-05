@@ -1,5 +1,6 @@
-import { graphql } from 'gatsby'
 import * as React from 'react'
+import { graphql } from 'gatsby'
+import type { HeadProps } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import Gallery from '@browniebroke/gatsby-image-gallery'
 import Layout from '@/components/Layout'
@@ -106,3 +107,12 @@ export const pageQuery = graphql`
 `
 
 export default ImageGallery
+
+export function Head(props: HeadProps) {
+  return (
+    <>
+      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+    </>
+  )
+}

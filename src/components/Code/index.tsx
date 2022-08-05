@@ -49,9 +49,22 @@ const copyToClipboard = str => {
   document.body.removeChild(el)
 }
 
-const ButtonWrapper = props => <div style={{ backgroundColor: '#282A36', borderTopRightRadius: '12px', borderTopLeftRadius: '12px', position: 'relative', alignItems: 'center' }} {...props} />
+const ButtonWrapper = props => (
+  <div
+    style={{
+      backgroundColor: '#282A36',
+      borderTopRightRadius: '12px',
+      borderTopLeftRadius: '12px',
+      position: 'relative',
+      alignItems: 'center',
+    }}
+    {...props}
+  />
+)
 
-const Wrapper = props => <div style={{ position: 'relative', borderBottomRightRadius: '12px', borderBottomLeftRadius: '12px', }} {...props} />
+const Wrapper = props => (
+  <div style={{ position: 'relative', borderBottomRightRadius: '12px', borderBottomLeftRadius: '12px' }} {...props} />
+)
 
 const ConfettiWrapper = props => <div style={{ position: 'absolute', top: 0, right: 0 }} {...props} />
 
@@ -193,10 +206,10 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
     buttonRef.current.disabled = true
 
     console.log('button clicked')
-  };
+  }
   const handleCopy = event => {
-    buttonRef.current.disabled = false;
-  };
+    buttonRef.current.disabled = false
+  }
   // https://www.christopherbiscardi.com/post/using-mdx-scope-in-react-live-scope
   const components = useMDXScope()
   if (props['react-live']) {

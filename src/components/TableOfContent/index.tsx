@@ -81,9 +81,9 @@ const virtualReference = {
       left: 10,
       bottom: 20,
       height: 60,
-    };
+    }
   },
-};
+}
 const TableOfContent = ({ headings }: TableOfContentProps) => {
   const idList = getIds(headings)
   const activeId = useActiveId(idList)
@@ -115,7 +115,12 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
               leaveFrom="transform scale-100 opacity-100"
               leaveTo="transform scale-95 opacity-0"
             >
-              <Popover.Panel className="relative w-64 bottom-1/4" ref={setPopperElement} style={styles.popper} {...attributes.popper}>
+              <Popover.Panel
+                className="relative w-64 bottom-1/4"
+                ref={setPopperElement}
+                style={styles.popper}
+                {...attributes.popper}
+              >
                 <div className="rounded-lg shadow-lg ring-1 mt-2 ml-2 mr-2 bg-gray-700  ring-black ring-opacity-5">
                   <div className="text-gray-200 text-xl text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
                     Table Of Contents
