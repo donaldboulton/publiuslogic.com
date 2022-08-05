@@ -78,8 +78,7 @@ const virtualReference = {
   getBoundingClientRect() {
     return {
       top: 10,
-      left: 10,
-      bottom: 20,
+      left: 0,
       height: 60,
     }
   },
