@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import { Link, Script } from 'gatsby'
 import '@fontsource/kaushan-script'
 import CookieConsent, { getCookieConsentValue } from 'react-cookie-consent'
 import { MDXProvider } from '@mdx-js/react'
@@ -44,7 +44,7 @@ const shortcodes = {
 
 const Layout = ({ children, path }: LayoutProps) => {
   console.log(getCookieConsentValue())
-  getCookieConsentValue('gatsby-gdpr-google-analytics')
+  getCookieConsentValue('gtag')
   return (
     <>
       <LazyMotion features={loadFeatures}>
@@ -106,3 +106,25 @@ const Layout = ({ children, path }: LayoutProps) => {
 }
 
 export default Layout
+
+export function Head(props: HeadProps) {
+  return (
+    <>
+      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG}`}
+          strategy="off-main-thread"
+          forward={[`gtag`]}
+        />
+        <Script id="gtag-config" strategy="off-main-thread">
+          {`
+            window.dataLayer = window.dataLayer || []
+            window.gtag = function gtag() { window.dataLayer.push(arguments) }
+            gtag('js', new Date())
+            gtag('config', ${process.env.GTAG}, { send_page_view: false })
+          `}
+        </Script>
+    </>
+  )
+}

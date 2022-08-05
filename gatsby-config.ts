@@ -31,6 +31,9 @@ module.exports = {
       linkedin: 'https://www.linkedin.com/donboulton',
       github: 'https://github.com/donaldboulton/',
     },
+    partytownProxiedURLs: [
+      `https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG}`
+    ],
   },
   plugins: [
     {
@@ -199,37 +202,6 @@ module.exports = {
         queries,
         chunkSize: 10000, // default: 1000
         skipIndexing: false,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-gdpr-cookies',
-      options: {
-        googleAnalytics: {
-          trackingId: 'UA-24847941-1', // leave empty if you want to disable the tracker
-          cookieName: 'gatsby-gdpr-google-analytics', // default
-          anonymize: true, // default
-          allowAdFeatures: false, // default
-        },
-        googleTagManager: {
-          trackingId: 'GTM-WLCMLLP', // leave empty if you want to disable the tracker
-          cookieName: 'gatsby-gdpr-google-tagmanager', // default
-          dataLayerName: 'dataLayer', // default
-        },
-        facebookPixel: {
-          pixelId: 'YOUR_FACEBOOK_PIXEL_ID', // leave empty if you want to disable the tracker
-          cookieName: 'gatsby-gdpr-facebook-pixel', // default
-        },
-        tikTokPixel: {
-          pixelId: 'YOUR_TIKTOK_PIXEL_ID', // leave empty if you want to disable the tracker
-          cookieName: 'gatsby-gdpr-tiktok-pixel', // default
-        },
-        hotjar: {
-          hjid: '1328362',
-          hjsv: '6',
-          cookieName: 'gatsby-gdpr-hotjar', // default
-        },
-        // defines the environments where the tracking should be available  - default is ["production"]
-        environments: ['production', 'development'],
       },
     },
     {

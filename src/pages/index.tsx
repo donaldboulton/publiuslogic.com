@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useEffect, useState } from 'react'
 import type { HeadProps } from 'gatsby'
 import CookieConsent, { getCookieConsentValue } from 'react-cookie-consent'
-import { Link } from 'gatsby'
+import { Link, Script } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import SEO from '@/components/Seo'
 import Header from '@/components/Header'
@@ -59,7 +59,7 @@ const useAnimateOnInView = () => {
 
 export default function Home() {
   console.log(getCookieConsentValue())
-  getCookieConsentValue('gatsby-gdpr-google-analytics')
+  getCookieConsentValue('gtag')
   const [replay, setReplay] = useState(true)
   // Placeholder text data, as if from API
   const placeholderText = [
@@ -658,7 +658,21 @@ export function Head(props: HeadProps) {
       >
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG}`}
+          strategy="off-main-thread"
+          forward={[`gtag`]}
+        />
+        <Script id="gtag-config" strategy="off-main-thread">
+          {`
+            window.dataLayer = window.dataLayer || []
+            window.gtag = function gtag() { window.dataLayer.push(arguments) }
+            gtag('js', new Date())
+            gtag('config', ${process.env.GTAG}, { send_page_view: false })
+          `}
+        </Script>
       </SEO>
     </>
   )
 }
+

@@ -47,7 +47,6 @@
     "framer-motion": "^6.5.1",
     "gatsby": "^4.20.0",
     "gatsby-plugin-algolia": "^0.26.0",
-    "gatsby-plugin-gdpr-cookies": "^2.0.9",
     "gatsby-plugin-manifest": "^4.20.0",
     "gatsby-plugin-mdx": "^3.20.0",
     "gatsby-plugin-offline": "^5.20.0",
