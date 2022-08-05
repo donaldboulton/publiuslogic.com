@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useRef } from 'react'
-import { AdvancedVideo, Transformation, lazyload } from '@cloudinary/react'
+import { AdvancedVideo, lazyload } from '@cloudinary/react'
 import { CloudinaryVideo } from '@cloudinary/url-gen'
 import { videoCodec } from '@cloudinary/url-gen/actions/transcode'
 import { auto, vp9 } from '@cloudinary/url-gen/qualifiers/videoCodec'

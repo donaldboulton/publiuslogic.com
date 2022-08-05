@@ -8,7 +8,7 @@ declare module 'csstype' {
     danger: string
 
     // Add a CSS Custom Property
-    ['--icon-color' as info]: '#9333ea',
-    ['--icon-color' as danger]: '#be123c',
+    ['--icon-color' as info]: '#9333ea'
+    ['--icon-color' as danger]: '#be123c'
   }
 }

@@ -25,19 +25,6 @@ const navigation = [
   { name: 'Blog', href: '/blog', current: false },
 ]
 
-const subNavigation = [
-  { name: 'About', href: '/blog/about', current: false },
-  { name: 'Blog', href: '/blog', current: false },
-  { name: 'Biblical Writings Playtime', href: '/blog/playtime', current: false },
-  { name: 'Creation of All', href: '/blog/creation-of-all', current: false },
-  { name: 'Virtue', href: '/blog/virtue', current: false },
-  { name: 'Trinity of Angels', href: '/blog/trinity-of-angels', current: false },
-  { name: 'Trinity Of Man', href: '/blog/trinity-of-man', current: false },
-  { name: 'Experiments', href: '/blog/experiments', current: false },
-  { name: 'Works of Flesh', href: '/blog/works-of-flesh', current: false },
-  { name: 'Song', href: '/blog/song', current: false },
-  { name: 'The Day The I', href: '/blog/the-day-the-i', current: false },
-]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }

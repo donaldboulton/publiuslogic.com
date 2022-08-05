@@ -59,14 +59,14 @@ const CopyToClipboardButton = (props: { text: string; title?: string }) => {
   const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1])
 
   const copyToClipboard = (content: string) => {
-    const el = document.createElement(`textarea`)
+    const el = document.createElement('textarea')
     el.value = content
-    el.setAttribute(`readonly`, ``)
-    el.style.position = `absolute`
-    el.style.left = `-9999px`
+    el.setAttribute('readonly', '')
+    el.style.position = 'absolute'
+    el.style.left = '-9999px'
     document.body.appendChild(el)
     el.select()
-    document.execCommand(`copy`)
+    document.execCommand('copy')
     document.body.removeChild(el)
   }
 

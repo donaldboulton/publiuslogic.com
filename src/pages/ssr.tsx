@@ -17,23 +17,17 @@ function refreshPage() {
   }
 }
 
+const ogimage = {
+  src: OGImage,
+  width: 1400,
+  height: 450,
+}
+
 function SSR(props) {
   const { image } = props.serverData
-  const ogimage = {
-    src: OGImage,
-    width: 1342,
-    height: 450,
-  }
-
   return (
     <>
       <Layout>
-        <SEO
-          type="ssr"
-          title="Server Side Rendering"
-          description="PubliusLogic topics on Law Congress Programing and Human Anything."
-          image={ogimage}
-        />
         <Header />
         <main>
           <article>
@@ -97,8 +91,15 @@ export async function getServerData() {
 export function Head(props: HeadProps) {
   return (
     <>
-      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+      <SEO
+        type="page"
+        title="Server Side Rendering"
+        description="PubliusLogic topics on Law Congress Programing and Human Anything."
+        image={ogimage}
+      >
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+      </SEO>
     </>
   )
 }

@@ -11,6 +11,9 @@ import OGImage from '../../static/images/undraw/undraw_Portfolio_re_qwm5.png'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { LazyMotion, m } from 'framer-motion'
+
+const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 interface ImageSharpEdge {
   node: {
@@ -35,12 +38,13 @@ const CustomWrapper = ({ children, onClick }) => (
   </div>
 )
 
+const ogimage = {
+  src: OGImage,
+  width: 1400,
+  height: 450,
+}
+
 const ImageGallery: React.FC<PageProps> = ({ data }) => {
-  const ogimage = {
-    src: OGImage,
-    width: 1342,
-    height: 1024,
-  }
   const images = data.images.edges.map(({ node }, index) => ({
     ...node.childImageSharp,
     // Generate name based on the index as caption.
@@ -64,27 +68,28 @@ const ImageGallery: React.FC<PageProps> = ({ data }) => {
 
   return (
     <Layout>
-      <SEO type="Gallery" title="Gallery: Images" description="History Pics" image={ogimage} pathname="/gallery" />
       <Header />
       <PageHero title="Gallery: Images" description="My personal Images from History!" image={Image} />
       <ScrollIndicator />
-      <main className="mt-10">
-        <article className="post">
-          <div className="max-w-7xl mt-16 mb-32 mx-auto bg-gray-900 light:bg-gray-300 text-white light:text-black rounded-xl shadow-md overflow-hidden md:max-w-5xl">
-            <div className="md:flex">
-              <div className="container mx-auto">
-                <Gallery
-                  className="rounded-lg"
-                  images={images}
-                  lightboxOptions={lightboxOptions}
-                  customWrapper={CustomWrapper}
-                  onClose={onClose}
-                />
+      <LazyMotion features={loadFeatures}>
+        <m.div className="mt-10">
+          <article className="post">
+            <div className="max-w-7xl mt-16 mb-32 mx-auto bg-gray-900 light:bg-gray-300 text-white light:text-black rounded-xl shadow-md overflow-hidden md:max-w-5xl">
+              <div className="md:flex">
+                <div className="container mx-auto">
+                  <Gallery
+                    className="rounded-lg"
+                    images={images}
+                    lightboxOptions={lightboxOptions}
+                    customWrapper={CustomWrapper}
+                    onClose={onClose}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </article>
-      </main>
+          </article>
+        </m.div>
+      </LazyMotion>
       <Footer />
     </Layout>
   )
@@ -111,8 +116,10 @@ export default ImageGallery
 export function Head(props: HeadProps) {
   return (
     <>
-      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+      <SEO type="Gallery" title="Gallery: Images" description="History Pics" image={ogimage} pathname="/gallery">
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+      </SEO>
     </>
   )
 }

@@ -5,6 +5,7 @@ import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import { Link } from 'gatsby'
+import { LazyMotion, m } from 'framer-motion'
 import {
   jupiter,
   cutout,
@@ -100,61 +101,58 @@ const patterns = [
   wallpaper('#9c92ac', 0.5),
 ]
 
+const ogimage = {
+  src: OGImage,
+  width: 1400,
+  height: 450,
+}
+
+const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
+
 const Tags = () => {
   const tags = GetTags()
-  const ogimage = {
-    src: OGImage,
-    width: 1342,
-    height: 1024,
-  }
-
   return (
     <Layout>
-      <SEO
-        type="page"
-        title="Blog Tags"
-        description="Click on each tag to view blog posts containing tag."
-        image={ogimage}
-        pathname="/tags"
-      />
       <Header />
       <ScrollIndicator />
-      <main className="mt-10">
-        <article className="post">
-          <header>
-            <PageHero
-              title="Blog Tags"
-              description="Click on each tag to view blog posts containing tag."
-              image={Image}
-            />
-          </header>
-        </article>
-        <div className="mt-6 mb-24 grid grid-cols-2 gap-y-4 sm:grid-cols-3 md:grid-cols-4 gap-x-4 lg:grid-cols-5 xl:grid-cols-6 xl:gap-y-6 xl:gap-x-6">
-          {tags
-            .sort((a, b) => b.count - a.count)
-            .map((tag, i) => (
-              <Link key={tag.tag} to={`/tags/${kebabCase(tag.tag)}/`} className="group">
-                <section
-                  className="relative w-full h-24 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
-                  style={{
-                    backgroundColor: '#dfdbe5',
-                    // backgroundImage: `url(${OGImage})`,
-                    backgroundImage: patterns[i % patterns.length],
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gray-900 bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
-                  <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
-                    <h3 className="text-center text-white text-2xl font-bold">
-                      <span className="absolute inset-0"></span>
-                      {tag.tag}
-                    </h3>
-                    <p className="text-center text-gray-200 text-sm font-medium">&nbsp;({tag.count})</p>
-                  </div>
-                </section>
-              </Link>
-            ))}
-        </div>
-      </main>
+      <LazyMotion features={loadFeatures}>
+        <m.div className="mt-10">
+          <article className="post">
+            <header>
+              <PageHero
+                title="Blog Tags"
+                description="Click on each tag to view blog posts containing tag."
+                image={Image}
+              />
+            </header>
+          </article>
+          <div className="mt-6 mb-24 grid grid-cols-2 gap-y-4 sm:grid-cols-3 md:grid-cols-4 gap-x-4 lg:grid-cols-5 xl:grid-cols-6 xl:gap-y-6 xl:gap-x-6">
+            {tags
+              .sort((a, b) => b.count - a.count)
+              .map((tag, i) => (
+                <Link key={tag.tag} to={`/tags/${kebabCase(tag.tag)}/`} className="group">
+                  <section
+                    className="relative w-full h-24 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
+                    style={{
+                      backgroundColor: '#dfdbe5',
+                      // backgroundImage: `url(${OGImage})`,
+                      backgroundImage: patterns[i % patterns.length],
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gray-900 bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+                    <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+                      <h3 className="text-center text-white text-2xl font-bold">
+                        <span className="absolute inset-0"></span>
+                        {tag.tag}
+                      </h3>
+                      <p className="text-center text-gray-200 text-sm font-medium">&nbsp;({tag.count})</p>
+                    </div>
+                  </section>
+                </Link>
+              ))}
+          </div>
+        </m.div>
+      </LazyMotion>
       <Footer />
     </Layout>
   )
@@ -165,8 +163,16 @@ export default Tags
 export function Head(props: HeadProps) {
   return (
     <>
-      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+      <SEO
+        type="page"
+        title="Blog Tags"
+        description="Click on each tag to view blog posts containing tag."
+        image={ogimage}
+        pathname="/tags"
+      >
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+      </SEO>
     </>
   )
 }

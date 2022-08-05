@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import '@fontsource/kaushan-script'
-import CookieConsent, { Cookies, getCookieConsentValue } from 'react-cookie-consent'
+import CookieConsent, { getCookieConsentValue } from 'react-cookie-consent'
 import { MDXProvider } from '@mdx-js/react'
 import FindOutMore from '@/components/FindOutMore'
 import Features from '@/components/Features'

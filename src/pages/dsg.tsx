@@ -13,23 +13,16 @@ import PageImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_
 
 const ogimage = {
   src: OGImage,
-  width: 1342,
-  height: 531,
+  width: 1400,
+  height: 450,
 }
 
 export default function DSG() {
   return (
     <>
       <Layout>
-        <SEO
-          type="dsg"
-          title="Deferred Static Generation"
-          description="PubliusLogic topics on Law Congress Programing and Human Anything."
-          image={ogimage}
-          pathname="/dsg"
-        />
         <Header />
-        <main>
+        <div className="mt-10">
           <article>
             <header>
               <PageHero title="DSG" description="Deferred Static Generation." image={PageImage} />
@@ -43,7 +36,7 @@ export default function DSG() {
               </div>
             </div>
           </article>
-        </main>
+        </div>
         <Footer />
       </Layout>
     </>
@@ -53,8 +46,16 @@ export default function DSG() {
 export function Head(props: HeadProps) {
   return (
     <>
-      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+      <SEO
+        type="page"
+        title="Deferred Static Generation"
+        description="PubliusLogic topics on Law Congress Programing and Human Anything."
+        image={ogimage}
+        pathname="/dsg"
+      >
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+      </SEO>
     </>
   )
 }

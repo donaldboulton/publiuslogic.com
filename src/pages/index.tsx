@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import type { HeadProps } from 'gatsby'
-import CookieConsent, { Cookies, getCookieConsentValue } from 'react-cookie-consent'
+import CookieConsent, { getCookieConsentValue } from 'react-cookie-consent'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import SEO from '@/components/Seo'
@@ -19,7 +19,7 @@ import OGImage from '../../static/images/jpg/dbbg.jpg'
 
 const ogimage = {
   src: OGImage,
-  width: 1342,
+  width: 1400,
   height: 531,
 }
 
@@ -155,13 +155,6 @@ export default function Home() {
 
   return (
     <LazyMotion features={loadFeatures}>
-      <SEO
-        type="homepage"
-        title="Home"
-        description="PubliusLogic topics on Law Congress Programing and Human Anything."
-        image={ogimage}
-        pathname="/"
-      />
       <Header />
       <m.main className="font-sans" variants={container}>
         <div className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center">
@@ -656,8 +649,16 @@ export default function Home() {
 export function Head(props: HeadProps) {
   return (
     <>
-      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+      <SEO
+        type="homepage"
+        title="Home"
+        description="PubliusLogic topics on Law Congress Programing and Human Anything."
+        image={ogimage}
+        pathname="/"
+      >
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+      </SEO>
     </>
   )
 }

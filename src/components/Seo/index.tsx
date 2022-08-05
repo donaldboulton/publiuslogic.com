@@ -1,8 +1,8 @@
 /* eslint-disable indent */
-import React from 'react'
-import Helmet from 'react-helmet'
+import * as React from 'react'
+import { Script } from 'gatsby'
 import SiteMetadata from '@/utils/sitemetadata'
-import JsonLD from '@/utils/jsonld'
+import Graph from '@/utils/graph'
 
 import defaultImage from '../../../static/images/jpg/dbbg.jpg'
 
@@ -52,7 +52,8 @@ const SEO = ({
   const canonical = pathname ? `${siteMetadata.siteUrl}${pathname}` : siteMetadata.siteUrl
 
   return (
-    <Helmet
+    <Script
+      id="seo"
       htmlAttributes={{
         lang,
       }}
@@ -116,7 +117,7 @@ const SEO = ({
         )
         .concat(keywords && keywords.length > 0 ? { name: 'keywords', content: keywords.join(', ') } : [])
         .concat(meta)}
-      script={JsonLD({
+      script={Graph({
         title: title,
         description: metaDescription,
         type: type,

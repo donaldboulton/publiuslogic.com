@@ -2,8 +2,8 @@ import { useScroll } from 'framer-motion'
 import * as React from 'react'
 
 const useProgress = () => {
-  const [readingProgress, setReadingProgress] = React.useState(0);
-  const { scrollYProgress } = useScroll();
+  const [readingProgress, setReadingProgress] = React.useState(0)
+  const { scrollYProgress } = useScroll()
 
   React.useEffect(
     () =>
@@ -12,12 +12,12 @@ const useProgress = () => {
        * position in the viewport and save it in the state
        */
       scrollYProgress.onChange((latest: number) => {
-        setReadingProgress(parseFloat(latest.toFixed(2)));
+        setReadingProgress(parseFloat(latest.toFixed(2)))
       }),
     [scrollYProgress]
-  );
+  )
 
   return readingProgress
-};
+}
 
 export default useProgress

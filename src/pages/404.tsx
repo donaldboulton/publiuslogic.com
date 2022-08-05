@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
+import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
@@ -9,22 +10,15 @@ import Footer from '@/components/Footer'
 import Image from '../../static/svg/undraw/undraw_page_not_found_re_e9o6.svg'
 import OGImage from '../../static/images/undraw/undraw_Page_not_found_re_e9o6.png'
 
-const NotFoundPage = () => {
-  const ogimage = {
-    src: OGImage,
-    width: 1342,
-    height: 1024,
-  }
+const ogimage = {
+  src: OGImage,
+  width: 1400,
+  height: 450,
+}
 
+const NotFoundPage = () => {
   return (
     <Layout>
-      <SEO
-        type="404"
-        title="404: Not found"
-        description="You just hit a route that doesn&#39;t exist... the sadness."
-        image={ogimage}
-        pathname="/"
-      />
       <Header />
       <PageHero
         title="404: Not Found"
@@ -59,3 +53,14 @@ const NotFoundPage = () => {
 }
 
 export default NotFoundPage
+
+export function Head(props: HeadProps) {
+  return (
+    <>
+      <SEO type="page" title="404 Not Found" description="Not Found 404 Go Back" image={ogimage} pathname="/404">
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+      </SEO>
+    </>
+  )
+}

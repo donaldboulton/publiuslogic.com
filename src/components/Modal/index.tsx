@@ -10,7 +10,7 @@ function refreshPage() {
 }
 
 export default function Modal() {
-  let [isOpen, setOpen] = useState(true)
+  const [isOpen, setOpen] = useState(true)
   const cancelButtonRef = useRef(null)
   return (
     <>

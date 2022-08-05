@@ -19,8 +19,8 @@ const TagPage = ({ pageContext }: TagProps) => {
   const tag = pageContext.tag
   const ogimage = {
     src: OGImage,
-    width: 1342,
-    height: 1024,
+    width: 1400,
+    height: 450,
   }
 
   const title = `Tag: ${tag}`
