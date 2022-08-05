@@ -7,7 +7,15 @@ export function wrapPageElement({ element }) {
 }
 export const wrapRootElement = wrap
 
-export function onRenderBody({ setPreBodyComponents }) {
+export function onRenderBody({ setPreBodyComponents, setHeadComponents }) {
+  setHeadComponents([
+    <script
+      key="partytown-vanilla-config"
+      dangerouslySetInnerHTML={{
+        __html: `partytown = { debug: true }`,
+      }}
+    />,
+  ])
   setPreBodyComponents([
     React.createElement('script', {
       key: 'gatsby-dark-mode',
