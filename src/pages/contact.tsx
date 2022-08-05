@@ -21,12 +21,6 @@ import Stars from '@/components/Stars'
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
 
-function refreshPage() {
-  if (typeof window !== undefined) {
-    window.location.reload(false)
-  }
-}
-
 function ContactUs() {
   const ogimage = {
     src: OGImage,
@@ -72,15 +66,6 @@ function ContactUs() {
           <Stars />
           <div className="lg:grid lg:grid-cols-3 lg:gap-6">
             <div className="lg:col-span-1">
-              <div className="m-0">
-                <button
-                  type="button"
-                  className="p-1 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
-                  onClick={refreshPage}
-                >
-                  Click for Map's Display
-                </button>
-              </div>
               <div className="px-4 sm:px-0">
                 {contactMethods.map(method =>
                   method.link ? (
