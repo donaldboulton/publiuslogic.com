@@ -675,4 +675,3 @@ export function Head(props: HeadProps) {
     </>
   )
 }
-

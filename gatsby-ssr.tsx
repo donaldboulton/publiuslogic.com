@@ -7,13 +7,13 @@ export function wrapPageElement({ element }) {
 }
 export const wrapRootElement = wrap
 
-import { Partytown } from '@builder.io/partytown/react';
+import { Partytown } from '@builder.io/partytown/react'
 
-const ORIGIN = 'https://www.googletagmanager.com';
-const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP';
+const ORIGIN = 'https://www.googletagmanager.com'
+const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP'
 
 export function onRenderBody({ setHeadComponents, setPreBodyComponents }) {
-  if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') return null;
+  if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') return null
 
   setHeadComponents([
     <Partytown key="partytown" forward={['gtag']} />,
@@ -25,10 +25,10 @@ export function onRenderBody({ setHeadComponents, setPreBodyComponents }) {
         __html: `window.dataLayer = window.dataLayer || [];
         window.gtag = function gtag(){ window.dataLayer.push(arguments);}
         gtag('js', new Date()); 
-        gtag('config', '${GATSBY_GA_MEASUREMENT_ID}', { send_page_view: false })`
+        gtag('config', '${GATSBY_GA_MEASUREMENT_ID}', { send_page_view: false })`,
       }}
-    />
-  ]);
+    />,
+  ])
   setPreBodyComponents([
     React.createElement('script', {
       key: 'gatsby-dark-mode',
@@ -73,6 +73,6 @@ void function() {
                       style="display:none;visibility:hidden"></iframe>
                 `,
       }}
-    />
+    />,
   ])
 }

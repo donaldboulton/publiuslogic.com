@@ -1,8 +1,8 @@
 /* eslint-disable indent */
-import * as React from 'react'
+import React from 'react'
 import { Script } from 'gatsby'
 import SiteMetadata from '@/utils/sitemetadata'
-import Graph from '@/utils/graph'
+import JsonLD from '@/utils/jsonld'
 
 import defaultImage from '../../../static/images/jpg/dbbg.jpg'
 
@@ -53,7 +53,6 @@ const SEO = ({
 
   return (
     <Script
-      id="seo"
       htmlAttributes={{
         lang,
       }}
@@ -117,7 +116,7 @@ const SEO = ({
         )
         .concat(keywords && keywords.length > 0 ? { name: 'keywords', content: keywords.join(', ') } : [])
         .concat(meta)}
-      script={Graph({
+      script={JsonLD({
         title: title,
         description: metaDescription,
         type: type,

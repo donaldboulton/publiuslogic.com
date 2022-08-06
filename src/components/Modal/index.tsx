@@ -3,30 +3,35 @@ import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationIcon } from '@heroicons/react/outline'
 
-function refreshPage() {
-  if (typeof window !== undefined) {
-    window.location.reload(false)
-  }
+export interface ModalProps {
+  dialogContent: JSX.Element
+  dialogTitle: string
 }
 
-export default function Modal() {
-  const [isOpen, setOpen] = useState(true)
-  const cancelButtonRef = useRef(null)
+export const Modal: ReactFC<ModalProps> = ({ dialogContent, dialogTitle }) => {
+  const [isOpen, setIsOpen] = useState(true)
+
+  function closeModal() {
+    setIsOpen(false)
+  }
+
+  function openModal() {
+    setIsOpen(true)
+  }
+  let closeButtonRef = useRef(null)
   return (
     <>
-      <div className="m-0">
+      <div className="fixed inset-0 flex items-center justify-center">
         <button
           type="button"
-          onClick={() => setOpen(true)}
-          type="button"
-          className="p-1 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
+          onClick={openModal}
+          className="rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
         >
-          Show Map Message
+          Open dialog
         </button>
       </div>
-
       <Transition.Root appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-30" initialFocus={cancelButtonRef} onClose={setOpen}>
+        <Dialog as="div" className="relative z-30" initialFocus={closeButtonRef} open={isOpen} onClose={() => setIsOpen(false)}>
           {/* The backdrop, rendered as a fixed sibling to the panel container */}
           <div class="fixed inset-0 bg-black/30" aria-hidden="true" />
           <Transition.Child
@@ -64,37 +69,27 @@ export default function Modal() {
                       </div>
                       <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                         <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                          My Location
+                          {dialogTitle}
                         </Dialog.Title>
                         <div className="mt-2">
-                          <p className="text-sm text-gray-500">
-                            Clicking Show Map will refresh the page and show a Map of My Location's Home Work and
-                            Hangout.
-                          </p>
+                          <p className="text-sm text-gray-500">{dialogContent}</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="bg-gray-800 light:bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <button
-                      type="button"
-                      className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-                      onClick={refreshPage}
-                    >
-                      Show Map
-                    </button>
-                    <button
-                      type="button"
-                      className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-                      onClick={() => setOpen(false)}
-                      ref={cancelButtonRef}
-                    >
-                      Cancel
-                    </button>
-                  </div>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
+          </div>
+          <div className="mt-4">
+            <button
+              ref={closeButtonRef}
+              type="button"
+              className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              onClick={() => setIsOpen(false)}
+            >
+              Close
+            </button>
           </div>
         </Dialog>
       </Transition.Root>
