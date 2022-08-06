@@ -31,10 +31,6 @@ module.exports = {
       linkedin: 'https://www.linkedin.com/donboulton',
       github: 'https://github.com/donaldboulton/',
     },
-    partytownProxiedURLs: [
-      `https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG}`,
-      'https://www.google-analytics.com/analytics.js`
-    ],
   },
   plugins: [
     {

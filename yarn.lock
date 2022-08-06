@@ -1628,6 +1628,11 @@
   resolved "https://registry.yarnpkg.com/@builder.io/partytown/-/partytown-0.5.4.tgz#1a89069978734e132fa4a59414ddb64e4b94fde7"
   integrity sha512-qnikpQgi30AS01aFlNQV6l8/qdZIcP76mp90ti+u4rucXHsn4afSKivQXApqxvrQG9+Ibv45STyvHizvxef/7A==
 
+"@builder.io/partytown@^0.6.4":
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/@builder.io/partytown/-/partytown-0.6.4.tgz#8610c9e73cc52a95b963c1878760ebe628eee048"
+  integrity sha512-W6C7O0eSg6YNujHYZozXK5iJ+V69QVLLLRv+NlmYh1vFe0PUJ3kmAhRCx7rUqI3XAA/KpdyfdxLoopBg3GlfVA==
+
 "@cloudinary/html@^1.4.1":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@cloudinary/html/-/html-1.4.1.tgz#125432e02e57c8f77a01c4909b174dba9c1715a7"

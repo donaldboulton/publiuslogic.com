@@ -9,6 +9,12 @@
 const path = require('path')
 const _ = require('lodash')
 
+const { copyLibFiles } = require('@builder.io/partytown/utils');
+
+exports.onPreBuild = async () => {
+  await copyLibFiles(path.join(__dirname, 'static', '~partytown'));
+};
+
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {

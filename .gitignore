@@ -68,10 +68,30 @@ yarn-error.log
 .pnp.js
 .pnp.cjs
 .pnp.loader.mjs
+
 # Yarn Integrity file
 .yarn-integrity
 .yarnrc.yml
 yarn-lock
 .yarn-lock
+
 # VS Code workspace
 *.code-workspace
+
+# TernJS port file
+.tern-port
+
+# Partytown
+static/~partytown
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
