@@ -78,8 +78,9 @@ const virtualReference = {
   getBoundingClientRect() {
     return {
       top: 10,
+      bottom: 20,
       left: 0,
-      height: 60,
+      height: 50,
     }
   },
 }
@@ -115,17 +116,17 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
               leaveTo="transform scale-95 opacity-0"
             >
               <Popover.Panel
-                className="relative w-64 bottom-1/4"
+                className="relative w-64 h-64"
                 ref={setPopperElement}
                 style={styles.popper}
                 {...attributes.popper}
               >
-                <div className="rounded-lg shadow-lg ring-1 mt-2 ml-2 mr-2 bg-gray-700  ring-black ring-opacity-5">
+                <div className="rounded-lg shadow-lg ring-1 mt-2 ml-2 mr-2 bg-gray-700 ring-black ring-opacity-5">
                   <div className="text-gray-200 text-xl text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
                     Table Of Contents
                   </div>
                   <WavyHr className="mt-1 mb-1" />
-                  <nav className="overflow-y-auto overflow-x-hidden nav-scroll h-auto w-auto">
+                  <nav className="overflow-y-auto overflow-x-hidden nav-scroll h-96 w-auto">
                     <ul className="flex flex-col">
                       {headings.map(heading => {
                         if (heading.depth > 4) {
