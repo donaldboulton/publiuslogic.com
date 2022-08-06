@@ -17,20 +17,17 @@ import Github from '../../static/svg/icons/github.inline.svg'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Stars from '@/components/Stars'
-import { LazyMotion, m } from 'framer-motion'
 
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
 
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
-
-const ogimage = {
-  src: OGImage,
-  width: 1400,
-  height: 450,
-}
-
 function ContactUs() {
+  const ogimage = {
+    src: OGImage,
+    width: 1342,
+    height: 1024,
+  }
+
   const metadata = SiteMetadata().siteMetadata
   const SITE_RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 
@@ -45,175 +42,177 @@ function ContactUs() {
   ]
   return (
     <Layout>
+      <SEO
+        type="page"
+        title="Contact Us"
+        description="Our presence is real and digital. Contact us through the following ways."
+        image={ogimage}
+        pathname="/contact"
+      />
       <Header />
       <ScrollIndicator />
-      <LazyMotion features={loadFeatures}>
-        <m.div className="mt-10">
-          <article className="post">
-            <header>
-              <PageHero
-                title="Contact Us"
-                description="Our presence is real and digital. Contact us through the following ways."
-                image={Image}
-              />
-            </header>
-          </article>
-          <Map />
-          <div className="mt-10 sm:mt-0 p-8 text-white light:text-black">
-            <Stars />
-            <div className="lg:grid lg:grid-cols-3 lg:gap-6">
-              <div className="lg:col-span-1">
-                <div className="px-4 sm:px-0">
-                  {contactMethods.map(method =>
-                    method.link ? (
-                      <p key={method.name} className="mt-2 flex items-center text-sm text-white light:text-black">
-                        <method.image className=" h-5 w-5" />
-                        <span>&nbsp;{method.name}:&nbsp;</span>
-                        <a
-                          href={method.link}
-                          className="text-rose-600 hover:text-rose-500"
-                          rel="noopener noreferrer"
-                          target="_blank"
-                          area-label="Github"
-                        >
-                          {method.link}
-                        </a>
-                      </p>
-                    ) : (
-                      ''
-                    )
-                  )}
-                </div>
-              </div>
-
-              <div className="mt-5 lg:mt-0 lg:col-span-2 mb-24 rounded-lg bg-gray-800 light:bg-gray-300 text-gray-200 light:text-gray-800">
-                <NetlifyForm
-                  method="POST"
-                  name="contact"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
-                  enableRecaptcha
-                  onSuccess={(response, context) => {
-                    console.log('Successfully sent form data to Netlify Server')
-                    context.formRef.current.reset()
-                  }}
-                >
-                  {({ handleChange, success, error }) => (
-                    <>
-                      <Honeypot />
-                      <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
-                      <p className="hidden">
-                        <label>
-                          Don not fill this out if you are human: <input name="bot-field" />
-                        </label>
-                      </p>
-                      <div className="shadow overflow-hidden sm:rounded-md">
-                        <div className="px-4 py-5 text-white light:text-black sm:p-6">
-                          <div className="grid grid-cols-6 gap-6">
-                            <div className="col-span-6 sm:col-span-6">
-                              <label htmlFor="name" className="block text-sm font-medium">
-                                Name
-                              </label>
-                              <input
-                                type="text"
-                                name="name"
-                                id="name"
-                                autoComplete="off"
-                                required
-                                placeholder="Enter your Name here."
-                                className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
-                                onChange={handleChange}
-                              />
-                            </div>
-
-                            <div className="col-span-6">
-                              <label htmlFor="email" className="block text-sm font-medium text-white light:text-black">
-                                Email address
-                              </label>
-                              <input
-                                type="email"
-                                name="email"
-                                id="email"
-                                autoComplete="off"
-                                required
-                                placeholder="Enter your Email here."
-                                className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md peer ..."
-                                onChange={handleChange}
-                              />
-                              <p class="invisible peer-invalid:visible text-pink-600 text-sm">
-                                Please provide a valid email address.
-                              </p>
-                            </div>
-
-                            <div className="col-span-6">
-                              <label htmlFor="phone" className="block text-sm font-medium text-white light:text-black">
-                                Phone
-                              </label>
-                              <input
-                                type="tel"
-                                name="phone"
-                                id="phone"
-                                autoComplete="off"
-                                required
-                                placeholder="Enter Phone Number here."
-                                className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
-                                onChange={handleChange}
-                              />
-                            </div>
-
-                            <div className="col-span-6">
-                              <label
-                                htmlFor="subject"
-                                className="block text-sm font-medium text-white light:text-black"
-                              >
-                                Subject
-                              </label>
-                              <input
-                                type="text"
-                                name="subject"
-                                id="subject"
-                                autoComplete="on"
-                                required
-                                placeholder="Enter your Subject here."
-                                className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
-                                onChange={handleChange}
-                              />
-                            </div>
-
-                            <div className="col-span-6">
-                              <label htmlFor="text" className="block text-sm font-medium text-white light:text-black">
-                                Message
-                              </label>
-                              <textarea
-                                className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
-                                rows={5}
-                                name="text"
-                                required
-                                placeholder="Enter your message here."
-                                onChange={handleChange}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="px-4 py-3 text-right sm:px-6 bg-gray-800 light:bg-gray-200">
-                          {success && <p className="text-rose-500">Will get back to you A.S.A.P!</p>}
-                          {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
-                          <button
-                            type="submit"
-                            className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
-                          >
-                            Send
-                          </button>
-                        </div>
-                      </div>
-                    </>
-                  )}
-                </NetlifyForm>
+      <main className="mt-10">
+        <article className="post">
+          <header>
+            <PageHero
+              title="Contact Us"
+              description="Our presence is real and digital. Contact us through the following ways."
+              image={Image}
+            />
+          </header>
+        </article>
+        <Map />
+        <div className="mt-10 sm:mt-0 p-8 text-white light:text-black">
+          <Stars />
+          <div className="lg:grid lg:grid-cols-3 lg:gap-6">
+            <div className="lg:col-span-1">
+              <div className="px-4 sm:px-0">
+                {contactMethods.map(method =>
+                  method.link ? (
+                    <p key={method.name} className="mt-2 flex items-center text-sm text-white light:text-black">
+                      <method.image className=" h-5 w-5" />
+                      <span>&nbsp;{method.name}:&nbsp;</span>
+                      <a
+                        href={method.link}
+                        className="text-rose-600 hover:text-rose-500"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        area-label="Github"
+                      >
+                        {method.link}
+                      </a>
+                    </p>
+                  ) : (
+                    ''
+                  )
+                )}
               </div>
             </div>
+
+            <div className="mt-5 lg:mt-0 lg:col-span-2 mb-24 rounded-lg bg-gray-800 light:bg-gray-300 text-gray-200 light:text-gray-800">
+              <NetlifyForm
+                method="POST"
+                name="contact"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                enableRecaptcha
+                onSuccess={(response, context) => {
+                  console.log('Successfully sent form data to Netlify Server')
+                  context.formRef.current.reset()
+                }}
+              >
+                {({ handleChange, success, error }) => (
+                  <>
+                    <Honeypot />
+                    <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
+                    <p className="hidden">
+                      <label>
+                        Don not fill this out if you are human: <input name="bot-field" />
+                      </label>
+                    </p>
+                    <div className="shadow overflow-hidden sm:rounded-md">
+                      <div className="px-4 py-5 text-white light:text-black sm:p-6">
+                        <div className="grid grid-cols-6 gap-6">
+                          <div className="col-span-6 sm:col-span-6">
+                            <label htmlFor="name" className="block text-sm font-medium">
+                              Name
+                            </label>
+                            <input
+                              type="text"
+                              name="name"
+                              id="name"
+                              autoComplete="off"
+                              required
+                              placeholder="Enter your Name here."
+                              className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                              onChange={handleChange}
+                            />
+                          </div>
+
+                          <div className="col-span-6">
+                            <label htmlFor="email" className="block text-sm font-medium text-white light:text-black">
+                              Email address
+                            </label>
+                            <input
+                              type="email"
+                              name="email"
+                              id="email"
+                              autoComplete="off"
+                              required
+                              placeholder="Enter your Email here."
+                              className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md peer ..."
+                              onChange={handleChange}
+                            />
+                            <p class="invisible peer-invalid:visible text-pink-600 text-sm">
+                              Please provide a valid email address.
+                            </p>
+                          </div>
+
+                          <div className="col-span-6">
+                            <label htmlFor="phone" className="block text-sm font-medium text-white light:text-black">
+                              Phone
+                            </label>
+                            <input
+                              type="tel"
+                              name="phone"
+                              id="phone"
+                              autoComplete="off"
+                              required
+                              placeholder="Enter Phone Number here."
+                              className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                              onChange={handleChange}
+                            />
+                          </div>
+
+                          <div className="col-span-6">
+                            <label htmlFor="subject" className="block text-sm font-medium text-white light:text-black">
+                              Subject
+                            </label>
+                            <input
+                              type="text"
+                              name="subject"
+                              id="subject"
+                              autoComplete="on"
+                              required
+                              placeholder="Enter your Subject here."
+                              className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                              onChange={handleChange}
+                            />
+                          </div>
+
+                          <div className="col-span-6">
+                            <label htmlFor="text" className="block text-sm font-medium text-white light:text-black">
+                              Message
+                            </label>
+                            <textarea
+                              className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                              rows={5}
+                              name="text"
+                              required
+                              placeholder="Enter your message here."
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="px-4 py-3 text-right sm:px-6 bg-gray-800 light:bg-gray-200">
+                        {success && <p className="text-rose-500">Will get back to you A.S.A.P!</p>}
+                        {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
+                        <button
+                          type="submit"
+                          className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
+                        >
+                          Send
+                        </button>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </NetlifyForm>
+            </div>
           </div>
-        </m.div>
-      </LazyMotion>
+        </div>
+      </main>
       <Footer />
     </Layout>
   )
@@ -224,22 +223,14 @@ export default ContactUs
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO
-        type="page"
-        title="Contact Us"
-        description="Our presence is real and digital. Contact us through the following ways."
-        image={ogimage}
-        pathname="/contact"
-      >
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-          crossorigin=""
-        />
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin=""
+      />
+      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
     </>
   )
 }
