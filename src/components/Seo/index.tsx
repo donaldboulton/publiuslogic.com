@@ -1,6 +1,6 @@
 /* eslint-disable indent */
-import React from 'react'
-import { Script } from 'gatsby'
+import * as React from 'react'
+import Helmet from 'react-helmet'
 import SiteMetadata from '@/utils/sitemetadata'
 import JsonLD from '@/utils/jsonld'
 
@@ -52,7 +52,7 @@ const SEO = ({
   const canonical = pathname ? `${siteMetadata.siteUrl}${pathname}` : siteMetadata.siteUrl
 
   return (
-    <Script
+    <Helmet
       htmlAttributes={{
         lang,
       }}
