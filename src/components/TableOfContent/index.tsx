@@ -121,7 +121,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
                 style={styles.popper}
                 {...attributes.popper}
               >
-                <div className="rounded-lg shadow-lg ring-1 mt-2 ml-2 mr-2 bg-gray-700 ring-black ring-opacity-5">
+                <div className="rounded-lg shadow-lg ring-1 mt-2 ml-2 mr-2 bg-gray-800 ring-black ring-opacity-5 opacity-75">
                   <div className="text-gray-200 text-xl text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
                     Table Of Contents
                   </div>
