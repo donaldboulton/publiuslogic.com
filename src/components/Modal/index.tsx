@@ -6,9 +6,11 @@ import { ExclamationIcon } from '@heroicons/react/outline'
 export interface ModalProps {
   dialogContent: JSX.Element
   dialogTitle: string
+  children: React.ReactNode
 }
 
-export const Modal: ReactFC<ModalProps> = ({ dialogContent, dialogTitle }) => {
+export const Modal: ReactFC<ModalProps> = props => {
+  const { dialogTitle, dialogContent, children, ...rest } = props
   const [isOpen, setIsOpen] = useState(true)
 
   function closeModal() {
@@ -30,8 +32,14 @@ export const Modal: ReactFC<ModalProps> = ({ dialogContent, dialogTitle }) => {
           Open dialog
         </button>
       </div>
-      <Transition.Root appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-30" initialFocus={closeButtonRef} open={isOpen} onClose={() => setIsOpen(false)}>
+      <Transition.Root appear show={isOpen} as={Fragment} {...rest}>
+        <Dialog
+          as="div"
+          className="relative z-30"
+          initialFocus={closeButtonRef}
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+        >
           {/* The backdrop, rendered as a fixed sibling to the panel container */}
           <div class="fixed inset-0 bg-black/30" aria-hidden="true" />
           <Transition.Child
@@ -68,11 +76,13 @@ export const Modal: ReactFC<ModalProps> = ({ dialogContent, dialogTitle }) => {
                         <ExclamationIcon className="h-6 w-6 text-purple-700" aria-hidden="true" />
                       </div>
                       <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                        <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                          {dialogTitle}
+                        <Dialog.Title key={dialogTitle} as="h3" className="text-lg leading-6 font-medium text-gray-900">
+                          {children}
                         </Dialog.Title>
                         <div className="mt-2">
-                          <p className="text-sm text-gray-500">{dialogContent}</p>
+                          <p key={dialogContent} className="text-sm text-gray-500">
+                            {children}
+                          </p>
                         </div>
                       </div>
                     </div>

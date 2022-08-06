@@ -23,7 +23,7 @@ const A = ({ href, external = false, className, children }: AProps) => {
     )
   } else {
     return (
-      <Link to={href} className={`text-gray-300 hover:text-fuchsia-600 ${className}`}>
+      <Link to={href} className={`text-gray-300 hover:text-fuchsia-600 ${className}`} activeClassName="active">
         {children}
       </Link>
     )
