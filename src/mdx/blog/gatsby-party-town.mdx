@@ -1,0 +1,158 @@
+---
+published: true
+featuredpost: false
+author: Donald Boulton
+title: Gatsby Partytown
+path: /blog/gatsby-party-town
+date: 2020-08-06
+category: Tech
+image: ../../../static/assets/partytown.jpg
+tags: [Play, Party, WebWorker]
+publicId: videos/angelina_jordan_suspicious_minds
+videoTitle: Angelina Jordan Suspicious Minds
+description: Partytown is a lazy-loaded library to help relocate resource intensive scripts into a web worker.
+---
+
+![Partytown WebWorker](../../../static/assets/partytown.jpg)
+
+<Center>Gatbsy Partytown WebWorker!</Center>
+
+## Partytown
+
+🔗 [Partytown By builder.io](https://partytown.builder.io/) is a lazy-loaded library to help relocate resource intensive scripts into a web worker, and off of the main thread.
+
+Its goal is to help speed up sites by dedicating the main thread to your code, and offloading third-party scripts to a web worker.
+
+🔗 [Gatsby Post On Partytown](https://www.gatsbyjs.com/blog/how-to-add-google-analytics-gtag-to-gatsby-using-partytown/)
+
+🔗 [Repo for the changes](https://github.com/PaulieScanlon/gatsby-gtag-partytown/pull/1/files)
+
+## Why is it important
+
+It’s important because third-party scripts have a habit of slowing down the time it takes for your website to load, and a slow-to-load website isn’t good for users, or performance metrics…. or $business!
+
+What we know: Loading third-party scripts on the main thread impacts performance by delaying the time it takes for your site to become available and ready to use by your end users.
+
+You can see from the below that amongst that mess on the Performance tab is the gtag script which is getting in the way of the application JavaScript – Blurg 🤢
+
+## My Implementation
+
+I just changed my file's like the plugin, `gatsby-gtag-partytown`, would do.
+
+Remove any modules as in, `gatsby-plugin-google-gtag` or google analytics
+
+```bash:title=uninstall {1}
+npm uninstall gatsby-plugin-google-analytics || gatsby-plugin-google-gtag
+```
+
+## gatsby-config.ts
+
+```ts:title=gatsby-config.ts {6-14}
+module.exports = {
+  siteMetadata: {
+    title: 'gatsby-gtag-partytown'
+  },
+  plugins: [
+-    {
+-      resolve: 'gatsby-plugin-google-gtag',
+-      options: {
+-        trackingIds: ['G-C60YCNF3ND'],
+-        pluginConfig: {
+-          head: true
+-        }
+-      }
+-    }
+   ]
+  }
+};
+```
+
+Add to .gitignore
+
+```diff:title=.gitignore {3-5}
+  # TernJS port file
+  .tern-port
++
++ # Partytown
++ static/~partytown
+```
+
+## package.json
+
+```node:title=package.json {1}
++ "@builder.io/partytown": "^0.5.0"
+- "gatsby-plugin-google-gtag": "^4.20.0"
+```
+
+## gatsby-ssr.tsx
+
+> Google Analytics GA4 property
+
+```tsx:title=gatsby-ssr.tsx {2,4-5,7-8,10-23,25-36}
+import * as React from 'react'
+import { Partytown } from '@builder.io/partytown/react'
+
+const ORIGIN = 'https://www.googletagmanager.com'
+const GATSBY_GA_MEASUREMENT_ID = 'XXX-XXXXXXX'
+
+export function onRenderBody({ setHeadComponents, setPreBodyComponents }) {
+  if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') return null
+
+  setHeadComponents([
+    <Partytown key="partytown" forward={['gtag']} />,
+    <script key="google-analytics" type="text/partytown" src={`${ORIGIN}/gtag/js?id=${GATSBY_GA_MEASUREMENT_ID}`} />,
+    <script
+      key="google-analytics-config"
+      type="text/partytown" // You can add other external scripts below, adding this type to all
+      dangerouslySetInnerHTML={{
+        __html: `window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag(){ window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${GATSBY_GA_MEASUREMENT_ID}', { send_page_view: false })`,
+      }}
+    />,
+  ])
+
+  setPreBodyComponents([
+    <noscript
+      key="gtm"
+      dangerouslySetInnerHTML={{
+        __html: `
+                  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLCMLLP" height="0" width="0"
+                      style="display:none;visibility:hidden"></iframe>
+                `,
+      }}
+    />,
+  ])
+}
+```
+
+## gatsby-browser.tsx
+
+```tsx:title=gatsby-browser.tsx {1-4,6-12}
++ export const onRouteUpdate = ({ location }) => {
++  if (process.env.NODE_ENV !== 'production') {
++    return null;
++  }
+
++ const pagePath = location ? location.pathname + location.search + location.hash : undefined;
++  setTimeout(() => {
++    if (typeof gtag === 'function') {
++      gtag('event', 'page_view', { page_path: pagePath });
++    }
++  }, 100);
++ };
+```
+
+## gatsby-node.ts
+
+```ts:title=gatsby-node.ts {1-2,4-6}
++ const path = require('path');
++ const { copyLibFiles } = require('@builder.io/partytown/utils');
+
++ exports.onPreBuild = async () => {
++   await copyLibFiles(path.join(__dirname, 'static', '~partytown'));
++ };
+```
+
+<WavyHr className="mt-1 mb-1 text-fuchsia-600" />
