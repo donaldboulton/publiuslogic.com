@@ -28,6 +28,10 @@ export function onRenderBody({ setHeadComponents, setPreBodyComponents }) {
         gtag('config', '${GATSBY_GA_MEASUREMENT_ID}', { send_page_view: false })`,
       }}
     />,
+    <>
+      <Partytown key="g-recaptcha" forward={['g-recaptcha']} />
+      <script type="text/partytown" key="g-recaptcha" src="https://www.google.com/recaptcha/api.js"></script>
+    </>,
   ])
   setPreBodyComponents([
     React.createElement('script', {

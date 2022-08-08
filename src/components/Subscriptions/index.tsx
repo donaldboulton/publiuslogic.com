@@ -7,7 +7,8 @@ function Subscriptions() {
       <div className="p-2 mx-auto flex items-center space-x-2">
         <NetlifyForm
           name="subscriptions"
-          honeypotName="bot-field"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
           onSuccess={(response, context) => {
             console.log('Successfully sent form data to Netlify Server')
             context.formRef.current.reset()
@@ -47,8 +48,11 @@ function Subscriptions() {
                   <span className="block space-x-2">
                     <button
                       type="button"
-                      className="p-2 ml-2 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
+                      className="g-recaptcha p-2 ml-2 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
                       type="submit"
+                      data-sitekey="GATSBY_RECAPTCHA_SITE_KEY"
+                      data-callback="onSubmit"
+                      data-action="submit"
                     >
                       Subscribe
                     </button>

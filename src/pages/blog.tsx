@@ -60,6 +60,11 @@ export function Head(props: HeadProps) {
         image={ogimage}
         pathname="/blog"
       >
+        <script>
+          if (typeof document !== `undefined`) {
+            function onSubmit(token) {document.getElementById('subscriptions').submit()}
+          }
+        </script>
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </SEO>

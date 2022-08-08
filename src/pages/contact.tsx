@@ -1,6 +1,6 @@
 import * as React from 'react'
 import type { HeadProps } from 'gatsby'
-import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
+import { NetlifyForm, Honeypot } from 'react-netlify-forms'
 import SiteMetadata from '@/utils/sitemetadata'
 import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
@@ -95,7 +95,6 @@ function ContactUs() {
                 name="contact"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
-                enableRecaptcha
                 onSuccess={(response, context) => {
                   console.log('Successfully sent form data to Netlify Server')
                   context.formRef.current.reset()
@@ -104,7 +103,6 @@ function ContactUs() {
                 {({ handleChange, success, error }) => (
                   <>
                     <Honeypot />
-                    <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
                     <p className="hidden">
                       <label>
                         Don not fill this out if you are human: <input name="bot-field" />
@@ -200,7 +198,10 @@ function ContactUs() {
                         {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
                         <button
                           type="submit"
-                          className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
+                          data-sitekey="GATSBY_RECAPTCHA_SITE_KEY"
+                          data-callback="onSubmit"
+                          data-action="submit"
+                          className="g-recaptcha inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
                         >
                           Send
                         </button>
@@ -223,6 +224,16 @@ export default ContactUs
 export function Head(props: HeadProps) {
   return (
     <>
+      <script>
+        if (typeof document !== `undefined`) {
+          function onSubmit(token) {document.getElementById('subscriptions').submit()}
+        }
+      </script>
+      <script>
+          if (typeof document !== `undefined`) {
+            function onSubmit(token) {document.getElementById('contact').submit()}
+          }
+        </script>
       <link
         rel="stylesheet"
         href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
