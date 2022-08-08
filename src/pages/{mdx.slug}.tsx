@@ -1,10 +1,8 @@
 import * as React from 'react'
-import type { HeadProps } from 'gatsby'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
-import SEO from '@/components/Seo'
 import Bio from '@/components/Bio'
 import ScrollDown from '@/components/ScrollDown'
 import Scroll from '@/components/Scroll'
@@ -19,6 +17,7 @@ import GiscusComments from '@/components/GiscusComments'
 import WavyHr from '@/components/WavyHr'
 import Stars from '@/components/Stars'
 import { LazyMotion, m } from 'framer-motion'
+import SEO from '@/components/Seo'
 
 const components = { Link }
 
@@ -51,6 +50,15 @@ const BlogPost = ({ data }: BlogPostProps) => {
   const pathname = '/' + data.mdx.slug
   return (
     <Layout>
+      <SEO
+        type={data.mdx.slug.slice(0, 5) === 'blog/' ? 'blog' : 'page'}
+        title={frontmatter.title}
+        description={frontmatter.description}
+        date={frontmatter.date}
+        lastUpdated={data.mdx.parent.modifiedTime}
+        keywords={frontmatter.tags}
+        pathname={pathname}
+      />
       <Header />
       <TableOfContent headings={data.mdx.headings} />
       <ScrollIndicator />
@@ -141,16 +149,3 @@ export const query = graphql`
 
 export default BlogPost
 
-export function Head(props: HeadProps) {
-  return (
-    <>
-      <script>
-        if (typeof document !== `undefined`) {
-          function onSubmit(token) {document.getElementById('subscriptions').submit()}
-        }
-      </script>
-      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-    </>
-  )
-}

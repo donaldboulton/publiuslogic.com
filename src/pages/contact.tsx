@@ -21,13 +21,13 @@ import Stars from '@/components/Stars'
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
 
-function ContactUs() {
-  const ogimage = {
-    src: OGImage,
-    width: 1342,
-    height: 1024,
-  }
+const ogimage = {
+  src: OGImage,
+  width: 1342,
+  height: 1024,
+}
 
+function ContactUs() {
   const metadata = SiteMetadata().siteMetadata
   const SITE_RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 
@@ -41,14 +41,7 @@ function ContactUs() {
     { name: 'Github', link: 'github' in metadata.social ? metadata.social.github : null, image: Github },
   ]
   return (
-    <Layout>
-      <SEO
-        type="page"
-        title="Contact Us"
-        description="Our presence is real and digital. Contact us through the following ways."
-        image={ogimage}
-        pathname="/contact"
-      />
+    <Layout>      
       <Header />
       <ScrollIndicator />
       <main className="mt-10">
@@ -224,24 +217,20 @@ export default ContactUs
 export function Head(props: HeadProps) {
   return (
     <>
-      <script>
-        if (typeof document !== `undefined`) {
-          function onSubmit(token) {document.getElementById('subscriptions').submit()}
-        }
-      </script>
-      <script>
-          if (typeof document !== `undefined`) {
-            function onSubmit(token) {document.getElementById('contact').submit()}
-          }
-        </script>
-      <link
-        rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-        crossorigin=""
-      />
-      <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-      <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
+      <SEO
+        type="page"
+        title="Contact Us"
+        description="Our presence is real and digital. Contact us through the following ways."
+        image={ogimage}
+        pathname="/contact"
+      >
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+          crossorigin=""
+        />
+      </SEO>
     </>
   )
 }

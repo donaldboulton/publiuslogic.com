@@ -65,22 +65,12 @@ export default SearchPage
 
 export function Head(props: HeadProps) {
   return (
-    <>
-      <SEO
-        type="page"
-        title="Search"
-        description="Click on each tag to view blog posts containing tag."
-        image={ogimage}
-        pathname="/search"
-      >
-        <script>
-          if (typeof document !== `undefined`) {
-            function onSubmit(token) {document.getElementById('subscriptions').submit()}
-          }
-        </script>
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
-    </>
+    <SEO
+      type="page"
+      title="Search"
+      description="Click on each tag to view blog posts containing tag."
+      image={ogimage}
+      pathname="/search"
+    />
   )
 }

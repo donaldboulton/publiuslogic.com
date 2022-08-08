@@ -81,16 +81,6 @@ export default Profile
 
 export function Head(props: HeadProps) {
   return (
-    <>
-      <SEO type="Profile" title="Profile" description="Github Profile" image={ogimage}>
-      <script>
-          if (typeof document !== `undefined`) {
-            function onSubmit(token) {document.getElementById('subscriptions').submit()}
-          }
-        </script>
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
-    </>
+    <SEO type="Profile" title="Profile" description="Github Profile" image={ogimage} />
   )
 }

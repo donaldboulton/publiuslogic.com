@@ -656,6 +656,7 @@ export function Head(props: HeadProps) {
         image={ogimage}
         pathname="/"
       >
+        <script key="g-recaptcha" src="https://www.google.com/recaptcha/api.js"></script>
         <script>
           if (typeof document !== `undefined`) {
             function onSubmit(token) {document.getElementById('subscriptions').submit()}

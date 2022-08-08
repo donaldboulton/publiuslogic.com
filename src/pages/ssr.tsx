@@ -90,21 +90,11 @@ export async function getServerData() {
 
 export function Head(props: HeadProps) {
   return (
-    <>
-      <SEO
-        type="page"
-        title="Server Side Rendering"
-        description="PubliusLogic topics on Law Congress Programing and Human Anything."
-        image={ogimage}
-      >
-        <script>
-          if (typeof document !== `undefined`) {
-            function onSubmit(token) {document.getElementById('subscriptions').submit()}
-          }
-        </script>
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
-    </>
+    <SEO
+      type="page"
+      title="Server Side Rendering"
+      description="PubliusLogic topics on Law Congress Programing and Human Anything."
+      image={ogimage}
+    />
   )
 }
