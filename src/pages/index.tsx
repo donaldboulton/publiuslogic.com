@@ -78,14 +78,7 @@ export default function Home() {
     triggerOnce: true,
     rootMargin: '-200px 0px',
   })
-  const cardVariants = {
-    hover: {
-      scale: 1.05,
-    },
-    initial: {
-      scale: 1,
-    },
-  }
+
   const variants = {
     visible: {
       opacity: 1,
@@ -194,7 +187,6 @@ export default function Home() {
               <div className="lg:pt-12 pt-4 w-full md:w-4/12 px-4 text-center">
                 <m.div
                   className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-gray-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg"
-                  variants={cardVariants}
                   transition={{
                     ease: 'easeOut',
                     delay: 0.15,
@@ -230,7 +222,6 @@ export default function Home() {
               <div className="w-full md:w-4/12 px-4 text-center">
                 <m.div
                   className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-gray-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg"
-                  variants={cardVariants}
                   transition={{
                     ease: 'easeOut',
                     delay: 0.15,
@@ -265,7 +256,6 @@ export default function Home() {
               <div className="pt-6 w-full md:w-4/12 px-4 text-center">
                 <m.div
                   className="relative flex flex-col min-w-0 break-words bg-purple-600 text-gray-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg"
-                  variants={cardVariants}
                   transition={{
                     ease: 'easeOut',
                     delay: 0.15,
