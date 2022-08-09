@@ -94,5 +94,6 @@
       midi=(self),
       payment=(self),
       picture-in-picture=*,
-      usb=(self)
+      usb=(self),
+      interest-cohort=(self)
     '''

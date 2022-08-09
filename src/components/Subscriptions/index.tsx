@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react'
+import { Link } from 'gatsby'
 import { NetlifyForm, Honeypot } from 'react-netlify-forms'
 
 function Input(props) {
@@ -88,7 +89,8 @@ function Subscriptions() {
                     </button>
                   </span>
                   <span className="block space-x-2">
-                    <input type="checkbox" className="ml-2 default:ring-2 required:border-red-500 valid:border-green-500 required:shadow-lg required:shadow-red-500/50 valid:shadow-green-500/50" name="accept" id="accept" label="I accept Terms of Usage" required />
+                    <input type="checkbox" className="ml-2 w-6 h-6 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" name="accept" id="accept" required />
+                    <label for="accept" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <Link to="/blog/privacy" class="text-blue-400 light:text-blue-300 hover:underline">terms and conditions</Link>.</label>
                   </span>
                 </span>
               </div>

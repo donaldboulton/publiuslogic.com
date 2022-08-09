@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
+import { Link } from 'gatsby'
 import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
 import SiteMetadata from '@/utils/sitemetadata'
 import Layout from '@/components/Layout'
@@ -21,6 +22,32 @@ import Stars from '@/components/Stars'
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
 
+function Input(props) {
+  // https://stackoverflow.com/questions/68708009/how-to-disable-submit-input-field-until-all-required-fields-and-checkboxes-are-e
+  const [invalid, setInvalid] = useState(false)
+  
+  const handleInvalid = event => {
+    event.preventDefault()
+    console.log('Invalid')
+    setInvalid(true)
+  }
+  
+  const handleChange = () => setInvalid(false)
+  
+  const className = invalid ? 'invalid' : ''
+
+  return (
+    <div className={className}>
+      <input {...props} onInvalid={handleInvalid} onChange={handleChange} />
+      {props.type === "checkbox" && (
+        <label htmlFor={props.id}>
+          {props.label}
+        </label>
+      )}
+    </div>
+  )
+}
+
 function ContactUs() {
   const ogimage = {
     src: OGImage,
@@ -29,7 +56,10 @@ function ContactUs() {
   }
 
   const metadata = SiteMetadata().siteMetadata
-  const SITE_RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
+  const handleSubmit = event => {
+    event.preventDefault()
+    console.log('Submit')
+  }
 
   const contactMethods = [
     { name: 'Email', link: 'email' in metadata.social ? metadata.social.email : null, image: Email },
@@ -103,8 +133,7 @@ function ContactUs() {
                 name="contact"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
-                formProps={{ id: 'contact' }}
-                enableRecaptcha
+                onSubmit={handleSubmit}
                 onSuccess={(response, context) => {
                   console.log('Successfully sent form data to Netlify Server')
                   context.formRef.current.reset()
@@ -112,8 +141,7 @@ function ContactUs() {
               >
                 {({ handleChange, success, error }) => (
                   <>
-                    <Honeypot />
-                    <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
+                    <Honeypot />          
                     <p className="hidden">
                       <label>
                         Don not fill this out if you are human: <input name="bot-field" />
@@ -204,7 +232,8 @@ function ContactUs() {
                           </div>
                         </div>
                       </div>
-                      <div className="px-4 py-3 text-right sm:px-6 bg-gray-800 light:bg-gray-200">
+                      <div className="px-4 py-3 p-1 mx-auto space-x-1 sm:px-6 bg-gray-800 light:bg-gray-200">
+                      <span className="group relative flex items-center text-fuchsia-600">
                         {success && <p className="text-rose-500">Will get back to you A.S.A.P!</p>}
                         {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
                         <button
@@ -213,6 +242,11 @@ function ContactUs() {
                         >
                           Send
                         </button>
+                        <span className="block space-x-2">
+                          <input type="checkbox" className="ml-2 w-6 h-6 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" name="accept" id="accept" required />
+                          <label for="accept" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <Link to="/blog/privacy" class="text-blue-400 light:text-blue-300 hover:underline">terms and conditions</Link>.</label>
+                        </span>
+                        </span>
                       </div>
                     </div>
                   </>
