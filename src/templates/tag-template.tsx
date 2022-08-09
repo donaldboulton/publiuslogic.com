@@ -34,7 +34,7 @@ const TagPage = ({ pageContext }: TagProps) => {
         image={ogimage}
         pathname={'/tags/' + tag}
       />
-      <main className="mt-10">
+      <div className="mt-10">
         <article className="post">
           <header>
             <PageHero title={title} description={`Posts with tag [${tag}]`} image={Image} />
@@ -51,7 +51,7 @@ const TagPage = ({ pageContext }: TagProps) => {
           </div>
         </div>
         <BlogRoll tag={tag} />
-      </main>
+      </div>
     </Layout>
   )
 }

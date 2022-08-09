@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { Helmet } from 'react-helmet'
+import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
-import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
+import { NetlifyForm, Honeypot } from 'react-netlify-forms'
 import SiteMetadata from '@/utils/sitemetadata'
 import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
@@ -25,25 +25,21 @@ import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
 function Input(props) {
   // https://stackoverflow.com/questions/68708009/how-to-disable-submit-input-field-until-all-required-fields-and-checkboxes-are-e
   const [error, setError] = useState(false)
-  
+
   const handleInvalid = event => {
     event.preventDefault()
     console.log('Error')
     setError(true)
   }
-  
+
   const handleChanged = () => setError(false)
-  
+
   const className = error ? 'error' : ''
 
   return (
     <div className={className}>
       <input {...props} onError={handleError} onChange={handleChanged} />
-      {props.type === "checkbox" && (
-        <label htmlFor={props.id}>
-          {props.label}
-        </label>
-      )}
+      {props.type === 'checkbox' && <label htmlFor={props.id}>{props.label}</label>}
     </div>
   )
 }
@@ -79,17 +75,9 @@ function ContactUs() {
         image={ogimage}
         pathname="/contact"
       />
-      <Helmet>
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-          crossorigin=""
-        />
-      </Helmet>
       <Header />
       <ScrollIndicator />
-      <main className="mt-10">
+      <div className="mt-10">
         <article className="post">
           <header>
             <PageHero
@@ -141,7 +129,7 @@ function ContactUs() {
               >
                 {({ handleChange, success, error }) => (
                   <>
-                    <Honeypot />          
+                    <Honeypot />
                     <p className="hidden">
                       <label>
                         Don not fill this out if you are human: <input name="bot-field" />
@@ -233,19 +221,37 @@ function ContactUs() {
                         </div>
                       </div>
                       <div className="px-4 py-3 p-1 mx-auto space-x-1 sm:px-6 bg-gray-800 light:bg-gray-200">
-                      <span className="group relative flex items-center text-fuchsia-600">
-                        {success && <p className="text-rose-500">Will get back to you A.S.A.P!</p>}
-                        {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
-                        <button
-                          type="submit"
-                          className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
-                        >
-                          Send
-                        </button>
-                        <span className="block space-x-2">
-                          <input type="checkbox" className="ml-2 w-6 h-6 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" name="agree" id="agree" required />
-                          <label for="agree" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <Link to="/blog/privacy" class="text-blue-400 light:text-blue-300 hover:underline">terms and conditions</Link>.</label>
-                        </span>
+                        <span className="group relative flex items-center text-fuchsia-600">
+                          {success && <p className="text-rose-500">Will get back to you A.S.A.P!</p>}
+                          {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
+                          <button
+                            type="submit"
+                            className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
+                          >
+                            Send
+                          </button>
+                          <span className="block space-x-2">
+                            <input
+                              id="agree"
+                              type="checkbox"
+                              className="ml-2 w-6 h-6 bg-fuchsia-500 rounded border-gray-300 focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2 light:bg-gray-700 light:border-gray-600"
+                              name="agree"
+                              id="agree"
+                              required
+                            />
+                            <label for="agree" className="ml-3 text-sm font-medium text-gray-200 light:text-gray-800">
+                              I agree with the{' '}
+                              <Link
+                                to="/blog/privacy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-blue-400 light:text-blue-300 hover:underline"
+                              >
+                                Terms and Conditions
+                              </Link>
+                              .
+                            </label>
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -255,10 +261,21 @@ function ContactUs() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
       <Footer />
     </Layout>
   )
 }
 
 export default ContactUs
+
+export function Head(props: HeadProps) {
+  return (
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      ntegrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+  )
+}

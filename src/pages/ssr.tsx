@@ -34,7 +34,7 @@ function SSR(props) {
           pathname="/ssr"
         />
         <Header />
-        <main>
+        <div>
           <article>
             <header>
               <PageHero title="SSR" description="Sever Side Rendering." image={PageImage} />
@@ -73,7 +73,7 @@ function SSR(props) {
               </div>
             </div>
           </article>
-        </main>
+        </div>
         <Footer />
       </Layout>
     </>
