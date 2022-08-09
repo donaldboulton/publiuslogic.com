@@ -1,11 +1,9 @@
 import * as React from 'react'
-import type { HeadProps } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import { Link } from 'gatsby'
-import { LazyMotion, m } from 'framer-motion'
 import {
   jupiter,
   cutout,
@@ -107,16 +105,22 @@ const ogimage = {
   height: 450,
 }
 
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
-
 const Tags = () => {
   const tags = GetTags()
+
   return (
     <Layout>
+      <SEO
+        type="page"
+        title="Blog Tags"
+        description="Click on each tag to view blog posts containing tag."
+        image={ogimage}
+        pathname="/tags"
+      />
       <Header />
       <ScrollIndicator />
-      <LazyMotion features={loadFeatures}>
-        <m.div className="mt-10">
+      <div>
+        <div className="mt-10">
           <article className="post">
             <header>
               <PageHero
@@ -151,23 +155,11 @@ const Tags = () => {
                 </Link>
               ))}
           </div>
-        </m.div>
-      </LazyMotion>
+        </div>
+      </div>
       <Footer />
     </Layout>
   )
 }
 
 export default Tags
-
-export function Head(props: HeadProps) {
-  return (
-    <SEO
-      type="page"
-      title="Blog Tags"
-      description="Click on each tag to view blog posts containing tag."
-      image={ogimage}
-      pathname="/tags"
-    />
-  )
-}

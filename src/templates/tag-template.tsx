@@ -15,14 +15,14 @@ interface TagProps {
   }
 }
 
+const ogimage = {
+  src: OGImage,
+  width: 1400,
+  height: 450,
+}
+
 const TagPage = ({ pageContext }: TagProps) => {
   const tag = pageContext.tag
-  const ogimage = {
-    src: OGImage,
-    width: 1400,
-    height: 450,
-  }
-
   const title = `Tag: ${tag}`
   return (
     <Layout>

@@ -20,7 +20,7 @@ export const Modal: ReactFC<ModalProps> = props => {
   function openModal() {
     setIsOpen(true)
   }
-  let closeButtonRef = useRef(null)
+  const closeButtonRef = useRef(null)
   return (
     <>
       <div className="fixed inset-0 flex items-center justify-center">

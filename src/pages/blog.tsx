@@ -1,5 +1,4 @@
 import * as React from 'react'
-import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
@@ -12,7 +11,6 @@ import Stars from '@/components/Stars'
 
 import Image from '../../static/svg/undraw/undraw_blog_post_re_fy5x.svg'
 import OGImage from '../../static/images/undraw/undraw_Blog_post_re_fy5x.png'
-import { LazyMotion, m } from 'framer-motion'
 
 const ogimage = {
   src: OGImage,
@@ -20,15 +18,20 @@ const ogimage = {
   height: 450,
 }
 
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
-
 const BlogPage = () => {
   return (
     <Layout>
+      <SEO
+        type="page"
+        title="Blog Posts"
+        description="Articles published from time to time"
+        image={ogimage}
+        pathname="/blog"
+      />
       <Header />
       <ScrollIndicator />
-      <LazyMotion features={loadFeatures}>
-        <m.div className="mt-10">
+      <div>
+        <div className="mt-10">
           <Stars />
           <article className="post">
             <header>
@@ -36,8 +39,8 @@ const BlogPage = () => {
             </header>
           </article>
           <BlogRoll />
-        </m.div>
-      </LazyMotion>
+        </div>
+      </div>
       <ScrollDown
         className="scroll z-20 right-4 md:right-3 top-20"
         size={40}
@@ -49,15 +52,3 @@ const BlogPage = () => {
 }
 
 export default BlogPage
-
-export function Head(props: HeadProps) {
-  return (
-      <SEO
-        type="page"
-        title="Blog Posts"
-        description="Articles published from time to time"
-        image={ogimage}
-        pathname="/blog"
-      />
-  )
-}

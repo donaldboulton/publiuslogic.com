@@ -1,14 +1,17 @@
 import * as React from 'react'
-import { NetlifyForm, Honeypot } from 'react-netlify-forms'
+import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
 
 function Subscriptions() {
+  const SITE_RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
   return (
     <div>
       <div className="p-2 mx-auto flex items-center space-x-2">
         <NetlifyForm
+          method="POST"
           name="subscriptions"
-          data-netlify="true"
+          hdata-netlify="true"
           data-netlify-honeypot="bot-field"
+          enableRecaptcha
           onSuccess={(response, context) => {
             console.log('Successfully sent form data to Netlify Server')
             context.formRef.current.reset()
@@ -17,6 +20,7 @@ function Subscriptions() {
           {({ handleChange, success, error }) => (
             <>
               <Honeypot />
+              <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
               {success && <p className="text-rose-500">Thanks for Subscribing!</p>}
               {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
               <p className="hidden">
@@ -48,11 +52,8 @@ function Subscriptions() {
                   <span className="block space-x-2">
                     <button
                       type="button"
-                      className="g-recaptcha p-2 ml-2 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
+                      className="p-2 ml-2 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
                       type="submit"
-                      data-sitekey="GATSBY_RECAPTCHA_SITE_KEY"
-                      data-callback="onSubmit"
-                      data-action="submit"
                     >
                       Subscribe
                     </button>

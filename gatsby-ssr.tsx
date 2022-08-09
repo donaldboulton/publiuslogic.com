@@ -27,7 +27,7 @@ export function onRenderBody({ setHeadComponents, setPreBodyComponents }) {
         gtag('js', new Date()); 
         gtag('config', '${GATSBY_GA_MEASUREMENT_ID}', { send_page_view: false })`,
       }}
-    />
+    />,
   ])
   setPreBodyComponents([
     React.createElement('script', {

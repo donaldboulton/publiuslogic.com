@@ -1,5 +1,4 @@
 import * as React from 'react'
-import type { HeadProps } from 'gatsby'
 import fetch from 'isomorphic-fetch'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
@@ -17,17 +16,23 @@ function refreshPage() {
   }
 }
 
-const ogimage = {
-  src: OGImage,
-  width: 1400,
-  height: 450,
-}
-
 function SSR(props) {
   const { image } = props.serverData
+  const ogimage = {
+    src: OGImage,
+    width: 1400,
+    height: 450,
+  }
   return (
     <>
       <Layout>
+        <SEO
+          type="page"
+          title="Server Side Rendering"
+          description="PubliusLogic topics on Law Congress Programing and Human Anything."
+          image={ogimage}
+          pathname="/ssr"
+        />
         <Header />
         <main>
           <article>
@@ -86,15 +91,4 @@ export async function getServerData() {
       image: data.message,
     },
   }
-}
-
-export function Head(props: HeadProps) {
-  return (
-    <SEO
-      type="page"
-      title="Server Side Rendering"
-      description="PubliusLogic topics on Law Congress Programing and Human Anything."
-      image={ogimage}
-    />
-  )
 }

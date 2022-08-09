@@ -1,6 +1,6 @@
 import * as React from 'react'
-import type { HeadProps } from 'gatsby'
-import { NetlifyForm, Honeypot } from 'react-netlify-forms'
+import { Helmet } from 'react-helmet'
+import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
 import SiteMetadata from '@/utils/sitemetadata'
 import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
@@ -21,13 +21,13 @@ import Stars from '@/components/Stars'
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
 
-const ogimage = {
-  src: OGImage,
-  width: 1342,
-  height: 1024,
-}
-
 function ContactUs() {
+  const ogimage = {
+    src: OGImage,
+    width: 1342,
+    height: 1024,
+  }
+
   const metadata = SiteMetadata().siteMetadata
   const SITE_RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 
@@ -41,7 +41,22 @@ function ContactUs() {
     { name: 'Github', link: 'github' in metadata.social ? metadata.social.github : null, image: Github },
   ]
   return (
-    <Layout>      
+    <Layout>
+      <SEO
+        type="page"
+        title="Contact Us"
+        description="Our presence is real and digital. Contact us through the following ways."
+        image={ogimage}
+        pathname="/contact"
+      />
+      <Helmet>
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+          crossorigin=""
+        />
+      </Helmet>
       <Header />
       <ScrollIndicator />
       <main className="mt-10">
@@ -88,6 +103,7 @@ function ContactUs() {
                 name="contact"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
+                enableRecaptcha
                 onSuccess={(response, context) => {
                   console.log('Successfully sent form data to Netlify Server')
                   context.formRef.current.reset()
@@ -96,6 +112,7 @@ function ContactUs() {
                 {({ handleChange, success, error }) => (
                   <>
                     <Honeypot />
+                    <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
                     <p className="hidden">
                       <label>
                         Don not fill this out if you are human: <input name="bot-field" />
@@ -191,10 +208,7 @@ function ContactUs() {
                         {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
                         <button
                           type="submit"
-                          data-sitekey="GATSBY_RECAPTCHA_SITE_KEY"
-                          data-callback="onSubmit"
-                          data-action="submit"
-                          className="g-recaptcha inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
+                          className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
                         >
                           Send
                         </button>
@@ -213,24 +227,3 @@ function ContactUs() {
 }
 
 export default ContactUs
-
-export function Head(props: HeadProps) {
-  return (
-    <>
-      <SEO
-        type="page"
-        title="Contact Us"
-        description="Our presence is real and digital. Contact us through the following ways."
-        image={ogimage}
-        pathname="/contact"
-      >
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-          crossorigin=""
-        />
-      </SEO>
-    </>
-  )
-}

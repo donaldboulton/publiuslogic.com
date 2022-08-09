@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import type { HeadProps } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import Gallery from '@browniebroke/gatsby-image-gallery'
 import Layout from '@/components/Layout'
@@ -11,9 +10,6 @@ import OGImage from '../../static/images/undraw/undraw_Portfolio_re_qwm5.png'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { LazyMotion, m } from 'framer-motion'
-
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 interface ImageSharpEdge {
   node: {
@@ -38,12 +34,6 @@ const CustomWrapper = ({ children, onClick }) => (
   </div>
 )
 
-const ogimage = {
-  src: OGImage,
-  width: 1400,
-  height: 450,
-}
-
 const ImageGallery: React.FC<PageProps> = ({ data }) => {
   const images = data.images.edges.map(({ node }, index) => ({
     ...node.childImageSharp,
@@ -65,14 +55,19 @@ const ImageGallery: React.FC<PageProps> = ({ data }) => {
   const onClose = () => {
     console.log('Lightbox was closed')
   }
-
+  const ogimage = {
+    src: OGImage,
+    width: 1400,
+    height: 450,
+  }
   return (
     <Layout>
+      <SEO type="Gallery" title="Gallery Images" description="History Pics" image={ogimage} pathname="/gallery" />
       <Header />
       <PageHero title="Gallery: Images" description="My personal Images from History!" image={Image} />
       <ScrollIndicator />
-      <LazyMotion features={loadFeatures}>
-        <m.div className="mt-10">
+      <div>
+        <div className="mt-10">
           <article className="post">
             <div className="max-w-7xl mt-16 mb-32 mx-auto bg-gray-900 light:bg-gray-300 text-white light:text-black rounded-xl shadow-md overflow-hidden md:max-w-5xl">
               <div className="md:flex">
@@ -88,8 +83,8 @@ const ImageGallery: React.FC<PageProps> = ({ data }) => {
               </div>
             </div>
           </article>
-        </m.div>
-      </LazyMotion>
+        </div>
+      </div>
       <Footer />
     </Layout>
   )
@@ -112,9 +107,3 @@ export const pageQuery = graphql`
 `
 
 export default ImageGallery
-
-export function Head(props: HeadProps) {
-  return (
-    <SEO type="Gallery" title="Gallery Images" description="History Pics" image={ogimage} pathname="/gallery" />
-  )
-}

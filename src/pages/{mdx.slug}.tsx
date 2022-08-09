@@ -1,7 +1,6 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import Bio from '@/components/Bio'
 import ScrollDown from '@/components/ScrollDown'
@@ -16,12 +15,9 @@ import NowPlaying from '@/components/PlayList'
 import GiscusComments from '@/components/GiscusComments'
 import WavyHr from '@/components/WavyHr'
 import Stars from '@/components/Stars'
-import { LazyMotion, m } from 'framer-motion'
 import SEO from '@/components/Seo'
 
 const components = { Link }
-
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 interface BlogPostProps {
   data: {
@@ -48,6 +44,7 @@ interface BlogPostProps {
 const BlogPost = ({ data }: BlogPostProps) => {
   const { frontmatter, timeToRead } = data.mdx
   const pathname = '/' + data.mdx.slug
+
   return (
     <Layout>
       <SEO
@@ -62,8 +59,8 @@ const BlogPost = ({ data }: BlogPostProps) => {
       <Header />
       <TableOfContent headings={data.mdx.headings} />
       <ScrollIndicator />
-      <LazyMotion features={loadFeatures}>
-        <m.div>
+      <div>
+        <div>
           <Stars />
           <article className="mb-10">
             <section className="px-4 lg:px-0 mt-8 mb-20 max-w-screen-lg mx-auto text-white light:text-black prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500">
@@ -111,8 +108,8 @@ const BlogPost = ({ data }: BlogPostProps) => {
               css="position: fixed; color: gray; width: 40px; height: 40px;"
             />
           </article>
-        </m.div>
-      </LazyMotion>
+        </div>
+      </div>
       <Footer />
     </Layout>
   )
@@ -148,4 +145,3 @@ export const query = graphql`
 `
 
 export default BlogPost
-

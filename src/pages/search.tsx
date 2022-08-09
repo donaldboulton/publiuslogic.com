@@ -1,5 +1,4 @@
 import * as React from 'react'
-import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -8,12 +7,8 @@ import Search from '@/components/Algolia/search'
 import PageHero from '@/components/PageHero'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Stars from '@/components/Stars'
-import { LazyMotion, m } from 'framer-motion'
-
 import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
 import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
-
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 const searchIndices = [{ name: 'Posts', title: 'Posts' }]
 
@@ -27,17 +22,11 @@ const SearchPage = () => {
   return (
     <>
       <Layout>
-        <SEO
-          type="page"
-          title="Search"
-          description="Click on each tag to view blog posts containing tag."
-          image={ogimage}
-          pathname="/search"
-        />
+        <SEO type="page" title="Search" description="Click on each Post for link." image={ogimage} pathname="/search" />
         <Header />
         <ScrollIndicator />
-        <LazyMotion features={loadFeatures}>
-          <m.div className="mt-10">
+        <div>
+          <div className="mt-10">
             <Stars />
             <article>
               <header>
@@ -53,8 +42,8 @@ const SearchPage = () => {
                 </div>
               </div>
             </article>
-          </m.div>
-        </LazyMotion>
+          </div>
+        </div>
         <Footer />
       </Layout>
     </>
@@ -62,15 +51,3 @@ const SearchPage = () => {
 }
 
 export default SearchPage
-
-export function Head(props: HeadProps) {
-  return (
-    <SEO
-      type="page"
-      title="Search"
-      description="Click on each tag to view blog posts containing tag."
-      image={ogimage}
-      pathname="/search"
-    />
-  )
-}

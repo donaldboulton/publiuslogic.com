@@ -47,6 +47,7 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
@@ -182,12 +183,12 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'PubliusLogic',
-        short_name: 'PubliusLogic',
+        short_name: 'publiuslogic',
         start_url: '/',
         background_color: fullConfig.theme.colors.gray['800'],
         theme_color: fullConfig.theme.colors.gray['800'],
         display: 'minimal-ui',
-        icon: 'static/images/gatsby/publiuslogic-logo.png', // This path is relative to the root of the site.
+        icon: 'static/images/gatsby/publiuslogic-logo.png',
       },
     },
     {
@@ -235,7 +236,12 @@ module.exports = {
             // Opt-out of Google's FLoC
             'Permissions-Policy: interest-cohort=()',
           ],
-        },
+        }, // option to add more headers. `Link` headers are transformed by the below criteria
+        allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
+        mergeSecurityHeaders: true, // boolean to turn off the default security headers
+        mergeCachingHeaders: true, // boolean to turn off the default caching headers
+        transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
+        generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
       },
     },
   ],

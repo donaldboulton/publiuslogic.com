@@ -11,15 +11,6 @@ import CloudinaryVideo from '@/components/CloudinaryVideo'
 import Center from '@/components/Center'
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 import Spacer200 from '../../static/img//spacer-200.jpg'
-import { LazyMotion, m } from 'framer-motion'
-
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
-
-const ogimage = {
-  src: OGImage,
-  width: 1400,
-  height: 450,
-}
 
 function Profile() {
   const spacer200 = {
@@ -27,13 +18,19 @@ function Profile() {
     width: 1400,
     height: 200,
   }
+  const ogimage = {
+    src: OGImage,
+    width: 1400,
+    height: 450,
+  }
   return (
     <>
       <Layout>
-        <Header transparent />
+        <SEO type="Profile" title="Profile" description="Github Profile" image={ogimage} pathname="/profile" />
+        <Header />
         <ScrollIndicator />
-        <LazyMotion features={loadFeatures}>
-          <m.div>
+        <div>
+          <div>
             <article className="mb-11">
               <div className="mt-6 mb-6 text-center">
                 <h2 className="text-4xl font-bold mt-2 mb-2 leading-tight">Github Profile</h2>
@@ -69,8 +66,8 @@ function Profile() {
                 <WavyHr className="text-indigo-600" />
               </div>
             </article>
-          </m.div>
-        </LazyMotion>
+          </div>
+        </div>
         <Footer />
       </Layout>
     </>
@@ -78,9 +75,3 @@ function Profile() {
 }
 
 export default Profile
-
-export function Head(props: HeadProps) {
-  return (
-    <SEO type="Profile" title="Profile" description="Github Profile" image={ogimage} />
-  )
-}

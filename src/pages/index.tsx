@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import type { HeadProps } from 'gatsby'
-import CookieConsent, { getCookieConsentValue } from 'react-cookie-consent'
-import { Link, Script } from 'gatsby'
+import CookieConsent, { Cookies } from 'react-cookie-consent'
+import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import SEO from '@/components/Seo'
 import Header from '@/components/Header'
@@ -16,12 +15,6 @@ import { LazyMotion, motion, m } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
-
-const ogimage = {
-  src: OGImage,
-  width: 1400,
-  height: 531,
-}
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -58,8 +51,11 @@ const useAnimateOnInView = () => {
 }
 
 export default function Home() {
-  console.log(getCookieConsentValue())
-  getCookieConsentValue('gtag')
+  const ogimage = {
+    src: OGImage,
+    width: 1400,
+    height: 531,
+  }
   const [replay, setReplay] = useState(true)
   // Placeholder text data, as if from API
   const placeholderText = [
@@ -155,6 +151,13 @@ export default function Home() {
 
   return (
     <LazyMotion features={loadFeatures}>
+      <SEO
+        type="homepage"
+        title="Home"
+        description="PubliusLogic topics on Law Congress Programing and Human Anything."
+        image={ogimage}
+        pathname="/"
+      />
       <Header />
       <m.main className="font-sans" variants={container}>
         <div className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center">
@@ -613,7 +616,8 @@ export default function Home() {
         declineButtonText="Decline"
         ariaAcceptLabel="Accept Cookies"
         ariaDeclineLabel="Decline Cookies"
-        cookieName="gatsby-gdpr-google-analytics"
+        cookieName="gtag"
+        expires={150}
         style={{
           background: 'linear-gradient(to right, #4338ca, transparent, #4338ca)',
           textShadow: '2px 2px black',
@@ -643,28 +647,5 @@ export default function Home() {
       <ScrollIndicator />
       <Footer />
     </LazyMotion>
-  )
-}
-
-export function Head(props: HeadProps) {
-  return (
-    <>
-      <SEO
-        type="homepage"
-        title="Home"
-        description="PubliusLogic topics on Law Congress Programing and Human Anything."
-        image={ogimage}
-        pathname="/"
-      >
-        <script key="g-recaptcha" src="https://www.google.com/recaptcha/api.js"></script>
-        <script>
-          if (typeof document !== `undefined`) {
-            function onSubmit(token) {document.getElementById('subscriptions').submit()}
-          }
-        </script>
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-        <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
-    </>
   )
 }
