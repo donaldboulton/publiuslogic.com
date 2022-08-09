@@ -65,8 +65,7 @@
       https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
       https://stats.g.doubleclick.net/
       https://www.google.com/recaptcha/api.js
-      https://www.gstatic.com/recaptcha/releases/0aeEuuJmrVqDrEL39Fsg5-UJ/recaptcha__en.js
-      https://www.gstatic.com/recaptcha/releases/kcXVPRWG7fMILHmzon0--fD3/recaptcha__en.js
+      https://www.gstatic.com/recaptcha/releases/gWN_U6xTIPevg0vuq7g1hct0/recaptcha__en.js
       https://unpkg.com/leaflet@1.8.0/dist/leaflet.css
     '''      
     Access-Control-Allow-Methods = '''
@@ -97,14 +96,3 @@
       picture-in-picture=*,
       usb=(self)
     '''
-[[redirects]]
-  from = "/privacy"
-  to = "/blog/privacy"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/about"
-  to = "/blog/about"
-  status = 301
-  force = true  
