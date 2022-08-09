@@ -158,9 +158,9 @@
     "deploy": "gatsby build && gh-pages -d public -b main"
   },
   "engines": {
-    "node": ">=18.7.0"
+    "node": ">=16.16.0"
   },
   "AWS_LAMBDA_JS_RUNTIME": {
-    "node": ">=18.7.0"
+    "node": ">=16.16.0"
   }
 }
