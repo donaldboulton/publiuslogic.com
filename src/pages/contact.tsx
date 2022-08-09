@@ -24,21 +24,21 @@ import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
 
 function Input(props) {
   // https://stackoverflow.com/questions/68708009/how-to-disable-submit-input-field-until-all-required-fields-and-checkboxes-are-e
-  const [invalid, setInvalid] = useState(false)
+  const [error, setError] = useState(false)
   
   const handleInvalid = event => {
     event.preventDefault()
-    console.log('Invalid')
-    setInvalid(true)
+    console.log('Error')
+    setError(true)
   }
   
-  const handleChange = () => setInvalid(false)
+  const handleChanged = () => setError(false)
   
-  const className = invalid ? 'invalid' : ''
+  const className = error ? 'error' : ''
 
   return (
     <div className={className}>
-      <input {...props} onInvalid={handleInvalid} onChange={handleChange} />
+      <input {...props} onError={handleError} onChange={handleChanged} />
       {props.type === "checkbox" && (
         <label htmlFor={props.id}>
           {props.label}
@@ -243,8 +243,8 @@ function ContactUs() {
                           Send
                         </button>
                         <span className="block space-x-2">
-                          <input type="checkbox" className="ml-2 w-6 h-6 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" name="accept" id="accept" required />
-                          <label for="accept" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <Link to="/blog/privacy" class="text-blue-400 light:text-blue-300 hover:underline">terms and conditions</Link>.</label>
+                          <input type="checkbox" className="ml-2 w-6 h-6 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" name="agree" id="agree" required />
+                          <label for="agree" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <Link to="/blog/privacy" class="text-blue-400 light:text-blue-300 hover:underline">terms and conditions</Link>.</label>
                         </span>
                         </span>
                       </div>
