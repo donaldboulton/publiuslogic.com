@@ -1,15 +1,47 @@
 import * as React from 'react'
+import { useState } from 'react'
 import { NetlifyForm, Honeypot } from 'react-netlify-forms'
 
+function Input(props) {
+  // https://stackoverflow.com/questions/68708009/how-to-disable-submit-input-field-until-all-required-fields-and-checkboxes-are-e
+  const [invalid, setInvalid] = useState(false)
+  
+  const handleInvalid = event => {
+    event.preventDefault()
+    console.log('Invalid')
+    setInvalid(true)
+  }
+  
+  const handleChange = () => setInvalid(false)
+  
+  const className = invalid ? 'invalid' : ''
+
+  return (
+    <div className={className}>
+      <input {...props} onInvalid={handleInvalid} onChange={handleChange} />
+      {props.type === "checkbox" && (
+        <label htmlFor={props.id}>
+          {props.label}
+        </label>
+      )}
+    </div>
+  )
+}
+
 function Subscriptions() {
+  const handleSubmit = event => {
+    event.preventDefault()
+    console.log('Submit')
+  }
   return (
     <div>
       <div className="p-2 mx-auto flex items-center space-x-2">
         <NetlifyForm
           method="POST"
           name="subscriptions"
-          hdata-netlify="true"
+          data-netlify="true"
           data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
           onSuccess={(response, context) => {
             console.log('Successfully sent form data to Netlify Server')
             context.formRef.current.reset()
@@ -17,7 +49,7 @@ function Subscriptions() {
         >
           {({ handleChange, success, error }) => (
             <>
-              <Honeypot />             
+              <Honeypot />
               {success && <p className="text-rose-500">Thanks for Subscribing!</p>}
               {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
               <p className="hidden">
@@ -26,7 +58,7 @@ function Subscriptions() {
                 </label>
               </p>
               <div className="p-1 mx-auto space-x-1">
-                <form className="group relative flex items-center text-fuchsia-600">
+                <span className="group relative flex items-center text-fuchsia-600">
                   <svg
                     width="20"
                     height="20"
@@ -39,7 +71,7 @@ function Subscriptions() {
                   </svg>
                   <input
                     type="email"
-                    name="subscriptions"
+                    name="email"
                     onChange={handleChange}
                     placeholder="Email Address"
                     required
@@ -55,7 +87,10 @@ function Subscriptions() {
                       Subscribe
                     </button>
                   </span>
-                </form>
+                  <span className="block space-x-2">
+                    <input type="checkbox" className="ml-2 default:ring-2 required:border-red-500 valid:border-green-500 required:shadow-lg required:shadow-red-500/50 valid:shadow-green-500/50" name="accept" id="accept" label="I accept Terms of Usage" required />
+                  </span>
+                </span>
               </div>
             </>
           )}

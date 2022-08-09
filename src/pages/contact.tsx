@@ -103,6 +103,7 @@ function ContactUs() {
                 name="contact"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
+                formProps={{ id: 'contact' }}
                 enableRecaptcha
                 onSuccess={(response, context) => {
                   console.log('Successfully sent form data to Netlify Server')
