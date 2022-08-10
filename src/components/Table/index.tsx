@@ -7,7 +7,7 @@ import { LazyMotion, m } from 'framer-motion'
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 const Table = () => {
-  const container = {
+  const tableContainer = {
     enter: {
       transition: {
         when: 'beforeChildren',
@@ -38,11 +38,11 @@ const Table = () => {
 
     return { ref }
   }
-  const [ref, isVisible] = useInView({
+  const [ref5, isVisible5] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',
   })
-  const variants = {
+  const variants5 = {
     visible: {
       opacity: 1,
       x: 0,
@@ -54,165 +54,136 @@ const Table = () => {
   }
   return (
     <LazyMotion features={loadFeatures}>
-      <m.section className="font-sans" variants={container}>
+      <m.section className="font-sans" variants={tableContainer}>
         <div className="w-full px-4 mr-auto ml-auto">
           <m.div
-            ref={ref}
-            variants={variants}
-            animate={isVisible ? 'visible' : 'hidden'}
+            ref={ref5}
+            variants={variants5}
+            animate={isVisible5 ? 'visible' : 'hidden'}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             key={0}
           >
-            <div className="overflow-x-auto nav-scroll relative shadow-md rounded-md sm:rounded-lg opacity-75">
-              <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead className="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <div className="overflow-x-auto nav-scroll relative shadow-md opacity-75">
+              <table className="w-full rounded rounded-lg sm:rounded-md text-sm text-left text-gray-500 light:text-gray-700">
+                <thead className="text-md uppercase bg-gray-700 light:bg-gray-300 light:text-gray-700">
                   <tr>
-                    <th scope="col" className="py-3 px-6 text-gray-300 ml-2">
+                    <th scope="col" className="py-3 px-6 text-gray-300 light:text-gray-800 ml-2">
                       Article Name
                     </th>
-                    <th scope="col" className="py-3 px-6 text text-gray-300">
+                    <th scope="col" className="py-3 px-6 text text-gray-300 light:text-gray-800">
                       Dated
                     </th>
-                    <th scope="col" className="py-3 px-6 text-gray-300">
+                    <th scope="col" className="py-3 px-6 text-gray-300 light:text-gray-800">
                       Category
                     </th>
-                    <th scope="col" className="py-3 px-6 text-gray-300">
+                    <th scope="col" className="py-3 px-6 text-gray-300 light:text-gray-800">
                       Tags
-                    </th>
-                    <th scope="col" className="py-3 px-6 text-gray-300">
-                      Link's
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                    <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      Playtime
-                    </th>
-                    <td className="py-4 px-6">2020-04-07</td>
-                    <td className="py-4 px-6">Logic</td>
-                    <td className="py-4 px-6">God</td>
-                    <td className="py-4 px-6">
+                  <tr className="bg-gray-900 border-b border-gray-500 dark:bg-gray-900 border-gray-700">
+                    <th scope="row" className="py-4 px-6 font-medium text-gray-100 whitespace-nowrap light:text-gray-800">
                       <Link
                         to="/blog/playtime"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        className="font-medium text-blue-400 light:text-blue-500 hover:underline"
                       >
-                        Link
+                        Playtime
                       </Link>
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 border-b dark:bg-gray-800 dark:border-gray-700">
-                    <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      Creation Of All
                     </th>
-                    <td className="py-4 px-6">2021-04-04</td>
-                    <td className="py-4 px-6">Creation</td>
-                    <td className="py-4 px-6">Trinity</td>
-                    <td className="py-4 px-6">
+                    <td className="py-4 px-6">2020-04-07</td>
+                    <td className="py-4 px-6">Logic</td>
+                    <td className="py-4 px-6">God</td>
+                  </tr>
+                  <tr className="bg-gray-700 border-b light:bg-gray-300 border-gray-700">
+                    <th scope="row" className="py-4 px-6 font-medium text-gray-100 whitespace-nowrap light:text-gray-800">
                       <Link
                         to="/blog/creation-of-all"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        className="font-medium text-blue-400 light:text-blue-500 hover:underline"
                       >
-                        Link
+                        Creation Of All
                       </Link>
-                    </td>
+                    </th>
+                    <td className="py-4 px-6">2021-04-04</td>
+                    <td className="py-4 px-6">Creation</td>
+                    <td className="py-4 px-6">Trinity</td>
                   </tr>
-                  <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                  <tr className="bg-gray-900 border-b dark:bg-gray-900 border-gray-700">
                     <th
                       scope="row"
-                      className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white dark:order-gray-900"
+                      className="py-4 px-6 font-medium text-gray-100 whitespace-nowrap light:text-gray-800 dark:order-gray-900"
                     >
-                      Trinity of Angels
+                      <Link
+                        to="/blog/trinity-of-angels"
+                        rel="noopener noreferrer"
+                        className="font-medium text-blue-400 light:text-blue-500 hover:underline"
+                      >
+                        Trinity of Angels
+                      </Link>
                     </th>
                     <td className="py-4 px-6">2021-04-11</td>
                     <td className="py-4 px-6">Creation</td>
                     <td className="py-4 px-6">Holy Spirit</td>
-                    <td className="py-4 px-6">
-                      <Link
-                        to="/blog/trinity-of-angels"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                      >
-                        Link
-                      </Link>
-                    </td>
                   </tr>
-                  <tr className="bg-gray-50 border-b dark:bg-gray-800 dark:border-gray-700">
-                    <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      Works Of Flesh
+                  <tr className="bg-gray-700 border-b light:bg-gray-300 border-gray-700">
+                    <th scope="row" className="py-4 px-6 font-medium text-gray-100 whitespace-nowrap light:text-gray-800">
+                      <Link
+                        to="/blog/works-of-flesh"
+                        rel="noopener noreferrer"
+                        className="font-medium text-blue-400 light:text-blue-500 hover:underline"
+                      >
+                        Works Of Flesh
+                      </Link>
                     </th>
                     <td className="py-4 px-6">2021-04-13</td>
                     <td className="py-4 px-6">Creation</td>
                     <td className="py-4 px-6">God</td>
-                    <td className="py-4 px-6">
-                      <Link
-                        to="/blog/works-of-flesh"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                      >
-                        Link
-                      </Link>
-                    </td>
                   </tr>
-                  <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                    <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      Virtue
+                  <tr className="bg-gray-900 border-b border-gray-700 light:bg-gray-400 border-gray-700">
+                    <th scope="row" className="py-4 px-6 font-medium text-gray-100 whitespace-nowrap light:text-gray-800">
+                    <Link
+                        to="/blog/virtue"
+                        rel="noopener noreferrer"
+                        className="font-medium text-blue-400 light:text-blue-500 hover:underline"
+                      >
+                        Virtue
+                      </Link>
                     </th>
                     <td className="py-4 px-6">2021-04-22</td>
                     <td className="py-4 px-6">Creation</td>
                     <td className="py-4 px-6">Truth</td>
-                    <td className="py-4 px-6">
-                      <Link
-                        to="/blog/virtue"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                      >
-                        Link
-                      </Link>
-                    </td>
                   </tr>
-                  <tr className="bg-gray-50 border-b dark:bg-gray-800 dark:border-gray-700">
-                    <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      Immorality Abortion
+                  <tr className="bg-gray-700 border-b light:bg-gray-300 border-gray-700">
+                    <th scope="row" className="py-4 px-6 font-medium text-gray-100 whitespace-nowrap light:text-gray-800">
+                      <Link
+                        to="/blog/immorality-abortion"
+                        rel="noopener noreferrer"
+                        className="font-medium text-blue-400 light:text-blue-500 hover:underline"
+                      >
+                        Immorality Abortion
+                      </Link>
                     </th>
                     <td className="py-4 px-6">2021-10-13</td>
                     <td className="py-4 px-6">Creation</td>
                     <td className="py-4 px-6">Murder</td>
-                    <td className="py-4 px-6">
-                      <Link
-                        to="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                      >
-                        Link
-                      </Link>
-                    </td>
                   </tr>
                   <tr>
-                    <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      Trinity of Man
+                    <th scope="row" className="py-4 px-6 font-medium text-gray-100 whitespace-nowrap light:text-gray-800">
+                      <Link
+                        to="/blog/trinity-of-man"
+                        rel="noopener noreferrer"
+                        className="font-medium text-blue-400 light:text-blue-500 hover:underline"
+                      > 
+                        Trinity of Man
+                      </Link>
                     </th>
                     <td className="py-4 px-6">2022-04-17</td>
                     <td className="py-4 px-6">Good Evil</td>
                     <td className="py-4 px-6">Devil</td>
-                    <td className="py-4 px-6">
-                      <Link
-                        to="/blog/trinity-of-man"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                      >
-                        Link
-                      </Link>
-                    </td>
                   </tr>
                 </tbody>
               </table>

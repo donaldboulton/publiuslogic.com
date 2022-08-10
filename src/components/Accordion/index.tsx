@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import { Disclosure } from '@headlessui/react'
-import { ChevronUpIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon } from '@heroicons/react/solid'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
 import Center from '@/components/Center'
@@ -11,7 +11,7 @@ import List from '@/components/List'
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 const Accordion = () => {
-  const containerAccordion = {
+  const accordionContainer = {
     enter: {
       transition: {
         when: 'beforeChildren',
@@ -42,11 +42,11 @@ const Accordion = () => {
 
     return { ref }
   }
-  const [ref, isVisible] = useInView({
+  const [ref4, isVisible4] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',
   })
-  const variantsAccordion = {
+  const variants4 = {
     visible: {
       opacity: 1,
       x: 0,
@@ -58,12 +58,12 @@ const Accordion = () => {
   }
   return (
     <LazyMotion features={loadFeatures}>
-      <m.section className="font-sans" variants={containerAccordion}>
+      <m.section className="font-sans" variants={accordionContainer}>
         <div className="w-full px-4 mr-auto ml-auto">
           <m.div
-            ref={ref}
-            variants={variantsAccordion}
-            animate={isVisible ? 'visible' : 'hidden'}
+            ref={ref4}
+            variants={variants4}
+            animate={isVisible4 ? 'visible' : 'hidden'}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             key={0}
           >
@@ -74,7 +74,7 @@ const Accordion = () => {
                     <>
                       <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-800 px-4 py-2 text-left text-sm font-medium text-gray-200 hover:bg-gray-900 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                         <span className="text-lg">Lyrics Suspicious Minds</span>
-                        <ChevronUpIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-gray-200`} />
+                        <ChevronDownIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-gray-200`} />
                       </Disclosure.Button>
                       <Disclosure.Panel className="px-4 pt-4 pb-2 text-md text-gray-200">
                         <div className="text-md">
@@ -85,22 +85,22 @@ const Accordion = () => {
                           Way more Beautiful than Elvis's version of which I saw live along time ago. 1962 or 63?{' '}
                         </div>
 
-                        <div>[Bridge]</div>
+                        <div className="my-4">[Bridge]</div>
 
                         <div>Oh, let our love survive</div>
                         <div>I'll dry the tears from your eyes</div>
                         <div>Let's don't let a good thing die</div>
-                        <div>When, honey, you know I've never lied</div> 
+                        <div>When, honey, you know I've never lied</div>
                         <div>to you</div>
 
-                        <div>[Verse 1]</div>
+                        <div className="my-4">[Verse 1]</div>
 
                         <div>Heart Of A Child, I can't walk out</div>
                         <div>Because I love you too much, baby </div>
                         <div>Why can't you see, what you're doin' to me </div>
                         <div>When you don' believe a word I say?</div>
 
-                        <div>[Chorus]</div>
+                        <div className="my-4">[Chorus]</div>
 
                         <div>We can't go on together With suspicious minds</div>
 
@@ -137,7 +137,7 @@ const Accordion = () => {
                     <>
                       <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-800 px-4 py-2 text-left text-sm font-medium text-gray-200 hover:bg-gray-900 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                         <span className="text-lg">Credits</span>
-                        <ChevronUpIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-gray-200`} />
+                        <ChevronDownIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-gray-200`} />
                       </Disclosure.Button>
                       <Disclosure.Panel className="px-4 pt-4 pb-2 text-md text-gray-200">
                         <List variant="unordered">

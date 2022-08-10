@@ -139,7 +139,6 @@ export default function Home() {
       x: -300,
     },
   }
-
   return (
     <LazyMotion features={loadFeatures}>
       <SEO
