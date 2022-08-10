@@ -18,6 +18,8 @@ import { LazyMotion, m } from 'framer-motion'
 import VideoOne from '@/components/CloudinaryVideo/videoOne'
 import VideoTwo from '@/components/CloudinaryVideo/videoTwo'
 import CloudinaryVideo from '@/components/CloudinaryVideo'
+import Table from '@/components/Table'
+import Accordion from '@/components/Accordion'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -40,6 +42,8 @@ const shortcodes = {
   CloudinaryVideo,
   VideoTwo,
   VideoOne,
+  Table,
+  Accordion,
 }
 
 const Layout = ({ children, path }: LayoutProps) => {

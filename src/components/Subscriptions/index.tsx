@@ -94,14 +94,14 @@ function Subscriptions() {
                       required
                     />
                     <label for="accept" className="ml-3 text-sm font-medium text-gray-200 light:text-gray-800">
-                      I agree with the{' '}
+                      Terms{' '}
                       <Link
                         to="/blog/privacy"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="text-blue-400 light:text-blue-300 hover:underline"
                       >
-                        Privacy Policy
+                        Privacy
                       </Link>
                       .
                     </label>

@@ -7,7 +7,7 @@ const Tags = ({ tags }: { tags: string[] }) => (
     {tags.map(tag => (
       <Link
         to={`/tags/${kebabCase(tag)}/`}
-        className="inline-block py-1 px-3 rounded no-underline bg-fuchsia-600 hover:bg-fuchsia-700 transition ease-in-out delay-150 shadow-sm shadow-fuchsia-500/50 hover:shadow-fuchsia-700/50 text-gray-100 light:text-gray-100 text-xs font-medium tracking-tight uppercase"
+        className="inline-block py-1 px-3 rounded no-underline bg-gray-700 hover:bg-gray-800 transition ease-in-out delay-150 shadow-sm shadow-purple-500/50 hover:shadow-purple-700/50 text-gray-100 light:text-gray-100 text-xs font-medium tracking-tight uppercase"
         key={tag}
       >
         {tag}

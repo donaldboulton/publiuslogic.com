@@ -13,48 +13,46 @@ import List from '@/components/List'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, motion, m } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
-
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
-
-const container = {
-  enter: {
-    transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.3,
-    },
-  },
-}
-const item = {
-  initial: { y: 20, opacity: 0 },
-  enter: {
-    y: 0,
-    opacity: 1,
-  },
-}
-
-const useAnimateOnInView = () => {
-  const controls = useAnimation()
-  const { ref, inView } = useInView()
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible')
-    }
-    if (!inView) {
-      controls.start('hidden')
-    }
-  }, [controls, inView])
-
-  return { ref }
-}
 
 export default function Home() {
   const ogimage = {
     src: OGImage,
     width: 1400,
-    height: 531,
+    height: 450,
+  }
+  const container = {
+    enter: {
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.3,
+      },
+    },
+  }
+  const item = {
+    initial: { y: 20, opacity: 0 },
+    enter: {
+      y: 0,
+      opacity: 1,
+    },
+  }
+
+  const useAnimateOnInView = () => {
+    const controls = useAnimation()
+    const { ref, inView } = useInView()
+
+    useEffect(() => {
+      if (inView) {
+        controls.start('visible')
+      }
+      if (!inView) {
+        controls.start('hidden')
+      }
+    }, [controls, inView])
+
+    return { ref }
   }
   const [replay, setReplay] = useState(true)
   // Placeholder text data, as if from API
