@@ -61,10 +61,10 @@ const Table = () => {
             variants={variants5}
             animate={isVisible5 ? 'visible' : 'hidden'}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            key={0}
+            key={5}
           >
             <div className="overflow-x-auto nav-scroll relative shadow-md opacity-75">
-              <table className="w-full rounded rounded-lg sm:rounded-md text-sm text-left text-gray-500 light:text-gray-700">
+              <table className="w-full rounded-t-lg sm:rounded-md text-sm text-left text-gray-500 light:text-gray-700">
                 <thead className="text-md uppercase rounded-t-lg bg-gray-800 light:bg-gray-300 light:text-gray-700">
                   <tr>
                     <th scope="col" className="py-3 px-6 text-gray-100 light:text-gray-800 ml-2">

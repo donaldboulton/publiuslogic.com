@@ -11,6 +11,7 @@ import LatestArticles from '@/components/LatestArticles'
 import Footer from '@/components/Footer'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import List from '@/components/List'
+import Table from '@/components/Table'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, motion, m } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
@@ -511,7 +512,7 @@ export default function Home() {
             >
               <LatestArticles />
             </m.div>
-            <div className="mt-10 bottom-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
+            <div className="mt-20 pt-10 bottom-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xlink="http://www.w3.org/1999/xlink"
@@ -528,10 +529,10 @@ export default function Home() {
             </div>
           </div>
         </m.section>
-        <m.section variants={item} className="relative block py-20 lg:pt-0">
-          <div className="container mx-auto px-4">
+        <m.section variants={item} className="relative block py-8 lg:pt-0">
+          <div className="mx-auto px-4">
             <div className="flex flex-wrap justify-center lg:-mt-64 -mt-48">
-              <div className="w-full lg:w-6/12 px-4">
+              <div className="w-full lg:w-8/12 px-4">
                 <m.div
                   ref={ref3}
                   variants={variants3}
@@ -541,50 +542,28 @@ export default function Home() {
                 >
                   <div className="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg">
                     <div className="flex-auto p-5 m-2 lg:p-10t text-white light:text-black">
-                      <h4 className="text-2xl mb-2 font-semibold text-gray-200 underline underline-offset-3 decoration-wavy decoration-fuchsia-600">
-                        Up Coming Episodes!
+                      <h4 className="text-2xl mb-2 text-center font-semibold text-gray-200 underline underline-offset-3 decoration-wavy decoration-fuchsia-600">
+                        Update's To Creation, and Virtue!
                       </h4>
-                      <p className="leading-relaxed mt-1 mb-4 text-gray-200">
-                        Before the End of this Month I will be a little more explanatory on the Creation of all and
-                        Virtue!
-                      </p>
-                      <p className="leading-relaxed mt-1 mb-20 text-gray-200">
-                        On Easter I will Give you the Final Trinity Works.{' '}
-                        <span className="underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
-                          The Trinity Of Man!
-                        </span>
-                      </p>
-                      <div className="mt-20 lg:mt-0 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-white light:text-black">
-                        <List variant="unordered">
-                          <List.Item>
-                            <p className="mb-1" variant="secondary">
-                              The Devil is Controlling most all of your Government Officials! Details on how to fight
-                              off the Devil! 😈
-                            </p>
-                          </List.Item>
-                          <List.Item>
-                            <p className="mb-1" variant="secondary">
-                              Your Children are being brainwashed for Devilish total control! Stand Up and fight for
-                              there future and freedom now! 🤫
-                            </p>
-                          </List.Item>
-                          <List.Item>
-                            <p className="mb-1" variant="secondary">
-                              As A Species you will not Effectivity Do anything about climate control. That would Mean
-                              limiting playtime and entertainment and you have been set up to focus on only playtime
-                              pursuits. Playtime and Over population through heat from every one of you, is what is
-                              creating the{' '}
-                              <span className="underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
-                                Climate Crisis
-                              </span>
-                              ! 📝
-                            </p>
-                          </List.Item>
-                        </List>
+                      <div className="leading-relaxed mt-1 mb-4 text-center text-gray-200">
+                        Before 11/15/2022: I will be a little more explanatory on the Creation of all. 
+                        <p>Add some input from Angel of Love to Virtue!</p>
                       </div>
+                      <p className="leading-relaxed mt-1 mb-20 text-center text-gray-200">
+                        Final Trinity Works.{' '}
+                        <span className="text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
+                          <Link to='/blog/trinity-of-man' rel="noopener noreferrer"> The Trinity Of Man!</Link>
+                        </span>
+                      </p>                      
                     </div>
                   </div>
                 </m.div>
+                <div className="mt-10 lg:mt-6 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-gray-200 light:text-gray-800">
+                  <h4 className="text-center text-2xl mb-2 font-semibold text-gray-200 underline underline-offset-3 decoration-wavy decoration-fuchsia-600">
+                    Ordered Spiritual Reading List!
+                  </h4>
+                  <Table />
+                </div>
               </div>
             </div>
           </div>
