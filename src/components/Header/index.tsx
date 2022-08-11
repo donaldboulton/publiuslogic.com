@@ -76,7 +76,7 @@ export default function Navigation() {
                             to={item.href}
                             activeClassName="active"
                             className={classNames(
-                              item.current ? 'text-white' : 'text-gray-300 hover:bg-gray-800 hover:text-white',
+                              item.current ? 'text-gray-100' : 'text-gray-300 hover:bg-gray-800 hover:text-white',
                               'px-3 py-2 rounded-md text-lg font-medium'
                             )}
                             aria-current={item.current ? 'page' : undefined}

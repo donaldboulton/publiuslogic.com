@@ -1,7 +1,7 @@
 import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
-import { NetlifyForm, Honeypot } from 'react-netlify-forms'
+import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
 import SiteMetadata from '@/utils/sitemetadata'
 import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
@@ -114,6 +114,7 @@ function ContactUs() {
                 name="contact"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
+                enableRecaptcha
                 onSubmit={handleSubmit}
                 onSuccess={(response, context) => {
                   console.log('Successfully sent form data to Netlify Server')
@@ -123,6 +124,7 @@ function ContactUs() {
                 {({ handleChange, success, error }) => (
                   <>
                     <Honeypot />
+                    <Recaptcha siteKey={SITE_RECAPTCHA_KEY} theme="dark" invisible />
                     <p className="hidden">
                       <label>
                         Don not fill this out if you are human: <input name="bot-field" />

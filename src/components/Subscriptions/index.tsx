@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useState } from 'react'
 import { Link } from 'gatsby'
 import { NetlifyForm, Honeypot } from 'react-netlify-forms'
+import Tooltip from '@/components/Tooltip'
 
 function Input(props) {
   // https://stackoverflow.com/questions/68708009/how-to-disable-submit-input-field-until-all-required-fields-and-checkboxes-are-e
@@ -85,26 +86,28 @@ function Subscriptions() {
                     </button>
                   </span>
                   <span className="block space-x-2">
-                    <input
-                      id="accept"
-                      type="checkbox"
-                      className="ml-2 w-6 h-6 bg-fuchsia-500 rounded border-gray-300 focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2 light:bg-gray-700 light:border-gray-600"
-                      name="accept"
-                      id="accept"
-                      required
-                    />
+                    <Tooltip id="accept-checkbox" tooltipText="Agree to Terms and Privacy">
+                      <input
+                        id="accept"
+                        type="checkbox"
+                        className="ml-2 w-6 h-6 bg-fuchsia-500 rounded border-gray-300 focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2 light:bg-gray-700 light:border-gray-600"
+                        name="accept"
+                        id="accept"
+                        aria-describedby="accept-checkbox"
+                        required
+                      />
+                    </Tooltip>
                     <label for="accept" className="ml-3 text-sm font-medium text-gray-200 light:text-gray-800">
-                      Terms{' '}
                       <Link
                         to="/blog/privacy"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="text-blue-400 light:text-blue-300 hover:underline"
                       >
-                        Privacy
+                        Terms
                       </Link>
                       .
-                    </label>
+                    </label>                    
                   </span>
                 </span>
               </div>
