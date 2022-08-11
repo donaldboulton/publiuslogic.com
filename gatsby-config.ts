@@ -11,6 +11,7 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: 'PubliusLogic',
+    twitterUsername: '@donboulton',
     author: {
       name: 'Donald Boulton',
       url: 'https://donboulton.com',
@@ -19,6 +20,7 @@ module.exports = {
     description:
       'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
     siteUrl: 'https://publiuslogic.com',
+    siteImage: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
     siteRss: 'https://publiuslogic.com/rss.sml',
     siteSitemap: 'https://publiuslogic.com/sitemap.xml',
     location: 'OKC, Middle Earth',
@@ -47,7 +49,6 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',

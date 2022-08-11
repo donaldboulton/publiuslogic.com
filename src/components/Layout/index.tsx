@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import { Helmet } from 'react-helmet'
 import CookieConsent, { Cookies } from 'react-cookie-consent'
 import { MDXProvider } from '@mdx-js/react'
 import FindOutMore from '@/components/FindOutMore'
@@ -50,10 +49,6 @@ const Layout = ({ children, path }: LayoutProps) => {
   return (
     <>
       <LazyMotion features={loadFeatures}>
-        <Helmet>
-          <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-          <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-        </Helmet>
         <div className="max-w-screen-xl mx-auto bg-primary-dark light:bg-offwhite text-white light:text-black transition-all duration-200 ease-linear antialiased font-sans">
           <m.main
             key={path}
