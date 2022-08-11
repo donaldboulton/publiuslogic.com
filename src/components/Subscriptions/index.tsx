@@ -85,8 +85,8 @@ function Subscriptions() {
                       Subscribe
                     </button>
                   </span>
-                  <span className="block space-x-2">
-                    <Tooltip id="accept-checkbox" tooltipText="Agree to Terms and Privacy">
+                  <span className="block flex items-center space-x-2">
+                    <Tooltip id="accept-checkbox" tooltipText="Terms Privacy Agreement">
                       <input
                         id="accept"
                         type="checkbox"
@@ -94,7 +94,6 @@ function Subscriptions() {
                         name="accept"
                         id="accept"
                         aria-describedby="accept-checkbox"
-                        required
                       />
                     </Tooltip>
                     <label for="accept" className="ml-3 text-sm font-medium text-gray-200 light:text-gray-800">

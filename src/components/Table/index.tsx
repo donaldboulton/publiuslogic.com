@@ -64,7 +64,7 @@ const Table = () => {
             key={5}
           >
             <div className="overflow-x-auto nav-scroll relative shadow-md opacity-75">
-              <table className="w-full rounded-t-lg sm:rounded-md text-sm text-left text-gray-500 light:text-gray-700">
+              <table className="w-full rounded-t-lg sm:rounded-md text-md text-left text-gray-500 light:text-gray-700">
                 <thead className="text-md uppercase rounded-t-lg bg-gray-800 light:bg-gray-300 light:text-gray-700">
                   <tr>
                     <th scope="col" className="py-3 px-6 text-gray-100 light:text-gray-800 ml-2">
@@ -91,7 +91,7 @@ const Table = () => {
                         to="/blog/playtime"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-gray-200 light:text-blue-500 hover:underline"
+                        className="font-medium text-gray-300 hover:text-gray-100 hover:shadow-gray-200/50 underline underline-offset-8"
                       >
                         Playtime
                       </Link>
@@ -109,7 +109,7 @@ const Table = () => {
                         to="/blog/creation-of-all"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-gray-200 light:text-blue-500 hover:underline"
+                        className="font-medium text-gray-300 hover:text-gray-100 hover:shadow-gray-200/50 underline underline-offset-8"
                       >
                         Creation Of All
                       </Link>
@@ -126,7 +126,7 @@ const Table = () => {
                       <Link
                         to="/blog/trinity-of-angels"
                         rel="noopener noreferrer"
-                        className="font-medium text-gray-200 light:text-blue-500 hover:underline"
+                        className="font-medium text-gray-300 hover:text-gray-100 hover:shadow-gray-200/50 underline underline-offset-8"
                       >
                         Trinity of Angels
                       </Link>
@@ -143,7 +143,7 @@ const Table = () => {
                       <Link
                         to="/blog/works-of-flesh"
                         rel="noopener noreferrer"
-                        className="font-medium text-gray-200 light:text-blue-500 hover:underline"
+                        className="font-medium text-gray-300 hover:text-gray-100 hover:shadow-gray-200/50 underline underline-offset-8"
                       >
                         Works Of Flesh
                       </Link>
@@ -160,7 +160,7 @@ const Table = () => {
                       <Link
                         to="/blog/virtue"
                         rel="noopener noreferrer"
-                        className="font-medium text-gray-200 light:text-blue-500 hover:underline"
+                        className="font-medium text-gray-300 hover:text-gray-100 hover:shadow-gray-200/50 underline underline-offset-8"
                       >
                         Virtue
                       </Link>
@@ -177,7 +177,7 @@ const Table = () => {
                       <Link
                         to="/blog/immorality-abortion"
                         rel="noopener noreferrer"
-                        className="font-medium text-gray-200 light:text-blue-500 hover:underline"
+                        className="font-medium text-gray-300 hover:text-gray-100 hover:shadow-gray-200/50 underline underline-offset-8"
                       >
                         Immorality Abortion
                       </Link>
@@ -194,7 +194,7 @@ const Table = () => {
                       <Link
                         to="/blog/trinity-of-man"
                         rel="noopener noreferrer"
-                        className="font-medium text-gray-200 light:text-blue-500 hover:underline"
+                        className="font-medium text-gray-300 hover:text-gray-100 hover:shadow-gray-200/50 underline underline-offset-8"
                       >
                         Trinity of Man
                       </Link>

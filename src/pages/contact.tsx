@@ -18,6 +18,7 @@ import Github from '../../static/svg/icons/github.inline.svg'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Stars from '@/components/Stars'
+import Tooltip from '@/components/Tooltip'
 
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
 import OGImage from '../../static/images/undraw/undraw_contact_us_15o2.png'
@@ -52,6 +53,7 @@ const ogimage = {
 
 function ContactUs() {
   const metadata = SiteMetadata().siteMetadata
+  const SITE_RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
   const handleSubmit = event => {
     event.preventDefault()
     console.log('Submit')
@@ -108,7 +110,7 @@ function ContactUs() {
               </div>
             </div>
 
-            <div className="mt-5 lg:mt-0 lg:col-span-2 mb-24 rounded-lg bg-gray-800 light:bg-gray-300 text-gray-200 light:text-gray-800">
+            <div className="mt-5 lg:mt-0 lg:col-span-2 mb-20 pb-4 rounded-lg bg-gray-800 light:bg-gray-300 text-gray-200 light:text-gray-800">
               <NetlifyForm
                 method="POST"
                 name="contact"
@@ -225,15 +227,17 @@ function ContactUs() {
                           >
                             Send
                           </button>
-                          <span className="block space-x-2">
-                            <input
-                              id="agree"
-                              type="checkbox"
-                              className="ml-2 w-6 h-6 bg-fuchsia-500 rounded border-gray-300 focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2 light:bg-gray-700 light:border-gray-600"
-                              name="agree"
-                              id="agree"
-                              required
-                            />
+                          <span className="block flex items-center space-x-2">
+                            <Tooltip id="agree-checkbox" tooltipText="Terms Privacy Agreement">
+                              <input
+                                id="agree"
+                                type="checkbox"
+                                className="ml-2 w-6 h-6 bg-fuchsia-500 rounded border-gray-300 focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2 light:bg-gray-700 light:border-gray-600"
+                                name="agree"
+                                id="agree"
+                                aria-describedby="agree-checkbox"
+                              />
+                            </Tooltip>
                             <label for="agree" className="ml-3 text-sm font-medium text-gray-200 light:text-gray-800">
                               I agree with the{' '}
                               <Link
