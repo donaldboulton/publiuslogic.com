@@ -2,7 +2,6 @@ import * as React from 'react'
 import { useState } from 'react'
 import { Link } from 'gatsby'
 import { NetlifyForm, Honeypot } from 'react-netlify-forms'
-import Tooltip from '@/components/Tooltip'
 
 function Input(props) {
   // https://stackoverflow.com/questions/68708009/how-to-disable-submit-input-field-until-all-required-fields-and-checkboxes-are-e
@@ -55,7 +54,7 @@ function Subscriptions() {
                   Don not fill this out if you are human: <input name="bot-field" />
                 </label>
               </p>
-              <div className="p-1 mx-auto space-x-1">
+              <div className="p-1 mx-auto overflow-hidden space-x-1">
                 <span className="group relative flex items-center text-fuchsia-600">
                   <svg
                     width="20"
@@ -71,9 +70,9 @@ function Subscriptions() {
                     type="email"
                     name="email"
                     onChange={handleChange}
-                    placeholder="Email Address"
+                    placeholder="Email"
                     required
-                    className="focus:ring-2 focus:ring-fuchsia-500 focus:outline-none w-48 text-sm leading-6 bg-gray-200 light:bg-gray-300 text-fuchsia-600 light:text-fuchsia-600 placeholder-fuchsia-600 rounded-md py-2 pl-10 ring-1 ring-fuchsia-600 shadow-sm"
+                    className="focus:ring-2 focus:ring-fuchsia-500 focus:outline-none w-40 text-sm leading-6 bg-gray-700 light:bg-gray-300 text-gray-100 light:text-gray-800 placeholder-gray-100 rounded-md py-2 pl-10 ring-1 ring-fuchsia-600 shadow-sm"
                   />
 
                   <span className="block space-x-2">
@@ -85,29 +84,25 @@ function Subscriptions() {
                       Subscribe
                     </button>
                   </span>
-                  <span className="block flex items-center space-x-2">
-                    <Tooltip id="accept-checkbox" tooltipText="Terms Privacy Agreement">
-                      <input
-                        id="accept"
-                        type="checkbox"
-                        className="ml-2 w-6 h-6 bg-fuchsia-500 rounded border-gray-300 focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2 light:bg-gray-700 light:border-gray-600"
-                        name="accept"
-                        id="accept"
-                        aria-describedby="accept-checkbox"
-                      />
-                    </Tooltip>
+                  <div className="block flex items-center space-x-2">
+                    <input
+                      id="accept"
+                      type="checkbox"
+                      className="ml-2 w-6 h-6 bg-gray-700 rounded border-fuchsia-700 focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2"
+                      name="accept"
+                      id="accept"
+                    />
                     <label for="accept" className="ml-3 text-sm font-medium text-gray-200 light:text-gray-800">
                       <Link
                         to="/blog/privacy"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="text-blue-400 light:text-blue-300 hover:underline"
+                        class="text-blue-400 light:text-blue-600 hover:underline"
                       >
                         Terms
                       </Link>
-                      .
-                    </label>                    
-                  </span>
+                    </label>
+                  </div>
                 </span>
               </div>
             </>

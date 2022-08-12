@@ -32,6 +32,7 @@ const tooltip: CSS.Properties = {
   whiteSpace: 'nowrap',
   pointerEvents: 'none',
   userSelect: 'none',
+  overflowX: 'hidden',
 }
 
 const Tooltip: React.FC<Props> = props => {

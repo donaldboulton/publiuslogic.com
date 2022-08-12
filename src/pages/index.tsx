@@ -542,24 +542,27 @@ export default function Home() {
                 >
                   <div className="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg">
                     <div className="flex-auto p-5 m-2 lg:p-10t text-white light:text-black">
-                      <h4 className="text-2xl mb-2 text-center font-semibold text-gray-200 underline underline-offset-3 decoration-wavy decoration-fuchsia-600">
+                      <h4 className="text-2xl mb-2 text-center font-semibold text-gray-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
                         Update's To Creation, and Virtue!
                       </h4>
                       <div className="leading-relaxed mt-1 mb-4 text-center text-gray-200">
-                        Before 11/15/2022: I will be a little more explanatory on the Creation of all. 
+                        Before 11/15/2022: I will be a little more explanatory on the Creation of all.
                         <p>Add some input from Angel of Love to Virtue!</p>
                       </div>
                       <p className="leading-relaxed mt-1 mb-20 text-center text-gray-200">
                         Final Trinity Works.{' '}
                         <span className="text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
-                          <Link to='/blog/trinity-of-man' rel="noopener noreferrer"> The Trinity Of Man!</Link>
+                          <Link to="/blog/trinity-of-man" rel="noopener noreferrer">
+                            {' '}
+                            The Trinity Of Man!
+                          </Link>
                         </span>
-                      </p>                      
+                      </p>
                     </div>
                   </div>
                 </m.div>
                 <div className="mt-10 lg:mt-6 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-gray-200 light:text-gray-800">
-                  <h4 className="text-center text-2xl mb-2 font-semibold text-gray-200 underline underline-offset-3 decoration-wavy decoration-fuchsia-600">
+                  <h4 className="text-center text-2xl mb-2 font-semibold text-gray-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
                     Ordered Spiritual Reading List!
                   </h4>
                   <Table />

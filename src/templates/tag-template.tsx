@@ -2,6 +2,8 @@ import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import BlogRoll from '@/components/BlogRoll'
@@ -26,6 +28,7 @@ const TagPage = ({ pageContext }: TagProps) => {
   const title = `Tag: ${tag}`
   return (
     <Layout>
+      <Header />
       <SEO
         type="tags"
         title={title}
@@ -52,6 +55,7 @@ const TagPage = ({ pageContext }: TagProps) => {
         </div>
         <BlogRoll tag={tag} />
       </div>
+      <Footer />
     </Layout>
   )
 }

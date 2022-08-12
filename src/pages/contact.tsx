@@ -228,7 +228,7 @@ function ContactUs() {
                             Send
                           </button>
                           <span className="block flex items-center space-x-2">
-                            <Tooltip id="agree-checkbox" tooltipText="Terms Privacy Agreement">
+                            <Tooltip className='right' id="agree-checkbox" tooltipText="Terms Privacy Agreement">
                               <input
                                 id="agree"
                                 type="checkbox"

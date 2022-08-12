@@ -44,24 +44,18 @@ const shortcodes = {
   Table,
   Accordion,
 }
+const animationConfiguration = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+}
 
 const Layout = ({ children, path }: LayoutProps) => {
   return (
     <>
       <LazyMotion features={loadFeatures}>
         <div className="max-w-screen-xl mx-auto bg-primary-dark light:bg-offwhite text-white light:text-black transition-all duration-200 ease-linear antialiased font-sans">
-          <m.main
-            key={path}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{
-              type: 'spring',
-              mass: 0.35,
-              stiffness: 75,
-              duration: 0.2,
-            }}
-          >
+          <m.main key={path} variants={animationConfiguration} transition={{ duration: 2 }}>
             <MDXProvider components={shortcodes}>{children}</MDXProvider>
           </m.main>
         </div>
