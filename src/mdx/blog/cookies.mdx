@@ -17,6 +17,18 @@ image: ../../../static/assets/cookies.jpg
 
 ## Cookie Consent GDPR
 
+## Update August 6th 2022
+
+Load Google Tag Manager (GTM), Analytics, GTM Version 4, in a Web Worker off the main thread.
+
+[Partytown Webworker](/blog/gatsby-party-town)
+
+## Change Cookie Consent
+
+Remove `gatsby-plugin-gdpr-cookies` and any Analytics plugins or scripts.
+
+Change Cookie Consent from `cookieName="gatsby-gdpr-google-analytics"` to `cookieName="gtag"`
+
 Dated: January 26, 2020
 
 [By Bojan Bedrac](https://www.improvebadcode.com/gatsby-gdpr-cookie-consent/)
@@ -30,6 +42,7 @@ Simple tracking solutions like Google Analytics or Facebook Pixel can only be us
 To make your Gatsby site compliant there are two parts you need to implement.
 
 Allow or prevent user data to be collected based on user choice.
+
 Give the user a choice to opt-in or opt-out to have their data collected.
 
 ### Control When Users Data Is Collected
@@ -103,16 +116,15 @@ npm install --save react-cookie-consent
 
 After that add the component in your layout.js file or wherever you define your layout. It’s important that the component is loaded on any page so the consent can be collected regardless of the entry page.
 
-```tsx:title=src/components/CookieConsent.tsx {3-9}
-
-import CookieConsent from 'react-cookie-consent';
+```tsx:title=src/components/CookieConsent.tsx {1,2-9}
+import CookieConsent from 'react-cookie-consent'
 
 <CookieConsent
-    location="bottom"
-    buttonText="Accept"
-    declineButtonText="Decline"
-    cookieName="gatsby-gdpr-google-analytics">
-    This site uses cookies ...
+  location="bottom"
+  buttonText="Accept"
+  declineButtonText="Decline"
+  cookieName="gatsby-gdpr-google-analytics">
+  This site uses cookies ...
 </CookieConsent>
 ```
 
@@ -162,7 +174,7 @@ Quick tip When you want to set both cookies with one action, you can hook into t
 </Callout>
 
 ```tsx:title=src/components/CookieConsent.tsx
-import CookieConsent, { Cookies } from "react-cookie-consent";
+import CookieConsent, { Cookies } from "react-cookie-consent"
 ```
 
 Hopefully this helped you making your Gatsby site GDPR compliant.

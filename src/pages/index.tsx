@@ -547,11 +547,11 @@ export default function Home() {
                       </h4>
                       <div className="leading-relaxed mt-1 mb-4 text-center text-gray-200">
                         Before 11/15/2022: I will be a little more explanatory on the Creation of all.
-                        <p>Add some input from Angel of Love to Virtue!</p>
+                        <p>Add some input from my Angel of Love to Virtue!</p>
                       </div>
                       <p className="leading-relaxed mt-1 mb-20 text-center text-gray-200">
                         Final Trinity Works.{' '}
-                        <span className="text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
+                        <span className="text-center underline underline-offset-4 decoration-wavy decoration-fuchsia-600">
                           <Link to="/blog/trinity-of-man" rel="noopener noreferrer">
                             {' '}
                             The Trinity Of Man!
