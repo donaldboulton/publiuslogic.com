@@ -7,8 +7,10 @@ import ScrollIndicator from '@/components/ScrollIndicator'
 import SEO from '@/components/Seo'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import CloudinaryVideo from '@/components/CloudinaryVideo'
 import Center from '@/components/Center'
+import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 import Spacer200 from '../../static/img//spacer-200.jpg'
 
@@ -27,6 +29,7 @@ function Profile() {
   return (
     <>
       <Layout>
+        <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
         <Header />
         <ScrollIndicator />
         <div>

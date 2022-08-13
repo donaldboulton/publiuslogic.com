@@ -18,15 +18,15 @@ const ogimage = {
 
 const NotFoundPage = () => {
   return (
-    <Layout>
+    <>
       <Header />
-      <PageHero
-        title="404: Not Found"
-        description="You just hit a route that doesn&#39;t exist... the sadness."
-        image={Image}
-      />
-      <div className="mt-10">
-        <article className="post">
+      <Layout>
+        <PageHero
+          title="404: Not Found"
+          description="You just hit a route that doesn&#39;t exist... the sadness."
+          image={Image}
+        />
+        <div className="mt-10">
           <div className="mt-6 mb-16 flex flex-col items-center">
             <div className="text-white light:text-black">
               <Link
@@ -45,10 +45,10 @@ const NotFoundPage = () => {
               <div>You just hit a route that doesn&#39;t exist... the sadness.</div>
             </div>
           </div>
-        </article>
-      </div>
+        </div>
+      </Layout>
       <Footer />
-    </Layout>
+    </>
   )
 }
 

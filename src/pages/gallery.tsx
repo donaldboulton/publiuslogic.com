@@ -61,32 +61,29 @@ const ImageGallery: React.FC<PageProps> = ({ data }) => {
   }
 
   return (
-    <Layout>
-      <SEO type="Gallery" title="Gallery Images" description="History Pics" image={ogimage} pathname="/gallery" />
+    <>
       <Header />
-      <PageHero title="Gallery: Images" description="My personal Images from History!" image={Image} />
-      <ScrollIndicator />
-      <div>
+      <Layout>
+        <PageHero title="Gallery: Images" description="My personal Images from History!" image={Image} />
+        <ScrollIndicator />
         <div className="mt-10">
-          <article className="post">
-            <div className="max-w-7xl mt-16 mb-32 mx-auto bg-gray-900 light:bg-gray-300 text-white light:text-black rounded-xl shadow-md overflow-hidden md:max-w-5xl">
-              <div className="md:flex">
-                <div className="container mx-auto">
-                  <Gallery
-                    className="rounded-lg"
-                    images={images}
-                    lightboxOptions={lightboxOptions}
-                    customWrapper={CustomWrapper}
-                    onClose={onClose}
-                  />
-                </div>
+          <div className="max-w-7xl mt-16 mb-32 mx-auto bg-gray-900 light:bg-gray-300 text-white light:text-black rounded-xl shadow-md overflow-hidden md:max-w-5xl">
+            <div className="md:flex">
+              <div className="container mx-auto">
+                <Gallery
+                  className="rounded-lg"
+                  images={images}
+                  lightboxOptions={lightboxOptions}
+                  customWrapper={CustomWrapper}
+                  onClose={onClose}
+                />
               </div>
             </div>
-          </article>
+          </div>
         </div>
-      </div>
+      </Layout>
       <Footer />
-    </Layout>
+    </>
   )
 }
 
@@ -111,7 +108,7 @@ export default ImageGallery
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO type="page" title="DSG" description="Deferred Static Generation" image={ogimage} pathname="/dsg">
+      <SEO type="page" title="Gallery" description="Kitty Pictures" image={ogimage} pathname="/dsg">
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </SEO>

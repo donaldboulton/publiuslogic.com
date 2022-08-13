@@ -5,6 +5,7 @@ import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import { Link } from 'gatsby'
+import Stars from '@/components/Stars'
 import {
   jupiter,
   cutout,
@@ -49,11 +50,9 @@ import {
 } from 'hero-patterns'
 
 import GetTags from '@/utils/gettags'
-
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ScrollIndicator from '@/components/ScrollIndicator'
-
 import Image from '../../static/svg/undraw/undraw_Windows_re_uo4w.svg'
 import OGImage from '../../static/images/undraw/undraw_Windows_re_uo4w.png'
 
@@ -110,20 +109,13 @@ const Tags = () => {
   const tags = GetTags()
 
   return (
-    <Layout>
+    <>
       <Header />
-      <ScrollIndicator />
-      <div>
+      <Layout>
+        <PageHero title="Blog Tags" description="Click on each tag to view blog posts containing tag." image={Image} />
+        <ScrollIndicator />
+        <Stars />
         <div className="mt-10">
-          <article className="post">
-            <header>
-              <PageHero
-                title="Blog Tags"
-                description="Click on each tag to view blog posts containing tag."
-                image={Image}
-              />
-            </header>
-          </article>
           <div className="mt-6 mb-24 grid grid-cols-2 gap-y-4 sm:grid-cols-3 md:grid-cols-4 gap-x-4 lg:grid-cols-5 xl:grid-cols-6 xl:gap-y-6 xl:gap-x-6">
             {tags
               .sort((a, b) => b.count - a.count)
@@ -150,9 +142,9 @@ const Tags = () => {
               ))}
           </div>
         </div>
-      </div>
+      </Layout>
       <Footer />
-    </Layout>
+    </>
   )
 }
 

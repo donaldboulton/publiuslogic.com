@@ -21,27 +21,23 @@ const ogimage = {
 
 const BlogPage = () => {
   return (
-    <Layout>
+    <>
       <Header />
-      <ScrollIndicator />
-      <div>
+      <Layout>
+        <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
+        <ScrollIndicator />
+        <Stars />
         <div className="mt-10">
-          <Stars />
-          <article className="post">
-            <header>
-              <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
-            </header>
-          </article>
           <BlogRoll />
         </div>
-      </div>
-      <ScrollDown
-        className="scroll z-20 right-4 md:right-3 top-20"
-        size={40}
-        css="position: fixed; color: gray; width: 40px; height: 40px;"
-      />
+        <ScrollDown
+          className="scroll z-20 right-4 md:right-3 top-20"
+          size={40}
+          css="position: fixed; color: gray; width: 40px; height: 40px;"
+        />
+      </Layout>
       <Footer />
-    </Layout>
+    </>
   )
 }
 

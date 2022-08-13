@@ -22,26 +22,17 @@ const ogimage = {
 const SearchPage = () => {
   return (
     <>
+      <Header />
       <Layout>
-        <Header />
+        <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
+
         <ScrollIndicator />
-        <div>
-          <div className="mt-10">
-            <Stars />
-            <article>
-              <header>
-                <PageHero
-                  title="Search Page"
-                  description="Type in the search box to get instant results."
-                  image={Image}
-                />
-              </header>
-              <div className="mt-16 mb-16 sm:mt-2 p-8 bg-gray-900 light:bg-white text-white light:text-black">
-                <div className="mb-2">
-                  <Search indices={searchIndices} />
-                </div>
-              </div>
-            </article>
+        <Stars />
+        <div className="mt-10">
+          <div className="mt-16 mb-16 sm:mt-2 p-8 bg-gray-900 light:bg-white text-white light:text-black">
+            <div className="mb-2">
+              <Search indices={searchIndices} />
+            </div>
           </div>
         </div>
         <Footer />

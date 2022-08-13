@@ -26,50 +26,46 @@ function SSR(props) {
   const { image } = props.serverData
   return (
     <>
+      <Header />
       <Layout>
-        <Header />
-        <div>
-          <article>
-            <header>
-              <PageHero title="SSR" description="Sever Side Rendering." image={PageImage} />
-            </header>
-            <div className="max-w-md mt-16 mb-32 mx-auto bg-gray-800 light:bg-gray-200 text-white light:text-black rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-              <div className="md:flex">
-                <div className="md:shrink-0">
-                  <img className="h-48 w-full object-cover md:h-full md:w-48" alt="doggo" src={image} />
+        <PageHero title="SSR" description="Sever Side Rendering." image={PageImage} />
+        <div className="mt-10">
+          <div className="max-w-md mt-16 mb-32 mx-auto bg-gray-800 light:bg-gray-200 text-white light:text-black rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+            <div className="md:flex">
+              <div className="md:shrink-0">
+                <img className="h-48 w-full object-cover md:h-full md:w-48" alt="doggo" src={image} />
+              </div>
+              <div className="p-8">
+                <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+                  SSR: Server Side Rendering
                 </div>
-                <div className="p-8">
-                  <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-                    SSR: Server Side Rendering
-                  </div>
-                  <div>
-                    <Link
-                      to="/blog/gatsby-version-four"
-                      className="text-fuchsia-600 hover:text-fuchsia-700 block mt-2 text-lg leading-tight font-medium hover:underline"
-                    >
-                      Back to Post
-                    </Link>
-                  </div>
-                  <p className="mt-2 text-gray-500">
-                    See the Doggies! Doggies of all kinds of shapes, sizes and colors. With many different Breeds!
-                  </p>
-                  <p className="mt-2 text-gray-500">Refresh the Page for More Doggies</p>
-                  <div>
-                    <button
-                      type="button"
-                      className="p-2 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
-                      onClick={refreshPage}
-                    >
-                      Refresh the Page
-                    </button>
-                  </div>
+                <div>
+                  <Link
+                    to="/blog/gatsby-version-four"
+                    className="text-fuchsia-600 hover:text-fuchsia-700 block mt-2 text-lg leading-tight font-medium hover:underline"
+                  >
+                    Back to Post
+                  </Link>
+                </div>
+                <p className="mt-2 text-gray-500">
+                  See the Doggies! Doggies of all kinds of shapes, sizes and colors. With many different Breeds!
+                </p>
+                <p className="mt-2 text-gray-500">Refresh the Page for More Doggies</p>
+                <div>
+                  <button
+                    type="button"
+                    className="p-2 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
+                    onClick={refreshPage}
+                  >
+                    Refresh the Page
+                  </button>
                 </div>
               </div>
             </div>
-          </article>
+          </div>
         </div>
-        <Footer />
       </Layout>
+      <Footer />
     </>
   )
 }
