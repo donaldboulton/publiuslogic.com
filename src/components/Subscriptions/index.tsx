@@ -31,7 +31,7 @@ function Subscriptions() {
     console.log('Submit')
   }
   return (
-    <div>
+    <>
       <div className="p-2 mx-auto flex items-center space-x-2">
         <NetlifyForm
           method="POST"
@@ -74,7 +74,6 @@ function Subscriptions() {
                     required
                     className="focus:ring-2 focus:ring-fuchsia-500 focus:outline-none w-40 text-sm leading-6 bg-gray-700 light:bg-gray-300 text-gray-100 light:text-gray-800 placeholder-gray-100 rounded-md py-2 pl-10 ring-1 ring-fuchsia-600 shadow-sm"
                   />
-
                   <span className="block space-x-2">
                     <button
                       type="button"
@@ -84,24 +83,15 @@ function Subscriptions() {
                       Subscribe
                     </button>
                   </span>
-                  <div className="block flex items-center space-x-2">
+                  <div className="block flex items-center">
                     <input
                       id="accept"
                       type="checkbox"
                       className="ml-2 w-6 h-6 bg-gray-700 rounded border-fuchsia-700 focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2"
                       name="accept"
                       id="accept"
+                      required
                     />
-                    <label for="accept" className="ml-3 text-sm font-medium text-gray-200 light:text-gray-800">
-                      <Link
-                        to="/blog/privacy"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-blue-400 light:text-blue-600 hover:underline"
-                      >
-                        Terms
-                      </Link>
-                    </label>
                   </div>
                 </span>
               </div>
@@ -109,7 +99,7 @@ function Subscriptions() {
           )}
         </NetlifyForm>
       </div>
-    </div>
+    </>
   )
 }
 

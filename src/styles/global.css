@@ -535,10 +535,49 @@ giscus-widget {
   margin: auto;
   display: flex;
 }
-
 .comments-container {
   max-height: 640px;
   overflow-y: scroll;
+}
+.popup-gatsby {
+  display: flex;
+  width: 36em;
+  padding: 1em;
+  border-radius: 1em;
+}
+.popup-gatsby-image {
+  display: flex;
+  align-items: center;
+  margin-right: 2em;
+}
+.popup-gatsby-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  text-align: left;
+  padding-right: 1em;
+}
+.popup-gatsby-content h1 {
+  margin: 0 0 0.2em;
+}
+.popup-gatsby-content p {
+  margin: 0 0 0.5em;
+}
+
+.gatsby-astronaut {
+  overflow: hidden;
+  width: 10em;
+  height: 10em;
+  background-color: purple;
+  border-radius: 100%;
+  border: solid 6px purple;
+  margin: 0;
+}
+.gatsby-astronaut img {
+  width: 100%;
+  height: auto;
 }
 
 @tailwind components;

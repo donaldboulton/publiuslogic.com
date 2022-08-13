@@ -8,20 +8,30 @@ const animationConfiguration = {
   animate: { opacity: 1 },
   exit: { opacity: 0 },
 }
-const Transitions = ({ children, path }) => {
+
+interface TransitionsProps {
+  children: React.ReactNode
+  path: string
+}
+
+const Transitions: React.FC<TransitionsProps> = props => {
+  const { children, path } = props
+
   return (
-    <LazyMotion features={loadFeatures}>
-      <m.div
-        key={path}
-        variants={animationConfiguration}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={{ duration: 3 }}
-      >
-        {children}
-      </m.div>
-    </LazyMotion>
+    <>
+      <LazyMotion features={loadFeatures}>
+        <m.div
+          key={path}
+          variants={animationConfiguration}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition={{ duration: 3 }}
+        >
+          {children}
+        </m.div>
+      </LazyMotion>
+    </>
   )
 }
 
