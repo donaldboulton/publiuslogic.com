@@ -43,12 +43,12 @@ export const calloutLabelWrapper: CSS.Properties = {
   fontSize: 'inherit',
   fontWeight: 'inherit',
   userSelect: 'none',
-  background: '#282A36',
+  background: '#374151',
 
   variants: {
     variant: {
       info: {
-        background: '#282A36',
+        background: '#374151',
       },
       danger: {
         background: '#fa383826',
@@ -70,7 +70,7 @@ const callout: CSS.Properties = {
   fontSize: '1.25em',
   color: '#fff',
   border: '2px solid rgb(147, 51, 234, 0.5)',
-  background: '#282A36',
+  background: '#374151',
   boxShadow: '6px 5px 5px rgb(147, 51, 234, 0.75)',
   opacity: '0.6',
 }

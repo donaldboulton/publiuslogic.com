@@ -19,7 +19,7 @@ const wrapper: CSS.Properties = {
 
 const tooltip: CSS.Properties = {
   color: '#fff',
-  background: '#282A36',
+  background: '#374151',
   boxShadow: '#222',
   borderRadius: '5px',
   position: 'absolute',

@@ -52,7 +52,7 @@ const copyToClipboard = str => {
 const ButtonWrapper = props => (
   <div
     style={{
-      backgroundColor: '#282A36',
+      backgroundColor: '#374151',
       borderTopRightRadius: '12px',
       borderTopLeftRadius: '12px',
       position: 'relative',
