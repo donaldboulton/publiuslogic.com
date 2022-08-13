@@ -9,6 +9,20 @@ type ReturnValue = {
         url: string
         summary: string
       }
+      date?: string
+      lastUpdated?: string
+      image?: {
+        src: string
+        height: number
+        width: number
+      }
+      meta?: {
+        property: string
+        content: string
+      }[]
+      keywords?: string[]
+      pathname?: string
+      lang?: string
       description: string
       siteUrl: string
       location: string

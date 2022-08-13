@@ -14,7 +14,6 @@ const { copyLibFiles } = require('@builder.io/partytown/utils')
 exports.onPreBuild = async () => {
   await copyLibFiles(path.join(__dirname, 'static', '~partytown'))
 }
-
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === 'build-html') {
     actions.setWebpackConfig({
@@ -29,7 +28,6 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
     })
   }
 }
-
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {

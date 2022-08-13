@@ -14,13 +14,6 @@ const GATSBY_GA_MEASUREMENT_ID = 'GTM-WLCMLLP'
 
 export function onRenderBody({ setHeadComponents, setPreBodyComponents }) {
   if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') return null
-  const link = React.createElement('link', {
-    key: 'leaflet',
-    rel: 'stylesheet',
-    href: 'https://unpkg.com/leaflet@1.8.0/dist/leaflet.css',
-    integrity: 'sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==',
-    crossOrigin: 'anonymous',
-  })
 
   setHeadComponents([
     <Partytown key="partytown" forward={['gtag']} />,
@@ -35,7 +28,6 @@ export function onRenderBody({ setHeadComponents, setPreBodyComponents }) {
         gtag('config', '${GATSBY_GA_MEASUREMENT_ID}', { send_page_view: false })`,
       }}
     />,
-    link,
   ])
   setPreBodyComponents([
     React.createElement('script', {
