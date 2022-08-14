@@ -72,12 +72,12 @@ function Subscriptions() {
                     onChange={handleChange}
                     placeholder="Email"
                     required
-                    className="focus:ring-2 focus:ring-fuchsia-500 focus:outline-none w-40 text-sm leading-6 bg-gray-700 light:bg-gray-300 text-slate-800 dark:text-slate-300 placeholder-gray-100 rounded-md py-2 pl-10 ring-1 ring-fuchsia-600 shadow-sm"
+                    className="focus:ring-2 focus:ring-fuchsia-500 focus:outline-none w-40 text-sm leading-6 bg-gray-300 dark:bg-slate-800 text-slate-800 dark:text-slate-300 placeholder-slate-100 rounded-md py-2 pl-10 ring-1 ring-fuchsia-600 shadow-sm"
                   />
                   <span className="block space-x-2">
                     <button
                       type="button"
-                      className="p-2 ml-2 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
+                      className="p-2 ml-2 border border-transparent text-sm font-medium rounded-md text-gray-800 dark:text-slate-300 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
                       type="submit"
                     >
                       Subscribe
@@ -87,7 +87,7 @@ function Subscriptions() {
                     <input
                       id="accept"
                       type="checkbox"
-                      className="ml-2 w-6 h-6 bg-gray-700 rounded border-fuchsia-700 focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2"
+                      className="ml-2 w-6 h-6 bg-slate-700 rounded border-fuchsia-700 focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2"
                       name="accept"
                       id="accept"
                       required

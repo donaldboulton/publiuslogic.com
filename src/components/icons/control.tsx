@@ -20,7 +20,7 @@ const Control: React.FC = (props: Props) => {
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-7 w-7 stroke-violet-200 stroke:hover:text-violet-100"
+      className="h-7 w-7 stroke-slate-300 stroke:hover:text-slate-100"
       viewBox="0 0 25 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

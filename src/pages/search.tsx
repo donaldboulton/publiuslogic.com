@@ -29,7 +29,7 @@ const SearchPage = () => {
         <ScrollIndicator />
         <Stars />
         <div className="mt-10">
-          <div className="mt-16 mb-16 sm:mt-2 p-8 bg-gray-900 light:bg-white text-black dark:text-white">
+          <div className="mt-16 mb-16 sm:mt-2 p-8 bg-slate-300 dark:bg-slate-800 text-slate-800 dark:text-slate-200">
             <div className="mb-2">
               <Search indices={searchIndices} />
             </div>
