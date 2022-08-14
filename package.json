@@ -22,8 +22,8 @@
     "url": "git+https://github.com/donaldboulton/publiuslogic.com.git"
   },
   "dependencies": {
-    "@builder.io/partytown": "^0.6.4",
     "@browniebroke/gatsby-image-gallery": "^7.0.7",
+    "@builder.io/partytown": "^0.6.4",
     "@cloudinary/react": "^1.4.1",
     "@cloudinary/url-gen": "^1.8.0",
     "@fontsource/kaushan-script": "^4.5.8",
@@ -43,6 +43,7 @@
     "algoliasearch": "^4.12.2",
     "axios": "^0.27.2",
     "babel-loader": "^8.2.5",
+    "clsx": "^1.2.1",
     "csstype": "^3.1.0",
     "framer-motion": "^7.0.0",
     "gatsby": "^4.20.0",
@@ -96,7 +97,8 @@
     "schema-dts": "^1.1.0",
     "tsparticles-preset-stars": "^2.1.4",
     "use-click-outside": "^2.0.0",
-    "use-sound": "^4.0.1"
+    "use-sound": "^4.0.1",
+    "zustand": "^4.0.0"
   },
   "devDependencies": {
     "@netlify/functions": "^1.0.0",

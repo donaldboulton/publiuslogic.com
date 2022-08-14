@@ -143,21 +143,21 @@ function HeaderPopover() {
               leaveTo="opacity-0 translate-y-1"
             >
               <Popover.Panel className="absolute z-10 w-screen max-w-md lg:ml-20 px-4 mt-2 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-4xl">
-                <div className="overflow-hidden rounded-lg shadow-lg ring-1 bg-gray-700  ring-black ring-opacity-5">
+                <div className="overflow-hidden rounded-lg shadow-lg ring-1 bg-slate-800 ring-black ring-opacity-5">
                   <nav className="nav-scroll">
-                    <div className="relative h-96 max-h-full md:max-h-screen grid gap-8 bg-gray-700 p-7 lg:grid-cols-3">
+                    <div className="relative h-96 max-h-full md:max-h-screen grid gap-8 bg-slate-800 p-7 lg:grid-cols-3">
                       {posts.map(item => (
                         <Link
                           key={item.name}
                           to={item.href}
                           className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-purple-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-50"
                         >
-                          <div className="flex items-center p-2 rounded-md bg-purple-800 hover:bg-purple-900 justify-center flex-shrink-0 w-10 h-10 text-gray-200 hover:text-rose-600 sm:h-12 sm:w-12">
+                          <div className="flex items-center p-2 rounded-md bg-purple-800 hover:bg-purple-900 justify-center flex-shrink-0 w-10 h-10 text-slate-300 hover:text-rose-600 sm:h-12 sm:w-12">
                             <item.icon aria-hidden="true" />
                           </div>
                           <div className="ml-4">
                             <p className="text-sm font-medium text-rose-500 hover:text-rose-600">{item.name}</p>
-                            <p className="text-sm text-gray-300">{item.description}</p>
+                            <p className="text-sm text-slate-300">{item.description}</p>
                           </div>
                         </Link>
                       ))}
