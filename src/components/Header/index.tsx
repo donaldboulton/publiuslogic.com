@@ -100,7 +100,7 @@ export default function Navigation() {
                     <div>
                       <Menu.Button className="flex text-sm rounded-full focus:outline-none">
                         <Control
-                          className="text-gray-300 hover:text-gray-200 light:text-gray-200 text-opacity-70"
+                          className="text-slate-800 hover:text-slate-700 dark:text-slate-200 text-opacity-70"
                           aria-hidden="true"
                         />
                         <ChevronDownIcon

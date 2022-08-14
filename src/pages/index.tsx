@@ -174,13 +174,13 @@ export default function Home() {
           </div>
           <m.section
             variants={item}
-            className="pb-10 bg-gray-700 light:bg-gray-200 text-gray-800 light:text-gray-200 transition-all duration-200 -mt-10"
+            className="pb-10 bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300 transition-all duration-200 -mt-10"
           >
             <div className="container mx-auto px-4">
               <div className="flex flex-wrap">
                 <div className="lg:pt-12 pt-4 w-full md:w-4/12 px-4 text-center">
                   <m.div
-                    className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-gray-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg"
+                    className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-slate-800 dark:text-slate-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg"
                     transition={{
                       ease: 'easeOut',
                       delay: 0.15,
@@ -288,7 +288,7 @@ export default function Home() {
                   </m.div>
                 </div>
               </div>
-              <div className="text-zinc-200 light:text-zinc-800 mb-10">
+              <div className="text-slate-800 dark:text-slate-200 mb-10">
                 <div className="flex justify-center">
                   <StaticImage
                     className="max-w-xs m-auto w-20 h-20 mx-auto mb-3 ring ring-indigo-500 ring-offset-4 rounded-full"
@@ -307,7 +307,7 @@ export default function Home() {
                 >
                   https://donboulton.com
                 </a>
-                <div className="justify-center max-w-xl m-auto text-gray-200 hover:text-gray-400 light:text-gray-800 light:hover:text-gray-700 my-2 mb-6">
+                <div className="justify-center max-w-xl m-auto text-slate-800 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200 my-2 mb-6">
                   <div className="text-center justify-items-center">
                     Left Hand of Father God since the beginning of time!{' '}
                   </div>
@@ -338,7 +338,7 @@ export default function Home() {
                       <span>donboulton</span>
                     </a>
                     <a
-                      className="flex items-center text-gray-200 hover:text-gray-400 light:text-gray-800 light:hover:text-gray-700"
+                      className="flex items-center text-slate-800 hover:text-slate-700 dark:text-slate-200 dark:hover:text-slate-300"
                       href="https://www.github.com/donaldboulton"
                       target="_blank"
                       rel="noreferrer"
@@ -387,21 +387,21 @@ export default function Home() {
               <div className="items-center flex flex-wrap bg-gray-900 light:bg-white text-gray-800 light:text-gray-300">
                 <div className="flex flex-wrap items-center mt-8">
                   <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mb-6">
-                    <h3 className="text-3xl text-white light:text-black mb-2 font-semibold leading-normal">
+                    <h3 className="text-3xl text-black dark:text-white mb-2 font-semibold leading-normal">
                       Coming Out of Retirement
                     </h3>
-                    <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-white light:text-black">
+                    <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-black dark:text-white">
                       I have been Retired till I become 65, then I am getting to work, start singing, finding somewhere
                       the people like to talk about God, Life, Love, Truth! Starting my Loves's church on Earth.
                     </p>
-                    <div className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-black">
+                    <div className="text-lg font-light leading-relaxed mt-0 mb-4 text-black dark:text-white">
                       <div>
                         <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4">
                           {' '}
                           Mans Books Of Life
                         </span>
                         <p>
-                          <span className="text-white light:text-black">
+                          <span className="text-black dark:text-white">
                             {' '}
                             Will be compared to Gods Books Of Life in one years time.
                           </span>
@@ -545,7 +545,7 @@ export default function Home() {
                     key={3}
                   >
                     <div className="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg">
-                      <div className="flex-auto p-5 m-2 lg:p-10t text-white light:text-black">
+                      <div className="flex-auto p-5 m-2 lg:p-10t text-black dark:text-white">
                         <h4 className="text-2xl mb-2 text-center font-semibold text-gray-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
                           Update's To Creation, and Virtue!
                         </h4>
@@ -565,7 +565,7 @@ export default function Home() {
                       </div>
                     </div>
                   </m.div>
-                  <div className="mt-10 lg:mt-6 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-gray-200 light:text-gray-800">
+                  <div className="mt-10 lg:mt-6 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-slate-800 dark:text-slate-300">
                     <h4 className="text-center text-2xl mb-2 font-semibold text-gray-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
                       Ordered Spiritual Reading List!
                     </h4>

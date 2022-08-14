@@ -15,7 +15,7 @@ function BioTypist() {
     <div>
       {count ? (
         <Typist
-          className="text-gray-300 light:text-gray-800"
+          className="text-slate-800 dark:text-slate-200"
           avgTypingDelay={50}
           onTypingDone={() => setCount(29)}
           cursor={{ hideWhenDone: true }}

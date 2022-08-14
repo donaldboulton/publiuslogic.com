@@ -8,7 +8,7 @@ const HitCount = connectStateResults(({ searchResults }) => {
 
   return hitCount > 0 ? (
     <div className="HitCount ml-3">
-      <div className="text-gray-200 light:text-gray-800 mt-3 mb-2">Search Posts Listed Below</div>
+      <div className="text-slate-800 dark:text-slate-300 mt-3 mb-2">Search Posts Listed Below</div>
       {hitCount} result{hitCount !== 1 ? 's' : ''}
     </div>
   ) : null

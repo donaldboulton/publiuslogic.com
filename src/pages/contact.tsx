@@ -80,14 +80,14 @@ function ContactUs() {
         <ScrollIndicator />
         <div className="mt-10">
           <Map />
-          <div className="mt-10 sm:mt-0 p-8 text-white light:text-black">
+          <div className="mt-10 sm:mt-0 p-8 text-black dark:text-white">
             <Stars />
             <div className="lg:grid lg:grid-cols-3 lg:gap-6">
               <div className="lg:col-span-1">
                 <div className="px-4 sm:px-0">
                   {contactMethods.map(method =>
                     method.link ? (
-                      <p key={method.name} className="mt-2 flex items-center text-sm text-white light:text-black">
+                      <p key={method.name} className="mt-2 flex items-center text-sm text-black dark:text-white">
                         <method.image className=" h-5 w-5" />
                         <span>&nbsp;{method.name}:&nbsp;</span>
                         <a
@@ -107,7 +107,7 @@ function ContactUs() {
                 </div>
               </div>
 
-              <div className="mt-5 lg:mt-0 lg:col-span-2 mb-20 pb-4 rounded-lg bg-gray-800 light:bg-gray-300 text-gray-200 light:text-gray-800">
+              <div className="mt-5 lg:mt-0 lg:col-span-2 mb-20 pb-4 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300">
                 <NetlifyForm
                   method="POST"
                   name="contact"
@@ -130,7 +130,7 @@ function ContactUs() {
                         </label>
                       </p>
                       <div className="shadow overflow-hidden sm:rounded-md">
-                        <div className="px-4 py-5 text-white light:text-black sm:p-6">
+                        <div className="px-4 py-5 text-black dark:text-white sm:p-6">
                           <div className="grid grid-cols-6 gap-6">
                             <div className="col-span-6 sm:col-span-6">
                               <label htmlFor="name" className="block text-sm font-medium">
@@ -143,13 +143,13 @@ function ContactUs() {
                                 autoComplete="off"
                                 required
                                 placeholder="Enter your Name here."
-                                className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                                className="mt-1 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
                                 onChange={handleChange}
                               />
                             </div>
 
                             <div className="col-span-6">
-                              <label htmlFor="email" className="block text-sm font-medium text-white light:text-black">
+                              <label htmlFor="email" className="block text-sm font-medium text-black dark:text-white">
                                 Email address
                               </label>
                               <input
@@ -159,7 +159,7 @@ function ContactUs() {
                                 autoComplete="off"
                                 required
                                 placeholder="Enter your Email here."
-                                className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md peer ..."
+                                className="mt-1 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md peer ..."
                                 onChange={handleChange}
                               />
                               <p class="invisible peer-invalid:visible text-pink-600 text-sm">
@@ -168,7 +168,7 @@ function ContactUs() {
                             </div>
 
                             <div className="col-span-6">
-                              <label htmlFor="phone" className="block text-sm font-medium text-white light:text-black">
+                              <label htmlFor="phone" className="block text-sm font-medium text-black dark:text-white">
                                 Phone
                               </label>
                               <input
@@ -178,7 +178,7 @@ function ContactUs() {
                                 autoComplete="off"
                                 required
                                 placeholder="Enter Phone Number here."
-                                className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                                className="mt-1 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
                                 onChange={handleChange}
                               />
                             </div>
@@ -186,7 +186,7 @@ function ContactUs() {
                             <div className="col-span-6">
                               <label
                                 htmlFor="subject"
-                                className="block text-sm font-medium text-white light:text-black"
+                                className="block text-sm font-medium text-black dark:text-white"
                               >
                                 Subject
                               </label>
@@ -197,17 +197,17 @@ function ContactUs() {
                                 autoComplete="on"
                                 required
                                 placeholder="Enter your Subject here."
-                                className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                                className="mt-1 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
                                 onChange={handleChange}
                               />
                             </div>
 
                             <div className="col-span-6">
-                              <label htmlFor="text" className="block text-sm font-medium text-white light:text-black">
+                              <label htmlFor="text" className="block text-sm font-medium text-black dark:text-white">
                                 Message
                               </label>
                               <textarea
-                                className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                                className="mt-1 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
                                 rows={5}
                                 name="text"
                                 required
@@ -217,13 +217,13 @@ function ContactUs() {
                             </div>
                           </div>
                         </div>
-                        <div className="px-4 py-3 p-1 mx-auto space-x-1 sm:px-6 bg-gray-800 light:bg-gray-200">
+                        <div className="px-4 py-3 p-1 mx-auto space-x-1 sm:px-6 bg-slate-200 dark:bg-slate-800">
                           <span className="group relative flex items-center text-fuchsia-600">
                             {success && <p className="text-rose-500">Will get back to you A.S.A.P!</p>}
                             {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
                             <button
                               type="submit"
-                              className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
+                              className="inline-flex justify-center mr-2 py-2 px-4 text-slate-800 dark:text-slate-200 rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
                             >
                               Send
                             </button>
@@ -232,19 +232,19 @@ function ContactUs() {
                                 <input
                                   id="agree"
                                   type="checkbox"
-                                  className="ml-2 w-6 h-6 bg-fuchsia-500 rounded border-gray-300 focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2 light:bg-gray-700 light:border-gray-600"
+                                  className="ml-2 w-6 h-6 bg-fuchsia-500 rounded focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2 bg-slate-200 dark:bg-slate-800 border-gray-800 dark:border-slate-200"
                                   name="agree"
                                   id="agree"
                                   aria-describedby="agree-checkbox"
                                 />
                               </Tooltip>
-                              <label for="agree" className="ml-3 text-sm font-medium text-gray-200 light:text-gray-800">
+                              <label for="agree" className="ml-3 text-sm font-medium text-slate-800 dark:text-slate-300">
                                 I agree with the{' '}
                                 <Link
                                   to="/blog/privacy"
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  class="text-blue-400 light:text-blue-300 hover:underline"
+                                  class="text-blue-300 dark:text-blue-400 hover:underline"
                                 >
                                   Terms and Conditions
                                 </Link>

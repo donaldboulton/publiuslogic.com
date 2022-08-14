@@ -17,7 +17,7 @@ export default connectSearchBox(({ refine, currentRefinement, onFocus, ...rest }
       />
     </svg>
     <input
-      className="focus:ring-2 focus:ring-purple-500 focus:outline-none w-full text-sm leading-6 bg-gray-800 light:bg-gray-200 text-gray-300 light:text-gray-900 placeholder-gray-400 rounded-md py-2 pl-10 ring-1 ring-purple-500 shadow-sm"
+      className="focus:ring-2 focus:ring-purple-500 focus:outline-none w-full text-sm leading-6 bg-slate-300 dark:bg-slate-800 text-slate-800 dark:text-slate-300 placeholder-gray-400 rounded-md py-2 pl-10 ring-1 ring-purple-500 shadow-sm"
       type="text"
       aria-label="Search Posts"
       placeholder="Search posts..."

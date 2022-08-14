@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-varsconst plugin = require('tailwindcss/plugin')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}', './src/pages/*.{js,jsx,ts,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class', // or 'media' or 'class'
+  content: ['./src/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
@@ -14,6 +14,7 @@ module.exports = {
   theme: {
     screens: {
       sm: '640px',
+      'demo-sm': '720px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
@@ -112,6 +113,7 @@ module.exports = {
     }),
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
   ],
 }

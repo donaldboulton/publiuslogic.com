@@ -22,7 +22,7 @@ function GithubProfile() {
   }, [])
 
   return (
-    <section className="w-full shadow-lg pt-8 mt-10 rounded-lg bg-gray-800 light:bg-gray-200 mb-6 p-6">
+    <section className="w-full shadow-lg pt-8 mt-10 rounded-lg bg-slate-300 dark:bg-slate-800 mb-6 p-6">
       {isLoading ? (
         <div>Loading...</div>
       ) : (
@@ -37,7 +37,7 @@ function GithubProfile() {
             <a className="text-rose-400 hover:text-rose-500" href={user.blog_url} target="_blank" rel="noreferrer">
               {user.blog_url}
             </a>
-            <p className="flex justify-center max-w-md m-auto text-gray-200 hover:text-gray-400 light:text-gray-800 light:hover:text-gray-700 my-2 mb-6">
+            <p className="flex justify-center max-w-md m-auto text-slate-800 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200 my-2 mb-6">
               {user.bio}
             </p>
             <div className="flex justify-center max-w-xs m-auto">
@@ -63,7 +63,7 @@ function GithubProfile() {
                   <span>{user.twitterUsername}</span>
                 </a>
                 <a
-                  className="flex items-center text-gray-200 hover:text-gray-400 light:text-gray-800 light:hover:text-gray-700"
+                  className="flex items-center text-slate-800 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200"
                   href={user.githubUrl}
                   target="_blank"
                   rel="noreferrer me"

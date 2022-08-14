@@ -64,28 +64,28 @@ const Table = () => {
             key={5}
           >
             <div className="overflow-x-auto nav-scroll relative shadow-md opacity-75">
-              <table className="w-full rounded-t-lg sm:rounded-md text-md text-left text-gray-500 light:text-gray-700">
-                <thead className="text-md uppercase rounded-t-lg bg-gray-800 light:bg-gray-300 light:text-gray-700">
+              <table className="w-full rounded-t-lg sm:rounded-md text-md text-left text-slate-800 dark:text-slate-300">
+                <thead className="text-md uppercase rounded-t-lg bg-slate-200 dark:bg-slate-800 light:text-gray-700">
                   <tr>
-                    <th scope="col" className="py-3 px-6 text-gray-100 light:text-gray-800 ml-2">
+                    <th scope="col" className="py-3 px-6 text-slate-800 dark:text-slate-300 ml-2">
                       Article Name
                     </th>
-                    <th scope="col" className="py-3 px-6 text text-gray-100 light:text-gray-800">
+                    <th scope="col" className="py-3 px-6 text-slate-800 dark:text-slate-300">
                       Dated
                     </th>
-                    <th scope="col" className="py-3 px-6 text-gray-100 light:text-gray-800">
+                    <th scope="col" className="py-3 px-6 text-slate-800 dark:text-slate-300">
                       Category
                     </th>
-                    <th scope="col" className="py-3 px-6 text-gray-100 light:text-gray-800">
+                    <th scope="col" className="py-3 px-6 text-slate-800 dark:text-slate-300">
                       Tags
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="bg-gray-900 border-b border-gray-500 dark:bg-gray-900 border-gray-700">
+                  <tr className="bg-gray-900 border-b border-gray-500 dark:bg-gray-900 border-slate-700">
                     <th
                       scope="row"
-                      className="py-4 px-6 font-medium text-gray-100 whitespace-nowrap light:text-gray-800"
+                      className="py-4 px-6 font-medium whitespace-nowrap text-slate-800 dark:text-slate-300"
                     >
                       <Link
                         to="/blog/playtime"

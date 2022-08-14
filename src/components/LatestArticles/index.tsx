@@ -53,7 +53,7 @@ export default function LatestArticles() {
               </div>
               <WavyHr className="mb-4" />
               <h2 className="mb-4 mt-4">Featured Articles by Topics</h2>
-              <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 xl:grid-cols-3 lg:gap-x-6 lg:mt-0 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-white light:text-black">
+              <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 xl:grid-cols-3 lg:gap-x-6 lg:mt-0 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-black dark:text-white">
                 <List variant="unordered">
                   <div className="ml-12 mb-6 mt-4 text-lg transition duration-300 underline underline-offset-4 decoration-wavy decoration-fuchsia-600">
                     God and Creation

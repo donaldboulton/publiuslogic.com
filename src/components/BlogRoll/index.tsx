@@ -45,7 +45,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
               <m.div className="relative opacity-75" initial="initial" whileHover="hover">
                 <div>
                   <m.div
-                    className="h-full border-1 border-gray-800 light:border-gray-300 bg-gray-700 light:bg-offwhite text-gray-800 light:text-gray-200 rounded-lg shadow-xl overflow-hidden p-2 opacity-75"
+                    className="h-full border-1 border-slate-800 dark:border-slate-300 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 rounded-lg shadow-xl overflow-hidden p-2 opacity-75"
                     variants={cardVariants}
                     transition={{
                       ease: 'easeOut',
@@ -59,21 +59,21 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
                     <div className="p-6">
                       {post.frontmatter.tags ? <Tags tags={post.frontmatter.tags} /> : ''}
                       <Link to={`/${post.slug}`}>
-                        <h2 className="title-font text-xl font-bold text-white light:text-black hover:text-fuchsia-400 mt-2">
+                        <h2 className="title-font text-xl font-bold text-black dark:text-white hover:text-fuchsia-400 mt-2">
                           {post.frontmatter.title}
                         </h2>
                       </Link>
                       <div className="flex items-center flex-wrap ">
-                        <span className="text-white light:text-black mr-3 inline-flex items-center leading-none text-xs pr-3 py-1 border-r-2 border-fuchsia-200">
+                        <span className="text-black dark:text-white mr-3 inline-flex items-center leading-none text-xs pr-3 py-1 border-r-2 border-fuchsia-200">
                           <CalendarIcon className="w-4 h-4 mr-1" />
                           {post.frontmatter.date}
                         </span>
-                        <span className="text-white light:text-black inline-flex items-center leading-none text-xs">
+                        <span className="text-black dark:text-white inline-flex items-center leading-none text-xs">
                           <UserCircleIcon className="w-4 h-4 mr-1" />
                           {post.frontmatter.author}
                         </span>
                       </div>
-                      <p className="mt-3 italic text-sm text-white light:text-black">{post.frontmatter.description}</p>
+                      <p className="mt-3 italic text-sm text-black dark:text-white">{post.frontmatter.description}</p>
                     </div>
                   </m.div>
                 </div>
@@ -129,7 +129,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
             pageRangeDisplayed={3}
             onPageChange={handlePageClick}
             containerClassName="relative z-0 inline-flex shadow-sm -space-x-px border-gray-800 light:border-gray-200"
-            activeLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-800 light:border-gray-200 text-gray-200 light:text-gray-800 text-sm font-medium hover:bg-fuchsia-700 bg-fuchsia-500"
+            activeLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-800 light:border-gray-200 text-slate-800 dark:text-slate-300 text-sm font-medium hover:bg-fuchsia-700 bg-fuchsia-500"
           />
         ) : (
           ''

@@ -72,7 +72,7 @@ function Subscriptions() {
                     onChange={handleChange}
                     placeholder="Email"
                     required
-                    className="focus:ring-2 focus:ring-fuchsia-500 focus:outline-none w-40 text-sm leading-6 bg-gray-700 light:bg-gray-300 text-gray-100 light:text-gray-800 placeholder-gray-100 rounded-md py-2 pl-10 ring-1 ring-fuchsia-600 shadow-sm"
+                    className="focus:ring-2 focus:ring-fuchsia-500 focus:outline-none w-40 text-sm leading-6 bg-gray-700 light:bg-gray-300 text-slate-800 dark:text-slate-300 placeholder-gray-100 rounded-md py-2 pl-10 ring-1 ring-fuchsia-600 shadow-sm"
                   />
                   <span className="block space-x-2">
                     <button
