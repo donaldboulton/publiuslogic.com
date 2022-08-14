@@ -65,14 +65,5 @@ void function() {
     `,
       },
     }),
-    <noscript
-      key="gtm"
-      dangerouslySetInnerHTML={{
-        __html: `
-                  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLCMLLP" height="0" width="0"
-                      style="display:none;visibility:hidden"></iframe>
-                `,
-      }}
-    />,
   ])
 }

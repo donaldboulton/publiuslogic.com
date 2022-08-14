@@ -3,7 +3,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx}', './src/pages/*.{js,jsx,ts,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class', // or 'media' or 'class'
   future: {
     removeDeprecatedGapUtilities: true,
@@ -54,8 +54,6 @@ module.exports = {
         pre: '#fcfcfc',
         code: '#fcfcfc',
         offwhite: '#fcfcfc',
-        green: '#56d187',
-        orange: '#ff9938',
       },
       fontFamily: {
         sans: 'DM Sans',
