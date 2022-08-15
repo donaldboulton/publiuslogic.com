@@ -149,7 +149,7 @@ export default function Home() {
         <m.main className="font-sans" variants={container}>
           <div className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center">
             <div className="absolute top-0 bg-center">
-              <div className="absolute left-0 bottom-0 md:mb-0 w-full h-full z-10 bg-gradient-to-b from-gray-700 opacity-70"></div>
+              <div className="absolute left-0 bottom-0 md:mb-0 w-full h-full z-10 bg-gradient-to-b from-slate-700 opacity-70"></div>
               <StaticImage
                 className="cover object-contain h-96"
                 formats={['auto', 'webp']}
@@ -215,7 +215,7 @@ export default function Home() {
                 </div>
                 <div className="w-full md:w-4/12 px-4 text-center">
                   <m.div
-                    className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-gray-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg"
+                    className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-slate-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg"
                     transition={{
                       ease: 'easeOut',
                       delay: 0.15,
@@ -249,7 +249,7 @@ export default function Home() {
                 </div>
                 <div className="pt-6 w-full md:w-4/12 px-4 text-center">
                   <m.div
-                    className="relative flex flex-col min-w-0 break-words bg-purple-600 text-gray-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg"
+                    className="relative flex flex-col min-w-0 break-words bg-purple-600 text-slate-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg"
                     transition={{
                       ease: 'easeOut',
                       delay: 0.15,
@@ -280,7 +280,7 @@ export default function Home() {
                           <h6>JAMStack Technology</h6>
                         </a>
                       </h6>
-                      <p className="mt-2 mb-4 text-gray-200">
+                      <p className="mt-2 mb-4 text-slate-200">
                         PubliusLogic is a Static site using JAMstack architecture. Built using Gatsby, React, MDX,
                         Tailwind and Typescript on Netlify Servers for, "Ultimate Performance"!
                       </p>
@@ -362,7 +362,7 @@ export default function Home() {
               </div>
             </div>
           </m.section>
-          <m.section variants={item} className="relative py-20 bg-gray-900 light:bg-white">
+          <m.section variants={item} className="relative py-20 bg-slate-900 light:bg-white">
             <div
               className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
               style={{ height: '80px' }}
@@ -377,14 +377,14 @@ export default function Home() {
                 y="0"
               >
                 <polygon
-                  className="text-gray-900 light:text-white fill-current"
+                  className="text-slate-900 light:text-white fill-current"
                   points="2560 0 2560 100 0 100"
                 ></polygon>
               </svg>
             </div>
 
             <div className="container mx-auto px-4">
-              <div className="items-center flex flex-wrap bg-gray-900 light:bg-white text-gray-800 light:text-gray-300">
+              <div className="items-center flex flex-wrap bg-slate-900 light:bg-white text-slate-800 light:text-slate-300">
                 <div className="flex flex-wrap items-center mt-8">
                   <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mb-6">
                     <h3 className="text-3xl text-black dark:text-white mb-2 font-semibold leading-normal">
@@ -414,7 +414,7 @@ export default function Home() {
                         https://mansbooks.com
                       </a>
                     </div>
-                    <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-gray-800">
+                    <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-slate-800">
                       <div>
                         <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4">
                           {' '}
@@ -436,7 +436,6 @@ export default function Home() {
                       variants={variants}
                       animate={isVisible ? 'visible' : 'hidden'}
                       transition={{ duration: 0.8, ease: 'easeOut' }}
-                      key={0}
                     >
                       <div className="relative flex flex-col min-w-0 break-words text-white w-full mb-6 shadow-lg rounded-lg bg-rose-600">
                         <StaticImage
@@ -471,7 +470,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div
-                  className="top-auto mt-4 bottom-0 left-0 bg-gray-900 light:bg-offwhite right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
+                  className="top-auto mt-4 bottom-0 left-0 bg-slate-900 light:bg-offwhite right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
                   style={{ height: '70px' }}
                 >
                   <svg
@@ -484,7 +483,7 @@ export default function Home() {
                     y="0"
                   >
                     <polygon
-                      className="bg-gray-700 light:bg-gray-300 text-gray-700 light:text-gray-300 fill-current"
+                      className="bg-slate-700 light:bg-slate-300 text-slate-700 light:text-slate-300 fill-current"
                       points="2560 0 2560 100 0 100"
                     ></polygon>
                   </svg>
@@ -492,14 +491,13 @@ export default function Home() {
               </div>
             </div>
           </m.section>
-          <m.section variants={item} className="py-20 bg-gray-700 light:bg-gray-300">
+          <m.section variants={item} className="py-20 bg-slate-700 light:bg-slate-300">
             <div className="container mx-auto px-4">
               <m.div
                 ref={ref1}
                 variants={variants1}
                 animate={isVisible1 ? 'visible' : 'hidden'}
                 transition={{ duration: 0.8, ease: 'easeIn' }}
-                key={1}
               >
                 <Features />
               </m.div>
@@ -512,7 +510,6 @@ export default function Home() {
                 variants={variants2}
                 animate={isVisible2 ? 'visible' : 'hidden'}
                 transition={{ duration: 0.6, ease: 'easeIn' }}
-                key={2}
               >
                 <LatestArticles />
               </m.div>
@@ -523,7 +520,7 @@ export default function Home() {
                   width="2560"
                   height="200"
                   viewBox="0 0 2560 200"
-                  className="stroke-red-500 dark:stroke-red-600 fill-gray-800"
+                  className="stroke-red-500 dark:stroke-red-600 fill-slate-800"
                 >
                   <path
                     stroke-width="2"
@@ -542,18 +539,17 @@ export default function Home() {
                     variants={variants3}
                     animate={isVisible3 ? 'visible' : 'hidden'}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
-                    key={3}
                   >
                     <div className="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg">
                       <div className="flex-auto p-5 m-2 lg:p-10t text-black dark:text-white">
-                        <h4 className="text-2xl mb-2 text-center font-semibold text-gray-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
+                        <h4 className="text-2xl mb-2 mt-20 text-center font-semibold text-slate-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
                           Update's To Creation, and Virtue!
                         </h4>
-                        <div className="leading-relaxed mt-1 mb-4 text-center text-gray-200">
+                        <div className="leading-relaxed mt-1 mb-4 text-center text-slate-200">
                           Before 11/15/2022: I will be a little more explanatory on the Creation of all.
                           <p>Add some input from my Angel of Love to Virtue!</p>
                         </div>
-                        <p className="leading-relaxed mt-1 mb-20 text-center text-gray-200">
+                        <p className="leading-relaxed mt-1 mb-20 text-center text-slate-200">
                           Final Trinity Works.{' '}
                           <span className="text-center underline underline-offset-4 decoration-wavy decoration-fuchsia-600">
                             <Link to="/blog/trinity-of-man" rel="noopener noreferrer">
@@ -565,8 +561,8 @@ export default function Home() {
                       </div>
                     </div>
                   </m.div>
-                  <div className="mt-10 lg:mt-6 mb-4 rounded-lg bg-gray-900 light:bg-gray-200 text-slate-800 dark:text-slate-300">
-                    <h4 className="text-center text-2xl mb-2 font-semibold text-gray-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
+                  <div className="mt-10 lg:mt-6 rounded-lg bg-slate-900 light:bg-slate-200 text-slate-800 dark:text-slate-300">
+                    <h4 className="text-center text-2xl font-semibold text-slate-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
                       Ordered Spiritual Reading List!
                     </h4>
                     <Table />
@@ -607,7 +603,7 @@ export default function Home() {
               marginLeft: '20px',
             }}
           >
-            <Link to="/blog/privacy" className="text-gray-200" alt="Privacy Page">
+            <Link to="/blog/privacy" className="text-slate-200" alt="Privacy Page">
               Privacy Page
             </Link>
           </span>

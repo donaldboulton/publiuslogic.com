@@ -61,7 +61,6 @@ const Table = () => {
             variants={variants5}
             animate={isVisible5 ? 'visible' : 'hidden'}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            key={5}
           >
             <div className="overflow-x-auto nav-scroll relative mb-8 shadow-md opacity-75">
               <table className="w-full mb-8 rounded-t-lg sm:rounded-md text-md text-left text-slate-800 dark:text-slate-300">

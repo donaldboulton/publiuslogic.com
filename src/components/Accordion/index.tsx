@@ -65,18 +65,17 @@ const Accordion = () => {
             variants={variants4}
             animate={isVisible4 ? 'visible' : 'hidden'}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            key={0}
           >
             <div className="flex w-full pt-2">
               <div className="mx-auto w-full rounded-2xl p-2">
                 <Disclosure>
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-800 px-4 py-2 text-left text-sm font-medium text-gray-200 hover:bg-gray-900 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                      <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-2 text-left text-sm font-medium text-slate-200 bg-slate-900 hover:bg-slate-800 px-4 py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                         <span className="text-lg">Lyrics Suspicious Minds</span>
-                        <ChevronDownIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-gray-200`} />
+                        <ChevronDownIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-slate-200`} />
                       </Disclosure.Button>
-                      <Disclosure.Panel className="px-4 pt-4 pb-2 text-md text-gray-200">
+                      <Disclosure.Panel className="px-4 pt-4 pb-2 text-md text-slate-200">
                         <div className="text-md">
                           Only change in song is verse 1, to, "Heart of a Child", from, "We're are caught in a trap
                         </div>
@@ -135,11 +134,11 @@ const Accordion = () => {
                 <Disclosure as="div" className="mt-2">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-800 px-4 py-2 text-left text-sm font-medium text-gray-200 hover:bg-gray-900 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                      <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-2 text-left text-sm font-medium text-slate-200 bg-slate-900 hover:bg-slate-800 px-4 py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                         <span className="text-lg">Credits</span>
-                        <ChevronDownIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-gray-200`} />
+                        <ChevronDownIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-slate-200`} />
                       </Disclosure.Button>
-                      <Disclosure.Panel className="px-4 pt-4 pb-2 text-md text-gray-200">
+                      <Disclosure.Panel className="px-4 pt-4 pb-2 text-md text-slate-200">
                         <List variant="unordered">
                           <List.Item>
                             <span className="mb-1" variant="secondary">
