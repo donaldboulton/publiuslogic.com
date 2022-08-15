@@ -1,10 +1,10 @@
 import * as React from 'react'
 import Alert from '@/components/icons/alert'
 import Info from '@/components/icons/info'
-import { CalloutVariant } from '../types/index'
+import { CalloutPrinciple } from '../types/index'
 
-export const getVariantIcon = (variant: CalloutVariant): React.ReactNode => {
-  switch (variant) {
+export const getPrincipleIcon = (principle: CalloutPrinciple): React.ReactNode => {
+  switch (principle) {
     case 'info':
       return <Info />
     case 'danger':

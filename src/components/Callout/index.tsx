@@ -1,7 +1,8 @@
 import * as React from 'react'
 import * as CSS from 'csstype'
 import { CalloutProps } from './types'
-import { getVariantIcon } from '../../utils/utils'
+import Info from '@/components/icons/info'
+import { getPrincipleIcon } from '../../utils/utils'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
 
@@ -20,8 +21,8 @@ export const callOutWrapper: CSS.Properties = {
   border: '6px solid transparent',
   background: '#141936',
 
-  variants: {
-    variant: {
+  principles: {
+    principle: {
       info: {
         '--icon-color': 'info',
       },
@@ -45,8 +46,8 @@ export const calloutLabelWrapper: CSS.Properties = {
   userSelect: 'none',
   background: '#374151',
 
-  variants: {
-    variant: {
+  principles: {
+    principle: {
       info: {
         background: '#374151',
       },
@@ -76,9 +77,11 @@ const callout: CSS.Properties = {
 }
 
 const Callout: React.FC<CalloutProps> = props => {
-  const { children, variant, label, ...rest } = props
-  const icon = label ? null : getVariantIcon(variant)
-
+  const { children, principle, label, ...rest } = props
+  const icon = label ? null : getPrincipleIcon(principle)
+  const infoimage = {
+    src: Info,
+  }
   const item = {
     initial: { y: 20, opacity: 0 },
     enter: {
@@ -126,16 +129,16 @@ const Callout: React.FC<CalloutProps> = props => {
         transition={{ duration: 0.8, ease: 'easeOut' }}
         key={6}
         style={callout}
-        variant={variant}
+        principle={principle}
         {...rest}
       >
         {icon ? (
-          <aside style={callOutWrapper} variant={variant}>
-            {icon}
+          <aside style={callOutWrapper} principle={principle}>
+            {infoimage}
           </aside>
         ) : null}
         {label ? (
-          <aside style={calloutLabelWrapper} variant={variant}>
+          <aside style={calloutLabelWrapper} principle={principle}>
             {label}
           </aside>
         ) : null}

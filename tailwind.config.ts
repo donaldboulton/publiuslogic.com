@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-// eslint-disable-next-line @typescript-eslint/no-unused-varsconst plugin = require('tailwindcss/plugin')
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
@@ -50,7 +50,6 @@ module.exports = {
         },
       },
       colors: {
-        primary: { dark: '#141936', light: '#ada6a9' },
         transparent: 'transparent',
         pre: '#fcfcfc',
         code: '#fcfcfc',
@@ -77,13 +76,6 @@ module.exports = {
                 square: 'square',
                 roman: 'upper-roman',
               },
-              a: {
-                color: theme('colors.gray.200'),
-                textDecoration: null,
-                '&:hover': {
-                  textDecoration: 'underline',
-                },
-              },
               'code::before': null,
               'code::after': null,
               'blockquote p:first-of-type::before': null,
@@ -94,26 +86,7 @@ module.exports = {
       },
     },
   },
-  variants: {
-    animation: ['motion-safe'],
-    extend: {
-      textOpacity: ['dark'],
-    },
-    backgroundColor: ['light'],
-    textColor: ['light'],
-  },
   plugins: [
-    plugin(function ({ addVariant, e }) {
-      const lightSelector = '.light'
-      addVariant('light', ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }) => {
-          return `${lightSelector} .${e(`light${separator}${className}`)}`
-        })
-      })
-    }),
     require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/aspect-ratio'),
   ],
 }

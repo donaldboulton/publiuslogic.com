@@ -1,5 +1,5 @@
-export type CalloutVariant = 'info' | 'danger'
+export type CalloutPrinciple = 'info' | 'danger'
 
 export interface CalloutProps {
-  variant: CalloutVariant
+  principle: CalloutPrinciple
 }

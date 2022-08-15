@@ -22,7 +22,7 @@ const Map: React.FC<MapProps> = props => {
   })
   const basemap = services.find(service => service.name === defaultBaseMap)
 
-  let mapClassName = `map`
+  let mapClassName = 'map'
 
   if (className) {
     mapClassName = `${mapClassName} ${className}`

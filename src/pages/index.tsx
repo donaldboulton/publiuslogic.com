@@ -362,7 +362,7 @@ export default function Home() {
               </div>
             </div>
           </m.section>
-          <m.section variants={item} className="relative py-20 bg-gray-900 light:bg-white">
+          <m.section variants={item} className="relative py-20 bg-slate-300 dark:bg-slate-900">
             <div
               className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
               style={{ height: '80px' }}
@@ -377,14 +377,14 @@ export default function Home() {
                 y="0"
               >
                 <polygon
-                  className="text-gray-900 light:text-white fill-current"
+                  className="dark:text-slate-200 text-slate-900 fill-current"
                   points="2560 0 2560 100 0 100"
                 ></polygon>
               </svg>
             </div>
 
             <div className="container mx-auto px-4">
-              <div className="items-center flex flex-wrap bg-gray-900 light:bg-white text-gray-800 light:text-gray-300">
+              <div className="items-center flex flex-wrap bg-slate-300 dark:bg-slate-900 text-slate-800 dark:text-slate-300">
                 <div className="flex flex-wrap items-center mt-8">
                   <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mb-6">
                     <h3 className="text-3xl text-black dark:text-white mb-2 font-semibold leading-normal">
@@ -414,7 +414,7 @@ export default function Home() {
                         https://mansbooks.com
                       </a>
                     </div>
-                    <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-gray-800">
+                    <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-slate-800 dark:text-slate-300">
                       <div>
                         <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4">
                           {' '}
@@ -432,6 +432,7 @@ export default function Home() {
                   </div>
                   <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
                     <m.div
+                      id={ref}
                       ref={ref}
                       variants={variants}
                       animate={isVisible ? 'visible' : 'hidden'}
@@ -471,7 +472,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div
-                  className="top-auto mt-4 bottom-0 left-0 bg-gray-900 light:bg-offwhite right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
+                  className="top-auto mt-4 bottom-0 left-0 bg-slate-300 dark:bg-slate-900 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
                   style={{ height: '70px' }}
                 >
                   <svg
@@ -484,7 +485,7 @@ export default function Home() {
                     y="0"
                   >
                     <polygon
-                      className="bg-gray-700 light:bg-gray-300 text-gray-700 light:text-gray-300 fill-current"
+                      className="bg-gray-300 dark:bg-slate-700 text-slate-900 dark:text-slate-200 fill-current"
                       points="2560 0 2560 100 0 100"
                     ></polygon>
                   </svg>
@@ -492,9 +493,10 @@ export default function Home() {
               </div>
             </div>
           </m.section>
-          <m.section variants={item} className="py-20 bg-gray-700 light:bg-gray-300">
+          <m.section variants={item} className="py-20 bg-slate-300 dark:bg-slate-700">
             <div className="container mx-auto px-4">
               <m.div
+                id={ref1}
                 ref={ref1}
                 variants={variants1}
                 animate={isVisible1 ? 'visible' : 'hidden'}
@@ -505,9 +507,10 @@ export default function Home() {
               </m.div>
             </div>
           </m.section>
-          <m.section variants={item} className="py-20 relative block bg-primary-dark">
+          <m.section variants={item} className="py-20 relative block bg-slate-300 dark:bg-slate-700">
             <div className="container mx-auto px-4 lg:pt-12 lg:pb-28">
               <m.div
+                id={ref2}
                 ref={ref2}
                 variants={variants2}
                 animate={isVisible2 ? 'visible' : 'hidden'}
@@ -538,6 +541,7 @@ export default function Home() {
               <div className="flex flex-wrap justify-center lg:-mt-64 -mt-48">
                 <div className="w-full lg:w-8/12 px-4">
                   <m.div
+                    id={ref3}
                     ref={ref3}
                     variants={variants3}
                     animate={isVisible3 ? 'visible' : 'hidden'}
@@ -565,7 +569,7 @@ export default function Home() {
                       </div>
                     </div>
                   </m.div>
-                  <div className="mt-10 lg:mt-6 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-slate-800 dark:text-slate-300">
+                  <div className="mt-10 lg:mt-6 mb-4 rounded-lg bg-slate-200 dark:bg-gray-700 text-slate-800 dark:text-slate-300">
                     <h4 className="text-center text-2xl mb-2 font-semibold text-gray-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
                       Ordered Spiritual Reading List!
                     </h4>

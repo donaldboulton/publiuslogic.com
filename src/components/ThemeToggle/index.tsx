@@ -5,9 +5,9 @@ import clsx from 'clsx'
 import { Fragment, useEffect, useRef } from 'react'
 import create from 'zustand'
 
-const useSetting = create((set) => ({
+const useSetting = create(set => ({
   setting: 'system',
-  setSetting: (setting) => set({ setting }),
+  setSetting: setting => set({ setting }),
 }))
 
 function update() {
@@ -24,7 +24,7 @@ function update() {
   })
 }
 
-let settings = [
+const settings = [
   {
     value: 'light',
     label: 'Light',
@@ -44,19 +44,10 @@ let settings = [
 
 function SunIcon({ selected, ...props }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
       <path
         d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-        className={
-          selected ? 'fill-sky-400/20 stroke-sky-500' : 'stroke-slate-400 dark:stroke-slate-500'
-        }
+        className={selected ? 'fill-sky-400/20 stroke-sky-500' : 'stroke-slate-400 dark:stroke-slate-500'}
       />
       <path
         d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
@@ -96,9 +87,7 @@ function PcIcon({ selected, ...props }) {
         d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z"
         strokeWidth="2"
         strokeLinejoin="round"
-        className={
-          selected ? 'stroke-sky-500 fill-sky-400/20' : 'stroke-slate-400 dark:stroke-slate-500'
-        }
+        className={selected ? 'stroke-sky-500 fill-sky-400/20' : 'stroke-slate-400 dark:stroke-slate-500'}
       />
       <path
         d="M14 15c0 3 2 5 2 5H8s2-2 2-5"
@@ -112,11 +101,11 @@ function PcIcon({ selected, ...props }) {
 }
 
 function useTheme() {
-  let { setting, setSetting } = useSetting()
-  let initial = useRef(true)
+  const { setting, setSetting } = useSetting()
+  const initial = useRef(true)
 
   useIsomorphicLayoutEffect(() => {
-    let theme = localStorage.theme
+    const theme = localStorage.theme
     if (theme === 'light' || theme === 'dark') {
       setSetting(theme)
     }
@@ -136,7 +125,7 @@ function useTheme() {
   }, [setting])
 
   useEffect(() => {
-    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
     if (mediaQuery?.addEventListener) {
       mediaQuery.addEventListener('change', update)
@@ -146,7 +135,7 @@ function useTheme() {
 
     function onStorage() {
       update()
-      let theme = localStorage.theme
+      const theme = localStorage.theme
       if (theme === 'light' || theme === 'dark') {
         setSetting(theme)
       } else {
@@ -170,7 +159,7 @@ function useTheme() {
 }
 
 export default function ThemeToggle({ panelClassName = 'mt-4' }) {
-  let [setting, setSetting] = useTheme()
+  const [setting, setSetting] = useTheme()
 
   return (
     <Listbox value={setting} onChange={setSetting}>
@@ -211,9 +200,9 @@ export default function ThemeToggle({ panelClassName = 'mt-4' }) {
 }
 
 export function ThemeSelect() {
-  let [setting, setSetting] = useTheme()
+  const [setting, setSetting] = useTheme()
 
-  let { label } = settings.find((x) => x.value === setting)
+  const { label } = settings.find(x => x.value === setting)
 
   return (
     <div className="flex items-center justify-between">
@@ -242,18 +231,12 @@ export function ThemeSelect() {
         </svg>
         {label}
         <svg className="w-6 h-6 ml-2 text-slate-400" fill="none">
-          <path
-            d="m15 11-3 3-3-3"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="m15 11-3 3-3-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <select
           id="theme"
           value={setting}
-          onChange={(e) => setSetting(e.target.value)}
+          onChange={e => setSetting(e.target.value)}
           className="absolute appearance-none inset-0 w-full h-full opacity-0"
         >
           {settings.map(({ value, label }) => (

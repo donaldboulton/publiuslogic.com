@@ -2,7 +2,7 @@ import * as React from 'react'
 import type { HeadProps } from 'gatsby'
 import { Link } from 'gatsby'
 import { NetlifyForm, Honeypot, Recaptcha } from 'react-netlify-forms'
-import SiteMetadata from '@/utils/sitemetadata'
+import SiteMetadata from '@/hooks/use-site-metadata'
 import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
@@ -184,10 +184,7 @@ function ContactUs() {
                             </div>
 
                             <div className="col-span-6">
-                              <label
-                                htmlFor="subject"
-                                className="block text-sm font-medium text-black dark:text-white"
-                              >
+                              <label htmlFor="subject" className="block text-sm font-medium text-black dark:text-white">
                                 Subject
                               </label>
                               <input
@@ -238,7 +235,10 @@ function ContactUs() {
                                   aria-describedby="agree-checkbox"
                                 />
                               </Tooltip>
-                              <label for="agree" className="ml-3 text-sm font-medium text-slate-800 dark:text-slate-300">
+                              <label
+                                for="agree"
+                                className="ml-3 text-sm font-medium text-slate-800 dark:text-slate-300"
+                              >
                                 I agree with the{' '}
                                 <Link
                                   to="/blog/privacy"

@@ -38,7 +38,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-react-leaflet',
       options: {
-        linkStyles: true, // (default: true) Enable/disable loading stylesheets via CDN
+        linkStyles: false, // (default: true) Enable/disable loading stylesheets via CDN
       },
     },
     {
@@ -201,12 +201,6 @@ module.exports = {
         queries,
         chunkSize: 10000, // default: 1000
         skipIndexing: false,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
-      options: {
-        devMode: true,
       },
     },
     {

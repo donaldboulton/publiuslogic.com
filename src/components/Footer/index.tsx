@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import SiteMetadata from '@/utils/sitemetadata'
+import SiteMetadata from '@/hooks/use-site-metadata'
 import A from '@/components/A'
 import Subscriptions from '@/components/Subscriptions'
 import LinkedIn from '../../../static/svg/icons/linkedin.inline.svg'

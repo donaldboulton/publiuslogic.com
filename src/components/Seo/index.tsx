@@ -13,7 +13,7 @@ const SEO: React.FC<React.PropsWithChildren<SEOProps>> = ({ title, description, 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    url: `${siteUrl}${pathname || ``}`,
+    url: `${siteUrl}${pathname || ''}`,
     twitterUsername,
   }
 

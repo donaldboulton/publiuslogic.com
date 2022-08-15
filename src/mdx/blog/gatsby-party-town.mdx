@@ -161,7 +161,7 @@ onRenderBody is one of gatsby-ssr’s extension points and runs after each page 
 
 ## gatsby-browser.tsx
 
-```tsx:title=gatsby-browser.tsx {1-4,5-11}
+````tsx:title=gatsby-browser.tsx {1-4,5-11}
 export const onRouteUpdate = ({ location }) => {
   if (process.env.NODE_ENV !== 'production') {
     return null
@@ -200,7 +200,7 @@ There’s a small but important difference shown here in the diff.
 ```diff:title=gtag function diff {2}
 - function gtag(){window.dataLayer.push(arguments);}
 + window.gtag = function gtag(){ window.dataLayer.push(arguments);}
-```
+````
 
 When Partytown moves scripts into a web worker it creates a kind of clone of the window object, and when it does, function gtag() isn’t hoisted onto the cloned window object.
 
