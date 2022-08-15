@@ -3,7 +3,6 @@ const siteAcronyms = require('./gatsby-site-acronyms')
 const queries = require('./src/utils/algolia-queries')
 const resolveConfig = require('tailwindcss/resolveConfig')
 const tailwindConfig = require('./tailwind.config.ts')
-const path = require('path')
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -39,7 +38,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-react-leaflet',
       options: {
-        linkStyles: false, // (default: true) Enable/disable loading stylesheets via CDN
+        linkStyles: true, // (default: true) Enable/disable loading stylesheets via CDN
       },
     },
     {
@@ -202,6 +201,12 @@ module.exports = {
         queries,
         chunkSize: 10000, // default: 1000
         skipIndexing: false,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        devMode: true,
       },
     },
     {

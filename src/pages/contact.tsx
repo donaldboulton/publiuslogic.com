@@ -107,7 +107,7 @@ function ContactUs() {
                 </div>
               </div>
 
-              <div className="mt-5 lg:mt-0 lg:col-span-2 mb-20 pb-4 rounded-lg bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-slate-300">
+              <div className="mt-5 lg:mt-0 lg:col-span-2 mb-20 pb-4 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300">
                 <NetlifyForm
                   method="POST"
                   name="contact"
@@ -143,7 +143,7 @@ function ContactUs() {
                                 autoComplete="off"
                                 required
                                 placeholder="Enter your Name here."
-                                className="mt-1 bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                                className="mt-1 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
                                 onChange={handleChange}
                               />
                             </div>
@@ -159,7 +159,7 @@ function ContactUs() {
                                 autoComplete="off"
                                 required
                                 placeholder="Enter your Email here."
-                                className="mt-1 bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md peer ..."
+                                className="mt-1 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md peer ..."
                                 onChange={handleChange}
                               />
                               <p class="invisible peer-invalid:visible text-pink-600 text-sm">
@@ -178,13 +178,16 @@ function ContactUs() {
                                 autoComplete="off"
                                 required
                                 placeholder="Enter Phone Number here."
-                                className="mt-1 bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                                className="mt-1 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
                                 onChange={handleChange}
                               />
                             </div>
 
                             <div className="col-span-6">
-                              <label htmlFor="subject" className="block text-sm font-medium text-black dark:text-white">
+                              <label
+                                htmlFor="subject"
+                                className="block text-sm font-medium text-black dark:text-white"
+                              >
                                 Subject
                               </label>
                               <input
@@ -194,7 +197,7 @@ function ContactUs() {
                                 autoComplete="on"
                                 required
                                 placeholder="Enter your Subject here."
-                                className="mt-1 bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                                className="mt-1 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
                                 onChange={handleChange}
                               />
                             </div>
@@ -204,7 +207,7 @@ function ContactUs() {
                                 Message
                               </label>
                               <textarea
-                                className="mt-1 bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                                className="mt-1 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
                                 rows={5}
                                 name="text"
                                 required
@@ -214,7 +217,7 @@ function ContactUs() {
                             </div>
                           </div>
                         </div>
-                        <div className="px-4 py-3 p-1 mx-auto space-x-1 sm:px-6 bg-slate-200 dark:bg-slate-900">
+                        <div className="px-4 py-3 p-1 mx-auto space-x-1 sm:px-6 bg-slate-200 dark:bg-slate-800">
                           <span className="group relative flex items-center text-fuchsia-600">
                             {success && <p className="text-rose-500">Will get back to you A.S.A.P!</p>}
                             {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
@@ -229,16 +232,13 @@ function ContactUs() {
                                 <input
                                   id="agree"
                                   type="checkbox"
-                                  className="ml-2 w-6 h-6 bg-fuchsia-500 rounded focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2 bg-slate-200 dark:bg-slate-900 border-gray-800 dark:border-slate-200"
+                                  className="ml-2 w-6 h-6 bg-fuchsia-500 rounded focus:ring-blue-600 ring-offset-fuchsia-800 focus:ring-2 bg-slate-200 dark:bg-slate-800 border-gray-800 dark:border-slate-200"
                                   name="agree"
                                   id="agree"
                                   aria-describedby="agree-checkbox"
                                 />
                               </Tooltip>
-                              <label
-                                for="agree"
-                                className="ml-3 text-sm font-medium text-slate-800 dark:text-slate-300"
-                              >
+                              <label for="agree" className="ml-3 text-sm font-medium text-slate-800 dark:text-slate-300">
                                 I agree with the{' '}
                                 <Link
                                   to="/blog/privacy"

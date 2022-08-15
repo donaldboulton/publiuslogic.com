@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Info from '@/components/Info'
+import Callout from '@/components/Callout'
 import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 
@@ -29,7 +29,7 @@ export default function DSG() {
               <Link to="/blog/gatsby-version-four">Back to Post</Link>
               <br />
               <h1 className="text-4xl font-bold mt-2 mb-2 leading-tight">DSG: Deferred Static Generation</h1>
-              <Info>This page was generated At Runtime!</Info>
+              <Callout variant="danger">This page was generated At Runtime!</Callout>
             </div>
           </div>
         </div>

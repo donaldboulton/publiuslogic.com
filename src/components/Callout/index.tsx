@@ -1,12 +1,15 @@
 import * as React from 'react'
 import * as CSS from 'csstype'
-import InfoImage from '@/components/icons/info'
+import { CalloutProps } from './types'
+import { getVariantIcon } from '../../utils/utils'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
-export const infoStyleWrapper: CSS.Properties = {
+export const callOutWrapper: CSS.Properties = {
+  ['--icon-color' as info]: '#9333ea',
+  ['--icon-color' as danger]: '#fa383826',
   position: 'absolute',
   display: 'flex',
   top: '-24px',
@@ -16,9 +19,45 @@ export const infoStyleWrapper: CSS.Properties = {
   color: '#9333ea',
   border: '6px solid transparent',
   background: '#141936',
+
+  variants: {
+    variant: {
+      info: {
+        '--icon-color': 'info',
+      },
+      danger: {
+        '--icon-color': 'danger',
+      },
+    },
+  },
 }
 
-const infoStyle: CSS.Properties = {
+export const calloutLabelWrapper: CSS.Properties = {
+  position: 'absolute',
+  display: 'flex',
+  top: '-24px',
+  right: '-8px',
+  borderRadius: '6px',
+  padding: '8px',
+  color: '#fff',
+  fontSize: 'inherit',
+  fontWeight: 'inherit',
+  userSelect: 'none',
+  background: '#374151',
+
+  variants: {
+    variant: {
+      info: {
+        background: '#374151',
+      },
+      danger: {
+        background: '#fa383826',
+      },
+    },
+  },
+}
+
+const callout: CSS.Properties = {
   '*:last-child': {
     marginBottom: '0px',
   },
@@ -36,11 +75,10 @@ const infoStyle: CSS.Properties = {
   opacity: '0.6',
 }
 
-const Info: React.FC<InfoProps> = props => {
-  const { children } = props
-  const infoimage = {
-    src: InfoImage,
-  }
+const Callout: React.FC<CalloutProps> = props => {
+  const { children, variant, label, ...rest } = props
+  const icon = label ? null : getVariantIcon(variant)
+
   const item = {
     initial: { y: 20, opacity: 0 },
     enter: {
@@ -86,13 +124,24 @@ const Info: React.FC<InfoProps> = props => {
         animate={isVisible6 ? 'visible' : 'hidden'}
         variants={variants6}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        style={infoStyle}
+        style={callout}
+        variant={variant}
+        {...rest}
       >
-        <aside style={infoStyleWrapper}>{infoimage}</aside>
+        {icon ? (
+          <aside style={callOutWrapper} variant={variant}>
+            {icon}
+          </aside>
+        ) : null}
+        {label ? (
+          <aside style={calloutLabelWrapper} variant={variant}>
+            {label}
+          </aside>
+        ) : null}
         {children}
       </m.div>
     </LazyMotion>
   )
 }
 
-export default Info
+export default Callout

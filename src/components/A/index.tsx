@@ -13,7 +13,7 @@ const A = ({ href, external = false, className, children }: AProps) => {
     return (
       <a
         href={href}
-        className={`text-gray-800 hover:text-fuchsia-600 ${className}`}
+        className={`text-slate-200 dark:text-slate-200 hover:text-fuchsia-600 ${className}`}
         rel="noopener noreferrer"
         target="_blank"
         area-label="Social Link"
@@ -23,7 +23,7 @@ const A = ({ href, external = false, className, children }: AProps) => {
     )
   } else {
     return (
-      <Link to={href} className={`text-gray-300 hover:text-fuchsia-600 ${className}`} activeClassName="active">
+      <Link to={href} className={`text-slate-200 dark:text-slate-200 hover:text-fuchsia-600 ${className}`} activeClassName="active">
         {children}
       </Link>
     )

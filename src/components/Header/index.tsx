@@ -120,7 +120,7 @@ export default function Navigation() {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="origin-top-right absolute right-0 mt-3 w-48 rounded-md shadow-lg py-1 bg-slate-300 dark:bg-slate-800 text-slate-800 dark:text-gray-300 ring-1 ring-black ring-opacity-5 focus:outline-none opacity-75 hover:opacity-100">
+                      <Menu.Items className="origin-top-right absolute right-0 mt-3 w-48 rounded-md shadow-lg py-1 bg-slate-800 light:bg-primary-light text-slate-300 light:text-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none opacity-75 hover:opacity-100">
                         <Menu.Item>
                           {({ active }) => (
                             <Link

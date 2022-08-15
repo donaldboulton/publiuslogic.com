@@ -22,7 +22,7 @@ function GithubProfile() {
   }, [])
 
   return (
-    <section className="w-full shadow-lg pt-8 mt-10 rounded-lg bg-slate-300 dark:bg-slate-900 mb-6 p-6">
+    <section className="w-full shadow-lg pt-8 mt-10 rounded-lg bg-slate-300 dark:bg-slate-800 mb-6 p-6">
       {isLoading ? (
         <div>Loading...</div>
       ) : (

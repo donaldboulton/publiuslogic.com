@@ -13,7 +13,7 @@ export default function LatestArticles() {
 
   return (
     <div>
-      <div className="max-w-7xl mx-auto bg-slate-300 dark:bg-slate-900 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto bg-primary-dark px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto py-4 sm:py-8 lg:py-10 lg:max-w-none">
           <div className="flex flex-row items-center">
             <h2 className="text-2xl md:text-4xl font-extrabold text-white">Latest Articles</h2>
