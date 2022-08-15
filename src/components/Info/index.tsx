@@ -1,16 +1,12 @@
 import * as React from 'react'
 import * as CSS from 'csstype'
-import { CalloutProps } from './types'
-import Info from '@/components/icons/info'
-import { getPrincipleIcon } from '../../utils/utils'
+import InfoImage from '@/components/icons/info'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
-export const callOutWrapper: CSS.Properties = {
-  ['--icon-color' as info]: '#9333ea',
-  ['--icon-color' as danger]: '#fa383826',
+export const infoStyleWrapper: CSS.Properties = {
   position: 'absolute',
   display: 'flex',
   top: '-24px',
@@ -20,45 +16,9 @@ export const callOutWrapper: CSS.Properties = {
   color: '#9333ea',
   border: '6px solid transparent',
   background: '#141936',
-
-  principles: {
-    principle: {
-      info: {
-        '--icon-color': 'info',
-      },
-      danger: {
-        '--icon-color': 'danger',
-      },
-    },
-  },
 }
 
-export const calloutLabelWrapper: CSS.Properties = {
-  position: 'absolute',
-  display: 'flex',
-  top: '-24px',
-  right: '-8px',
-  borderRadius: '6px',
-  padding: '8px',
-  color: '#fff',
-  fontSize: 'inherit',
-  fontWeight: 'inherit',
-  userSelect: 'none',
-  background: '#374151',
-
-  principles: {
-    principle: {
-      info: {
-        background: '#374151',
-      },
-      danger: {
-        background: '#fa383826',
-      },
-    },
-  },
-}
-
-const callout: CSS.Properties = {
+const infoStyle: CSS.Properties = {
   '*:last-child': {
     marginBottom: '0px',
   },
@@ -76,11 +36,10 @@ const callout: CSS.Properties = {
   opacity: '0.6',
 }
 
-const Callout: React.FC<CalloutProps> = props => {
-  const { children, principle, label, ...rest } = props
-  const icon = label ? null : getPrincipleIcon(principle)
+const Info: React.FC<InfoProps> = props => {
+  const { children } = props
   const infoimage = {
-    src: Info,
+    src: InfoImage,
   }
   const item = {
     initial: { y: 20, opacity: 0 },
@@ -127,25 +86,13 @@ const Callout: React.FC<CalloutProps> = props => {
         animate={isVisible6 ? 'visible' : 'hidden'}
         variants={variants6}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        key={6}
-        style={callout}
-        principle={principle}
-        {...rest}
+        style={infoStyle}
       >
-        {icon ? (
-          <aside style={callOutWrapper} principle={principle}>
-            {infoimage}
-          </aside>
-        ) : null}
-        {label ? (
-          <aside style={calloutLabelWrapper} principle={principle}>
-            {label}
-          </aside>
-        ) : null}
+        <aside style={infoStyleWrapper}>{infoimage}</aside>
         {children}
       </m.div>
     </LazyMotion>
   )
 }
 
-export default Callout
+export default Info

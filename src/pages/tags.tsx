@@ -129,13 +129,13 @@ const Tags = () => {
                       backgroundImage: patterns[i % patterns.length],
                     }}
                   >
-                    <div className="absolute inset-0 bg-gray-900 bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+                    <div className="absolute inset-0 bg-slate-900 bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
                     <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
-                      <h3 className="text-center text-white text-2xl font-bold">
+                      <h3 className="text-center text-slate-200 text-2xl font-bold">
                         <span className="absolute inset-0"></span>
                         {tag.tag}
                       </h3>
-                      <p className="text-center text-gray-200 text-sm font-medium">&nbsp;({tag.count})</p>
+                      <p className="text-center text-slate-200 text-sm font-medium">&nbsp;({tag.count})</p>
                     </div>
                   </section>
                 </Link>

@@ -3,6 +3,7 @@ const siteAcronyms = require('./gatsby-site-acronyms')
 const queries = require('./src/utils/algolia-queries')
 const resolveConfig = require('tailwindcss/resolveConfig')
 const tailwindConfig = require('./tailwind.config.ts')
+const path = require('path')
 
 const fullConfig = resolveConfig(tailwindConfig)
 

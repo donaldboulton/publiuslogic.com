@@ -67,7 +67,7 @@ const ImageGallery: React.FC<PageProps> = ({ data }) => {
         <PageHero title="Gallery: Images" description="My personal Images from History!" image={Image} />
         <ScrollIndicator />
         <div className="mt-10">
-          <div className="max-w-7xl mt-16 mb-32 mx-auto bg-slate-300 dark:bg-slate-800 text-slate-200 dark:text-slate-200 rounded-xl shadow-md overflow-hidden md:max-w-5xl">
+          <div className="max-w-7xl mt-16 mb-32 mx-auto bg-slate-300 dark:bg-slate-900 text-slate-200 dark:text-slate-200 rounded-xl shadow-md overflow-hidden md:max-w-5xl">
             <div className="md:flex">
               <div className="container mx-auto">
                 <Gallery

@@ -63,9 +63,9 @@ const Table = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             key={5}
           >
-            <div className="overflow-x-auto nav-scroll relative shadow-md opacity-75">
-              <table className="w-full rounded-t-lg sm:rounded-md text-md text-left text-slate-800 dark:text-slate-300">
-                <thead className="text-md uppercase rounded-t-lg bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300">
+            <div className="overflow-x-auto nav-scroll relative mb-8 shadow-md opacity-75">
+              <table className="w-full mb-8 rounded-t-lg sm:rounded-md text-md text-left text-slate-800 dark:text-slate-300">
+                <thead className="text-md uppercase rounded-t-lg bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-slate-300">
                   <tr>
                     <th scope="col" className="py-3 px-6 text-slate-800 dark:text-slate-300 ml-2">
                       Article Name
