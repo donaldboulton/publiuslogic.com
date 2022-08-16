@@ -30,7 +30,7 @@ function SSR(props) {
       <Layout>
         <PageHero title="SSR" description="Sever Side Rendering." image={PageImage} />
         <div className="mt-10">
-          <div className="max-w-md mt-16 mb-32 mx-auto bg-slate-300 dark:bg-slate-800-200 text-slate-800 dark:text-slate-200 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+          <div className="max-w-md mt-16 mb-32 mx-auto bg-slate-300 dark:bg-slate-900 text-slate-800 dark:text-slate-200 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
             <div className="md:flex">
               <div className="md:shrink-0">
                 <img className="h-48 w-full object-cover md:h-full md:w-48" alt="doggo" src={image} />

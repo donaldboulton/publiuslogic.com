@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import CookieConsent, { Cookies } from 'react-cookie-consent'
+import { CookieConsent } from 'react-cookie-consent'
 import { MDXProvider } from '@mdx-js/react'
 import FindOutMore from '@/components/FindOutMore'
 import Features from '@/components/Features'
@@ -55,7 +55,7 @@ const Layout = ({ children, path }: LayoutProps) => {
     <>
       <LazyMotion features={loadFeatures}>
         <div className="max-w-screen-xl mx-auto text-slate-800 dark:text-slate-300 antialiased font-sans">
-          <m.main key={path} variants={animationConfiguration} transition={{ duration: 2 }}>
+          <m.main key={path} variants={animationConfiguration} transition={{ duration: 2 }} exit='exit'>
             <MDXProvider components={shortcodes}>{children}</MDXProvider>
           </m.main>
         </div>

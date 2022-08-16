@@ -147,11 +147,11 @@ export default function Home() {
       <Header />
       <LazyMotion features={loadFeatures}>
         <m.main className="font-sans" variants={container}>
-          <div className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center">
+          <div className="relative flex content-center min-h-[55vh] md:min-h-40 items-center justify-center">
             <div className="absolute top-0 bg-center">
               <div className="absolute left-0 bottom-0 md:mb-0 w-full h-full z-10 bg-gradient-to-b from-gray-700 opacity-70"></div>
               <StaticImage
-                className="cover object-contain h-96"
+                className="cover object-contain h-auto"
                 formats={['auto', 'webp']}
                 src="../../static/images/jpg/dbbg.jpg"
                 quality={95}
@@ -172,20 +172,14 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
-          <m.section
-            variants={item}
+          <section
             className="pb-10 bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300 transition-all duration-200 -mt-10"
           >
             <div className="container mx-auto px-4">
               <div className="flex flex-wrap">
                 <div className="lg:pt-12 pt-4 w-full md:w-4/12 px-4 text-center">
-                  <m.div
-                    className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-slate-800 dark:text-slate-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg"
-                    transition={{
-                      ease: 'easeOut',
-                      delay: 0.15,
-                      duration: 0.5,
-                    }}
+                  <div
+                    className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-slate-800 dark:text-slate-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg"                    
                   >
                     <div className="px-4 py-5 flex-auto">
                       <div className="bg-blue-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-blue-700/50 rounded-full">
@@ -211,16 +205,11 @@ export default function Home() {
                         your, "Unborn Children"!
                       </p>
                     </div>
-                  </m.div>
+                  </div>
                 </div>
                 <div className="w-full md:w-4/12 px-4 text-center">
-                  <m.div
-                    className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-gray-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg"
-                    transition={{
-                      ease: 'easeOut',
-                      delay: 0.15,
-                      duration: 0.5,
-                    }}
+                  <div
+                    className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-gray-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg"                    
                   >
                     <div className="px-4 py-5 flex-auto">
                       <div className="bg-purple-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-purple-500/50 rounded-full">
@@ -245,16 +234,11 @@ export default function Home() {
                         formless verse, bringing forth life to all. For all to formalize there, "Own Song"!
                       </p>
                     </div>
-                  </m.div>
+                  </div>
                 </div>
                 <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-                  <m.div
-                    className="relative flex flex-col min-w-0 break-words bg-purple-600 text-gray-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg"
-                    transition={{
-                      ease: 'easeOut',
-                      delay: 0.15,
-                      duration: 0.5,
-                    }}
+                  <div
+                    className="relative flex flex-col min-w-0 break-words bg-purple-600 text-gray-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg"                    
                   >
                     <div className="px-4 py-5 flex-auto">
                       <div className="bg-fuchsia-600 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-fuchsia-600/50 rounded-full">
@@ -285,7 +269,7 @@ export default function Home() {
                         Tailwind and Typescript on Netlify Servers for, "Ultimate Performance"!
                       </p>
                     </div>
-                  </m.div>
+                  </div>
                 </div>
               </div>
               <div className="text-slate-800 dark:text-slate-200 mb-10">
@@ -361,7 +345,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </m.section>
+          </section>
           <m.section variants={item} className="relative py-20 bg-gray-900 light:bg-white">
             <div
               className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
