@@ -28,9 +28,9 @@ function Profile() {
   }
   return (
     <>
+      <Header />
       <Layout>
-        <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
-        <Header />
+        <PageHero title="Profile" description="Github Profile and Repo Info." image={Image} />        
         <ScrollIndicator />
         <div>
           <div>
@@ -43,9 +43,10 @@ function Profile() {
               </div>
               <div
                 image={spacer200}
-                className="my-10 pt-10 right-0 w-full absolute overflow-hidden bg-transparent"
+                className="mb-10 mt-20 pt-10 right-0 w-full absolute overflow-hidden bg-transparent"
               ></div>
-              <div className="mt-10 pt-10 right-0 bottom-10 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
+              <div className="mt-2">
+              <div className="mt-10 pt-10 top-96 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2560"
@@ -59,7 +60,6 @@ function Profile() {
                   ></path>
                 </svg>
               </div>
-              <div className="mb-10">
                 <Center>
                   <CloudinaryVideo />
                 </Center>
@@ -70,8 +70,8 @@ function Profile() {
             </article>
           </div>
         </div>
-        <Footer />
       </Layout>
+      <Footer />
     </>
   )
 }

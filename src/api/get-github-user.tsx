@@ -1,10 +1,20 @@
-// src/api/get-github-user.js
+// src/api/get-github-user.tsx
 
 import { Octokit } from '@octokit/rest'
 
 const octokit = new Octokit({
   auth: process.env.OCTOKIT_PERSONAL_ACCESS_TOKEN,
 })
+await octokit.request('GET /users/{username}/repos', {
+  username: 'donaldboulton'
+})
+
+await octokit.request("GET /repos/{owner}/{repo}/discussions", {
+  owner: "donaldboulton",
+  repo: "publiuslogic.com",
+  title: "PubliusLogic!",
+  body: "PubliusLogic Discussions!",
+});
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*')
