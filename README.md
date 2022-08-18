@@ -2,7 +2,7 @@
 
 ## Technical notes about this website
 
-Upgrade as of Aug 4th, 2022 to Gatsby 4.20.0 React Version 18.2.0
+Upgrade as of Aug 4th, 2022 to Gatsby 4.21.0 React Version 18.2.0
 
 🎁 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/donaldboulton/publiuslogic.com/master/LICENSE.txt)
 [![Tip Me via PayPal](https://img.shields.io/badge/PayPal-tip%20me-green.svg?logo=paypal)](https://www.paypal.me/donaldboulton)
@@ -63,8 +63,9 @@ This is starter template for a full featured marketing and blog website based on
 - Support for code syntax highlighting
 - Manifest and offline support
 - Contact form using sendgrid email and Gatsby functions
-- Full SEO support (via Gatsby v4.20.0 Head ) including Open Graph, Twitter Cards and Schema.org via JSON-LD
-- Tailwind Css v3.0.7, for super styling
+- Full SEO support (via Gatsby v4.21.0 Head ) 
+- Open Graph, Twitter Cards and Schema.org via JSON-LD
+- Tailwind Css v3.1.8, for super styling
 
 ## How to use the starter
 
@@ -79,22 +80,17 @@ This is starter template for a full featured marketing and blog website based on
 9. If you want to change the navigation menu, edit `src/components/header.tsx`. Similarly, edit `src/components/footer.tsx` to customise the footer.
 10. If you make a lot of changes, use `yarn lint` and `yarn type-check` to check everything is okay.
 
-## SendGrid configuration (for contact form)
+### Framer Motion Animations
 
-Insert the following environment variables (either in .env or on deployment host):
-
-- `SENDGRID_API_KEY`
-- `SENDGRID_AUTHORIZED_EMAIL`
-
-### React Spring Animations
-
-Using react spring for menu animations from desktop to mobile, image gallery useChain animations for hidden gallery's display
+Using Framer Motion for component and page animations an for menu animations.
 
 ## Just Having Fun
 
 🍸 This website is built as static HTML with Gatsby component-modular Docker Container builds using React components and GraphQL, Built with WebPack. Including a user data backend on FaunaDB.
 
-Served on Netlify via a continuous deployment (CD) workflow. Pull requests are automatically built into preview apps, while commits to the master branch trigger the production build and deploy onto Netlify’s CDN edge node infrastructure. Since the whole site is just a bunch of static files copied onto multiple CDN nodes around the world, time to first byte (TTFB) is consistently fast at around 1ms to 2ms. Instant Notifications through my Slack Bots or GMail and phone notifications using Netlify Functions for my Mansbooks.com publiuslogic.com workspace.
+Served on Netlify via a continuous deployment (CD) workflow. Pull requests are automatically built into preview apps, while commits to the master branch trigger the production build and deploy onto Netlify’s CDN edge node infrastructure. 
+
+Since the whole site is just a bunch of static files copied onto multiple CDN nodes around the world, time to first byte (TTFB) is consistently fast at around 1ms to 2ms. Instant Notifications through my Slack Bots or GMail and phone notifications using Netlify Functions for my Mansbooks.com publiuslogic.com workspace.
 
 ## Gatsby Starter Publius
 

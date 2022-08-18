@@ -11,7 +11,7 @@ export default function CTA() {
         <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
           <div className="inline-flex rounded-md shadow">
             <a
-              href="https://github.com/hellotham/hello-gatsby-starter/generate"
+              href="https://github.com/donaldboulton/publiuslogic.com/generate"
               className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-gray-200 text-base font-medium rounded-md bg-fuchsia-400 hover:bg-fuchsia-500"
             >
               Use Template
@@ -19,7 +19,7 @@ export default function CTA() {
           </div>
           <div className="ml-3 inline-flex rounded-md shadow">
             <a
-              href="https://github.com/hellotham/hello-gatsby-starter"
+              href="https://github.com/donaldboulton/publiuslogic.com"
               className="inline-flex items-center justify-center px-5 py-3 bg-fuchsia-500 hover:bg-fuchsia-700 border border-transparent text-gray-200 text-base font-medium rounded-md"
             >
               Github Repo
