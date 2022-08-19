@@ -20,6 +20,7 @@ const SEO: React.FC<React.PropsWithChildren<SEOProps>> = ({ title, description, 
   return (
     <>
       <title>{seo.title}</title>
+      <meta name="robots" content="index" />
       <meta name="description" content={seo.description} />
       <meta name="image" content="https://publiuslogic.com/static/images/jpg/dbbg.jpg" />
       <meta name="twitter:card" content="summary_large_image" />
@@ -45,6 +46,7 @@ const SEO: React.FC<React.PropsWithChildren<SEOProps>> = ({ title, description, 
       <link href="https://www.instagram.com/boulton3662" rel="me" />
       <link href="https://www.linkedin.com/donboulton" rel="me" />
       <link href="mailto:donaldboulton@gmail.com" rel="me" />
+      <link rel="robots" href="https://publiuslogic.com/robots.txt" />
       <link rel="webmention" href="https://webmention.io/publiuslogic.com/webmention" />
       <link rel="pingback" href="https://webmention.io/publiuslogic.com/xmlrpc" />
       {children}
