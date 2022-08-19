@@ -30,6 +30,7 @@ type DataProps = {
         path: string
         date: string
         image: string
+        imageLink: string
         tags: string[]
         publicId: string
         videoTitle: string
@@ -55,6 +56,7 @@ interface PageProps {
         author: string
         date: string
         image: string
+        imageLink: string
         tags: string[]
         publicId: string
         videoTitle: string
@@ -70,7 +72,7 @@ interface PageProps {
   }
 }
 
-const ogimage = {
+const Image = {
   src: OGImage,
   width: 1400,
   height: 450,
@@ -146,30 +148,29 @@ export function Head(props: HeadProps<DataProps>) {
   const seo = {
     path: `${siteUrl}${pathname || ``}`,
   }
-  const postNode = props.data.mdx
-  const Image = props.data.mdx.frontmatter.image ? postNode.frontmatter.image.childImageSharp.gatsbyImageData : ''
+  const Image = props.data.mdx.frontmatter.imageLink
   return (
     <>
       <SeoBlog
         type="page"
         title={props.data.mdx.frontmatter.title}
         description={props.data.mdx.frontmatter.description}
-        image={ogimage}
+        image={Image}
         pathname={seo.path}
       >
         <title>{props.data.mdx.frontmatter.title}</title>
         <meta name="description" content={props.data.mdx.frontmatter.description} />
-        <meta name="image" content="https://publiuslogic.com/static/images/jpg/dbbg.jpg" />
+        <meta name="image" content={Image} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={props.data.mdx.frontmatter.title} />
         <meta name="twitter:url" content={seo.path} />
         <meta name="twitter:description" content={props.data.mdx.frontmatter.description} />
-        <meta name="twitter:image" content="https://publiuslogic.com/static/images/jpg/dbbg.jpg" />
+        <meta name="twitter:image" content={Image} />
         <meta name="twitter:creator" content="@donboulton" />
         <meta name="og:title" content={props.data.mdx.frontmatter.title} />
         <meta name="og:url" content={seo.path} />
         <meta name="og:description" content={props.data.mdx.frontmatter.description} />
-        <meta name="og:image" content="https://publiuslogic.com/static/images/jpg/dbbg.jpg" />
+        <meta name="og:image" content={Image} />
         <meta name="og:image:title" content={props.data.mdx.frontmatter.title} />
         <meta name="og:image:alt" content={props.data.mdx.frontmatter.title} />
         <meta name="og:image:width" content="1400px" />
@@ -223,7 +224,7 @@ export function Head(props: HeadProps<DataProps>) {
           url: seo.path,
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
+            url: Image,
             width: '1400',
             height: '450',
           },
@@ -241,7 +242,7 @@ export function Head(props: HeadProps<DataProps>) {
           headline: props.data.mdx.frontmatter.title,
           alternativeHeadline: props.data.mdx.frontmatter.description,
           mainEntityOfPage: seo.path,
-          image: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
+          image: Image,
           award: 'Best Blog page ever built',
           editor: props.data.mdx.frontmatter.author,
           genre: 'group',
@@ -353,6 +354,7 @@ export const query = graphql`
         author
         path
         publicId
+        imageLink
         videoTitle
         date(formatString: "YYYY-MM-DD")
         tags

@@ -11,6 +11,7 @@ const postQuery = graphql`
           title
           description
           author
+          imageLink
           date(formatString: "YYYY-MM-DD")
           tags
           category
