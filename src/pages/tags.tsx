@@ -202,8 +202,7 @@ export function Head(props: HeadProps) {
           creator: {
             '@id': 'https://publiuslogic.com',
           },
-          description:
-            'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
+          description: 'PubliusLogic name means to Publish Logic',
           image: {
             '@type': 'ImageObject',
             url: ogimage,
@@ -216,6 +215,11 @@ export function Head(props: HeadProps) {
             '@id': 'https://publiuslogic.com',
           },
           url: 'https://publiuslogic.com',
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: 'http://publiuslogic.com/search?&q={query}',
+            query: 'required',
+          },
         })}
       </script>
       <script type="application/ld+json">
