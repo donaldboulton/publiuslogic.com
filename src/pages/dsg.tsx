@@ -7,7 +7,6 @@ import Footer from '@/components/Footer'
 import Callout from '@/components/Callout'
 import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
-
 import OGImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
 import PageImage from '../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg'
 

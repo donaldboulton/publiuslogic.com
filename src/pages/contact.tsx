@@ -44,7 +44,6 @@ function Input(props) {
     </div>
   )
 }
-
 const ogimage = {
   src: OGImage,
   width: 1400,
@@ -71,13 +70,14 @@ function ContactUs() {
   return (
     <>
       <Header />
+      <ScrollIndicator />
       <Layout>
         <PageHero
           title="Contact Us"
           description="Our presence is real and digital. Contact us through the following ways."
           image={Image}
         />
-        <ScrollIndicator />
+        
         <div className="mt-10">
           <Map />
           <div className="mt-10 sm:mt-0 p-8 text-black dark:text-white">
