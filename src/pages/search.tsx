@@ -99,8 +99,8 @@ export function Head(props: HeadProps) {
             height: '450',
           },
           publisher: {
-            '@type': 'PubliusLogic',
-            name: 'Search with Algolia',
+            '@type': 'Organization',
+            name: 'Mansbooks',
           },
           license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}

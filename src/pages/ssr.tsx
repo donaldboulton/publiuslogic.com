@@ -134,8 +134,8 @@ export function Head(props: HeadProps) {
             height: '450',
           },
           publisher: {
-            '@type': 'PubliusLogic',
-            name: 'Donald Boulton',
+            '@type': 'Organization',
+            name: 'Mansbooks',
           },
           license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}

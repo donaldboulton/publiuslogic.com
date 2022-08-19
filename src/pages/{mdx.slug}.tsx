@@ -210,7 +210,7 @@ export function Head(props: HeadProps<DataProps>) {
           inLanguage: 'en',
           name: 'PubliusLogic',
           publisher: {
-            '@id': 'https://publiuslogic.com',
+            '@id': 'PubliusLogic at Mansbooks',
           },
           url: 'https://publiuslogic.com',
         })}
@@ -219,7 +219,7 @@ export function Head(props: HeadProps<DataProps>) {
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'Blog Posts',
+          name: {props.data.mdx.tags},
           url: seo.path,
           image: {
             '@type': 'ImageObject',
@@ -228,8 +228,8 @@ export function Head(props: HeadProps<DataProps>) {
             height: '450',
           },
           publisher: {
-            '@type': 'PubliusLogic',
-            name: 'Donald Boulton',
+            '@type': 'Organization',
+            name: 'Mansbooks',
           },
           license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
