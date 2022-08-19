@@ -80,7 +80,7 @@ function ContactUs() {
         
         <div className="mt-10">
           <Map />
-          <div className="mt-10 sm:mt-0 p-8 text-black dark:text-white">
+          <div className="mt-10 sm:mt-0 p-8 text-slate-900 dark:text-slate-100">
             <Stars />
             <div className="lg:grid lg:grid-cols-3 lg:gap-6">
               <div className="lg:col-span-1">
@@ -107,7 +107,7 @@ function ContactUs() {
                 </div>
               </div>
 
-              <div className="mt-5 lg:mt-0 lg:col-span-2 mb-20 pb-4 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300">
+              <div className="mt-5 lg:mt-0 lg:col-span-2 mb-20 pb-4 rounded-lg bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200">
                 <NetlifyForm
                   method="POST"
                   name="contact"
