@@ -11,11 +11,6 @@ const postQuery = graphql`
           title
           description
           author
-          image {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
-          }
           date(formatString: "YYYY-MM-DD")
           tags
           category
