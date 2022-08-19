@@ -29,7 +29,6 @@ type DataProps = {
         author: string
         path: string
         date: string
-        image: string
         imageLink: string
         tags: string[]
         publicId: string
@@ -55,7 +54,6 @@ interface PageProps {
         path: string
         author: string
         date: string
-        image: string
         imageLink: string
         tags: string[]
         publicId: string

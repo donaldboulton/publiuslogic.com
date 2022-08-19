@@ -77,7 +77,7 @@ function ContactUs() {
           description="Our presence is real and digital. Contact us through the following ways."
           image={Image}
         />
-        
+
         <div className="mt-10">
           <Map />
           <div className="mt-10 sm:mt-0 p-8 text-slate-900 dark:text-slate-100">

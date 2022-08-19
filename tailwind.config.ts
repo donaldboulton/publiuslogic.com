@@ -50,7 +50,7 @@ module.exports = {
         },
       },
       colors: {
-        primary: { dark: '#141936', light: '#ada6a9' },
+        primary: { dark: '#0f172a', light: '#ada6a9' },
         transparent: 'transparent',
         pre: '#fcfcfc',
         code: '#fcfcfc',
