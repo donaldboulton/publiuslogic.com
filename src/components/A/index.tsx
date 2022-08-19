@@ -15,7 +15,7 @@ const A = ({ href, external = false, className, children }: AProps) => {
         key={href}
         href={href}
         className={`text-slate-200 dark:text-slate-200 hover:text-fuchsia-600 ${className}`}
-        rel="noopener noreferrer"
+        rel="me"
         target="_blank"
         area-label="Social Link"
       >
@@ -26,6 +26,8 @@ const A = ({ href, external = false, className, children }: AProps) => {
     return (
       <Link
         to={href}
+        rel="me"
+        target="_blank"
         className={`text-slate-200 dark:text-slate-200 hover:text-fuchsia-600 ${className}`}
         activeClassName="active"
       >

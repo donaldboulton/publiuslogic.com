@@ -39,6 +39,12 @@ const SEO: React.FC<React.PropsWithChildren<SEOProps>> = ({ title, description, 
       <meta name="og:type" content="website" />
       <meta name="og:updated_time" content="2022-08-12" />
       <meta name="canonical" content={seo.url} />
+      <link href="https://github.com/donaldboulton" rel="me" />
+      <link href="https://twitter.com/donboulton" rel="me" />
+      <link href="https://facebook.com/don.boulton" rel="me" />
+      <link href="https://www.instagram.com/boulton3662" rel="me" />
+      <link href="https://www.linkedin.com/donboulton" rel="me" />
+      <link href="mailto:donaldboulton@gmail.com" rel="me" />
       {children}
     </>
   )
