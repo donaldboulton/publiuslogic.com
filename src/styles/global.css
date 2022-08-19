@@ -254,7 +254,7 @@ input:-webkit-autofill {
   overflow-x: hidden;
 }
 
-ul li>.active {
+ul li > .active {
   color: rgb(67, 56, 202);
 }
 
@@ -413,8 +413,8 @@ ul {
   padding-left: '20px';
 }
 
-p>code,
-li>code {
+p > code,
+li > code {
   background: rgb(1, 22, 39);
   color: rgb(214, 222, 235);
   padding: 0.4em 0.3rem;
@@ -427,8 +427,8 @@ li>code {
   -webkit-overflow-scrolling: touch;
 }
 
-gatsby-highlight>code[class*='language-'],
-.gatsby-highlight>pre[class*='language-'] {
+gatsby-highlight > code[class*='language-'],
+.gatsby-highlight > pre[class*='language-'] {
   word-spacing: normal;
   word-break: normal;
   overflow-wrap: normal;

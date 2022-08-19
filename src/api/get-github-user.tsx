@@ -6,15 +6,15 @@ const octokit = new Octokit({
   auth: process.env.OCTOKIT_PERSONAL_ACCESS_TOKEN,
 })
 await octokit.request('GET /users/{username}/repos', {
-  username: 'donaldboulton'
+  username: 'donaldboulton',
 })
 
-await octokit.request("GET /repos/{owner}/{repo}/discussions", {
-  owner: "donaldboulton",
-  repo: "publiuslogic.com",
-  title: "PubliusLogic!",
-  body: "PubliusLogic Discussions!",
-});
+await octokit.request('GET /repos/{owner}/{repo}/discussions', {
+  owner: 'donaldboulton',
+  repo: 'publiuslogic.com',
+  title: 'PubliusLogic!',
+  body: 'PubliusLogic Discussions!',
+})
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*')

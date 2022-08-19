@@ -55,7 +55,7 @@ const Layout = ({ children, path }: LayoutProps) => {
     <>
       <LazyMotion features={loadFeatures}>
         <div className="max-w-screen-xl mx-auto text-slate-800 dark:text-slate-300 antialiased font-sans">
-          <m.main key={path} variants={animationConfiguration} transition={{ duration: 2 }} exit='exit'>
+          <m.main key={path} variants={animationConfiguration} transition={{ duration: 2 }} exit="exit">
             <MDXProvider components={shortcodes}>{children}</MDXProvider>
           </m.main>
         </div>

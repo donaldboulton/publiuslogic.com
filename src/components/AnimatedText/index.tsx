@@ -1,5 +1,7 @@
 import * as React from 'react'
-import { motion } from 'framer-motion'
+import { LazyMotion, m } from 'framer-motion'
+
+const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 // Word wrapper
 const WordWrapper = props => {
@@ -52,31 +54,33 @@ const AnimatedCharacters = props => {
   const Tag = tagMap[props.type]
 
   return (
-    <Tag>
-      {words.map((word, index) => {
-        return (
-          // Wrap each word in the Wrapper component
-          <WordWrapper key={index}>
-            {words[index].flat().map((element, index) => {
-              return (
-                <span
-                  style={{
-                    overflow: 'hidden',
-                    display: 'inline-block',
-                  }}
-                  key={index}
-                >
-                  <motion.span style={{ display: 'inline-block' }} variants={item}>
-                    {element}
-                  </motion.span>
-                </span>
-              )
-            })}
-          </WordWrapper>
-        )
-      })}
-      {/* {} */}
-    </Tag>
+    <LazyMotion features={loadFeatures}>
+      <Tag>
+        {words.map((word, index) => {
+          return (
+            // Wrap each word in the Wrapper component
+            <WordWrapper key={index}>
+              {words[index].flat().map((element, index) => {
+                return (
+                  <span
+                    style={{
+                      overflow: 'hidden',
+                      display: 'inline-block',
+                    }}
+                    key={index}
+                  >
+                    <m.span style={{ display: 'inline-block' }} variants={item}>
+                      {element}
+                    </m.span>
+                  </span>
+                )
+              })}
+            </WordWrapper>
+          )
+        })}
+        {/* {} */}
+      </Tag>
+    </LazyMotion>
   )
 }
 

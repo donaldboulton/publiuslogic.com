@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import * as React from 'react'
+import { useState, useEffect } from 'react'
 import { ArrowCircleDownIcon } from '@heroicons/react/outline'
 
 const ScrollDown = ({ direction = 'down', by, to, showBelow, className, size = '1.3em' }) => {

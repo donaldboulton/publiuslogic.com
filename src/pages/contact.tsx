@@ -184,10 +184,7 @@ function ContactUs() {
                             </div>
 
                             <div className="col-span-6">
-                              <label
-                                htmlFor="subject"
-                                className="block text-sm font-medium text-black dark:text-white"
-                              >
+                              <label htmlFor="subject" className="block text-sm font-medium text-black dark:text-white">
                                 Subject
                               </label>
                               <input
@@ -238,7 +235,10 @@ function ContactUs() {
                                   aria-describedby="agree-checkbox"
                                 />
                               </Tooltip>
-                              <label for="agree" className="ml-3 text-sm font-medium text-slate-800 dark:text-slate-300">
+                              <label
+                                for="agree"
+                                className="ml-3 text-sm font-medium text-slate-800 dark:text-slate-300"
+                              >
                                 I agree with the{' '}
                                 <Link
                                   to="/blog/privacy"
@@ -306,7 +306,7 @@ export function Head(props: HeadProps) {
             'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
+            url: ogimage,
             width: '1400',
             height: '450',
           },
@@ -384,7 +384,7 @@ export function Head(props: HeadProps) {
           location: 'OKC, Middle Earth',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
+            url: ogimage,
             width: '1400',
             height: '450',
           },

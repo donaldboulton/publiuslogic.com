@@ -13,12 +13,13 @@ import ScrollIndicator from '@/components/ScrollIndicator'
 import List from '@/components/List'
 import Table from '@/components/Table'
 import { useInView } from 'react-intersection-observer'
-import { LazyMotion, motion, m } from 'framer-motion'
+import { LazyMotion, m } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
+
 const ogimage = {
   src: OGImage,
   width: 1400,
@@ -151,13 +152,13 @@ export default function Home() {
             <div className="absolute top-0 bg-center">
               <div className="absolute left-0 bottom-0 md:mb-0 w-full h-full z-10 bg-gradient-to-b from-gray-700 opacity-70"></div>
               <StaticImage
-                className="cover object-contain h-auto"
+                className="cover object-contain h-96"
                 formats={['auto', 'webp']}
                 src="../../static/images/jpg/dbbg.jpg"
                 quality={95}
                 alt="Landing Image"
               />
-              <motion.div
+              <m.div
                 className="p-4 absolute top-16 left-3 z-20"
                 initial="hidden"
                 // animate="visible"
@@ -169,18 +170,17 @@ export default function Home() {
                     return <AnimatedText {...item} key={index} />
                   })}
                 </div>
-              </motion.div>
+              </m.div>
             </div>
           </div>
-          <section
+          <m.section
+            variants={item}
             className="pb-10 bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-300 transition-all duration-200 -mt-10"
           >
             <div className="container mx-auto px-4">
               <div className="flex flex-wrap">
                 <div className="lg:pt-12 pt-4 w-full md:w-4/12 px-4 text-center">
-                  <div
-                    className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-slate-800 dark:text-slate-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg"                    
-                  >
+                  <div className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-slate-800 dark:text-slate-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg">
                     <div className="px-4 py-5 flex-auto">
                       <div className="bg-blue-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-blue-700/50 rounded-full">
                         <StaticImage
@@ -208,9 +208,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="w-full md:w-4/12 px-4 text-center">
-                  <div
-                    className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-gray-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg"                    
-                  >
+                  <div className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-gray-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg">
                     <div className="px-4 py-5 flex-auto">
                       <div className="bg-purple-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-purple-500/50 rounded-full">
                         <StaticImage
@@ -237,9 +235,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-                  <div
-                    className="relative flex flex-col min-w-0 break-words bg-purple-600 text-gray-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg"                    
-                  >
+                  <div className="relative flex flex-col min-w-0 break-words bg-purple-600 text-gray-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg">
                     <div className="px-4 py-5 flex-auto">
                       <div className="bg-fuchsia-600 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-fuchsia-600/50 rounded-full">
                         <StaticImage
@@ -345,7 +341,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
+          </m.section>
           <m.section variants={item} className="relative py-20 bg-gray-900 light:bg-white">
             <div
               className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
@@ -427,7 +423,7 @@ export default function Home() {
                           src="../../static/img/jesus.jpg"
                           alt="PubliusLogic"
                         />
-                        <blockquote className="relative p-8 mb-4">
+                        <div className="relative p-8 mb-4">
                           <svg
                             preserveAspectRatio="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -445,10 +441,13 @@ export default function Home() {
                           </svg>
                           <h4 className="text-xl font-bold text-white">Fruition is Soon, "Nov 15 2022"!</h4>
                           <p className="text-lg font-light mt-2 text-white">
-                            All Time will be coming to fruition. Revelation 22:12, And, behold, I come quickly; and my
-                            reward is with me, to give every man according as his work shall be.
+                            All Time will be coming to fruition. Revelation 22:12!
                           </p>
-                        </blockquote>
+                          <p className="text-lg font-light mt-2 text-white">
+                            And, behold, I come quickly; and my reward is with me, to give every man according as his
+                            work shall be.
+                          </p>
+                        </div>
                       </div>
                     </m.div>
                   </div>
@@ -614,6 +613,31 @@ export function Head(props: HeadProps) {
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: 'PubliusLogic Home Page',
+          alternativeHeadline: 'At PubliusLogic we publish logic and Gods truth',
+          image: ogimage,
+          award: 'Best Home page ever built',
+          editor: 'Donald Boulton',
+          genre: 'search engine optimization',
+          keywords: 'home logic god',
+          wordCount: '1120',
+          publisher: 'PubliusLogic',
+          url: 'https://publiuslogic.com',
+          datePublished: '2020-09-20',
+          dateCreated: '2020-08-20',
+          dateModified: '2022-08-16',
+          description: 'We love to do stuff to help people and stuff',
+          articleBody: 'You can paste your entire post in here, and yes it can get really really long.',
+          author: {
+            '@type': 'Person',
+            name: 'Donald W. Boulton',
+          },
+        })}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
           '@type': 'WebSite',
           about: {
             '@id': 'https://publiuslogic.com',
@@ -635,7 +659,7 @@ export function Head(props: HeadProps) {
             'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
+            url: ogimage,
             width: '1400',
             height: '450',
           },
@@ -655,7 +679,7 @@ export function Head(props: HeadProps) {
           url: 'https://publiuslogic.com/',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
+            url: ogimage,
             width: '1400',
             height: '450',
           },
@@ -713,7 +737,7 @@ export function Head(props: HeadProps) {
           location: 'OKC, Middle Earth',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
+            url: ogimage,
             width: '1400',
             height: '450',
           },

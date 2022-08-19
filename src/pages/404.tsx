@@ -163,7 +163,7 @@ export function Head(props: HeadProps) {
           location: 'OKC, Middle Earth',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
+            url: ogimage,
             width: '1400',
             height: '450',
           },

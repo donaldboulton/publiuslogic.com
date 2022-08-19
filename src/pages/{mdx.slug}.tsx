@@ -1,6 +1,5 @@
 import * as React from 'react'
-import { graphql, Link } from 'gatsby'
-import type { HeadProps } from 'gatsby'
+import { graphql, Link, HeadProps, PageProps } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '@/components/Layout'
 import Bio from '@/components/Bio'
@@ -16,19 +15,21 @@ import NowPlaying from '@/components/PlayList'
 import GiscusComments from '@/components/GiscusComments'
 import WavyHr from '@/components/WavyHr'
 import Stars from '@/components/Stars'
-import SEO from '@/components/Seo'
+import SeoBlog from '@/components/Seo/SeoBlog'
 import OGImage from '../../static/images/undraw/undraw_Blog_post_re_fy5x.png'
 
 const components = { Link }
 
-interface BlogPostProps {
+type DataProps = {
   data: {
     mdx: {
       frontmatter: {
         title: string
         description: string
         author: string
+        path: string
         date: string
+        image: string
         tags: string[]
         publicId: string
         videoTitle: string
@@ -38,6 +39,32 @@ interface BlogPostProps {
         modifiedTime: string
       }
       body: string
+      pathname: string
+      timeToRead: string
+    }
+  }
+}
+
+interface PageProps {
+  data: {
+    mdx: {
+      frontmatter: {
+        title: string
+        description: string
+        path: string
+        author: string
+        date: string
+        image: string
+        tags: string[]
+        publicId: string
+        videoTitle: string
+      }
+      slug: string
+      parent: {
+        modifiedTime: string
+      }
+      body: string
+      pathname: string
       timeToRead: string
     }
   }
@@ -49,7 +76,7 @@ const ogimage = {
   height: 450,
 }
 
-const BlogPost = ({ data }: BlogPostProps) => {
+const BlogPost = ({ data: { mdx }, data, title, description }: PageProps<DataProps>) => {
   const { frontmatter, timeToRead } = data.mdx
   const pathname = '/' + data.mdx.slug
   return (
@@ -113,19 +140,45 @@ const BlogPost = ({ data }: BlogPostProps) => {
 
 export default BlogPost
 
-export function Head(props: HeadProps) {
+export function Head(props: HeadProps<DataProps>) {
+  const siteUrl = 'https://publiuslogic.com'
+  const pathname = '/' + props.data.mdx.slug
+  const seo = {
+    path: `${siteUrl}${pathname || ``}`,
+  }
+  const postNode = props.data.mdx
+  const Image = props.data.mdx.frontmatter.image ? postNode.frontmatter.image.childImageSharp.gatsbyImageData : ''
   return (
     <>
-      <SEO
+      <SeoBlog
         type="page"
-        title="Blog Posts"
-        description="Articles published from time to time"
+        title={props.data.mdx.frontmatter.title}
+        description={props.data.mdx.frontmatter.description}
         image={ogimage}
-        pathname="/blog"
+        pathname={seo.path}
       >
+        <title>{props.data.mdx.frontmatter.title}</title>
+        <meta name="description" content={props.data.mdx.frontmatter.description} />
+        <meta name="image" content="https://publiuslogic.com/static/images/jpg/dbbg.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={props.data.mdx.frontmatter.title} />
+        <meta name="twitter:url" content={seo.path} />
+        <meta name="twitter:description" content={props.data.mdx.frontmatter.description} />
+        <meta name="twitter:image" content="https://publiuslogic.com/static/images/jpg/dbbg.jpg" />
+        <meta name="twitter:creator" content="@donboulton" />
+        <meta name="og:title" content={props.data.mdx.frontmatter.title} />
+        <meta name="og:url" content={seo.path} />
+        <meta name="og:description" content={props.data.mdx.frontmatter.description} />
+        <meta name="og:image" content="https://publiuslogic.com/static/images/jpg/dbbg.jpg" />
+        <meta name="og:image:title" content={props.data.mdx.frontmatter.title} />
+        <meta name="og:image:alt" content={props.data.mdx.frontmatter.title} />
+        <meta name="og:image:width" content="1400px" />
+        <meta name="og:image:height" content="450px" />
+        <meta name="og:updated_time" content={props.data.mdx.parent.modifiedTime} />
+        <meta name="canonical" content={seo.path} />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
-      </SEO>
+      </SeoBlog>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
@@ -151,8 +204,8 @@ export function Head(props: HeadProps) {
           image: {
             '@type': 'ImageObject',
             url: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
-            width: '1400',
-            height: '450',
+            width: '1400px',
+            height: '450px',
           },
           inLanguage: 'en',
           name: 'PubliusLogic',
@@ -167,10 +220,10 @@ export function Head(props: HeadProps) {
           '@context': 'https://schema.org',
           '@type': 'WebPage',
           name: 'Blog Posts',
-          url: 'https://publiuslogic.com/blog',
+          url: seo.path,
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/undraw/undraw_Blog_post_re_fy5x.png',
+            url: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
             width: '1400',
             height: '450',
           },
@@ -184,22 +237,48 @@ export function Head(props: HeadProps) {
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: props.data.mdx.frontmatter.title,
+          alternativeHeadline: props.data.mdx.frontmatter.description,
+          mainEntityOfPage: seo.path,
+          image: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
+          award: 'Best Blog page ever built',
+          editor: props.data.mdx.frontmatter.author,
+          genre: 'group',
+          keywords: props.data.mdx.frontmatter.tags,
+          wordCount: '1120',
+          publisher: 'PubliusLogic',
+          url: seo.path,
+          datePublished: props.data.mdx.frontmatter.date,
+          dateCreated: props.data.mdx.frontmatter.date,
+          dateModified: props.data.mdx.parent.modifiedTime,
+          description: props.data.mdx.frontmatter.description,
+          articleBody: props.data.mdx.frontmatter.description,
+          author: {
+            '@type': 'Person',
+            name: props.data.mdx.frontmatter.author,
+          },
+        })}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           description: 'Breadcrumbs list',
           itemListElement: [
             {
               '@type': 'ListItem',
               item: {
-                '@id': 'https://publiuslogic.com',
-                name: 'PubliusLogic',
+                '@id': 'https://publiuslogic.com/blog',
+                name: 'PubliusLogic Blog',
               },
               position: '1',
             },
             {
               '@type': 'ListItem',
               item: {
-                '@id': 'https://publiuslogic.com/blog',
-                name: 'Blog Posts',
+                '@id': seo.path,
+                name: props.data.mdx.frontmatter.title,
               },
               position: '2',
             },
@@ -273,6 +352,11 @@ export const query = graphql`
         description
         author
         path
+        image {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
         publicId
         videoTitle
         date(formatString: "YYYY-MM-DD")

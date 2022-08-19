@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import * as React from 'react'
+import { useState, useEffect } from 'react'
 import { ArrowCircleUpIcon } from '@heroicons/react/outline'
 
 const Scroll = ({ direction = 'up', by, to, showBelow, className, size = '1.3em' }) => {

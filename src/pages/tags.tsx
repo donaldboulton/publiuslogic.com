@@ -160,6 +160,31 @@ export function Head(props: HeadProps) {
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: 'Tags',
+          alternativeHeadline: 'Site Tags',
+          image: ogimage,
+          award: 'Best Tags page ever built',
+          editor: 'Donald Boulton',
+          genre: 'search engine optimization',
+          keywords: 'publiuslogic tags site',
+          wordCount: '1120',
+          publisher: 'PubliusLogic',
+          url: 'https://publiuslogic.com/tags',
+          datePublished: '2020-09-20',
+          dateCreated: '2020-08-20',
+          dateModified: '2022-08-16',
+          description: 'We love to Tag and do stuff to help people and stuff',
+          articleBody: 'You can paste your entire post in here, and yes it can get really really long.',
+          author: {
+            '@type': 'Person',
+            name: 'Donald W. Boulton',
+          },
+        })}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
           '@type': 'WebSite',
           about: {
             '@id': 'https://publiuslogic.com',
@@ -181,7 +206,7 @@ export function Head(props: HeadProps) {
             'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
+            url: ogimage,
             width: '1400',
             height: '450',
           },
@@ -201,7 +226,7 @@ export function Head(props: HeadProps) {
           url: 'https://publiuslogic.com/search',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/undraw/undraw_Windows_re_uo4w.png',
+            url: ogimage,
             width: '1400',
             height: '450',
           },
@@ -259,7 +284,7 @@ export function Head(props: HeadProps) {
           location: 'OKC, Middle Earth',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
+            url: ogimage,
             width: '1400',
             height: '450',
           },

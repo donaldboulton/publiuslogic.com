@@ -60,7 +60,8 @@ const Table = () => {
             ref={ref5}
             variants={variants5}
             animate={isVisible5 ? 'visible' : 'hidden'}
-            transition={{ duration: 0.8, ease: 'easeOut' }}>
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
             <div className="overflow-x-auto nav-scroll relative shadow-md opacity-75">
               <table className="w-full rounded-t-lg sm:rounded-md text-md text-left text-slate-800 dark:text-slate-300">
                 <thead className="text-md uppercase rounded-t-lg bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300">

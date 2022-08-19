@@ -63,7 +63,7 @@ This is starter template for a full featured marketing and blog website based on
 - Support for code syntax highlighting
 - Manifest and offline support
 - Contact form using sendgrid email and Gatsby functions
-- Full SEO support (via Gatsby v4.21.0 Head ) 
+- Full SEO support (via Gatsby v4.21.0 Head )
 - Open Graph, Twitter Cards and Schema.org via JSON-LD
 - Tailwind Css v3.1.8, for super styling
 
@@ -88,7 +88,7 @@ Using Framer Motion for component and page animations an for menu animations.
 
 🍸 This website is built as static HTML with Gatsby component-modular Docker Container builds using React components and GraphQL, Built with WebPack. Including a user data backend on FaunaDB.
 
-Served on Netlify via a continuous deployment (CD) workflow. Pull requests are automatically built into preview apps, while commits to the master branch trigger the production build and deploy onto Netlify’s CDN edge node infrastructure. 
+Served on Netlify via a continuous deployment (CD) workflow. Pull requests are automatically built into preview apps, while commits to the master branch trigger the production build and deploy onto Netlify’s CDN edge node infrastructure.
 
 Since the whole site is just a bunch of static files copied onto multiple CDN nodes around the world, time to first byte (TTFB) is consistently fast at around 1ms to 2ms. Instant Notifications through my Slack Bots or GMail and phone notifications using Netlify Functions for my Mansbooks.com publiuslogic.com workspace.
 
