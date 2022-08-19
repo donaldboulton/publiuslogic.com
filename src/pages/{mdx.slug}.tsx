@@ -161,6 +161,7 @@ export function Head(props: HeadProps<DataProps>) {
         <title>{props.data.mdx.frontmatter.title}</title>
         <meta name="description" content={props.data.mdx.frontmatter.description} />
         <meta name="image" content={Image} />
+        <meta name="twitter:site" content="@donaldboulton" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={props.data.mdx.frontmatter.title} />
         <meta name="twitter:url" content={seo.path} />
@@ -170,6 +171,7 @@ export function Head(props: HeadProps<DataProps>) {
         <meta name="og:title" content={props.data.mdx.frontmatter.title} />
         <meta name="og:url" content={seo.path} />
         <meta name="og:description" content={props.data.mdx.frontmatter.description} />
+        <meta name="og:site_name" content="PubliusLogic" />
         <meta name="og:image" content={Image} />
         <meta name="og:image:title" content={props.data.mdx.frontmatter.title} />
         <meta name="og:image:alt" content={props.data.mdx.frontmatter.title} />
@@ -200,11 +202,10 @@ export function Head(props: HeadProps<DataProps>) {
           creator: {
             '@id': 'https://publiuslogic.com',
           },
-          description:
-            'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
+          description: 'PubliusLogic name means to Publish Logic',
           image: {
             '@type': 'ImageObject',
-            url: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
+            url: Image,
             width: '1400px',
             height: '450px',
           },
@@ -214,13 +215,18 @@ export function Head(props: HeadProps<DataProps>) {
             '@id': 'https://publiuslogic.com',
           },
           url: 'https://publiuslogic.com',
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: 'http://publiuslogic.com/search?&q={query}',
+            query: 'required',
+          },
         })}
       </script>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: props.data.mdx.frontmatter.tags,
+          name: props.data.mdx.frontmatter.title,
           url: seo.path,
           image: {
             '@type': 'ImageObject',
