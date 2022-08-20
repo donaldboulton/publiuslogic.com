@@ -102,7 +102,7 @@ export default function Navigation() {
                         <Control
                           className="text-slate-900 hover:text-slate-700 dark:text-slate-300 text-opacity-70"
                           aria-hidden="true"
-                          aria-label="Light Dark Mode"
+                          aria-label="DarkMode"
                         />
                         <ChevronDownIcon
                           className={`${open ? 'text-slate-300 transform rotate-180' : 'text-opacity-70'}
