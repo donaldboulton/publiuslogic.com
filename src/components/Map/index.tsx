@@ -2,11 +2,9 @@ import * as React from 'react'
 import { MapContainer, TileLayer, Circle, LayerGroup, FeatureGroup, Rectangle, Marker, Popup } from 'react-leaflet'
 import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js'
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css'
-import useConfigureLeaflet from '@/hooks/useConfigureLeaflet'
 import MarkerClusterGroup from 'react-leaflet-markercluster'
 
 function Map() {
-  useConfigureLeaflet()
   const center = [35.590607, -97.43913]
   const rectangle = [
     [35.507745, -97.58331],
@@ -62,5 +60,4 @@ function Map() {
     return <div className="h-96" />
   }
 }
-
 export default Map

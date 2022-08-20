@@ -26,7 +26,7 @@ const BlogPage = () => {
       <ScrollIndicator />
       <Stars />
       <Layout>
-        <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />        
+        <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
         <div className="mt-10">
           <BlogRoll />
         </div>

@@ -17,13 +17,13 @@ const features = [
   {
     name: 'Saving Mankind',
     description:
-      'The destruction of all Humanity is eminent. You are over populating the Planet at a accelerating rate. If you do not stop soon you will all be destroyed. Mother Earth is a Fallen Angel, the Devil, Her job as Earth is to give life for mankind as your flesh. You are completely disrespecting Her. She is in the process of culling or eliminating your species. The negative effect and energy force your planet is producing is effecting the Whole Verse. It will not be allowed to continue, the other forms of man will see to it. GOV if you havent noticed there in the process of that now. None of your little boys with there war toys can not stop them! Everything has a off switch, the other forms of Man know how to activate yours, without turning off other things!',
+      'The destruction of all Humanity is eminent. You are over populating the Planet at a accelerating rate. If you do not stop soon you will all be die from starvation. Mother Earth is a Fallen Angel, the Devil, Her job as Earth is to give life for mankind as in your flesh. You are completely disrespecting Her. She is in the process of culling or eliminating your species. The negative effect and energy force your planet is producing is effecting the Whole Verse. It will not be allowed to continue!',
     icon: ClockIcon,
   },
   {
     name: 'Internet Programming',
     description:
-      'PubliusLogic is a Static site using JAMstack architecture. Built using Gatsby, React and Typescript for ultimate performance. Served on Netlify via Cloudflare CDN, on Global Server nodes with a continuous deployment (CD,) workflow. Pull requests are automatically built into preview apps, while commits to the master branch trigger the production build and deploy onto Netlify CDN edge node infrastructure. Since the whole site is just a bunch of static files copied onto multiple CDN nodes around the world, time to first byte (TTFB) is consistently fast at around 1ms to 2ms. Instant Notifications through my Slack Bots or GMail and phone text notifications, using Netlify Functions for my mansbooks.com - publiuslogic.com workspace.',
+      'PubliusLogic is a Static site using JAMstack architecture. Built using Gatsby, React and Typescript for ultimate performance. Served on Netlify via Cloudflare CDN, on Global Server nodes with a continuous deployment (CD,) workflow. Pull requests are automatically built into preview apps, while commits to the master branch trigger the production build and deploy onto Netlify CDN edge node infrastructure.',
     icon: PresentationChartBarIcon,
   },
 ]
