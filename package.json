@@ -136,14 +136,14 @@
   },
   "scripts": {
     "analyze:lint": "eslint --ext .tsx --ext .ts .",
-    "analyze:prettier": "prettier --list-different \"**/*.{css,js,tsx,json,md,mdx}\"",
+    "analyze:prettier": "prettier --list-different \"**/*.{css,ts,tsx,json,md,mdx}\"",
     "analyze": "npm run analyze:lint && npm run analyze:prettier",
     "fix:lint": "eslint --ext .tsx --ext .ts . --fix",
-    "fix:prettier": "prettier --write \"**/*.{css,ts,jsx,tsx,json,md,mdx}\"",
+    "fix:prettier": "prettier --write \"**/*.{css,ts,tsx,json,md,mdx}\"",
     "fix": "npm run fix:lint && npm run fix:prettier",
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md,mdx}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -155,9 +155,9 @@
     "deploy": "gatsby build && gh-pages -d public -b main"
   },
   "engines": {
-    "node": ">=16.6.0"
+    "node": ">=18.7.0"
   },
   "AWS_LAMBDA_JS_RUNTIME": {
-    "node": ">=16.16.0"
+    "node": ">=18.7.0"
   }
 }
