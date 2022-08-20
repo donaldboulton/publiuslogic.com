@@ -82,7 +82,7 @@
     "react-dom-confetti": "^0.2.0",
     "react-instantsearch-dom": "^6.24.3",
     "react-intersection-observer": "^9.4.0",
-    "react-leaflet": "^3.2.5",
+    "react-leaflet": "^4.0.0",
     "react-leaflet-markercluster": "next",
     "react-live": "^2.4.1",
     "react-masonry-component": "^6.3.0",

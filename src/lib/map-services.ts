@@ -1,4 +1,4 @@
-import { mapServices } from '../../data/map-services'
+import { mapServices } from '@/components/data/map-services'
 
 /**
  * getMapServicesByName

@@ -23,10 +23,10 @@ const BlogPage = () => {
   return (
     <>
       <Header />
+      <ScrollIndicator />
+      <Stars />
       <Layout>
-        <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />
-        <ScrollIndicator />
-        <Stars />
+        <PageHero title="Blog Posts" description="Articles published from time to time" image={Image} />        
         <div className="mt-10">
           <BlogRoll />
         </div>

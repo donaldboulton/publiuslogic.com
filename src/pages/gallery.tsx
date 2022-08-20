@@ -4,6 +4,7 @@ import { IGatsbyImageData } from 'gatsby-plugin-image'
 import Gallery from '@browniebroke/gatsby-image-gallery'
 import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
+import Stars from '@/components/Stars'
 import PageHero from '@/components/PageHero'
 import Image from '../../static/svg/undraw/undraw_portfolio_re_qwm5.svg'
 import OGImage from '../../static/images/undraw/undraw_Portfolio_re_qwm5.png'
@@ -64,9 +65,10 @@ const ImageGallery: React.FC<PageProps> = ({ data }) => {
   return (
     <>
       <Header />
+      <ScrollIndicator />
+      <Stars />
       <Layout>
         <PageHero title="Gallery: Images" description="My personal Images from History!" image={Image} />
-        <ScrollIndicator />
         <div className="mt-10">
           <div className="max-w-7xl mt-16 mb-32 mx-auto bg-slate-300 dark:bg-slate-800 text-slate-200 dark:text-slate-200 rounded-xl shadow-md overflow-hidden md:max-w-5xl">
             <div className="md:flex">

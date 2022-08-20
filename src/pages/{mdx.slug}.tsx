@@ -82,10 +82,10 @@ const BlogPost = ({ data: { mdx }, data, title, description }: PageProps<DataPro
   return (
     <>
       <Header />
+      <ScrollIndicator />
+      <Stars />
       <Layout>
-        <TableOfContent headings={data.mdx.headings} />
-        <ScrollIndicator />
-        <Stars />
+        <TableOfContent headings={data.mdx.headings} />        
         <div className="mb-10 mt-10">
           <section className="px-4 lg:px-0 mt-8 mb-20 max-w-screen-lg mx-auto text-black dark:text-white prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500">
             <div>

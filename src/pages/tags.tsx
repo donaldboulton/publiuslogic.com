@@ -111,10 +111,10 @@ const Tags = () => {
   return (
     <>
       <Header />
+      <ScrollIndicator />
+      <Stars />
       <Layout>
         <PageHero title="Blog Tags" description="Click on each tag to view blog posts containing tag." image={Image} />
-        <ScrollIndicator />
-        <Stars />
         <div className="mt-10">
           <div className="mt-6 mb-24 grid grid-cols-2 gap-y-4 sm:grid-cols-3 md:grid-cols-4 gap-x-4 lg:grid-cols-5 xl:grid-cols-6 xl:gap-y-6 xl:gap-x-6">
             {tags

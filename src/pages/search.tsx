@@ -23,11 +23,10 @@ const SearchPage = () => {
   return (
     <>
       <Header />
+      <ScrollIndicator />
+      <Stars />
       <Layout>
         <PageHero title="Search Page" description="Type in the search box to get instant results." image={Image} />
-
-        <ScrollIndicator />
-        <Stars />
         <div className="mt-10">
           <div className="mt-16 mb-16 sm:mt-2 p-8 bg-slate-300 dark:bg-slate-800 text-slate-800 dark:text-slate-200">
             <div className="mb-2">

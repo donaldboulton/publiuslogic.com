@@ -17,7 +17,6 @@ import Twitter from '../../static/svg/icons/twitter.inline.svg'
 import Github from '../../static/svg/icons/github.inline.svg'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Stars from '@/components/Stars'
 import Tooltip from '@/components/Tooltip'
 
 import Image from '../../static/svg/undraw/undraw_contact_us_-15-o2.svg'
@@ -77,11 +76,9 @@ function ContactUs() {
           description="Our presence is real and digital. Contact us through the following ways."
           image={Image}
         />
-
         <div className="mt-10">
           <Map />
-          <div className="mt-10 sm:mt-0 p-8 text-slate-900 dark:text-slate-100">
-            <Stars />
+          <div className="mt-10 sm:mt-0 p-8 text-black dark:text-white">
             <div className="lg:grid lg:grid-cols-3 lg:gap-6">
               <div className="lg:col-span-1">
                 <div className="px-4 sm:px-0">
@@ -107,7 +104,7 @@ function ContactUs() {
                 </div>
               </div>
 
-              <div className="mt-5 lg:mt-0 lg:col-span-2 mb-20 pb-4 rounded-lg bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200">
+              <div className="mt-5 lg:mt-0 lg:col-span-2 mb-20 pb-4 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300">
                 <NetlifyForm
                   method="POST"
                   name="contact"
@@ -302,7 +299,8 @@ export function Head(props: HeadProps) {
           creator: {
             '@id': 'https://publiuslogic.com',
           },
-          description: 'PubliusLogic name means to Publish Logic',
+          description:
+            'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
           image: {
             '@type': 'ImageObject',
             url: ogimage,
@@ -315,11 +313,6 @@ export function Head(props: HeadProps) {
             '@id': 'https://publiuslogic.com',
           },
           url: 'https://publiuslogic.com',
-          potentialAction: {
-            '@type': 'SearchAction',
-            target: 'http://publiuslogic.com/search?&q={query}',
-            query: 'required',
-          },
         })}
       </script>
       <script type="application/ld+json">
@@ -335,8 +328,8 @@ export function Head(props: HeadProps) {
             height: '450',
           },
           publisher: {
-            '@type': 'Organization',
-            name: 'Mansbooks',
+            '@type': 'PubliusLogic',
+            name: 'Donald Boulton',
           },
           license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}

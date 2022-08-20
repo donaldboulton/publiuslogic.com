@@ -5,6 +5,7 @@ import GithubProfile from '@/components/GithubProfile'
 import WavyHr from '@/components/WavyHr'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import SEO from '@/components/Seo'
+import Stars from '@/components/Stars'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
@@ -29,6 +30,8 @@ function Profile() {
   return (
     <>
       <Header />
+      <ScrollIndicator />
+      <Stars />
       <Layout>
         <PageHero title="Profile" description="Github Profile and Repo Info." image={Image} />
         <ScrollIndicator />
