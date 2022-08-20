@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import CookieConsent, { Cookies } from 'react-cookie-consent'
+import { CookieConsent } from 'react-cookie-consent'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import SEO from '@/components/Seo'
@@ -10,6 +10,7 @@ import LatestArticles from '@/components/LatestArticles'
 import Footer from '@/components/Footer'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import List from '@/components/List'
+import ListItem from '@/components/List'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, motion, m } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
@@ -457,7 +458,7 @@ export default function Home() {
                         src="../../static/img/jesus.jpg"
                         alt="PubliusLogic"
                       />
-                      <blockquote className="relative p-8 mb-4">
+                      <div className="relative p-8 mb-4">
                         <svg
                           preserveAspectRatio="none"
                           xmlns="http://www.w3.org/2000/svg"
@@ -474,11 +475,14 @@ export default function Home() {
                           ></polygon>
                         </svg>
                         <h4 className="text-xl font-bold text-white">Fruition is Soon, "Nov 15 2022"!</h4>
-                        <p className="text-lg font-light mt-2 text-white">
-                          All Time will be coming to fruition. Revelation 22:12, And, behold, I come quickly; and my
-                          reward is with me, to give every man according as his work shall be.
-                        </p>
-                      </blockquote>
+                        <div className="text-lg font-light mt-2 text-white">
+                          All Time will be coming to fruition. Revelation 22:12,
+                          <p>
+                            And, behold, I come quickly; and my reward is with me, to give every man according as his
+                            work shall be.
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </m.div>
                 </div>
@@ -550,33 +554,61 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap justify-center lg:-mt-64 -mt-48">
               <div className="w-full lg:w-6/12 px-4">
-              <m.div
-                    ref={ref3}
-                    variants={variants3}
-                    animate={isVisible3 ? 'visible' : 'hidden'}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                  >
-                    <div className="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg">
-                      <div className="flex-auto p-5 m-2 lg:p-10t text-black dark:text-white">
-                        <h4 className="text-2xl mb-2 text-center font-semibold text-gray-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
-                          Update's To Creation, and Virtue!
-                        </h4>
-                        <div className="leading-relaxed mt-1 mb-4 text-center text-gray-200">
-                          Before 11/15/2022: I will be a little more explanatory on the Creation of all.
-                          <p>Add some input from my Angel of Love to Virtue!</p>
-                        </div>
-                        <p className="leading-relaxed mt-1 mb-20 text-center text-gray-200">
-                          Final Trinity Works.{' '}
-                          <span className="text-center underline underline-offset-4 decoration-wavy decoration-fuchsia-600">
-                            <Link to="/blog/trinity-of-man" rel="noopener noreferrer">
-                              {' '}
-                              The Trinity Of Man!
-                            </Link>
-                          </span>
-                        </p>
+                <m.div
+                  ref={ref3}
+                  variants={variants3}
+                  animate={isVisible3 ? 'visible' : 'hidden'}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                >
+                  <div className="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg">
+                    <div className="flex-auto p-5 m-2 lg:p-10t text-black dark:text-white">
+                      <h4 className="text-2xl mb-2 text-center font-semibold text-gray-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
+                        Update's To Creation, and Virtue!
+                      </h4>
+                      <div className="leading-relaxed mt-1 mb-4 text-center text-gray-200">
+                        Before 11/15/2022: I will be a little more explanatory on the Creation of all.
+                        <p>Add some input from my Angel of Love to Virtue!</p>
+                      </div>
+                      <p className="leading-relaxed mt-1 mb-20 text-center text-gray-200">
+                        Final Trinity Works.{' '}
+                        <span className="text-center underline underline-offset-4 decoration-wavy decoration-fuchsia-600">
+                          <Link to="/blog/trinity-of-man" rel="noopener noreferrer">
+                            {' '}
+                            The Trinity Of Man!
+                          </Link>
+                        </span>
+                      </p>
+                      <div className="mt-20 lg:mt-0 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-white light:text-black">
+                        <List variant="unordered">
+                          <List.Item>
+                            <p className="mb-1" variant="secondary">
+                              The Devil is Controlling most all of your Government Officials! Details on how to fight
+                              off the Devil! 😈
+                            </p>
+                          </List.Item>
+                          <List.Item>
+                            <p className="mb-1" variant="secondary">
+                              Your Children are being brainwashed for Devilish total control! Stand Up and fight for
+                              there future and freedom now! 🤫
+                            </p>
+                          </List.Item>
+                          <List.Item>
+                            <p className="mb-1" variant="secondary">
+                              As A Species you will not Effectivity Do anything about climate control. That would Mean
+                              limiting playtime and entertainment and you have been set up to focus on only playtime
+                              pursuits. Playtime and Over population through heat from every one of you, is what is
+                              creating the{' '}
+                              <span className="underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
+                                Climate Crisis
+                              </span>
+                              ! 📝
+                            </p>
+                          </List.Item>
+                        </List>
                       </div>
                     </div>
-                  </m.div>
+                  </div>
+                </m.div>
               </div>
             </div>
           </div>
