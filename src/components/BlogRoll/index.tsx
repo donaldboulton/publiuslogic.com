@@ -45,7 +45,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
               <m.div className="relative opacity-75" initial="initial" whileHover="hover">
                 <div>
                   <m.div
-                    className="h-full border-1 border-slate-800 dark:border-slate-300 bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-slate-200 rounded-lg shadow-xl overflow-hidden p-2 opacity-75"
+                    className="h-full border-1 border-slate-800 dark:border-slate-300 bg-slate-200 dark:bg-slate-900 text-slate-900 dark:text-slate-200 rounded-lg shadow-xl overflow-hidden p-2 opacity-75"
                     variants={cardVariants}
                     transition={{
                       ease: 'easeOut',
@@ -129,7 +129,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
             pageRangeDisplayed={3}
             onPageChange={handlePageClick}
             containerClassName="relative z-0 inline-flex shadow-sm -space-x-px border-gray-300 dark:border-gray-900"
-            activeLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-900 text-slate-800 dark:text-slate-300 text-sm font-medium hover:bg-fuchsia-700 bg-fuchsia-500"
+            activeLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-900 text-slate-900 dark:text-slate-300 text-sm font-medium hover:bg-fuchsia-700 bg-fuchsia-500"
           />
         ) : (
           ''

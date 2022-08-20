@@ -31,7 +31,7 @@ export function onRenderBody({ setHeadComponents, setPreBodyComponents, setHtmlA
   ])
   setPreBodyComponents([
     React.createElement('script', {
-      key: 'gatsby-dark-mode',
+      key: 'darkMode',
       dangerouslySetInnerHTML: {
         __html: `void function() {
           window.__onThemeChange = function() {}

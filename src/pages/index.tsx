@@ -12,28 +12,12 @@ import ScrollIndicator from '@/components/ScrollIndicator'
 import List from '@/components/List'
 import ListItem from '@/components/List'
 import { useInView } from 'react-intersection-observer'
-import { LazyMotion, motion, m } from 'framer-motion'
+import { LazyMotion, m } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
-
-const container = {
-  enter: {
-    transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.3,
-    },
-  },
-}
-const item = {
-  initial: { y: 20, opacity: 0 },
-  enter: {
-    y: 0,
-    opacity: 1,
-  },
-}
 
 const useAnimateOnInView = () => {
   const controls = useAnimation()
@@ -57,6 +41,14 @@ export default function Home() {
     width: 1400,
     height: 531,
   }
+  const container = {
+    enter: {
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.3,
+      },
+    },
+  }
   const [replay, setReplay] = useState(true)
   // Placeholder text data, as if from API
   const placeholderText = [
@@ -66,7 +58,6 @@ export default function Home() {
       text: 'Publishing Logic & Gods Truth!',
     },
   ]
-
   const headingContainer = {
     visible: {
       transition: {
@@ -74,19 +65,10 @@ export default function Home() {
       },
     },
   }
-
   const [ref, isVisible] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',
   })
-  const cardVariants = {
-    hover: {
-      scale: 1.05,
-    },
-    initial: {
-      scale: 1,
-    },
-  }
   const variants = {
     visible: {
       opacity: 1,
@@ -97,12 +79,57 @@ export default function Home() {
       x: -200,
     },
   }
-
   const [ref1, isVisible1] = useInView({
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  })
+  const variants1 = {
+    hidden: {
+      opacity: 0,
+      y: -5,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        delay: 0.8,
+      },
+    },
+  }
+  const [ref2, isVisible2] = useInView({
+    triggerOnce: true,
+    rootMargin: '200px 0px',
+  })
+  const variants2 = {
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+    hidden: {
+      opacity: 0,
+      x: -200,
+    },
+  }
+  const [ref3, isVisible3] = useInView({
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  })
+  const variants3 = {
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+    hidden: {
+      opacity: 0,
+      x: -200,
+    },
+  }
+  const [ref4, isVisible4] = useInView({
     triggerOnce: true,
     rootMargin: '-100px 0px',
   })
-  const variants1 = {
+  const variants4 = {
     hidden: {
       opacity: 0,
       y: -5,
@@ -116,12 +143,11 @@ export default function Home() {
       },
     },
   }
-
-  const [ref2, isVisible2] = useInView({
+  const [ref5, isVisible5] = useInView({
     triggerOnce: true,
     rootMargin: '-100px 0px',
   })
-  const variants2 = {
+  const variants5 = {
     hidden: {
       opacity: 0,
       y: -5,
@@ -131,15 +157,15 @@ export default function Home() {
       y: 0,
       transition: {
         type: 'spring',
-        delay: 0.6,
+        delay: 0.8,
       },
     },
   }
-  const [ref3, isVisible3] = useInView({
+  const [ref6, isVisible6] = useInView({
     triggerOnce: true,
     rootMargin: '-100px 0px',
   })
-  const variants3 = {
+  const variants6 = {
     visible: {
       opacity: 1,
       x: 0,
@@ -163,7 +189,7 @@ export default function Home() {
       <m.main className="font-sans" variants={container}>
         <div className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center">
           <div className="absolute top-0 bg-center">
-            <div className="absolute left-0 bottom-0 md:mb-0 w-full h-full z-10 bg-gradient-to-b from-gray-700 opacity-70"></div>
+            <div className="absolute left-0 bottom-0 md:mb-0 w-full h-full z-10 bg-gradient-to-b from-slate-700 opacity-70"></div>
             <StaticImage
               className="cover object-contain h-96"
               formats={['auto', 'webp']}
@@ -171,7 +197,7 @@ export default function Home() {
               quality={95}
               alt="Landing Image"
             />
-            <motion.div
+            <m.div
               className="p-4 absolute top-16 left-3 z-20"
               initial="hidden"
               // animate="visible"
@@ -183,24 +209,19 @@ export default function Home() {
                   return <AnimatedText {...item} key={index} />
                 })}
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
-        <m.section
-          variants={item}
-          className="pb-10 bg-gray-700 light:bg-gray-200 text-gray-800 light:text-gray-200 transition-all duration-200 -mt-10"
-        >
+        <m.section className="pb-10 bg-slate-300 dark:bg-slate-700 text-slate-200 dark:text-slate-900 transition-all duration-200 -mt-10">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap">
               <div className="lg:pt-12 pt-4 w-full md:w-4/12 px-4 text-center">
                 <m.div
-                  className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-gray-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg"
-                  variants={cardVariants}
-                  transition={{
-                    ease: 'easeOut',
-                    delay: 0.15,
-                    duration: 0.5,
-                  }}
+                  className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-slate-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg"
+                  ref={ref}
+                  variants={variants}
+                  animate={isVisible ? 'visible' : 'hidden'}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
                 >
                   <div className="px-4 py-5 flex-auto">
                     <div className="bg-blue-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-blue-700/50 rounded-full">
@@ -230,13 +251,11 @@ export default function Home() {
               </div>
               <div className="w-full md:w-4/12 px-4 text-center">
                 <m.div
-                  className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-gray-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg"
-                  variants={cardVariants}
-                  transition={{
-                    ease: 'easeOut',
-                    delay: 0.15,
-                    duration: 0.5,
-                  }}
+                  className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-slate-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg"
+                  ref={ref1}
+                  variants={variants1}
+                  animate={isVisible1 ? 'visible' : 'hidden'}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
                 >
                   <div className="px-4 py-5 flex-auto">
                     <div className="bg-purple-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-purple-500/50 rounded-full">
@@ -265,13 +284,11 @@ export default function Home() {
               </div>
               <div className="pt-6 w-full md:w-4/12 px-4 text-center">
                 <m.div
-                  className="relative flex flex-col min-w-0 break-words bg-purple-600 text-gray-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg"
-                  variants={cardVariants}
-                  transition={{
-                    ease: 'easeOut',
-                    delay: 0.15,
-                    duration: 0.5,
-                  }}
+                  className="relative flex flex-col min-w-0 break-words bg-purple-600 text-slate-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg"
+                  ref={ref2}
+                  variants={variants2}
+                  animate={isVisible2 ? 'visible' : 'hidden'}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
                 >
                   <div className="px-4 py-5 flex-auto">
                     <div className="bg-fuchsia-600 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-fuchsia-600/50 rounded-full">
@@ -297,7 +314,7 @@ export default function Home() {
                         <h6>JAMStack Technology</h6>
                       </a>
                     </h6>
-                    <p className="mt-2 mb-4 text-gray-200">
+                    <p className="mt-2 mb-4 text-slate-200">
                       PubliusLogic is a Static site using JAMstack architecture. Built using Gatsby, React, MDX,
                       Tailwind and Typescript on Netlify Servers for, "Ultimate Performance"!
                     </p>
@@ -305,7 +322,7 @@ export default function Home() {
                 </m.div>
               </div>
             </div>
-            <div className="text-zinc-200 light:text-zinc-800 mb-10">
+            <div className="text-slate-900 dark:text-slate-200 mb-10">
               <div className="flex justify-center">
                 <StaticImage
                   className="max-w-xs m-auto w-20 h-20 mx-auto mb-3 ring ring-indigo-500 ring-offset-4 rounded-full"
@@ -324,7 +341,7 @@ export default function Home() {
               >
                 https://donboulton.com
               </a>
-              <div className="justify-center max-w-xl m-auto text-gray-200 hover:text-gray-400 light:text-gray-800 light:hover:text-gray-700 my-2 mb-6">
+              <div className="justify-center max-w-xl m-auto dark:text-slate-200 dark:hover:text-slate-400 text-slate-900 hover:text-slate-700 my-2 mb-6">
                 <div className="text-center justify-items-center">
                   Left Hand of Father God since the beginning of time!{' '}
                 </div>
@@ -355,7 +372,7 @@ export default function Home() {
                     <span>donboulton</span>
                   </a>
                   <a
-                    className="flex items-center text-gray-200 hover:text-gray-400 light:text-gray-800 light:hover:text-gray-700"
+                    className="flex items-center text-slate-900 hover:text-slate-900 dark:text-slate-200 dark:hover:text-slate-300"
                     href="https://www.github.com/donaldboulton"
                     target="_blank"
                     rel="noreferrer"
@@ -379,7 +396,7 @@ export default function Home() {
             </div>
           </div>
         </m.section>
-        <m.section variants={item} className="relative py-20 bg-gray-900 light:bg-white">
+        <m.section className="relative py-20 bg-slate-300 dark:bg-slate-900">
           <div
             className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
             style={{ height: '80px' }}
@@ -393,29 +410,29 @@ export default function Home() {
               x="0"
               y="0"
             >
-              <polygon className="text-gray-900 light:text-white fill-current" points="2560 0 2560 100 0 100"></polygon>
+              <polygon className="text-slate-300 dark:text-slate-900 fill-current" points="2560 0 2560 100 0 100"></polygon>
             </svg>
           </div>
 
           <div className="container mx-auto px-4">
-            <div className="items-center flex flex-wrap bg-gray-900 light:bg-white text-gray-800 light:text-gray-300">
+            <div className="items-center flex flex-wrap bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
               <div className="flex flex-wrap items-center mt-8">
                 <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mb-6">
-                  <h3 className="text-3xl text-white light:text-black mb-2 font-semibold leading-normal">
+                  <h3 className="text-3xl text-black dark:text-white mb-2 font-semibold leading-normal">
                     Coming Out of Retirement
                   </h3>
-                  <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-white light:text-black">
+                  <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-black dark:text-white">
                     I have been Retired till I become 65, then I am getting to work, start singing, finding somewhere
                     the people like to talk about God, Life, Love, Truth! Starting my Loves's church on Earth.
                   </p>
-                  <div className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-black">
+                  <div className="text-lg font-light leading-relaxed mt-0 mb-4 text-black dark:text-white">
                     <div>
                       <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4">
                         {' '}
                         Mans Books Of Life
                       </span>
                       <p>
-                        <span className="text-white light:text-black">
+                        <span className="text-black dark:text-white">
                           {' '}
                           Will be compared to Gods Books Of Life in one years time.
                         </span>
@@ -428,7 +445,7 @@ export default function Home() {
                       https://mansbooks.com
                     </a>
                   </div>
-                  <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-white light:text-gray-800">
+                  <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-black dark:text-slate-200">
                     <div>
                       <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4">
                         {' '}
@@ -446,11 +463,10 @@ export default function Home() {
                 </div>
                 <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
                   <m.div
-                    ref={ref}
-                    variants={variants}
-                    animate={isVisible ? 'visible' : 'hidden'}
+                    ref={ref3}
+                    variants={variants3}
+                    animate={isVisible3 ? 'visible' : 'hidden'}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
-                    key={0}
                   >
                     <div className="relative flex flex-col min-w-0 break-words text-white w-full mb-6 shadow-lg rounded-lg bg-rose-600">
                       <StaticImage
@@ -488,7 +504,7 @@ export default function Home() {
                 </div>
               </div>
               <div
-                className="top-auto mt-4 bottom-0 left-0 bg-gray-900 light:bg-offwhite right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
+                className="top-auto mt-4 bottom-0 left-0 dark:bg-slate-900 bg-offwhite right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
                 style={{ height: '70px' }}
               >
                 <svg
@@ -501,7 +517,7 @@ export default function Home() {
                   y="0"
                 >
                   <polygon
-                    className="bg-gray-700 light:bg-gray-300 text-gray-700 light:text-gray-300 fill-current"
+                    className="text-slate-300 dark:text-slate-700 fill-current"
                     points="2560 0 2560 100 0 100"
                   ></polygon>
                 </svg>
@@ -509,27 +525,39 @@ export default function Home() {
             </div>
           </div>
         </m.section>
-        <m.section variants={item} className="py-20 bg-gray-700 light:bg-gray-300">
-          <div className="container mx-auto px-4">
+        <m.section className="py-20 relative block bg-slate-300 dark:bg-slate-700">
+          <div className="container mx-auto pb-24 px-4">
             <m.div
-              ref={ref1}
-              variants={variants1}
-              animate={isVisible1 ? 'visible' : 'hidden'}
+              ref={ref4}
+              variants={variants4}
+              animate={isVisible4 ? 'visible' : 'hidden'}
               transition={{ duration: 0.8, ease: 'easeIn' }}
-              key={1}
             >
               <Features />
-            </m.div>
+            </m.div>            
           </div>
+          <div className="mt-24 mb:mt-24 pt-24 bottom-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="2560"
+                    height="200"
+                    viewBox="0 0 2560 200"
+                    className="fill-blue-500 stroke-blue-500 dark:fill-slate-900"
+                  >
+                    <path
+                      strokeWidth="2"
+                      d="M26 106 0 23-7-1v211h2577V23l-32 118-27-8-27-50-27-19-28 33-27 68-26 15-28-55-26 16-27-27-27-43-27 47-27 18-28-60-25 89-29 8-26-40-27-69-29-32-25-8-27 47-28 38-27-12-27-44h-27l-26 18-27 43-27 15-27-24-28-67-26-28-28-7-25 93-26-32-29-4-28 100-26-24-27 37-27-28-27-16-27 53-28-60-26 23-27-23-27-8-27 42-27 26-27-77-28 17-27-13-26 58-28-11-27 11-27-31-27-22-27 42-27-11-27 28-26 15-27-66-28-13-26-71-27 10-28-21-27 109-27-30-27 8-26 84-27-19-28-93-27-59-26-20-27 68-27-59-27 55-27 35h-27l-28-50-26-8-28 97-27-23-26 51-27-114-26 86-28-102-27 53-27-48-27 27-28 61-27-22-27-8-27 39-27-83-27 44Z"
+                    ></path>
+                  </svg>
+                </div>
         </m.section>
-        <m.section variants={item} className="py-20 relative block bg-primary-dark">
+        <m.section className="pt-10 pb-20 relative block bg-primary-dark">
           <div className="container mx-auto px-4 lg:pt-12 lg:pb-28">
             <m.div
-              ref={ref2}
-              variants={variants2}
-              animate={isVisible2 ? 'visible' : 'hidden'}
+              ref={ref5}
+              variants={variants5}
+              animate={isVisible5 ? 'visible' : 'hidden'}
               transition={{ duration: 0.6, ease: 'easeIn' }}
-              key={2}
             >
               <LatestArticles />
             </m.div>
@@ -540,7 +568,7 @@ export default function Home() {
                 width="2560"
                 height="200"
                 viewBox="0 0 2560 200"
-                className="stroke-red-500 dark:stroke-red-600 fill-gray-800"
+                className="stroke-red-500 dark:stroke-red-600 fill-slate-800"
               >
                 <path
                   stroke-width="2"
@@ -550,26 +578,26 @@ export default function Home() {
             </div>
           </div>
         </m.section>
-        <m.section variants={item} className="relative block py-20 lg:pt-0">
+        <m.section className="relative block pt-24 pb-20 lg:pt-0">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap justify-center lg:-mt-64 -mt-48">
               <div className="w-full lg:w-6/12 px-4">
                 <m.div
-                  ref={ref3}
-                  variants={variants3}
-                  animate={isVisible3 ? 'visible' : 'hidden'}
+                  ref={ref6}
+                  variants={variants6}
+                  animate={isVisible6 ? 'visible' : 'hidden'}
                   transition={{ duration: 0.8, ease: 'easeOut' }}
                 >
                   <div className="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg">
                     <div className="flex-auto p-5 m-2 lg:p-10t text-black dark:text-white">
-                      <h4 className="text-2xl mb-2 text-center font-semibold text-gray-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
+                      <h4 className="text-2xl mb-2 text-center font-semibold text-slate-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
                         Update's To Creation, and Virtue!
                       </h4>
-                      <div className="leading-relaxed mt-1 mb-4 text-center text-gray-200">
+                      <div className="leading-relaxed mt-1 mb-4 text-center text-slate-200">
                         Before 11/15/2022: I will be a little more explanatory on the Creation of all.
                         <p>Add some input from my Angel of Love to Virtue!</p>
                       </div>
-                      <p className="leading-relaxed mt-1 mb-20 text-center text-gray-200">
+                      <p className="leading-relaxed mt-1 mb-20 text-center text-slate-200">
                         Final Trinity Works.{' '}
                         <span className="text-center underline underline-offset-4 decoration-wavy decoration-fuchsia-600">
                           <Link to="/blog/trinity-of-man" rel="noopener noreferrer">
@@ -578,7 +606,7 @@ export default function Home() {
                           </Link>
                         </span>
                       </p>
-                      <div className="mt-20 lg:mt-0 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-white light:text-black">
+                      <div className="mt-24 mt-20 lg:mt-0 mb-4 rounded-lg bg-slate-300 dark:bg-slate-800 text-black dark:text-white">
                         <List variant="unordered">
                           <List.Item>
                             <p className="mb-1" variant="secondary">
@@ -645,7 +673,7 @@ export default function Home() {
             marginLeft: '20px',
           }}
         >
-          <Link to="/blog/privacy" className="text-gray-200" alt="Privacy Page">
+          <Link to="/blog/privacy" className="text-slate-200" alt="Privacy Page">
             Privacy Page
           </Link>
         </span>

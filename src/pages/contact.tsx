@@ -62,14 +62,14 @@ function ContactUs() {
           </header>
         </article>
         <Map />
-        <div className="mt-10 sm:mt-0 p-8 text-white light:text-black">
+        <div className="mt-10 sm:mt-0 p-8 text-black dark:text-white">
           <Stars />
           <div className="lg:grid lg:grid-cols-3 lg:gap-6">
             <div className="lg:col-span-1">
               <div className="px-4 sm:px-0">
                 {contactMethods.map(method =>
                   method.link ? (
-                    <p key={method.name} className="mt-2 flex items-center text-sm text-white light:text-black">
+                    <p key={method.name} className="mt-2 flex items-center text-sm text-black dark:text-white">
                       <method.image className=" h-5 w-5" />
                       <span>&nbsp;{method.name}:&nbsp;</span>
                       <a
@@ -89,7 +89,7 @@ function ContactUs() {
               </div>
             </div>
 
-            <div className="mt-5 lg:mt-0 lg:col-span-2 mb-24 rounded-lg bg-gray-800 light:bg-gray-300 text-gray-200 light:text-gray-800">
+            <div className="mt-5 lg:mt-0 lg:col-span-2 mb-24 rounded-lg bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200">
               <NetlifyForm
                 method="POST"
                 name="contact"
@@ -112,7 +112,7 @@ function ContactUs() {
                       </label>
                     </p>
                     <div className="shadow overflow-hidden sm:rounded-md">
-                      <div className="px-4 py-5 text-white light:text-black sm:p-6">
+                      <div className="px-4 py-5 text-black dark:text-white sm:p-6">
                         <div className="grid grid-cols-6 gap-6">
                           <div className="col-span-6 sm:col-span-6">
                             <label htmlFor="name" className="block text-sm font-medium">
@@ -125,13 +125,13 @@ function ContactUs() {
                               autoComplete="off"
                               required
                               placeholder="Enter your Name here."
-                              className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                              className="mt-1 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md"
                               onChange={handleChange}
                             />
                           </div>
 
                           <div className="col-span-6">
-                            <label htmlFor="email" className="block text-sm font-medium text-white light:text-black">
+                            <label htmlFor="email" className="block text-sm font-medium text-black dark:text-white">
                               Email address
                             </label>
                             <input
@@ -141,7 +141,7 @@ function ContactUs() {
                               autoComplete="off"
                               required
                               placeholder="Enter your Email here."
-                              className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md peer ..."
+                              className="mt-1 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md peer ..."
                               onChange={handleChange}
                             />
                             <p class="invisible peer-invalid:visible text-pink-600 text-sm">
@@ -150,7 +150,7 @@ function ContactUs() {
                           </div>
 
                           <div className="col-span-6">
-                            <label htmlFor="phone" className="block text-sm font-medium text-white light:text-black">
+                            <label htmlFor="phone" className="block text-sm font-medium text-black dark:text-white">
                               Phone
                             </label>
                             <input
@@ -160,13 +160,13 @@ function ContactUs() {
                               autoComplete="off"
                               required
                               placeholder="Enter Phone Number here."
-                              className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                              className="mt-1 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md"
                               onChange={handleChange}
                             />
                           </div>
 
                           <div className="col-span-6">
-                            <label htmlFor="subject" className="block text-sm font-medium text-white light:text-black">
+                            <label htmlFor="subject" className="block text-sm font-medium text-black dark:text-white">
                               Subject
                             </label>
                             <input
@@ -176,17 +176,17 @@ function ContactUs() {
                               autoComplete="on"
                               required
                               placeholder="Enter your Subject here."
-                              className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                              className="mt-1 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md"
                               onChange={handleChange}
                             />
                           </div>
 
                           <div className="col-span-6">
-                            <label htmlFor="text" className="block text-sm font-medium text-white light:text-black">
+                            <label htmlFor="text" className="block text-sm font-medium text-black dark:text-white">
                               Message
                             </label>
                             <textarea
-                              className="mt-1 bg-gray-700 light:bg-gray-300 text-gray-200 light:text-gray-800 focus:ring-gray-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-gray-800 rounded-md"
+                              className="mt-1 bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 focus:ring-slate-500 focus:border-fuchsia-500 block w-full shadow-sm sm:text-sm border-slate-800 rounded-md"
                               rows={5}
                               name="text"
                               required
@@ -196,7 +196,7 @@ function ContactUs() {
                           </div>
                         </div>
                       </div>
-                      <div className="px-4 py-3 text-right sm:px-6 bg-gray-800 light:bg-gray-200">
+                      <div className="px-4 py-3 text-right sm:px-6 bg-slate-300 dark:bg-slate-900">
                         {success && <p className="text-rose-500">Will get back to you A.S.A.P!</p>}
                         {error && <p className="text-rose-500">Sorry, we could not reach our servers.</p>}
                         <button

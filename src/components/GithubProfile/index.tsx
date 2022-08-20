@@ -37,7 +37,7 @@ function GithubProfile() {
             <a className="text-rose-400 hover:text-rose-500" href={user.blog_url} target="_blank" rel="noreferrer">
               {user.blog_url}
             </a>
-            <p className="flex justify-center max-w-md m-auto text-slate-800 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200 my-2 mb-6">
+            <p className="flex justify-center max-w-md m-auto text-slate-900 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200 my-2 mb-6">
               {user.bio}
             </p>
             <div className="flex justify-center max-w-xs m-auto">
@@ -63,7 +63,7 @@ function GithubProfile() {
                   <span>{user.twitterUsername}</span>
                 </a>
                 <a
-                  className="flex items-center text-slate-800 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200"
+                  className="flex items-center text-slate-900 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200"
                   href={user.githubUrl}
                   target="_blank"
                   rel="noreferrer me"

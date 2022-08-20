@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 
 import Tags from '@/components/Tags'
 import List from '@/components/List'
+import ListItem from '@/components/List'
 import GetPosts from '@/utils/getposts'
 import WavyHr from '@/components/WavyHr'
 
@@ -52,7 +53,7 @@ export default function LatestArticles() {
             </div>
             <WavyHr className="mb-4" />
             <h2 className="mb-4 mt-4">Featured Articles by Topics</h2>
-            <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 xl:grid-cols-3 lg:gap-x-6 lg:mt-0 mb-4 rounded-lg bg-slate-300 dark:bg-slate-800 text-slate-800 dark:text-slate-300">
+            <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 xl:grid-cols-3 lg:gap-x-6 lg:mt-0 mb-4 rounded-lg bg-slate-300 dark:bg-slate-800 text-slate-900 dark:text-slate-300">
               <List variant="unordered">
                 <div className="ml-12 mb-6 mt-4 text-lg transition duration-300 underline underline-offset-4 decoration-wavy decoration-fuchsia-600">
                   God and Creation

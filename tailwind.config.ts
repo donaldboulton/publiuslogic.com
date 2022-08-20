@@ -14,7 +14,6 @@ module.exports = {
   theme: {
     screens: {
       sm: '640px',
-      'demo-sm': '720px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
@@ -94,26 +93,5 @@ module.exports = {
       },
     },
   },
-  variants: {
-    animation: ['motion-safe'],
-    extend: {
-      textOpacity: ['dark'],
-    },
-    backgroundColor: ['light'],
-    textColor: ['light'],
-  },
-  plugins: [
-    plugin(function ({ addVariant, e }) {
-      const lightSelector = '.light'
-      addVariant('light', ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }) => {
-          return `${lightSelector} .${e(`light${separator}${className}`)}`
-        })
-      })
-    }),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/aspect-ratio'),
-  ],
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms'), require('@tailwindcss/line-clamp')],
 }
