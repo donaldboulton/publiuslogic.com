@@ -6,7 +6,7 @@ const Title = props => {
     <div
       className={className}
       style={{
-        backgroundColor: '#374151',
+        backgroundColor: '#0f172a',
         color: 'white',
         paddingLeft: '20px',
         paddingTop: '8px',

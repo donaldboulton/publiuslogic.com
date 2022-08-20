@@ -40,6 +40,7 @@ const ogimage = {
   width: 1400,
   height: 531,
 }
+
 export default function Home() {
   const container = {
     enter: {
