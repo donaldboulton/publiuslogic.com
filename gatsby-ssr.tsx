@@ -1,12 +1,11 @@
-import * as React from "react"
-import type { GatsbySSR } from "gatsby"
+import * as React from 'react'
+import type { GatsbySSR } from 'gatsby'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
 import { Partytown } from '@builder.io/partytown/react'
 
-export const wrapPageElement: GatsbySSR["wrapPageElement"] = ({ element }) => {
-  return ( <AnimatePresence wait>{element}</AnimatePresence>
-  )
+export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({ element }) => {
+  return <AnimatePresence wait>{element}</AnimatePresence>
 }
 
 export const wrapRootElement = wrap
