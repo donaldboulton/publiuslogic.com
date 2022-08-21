@@ -151,7 +151,7 @@ const Table = () => {
                     <td className="py-4 px-6 text-slate-200">Creation</td>
                     <td className="py-4 px-6 text-slate-200">God</td>
                   </tr>
-                  <tr className="bg-slate-900 border-b dark:border-slate-700 bg-slate-400 border-slate-700">
+                  <tr className="dark:bg-slate-900 border-b dark:border-slate-800 bg-slate-400 border-slate-400">
                     <th
                       scope="row"
                       className="py-4 px-6 font-medium dark:text-slate-100 whitespace-nowrap text-slate-900"

@@ -1,7 +1,8 @@
 import * as React from 'react'
+import { ReactNode } from 'react'
 
 interface WrapperProps {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 const Wrapper = ({ children }: WrapperProps) => {

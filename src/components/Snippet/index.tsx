@@ -1,7 +1,8 @@
 import * as React from 'react'
+import { ReactNode } from 'react'
 
 interface SnippetProps {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 const Snippet: React.FC<SnippetProps> = props => {

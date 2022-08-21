@@ -1,12 +1,12 @@
 import * as React from 'react'
-import { Fragment, useRef, useState } from 'react'
+import { ReactNode, Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationIcon } from '@heroicons/react/outline'
 
 export interface ModalProps {
   dialogContent: JSX.Element
   dialogTitle: string
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export const Modal: ReactFC<ModalProps> = props => {

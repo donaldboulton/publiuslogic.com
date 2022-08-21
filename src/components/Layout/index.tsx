@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { ReactNode } from 'react'
 import { Link } from 'gatsby'
 import { CookieConsent } from 'react-cookie-consent'
 import { MDXProvider } from '@mdx-js/react'
@@ -23,7 +24,7 @@ import Accordion from '@/components/Accordion'
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 interface LayoutProps {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 const shortcodes = {

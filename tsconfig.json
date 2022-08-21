@@ -17,10 +17,6 @@
     "noEmit": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "baseUrl": "./src",
-    "paths": {
-      "@/*": ["./*"]
-    },
     "plugins": [
       {
         "name": "ts-graphql-plugin",

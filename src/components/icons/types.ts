@@ -1,3 +1,5 @@
+import * as React from 'react'
+import { ReactNode } from 'react'
 import { ForwardRefComponent, HTMLMotionProps } from 'framer-motion'
 
 export type MainButtonVariant = 'primary' | 'light'
@@ -11,13 +13,13 @@ interface BaseButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 interface MainButtonProps extends BaseButtonProps {
   variant: MainButtonVariant
   icon?: never
-  startIcon?: React.ReactNode
-  endIcon?: React.ReactNode
+  startIcon?: ReactNode
+  endIcon?: ReactNode
 }
 
 interface IconButtonProps extends BaseButtonProps {
   variant: IconButtonVariant
-  icon: React.ReactNode | HTMLOrSVGElement
+  icon: ReactNode | HTMLOrSVGElement
   startIcon?: never
   endIcon?: never
 }

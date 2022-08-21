@@ -1,10 +1,14 @@
-import * as React from 'react'
+import * as React from "react"
+import type { GatsbyBrowser } from "gatsby"
 import './src/styles/global.css'
 import { wrapRootElement as wrap } from './wrap-root-element'
 import { AnimatePresence } from 'framer-motion'
 
-export function wrapPageElement({ element }) {
-  return <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+export const wrapPageElement: GatsbyBrowser["wrapPageElement"] = ({
+  element,
+}) => {
+  return ( <AnimatePresence wait>{element}</AnimatePresence>
+  )
 }
 
 export const wrapRootElement = wrap

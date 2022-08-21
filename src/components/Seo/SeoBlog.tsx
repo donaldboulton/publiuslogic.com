@@ -1,7 +1,8 @@
 import * as React from 'react'
+import { ReactNode } from 'react'
 
 type SeoBlogProps = {
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 const SeoBlog: React.FC<React.PropsWithChildren<SEOBlogProps>> = ({ children }) => {

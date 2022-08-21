@@ -1,3 +1,4 @@
+import type { GatsbyConfig } from "gatsby"
 /* eslint @typescript-eslint/no-var-requires: "off" */
 const siteAcronyms = require('./gatsby-site-acronyms')
 const queries = require('./src/utils/algolia-queries')
@@ -8,7 +9,7 @@ const fullConfig = resolveConfig(tailwindConfig)
 
 require('dotenv').config()
 
-module.exports = {
+const config: GatsbyConfig = {
   siteMetadata: {
     title: 'PubliusLogic',
     twitterUsername: '@donboulton',
@@ -34,6 +35,7 @@ module.exports = {
       github: 'https://github.com/donaldboulton/',
     },
   },
+  graphqlTypegen: true,
   plugins: [
     {
       resolve: 'gatsby-plugin-react-leaflet',
@@ -238,3 +240,5 @@ module.exports = {
     },
   ],
 }
+
+export default config

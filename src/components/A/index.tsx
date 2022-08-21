@@ -1,14 +1,14 @@
 import * as React from 'react'
+import { ReactNode } from 'react'
 import { Link } from 'gatsby'
 
 interface AProps {
   href: string
   external?: boolean
   className?: string
-  children: React.ReactNode
+  children: ReactNode
 }
-
-const A = ({ href, external = false, className, children }: AProps) => {
+export default function A({ href, external = false, className, children }: AProps) {
   if (external) {
     return (
       <a
@@ -36,4 +36,3 @@ const A = ({ href, external = false, className, children }: AProps) => {
     )
   }
 }
-export default A

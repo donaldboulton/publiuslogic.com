@@ -1,11 +1,7 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+import type { GatsbyNode } from 'gatsby'
 
-// const fs = require(`fs`)
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const path = require('path')
 const _ = require('lodash')
 
@@ -28,14 +24,15 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
 
-  createTypes(`
+  const typeDefs = `
     type Mdx implements Node {
       frontmatter: MdxFrontmatter!
     }
     type MdxFrontmatter {
       image: File @fileByRelativePath
     }
-  `)
+  `
+  createTypes(typeDefs)
 }
 
 const tagTemplate = path.resolve('src/templates/tag-template.tsx')

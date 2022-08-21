@@ -1,9 +1,10 @@
 import * as React from 'react'
+import { ReactNode, ElementType } from 'react'
 import * as CSS from 'csstype'
 
-interface Props {
-  as: React.ElementType
-  children?: React.ReactNode
+interface HiddenProps {
+  as: ElementType
+  children?: ReactNode
   id?: string
 }
 
@@ -20,7 +21,7 @@ const visuallyHiddenClass: CSS.Properties = {
   whiteSpace: 'nowrap !important',
 }
 
-const VisuallyHidden = ({ as: Component, ...props }: Props) => (
+const VisuallyHidden = ({ as: Component, ...props }: HiddenProps) => (
   <Component {...props} style={visuallyHiddenClass}>
     {props.children}
   </Component>
