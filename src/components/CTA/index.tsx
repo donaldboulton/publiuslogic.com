@@ -5,8 +5,8 @@ export default function CTA() {
     <div>
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-4 lg:py-6 lg:px-6 lg:flex lg:items-center lg:justify-between">
         <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-          <span className="block text-slate-900 dark:text-slate-300">Ready to give it a try?</span>
-          <span className="block text-slate-900 dark:text-slate-300">Use the starter on Github today.</span>
+          <span className="block text-slate-900 dark:text-slate-200">Ready to give it a try?</span>
+          <span className="block text-slate-900 dark:text-slate-200">Use the starter on Github today.</span>
         </h2>
         <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
           <div className="inline-flex rounded-md shadow">

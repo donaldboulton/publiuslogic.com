@@ -152,12 +152,12 @@ function HeaderPopover() {
                           to={item.href}
                           className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-purple-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-50"
                         >
-                          <div className="flex items-center p-2 rounded-md bg-purple-800 hover:bg-purple-900 justify-center flex-shrink-0 w-10 h-10 text-slate-300 hover:text-rose-600 sm:h-12 sm:w-12">
+                          <div className="flex items-center p-2 rounded-md bg-purple-800 hover:bg-purple-900 justify-center flex-shrink-0 w-10 h-10 text-slate-200 hover:text-rose-600 sm:h-12 sm:w-12">
                             <item.icon aria-hidden="true" />
                           </div>
                           <div className="ml-4">
                             <p className="text-sm font-medium text-rose-500 hover:text-rose-600">{item.name}</p>
-                            <p className="text-sm text-slate-300">{item.description}</p>
+                            <p className="text-sm text-slate-200">{item.description}</p>
                           </div>
                         </Link>
                       ))}

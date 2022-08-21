@@ -367,7 +367,7 @@ export default function Home() {
                       <span>donboulton</span>
                     </a>
                     <a
-                      className="flex items-center text-slate-900 hover:text-slate-900 dark:text-slate-200 dark:hover:text-slate-300"
+                      className="flex items-center text-slate-900 hover:text-slate-900 dark:text-slate-200 dark:hover:text-slate-200"
                       href="https://www.github.com/donaldboulton"
                       target="_blank"
                       rel="noreferrer"
@@ -406,14 +406,14 @@ export default function Home() {
                 y="0"
               >
                 <polygon
-                  className="text-slate-300 dark:text-slate-900 fill-current"
+                  className="text-slate-200 dark:text-slate-900 fill-current"
                   points="2560 0 2560 100 0 100"
                 ></polygon>
               </svg>
             </div>
 
             <div className="container mx-auto px-4">
-              <div className="items-center flex flex-wrap bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-300">
+              <div className="items-center flex flex-wrap bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200">
                 <div className="flex flex-wrap items-center mt-8">
                   <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mb-6">
                     <h3 className="text-3xl text-black dark:text-white mb-2 font-semibold leading-normal">
@@ -515,7 +515,7 @@ export default function Home() {
                     y="0"
                   >
                     <polygon
-                      className="text-slate-300 dark:text-slate-700 fill-current"
+                      className="text-slate-200 dark:text-slate-700 fill-current"
                       points="2560 0 2560 100 0 100"
                     ></polygon>
                   </svg>

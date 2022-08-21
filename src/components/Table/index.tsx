@@ -63,19 +63,19 @@ const Table = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <div className="overflow-x-auto nav-scroll relative shadow-md opacity-75">
-              <table className="w-full rounded-t-lg sm:rounded-md text-md text-left text-slate-900 dark:text-slate-300">
-                <thead className="text-md uppercase rounded-t-lg bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-300">
+              <table className="w-full rounded-t-lg sm:rounded-md text-md text-left text-slate-900 dark:text-slate-200">
+                <thead className="text-md uppercase rounded-t-lg bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-200">
                   <tr>
-                    <th scope="col" className="py-3 px-6 text-slate-900 dark:text-slate-300 ml-2">
+                    <th scope="col" className="py-3 px-6 text-slate-900 dark:text-slate-200 ml-2">
                       Article Name
                     </th>
-                    <th scope="col" className="py-3 px-6 text-slate-900 dark:text-slate-300">
+                    <th scope="col" className="py-3 px-6 text-slate-900 dark:text-slate-200">
                       Dated
                     </th>
-                    <th scope="col" className="py-3 px-6 text-slate-900 dark:text-slate-300">
+                    <th scope="col" className="py-3 px-6 text-slate-900 dark:text-slate-200">
                       Category
                     </th>
-                    <th scope="col" className="py-3 px-6 text-slate-900 dark:text-slate-300">
+                    <th scope="col" className="py-3 px-6 text-slate-900 dark:text-slate-200">
                       Tags
                     </th>
                   </tr>
@@ -84,13 +84,13 @@ const Table = () => {
                   <tr className="bg-slate-900 border-b border-slate-500 dark:bg-slate-900 border-slate-700">
                     <th
                       scope="row"
-                      className="py-4 px-6 font-medium whitespace-nowrap text-slate-900 dark:text-slate-300"
+                      className="py-4 px-6 font-medium whitespace-nowrap text-slate-900 dark:text-slate-200"
                     >
                       <Link
                         to="/blog/playtime"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-300 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
                       >
                         Playtime
                       </Link>
@@ -108,7 +108,7 @@ const Table = () => {
                         to="/blog/creation-of-all"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-300 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
                       >
                         Creation Of All
                       </Link>
@@ -125,7 +125,7 @@ const Table = () => {
                       <Link
                         to="/blog/trinity-of-angels"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-300 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
                       >
                         Trinity of Angels
                       </Link>
@@ -142,7 +142,7 @@ const Table = () => {
                       <Link
                         to="/blog/works-of-flesh"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-300 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
                       >
                         Works Of Flesh
                       </Link>
@@ -159,7 +159,7 @@ const Table = () => {
                       <Link
                         to="/blog/virtue"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-300 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
                       >
                         Virtue
                       </Link>
@@ -176,7 +176,7 @@ const Table = () => {
                       <Link
                         to="/blog/immorality-abortion"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-300 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
                       >
                         Immorality Abortion
                       </Link>
@@ -193,7 +193,7 @@ const Table = () => {
                       <Link
                         to="/blog/trinity-of-man"
                         rel="noopener noreferrer"
-                        className="font-medium text-slate-300 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
+                        className="font-medium text-slate-200 hover:text-slate-100 hover:shadow-slate-200/50 underline underline-offset-8"
                       >
                         Trinity of Man
                       </Link>

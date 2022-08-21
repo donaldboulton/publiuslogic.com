@@ -129,7 +129,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
             pageRangeDisplayed={3}
             onPageChange={handlePageClick}
             containerClassName="relative z-0 inline-flex shadow-sm -space-x-px border-gray-300 dark:border-gray-900"
-            activeLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-900 text-slate-900 dark:text-slate-300 text-sm font-medium hover:bg-fuchsia-700 bg-fuchsia-500"
+            activeLinkClassName="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-900 text-slate-900 dark:text-slate-200 text-sm font-medium hover:bg-fuchsia-700 bg-fuchsia-500"
           />
         ) : (
           ''
