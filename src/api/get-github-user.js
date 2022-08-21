@@ -1,5 +1,3 @@
-// src/api/get-github-user.js
-
 import { Octokit } from '@octokit/rest'
 
 const octokit = new Octokit({

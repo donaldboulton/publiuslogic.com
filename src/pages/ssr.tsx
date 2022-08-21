@@ -233,7 +233,6 @@ export async function getServerData() {
 
   return {
     props: {
-      // data has the shape of "message", "status" where message is the image src
       image: data.message,
     },
   }

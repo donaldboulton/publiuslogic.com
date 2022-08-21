@@ -1,5 +1,3 @@
-// https://raw.githubusercontent.com/gatsbyjs/gatsby/master/www/src/hooks/use-active-hash.js
-// returns the id of the header in view now by using IntersectionObserver
 import { useEffect, useState } from 'react'
 
 export const useActiveId = (itemIds: string[], rootMargin = undefined): string => {

@@ -38,10 +38,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 const tagTemplate = path.resolve('src/templates/tag-template.tsx')
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  // Destructure the createPage function from the actions object
   const { createPage } = actions
-  // Use the graphql group command to get a list of each tag and category
-  // fieldValue is the tag/category name
   const { data, errors } = await graphql(`
     query {
       categories: allMdx {
@@ -59,8 +56,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
-
-  // Same for tags
   const tags = data.tags.group
   tags.forEach(({ fieldValue }) =>
     createPage({

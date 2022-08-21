@@ -125,7 +125,6 @@ const Tags = () => {
                     className="relative w-full h-24 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
                     style={{
                       backgroundColor: '#dfdbe5',
-                      // backgroundImage: `url(${OGImage})`,
                       backgroundImage: patterns[i % patterns.length],
                     }}
                   >

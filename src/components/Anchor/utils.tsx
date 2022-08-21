@@ -21,7 +21,6 @@ export const getIconString = (href?: string, arrow?: ArrowPosition): string | nu
     case href && href.includes('github.com'):
       return Github
     default:
-      // Improve: Add default link icon here
       return null
   }
 }

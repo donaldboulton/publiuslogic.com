@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-// eslint-disable-next-line @typescript-eslint/no-unused-varsconst plugin = require('tailwindcss/plugin')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {

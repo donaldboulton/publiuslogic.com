@@ -3,14 +3,11 @@ import { useState } from 'react'
 import { Link } from 'gatsby'
 import ReactPaginate from 'react-paginate'
 import { LazyMotion, m } from 'framer-motion'
-
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
-
-// import { GatsbyImage, getImage, ImageDataLike } from 'gatsby-plugin-image'
 import { CalendarIcon, UserCircleIcon } from '@heroicons/react/outline'
 import GetPosts from '@/utils/getposts'
-
 import Tags from '@/components/Tags'
+
+const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 interface BlogRollProps {
   tag?: string

@@ -5,8 +5,6 @@
     "target": "esnext",
     "module": "esnext",
     "lib": ["dom", "esnext"],
-    // "allowJs": true,
-    // "checkJs": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "jsx": "react",
@@ -20,8 +18,8 @@
     "plugins": [
       {
         "name": "ts-graphql-plugin",
-        "schema": "schema.graphql" /* Path to your GraphQL schema */,
-        "tag": "gql" /* Template tag function name */
+        "schema": "schema.graphql",
+        "tag": "gql"
       }
     ]
   }

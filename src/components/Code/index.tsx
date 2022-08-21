@@ -103,34 +103,29 @@ const highlightLine = (lineArray, lineProps) => {
   lineArray.forEach((line, i) => {
     const content = line.content
 
-    // Highlight lines with "// highlight-line"
     if (content.replace(/\s/g, '').includes('//highlight-line')) {
       lineProps.className = `${lineProps.className} ${highlightClassName}`
       line.content = content.replace('// highlight-line', '').replace('//highlight-line', '')
     }
-    // https://www.lekoarts.de/garden/adding-line-numbers-and-code-highlighting-to-mdx
-    // https://www.christopherbiscardi.com/post/codeblocks-mdx-and-mdx-utils
-    // Stop highlighting
+
     if (!!highlightStart && content.replace(/\s/g, '') === '//highlight-end') {
       highlightStart = false
       shouldExclude = true
     }
 
-    // Start highlighting after "//highlight-start"
     if (content.replace(/\s/g, '') === '//highlight-start') {
       highlightStart = true
       shouldExclude = true
     }
   })
 
-  // Highlight lines between //highlight-start & //highlight-end
   if (!!highlightStart) {
     lineProps.className = `${lineProps.className} ${highlightClassName}`
   }
 
   return shouldExclude
 }
-// https://prince.dev/highlight-with-react
+
 const calculateLinesToHighlight = meta => {
   const RE = /{([\d,-]+)}/
   if (RE.test(meta)) {
@@ -145,7 +140,6 @@ const calculateLinesToHighlight = meta => {
 export const Code = ({ codeString, className, metastring, ...props }) => {
   const ref = useRef()
   const [isClicked, setIsClicked] = useState(false)
-  // https://blog.maximeheckel.com/posts/guide-animations-spark-joy-framer-motion/'
   const duration = 0.4
   const svgVariants = {
     hover: (isClicked: boolean) => ({
@@ -209,7 +203,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
       setTimeout(() => setIsClicked(false), 3000)
     }
   }, [isClicked])
-  // buttonRef to separate code open and copy buttons from same onClick function
+
   const buttonRef = useRef(null)
 
   const handleClick = event => {
@@ -220,7 +214,7 @@ export const Code = ({ codeString, className, metastring, ...props }) => {
   const handleCopy = event => {
     buttonRef.current.disabled = false
   }
-  // https://www.christopherbiscardi.com/post/using-mdx-scope-in-react-live-scope
+
   const components = useMDXScope()
   if (props['react-live']) {
     return (

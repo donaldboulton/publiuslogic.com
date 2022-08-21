@@ -14,7 +14,6 @@ const listStyle: CSS.Properties = {
     variant: {
       unordered: {
         li: {
-          // We use List.Item to render the proper style
           listStyle: 'none',
         },
       },

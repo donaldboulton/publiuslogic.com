@@ -51,7 +51,6 @@ export default function Home() {
     },
   }
   const [replay, setReplay] = useState(true)
-  // Placeholder text data, as if from API
   const placeholderText = [
     { type: 'heading1', text: 'PubliusLogic' },
     {
@@ -195,7 +194,6 @@ export default function Home() {
               <m.div
                 className="p-4 absolute top-16 left-3 z-20"
                 initial="hidden"
-                // animate="visible"
                 animate={replay ? 'visible' : 'hidden'}
                 variants={headingContainer}
               >

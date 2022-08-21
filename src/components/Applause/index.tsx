@@ -32,7 +32,7 @@ const HEADERS = {
 
 const getClaps = async url => {
   const query = url ? `?url=${url}` : ''
-  // eslint-disable-next-line no-return-await
+  /* eslint-disable-next-line no-return-await */
   return await axios.get(`${API}/get-claps${query}`, {
     headers: HEADERS,
   })
@@ -41,7 +41,7 @@ const getClaps = async url => {
 const updateClaps = async (url, claps = 1) => {
   console.log(claps)
   const query = url ? `?url=${url}` : ''
-  // eslint-disable-next-line no-return-await
+  /* eslint-disable-next-line no-return-await */
   return await axios.post(`${API}/update-claps${query}`, JSON.stringify(`${claps},${VERSION}`), {
     headers: HEADERS,
   })

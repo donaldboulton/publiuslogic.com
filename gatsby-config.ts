@@ -40,7 +40,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-react-leaflet',
       options: {
-        linkStyles: false, // (default: true) Enable/disable loading stylesheets via CDN
+        linkStyles: false,
       },
     },
     {
@@ -115,13 +115,13 @@ const config: GatsbyConfig = {
             resolve: 'gatsby-remark-embed-video-ext',
             options: {
               width: 800,
-              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
-              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
-              noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
-              loadingStrategy: 'lazy', //Optional: Enable support for lazy-load offscreen iframes. Default is disabled.
-              containerClass: 'embedVideo-container', //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
+              ratio: 1.77,
+              related: false,
+              noIframeBorder: true,
+              loadingStrategy: 'lazy',
+              containerClass: 'embedVideo-container',
               sandboxOpts: 'allow-same-origin allow-scripts allow-popups allow-presentation',
-              iframeId: false, //Optional: if true, iframe's id will be set to what is provided after 'youtube:' (YouTube IFrame player API requires iframe id)
+              iframeId: false,
             },
           },
           {
@@ -201,7 +201,7 @@ const config: GatsbyConfig = {
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
         queries,
-        chunkSize: 10000, // default: 1000
+        chunkSize: 10000,
         skipIndexing: false,
       },
     },
@@ -222,20 +222,18 @@ const config: GatsbyConfig = {
       },
     },
     {
-      // Needs to be last
       resolve: 'gatsby-plugin-netlify',
       options: {
         headers: {
-          '/*': [
-            // Opt-out of Google's FLoC
+          '/*': [            
             'Permissions-Policy: interest-cohort=()',
           ],
-        }, // option to add more headers. `Link` headers are transformed by the below criteria
-        allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
-        mergeSecurityHeaders: true, // boolean to turn off the default security headers
-        mergeCachingHeaders: true, // boolean to turn off the default caching headers
-        transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
-        generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
+        }, 
+        allPageHeaders: [],
+        mergeSecurityHeaders: true,
+        mergeCachingHeaders: true,
+        transformHeaders: (headers, path) => headers,
+        generateMatchPathRewrites: true,
       },
     },
   ],
