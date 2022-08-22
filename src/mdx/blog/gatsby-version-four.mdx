@@ -13,15 +13,27 @@ videoTitle: Angelina Jordan Suspicious Minds
 imageLink: https://publiuslogic.com/assets/gatsby-starter-rendering-modes-thumbnail-wide.jpg
 ---
 
-![Gatsby Version 4.20.0 React Version 18.2.0](../../../static/assets/gatsby-starter-rendering-modes-thumbnail-wide.jpg)
+![Gatsby Version 4.21.0 React Version 18.2.0](../../../static/assets/gatsby-starter-rendering-modes-thumbnail-wide.jpg)
 
 ## Gatsby Coolness
 
-### Differed Static Generation
+## Static Site Generation
 
-> The performance of static sites without all of those long build times
+![SSG](../../../static/img/ssg-diagram.jpg 'Static Site Generation')
 
-![DSG](../../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg 'Statically Generated Websites')
+> One downside of SSG is longer build times. 
+
+As the number of pages of your site grows, so does the build time. 
+
+Gatsby supports incremental builds to make sure the 2nd and subsequent builds only rebuild the parts of your site that changed, but for the initial build (the build without the cache), build times may become an issue. 
+
+## Differed Static Generation
+
+That’s where Deferred Static Generation could be beneficial.
+
+> The performance of static sites without all of those long build times.
+
+![DSG](../../../static/assets/DSG_for_blog_article_and_G4_overview_page.jpg 'Deferred Static Generation')
 
 ### Dsg Example
 
@@ -31,7 +43,7 @@ The benefits of statically generated websites - performance, security, reliabili
 
 ## Server Side Rendering
 
-> Request and render data at run-time with Gatsby
+> Request and render data at run-time with Gatsby.
 
 ![SSR](../../../static/assets/SSR_for_blog_article_and_G4_overview_page.jpg 'Render Data At Run-time')
 
