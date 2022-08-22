@@ -225,10 +225,8 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-netlify',
       options: {
         headers: {
-          '/*': [            
-            'Permissions-Policy: interest-cohort=()',
-          ],
-        }, 
+          '/*': ['Permissions-Policy: interest-cohort=()'],
+        },
         allPageHeaders: [],
         mergeSecurityHeaders: true,
         mergeCachingHeaders: true,

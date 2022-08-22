@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { ReactNode } from 'react'
+import { FC, ReactBode } from 'react'
 
 interface SnippetProps {
   children: ReactNode
 }
 
-const Snippet: React.FC<SnippetProps> = props => {
+const Snippet: FC<SnippetProps> = props => {
   const { children } = props
 
   return (

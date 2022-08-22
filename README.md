@@ -26,35 +26,38 @@ Upgrade as of Aug 4th, 2022 to Gatsby 4.21.0 React Version 18.2.0
   <br />
 </p>
 
-- 🚋Serverless Functions
-- 🔏Authentication (with Netlify Identity)
-- 🔐Authenticated Serverless Functions
-- 😻External Provider login with GitHub, Bitbucket, Google, etc.
-- 🏠Protected Routes
-- 👋🏼Dynamic Clientside Pages in Gatsby (enabling all the above)
-- 🕵🏼‍♂️Hide API Secrets from being exposed to Frontend
+- 🚋 Serverless Functions
+- 🔏 Authentication (with Octokit Github Identity)
+- 🔐 Authenticated Serverless Functions
+- 😻 External Provider login with GitHub, Bitbucket, Google, etc.
+- 🏠 Protected Routes
+- 👋🏼 Dynamic Client side Pages in Gatsby (enabling all the above)
+- 🕵🏼‍♂️ Hide API Secrets from being exposed to Frontend
 
 This is starter template for a full featured marketing and blog website based on the following:
 
 - [Gatsby Starter Default](https://github.com/gatsbyjs/gatsby-starter-default)
 - [How To Set Up a Gatsby Project with TypeScript](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-gatsby-project-with-typescript)
-- [Gatsby](https://gatsbyjs.org)
+- [Gatsby v4.21.0](https://gatsbyjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
 - [TailwindCSS](https://tailwindcss.com) and [TailwindUI](https://tailwindui.com)
 - [HeroIcons](https://heroicons.com/)
 - [Hero Patterns](https://heropatterns.com/)
 - [HeadlessUI](https://headlessui.dev/)
 - [unDraw](https://undraw.co/) for illustrations
-- [MDX](https://mdxjs.com/) and [Markdown](https://www.markdownguide.org/)
-- [ESLint](https://eslint.org)for type-checking
-- [SendGrid](https://sendgrid.com/) email delivery
+- [MDX v2](https://mdxjs.com/) and [Markdown](https://www.markdownguide.org/)
+- [ESLint](https://eslint.org) for type-checking
+- [Framer Motion]() Page Animations
+- [React TsParticles](https://www.npmjs.com/package/react-tsparticles/) Background Animations
+- [React Leaflet](https://react-leaflet.js.org/) Contact Page Map
 - [Schema.org](https://schema.org/) and [JSON for Linking Data](https://json-ld.org/)
 - [Open Graph](https://ogp.me/) used by [Facebook](https://developers.facebook.com/docs/sharing/webmasters/#markup)
 - [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards)
 
 ## Features
 
-- Full-featured blog with frontmatter (title, description, author, date, image, tags)
+> ✔️ Complete Website Suite - Pages = Home, Blog, About, Privacy, Sitemap and Contact
+
 - Tags index page and individual tag pages
 - Pagination in posts and tag pages
 - Support for RSS feed, sitemap and robots.txt
@@ -62,7 +65,7 @@ This is starter template for a full featured marketing and blog website based on
 - SVG design (unDraw, Hero Patterns, HeroIcons)
 - Support for code syntax highlighting
 - Manifest and offline support
-- Contact form using sendgrid email and Gatsby functions
+- Contact form using Netlify Forms and Gatsby functions
 - Full SEO support (via Gatsby v4.21.0 Head )
 - Open Graph, Twitter Cards and Schema.org via JSON-LD
 - Tailwind Css v3.1.8, for super styling
@@ -82,7 +85,7 @@ This is starter template for a full featured marketing and blog website based on
 
 ### Framer Motion Animations
 
-Using Framer Motion for component and page animations an for menu animations.
+Using Framer Motion for all site component's and page transitions including animations and for menu.
 
 ## Just Having Fun
 
@@ -98,63 +101,25 @@ Since the whole site is just a bunch of static files copied onto multiple CDN no
 
 Feel free to reuse any part of this repo to create your own Gatsby site.
 
-A [Gatsby v4](https://www.gatsbyjs.org/) 🗸 and [Netlify CMS](https://www.netlifycms.org) 🗸 powered generic business website starter based on [gatsby-starter-netlify-cms](https://github.com/AustinGreen/gatsby-starter-netlify-cms) 🗸
+A [Gatsby v4.21.0](https://www.gatsbyjs.org/) 🗸 🗸
 
 ### Server-less
 
 🔥 No run time dependency or vulnerable server stack required Pre-built pages served over a CDN for fastest time to first byte Fast and cheap CDN scaling results in ultra-high availability worldwide Server-side processes abstracted into microservice APIs for reduced attack surface areas Modern Continuous Deployment (CD) Git workflows with instant rollbacks Headless CMS for complete separation from your app/site and with full version control Modern authentication methods such as OAuth 2 for ultimate security.
 
-## Authenticati
+## Authentication
 
-#### What is Netlify Identity
+#### What is Octokit Identity
 
-⁉️ Netlify’s Identity service is a plug-and-play microservice for handling site
-functionalities like signups, logins, password recovery, user metadata, and
+⁉️ Octokit Identity service is a plug-and-play microservice for handling site
+functionalities like sign / ups, logins, password recovery, user metadata, and
 roles. You can use it from single page apps instead of rolling your own, and
 integrate with any service that understands JSON Web Tokens (JWTs).
 
 Learn more about this service from this
-[Blog Post](https://www.netlify.com/blog/2017/09/07/introducing-built-in-identity-service-to-streamline-user-management/) 🗸
+[Octokit Rest](https://github.com/octokit/auth-app.js/) 🗸
 
 It follows the [JAMstack architecture](https://jamstack.org) 🗸 by using Git as a single source of truth, and [Netlify](https://www.netlify.com) 🗸 for continuous deployment, and CDN distribution.
-
-## Netlify CMS
-
-[Static + content management = ❤️](https://www.netlifycms.org/) 🗸
-
-🖥️ Netlify CMS is Always the latest Netlify CMS GitHub repo pull, with my custom Webpack hashed build, not the Gatsby plugin and netlify-cms node module way; which builds it into the frontend = slowing Gatsby way down; TEST it to see for yourself.
-
-My custom dark build of the Netlify Identity Widget is used on the Gatsby frontend and in my git-gateway back-end.
-
-Get the speed, security, and scalability of a static site, while still providing a convenient editing interface for content.
-
-An integrated part of your Git workflow
-Content is stored in your Git repository along side your code for easier versioning, multi-channel publishing, and the option to handle content updates directly in Git.
-
-### An extensible CMS built on React
-
-❤️ Netlify CMS is built as a single-page React app. Create custom-styled previews, UI widgets, and editor plugins or add backends to support different Git platform APIs.
-My Netlify CMS backend will build and add Pages, Posts, My layout components with Event data for Bulma GCal fullCalendar localized events, Notifications, Authors, Products, Site Updates and charts data using charts.js displaying build, sales and analytics charts data on individual pages and posts. All edited from a CMS Backend on a Static Website!
-
-## Features
-
-> ✔️ Complete Website Suite - Pages = Home, Blog, About, Privacy, Sitemap and Contact
-
-- Netlify CMS for Content Management
-- Netlify Identity for Authentication
-- FaunaDB for Authentication - Users Backend and Admin
-- SEO Friendly (Sitemap, Schemas, Meta Tags, GTM etc.)
-- All Twitter Widgets, Meta and SEO
-- Styled Components, screen mediaMatch mediaQuerys & Bulma for styling
-- React Spring for Animated Menus, Blogs Lists and Image Gallery's
-- Table Of Contents, on or off through frontmatter
-- Tags, Categories and a RSS Feed for Blog
-- Time to Read tags categories and published time meta
-- Comments with React withUtterances as GitHub Issues
-- Follow, Mention, Star and Fork GitHub buttons
-- Share Support
-- Elastic-Lunr Search
-- Pagination for Blog
 
 #### Demo
 

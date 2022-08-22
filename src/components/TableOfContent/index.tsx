@@ -6,7 +6,10 @@ import { usePopper } from 'react-popper'
 import { ViewListIcon } from '@heroicons/react/outline'
 import WavyHr from '@/components/WavyHr'
 
-// https://haseebmajid.dev/blog/toc-in-gatsby#toc
+{
+  /* https://haseebmajid.dev/blog/toc-in-gatsby#toc */
+}
+
 const headings = [
   {
     value: 'h2',
@@ -84,6 +87,7 @@ const virtualReference = {
     }
   },
 }
+
 const TableOfContent = ({ headings }: TableOfContentProps) => {
   const idList = getIds(headings)
   const activeId = useActiveId(idList)
@@ -122,7 +126,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
                 {...attributes.popper}
               >
                 <div className="rounded-lg shadow-lg ring-1 mt-2 ml-2 mr-2 bg-gray-800 ring-black ring-opacity-5 opacity-75">
-                  <div className="text-gray-200 text-xl text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
+                  <div className="text-slate-200 text-xl text-center underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
                     Table Of Contents
                   </div>
                   <WavyHr className="mt-1 mb-1" />
@@ -136,7 +140,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
                         return (
                           <li className="p-1 ml-1 mb-2 mt-2 mr-1 list-none" key={heading.value}>
                             <Link
-                              className="hover:text-gray-300 transition duration-300 underline underline-offset-8 decoration-wavy decoration-fuchsia-600"
+                              className="hover:text-slate-200 transition duration-300 underline underline-offset-8 decoration-wavy decoration-fuchsia-600"
                               rel="noopener noreferrer"
                               to={`#${heading.value.replace(/\s+/g, '-').toLowerCase()}`}
                             >

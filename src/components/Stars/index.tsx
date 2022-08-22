@@ -1,12 +1,11 @@
 import * as React from 'react'
+import { PureComponent } from 'react'
 import Particles from 'react-tsparticles'
 import type { Engine } from 'tsparticles'
 import { loadStarsPreset } from 'tsparticles-preset-stars'
 
-class ParticlesContainer extends React.PureComponent<IProps> {
-  // this customizes the component tsParticles installation
+class ParticlesContainer extends PureComponent<IProps> {
   async customInit(engine: Engine): Promise<void> {
-    // this adds the preset to tsParticles, you can safely use the
     await loadStarsPreset(engine)
   }
 
