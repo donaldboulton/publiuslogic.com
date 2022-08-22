@@ -2255,7 +2255,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@octokit/auth-oauth-app@^5.0.0":
+"@octokit/auth-oauth-app@^5.0.0", "@octokit/auth-oauth-app@^5.0.2":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@octokit/auth-oauth-app/-/auth-oauth-app-5.0.2.tgz#7a319e070b56da85bd9c8143934addcfe1f0b5c7"
   integrity sha512-6hHchPIw4fpB9J0tUT9cPpXG8aotp9xDvuUh8owyHWaXC7uHgnJmvDmEUb2X7qoU3KXqejB3nhm3u94q2p5EIg==

@@ -750,6 +750,11 @@ export function Head(props: HeadProps) {
             '@id': 'https://publiuslogic.com',
           },
           url: 'https://publiuslogic.com',
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: 'http://publiuslogic.com/search?&q={query}',
+            query: 'required',
+          },
         })}
       </script>
       <script type="application/ld+json">

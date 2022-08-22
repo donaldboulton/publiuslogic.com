@@ -6,6 +6,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 import {
   SearchIcon,
   MenuIcon,
+  LoginIcon,
   XIcon,
   UserGroupIcon,
   PhotographIcon,
@@ -125,15 +126,14 @@ export default function Navigation() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              target="_blank"
-                              to="https://publiuslogic-com.admin.datocms.com/"
+                              to="https://publiuslogic.com/api/oauth"
                               className={classNames(
-                                active ? 'bg-rose-500' : '',
+                                active ? 'bg-slate-700' : '',
                                 'block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
                               )}
                             >
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
-                                <CloudIcon className="block h-9 w-9 pr-2 text-red-500" aria-hidden="true" />
+                                <LoginIcon className="block h-9 w-9 pr-2 text-red-500" aria-hidden="true" />
                                 <span>Login</span>
                               </span>
                             </Link>
@@ -144,7 +144,7 @@ export default function Navigation() {
                             <Link
                               to="/profile"
                               className={classNames(
-                                active ? 'bg-rose-500' : '',
+                                active ? 'bg-slate-700' : '',
                                 'block px-3 py-2 mr-1 ml-1 rounded-md text-lg font-medium hover:bg-slate-600/30 hover:text-white'
                               )}
                             >
@@ -160,7 +160,7 @@ export default function Navigation() {
                             <Link
                               to="/gallery"
                               className={classNames(
-                                active ? 'bg-rose-500' : '',
+                                active ? 'bg-slate-700' : '',
                                 'block px-3 py-2 ml-0 mr-1 rounded-md text-lg font-medium hover:bg-slate-600/30 hover:text-white'
                               )}
                             >
@@ -177,7 +177,7 @@ export default function Navigation() {
                               target="_blank"
                               to="https://publiuslogic.com/sitemap.xml"
                               className={classNames(
-                                active ? 'bg-rose-500' : '',
+                                active ? 'bg-slate-700' : '',
                                 'block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
                               )}
                             >
@@ -193,7 +193,7 @@ export default function Navigation() {
                             <Link
                               to="/search"
                               className={classNames(
-                                active ? 'bg-rose-500' : '',
+                                active ? 'bg-slate-700' : '',
                                 'block px-3 py-2 ml-1 mr-1 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
                               )}
                             >

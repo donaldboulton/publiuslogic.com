@@ -3,6 +3,7 @@
   "private": true,
   "description": "To Publish Logic",
   "version": "1.0.0",
+  "main": "server.js",
   "author": "Donald Boulton <donaldboulton@gmail.com>",
   "bugs": {
     "url": "https://github.com/donaldboulton/publiuslogic.com/issues"
@@ -32,6 +33,7 @@
     "@heroicons/react": "^1.0.6",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@octokit/auth-oauth-app": "^5.0.2",
     "@octokit/oauth-app": "^4.0.6",
     "@octokit/rest": "^19.0.3",
     "@popperjs/core": "^2.11.5",
@@ -141,7 +143,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{ts,tsx,json,md,mdx}\"",
-    "start": "gatsby develop",
+    "start": "node server.js",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
