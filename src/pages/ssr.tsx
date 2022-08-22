@@ -1,6 +1,7 @@
 import * as React from 'react'
 import fetch from 'isomorphic-fetch'
 import { Link } from 'gatsby'
+import type { HeadProps } from 'gatsby'
 import Layout from '@/components/Layout'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -71,6 +72,16 @@ function SSR(props) {
 }
 
 export default SSR
+
+export async function getServerData() {
+  const data = await fetch('https://dog.ceo/api/breeds/image/random').then(res => res.json())
+
+  return {
+    props: {
+      image: data.message,
+    },
+  }
+}
 
 export function Head(props: HeadProps) {
   return (
@@ -226,14 +237,4 @@ export function Head(props: HeadProps) {
       </script>
     </>
   )
-}
-
-export async function getServerData() {
-  const data = await fetch('https://dog.ceo/api/breeds/image/random').then(res => res.json())
-
-  return {
-    props: {
-      image: data.message,
-    },
-  }
 }

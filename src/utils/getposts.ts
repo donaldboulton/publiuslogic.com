@@ -30,6 +30,7 @@ export type PostType = {
     date: string
     category: string
     tags: string[]
+    imageLink: string
   }
   slug: string
 }
