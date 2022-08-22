@@ -126,7 +126,7 @@ export default function Navigation() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              to="https://publiuslogic.com/api/oauth"
+                              to="/api/github/oauth/login"
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
                                 'block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
