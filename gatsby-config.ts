@@ -88,15 +88,17 @@ const config: GatsbyConfig = {
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
-            resolve: 'gatsby-remark-images',
+            resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 2048,
+              maxWidth: 650,
               showCaptions: true,
-              linkImagesToOriginal: false,
-              backgroundColor: 'none',
+              linkImagesToOriginal: true,
+              quality: 80,
+              backgroundColor: `none`,
               disableBgImage: true,
               withWebp: true,
-              loading: 'lazy',
+              loading: `auto`,
+              srcSetBreakpoints: [ 200, 340, 520, 890 ],
             },
           },
           {
