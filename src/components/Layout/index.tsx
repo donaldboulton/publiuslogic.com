@@ -56,7 +56,7 @@ const Layout = ({ children, path }: LayoutProps) => {
     <>
       <AnimatePresence exitBeforeEnter>
         <LazyMotion features={loadFeatures}>
-          <div className="max-w-screen-xl mx-auto text-slate-900 dark:text-slate-200 antialiased font-sans">
+          <div className="max-w-screen-xl mx-auto text-slate-900 dark:text-slate-200 antialiased">
             <m.main key={path} variants={animationConfiguration} transition={{ duration: 2 }}>
               <MDXProvider components={shortcodes}>{children}</MDXProvider>
             </m.main>
