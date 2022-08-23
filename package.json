@@ -3,7 +3,6 @@
   "private": true,
   "description": "To Publish Logic",
   "version": "1.0.0",
-  "main": "server.js",
   "author": "Donald Boulton <donaldboulton@gmail.com>",
   "bugs": {
     "url": "https://github.com/donaldboulton/publiuslogic.com/issues"
@@ -67,6 +66,7 @@
     "gatsby-remark-smartypants": "^5.21.0",
     "gatsby-source-filesystem": "^4.21.0",
     "gatsby-transformer-sharp": "^4.21.0",
+    "googleapis": "^107.0.0",
     "hero-patterns": "^2.1.0",
     "http-proxy-middleware": "^2.0.6",
     "isomorphic-fetch": "^3.0.0",
@@ -143,7 +143,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{ts,tsx,json,md,mdx}\"",
-    "start": "node server.js",
+
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",

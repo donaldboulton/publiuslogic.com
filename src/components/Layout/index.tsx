@@ -14,12 +14,12 @@ import List from '@/components/List'
 import ListItem from '@/components/List/ListItem'
 import ListGrid from '@/components/ListGrid'
 import Tooltip from '@/components/Tooltip'
-import { LazyMotion, m } from 'framer-motion'
 import VideoOne from '@/components/CloudinaryVideo/videoOne'
 import VideoTwo from '@/components/CloudinaryVideo/videoTwo'
 import CloudinaryVideo from '@/components/CloudinaryVideo'
 import Table from '@/components/Table'
 import Accordion from '@/components/Accordion'
+import { AnimatePresence, LazyMotion, m } from 'framer-motion'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -54,13 +54,15 @@ const animationConfiguration = {
 const Layout = ({ children, path }: LayoutProps) => {
   return (
     <>
-      <LazyMotion features={loadFeatures}>
-        <div className="max-w-screen-xl mx-auto text-slate-900 dark:text-slate-200 antialiased font-sans">
-          <m.main key={path} variants={animationConfiguration} transition={{ duration: 2 }} exit="exit">
-            <MDXProvider components={shortcodes}>{children}</MDXProvider>
-          </m.main>
-        </div>
-      </LazyMotion>
+      <AnimatePresence exitBeforeEnter>
+        <LazyMotion features={loadFeatures}>
+          <div className="max-w-screen-xl mx-auto text-slate-900 dark:text-slate-200 antialiased font-sans">
+            <m.main key={path} variants={animationConfiguration} transition={{ duration: 2 }}>
+              <MDXProvider components={shortcodes}>{children}</MDXProvider>
+            </m.main>
+          </div>
+        </LazyMotion>
+      </AnimatePresence>
       <CookieConsent
         enableDeclineButton
         flipButtons

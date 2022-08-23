@@ -114,7 +114,7 @@ const BlogPost = ({ data: { mdx }, data, title, description }: PageProps<DataPro
             <div className="mb-2">
               <Bio />
             </div>
-            <MDXRenderer localImages={frontmatter.image} components={components}>
+            <MDXRenderer components={components}>
               {data.mdx.body}
             </MDXRenderer>
             <GiscusComments mapping={pathname} />

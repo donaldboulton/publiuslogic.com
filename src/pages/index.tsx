@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import type { HeadProps } from 'gatsby'
-import { CookieConsent } from 'react-cookie-consent'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import SEO from '@/components/Seo'
@@ -9,16 +8,14 @@ import Header from '@/components/Header'
 import Features from '@/components/Features'
 import LatestArticles from '@/components/LatestArticles'
 import Footer from '@/components/Footer'
-import ScrollIndicator from '@/components/ScrollIndicator'
 import List from '@/components/List'
 import ListItem from '@/components/List'
 import { useInView } from 'react-intersection-observer'
-import { LazyMotion, m } from 'framer-motion'
+import { m } from 'framer-motion'
 import AnimatedText from '@/components/AnimatedText'
+import Layout from '@/components/Layout'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
-
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 const useAnimateOnInView = () => {
   const controls = useAnimation()
@@ -179,7 +176,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <LazyMotion features={loadFeatures}>
+      <Layout>
         <m.main className="font-sans" variants={container}>
           <div className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center">
             <div className="absolute top-0 bg-center">
@@ -638,44 +635,7 @@ export default function Home() {
             </div>
           </m.section>
         </m.main>
-        <CookieConsent
-          enableDeclineButton
-          flipButtons
-          location="bottom"
-          buttonText="Accept"
-          declineButtonText="Decline"
-          ariaAcceptLabel="Accept Cookies"
-          ariaDeclineLabel="Decline Cookies"
-          cookieName="gtag"
-          expires={150}
-          style={{
-            background: 'linear-gradient(to right, #4338ca, transparent, #4338ca)',
-            textShadow: '2px 2px black',
-          }}
-          buttonStyle={{
-            background: 'radial-gradient(circle at top right, #4338ca, transparent)',
-            color: 'white',
-            fontWeight: 'bolder',
-            borderRadius: '3px',
-            border: '1px black',
-            textShadow: '2px 2px black',
-          }}
-        >
-          PubliusLogic uses cookies for user experience.{' '}
-          <span
-            style={{
-              fontSize: '14px',
-              textAlign: 'center',
-              marginLeft: '20px',
-            }}
-          >
-            <Link to="/blog/privacy" className="text-slate-200" alt="Privacy Page">
-              Privacy Page
-            </Link>
-          </span>
-        </CookieConsent>
-        <ScrollIndicator />
-      </LazyMotion>
+      </Layout>
       <Footer />
     </>
   )

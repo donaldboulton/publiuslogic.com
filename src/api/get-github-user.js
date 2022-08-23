@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
   try {
     const { data } = await octokit.request('GET /users/{username}', {
-      username: 'donaldboulton',
+      username: data.name,
     })
 
     res.status(200).json({
