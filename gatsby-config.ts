@@ -98,7 +98,7 @@ const config: GatsbyConfig = {
               disableBgImage: true,
               withWebp: true,
               loading: `auto`,
-              srcSetBreakpoints: [ 200, 340, 520, 890 ],
+              srcSetBreakpoints: [200, 340, 520, 890],
             },
           },
           {

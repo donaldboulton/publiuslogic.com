@@ -1938,6 +1938,7 @@ declare namespace Queries {
     readonly description: Maybe<Scalars['String']>
     readonly featured: Maybe<Scalars['Boolean']>
     readonly featuredpost: Maybe<Scalars['Boolean']>
+    readonly image: Maybe<File>
     readonly imageLink: Maybe<Scalars['String']>
     readonly path: Maybe<Scalars['String']>
     readonly publicId: Maybe<Scalars['String']>
@@ -1964,6 +1965,7 @@ declare namespace Queries {
     readonly description: InputMaybe<StringQueryOperatorInput>
     readonly featured: InputMaybe<BooleanQueryOperatorInput>
     readonly featuredpost: InputMaybe<BooleanQueryOperatorInput>
+    readonly image: InputMaybe<FileFilterInput>
     readonly imageLink: InputMaybe<StringQueryOperatorInput>
     readonly path: InputMaybe<StringQueryOperatorInput>
     readonly publicId: InputMaybe<StringQueryOperatorInput>

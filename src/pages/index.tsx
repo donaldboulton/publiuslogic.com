@@ -554,7 +554,7 @@ export default function Home() {
               >
                 <LatestArticles />
               </m.div>
-              <div className="mt-10 bottom-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
+              <div className="mt-10 md:mt-20 bottom-0 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xlink="http://www.w3.org/1999/xlink"
@@ -573,7 +573,7 @@ export default function Home() {
           </m.section>
           <m.section className="relative block pt-24 pb-20 lg:pt-0">
             <div className="container mx-auto px-4">
-              <div className="flex flex-wrap justify-center lg:-mt-64 -mt-48">
+              <div className="flex flex-wrap justify-center lg:-mt-48 -mt-40">
                 <div className="w-full lg:w-6/12 px-4">
                   <m.div
                     ref={ref6}

@@ -2,23 +2,6 @@ import * as React from 'react'
 import { ReactNode } from 'react'
 import { Link } from 'gatsby'
 import { CookieConsent } from 'react-cookie-consent'
-import { MDXProvider } from '@mdx-js/react'
-import FindOutMore from '@/components/FindOutMore'
-import Features from '@/components/Features'
-import Cta from '@/components/CTA'
-import Callout from '@/components/Callout'
-import WavyHr from '@/components/WavyHr'
-import A from '@/components/A'
-import Center from '@/components/Center'
-import List from '@/components/List'
-import ListItem from '@/components/List/ListItem'
-import ListGrid from '@/components/ListGrid'
-import Tooltip from '@/components/Tooltip'
-import VideoOne from '@/components/CloudinaryVideo/videoOne'
-import VideoTwo from '@/components/CloudinaryVideo/videoTwo'
-import CloudinaryVideo from '@/components/CloudinaryVideo'
-import Table from '@/components/Table'
-import Accordion from '@/components/Accordion'
 import { AnimatePresence, LazyMotion, m } from 'framer-motion'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
@@ -27,24 +10,6 @@ interface LayoutProps {
   children: ReactNode
 }
 
-const shortcodes = {
-  A,
-  FindOutMore,
-  Center,
-  Cta,
-  Features,
-  WavyHr,
-  Callout,
-  List,
-  ListItem,
-  ListGrid,
-  Tooltip,
-  CloudinaryVideo,
-  VideoTwo,
-  VideoOne,
-  Table,
-  Accordion,
-}
 const animationConfiguration = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -54,11 +19,11 @@ const animationConfiguration = {
 const Layout = ({ children, path }: LayoutProps) => {
   return (
     <>
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence wait>
         <LazyMotion features={loadFeatures}>
           <div className="max-w-screen-xl mx-auto text-slate-900 dark:text-slate-200 antialiased">
-            <m.main key={path} variants={animationConfiguration} transition={{ duration: 2 }}>
-              <MDXProvider components={shortcodes}>{children}</MDXProvider>
+            <m.main key={path} variants={animationConfiguration} transition={{ duration: 3 }}>
+              {children}
             </m.main>
           </div>
         </LazyMotion>
