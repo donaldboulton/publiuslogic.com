@@ -128,8 +128,8 @@ function HeaderPopover() {
             >
               <span>Featured</span>
               <ChevronDownIcon
-                className={`${open ? 'transform rotate-180 text-red-600' : 'text-opacity-70'}
-                  ml-1 h-5 w-5 text-gray-200 group-hover:text-opacity-80 transition ease-in-out duration-150`}
+                className={`${open ? 'transform rotate-180 text-red-600' : 'text-opacity-75'}
+                  ml-1 h-5 w-5 text-gray-200 group-hover:text-opacity-75 transition ease-in-out duration-150`}
                 aria-hidden="true"
               />
             </Popover.Button>

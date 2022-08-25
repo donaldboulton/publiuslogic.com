@@ -6,6 +6,8 @@ import FindOutMore from './src/components/FindOutMore'
 import Features from './src/components/Features'
 import Cta from './src/components/CTA'
 import Callout from './src/components/Callout'
+import CalloutDanger from './src/components/Callout/CalloutDanger'
+import CalloutLabel from './src/components/Callout/CalloutLabel'
 import WavyHr from './src/components/WavyHr'
 import A from './src/components/A'
 import Center from './src/components/Center'
@@ -30,6 +32,8 @@ const components = {
   Features,
   WavyHr,
   Callout,
+  CalloutDanger,
+  CalloutLabel,
   List,
   ListItem,
   ListGrid,

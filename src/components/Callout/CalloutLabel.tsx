@@ -1,29 +1,31 @@
 import * as React from 'react'
 import { ReactNode } from 'react'
 import * as CSS from 'csstype'
-import Info from '@/components/icons/info'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
-interface CalloutProps {
+interface CalloutLabelProps {
   children: ReactNode
+  label: string
 }
 
-export const callOutWrapper: CSS.Properties = {
+export const calloutLabelWrapper: CSS.Properties = {
   position: 'absolute',
   display: 'flex',
   top: '-24px',
-  right: '-20px',
-  borderRadius: '50%',
-  padding: '6px',
-  color: '#9333ea',
-  border: '6px solid transparent',
-  background: '#0f172a',
+  right: '-8px',
+  borderRadius: '6px',
+  padding: '8px',
+  color: '#fff',
+  fontSize: 'inherit',
+  fontWeight: 'inherit',
+  userSelect: 'none',
+  background: '#1e293b',
 }
 
-const callout: CSS.Properties = {
+const calloutLabel: CSS.Properties = {
   '*:last-child': {
     marginBottom: '0px',
   },
@@ -36,14 +38,13 @@ const callout: CSS.Properties = {
   fontSize: '1.25em',
   color: '#fff',
   border: '2px solid rgb(147, 51, 234, 0.5)',
-  background: '#1e293b',
+  background: '#374151',
   boxShadow: '6px 5px 5px rgb(147, 51, 234, 0.75)',
   opacity: '0.6',
 }
 
-const Callout: React.FC<CalloutProps> = props => {
-  const { children, ...rest } = props
-
+const CalloutLabel: React.FC<CalloutLabelProps> = props => {
+  const { children, label, ...rest } = props
   const item = {
     initial: { y: 20, opacity: 0 },
     enter: {
@@ -67,11 +68,11 @@ const Callout: React.FC<CalloutProps> = props => {
 
     return { ref }
   }
-  const [ref6, isVisible6] = useInView({
+  const [ref8, isVisible8] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',
   })
-  const variants6 = {
+  const variants8 = {
     visible: {
       opacity: 1,
       x: 0,
@@ -85,15 +86,15 @@ const Callout: React.FC<CalloutProps> = props => {
   return (
     <LazyMotion features={loadFeatures}>
       <m.div
-        ref={ref6}
-        animate={isVisible6 ? 'visible' : 'hidden'}
-        variants={variants6}
+        ref={ref8}
+        animate={isVisible8 ? 'visible' : 'hidden'}
+        variants={variants8}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        style={callout}
+        style={calloutLabel}
         {...rest}
       >
-        <aside style={callOutWrapper}>
-          <Info className="w-6 h-6" />
+        <aside style={calloutLabelWrapper} className="bg-purple-600 px-2 opacity-75">
+          {label}
         </aside>
         {children}
       </m.div>
@@ -101,4 +102,4 @@ const Callout: React.FC<CalloutProps> = props => {
   )
 }
 
-export default Callout
+export default CalloutLabel

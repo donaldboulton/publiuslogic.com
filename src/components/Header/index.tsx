@@ -101,13 +101,13 @@ export default function Navigation() {
                     <div>
                       <Menu.Button className="flex text-sm rounded-full focus:outline-none">
                         <Control
-                          className="text-slate-900 hover:text-slate-700 dark:text-slate-200 text-opacity-70"
+                          className="text-slate-900 hover:text-slate-700 dark:text-slate-200 text-opacity-75"
                           aria-hidden="true"
                           aria-label="DarkMode"
                         />
                         <ChevronDownIcon
-                          className={`${open ? 'text-slate-200 transform rotate-180' : 'text-opacity-70'}
-                          first-letter:w-5 h-5 -mr-1 mt-1 text-gray-300 hover:text-gray-200 group-hover:text-opacity-80 transition ease-in-out duration-150`}
+                          className={`${open ? 'text-slate-200 transform rotate-180' : 'text-opacity-75'}
+                          first-letter:w-5 h-5 -mr-1 mt-1 text-gray-300 hover:text-gray-200 group-hover:text-opacity-75 transition ease-in-out duration-150`}
                           aria-hidden="true"
                         />
                         <span className="sr-only">Open Control Menu</span>

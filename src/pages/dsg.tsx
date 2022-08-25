@@ -28,7 +28,7 @@ export default function DSG() {
               <Link to="/blog/gatsby-version-four">Back to Post</Link>
               <br />
               <h1 className="text-4xl font-bold mt-2 mb-2 leading-tight">DSG: Deferred Static Generation</h1>
-              <Callout variant="danger">This page was generated At Runtime!</Callout>
+              <Callout>This page was generated At Runtime!</Callout>
             </div>
           </div>
         </div>
