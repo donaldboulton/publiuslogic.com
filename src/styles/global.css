@@ -654,3 +654,6 @@ giscus-widget {
   width: 100%;
   height: auto;
 }
+.selected {
+  background-color: #a21caf;
+}

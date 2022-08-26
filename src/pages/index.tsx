@@ -8,11 +8,11 @@ import Header from '@/components/Header'
 import Features from '@/components/Features'
 import LatestArticles from '@/components/LatestArticles'
 import Footer from '@/components/Footer'
+import IndexHero from '@/components/IndexHero'
 import List from '@/components/List'
 import ListItem from '@/components/List'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
-import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
 
 import OGImage from '../../static/images/jpg/dbbg.jpg'
@@ -49,21 +49,7 @@ export default function Home() {
       },
     },
   }
-  const [replay, setReplay] = useState(true)
-  const placeholderText = [
-    { type: 'heading1', text: 'PubliusLogic' },
-    {
-      type: 'heading2',
-      text: 'Publishing Logic & Gods Truth!',
-    },
-  ]
-  const headingContainer = {
-    visible: {
-      transition: {
-        staggerChildren: 0.025,
-      },
-    },
-  }
+
   const [ref, isVisible] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',
@@ -181,34 +167,13 @@ export default function Home() {
       <Layout>
         <LazyMotion features={loadFeatures}>
           <m.main className="font-sans" variants={container}>
-            <div className="relative flex content-center min-h-[55vh] md:h-46 sm:h-40 items-center justify-center">
-              <div className="absolute top-0 bg-center">
-                <div className="absolute left-0 bottom-0 md:mb-0 w-full h-full z-10 bg-gradient-to-b from-slate-700 opacity-75"></div>
-                <StaticImage
-                  className="cover object-contain h-96 md:h-46 sm:h-40"
-                  formats={['auto', 'webp']}
-                  src="../../static/images/jpg/dbbg.jpg"
-                  quality={95}
-                  alt="Landing Image"
-                />
-                <m.div
-                  className="p-4 absolute top-16 left-3 z-20"
-                  initial="hidden"
-                  animate={replay ? 'visible' : 'hidden'}
-                  variants={headingContainer}
-                >
-                  <div className="container">
-                    {placeholderText.map((item, index) => {
-                      return <AnimatedText {...item} key={index} />
-                    })}
-                  </div>
-                </m.div>
-              </div>
+            <div className="relative flex content-center items-center justify-center">
+              <IndexHero />
             </div>
             <section className="pb-10 bg-slate-300 dark:bg-slate-700 text-slate-200 dark:text-slate-900 transition-all duration-200 -mt-10">
               <div className="container mx-auto px-4">
                 <div className="flex flex-wrap">
-                  <div className="lg:pt-12 pt-4 w-full md:w-4/12 px-4 text-center">
+                  <div className="lg:pt-10 pt-4 w-full md:w-4/12 px-4 text-center">
                     <m.div
                       className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-slate-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg"
                       ref={ref}
@@ -250,7 +215,7 @@ export default function Home() {
                       animate={isVisible1 ? 'visible' : 'hidden'}
                       transition={{ duration: 0.8, ease: 'easeOut' }}
                     >
-                      <div className="px-4 py-5 flex-auto">
+                      <div className="px-4 py-4 flex-auto">
                         <div className="bg-purple-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-purple-500/50 rounded-full">
                           <StaticImage
                             layout="fixed"
@@ -411,7 +376,7 @@ export default function Home() {
               </div>
 
               <div className="container mx-auto px-4">
-                <div className="items-center flex flex-wrap bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200">
+                <div className="items-center flex flex-wrap bg-slate-200 dark:bg-slate-900 text-slate-900 dark:text-slate-200">
                   <div className="flex flex-wrap items-center mt-8">
                     <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mb-6">
                       <h3 className="text-3xl text-black dark:text-white mb-2 font-semibold leading-normal">

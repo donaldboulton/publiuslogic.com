@@ -11,10 +11,11 @@ const loadFeatures = () => import('@/components/FramerFeatures').then(res => res
 
 interface BlogRollProps {
   tag?: string
+  excerpt: string
 }
 const POSTS_PER_PAGE = 12
 
-const BlogRoll = ({ tag }: BlogRollProps) => {
+const BlogRoll = ({ tag, excerpt }: BlogRollProps) => {
   const posts = GetPosts(tag)
   const [offset, setOffset] = useState(0)
 
@@ -70,7 +71,7 @@ const BlogRoll = ({ tag }: BlogRollProps) => {
                           {post.frontmatter.author}
                         </span>
                       </div>
-                      <p className="mt-3 italic text-sm text-black dark:text-white">{post.frontmatter.description}</p>
+                      <p className="mt-3 italic text-sm text-black dark:text-white">{post.excerpt}</p>
                     </div>
                   </m.div>
                 </div>

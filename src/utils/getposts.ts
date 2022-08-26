@@ -17,6 +17,7 @@ const postQuery = graphql`
           category
         }
         slug
+        excerpt(pruneLength: 200, truncate: true)
       }
     }
   }

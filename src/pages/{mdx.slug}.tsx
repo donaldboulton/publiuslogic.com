@@ -35,6 +35,7 @@ type DataProps = {
         videoTitle: string
       }
       slug: string
+      excerpt: string
       parent: {
         modifiedTime: string
       }
@@ -60,6 +61,7 @@ interface PageProps {
         videoTitle: string
       }
       slug: string
+      excerpt: string
       parent: {
         modifiedTime: string
       }
@@ -77,7 +79,7 @@ const Image = {
 }
 
 const BlogPost = ({ data: { mdx }, data, title, description }: PageProps<DataProps>) => {
-  const { frontmatter, timeToRead } = data.mdx
+  const { frontmatter, timeToRead, excerpt } = data.mdx
   const pathname = '/' + data.mdx.slug
   return (
     <>
@@ -141,6 +143,7 @@ export default BlogPost
 export function Head(props: HeadProps<DataProps>) {
   const siteUrl = 'https://publiuslogic.com'
   const pathname = '/' + props.data.mdx.slug
+  const excerpt = props.data.mdx.excerpt
   const seo = {
     path: `${siteUrl}${pathname || ``}`,
   }
@@ -256,7 +259,7 @@ export function Head(props: HeadProps<DataProps>) {
           dateCreated: props.data.mdx.frontmatter.date,
           dateModified: props.data.mdx.parent.modifiedTime,
           description: props.data.mdx.frontmatter.description,
-          articleBody: props.data.mdx.frontmatter.description,
+          articleBody: excerpt,
           author: {
             '@type': 'Person',
             name: props.data.mdx.frontmatter.author,
@@ -366,6 +369,7 @@ export const query = graphql`
         depth
       }
       slug
+      excerpt(pruneLength: 5000)
       timeToRead
       parent {
         ... on File {

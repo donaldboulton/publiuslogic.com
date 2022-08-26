@@ -90,15 +90,14 @@ const config: GatsbyConfig = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 650,
+              maxWidth: 2048,
               showCaptions: true,
-              linkImagesToOriginal: true,
+              linkImagesToOriginal: false,
               quality: 80,
               backgroundColor: `none`,
               disableBgImage: true,
               withWebp: true,
               loading: `auto`,
-              srcSetBreakpoints: [200, 340, 520, 890],
             },
           },
           {
