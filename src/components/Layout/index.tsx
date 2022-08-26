@@ -2,9 +2,7 @@ import * as React from 'react'
 import { ReactNode } from 'react'
 import { Link } from 'gatsby'
 import { CookieConsent } from 'react-cookie-consent'
-import { AnimatePresence, LazyMotion, m } from 'framer-motion'
-
-const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
+import { AnimatePresence, m } from 'framer-motion'
 
 interface LayoutProps {
   children: ReactNode
@@ -20,13 +18,11 @@ const Layout = ({ children, path }: LayoutProps) => {
   return (
     <>
       <AnimatePresence wait>
-        <LazyMotion features={loadFeatures}>
-          <div className="max-w-screen-xl mx-auto text-slate-900 dark:text-slate-200 antialiased">
-            <m.main key={path} variants={animationConfiguration} transition={{ duration: 3 }}>
-              {children}
-            </m.main>
-          </div>
-        </LazyMotion>
+        <div className="max-w-screen-xl mx-auto text-slate-900 dark:text-slate-200 antialiased">
+          <m.main key={path} variants={animationConfiguration} transition={{ duration: 3 }}>
+            {children}
+          </m.main>
+        </div>
       </AnimatePresence>
       <CookieConsent
         enableDeclineButton
