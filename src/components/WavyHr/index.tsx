@@ -1,8 +1,13 @@
 import * as React from 'react'
+import { FC } from 'react'
 
-const WavyHr: React.FC<Props> = () => (
+interface WavyHrProps {
+  className: string
+}
+
+const WavyHr: FC<WavyHrProps> = () => (
   <div className="text-center">
-    <hr className="text-purple-500 flex justify-center"></hr>
+    <hr></hr>
   </div>
 )
 

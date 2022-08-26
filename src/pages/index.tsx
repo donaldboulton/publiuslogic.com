@@ -181,11 +181,11 @@ export default function Home() {
       <Layout>
         <LazyMotion features={loadFeatures}>
           <m.main className="font-sans" variants={container}>
-            <div className="relative flex content-center min-h-[55vh] md:min-h-4 items-center justify-center">
+            <div className="relative flex content-center min-h-[55vh] md:h-46 sm:h-40 items-center justify-center">
               <div className="absolute top-0 bg-center">
                 <div className="absolute left-0 bottom-0 md:mb-0 w-full h-full z-10 bg-gradient-to-b from-slate-700 opacity-75"></div>
                 <StaticImage
-                  className="cover object-contain h-96"
+                  className="cover object-contain h-96 md:h-46 sm:h-40"
                   formats={['auto', 'webp']}
                   src="../../static/images/jpg/dbbg.jpg"
                   quality={95}

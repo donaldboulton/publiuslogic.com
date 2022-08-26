@@ -20,7 +20,7 @@ export const callOutDangerWrapper: CSS.Properties = {
   padding: '6px',
   color: '#dc2626',
   border: '6px solid transparent',
-  background: '#0f172a',
+  background: '#1e293b',
 }
 
 const calloutDanger: CSS.Properties = {
@@ -36,7 +36,7 @@ const calloutDanger: CSS.Properties = {
   fontSize: '1.25em',
   color: '#fff',
   border: '2px solid #dc2626',
-  background: '#1e293b',
+  background: 'rgb(55, 65, 81, 0.5)',
   boxShadow: '6px 5px 5px #dc2626',
 }
 
@@ -91,7 +91,7 @@ const CalloutDanger: React.FC<CalloutDangerProps> = props => {
         style={calloutDanger}
         {...rest}
       >
-        <aside style={callOutDangerWrapper} className="text-red-600 w-6 h-6 opacity-75">
+        <aside style={callOutDangerWrapper}>
           <Alert className="text-red-600 w-6 h-6" />
         </aside>
         {children}

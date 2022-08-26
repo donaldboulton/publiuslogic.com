@@ -20,7 +20,7 @@ export const callOutWrapper: CSS.Properties = {
   padding: '6px',
   color: '#9333ea',
   border: '6px solid transparent',
-  background: '#0f172a',
+  background: '#1e293b',
 }
 
 const callout: CSS.Properties = {
@@ -36,7 +36,7 @@ const callout: CSS.Properties = {
   fontSize: '1.25em',
   color: '#fff',
   border: '2px solid rgb(147, 51, 234, 0.5)',
-  background: '#1e293b',
+  background: 'rgb(55, 65, 81, 0.5)',
   boxShadow: '6px 5px 5px rgb(147, 51, 234, 0.75)',
   opacity: '0.6',
 }

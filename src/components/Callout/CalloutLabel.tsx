@@ -17,12 +17,13 @@ export const calloutLabelWrapper: CSS.Properties = {
   top: '-24px',
   right: '-8px',
   borderRadius: '6px',
-  padding: '8px',
+  paddingRight: '8px',
+  paddingLeft: '8px',
   color: '#fff',
   fontSize: 'inherit',
   fontWeight: 'inherit',
   userSelect: 'none',
-  background: '#1e293b',
+  background: 'rgb(147, 51, 234, 0.5)',
 }
 
 const calloutLabel: CSS.Properties = {
@@ -38,7 +39,7 @@ const calloutLabel: CSS.Properties = {
   fontSize: '1.25em',
   color: '#fff',
   border: '2px solid rgb(147, 51, 234, 0.5)',
-  background: '#374151',
+  background: 'rgb(55, 65, 81, 0.5)',
   boxShadow: '6px 5px 5px rgb(147, 51, 234, 0.75)',
   opacity: '0.6',
 }
