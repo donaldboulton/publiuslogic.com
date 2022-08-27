@@ -1,12 +1,13 @@
 import * as React from 'react'
-import { useEffect, useState, useRef, useCallback } from 'react'
+import { ReactNode, useEffect, useState, useRef, useCallback, FC, RefObject } from 'react'
 import * as CSS from 'csstype'
 import VisuallyHidden from '../VisuallyHidden'
 import { LazyMotion, m, useAnimation } from 'framer-motion'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
-interface Props {
+interface TooltipProps {
+  children: ReactNode
   id: string
   className: string
   tooltipText: string
@@ -35,7 +36,7 @@ const tooltip: CSS.Properties = {
   overflowX: 'hidden',
 }
 
-const Tooltip: React.FC<Props> = props => {
+const Tooltip: FC<TooltipProps> = props => {
   const { children, id, className, tooltipText, tooltipVisuallyHiddenText } = props
   const [dimensions, setDimensions] = useState({
     height: typeof window !== 'undefined' ? window.innerHeight : 0,
@@ -62,7 +63,7 @@ const Tooltip: React.FC<Props> = props => {
   }, [])
 
   const handlePosition = useCallback(
-    (tooltipRef: React.RefObject<HTMLSpanElement>) => {
+    (tooltipRef: RefObject<HTMLSpanElement>) => {
       const { current } = tooltipRef!
 
       if (current) {
@@ -81,7 +82,7 @@ const Tooltip: React.FC<Props> = props => {
     [dimensions]
   )
 
-  const resetPosition = (tooltipRef: React.RefObject<HTMLSpanElement>) => {
+  const resetPosition = (tooltipRef: RefObject<HTMLSpanElement>) => {
     const { current } = tooltipRef!
 
     if (current) {

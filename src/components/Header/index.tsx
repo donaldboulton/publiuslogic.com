@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Fragment } from 'react'
 import { Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import {
@@ -17,9 +17,6 @@ import ThemeToggle from '@/components/ThemeToggle'
 import Tooltip from '@/components/Tooltip'
 import Control from '@/components/icons/control'
 import HeaderPopover from '@/components/HeaderPopover'
-
-import Logo from '../../../static/images/gatsby/publiuslogic-logo.png'
-import PrimaryLogo from '../../../static/images/gatsby/publiuslogic-monogram-182-32.png'
 
 const navigation = [
   { name: 'About', href: '/blog/about', current: false },
@@ -51,22 +48,38 @@ export default function Navigation() {
                 </div>
                 <div className="flex-1 flex items-center text-lg justify-center sm:items-stretch sm:justify-start">
                   <div className="flex-shrink-0 flex items-center">
-                    <Tooltip id="logoTooltip" tooltipText="Home Page">
-                      <Link to="/">
-                        <img
-                          className="block md:hidden h-8 w-auto"
-                          src={Logo}
-                          alt="Logo"
-                          aria-describedby="logoTooltip"
-                        />
-                        <img
-                          className="hidden md:block h-8 w-auto"
-                          src={PrimaryLogo}
-                          alt="Logo"
-                          aria-describedby="logoTooltip"
-                        />
+                    <Link to="/">
+                      <Tooltip id="logoTooltipSmall" tooltipText="Home Page">
+                        <StaticImage
+                          layout="fixed"
+                          width={24}
+                          height={24}
+                          className="hidden md:hidden h-6 h-6"
+                          src="../../../static/images/gatsby/publiuslogic-logo.png"
+                          alt="Logo Mobile"
+                          aria-label="Logo Mobile"
+                          aria-describedby="logoTooltipSmall"
+                          formats={['auto', 'webp']}
+                          quality={95}
+                        /> 
+                      </Tooltip>
                       </Link>
-                    </Tooltip>
+                      <Link to='/'>
+                      <Tooltip id="logoTooltip" tooltipText="Home Page">
+                        <StaticImage
+                          layout="fixed"
+                          width={182}
+                          height={32}
+                          className="hidden md:block h-8 w-[182px]"
+                          src="../../../static/images/gatsby/publiuslogic-monogram-182-32.png"
+                          alt='Logo Desktop'
+                          aria-label="Logo Desktop"
+                          aria-describedby="logoTooltip"
+                          formats={['auto', 'webp']}
+                          quality={95}
+                        />                        
+                      </Tooltip>
+                    </Link>
                   </div>
                   <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
@@ -113,8 +126,7 @@ export default function Navigation() {
                         <span className="sr-only">Open Control Menu</span>
                       </Menu.Button>
                     </div>
-                    <Transition
-                      as={Fragment}
+                    <Transition                    
                       enter="transition ease-out duration-100"
                       enterFrom="transform opacity-0 scale-95"
                       enterTo="transform opacity-100 scale-100"

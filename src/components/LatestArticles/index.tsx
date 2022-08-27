@@ -16,7 +16,7 @@ export default function LatestArticles() {
     <div className="max-w-7xl mx-auto bg-primary-dark px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto py-4 sm:py-8 lg:py-10 lg:max-w-none">
         <div className="flex flex-row items-center">
-          <h2 className="text-2xl md:text-4xl font-extrabold text-white">Latest Articles</h2>
+          <h2 className="text-2xl md:text-2xl font-extrabold text-white">Latest Articles</h2>
           <Link
             to="/blog"
             className="inline-block px-2 py-2 md:px-6 md:py-3 mt-2 ml-4 text-gray-800 hover:text-gray-200 font-bold text-base md:text-lg rounded-md transition ease-in-out delay-150 bg-fuchsia-300 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-500 duration-300"
@@ -40,7 +40,7 @@ export default function LatestArticles() {
                 <Tags tags={post.frontmatter.tags} />
               </div>
               <Link to={`/${post.slug}`}>
-                <h2 className="text-4xl font-bold mt-2 mb-2 leading-tight">{post.frontmatter.title}</h2>
+                <h2 className="text-lg font-bold mt-2 mb-2 leading-tight">{post.frontmatter.title}</h2>
               </Link>
               <div>{post.frontmatter.description}</div>
               <Link
@@ -54,7 +54,7 @@ export default function LatestArticles() {
             <WavyHr className="mb-4" />
             <h2 className="mb-4 mt-4">Featured Articles by Topics</h2>
             <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 xl:grid-cols-3 lg:gap-x-6 lg:mt-0 mb-4 rounded-lg bg-slate-300 dark:bg-slate-800 text-slate-900 dark:text-slate-200">
-              <List variant="unordered">
+              <List>
                 <div className="ml-12 mb-6 mt-4 text-lg transition duration-300 underline underline-offset-4 decoration-wavy decoration-fuchsia-600">
                   God and Creation
                 </div>
@@ -98,7 +98,7 @@ export default function LatestArticles() {
                   </div>
                 </List.Item>
               </List>
-              <List variant="unordered">
+              <List>
                 <div className="ml-12 mb-6 mt-4 text-lg transition duration-300 underline underline-offset-4 decoration-wavy decoration-fuchsia-600">
                   Law and Logic
                 </div>
@@ -140,7 +140,7 @@ export default function LatestArticles() {
                   </div>
                 </List.Item>
               </List>
-              <List variant="unordered">
+              <List>
                 <div className="ml-12 mb-6 mt-4 text-lg transition duration-300 underline underline-offset-4 decoration-wavy decoration-fuchsia-600">
                   Programming
                 </div>

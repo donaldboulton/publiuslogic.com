@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useEffect, useState, Fragment } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import { Popover, Transition } from '@headlessui/react'
 import { usePopper } from 'react-popper'
@@ -111,7 +111,6 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
             </Popover.Button>
             <Popover.Overlay className={`${open ? 'opacity-30 fixed inset-0' : 'opacity-0'} bg-black`} />
             <Transition
-              as={Fragment}
               enter="transition duration-100 ease-out"
               enterFrom="transform scale-95 opacity-0"
               enterTo="transform scale-100 opacity-100"

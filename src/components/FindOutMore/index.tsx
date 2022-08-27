@@ -34,7 +34,7 @@ export default function FindOutMore() {
     <div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto py-8 sm:py-10 lg:py-12 lg:max-w-none">
-          <h2 className="text-4xl mb-2 font-extrabold">Technology and Design</h2>
+          <h2 className="text-lg mb-2 font-extrabold">Technology and Design</h2>
           <WavyHr />
           <div className="mt-4 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6">
             {callouts.map(callout => (

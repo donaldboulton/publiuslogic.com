@@ -44,7 +44,7 @@ const settings = [
 
 function SunIcon({ selected, ...props }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <svg viewBox="0 0 24 24" area-label="Light" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
       <path
         d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
         className={selected ? 'fill-sky-400/20 stroke-sky-500' : 'stroke-slate-400 dark:stroke-slate-500'}
@@ -59,7 +59,7 @@ function SunIcon({ selected, ...props }) {
 
 function MoonIcon({ selected, ...props }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" {...props}>
+    <svg viewBox="0 0 24 24" area-label="Dark" fill="none" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -82,7 +82,7 @@ function MoonIcon({ selected, ...props }) {
 
 function PcIcon({ selected, ...props }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" {...props}>
+    <svg viewBox="0 0 24 24" area-label="System" fill="none" {...props}>
       <path
         d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z"
         strokeWidth="2"

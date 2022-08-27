@@ -17,13 +17,15 @@ const animationConfiguration = {
 const Layout = ({ children, path }: LayoutProps) => {
   return (
     <>
-      <AnimatePresence wait>
-        <div className="max-w-screen-xl mx-auto text-slate-900 dark:text-slate-200 antialiased">
-          <m.main key={path} variants={animationConfiguration} transition={{ duration: 3 }}>
-            {children}
-          </m.main>
-        </div>
-      </AnimatePresence>
+      <React.StrictMode>
+        <AnimatePresence wait>
+          <div className="max-w-screen-xl mx-auto text-slate-900 dark:text-slate-200 antialiased">
+            <m.main key={path} variants={animationConfiguration} transition={{ duration: 3 }}>
+              {children}
+            </m.main>
+          </div>
+        </AnimatePresence>
+      </React.StrictMode>
       <CookieConsent
         enableDeclineButton
         flipButtons

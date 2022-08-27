@@ -138,7 +138,7 @@ const Accordion = () => {
                         <ChevronDownIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-gray-200`} />
                       </Disclosure.Button>
                       <Disclosure.Panel className="px-4 pt-4 pb-2 text-md text-slate-200">
-                        <List variant="unordered">
+                        <List>
                           <List.Item>
                             <span className="mb-1" variant="secondary">
                               Vocals: Angelina Jordan

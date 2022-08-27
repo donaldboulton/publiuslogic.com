@@ -39,7 +39,7 @@ function Profile() {
           <div>
             <article className="mb-11">
               <div className="mt-6 mb-6 text-center">
-                <h2 className="text-4xl font-bold mt-2 mb-2 leading-tight">Github Profile</h2>
+                <h2 className="text-lg font-bold mt-2 mb-2 leading-tight">Github Profile</h2>
                 <div className="mt-6 mb-6 text-center">
                   <GithubProfile />
                 </div>

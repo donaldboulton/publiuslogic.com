@@ -18,8 +18,8 @@ const PageHero = ({ title, description, image }: PageHeroProps) => (
     />
 
     <div className="p-4 absolute bottom-0 left-0 z-20">
-      <h1 className="text-4xl font-bold text-gray-300 leading-tight">{title}</h1>
-      <h2 className="text-xl font-medium italic text-gray-300">{description}</h2>
+      <h1 className="text-lg font-bold text-gray-300 leading-tight">{title}</h1>
+      <h2 className="text-md font-medium italic text-gray-300">{description}</h2>
     </div>
   </div>
 )

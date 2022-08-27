@@ -91,8 +91,8 @@ const BlogPost = ({ data: { mdx }, data, title, description }: PageProps<DataPro
         <div className="mb-10 mt-10">
           <section className="px-4 lg:px-0 mt-8 mb-20 max-w-screen-lg mx-auto text-black dark:text-white prose md:prose-lg lg:prose-xl prose-a:text-purple-600 hover:prose-a:text-purple-500">
             <div>
-              <h1 className="text-4xl font-bold text-white leading-tight l-2 text-center">{frontmatter.title}</h1>
-              <h2 className="text-lg font-medium italic text-black dark:text-white text-center">
+              <h1 className="text-lg font-bold text-white leading-tight l-2 text-center">{frontmatter.title}</h1>
+              <h2 className="text-md font-medium italic text-black dark:text-white text-center">
                 {frontmatter.description}
               </h2>
               <div className="flex items-center flex-wrap mb-10 lg:place-content-start md:place-content-center sm:place-content-center">

@@ -34,7 +34,7 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 className="text-base font-semibold tracking-wide uppercase">PubliusLogic</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">Topics and Discussions</p>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-2xl">Topics and Discussions</p>
           <p className="mt-4 max-w-2xl text-xl lg:mx-auto">
             PubliusLogic has Topics on God/Creation, Law, USA and World Governments, Life Matters. Our Main focus is the
             Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your

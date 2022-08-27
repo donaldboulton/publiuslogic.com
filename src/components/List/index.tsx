@@ -1,7 +1,11 @@
 import * as React from 'react'
+import { ReactNode } from 'react'
 import * as CSS from 'csstype'
 import ListItem from './ListItem'
-import { ListProps } from './types'
+
+interface ListProps {
+  children: ReactNode
+}
 
 const listStyle: CSS.Properties = {
   margin: '0 0 1.45rem 0',
@@ -9,42 +13,13 @@ const listStyle: CSS.Properties = {
   color: 'inherit',
   listStylePosition: 'outside',
   listStyleImage: 'none',
-
-  variants: {
-    variant: {
-      unordered: {
-        li: {
-          listStyle: 'none',
-        },
-      },
-      ordered: {
-        li: {
-          counterIncrement: 'li',
-
-          svg: {
-            display: 'none',
-          },
-
-          '&:before': {
-            content: "counters(li, '.') '. '",
-            color: 'blue',
-            marginRight: '8px',
-          },
-        },
-      },
-    },
-  },
-  defaultVariants: {
-    variant: 'unordered',
-  },
+  listStyle: 'none',
 }
 const List = (props: ListProps) => {
-  const { variant = 'unordered', children, ...rest } = props
-
-  const Component = variant === 'ordered' ? 'ol' : 'ul'
+  const { children, ...rest } = props
 
   return (
-    <div style={listStyle} as={Component} variant={variant} {...rest}>
+    <div style={listStyle} {...rest}>
       {children}
     </div>
   )

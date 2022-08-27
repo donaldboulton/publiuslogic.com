@@ -520,7 +520,7 @@ export default function Home() {
                             </span>
                           </p>
                           <div className="mt-24 mt-20 lg:mt-0 mb-4 rounded-lg bg-slate-300 dark:bg-slate-800 text-black dark:text-white">
-                            <List variant="unordered">
+                            <List>
                               <List.Item>
                                 <p className="mb-1" variant="secondary">
                                   The Devil is Controlling most all of your Government Officials! Details on how to

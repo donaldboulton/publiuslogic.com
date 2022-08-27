@@ -1,5 +1,10 @@
 import * as React from 'react'
+import { FC } from 'react'
 import * as CSS from 'csstype'
+
+interface ListItemProps {
+  children: ReactNode
+}
 
 const listItem: CSS.Properties = {
   listStyle: 'none',
@@ -21,20 +26,21 @@ const listItem: CSS.Properties = {
   },
 
   '& > ul': {
-    marginLeft: '1.45rem',
-    marginBottom: 'calc(1.45rem / 2)',
-    marginTop: 'calc(1.45rem / 2)',
+    marginLeft: '1rem',
+    marginBottom: 'calc(1rem / 2)',
+    marginTop: 'calc(1rem / 2)',
   },
 
   '& > p': {
-    marginBottom: 'calc(1.45rem / 2)',
+    marginBottom: 'calc(0.45rem / 2)',
   },
 }
 
-const ListItem: React.FC<Props> = props => {
+const ListItem: FC<ListItemProps> = props => {
   const { children, ...rest } = props
 
   return (
+    <ul>
     <li style={listItem} {...rest}>
       <span dataListItem>
         <svg
@@ -56,6 +62,7 @@ const ListItem: React.FC<Props> = props => {
       </span>
       <div>{children}</div>
     </li>
+    </ul>
   )
 }
 

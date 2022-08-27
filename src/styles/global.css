@@ -86,6 +86,11 @@ h2 {
   color: #e2dee6;
 }
 
+.prose a:hover {
+  text-decoration: underline;
+  color: purple;
+}
+
 .gatsby-resp-image-image {
   border-radius: 12px;
 }
@@ -332,13 +337,6 @@ figure {
   justify-content: flex-end;
   margin-right: 10px;
   font-size: 80%;
-}
-
-fieldset,
-ol,
-ul {
-  margin: 10px !important;
-  padding: 10px !important;
 }
 
 .ais-Highlight-nonHighlighted {
