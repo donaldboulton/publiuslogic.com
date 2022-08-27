@@ -64,38 +64,7 @@ export default function Home() {
       x: -200,
     },
   }
-  const [ref1, isVisible1] = useInView({
-    triggerOnce: true,
-    rootMargin: '-200px 0px',
-  })
-  const variants1 = {
-    hidden: {
-      opacity: 0,
-      y: -5,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring',
-        delay: 0.8,
-      },
-    },
-  }
-  const [ref2, isVisible2] = useInView({
-    triggerOnce: true,
-    rootMargin: '200px 0px',
-  })
-  const variants2 = {
-    visible: {
-      opacity: 1,
-      x: 0,
-    },
-    hidden: {
-      opacity: 0,
-      x: -200,
-    },
-  }
+
   const [ref3, isVisible3] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',
@@ -174,13 +143,7 @@ export default function Home() {
               <div className="container mx-auto px-4">
                 <div className="flex flex-wrap">
                   <div className="lg:pt-10 pt-4 w-full md:w-4/12 px-4 text-center">
-                    <m.div
-                      className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-slate-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg"
-                      ref={ref}
-                      variants={variants}
-                      animate={isVisible ? 'visible' : 'hidden'}
-                      transition={{ duration: 0.8, ease: 'easeOut' }}
-                    >
+                    <div className="relative flex flex-col min-w-0 break-words bg-fuchsia-700 text-slate-200 transition-all duration-200 w-full mb-8 shadow-lg shadow-fuchsia-700/50 rounded-lg">
                       <div className="px-4 py-5 flex-auto">
                         <div className="bg-blue-700 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-blue-700/50 rounded-full">
                           <StaticImage
@@ -205,16 +168,10 @@ export default function Home() {
                           kill your, "Unborn Children"!
                         </p>
                       </div>
-                    </m.div>
+                    </div>
                   </div>
                   <div className="w-full md:w-4/12 px-4 text-center">
-                    <m.div
-                      className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-slate-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg"
-                      ref={ref1}
-                      variants={variants1}
-                      animate={isVisible1 ? 'visible' : 'hidden'}
-                      transition={{ duration: 0.8, ease: 'easeOut' }}
-                    >
+                    <div className="relative flex flex-col min-w-0 break-words bg-indigo-700 text-slate-200 w-full mb-8 shadow-lg shadow-indigo-700/50 rounded-lg">
                       <div className="px-4 py-4 flex-auto">
                         <div className="bg-purple-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-purple-500/50 rounded-full">
                           <StaticImage
@@ -238,16 +195,10 @@ export default function Home() {
                           formless verse, bringing forth life to all. For all to formalize there, "Own Song"!
                         </p>
                       </div>
-                    </m.div>
+                    </div>
                   </div>
                   <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-                    <m.div
-                      className="relative flex flex-col min-w-0 break-words bg-purple-600 text-slate-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg"
-                      ref={ref2}
-                      variants={variants2}
-                      animate={isVisible2 ? 'visible' : 'hidden'}
-                      transition={{ duration: 0.8, ease: 'easeOut' }}
-                    >
+                    <div className="relative flex flex-col min-w-0 break-words bg-purple-600 text-slate-200 w-full mb-8 shadow-lg shadow-purple-600/50 rounded-lg">
                       <div className="px-4 py-5 flex-auto">
                         <div className="bg-fuchsia-600 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-3 shadow-lg shadow-fuchsia-600/50 rounded-full">
                           <StaticImage
@@ -277,7 +228,7 @@ export default function Home() {
                           Tailwind and Typescript on Netlify Servers for, "Ultimate Performance"!
                         </p>
                       </div>
-                    </m.div>
+                    </div>
                   </div>
                 </div>
                 <div className="text-slate-900 dark:text-slate-200 mb-10">
