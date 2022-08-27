@@ -54,7 +54,7 @@ export default function Navigation() {
                           layout="fixed"
                           width={24}
                           height={24}
-                          className="hidden md:hidden h-6 h-6"
+                          className="block md:hidden h-6 h-6"
                           src="../../../static/images/gatsby/publiuslogic-logo.png"
                           alt="Logo Mobile"
                           aria-label="Logo Mobile"
