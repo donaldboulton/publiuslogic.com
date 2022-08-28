@@ -8,7 +8,6 @@ type SEOProps = {
 }
 
 const SEO: React.FC<React.PropsWithChildren<SEOProps>> = ({ title, description, image, pathname, children }) => {
-
   return (
     <>
       <link href="https://github.com/donaldboulton" rel="me" />

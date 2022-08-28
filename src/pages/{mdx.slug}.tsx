@@ -12,6 +12,7 @@ import Footer from '@/components/Footer'
 import Tags from '@/components/Tags'
 import TableOfContent from '@/components/TableOfContent'
 import NowPlaying from '@/components/PlayList'
+import GiscusComments from '@/components/GiscusComments'
 import WavyHr from '@/components/WavyHr'
 import Stars from '@/components/Stars'
 import SeoBlog from '@/components/Seo/SeoBlog'
@@ -116,6 +117,8 @@ const BlogPost = ({ data: { mdx }, data, title, description }: PageProps<DataPro
               <Bio />
             </div>
             <MDXRenderer components={components}>{data.mdx.body}</MDXRenderer>
+            <GiscusComments mapping={pathname} />
+            <WavyHr />
           </section>
           <ScrollDown
             className="scroll z-20 right-4 md:right-3 top-20"

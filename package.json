@@ -26,7 +26,7 @@
     "@cloudinary/react": "^1.4.1",
     "@cloudinary/url-gen": "^1.8.0",
     "@fontsource/kaushan-script": "^4.5.8",
-    "@giscus/react": "^2.1.1",
+    "@giscus/react": "^2.2.0",
     "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^1.0.6",
     "@mdx-js/mdx": "^1.6.22",

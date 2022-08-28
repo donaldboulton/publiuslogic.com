@@ -14,7 +14,6 @@ import ListItem from '@/components/List'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
 import Layout from '@/components/Layout'
-
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
@@ -139,7 +138,7 @@ export default function Home() {
             <div className="relative flex content-center items-center justify-center">
               <IndexHero />
             </div>
-            <section className="pb-10 bg-slate-300 dark:bg-slate-700 text-slate-200 dark:text-slate-900 transition-all duration-200 -mt-10">
+            <section className="pb-10 bg-slate-700 text-slate-200 transition-all duration-200 -mt-10">
               <div className="container mx-auto px-4">
                 <div className="flex flex-wrap">
                   <div className="lg:pt-10 pt-4 w-full md:w-4/12 px-4 text-center">
@@ -237,7 +236,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="text-slate-900 dark:text-slate-200 mb-10">
+                <div className="text-slate-200 mb-10">
                   <div className="flex justify-center">
                     <StaticImage
                       className="max-w-xs m-auto w-20 h-20 mx-auto mb-3 ring ring-indigo-500 ring-offset-4 rounded-full"
@@ -258,7 +257,7 @@ export default function Home() {
                   >
                     https://donboulton.com
                   </a>
-                  <div className="justify-center max-w-xl m-auto dark:text-slate-200 dark:hover:text-slate-400 text-slate-900 hover:text-slate-700 my-2 mb-6">
+                  <div className="justify-center max-w-xl m-auto text-slate-200  hover:text-slate-300 my-2 mb-6">
                     <div className="text-center justify-items-center">
                       Left Hand of Father God since the beginning of time!{' '}
                     </div>
@@ -290,7 +289,7 @@ export default function Home() {
                         <span>donboulton</span>
                       </a>
                       <a
-                        className="flex items-center text-slate-900 hover:text-slate-900 dark:text-slate-200 dark:hover:text-slate-200"
+                        className="flex items-center text-slate-200 hover:text-slate-300"
                         href="https://www.github.com/donaldboulton"
                         target="_blank"
                         rel="noreferrer"
@@ -315,7 +314,7 @@ export default function Home() {
                 </div>
               </div>
             </section>
-            <section className="relative py-20 bg-slate-300 dark:bg-slate-900">
+            <section className="relative py-20 bg-slate-900">
               <div
                 className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
                 style={{ height: '80px' }}
@@ -329,33 +328,30 @@ export default function Home() {
                   x="0"
                   y="0"
                 >
-                  <polygon
-                    className="text-slate-200 dark:text-slate-900 fill-current"
-                    points="2560 0 2560 100 0 100"
-                  ></polygon>
+                  <polygon className="text-slate-900 fill-current" points="2560 0 2560 100 0 100"></polygon>
                 </svg>
               </div>
 
               <div className="container mx-auto px-4">
-                <div className="items-center flex flex-wrap bg-slate-200 dark:bg-slate-900 text-slate-900 dark:text-slate-200">
+                <div className="items-center flex flex-wrap bg-slate-900 text-slate-200">
                   <div className="flex flex-wrap items-center mt-8">
                     <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mb-6">
-                      <h3 className="text-3xl text-black dark:text-white mb-2 font-semibold leading-normal">
+                      <h3 className="text-3xl text-slate-200 mb-2 font-semibold leading-normal">
                         Coming Out of Retirement
                       </h3>
-                      <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-black dark:text-white">
+                      <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-white">
                         I have been Retired from birth until I become 65, then I am getting to work, start singing,
                         finding somewhere the people like to talk about God, Life, Love, Truth! Starting my Loves's
                         church on Earth.
                       </p>
-                      <div className="text-lg font-light leading-relaxed mt-0 mb-4 text-black dark:text-white">
+                      <div className="text-lg font-light leading-relaxed mt-0 mb-4 text-white">
                         <div>
                           <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4">
                             {' '}
                             Mans Books Of Life
                           </span>
                           <p>
-                            <span className="text-black dark:text-white">
+                            <span className="text-white">
                               {' '}
                               Will be compared to Gods Books Of Life in one years time.
                             </span>
@@ -368,7 +364,7 @@ export default function Home() {
                           https://mansbooks.com
                         </a>
                       </div>
-                      <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-black dark:text-slate-200">
+                      <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-slate-200">
                         <div>
                           <span className="text-rose-500 hover:text-rose-700 hover:shadow-rose-700/50 mt-4">
                             {' '}
@@ -427,7 +423,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div
-                    className="top-auto mt-4 bottom-0 left-0 dark:bg-slate-900 bg-offwhite right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
+                    className="top-auto mt-4 bottom-0 left-0 bg-slate-900 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200"
                     style={{ height: '70px' }}
                   >
                     <svg
@@ -439,16 +435,13 @@ export default function Home() {
                       x="0"
                       y="0"
                     >
-                      <polygon
-                        className="text-slate-200 dark:text-slate-700 fill-current"
-                        points="2560 0 2560 100 0 100"
-                      ></polygon>
+                      <polygon className="text-slate-700 fill-current" points="2560 0 2560 100 0 100"></polygon>
                     </svg>
                   </div>
                 </div>
               </div>
             </section>
-            <section className="py-20 relative block bg-slate-300 dark:bg-slate-700">
+            <section className="py-20 relative block bg-slate-700">
               <div className="container mx-auto pb-24 px-4">
                 <m.div
                   ref={ref4}
@@ -465,7 +458,7 @@ export default function Home() {
                   width="2560"
                   height="200"
                   viewBox="0 0 2560 200"
-                  className="fill-slate-300 stroke-blue-500 dark:fill-slate-900"
+                  className="stroke-blue-500 fill-slate-900"
                 >
                   <path
                     strokeWidth="2"
@@ -491,7 +484,7 @@ export default function Home() {
                     width="2560"
                     height="200"
                     viewBox="0 0 2560 200"
-                    className="stroke-red-500 dark:stroke-red-600 fill-slate-800"
+                    className="stroke-red-600 fill-slate-800"
                   >
                     <path
                       stroke-width="2"
@@ -512,7 +505,7 @@ export default function Home() {
                       transition={{ duration: 0.8, ease: 'easeOut' }}
                     >
                       <div className="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg">
-                        <div className="flex-auto p-5 m-2 lg:p-10t text-black dark:text-white">
+                        <div className="flex-auto p-5 m-2 lg:p-10t text-white">
                           <h4 className="text-2xl mb-2 text-center font-semibold text-slate-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
                             Update's To Creation, and Virtue!
                           </h4>
@@ -529,7 +522,7 @@ export default function Home() {
                               </Link>
                             </span>
                           </p>
-                          <div className="mt-24 mt-20 lg:mt-0 mb-4 rounded-lg bg-slate-300 dark:bg-slate-800 text-black dark:text-white">
+                          <div className="mt-24 mt-20 lg:mt-0 mb-4 rounded-lg bg-slate-800 text-white">
                             <List>
                               <List.Item>
                                 <p className="mb-1" variant="secondary">

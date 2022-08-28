@@ -19,6 +19,8 @@ import { LazyMotion, m } from 'framer-motion'
 import VideoOne from '@/components/CloudinaryVideo/videoOne'
 import VideoTwo from '@/components/CloudinaryVideo/videoTwo'
 import CloudinaryVideo from '@/components/CloudinaryVideo'
+import Accordion from '@/components/Accordion'
+import Table from '@/components/Table'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -43,13 +45,15 @@ const shortcodes = {
   CloudinaryVideo,
   VideoTwo,
   VideoOne,
+  Accordion,
+  Table,
 }
 
 const Layout = ({ children, path }: LayoutProps) => {
   return (
     <>
       <LazyMotion features={loadFeatures}>
-        <div className="max-w-screen-xl mx-auto bg-primary-dark light:bg-offwhite text-white light:text-black transition-all duration-200 ease-linear antialiased font-sans">
+        <div className="max-w-screen-xl mx-auto text-slate-900 dark:text-slate-200 antialiased">
           <m.main
             key={path}
             initial={{ opacity: 0 }}

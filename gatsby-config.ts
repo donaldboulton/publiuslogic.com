@@ -36,8 +36,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-react-leaflet',
       options: {
-        linkStyles: false, // (default: true) Enable/disable loading stylesheets via CDN
-      },
+        linkStyles: false,
     },
     {
       resolve: 'gatsby-plugin-react-svg',
@@ -197,7 +196,7 @@ module.exports = {
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
         queries,
-        chunkSize: 10000, // default: 1000
+        chunkSize: 1000,
         skipIndexing: false,
       },
     },

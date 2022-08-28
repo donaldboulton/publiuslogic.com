@@ -1402,7 +1402,7 @@
     html-entities "^2.3.3"
     strip-ansi "^6.0.0"
 
-"@giscus/react@^2.1.1":
+"@giscus/react@^2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@giscus/react/-/react-2.2.0.tgz#b5fcec12ea19ecbf832d44996346f21a0ae50621"
   integrity sha512-MXjKAQyO85ZdC8OVApNQsJhPvTJcuUf5GmQw2KdvNcBVivUpVrA+NUppdwsrI+lK6jEX4ZMVOCnbJ5GaQddaAA==
