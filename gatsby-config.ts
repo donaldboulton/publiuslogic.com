@@ -11,6 +11,7 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: 'PubliusLogic',
+    twitterUsername: '@donboulton',
     author: {
       name: 'Donald Boulton',
       url: 'https://donboulton.com',
@@ -19,6 +20,7 @@ module.exports = {
     description:
       'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
     siteUrl: 'https://publiuslogic.com',
+    siteImage: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
     siteRss: 'https://publiuslogic.com/rss.sml',
     siteSitemap: 'https://publiuslogic.com/sitemap.xml',
     location: 'OKC, Middle Earth',
@@ -36,7 +38,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-react-leaflet',
       options: {
-        linkStyles: false,
+        linkStyles: true, // (default: true) Enable/disable loading stylesheets via CDN
+      },
     },
     {
       resolve: 'gatsby-plugin-react-svg',
@@ -181,12 +184,12 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'PubliusLogic',
-        short_name: 'PubliusLogic',
+        short_name: 'publiuslogic',
         start_url: '/',
-        background_color: fullConfig.theme.colors.gray['800'],
-        theme_color: fullConfig.theme.colors.gray['800'],
+        background_color: fullConfig.theme.colors.slate['900'],
+        theme_color: fullConfig.theme.colors.slate['900'],
         display: 'minimal-ui',
-        icon: 'static/images/gatsby/publiuslogic-logo.png', // This path is relative to the root of the site.
+        icon: 'static/images/gatsby/publiuslogic-logo.png',
       },
     },
     {
@@ -234,7 +237,12 @@ module.exports = {
             // Opt-out of Google's FLoC
             'Permissions-Policy: interest-cohort=()',
           ],
-        },
+        }, // option to add more headers. `Link` headers are transformed by the below criteria
+        allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
+        mergeSecurityHeaders: true, // boolean to turn off the default security headers
+        mergeCachingHeaders: true, // boolean to turn off the default caching headers
+        transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
+        generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
       },
     },
   ],
