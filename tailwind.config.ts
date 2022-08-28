@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  content: ['./src/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   future: {
     removeDeprecatedGapUtilities: true,
@@ -52,6 +54,8 @@ module.exports = {
         pre: '#fcfcfc',
         code: '#fcfcfc',
         offwhite: '#fcfcfc',
+        green: '#56d187',
+        orange: '#ff9938',
       },
       fontFamily: {
         sans: 'DM Sans',
@@ -91,5 +95,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms'), require('@tailwindcss/line-clamp')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }

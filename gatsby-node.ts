@@ -1,7 +1,11 @@
-import type { GatsbyNode } from 'gatsby'
-
 /* eslint-disable @typescript-eslint/no-var-requires */
+/**
+ * Implement Gatsby's Node APIs in this file.
+ *
+ * See: https://www.gatsbyjs.com/docs/node-apis/
+ */
 
+// const fs = require(`fs`)
 const path = require('path')
 const _ = require('lodash')
 
@@ -24,21 +28,23 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
 
-  const typeDefs = `
+  createTypes(`
     type Mdx implements Node {
       frontmatter: MdxFrontmatter!
     }
     type MdxFrontmatter {
       image: File @fileByRelativePath
     }
-  `
-  createTypes(typeDefs)
+  `)
 }
 
 const tagTemplate = path.resolve('src/templates/tag-template.tsx')
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
+  // Destructure the createPage function from the actions object
   const { createPage } = actions
+  // Use the graphql group command to get a list of each tag and category
+  // fieldValue is the tag/category name
   const { data, errors } = await graphql(`
     query {
       categories: allMdx {
@@ -56,6 +62,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
+
+  // Same for tags
   const tags = data.tags.group
   tags.forEach(({ fieldValue }) =>
     createPage({

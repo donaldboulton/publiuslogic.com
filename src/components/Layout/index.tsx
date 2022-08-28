@@ -1,31 +1,71 @@
 import * as React from 'react'
-import { ReactNode } from 'react'
 import { Link } from 'gatsby'
 import { CookieConsent } from 'react-cookie-consent'
-import { AnimatePresence, m } from 'framer-motion'
+import { MDXProvider } from '@mdx-js/react'
+import FindOutMore from '@/components/FindOutMore'
+import Features from '@/components/Features'
+import Cta from '@/components/CTA'
+import Callout from '@/components/Callout'
+import CalloutDanger from '@/components/Callout/CalloutDanger'
+import CalloutLabel from '@/components/Callout/CalloutLabel'
+import WavyHr from '@/components/WavyHr'
+import A from '@/components/A'
+import Center from '@/components/Center'
+import List from '@/components/List'
+import ListItem from '@/components/List/ListItem'
+import ListGrid from '@/components/ListGrid'
+import Tooltip from '@/components/Tooltip'
+import { LazyMotion, m } from 'framer-motion'
+import VideoOne from '@/components/CloudinaryVideo/videoOne'
+import VideoTwo from '@/components/CloudinaryVideo/videoTwo'
+import CloudinaryVideo from '@/components/CloudinaryVideo'
+
+const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 interface LayoutProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
-const animationConfiguration = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  exit: { opacity: 0 },
+const shortcodes = {
+  A,
+  FindOutMore,
+  Center,
+  Cta,
+  Features,
+  WavyHr,
+  Callout,
+  CalloutDanger,
+  CalloutLabel,
+  List,
+  ListItem,
+  ListGrid,
+  Tooltip,
+  CloudinaryVideo,
+  VideoTwo,
+  VideoOne,
 }
 
 const Layout = ({ children, path }: LayoutProps) => {
   return (
     <>
-      <React.StrictMode>
-        <AnimatePresence wait>
-          <div className="max-w-screen-xl mx-auto text-slate-900 dark:text-slate-200 antialiased">
-            <m.main key={path} variants={animationConfiguration} transition={{ duration: 3 }}>
-              {children}
-            </m.main>
-          </div>
-        </AnimatePresence>
-      </React.StrictMode>
+      <LazyMotion features={loadFeatures}>
+        <div className="max-w-screen-xl mx-auto bg-primary-dark light:bg-offwhite text-white light:text-black transition-all duration-200 ease-linear antialiased font-sans">
+          <m.main
+            key={path}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              type: 'spring',
+              mass: 0.35,
+              stiffness: 75,
+              duration: 0.2,
+            }}
+          >
+            <MDXProvider components={shortcodes}>{children}</MDXProvider>
+          </m.main>
+        </div>
+      </LazyMotion>
       <CookieConsent
         enableDeclineButton
         flipButtons
@@ -34,8 +74,7 @@ const Layout = ({ children, path }: LayoutProps) => {
         declineButtonText="Decline"
         ariaAcceptLabel="Accept Cookies"
         ariaDeclineLabel="Decline Cookies"
-        cookieName="gtag"
-        expires={150}
+        cookieName="gatsby-gdpr-google-analytics"
         style={{
           background: 'linear-gradient(to right, #4338ca, transparent, #4338ca)',
           textShadow: '2px 2px black',

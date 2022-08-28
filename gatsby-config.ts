@@ -1,4 +1,3 @@
-import type { GatsbyConfig } from 'gatsby'
 /* eslint @typescript-eslint/no-var-requires: "off" */
 const siteAcronyms = require('./gatsby-site-acronyms')
 const queries = require('./src/utils/algolia-queries')
@@ -9,10 +8,9 @@ const fullConfig = resolveConfig(tailwindConfig)
 
 require('dotenv').config()
 
-const config: GatsbyConfig = {
+module.exports = {
   siteMetadata: {
     title: 'PubliusLogic',
-    twitterUsername: '@donboulton',
     author: {
       name: 'Donald Boulton',
       url: 'https://donboulton.com',
@@ -21,7 +19,6 @@ const config: GatsbyConfig = {
     description:
       'PubliusLogic has Topics on Creation, Law, USA and World Governments, Life Matters. Our Main focus is the Re-Creation of Mankind to the Spiritual Beings you have forgotten about, as you only live in the Flesh. Your Soul and Spirit you deny.',
     siteUrl: 'https://publiuslogic.com',
-    siteImage: 'https://publiuslogic.com/static/images/jpg/dbbg.jpg',
     siteRss: 'https://publiuslogic.com/rss.sml',
     siteSitemap: 'https://publiuslogic.com/sitemap.xml',
     location: 'OKC, Middle Earth',
@@ -35,12 +32,11 @@ const config: GatsbyConfig = {
       github: 'https://github.com/donaldboulton/',
     },
   },
-  graphqlTypegen: true,
   plugins: [
     {
       resolve: 'gatsby-plugin-react-leaflet',
       options: {
-        linkStyles: false,
+        linkStyles: false, // (default: true) Enable/disable loading stylesheets via CDN
       },
     },
     {
@@ -88,16 +84,15 @@ const config: GatsbyConfig = {
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 2048,
               showCaptions: true,
               linkImagesToOriginal: false,
-              quality: 80,
-              backgroundColor: `none`,
+              backgroundColor: 'none',
               disableBgImage: true,
               withWebp: true,
-              loading: `auto`,
+              loading: 'lazy',
             },
           },
           {
@@ -116,13 +111,13 @@ const config: GatsbyConfig = {
             resolve: 'gatsby-remark-embed-video-ext',
             options: {
               width: 800,
-              ratio: 1.77,
-              related: false,
-              noIframeBorder: true,
-              loadingStrategy: 'lazy',
-              containerClass: 'embedVideo-container',
+              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
+              noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
+              loadingStrategy: 'lazy', //Optional: Enable support for lazy-load offscreen iframes. Default is disabled.
+              containerClass: 'embedVideo-container', //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
               sandboxOpts: 'allow-same-origin allow-scripts allow-popups allow-presentation',
-              iframeId: false,
+              iframeId: false, //Optional: if true, iframe's id will be set to what is provided after 'youtube:' (YouTube IFrame player API requires iframe id)
             },
           },
           {
@@ -187,12 +182,12 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'PubliusLogic',
-        short_name: 'publiuslogic',
+        short_name: 'PubliusLogic',
         start_url: '/',
         background_color: fullConfig.theme.colors.gray['800'],
         theme_color: fullConfig.theme.colors.gray['800'],
         display: 'minimal-ui',
-        icon: 'static/images/gatsby/publiuslogic-logo.png',
+        icon: 'static/images/gatsby/publiuslogic-logo.png', // This path is relative to the root of the site.
       },
     },
     {
@@ -202,8 +197,14 @@ const config: GatsbyConfig = {
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
         queries,
-        chunkSize: 10000,
+        chunkSize: 10000, // default: 1000
         skipIndexing: false,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        devMode: true,
       },
     },
     {
@@ -219,26 +220,23 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-offline',
       options: {
-        precachePages: ['/about', '/contact', '/blog/*'],
+        precachePages: ['/', 'about', '/contact', '/blog/*'],
         workboxConfig: {
-          importWorkboxFrom: `cdn`,
+          importWorkboxFrom: 'cdn',
         },
       },
     },
     {
+      // Needs to be last
       resolve: 'gatsby-plugin-netlify',
       options: {
         headers: {
-          '/*': ['Permissions-Policy: interest-cohort=()'],
+          '/*': [
+            // Opt-out of Google's FLoC
+            'Permissions-Policy: interest-cohort=()',
+          ],
         },
-        allPageHeaders: [],
-        mergeSecurityHeaders: true,
-        mergeCachingHeaders: true,
-        transformHeaders: (headers, path) => headers,
-        generateMatchPathRewrites: true,
       },
     },
   ],
 }
-
-export default config

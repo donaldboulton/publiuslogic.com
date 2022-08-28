@@ -2,7 +2,7 @@
 
 ## Technical notes about this website
 
-Upgrade as of Aug 4th, 2022 to Gatsby 4.21.0 React Version 18.2.0
+Upgrade as of Aug 4th, 2022 to Gatsby 4.20.0
 
 🎁 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/donaldboulton/publiuslogic.com/master/LICENSE.txt)
 [![Tip Me via PayPal](https://img.shields.io/badge/PayPal-tip%20me-green.svg?logo=paypal)](https://www.paypal.me/donaldboulton)
@@ -26,38 +26,35 @@ Upgrade as of Aug 4th, 2022 to Gatsby 4.21.0 React Version 18.2.0
   <br />
 </p>
 
-- 🚋 Serverless Functions
-- 🔏 Authentication (with Octokit Github Identity)
-- 🔐 Authenticated Serverless Functions
-- 😻 External Provider login with GitHub, Bitbucket, Google, etc.
-- 🏠 Protected Routes
-- 👋🏼 Dynamic Client side Pages in Gatsby (enabling all the above)
-- 🕵🏼‍♂️ Hide API Secrets from being exposed to Frontend
+- 🚋Serverless Functions
+- 🔏Authentication (with Netlify Identity)
+- 🔐Authenticated Serverless Functions
+- 😻External Provider login with GitHub, Bitbucket, Google, etc.
+- 🏠Protected Routes
+- 👋🏼Dynamic Clientside Pages in Gatsby (enabling all the above)
+- 🕵🏼‍♂️Hide API Secrets from being exposed to Frontend
 
 This is starter template for a full featured marketing and blog website based on the following:
 
 - [Gatsby Starter Default](https://github.com/gatsbyjs/gatsby-starter-default)
 - [How To Set Up a Gatsby Project with TypeScript](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-gatsby-project-with-typescript)
-- [Gatsby v4.21.0](https://gatsbyjs.org)
+- [Gatsby](https://gatsbyjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
 - [TailwindCSS](https://tailwindcss.com) and [TailwindUI](https://tailwindui.com)
 - [HeroIcons](https://heroicons.com/)
 - [Hero Patterns](https://heropatterns.com/)
 - [HeadlessUI](https://headlessui.dev/)
 - [unDraw](https://undraw.co/) for illustrations
-- [MDX v2](https://mdxjs.com/) and [Markdown](https://www.markdownguide.org/)
-- [ESLint](https://eslint.org) for type-checking
-- [Framer Motion]() Page Animations
-- [React TsParticles](https://www.npmjs.com/package/react-tsparticles/) Background Animations
-- [React Leaflet](https://react-leaflet.js.org/) Contact Page Map
+- [MDX](https://mdxjs.com/) and [Markdown](https://www.markdownguide.org/)
+- [ESLint](https://eslint.org)for type-checking
+- [SendGrid](https://sendgrid.com/) email delivery
 - [Schema.org](https://schema.org/) and [JSON for Linking Data](https://json-ld.org/)
 - [Open Graph](https://ogp.me/) used by [Facebook](https://developers.facebook.com/docs/sharing/webmasters/#markup)
 - [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards)
 
 ## Features
 
-> ✔️ Complete Website Suite - Pages = Home, Blog, About, Privacy, Sitemap and Contact
-
+- Full-featured blog with frontmatter (title, description, author, date, image, tags)
 - Tags index page and individual tag pages
 - Pagination in posts and tag pages
 - Support for RSS feed, sitemap and robots.txt
@@ -65,10 +62,9 @@ This is starter template for a full featured marketing and blog website based on
 - SVG design (unDraw, Hero Patterns, HeroIcons)
 - Support for code syntax highlighting
 - Manifest and offline support
-- Contact form using Netlify Forms and Gatsby functions
-- Full SEO support (via Gatsby v4.21.0 Head )
-- Open Graph, Twitter Cards and Schema.org via JSON-LD
-- Tailwind Css v3.1.8, for super styling
+- Contact form using sendgrid email and Gatsby functions
+- Full SEO support (via Gatsby v4.20.0 Head ) including Open Graph, Twitter Cards and Schema.org via JSON-LD
+- Tailwind Css v3.0.7, for super styling
 
 ## How to use the starter
 
@@ -83,17 +79,22 @@ This is starter template for a full featured marketing and blog website based on
 9. If you want to change the navigation menu, edit `src/components/header.tsx`. Similarly, edit `src/components/footer.tsx` to customise the footer.
 10. If you make a lot of changes, use `yarn lint` and `yarn type-check` to check everything is okay.
 
-### Framer Motion Animations
+## SendGrid configuration (for contact form)
 
-Using Framer Motion for all site component's and page transitions including animations and for menu.
+Insert the following environment variables (either in .env or on deployment host):
+
+- `SENDGRID_API_KEY`
+- `SENDGRID_AUTHORIZED_EMAIL`
+
+### React Spring Animations
+
+Using react spring for menu animations from desktop to mobile, image gallery useChain animations for hidden gallery's display
 
 ## Just Having Fun
 
 🍸 This website is built as static HTML with Gatsby component-modular Docker Container builds using React components and GraphQL, Built with WebPack. Including a user data backend on FaunaDB.
 
-Served on Netlify via a continuous deployment (CD) workflow. Pull requests are automatically built into preview apps, while commits to the master branch trigger the production build and deploy onto Netlify’s CDN edge node infrastructure.
-
-Since the whole site is just a bunch of static files copied onto multiple CDN nodes around the world, time to first byte (TTFB) is consistently fast at around 1ms to 2ms. Instant Notifications through my Slack Bots or GMail and phone notifications using Netlify Functions for my Mansbooks.com publiuslogic.com workspace.
+Served on Netlify via a continuous deployment (CD) workflow. Pull requests are automatically built into preview apps, while commits to the master branch trigger the production build and deploy onto Netlify’s CDN edge node infrastructure. Since the whole site is just a bunch of static files copied onto multiple CDN nodes around the world, time to first byte (TTFB) is consistently fast at around 1ms to 2ms. Instant Notifications through my Slack Bots or GMail and phone notifications using Netlify Functions for my Mansbooks.com publiuslogic.com workspace.
 
 ## Gatsby Starter Publius
 
@@ -101,72 +102,63 @@ Since the whole site is just a bunch of static files copied onto multiple CDN no
 
 Feel free to reuse any part of this repo to create your own Gatsby site.
 
-A [Gatsby v4.21.0](https://www.gatsbyjs.org/) 🗸 🗸
+A [Gatsby v4](https://www.gatsbyjs.org/) 🗸 and [Netlify CMS](https://www.netlifycms.org) 🗸 powered generic business website starter based on [gatsby-starter-netlify-cms](https://github.com/AustinGreen/gatsby-starter-netlify-cms) 🗸
 
 ### Server-less
 
 🔥 No run time dependency or vulnerable server stack required Pre-built pages served over a CDN for fastest time to first byte Fast and cheap CDN scaling results in ultra-high availability worldwide Server-side processes abstracted into microservice APIs for reduced attack surface areas Modern Continuous Deployment (CD) Git workflows with instant rollbacks Headless CMS for complete separation from your app/site and with full version control Modern authentication methods such as OAuth 2 for ultimate security.
 
-## Authentication
+## Authenticati
 
-### Gatsby Functions + Google OAuth Example
+#### What is Netlify Identity
 
-This example illustrates logging in with Google 0Auth via Gatsby Functions and defining a [private client route behind this authentication](https://www.gatsbyjs.com/tutorial/authentication-tutorial/). The primary focus is on the Functions aspect, not the client side routing/authentication. [This article](https://soshace.com/react-user-login-authentication-using-usecontext-and-usereducer/#crayon-60c920bddc105062139412) has a good example for setting up the client side auth provider you could layer on top of this example.
-
-## 🚀 Quick start
-
-1.  **Set up Google OAuth Client.**
-
-    This sample uses google oAuth client to authenticate into the Google inbox api. Obtain an oAuth credential from the Google Cloud [API & Services Credentials Page](https://console.cloud.google.com/apis/credentials?)
-
-    - Generate an Oauth Client ID. You can follow the steps highlighted in [Account Authentication - Service Account](https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication?id=oauth). Make sure to set up at least one **Authorized redirect URI** to be `http://localhost:8000`
-
-2.  **Add the Google Oauth Credentials to your `.env.development` file**
-
-    There are **2** environment variables you'll need to add to your project:
-
-    - `GOOGLE_CLIENT_ID`: Fetch the ClientId from the newly created OAuth 2.0 Client ID. Yuo can find it in the [Google Credentials Console](https://console.cloud.google.com/apis/credentials)
-    - `GOOGLE_CLIENT_SECRET`: Fetch the Client Secret from the newly created OAuth 2.0 Client ID. Yuo can find it in the [Google Credentials Console](https://console.cloud.google.com/apis/credentials)
-
-    You'll also want to add these as environment variables when deploying to Gatsby Cloud.
-
-3.  **Start developing.**
-
-    To get started, run `npm install` to add all necessary packages.
-
-    When developing locally, you include environment variables to your `.env.development`. Read more about how Gatsby handles `.env` files and environment variables in the [Gatsby Docs](https://www.gatsbyjs.com/docs/how-to/local-development/environment-variables/)
-
-    ```shell
-    cd examples/functions-google-oauth
-    npm install
-    npm run develop
-    ```
-
-4.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000! You can use the UI on the index page to test the functions or directly access them at http://localhost:8000/api/{function_name}
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-5.  **Deploy**
-
-You can deploy this example on Gatsby Cloud by copying the example into a new repo and [connecting that to Gatsby Cloud](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/deploying-to-gatsby-cloud/#set-up-an-existing-gatsby-site). **Note** The live URLs of your site will need to be set in the [Google Cloud allowed URLs](https://console.cloud.google.com/apis/credentials) settings for your Client ID and the environment variables need to be set in Gatsby Cloud for:
-
-- GOOGLE_REDIRECT_URI="{YOUR_DOMAIN}/api/googleAccessToken"
-- APP_REDIRECT_URI="{YOUR_DOMAIN}/auth-redirect"
-- APP_HOSTNAME="{YOUR_DOMAIN}"
-
-#### What is Octokit Identity
-
-⁉️ Octokit Identity service is a plug-and-play microservice for handling site
-functionalities like sign / ups, logins, password recovery, user metadata, and
+⁉️ Netlify’s Identity service is a plug-and-play microservice for handling site
+functionalities like signups, logins, password recovery, user metadata, and
 roles. You can use it from single page apps instead of rolling your own, and
 integrate with any service that understands JSON Web Tokens (JWTs).
 
 Learn more about this service from this
-[Octokit Rest](https://github.com/octokit/auth-app.js/) 🗸
+[Blog Post](https://www.netlify.com/blog/2017/09/07/introducing-built-in-identity-service-to-streamline-user-management/) 🗸
 
 It follows the [JAMstack architecture](https://jamstack.org) 🗸 by using Git as a single source of truth, and [Netlify](https://www.netlify.com) 🗸 for continuous deployment, and CDN distribution.
+
+## Netlify CMS
+
+[Static + content management = ❤️](https://www.netlifycms.org/) 🗸
+
+🖥️ Netlify CMS is Always the latest Netlify CMS GitHub repo pull, with my custom Webpack hashed build, not the Gatsby plugin and netlify-cms node module way; which builds it into the frontend = slowing Gatsby way down; TEST it to see for yourself.
+
+My custom dark build of the Netlify Identity Widget is used on the Gatsby frontend and in my git-gateway back-end.
+
+Get the speed, security, and scalability of a static site, while still providing a convenient editing interface for content.
+
+An integrated part of your Git workflow
+Content is stored in your Git repository along side your code for easier versioning, multi-channel publishing, and the option to handle content updates directly in Git.
+
+### An extensible CMS built on React
+
+❤️ Netlify CMS is built as a single-page React app. Create custom-styled previews, UI widgets, and editor plugins or add backends to support different Git platform APIs.
+My Netlify CMS backend will build and add Pages, Posts, My layout components with Event data for Bulma GCal fullCalendar localized events, Notifications, Authors, Products, Site Updates and charts data using charts.js displaying build, sales and analytics charts data on individual pages and posts. All edited from a CMS Backend on a Static Website!
+
+## Features
+
+> ✔️ Complete Website Suite - Pages = Home, Blog, About, Privacy, Sitemap and Contact
+
+- Netlify CMS for Content Management
+- Netlify Identity for Authentication
+- FaunaDB for Authentication - Users Backend and Admin
+- SEO Friendly (Sitemap, Schemas, Meta Tags, GTM etc.)
+- All Twitter Widgets, Meta and SEO
+- Styled Components, screen mediaMatch mediaQuerys & Bulma for styling
+- React Spring for Animated Menus, Blogs Lists and Image Gallery's
+- Table Of Contents, on or off through frontmatter
+- Tags, Categories and a RSS Feed for Blog
+- Time to Read tags categories and published time meta
+- Comments with React withUtterances as GitHub Issues
+- Follow, Mention, Star and Fork GitHub buttons
+- Share Support
+- Elastic-Lunr Search
+- Pagination for Blog
 
 #### Demo
 

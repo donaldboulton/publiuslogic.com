@@ -3,7 +3,7 @@
   command = "gatsby build"
   NETLIFY_USE_YARN = "true"
 [build.environment]
-  NODE_VERSION = "16.16.0"
+  NODE_VERSION = "16.15.0"
   YARN_VERSION = '1.22.19'
 [[plugins]]
   package = "@netlify/plugin-gatsby" 
@@ -65,6 +65,8 @@
       https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
       https://stats.g.doubleclick.net/
       https://www.google.com/recaptcha/api.js
+      https://www.gstatic.com/recaptcha/releases/0aeEuuJmrVqDrEL39Fsg5-UJ/recaptcha__en.js
+      https://www.gstatic.com/recaptcha/releases/kcXVPRWG7fMILHmzon0--fD3/recaptcha__en.js
       https://unpkg.com/leaflet@1.8.0/dist/leaflet.css
     '''      
     Access-Control-Allow-Methods = '''
@@ -93,6 +95,16 @@
       midi=(self),
       payment=(self),
       picture-in-picture=*,
-      usb=(self),
-      interest-cohort=(self)
+      usb=(self)
     '''
+[[redirects]]
+  from = "/privacy"
+  to = "/blog/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about"
+  to = "/blog/about"
+  status = 301
+  force = true  
