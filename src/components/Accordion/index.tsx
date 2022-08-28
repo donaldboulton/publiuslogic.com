@@ -96,7 +96,7 @@ const Accordion = () => {
                         <div>Heart Of A Child, I can't walk out</div>
                         <div>Because I love you too much, baby </div>
                         <div>Why can't you see, what you're doin' to me </div>
-                        <div>When you don' believe a word I say?</div>
+                        <div>When you don't believe a word I say?</div>
 
                         <div className="my-4">[Chorus]</div>
 

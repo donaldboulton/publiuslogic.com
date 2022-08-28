@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactNode, Fragment, useRef, useState } from 'react'
+import { ReactNode, Fragment, useRef, useState, FC } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationIcon } from '@heroicons/react/outline'
 
@@ -9,7 +9,7 @@ export interface ModalProps {
   children: ReactNode
 }
 
-export const Modal: ReactFC<ModalProps> = props => {
+export const Modal: FC<ModalProps> = props => {
   const { dialogTitle, dialogContent, children, ...rest } = props
   const [isOpen, setIsOpen] = useState(true)
 
@@ -69,7 +69,7 @@ export const Modal: ReactFC<ModalProps> = props => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="relative inline-block align-bottom bg-slate-200 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <Dialog.Panel className="relative inline-block align-bottom bg-slate-900 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
                   <div className="bg-slate-900 text-slate-200 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div className="sm:flex sm:items-start">
                       <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-purple-400 sm:mx-0 sm:h-10 sm:w-10">
