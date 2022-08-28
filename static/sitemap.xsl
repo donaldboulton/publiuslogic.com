@@ -18,13 +18,13 @@
                 <link rel="sitemap" type="application/xml" title="Sitemap Categories" href="/sitemap-categories.xml" />
                 <style type="text/css">
                     body {
-                        background: #1d1d1d;
+                        background: #0f172a;
                         font-family: sans-serif;
                         font-size: 22px;
                         color: #cccccc;
                     }
                     a {
-                        color: #d64000;
+                        color: #8b5cf6;
                     }
                     a:hover {
                         color: #ffffff;
@@ -40,14 +40,14 @@
                     th {
                         text-align: left;
                         padding-right: 30px;
-                        font-size: 18px;
+                        font-size: 24px;
                     }
                     thead th {
-                        border-bottom: 1px solid #d64000;
+                        border-bottom: 1px solid #8b5cf6;
                         cursor: pointer;
                     }
                     td {
-                        font-size: 18px;
+                        font-size: 22px;
                         padding: 5px;
                     }
                     tr:nth-child(odd) td {
@@ -80,7 +80,7 @@
                     <h1>PubliusLogic Sitemap's Index</h1>
                     <div className="desc">
                         Sitemap Index's of Pages, Posts, Tags and Categories
-                        <div><a href="/">Back to Home Page</a></div>
+                        <div><a href="/" area-label="Back To Home Page" title="Back to Home Page">Back to Home Page</a></div>
                     </div>
                     <xsl:if test="count(sitemap:sitemapindex/sitemap:sitemap) &gt; 0">
                         <table id="sitemap" cellpadding="3">

@@ -41,27 +41,27 @@ const ListItem: FC<ListItemProps> = props => {
 
   return (
     <ul>
-    <li style={listItem} {...rest}>
-      <span dataListItem>
-        <svg
-          className="w-6 h-6 mr-2 ml-1 inline-block items-center text-indigo-400"
-          viewBox="0 0 25 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          stroke="currentColor"
-          {...props}
-        >
-          <path d="M5 12H19" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path
-            d="M14.0829 6.42532L19 12L14.0829 17.5747"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </span>
-      <div>{children}</div>
-    </li>
+      <li style={listItem} {...rest}>
+        <span dataListItem>
+          <svg
+            className="w-6 h-6 mr-2 ml-1 inline-block items-center text-indigo-400"
+            viewBox="0 0 25 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="currentColor"
+            {...props}
+          >
+            <path d="M5 12H19" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d="M14.0829 6.42532L19 12L14.0829 17.5747"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+        <div>{children}</div>
+      </li>
     </ul>
   )
 }

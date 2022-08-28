@@ -61,10 +61,10 @@ export default function Navigation() {
                           aria-describedby="logoTooltipSmall"
                           formats={['auto', 'webp']}
                           quality={95}
-                        /> 
+                        />
                       </Tooltip>
-                      </Link>
-                      <Link to='/'>
+                    </Link>
+                    <Link to="/">
                       <Tooltip id="logoTooltip" tooltipText="Home Page">
                         <StaticImage
                           layout="fixed"
@@ -72,12 +72,12 @@ export default function Navigation() {
                           height={32}
                           className="hidden md:block h-8 w-[182px]"
                           src="../../../static/images/gatsby/publiuslogic-monogram-182-32.png"
-                          alt='Logo Desktop'
+                          alt="Logo Desktop"
                           aria-label="Logo Desktop"
                           aria-describedby="logoTooltip"
                           formats={['auto', 'webp']}
                           quality={95}
-                        />                        
+                        />
                       </Tooltip>
                     </Link>
                   </div>
@@ -126,7 +126,7 @@ export default function Navigation() {
                         <span className="sr-only">Open Control Menu</span>
                       </Menu.Button>
                     </div>
-                    <Transition                    
+                    <Transition
                       enter="transition ease-out duration-100"
                       enterFrom="transform opacity-0 scale-95"
                       enterTo="transform opacity-100 scale-100"

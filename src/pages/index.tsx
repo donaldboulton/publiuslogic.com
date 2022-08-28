@@ -158,7 +158,7 @@ export default function Home() {
                           />
                         </div>
                         <h6 className="text-xl font-semibold">
-                          <Link to="/blog/commandments" className="text-rose-500">
+                          <Link to="/blog/commandments" area-label="Commandments" className="text-rose-500">
                             Planetary Laws
                           </Link>
                         </h6>
@@ -179,6 +179,7 @@ export default function Home() {
                             width={24}
                             height={24}
                             className="icon"
+                            area-label="Prayer"
                             formats={['auto', 'webp']}
                             src="../../static/img/prayer-150-150.png"
                             quality={95}
@@ -186,7 +187,11 @@ export default function Home() {
                           />
                         </div>
                         <h6 className="text-xl font-semibold">
-                          <Link to="/blog/creation-of-all" className="text-rose-500">
+                          <Link
+                            to="/blog/creation-of-all/#breath-of-life"
+                            area-label="Breath Of Life"
+                            className="text-rose-500"
+                          >
                             Breath Of Life
                           </Link>
                         </h6>
@@ -206,6 +211,7 @@ export default function Home() {
                             width={24}
                             height={24}
                             className="icon"
+                            area-label="JAMStack"
                             formats={['auto', 'webp']}
                             src="../../static/img/jamstack-150-150.png"
                             quality={95}
@@ -239,6 +245,7 @@ export default function Home() {
                       src="../../static/assets/donald-boulton.jpg"
                       quality={95}
                       alt="Profile picture"
+                      area-label="My Picture"
                     />
                   </div>
                   <h2 className="font-bold text-2xl flex justify-center max-w-xs m-auto">Donald W. Boulton</h2>
@@ -247,6 +254,7 @@ export default function Home() {
                     href="https://donboulton.com"
                     target="_blank"
                     rel="noreferrer"
+                    area-label="Don Boulton Home"
                   >
                     https://donboulton.com
                   </a>
@@ -265,6 +273,7 @@ export default function Home() {
                         href="https://twitter.com/donboulton"
                         target="_blank"
                         rel="noreferrer"
+                        area-label="Don Boulton Twitter"
                       >
                         <svg
                           className="flex-initial mr-0.5 mt-0.5"
@@ -285,6 +294,7 @@ export default function Home() {
                         href="https://www.github.com/donaldboulton"
                         target="_blank"
                         rel="noreferrer"
+                        area-label="Don Boulton Github"
                       >
                         <svg
                           className="flex-initial mr-0.5 mt-0.5"
@@ -334,9 +344,9 @@ export default function Home() {
                         Coming Out of Retirement
                       </h3>
                       <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-black dark:text-white">
-                        I have been Retired till I become 65, then I am getting to work, start singing, finding
-                        somewhere the people like to talk about God, Life, Love, Truth! Starting my Loves's church on
-                        Earth.
+                        I have been Retired from birth until I become 65, then I am getting to work, start singing,
+                        finding somewhere the people like to talk about God, Life, Love, Truth! Starting my Loves's
+                        church on Earth.
                       </p>
                       <div className="text-lg font-light leading-relaxed mt-0 mb-4 text-black dark:text-white">
                         <div>

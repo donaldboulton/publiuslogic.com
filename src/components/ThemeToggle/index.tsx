@@ -44,7 +44,15 @@ const settings = [
 
 function SunIcon({ selected, ...props }) {
   return (
-    <svg viewBox="0 0 24 24" area-label="Light" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      area-label="Light"
+      fill="none"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
       <path
         d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
         className={selected ? 'fill-sky-400/20 stroke-sky-500' : 'stroke-slate-400 dark:stroke-slate-500'}
