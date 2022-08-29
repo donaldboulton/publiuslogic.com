@@ -6,7 +6,7 @@ import LogRocket from 'logrocket'
 import setupLogRocketReact from 'logrocket-react'
 
 const onClientEntry = () => {
-  console.log("LogRocket started!")
+  console.log('LogRocket started!')
   LogRocket.init('mcjbg9/publiuslogic')
   setupLogRocketReact(LogRocket)
 }

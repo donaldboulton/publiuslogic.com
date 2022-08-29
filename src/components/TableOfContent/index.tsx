@@ -99,7 +99,6 @@ const TableOfContent = ({ headings }: TableOfContentProps) => {
             <Popover.Button
               ref={setReferenceElement}
               className="bg-slate-700 w-auto h-auto rounded-r-md pr-2 pt-2 pb-0 -ml-1 text-slate-200"
-              aria-describedby="tocTooltip"
             >
               <span className="inline-flex headings-center">
                 <ViewListIcon className="w-8 h-8 ml-2 text-slate-200" />

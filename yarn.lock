@@ -7767,6 +7767,19 @@ gatsby-plugin-eslint@4.0.2:
   dependencies:
     webpack-merge "^5.8.0"
 
+gatsby-plugin-gatsby-cloud@^4.21.0:
+  version "4.21.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-gatsby-cloud/-/gatsby-plugin-gatsby-cloud-4.21.0.tgz#2d5b86f64355f4833afff07e2e13c9df3f424f69"
+  integrity sha512-2icPAxcf0oxqxB80I9WRisxmMuWqB/vAHCXEUONUqnHgCVevy/nc6XzPNj6UY5Nzce64xmoJYGIfhtb3EK+n4Q==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    fs-extra "^10.1.0"
+    gatsby-core-utils "^3.21.0"
+    gatsby-telemetry "^3.21.0"
+    kebab-hash "^0.1.2"
+    lodash "^4.17.21"
+    webpack-assets-manifest "^5.1.0"
+
 gatsby-plugin-image@2.20.0:
   version "2.20.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-image/-/gatsby-plugin-image-2.20.0.tgz#426e36e5fdaac7c8f97c7eb28732130c37bcb117"
@@ -15499,7 +15512,7 @@ webidl-conversions@^3.0.0:
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
   integrity sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==
 
-webpack-assets-manifest@^5.0.6:
+webpack-assets-manifest@^5.0.6, webpack-assets-manifest@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/webpack-assets-manifest/-/webpack-assets-manifest-5.1.0.tgz#5af328f6c8fa760cb9a62af631a83da2b478b791"
   integrity sha512-kPuTMEjBrqZQVJ5M6yXNBCEdFbQQn7p+loNXt8NOeDFaAbsNFWqqwR0YL1mfG5LbwhK5FLXWXpuK3GuIIZ46rg==

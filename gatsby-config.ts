@@ -222,10 +222,34 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-offline',
       options: {
-        precachePages: ['/', 'about', '/contact', '/blog/*'],
+        precachePages: ['/', '/about', '/contact', '/blog/*'],
         workboxConfig: {
           importWorkboxFrom: 'cdn',
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gatsby-cloud`,
+      options: {
+        headers: {
+          '/*': ['Cache-Control: public, max-age=31536000, immutable'],
+          '/static/*': ['Cache-Control: public, max-age=31536000, immutable'],
+        },
+        allPageHeaders: [
+          'Strict-Transport-Security: max-age=31536000; preload',
+          'X-Robots-Tag: index',
+          'X-Frame-Options: DENY',
+          'X-XSS-Protection: 1; mode=block',
+          'X-Content-Type-Options: nosniff',
+          'Referrer-Policy: same-origin',
+          'Access-Control-Allow-Origin: https://publiuslogic.com/, https://utteranc.es/client.js',
+          'Access-Control-Allow-Methods: POST; GET; PUT; DELETE; HEAD',
+        ],
+        mergeSecurityHeaders: true,
+        mergeLinkHeaders: true,
+        mergeCachingHeaders: true,
+        transformHeaders: (headers, path) => headers,
+        generateMatchPathRewrites: true,
       },
     },
     {

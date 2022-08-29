@@ -21,6 +21,7 @@ import VideoTwo from '@/components/CloudinaryVideo/videoTwo'
 import CloudinaryVideo from '@/components/CloudinaryVideo'
 import Accordion from '@/components/Accordion'
 import Table from '@/components/Table'
+import Modal from '@/components/Modal'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -47,6 +48,7 @@ const shortcodes = {
   VideoOne,
   Accordion,
   Table,
+  Modal,
 }
 
 const Layout = ({ children, path }: LayoutProps) => {

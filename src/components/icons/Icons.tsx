@@ -9,7 +9,7 @@ export const TwitterIcon = (props: SVGAttributes<SVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     stroke="currentColor"
     role="img"
-    aria-labelledby="title  desc"
+    aria-labelledby="title desc"
     {...props}
   >
     <title id="title">Twitter</title>
