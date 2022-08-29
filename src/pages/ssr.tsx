@@ -5,7 +5,6 @@ import Layout from '@/components/Layout'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
-import SEO from '@/components/Seo'
 
 import OGImage from '../../static/assets/SSR_for_blog_article_and_G4_overview_page.jpg'
 import PageImage from '../../static/assets/SSR_for_blog_article_and_G4_overview_page.jpg'
@@ -22,8 +21,7 @@ function refreshPage() {
   }
 }
 
-function SSR(props) {
-  const { image } = props.serverData
+const SSRPage = ({ serverData }) => {
   return (
     <>
       <Header />
@@ -33,7 +31,7 @@ function SSR(props) {
           <div className="max-w-md mt-16 mb-32 mx-auto bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
             <div className="md:flex">
               <div className="md:shrink-0">
-                <img className="h-48 w-full object-cover md:h-full md:w-48" alt="doggo" src={image} />
+                <img className="h-48 w-full object-cover md:h-full md:w-48" alt="doggo" src={serverData.message} />
               </div>
               <div className="p-8">
                 <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
@@ -70,15 +68,22 @@ function SSR(props) {
   )
 }
 
-export default SSR
+export default SSRPage
 
 export async function getServerData() {
-  const data = await fetch('https://dog.ceo/api/breeds/image/random').then(res => res.json())
-
-  return {
-    props: {
-      image: data.message,
-    },
+  try {
+    const res = await fetch(`https://dog.ceo/api/breeds/image/random`)
+    if (!res.ok) {
+      throw new Error(`Response failed`)
+    }
+    return {
+      props: await res.json(),
+    }
+  } catch (error) {
+    return {
+      status: 500,
+      headers: {},
+      props: {},
+    }
   }
 }
-

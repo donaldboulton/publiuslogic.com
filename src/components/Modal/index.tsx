@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactNode, Fragment, useRef, useState, FC } from 'react'
+import { Fragment, useRef, useState, FC } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationIcon } from '@heroicons/react/outline'
 import WavyHr from '@/components/WavyHr'
@@ -8,7 +8,6 @@ import Help from '@/components/icons/help'
 export interface ModalProps {
   dialogContent: JSX.Element
   dialogTitle: string
-  children: ReactNode
 }
 
 export const Modal: FC<ModalProps> = props => {
@@ -26,14 +25,14 @@ export const Modal: FC<ModalProps> = props => {
 
   return (
     <>
-      <div className="fixed left-1 mb-4 pb-4 z-10 top-1/4">
+      <div className="fixed left-1 z-10 top-1/4">
         <button
           type="button"
           onClick={openModal}
           className="bg-slate-700 w-auto h-auto rounded-r-md pr-2 pt-2 pb-0 ml-2 text-slate-200"
         >
           <span className="inline-flex headings-center">
-            <Help className="w-8 h-8 ml-2 text-slate-200" />
+            <Help className="w-8 h-8 px-2 mt-2 text-slate-200" />
           </span>
         </button>
       </div>
@@ -75,13 +74,13 @@ export const Modal: FC<ModalProps> = props => {
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
                 <Dialog.Panel className="relative inline-block align-bottom bg-slate-900 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                  <div className="bg-slate-900 text-slate-200 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                  <div className="bg-slate-900 text-slate-200 px-4 py-4 sm:p-6 sm:pb-4">
                     <div className="sm:flex sm:items-start">
-                      <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-purple-400 sm:mx-0 sm:h-10 sm:w-10">
+                      <div className="float-none mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-purple-400 sm:mx-0 sm:h-10 sm:w-10">
                         <ExclamationIcon className="h-6 w-6 text-purple-700" aria-hidden="true" />
                       </div>
-                      <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                        <div className="mb-2">
+                      <div className="mt-3 sm:mt-0 sm:ml-4 sm:text-left">
+                        <div>
                           <Dialog.Title
                             key={dialogTitle}
                             as="h3"
@@ -91,28 +90,27 @@ export const Modal: FC<ModalProps> = props => {
                           </Dialog.Title>
                         </div>
                         <div className="mt-2">
-                          <p key={dialogContent} className="text-sm text-slate-200">
+                          <p key={dialogContent} className="text-sm mt-4 text-slate-200">
                             {dialogContent}
                           </p>
                         </div>
                       </div>
                       <WavyHr />
-                      {children}
                     </div>
+                  </div>
+                  <div className="mt-4 py-4">
+                    <button
+                      ref={closeButtonRef}
+                      type="button"
+                      className="float-right rounded-md border border-transparent bg-red-500 px-4 py-2 mb-4 mr-4 text-sm font-medium text-slate-200 hover:bg-red-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Close
+                    </button>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
-          </div>
-          <div className="mt-4">
-            <button
-              ref={closeButtonRef}
-              type="button"
-              className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-              onClick={() => setIsOpen(false)}
-            >
-              Close
-            </button>
           </div>
         </Dialog>
       </Transition.Root>

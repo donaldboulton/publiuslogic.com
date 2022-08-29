@@ -34,6 +34,7 @@ export type PostType = {
     imageLink: string
   }
   slug: string
+  excerpt: string
 }
 type PostQueryType = {
   allMdx: {

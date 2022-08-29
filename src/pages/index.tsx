@@ -12,26 +12,16 @@ import IndexHero from '@/components/IndexHero'
 import List from '@/components/List'
 import ListItem from '@/components/List'
 import { useInView } from 'react-intersection-observer'
-import { LazyMotion, m } from 'framer-motion'
+import { LazyMotion, motion, m } from 'framer-motion'
+import AnimatedCharacters from '@/components/AnimatedCharacters'
 import Layout from '@/components/Layout'
 import OGImage from '../../static/images/jpg/dbbg.jpg'
+import defaultImage from '../../static/images/jpg/dbbg.jpg'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
-const useAnimateOnInView = () => {
-  const controls = useAnimation()
-  const { ref, inView } = useInView()
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible')
-    }
-    if (!inView) {
-      controls.start('hidden')
-    }
-  }, [controls, inView])
-
-  return { ref }
+interface HomeProps {
+  image?: string
 }
 const ogimage = {
   src: OGImage,
@@ -39,7 +29,41 @@ const ogimage = {
   height: 531,
 }
 
-export default function Home() {
+const Home = ({ image }: HomeProps) => {
+  const useAnimateOnInView = () => {
+    const controls = useAnimation()
+    const { ref, inView } = useInView()
+
+    useEffect(() => {
+      if (inView) {
+        controls.start('visible')
+      }
+      if (!inView) {
+        controls.start('hidden')
+      }
+    }, [controls, inView])
+
+    return { ref }
+  }
+
+  const [replay, setReplay] = useState(true)
+  // Placeholder text data, as if from API
+  const placeholderText = [
+    { type: 'heading1', text: 'PubliusLogic' },
+    {
+      type: 'heading2',
+      text: 'Publishing Logic & Gods Truth!',
+    },
+  ]
+
+  const headingContainer = {
+    visible: {
+      transition: {
+        staggerChildren: 0.025,
+      },
+    },
+  }
+
   const container = {
     enter: {
       transition: {
@@ -128,7 +152,6 @@ export default function Home() {
       x: -300,
     },
   }
-
   return (
     <>
       <Header />
@@ -136,7 +159,26 @@ export default function Home() {
         <LazyMotion features={loadFeatures}>
           <m.main className="font-sans" variants={container}>
             <div className="relative flex content-center items-center justify-center">
-              <IndexHero />
+              <div className="mb-4 md:mb-0 w-full max-w-screen-xl mx-auto relative h-96 text-white">
+                <div className="absolute left-0 bottom-0 w-full h-full z-10 bg-gradient-to-b from-slate-700"></div>
+                <img
+                  src={image ? image : defaultImage}
+                  alt="featured image"
+                  className="absolute left-0 top-0 w-full h-full z-0"
+                />
+                <motion.div
+                  className="p-4 absolute top-16 left-3 z-30"
+                  initial="hidden"
+                  animate={replay ? 'visible' : 'hidden'}
+                  variants={headingContainer}
+                >
+                  <div className="container">
+                    {placeholderText.map((item, index) => {
+                      return <AnimatedCharacters {...item} key={index} />
+                    })}
+                  </div>
+                </motion.div>
+              </div>
             </div>
             <section className="pb-10 bg-slate-700 text-slate-200 transition-all duration-200 -mt-10">
               <div className="container mx-auto px-4">
@@ -564,6 +606,8 @@ export default function Home() {
     </>
   )
 }
+
+export default Home
 
 export function Head(props: HeadProps) {
   return (

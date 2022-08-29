@@ -1,7 +1,9 @@
 import * as React from 'react'
 import { useState } from 'react'
-import { m } from 'framer-motion'
-import AnimatedText from '@/components/AnimatedText'
+import { LazyMotion, m } from 'framer-motion'
+import AnimatedText from '@/components/AnimatedCharacters'
+
+const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
 interface IndexHeroProps {
   image?: string
@@ -33,18 +35,20 @@ const IndexHero = ({ image }: IndexHeroProps) => {
         alt="featured image"
         className="absolute left-0 top-0 w-full h-full z-0"
       />
-      <m.div
-        className="p-4 absolute top-16 left-3 z-20"
-        initial="hidden"
-        animate={replay ? 'visible' : 'hidden'}
-        variants={headingContainer}
-      >
-        <div className="container">
-          {placeholderText.map((item, index) => {
-            return <AnimatedText {...item} key={index} />
-          })}
-        </div>
-      </m.div>
+      <LazyMotion features={loadFeatures}>
+        <m.div
+          className="p-4 absolute top-16 left-3 z-20"
+          initial="hidden"
+          animate={replay ? 'visible' : 'hidden'}
+          variants={headingContainer}
+        >
+          <div className="container">
+            {placeholderText.map((item, index) => {
+              return <AnimatedText {...item} key={index} />
+            })}
+          </div>
+        </m.div>
+      </LazyMotion>
     </div>
   )
 }
