@@ -17,7 +17,7 @@ import ThemeToggle from '@/components/ThemeToggle'
 import Tooltip from '@/components/Tooltip'
 import Control from '@/components/icons/control'
 import HeaderPopover from '@/components/HeaderPopover'
-import { useGoogleAuth, GoogleAuthProvider } from '@/components/GoogleAuthProvider'
+import { useGoogleAuth } from '@/components/GoogleAuthProvider'
 
 const navigation = [
   { name: 'About', href: '/blog/about', current: false },
@@ -29,7 +29,7 @@ function classNames(...classes) {
 }
 
 export default function Navigation() {
-  const { isSignedIn, googleUser, signIn, signOut } = useGoogleAuth()
+  const { signIn } = useGoogleAuth()
   return (
     <>
       <Disclosure as="nav" className="bg-gradient-to-r from-gray-800 via-transparent to-gray-800 sticky top-0 z-40">
@@ -115,17 +115,18 @@ export default function Navigation() {
                   <Menu as="div" className="ml-3 relative">
                     <div>
                       <Menu.Button className="flex text-sm rounded-full focus:outline-none">
+                        <span className="sr-only">Open Control Menu</span>
                         <Control
                           className="text-slate-900 hover:text-slate-700 dark:text-slate-200 text-opacity-75"
                           aria-hidden="true"
                           aria-label="DarkMode"
                         />
+                        <span className="sr-only">Open Control Menu</span>
                         <ChevronDownIcon
                           className={`${open ? 'text-slate-200 transform rotate-180' : 'text-opacity-75'}
                           first-letter:w-5 h-5 -mr-1 mt-1 text-gray-300 hover:text-gray-200 group-hover:text-opacity-75 transition ease-in-out duration-150`}
                           aria-hidden="true"
                         />
-                        <span className="sr-only">Open Control Menu</span>
                       </Menu.Button>
                     </div>
                     <Transition
@@ -153,30 +154,6 @@ export default function Navigation() {
                             </button>
                           )}
                         </Menu.Item>
-                        {isSignedIn && (
-                          <MenuItem>
-                            {({ active }) => (
-                              <button
-                                className={classNames(
-                                  active ? 'bg-slate-700' : '',
-                                  'block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
-                                )}
-                                onClick={signOut}
-                              >
-                                <span className="flex items-center flex-shrink-0 text-lg pr-2">
-                                  <span className="block pr-2" aria-hidden="true">
-                                    <img
-                                      className="rounded h-9 w-9"
-                                      src={googleUser.profileObj.imageUrl}
-                                      alt="Avatar"
-                                    />
-                                  </span>
-                                  <span className="text-slate-200">Logout: {googleUser.profileObj.name}</span>
-                                </span>
-                              </button>
-                            )}
-                          </MenuItem>
-                        )}
                         <Menu.Item>
                           {({ active }) => (
                             <Link
@@ -188,7 +165,7 @@ export default function Navigation() {
                             >
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
                                 <UserGroupIcon className="block h-8 w-8 pr-2 text-purple-500" aria-hidden="true" />
-                                <span>Profile</span>
+                                <span>Github Profile</span>
                               </span>
                             </Link>
                           )}

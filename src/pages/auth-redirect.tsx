@@ -13,7 +13,7 @@ export default function AuthRedirect({ location }) {
 
     // After setting token in localStorage, go to app homepage.
     setTimeout(() => {
-      window.location.assign('/')
+      window.location.assign('/app/status')
     }, 1000)
   })
 

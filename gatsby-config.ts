@@ -220,15 +220,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-offline',
-      options: {
-        precachePages: ['/', '/about', '/contact', '/blog/*'],
-        workboxConfig: {
-          importWorkboxFrom: 'cdn',
-        },
-      },
-    },
-    {
       resolve: `gatsby-plugin-gatsby-cloud`,
       options: {
         headers: {
@@ -242,7 +233,7 @@ module.exports = {
           'X-XSS-Protection: 1; mode=block',
           'X-Content-Type-Options: nosniff',
           'Referrer-Policy: same-origin',
-          'Access-Control-Allow-Origin: https://publiuslogic.com/, https://utteranc.es/client.js',
+          'Access-Control-Allow-Origin: https://publiuslogic.com/, https://unpkg.com/leaflet@1.8.0/dist/leaflet.css',
           'Access-Control-Allow-Methods: POST; GET; PUT; DELETE; HEAD',
         ],
         mergeSecurityHeaders: true,
@@ -250,6 +241,15 @@ module.exports = {
         mergeCachingHeaders: true,
         transformHeaders: (headers, path) => headers,
         generateMatchPathRewrites: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+        precachePages: ['/', '/about', '/contact', '/blog/*'],
+        workboxConfig: {
+          importWorkboxFrom: 'cdn',
+        },
       },
     },
   ],
