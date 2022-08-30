@@ -12806,6 +12806,11 @@ react-typist@^2.0.5:
   dependencies:
     prop-types "^15.5.10"
 
+react-use-googlelogin@^0.12.5:
+  version "0.12.5"
+  resolved "https://registry.yarnpkg.com/react-use-googlelogin/-/react-use-googlelogin-0.12.5.tgz#a533391f4ea87621e349e4003a448db9ccb4f5e2"
+  integrity sha512-30TF9rJyhDx7mO5T+BVChaKxd4xztLMMRCkG2/gdk8o9+JMfipSvBM26OJCDnG7Ug3KxBSNR+9uKgtQ4FCI0fg==
+
 react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"

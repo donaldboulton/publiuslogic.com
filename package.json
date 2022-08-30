@@ -94,6 +94,7 @@
     "react-popper": "^2.3.0",
     "react-tsparticles": "^2.0.6",
     "react-typist": "^2.0.5",
+    "react-use-googlelogin": "^0.12.5",
     "remark-autolink-headings": "^7.0.1",
     "remark-slug": "^7.0.1",
     "schema-dts": "^1.1.0",

@@ -195,6 +195,7 @@ export function Head(props: HeadProps) {
           },
         })}
       </script>
+      <title>Blog Posts</title>
     </>
   )
 }

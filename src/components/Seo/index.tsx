@@ -1,15 +1,17 @@
 import * as React from 'react'
+import { ReactNode, FC } from 'react'
 
 type SEOProps = {
   title?: string
   description?: string
   pathname?: string
-  children: React.ReactNode
+  children: ReactNode
 }
 
-const SEO: React.FC<React.PropsWithChildren<SEOProps>> = ({ title, description, image, pathname, children }) => {
+const SEO: FC<React.PropsWithChildren<SEOProps>> = ({ title, description, image, pathname, children }) => {
   return (
     <>
+      <meta name="robots" content="index" />
       <link href="https://github.com/donaldboulton" rel="me" />
       <link href="https://twitter.com/donboulton" rel="me" />
       <link href="https://facebook.com/don.boulton" rel="me" />

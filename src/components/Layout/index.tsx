@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { ReactNode } from 'react'
 import { Link } from 'gatsby'
 import { CookieConsent } from 'react-cookie-consent'
 import { MDXProvider } from '@mdx-js/react'
@@ -11,6 +12,7 @@ import CalloutLabel from '@/components/Callout/CalloutLabel'
 import WavyHr from '@/components/WavyHr'
 import A from '@/components/A'
 import Center from '@/components/Center'
+import CenterItem from '@/components/CenterItem'
 import List from '@/components/List'
 import ListItem from '@/components/List/ListItem'
 import ListGrid from '@/components/ListGrid'
@@ -23,13 +25,14 @@ import Table from '@/components/Table'
 import Modal from '@/components/Modal'
 
 interface LayoutProps {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 const shortcodes = {
   A,
   FindOutMore,
   Center,
+  CenterItem,
   Cta,
   Features,
   WavyHr,

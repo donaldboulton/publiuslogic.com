@@ -38,11 +38,13 @@ const Table = () => {
 
     return { ref }
   }
-  const [ref5, isVisible5] = useInView({
+
+  const [ref2, isVisible2] = useInView({
     triggerOnce: true,
     rootMargin: '-200px 0px',
   })
-  const variants5 = {
+
+  const variants2 = {
     visible: {
       opacity: 1,
       x: 0,
@@ -52,14 +54,15 @@ const Table = () => {
       x: -200,
     },
   }
+
   return (
     <LazyMotion features={loadFeatures}>
       <m.section className="font-sans" variants={tableContainer}>
         <div className="w-full px-4 mr-auto ml-auto">
           <m.div
-            ref={ref5}
-            variants={variants5}
-            animate={isVisible5 ? 'visible' : 'hidden'}
+            ref={ref2}
+            variants={variants2}
+            animate={isVisible2 ? 'visible' : 'hidden'}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <div className="overflow-x-auto nav-scroll relative shadow-md opacity-75">

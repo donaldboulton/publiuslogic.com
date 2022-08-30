@@ -17,6 +17,7 @@ import AnimatedCharacters from '@/components/AnimatedCharacters'
 import Layout from '@/components/Layout'
 import OGImage from '../../static/images/jpg/dbbg.jpg'
 import defaultImage from '../../static/images/jpg/dbbg.jpg'
+import Table from '@/components/Table'
 
 const loadFeatures = () => import('@/components/FramerFeatures').then(res => res.default)
 
@@ -539,7 +540,7 @@ const Home = ({ image }: HomeProps) => {
             <section className="relative block pt-24 pb-20 lg:pt-0">
               <div className="container mx-auto px-4">
                 <div className="flex flex-wrap justify-center lg:-mt-48 -mt-40">
-                  <div className="w-full lg:w-6/12 px-4">
+                  <div className="w-full px-4">
                     <m.div
                       ref={ref6}
                       variants={variants6}
@@ -564,37 +565,15 @@ const Home = ({ image }: HomeProps) => {
                               </Link>
                             </span>
                           </p>
-                          <div className="mt-24 mt-20 lg:mt-0 mb-4 rounded-lg bg-slate-800 text-white">
-                            <List>
-                              <List.Item>
-                                <p className="mb-1" variant="secondary">
-                                  The Devil is Controlling most all of your Government Officials! Details on how to
-                                  fight off the Devil! 😈
-                                </p>
-                              </List.Item>
-                              <List.Item>
-                                <p className="mb-1" variant="secondary">
-                                  Your Children are being brainwashed for Devilish total control! Stand Up and fight for
-                                  there future and freedom now! 🤫
-                                </p>
-                              </List.Item>
-                              <List.Item>
-                                <p className="mb-1" variant="secondary">
-                                  As A Species you will not Effectivity Do anything about climate control. That would
-                                  Mean limiting playtime and entertainment and you have been set up to focus on only
-                                  playtime pursuits. Playtime and Over population through heat from every one of you, is
-                                  what is creating the{' '}
-                                  <span className="underline underline-offset-2 decoration-wavy decoration-fuchsia-600">
-                                    Climate Crisis
-                                  </span>
-                                  ! 📝
-                                </p>
-                              </List.Item>
-                            </List>
-                          </div>
                         </div>
                       </div>
                     </m.div>
+                    <div className="mt-10 lg:mt-6 mb-4 rounded-lg bg-gray-800 light:bg-gray-200 text-gray-200 light:text-gray-800">
+                      <h4 className="text-center text-2xl mb-2 font-semibold text-gray-200 underline underline-offset-8 decoration-wavy decoration-fuchsia-600">
+                        Ordered Spiritual Reading List!
+                      </h4>
+                      <Table />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -784,6 +763,7 @@ export function Head(props: HeadProps) {
           },
         })}
       </script>
+      <title>Home</title>
       <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
       <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
     </>

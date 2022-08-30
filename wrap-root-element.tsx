@@ -2,6 +2,7 @@ import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { Code } from './src/components/Code'
 import { preToCodeBlock } from 'mdx-utils'
+import { GoogleAuthProvider } from '@/components/GoogleAuthProvider'
 
 const Acronym = props => <abbr style={{ color: '#8b5cf6' }} {...props} />
 
@@ -20,4 +21,8 @@ const components = {
     }
   },
 }
-export const wrapRootElement = ({ element }) => <MDXProvider components={components}>{element}</MDXProvider>
+export const wrapRootElement = ({ element }) => (
+  <GoogleAuthProvider>
+    <MDXProvider components={components}>{element}</MDXProvider>
+  </GoogleAuthProvider>
+)
