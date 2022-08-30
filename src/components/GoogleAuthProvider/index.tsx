@@ -2,8 +2,6 @@ import * as React from 'react'
 import { useContext } from 'react'
 import { useGoogleLogin } from 'react-use-googlelogin'
 
-const clientId = process.env.GOOGLE_CLIENT_ID
-
 const createContext = () => {
   const ctx = React.createContext()
   const useCtx = () => {
@@ -20,7 +18,7 @@ const [useGoogleAuth, AuthProvider] = createContext()
 
 export const GoogleAuthProvider = ({ children }) => {
   const { googleUser, isInitialized, grantOfflineAccess, signOut, isSignedIn, refreshUser } = useGoogleLogin({
-    clientId: clientId,
+    clientId: "146139913792.apps.googleusercontent.com",
   })
 
   /**
