@@ -112,6 +112,8 @@ export function Head(props: HeadProps) {
   return (
     <>
       <SEO type="page" title="Gallery" description="Kitty Pictures" image={ogimage} pathname="/dsg">
+        <title>Gallery</title>
+        <meta name="description" content="PubliusLogic Gallery Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </SEO>

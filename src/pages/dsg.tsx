@@ -42,6 +42,8 @@ export function Head(props: HeadProps) {
   return (
     <>
       <SEO type="page" title="DSG" description="Deferred Static Generation" image={ogimage} pathname="/dsg">
+        <title>DSG</title>
+        <meta name="description" content="PubliusLogic DSG Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </SEO>

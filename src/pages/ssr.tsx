@@ -1,5 +1,4 @@
 import * as React from 'react'
-import fetch from 'isomorphic-fetch'
 import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
 import Header from '@/components/Header'
@@ -39,7 +38,7 @@ const SSRPage = ({ serverData }) => {
                 </div>
                 <div>
                   <Link
-                    to="/blog/gatsby-version-four"
+                    to="/blog/gatsby-version-four/#ssr-example"
                     className="text-fuchsia-600 hover:text-fuchsia-700 block mt-2 text-lg leading-tight font-medium hover:underline"
                   >
                     Back to Post

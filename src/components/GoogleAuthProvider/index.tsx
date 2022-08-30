@@ -18,7 +18,7 @@ const [useGoogleAuth, AuthProvider] = createContext()
 
 export const GoogleAuthProvider = ({ children }) => {
   const { googleUser, isInitialized, grantOfflineAccess, signOut, isSignedIn, refreshUser } = useGoogleLogin({
-    clientId: "146139913792.apps.googleusercontent.com",
+    clientId: '146139913792.apps.googleusercontent.com',
   })
 
   /**

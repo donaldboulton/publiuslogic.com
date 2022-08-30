@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Fragment, useRef, useState, FC } from 'react'
+import { Fragment, ReactNode, useRef, useState, FC } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationIcon } from '@heroicons/react/outline'
 import WavyHr from '@/components/WavyHr'
@@ -8,6 +8,7 @@ import Help from '@/components/icons/help'
 export interface ModalProps {
   dialogContent: JSX.Element
   dialogTitle: string
+  children: ReactNode
 }
 
 export const Modal: FC<ModalProps> = props => {
@@ -29,7 +30,7 @@ export const Modal: FC<ModalProps> = props => {
         <button
           type="button"
           onClick={openModal}
-          className="bg-slate-700 w-auto h-auto rounded-r-md pr-2 pt-2 pb-0 ml-2 text-slate-200"
+          className="bg-slate-700 w-auto h-auto rounded-r-md pr-2 pl-3 pt-2 pb-0 -ml-1 text-slate-200"
         >
           <span className="inline-flex headings-center">
             <Help className="w-8 h-8 px-2 mt-2 text-slate-200" />
@@ -98,11 +99,12 @@ export const Modal: FC<ModalProps> = props => {
                       <WavyHr />
                     </div>
                   </div>
+                  <div className="mt-2 py-2 leading-6 mx-4">{children}</div>
                   <div className="mt-4 py-4">
                     <button
                       ref={closeButtonRef}
                       type="button"
-                      className="float-right rounded-md border border-transparent bg-red-500 px-4 py-2 mb-4 mr-4 text-sm font-medium text-slate-200 hover:bg-red-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                      className="float-right rounded-md border border-transparent bg-red-600 px-4 py-2 mb-4 mr-4 text-sm font-medium text-slate-200 hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
                       onClick={() => setIsOpen(false)}
                     >
                       Close

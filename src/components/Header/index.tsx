@@ -171,7 +171,7 @@ export default function Navigation() {
                                       alt="Avatar"
                                     />
                                   </span>
-                                  <span className="text-slate-200">{googleUser.profileObj.name}</span>
+                                  <span className="text-slate-200">Logout: {googleUser.profileObj.name}</span>
                                 </span>
                               </button>
                             )}

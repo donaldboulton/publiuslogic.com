@@ -53,6 +53,8 @@ export function Head(props: HeadProps) {
         image={ogimage}
         pathname="/blog"
       >
+        <title>Blog Page</title>
+        <meta name="description" content="PubliusLogic Home Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </SEO>
@@ -195,7 +197,6 @@ export function Head(props: HeadProps) {
           },
         })}
       </script>
-      <title>Blog Posts</title>
     </>
   )
 }

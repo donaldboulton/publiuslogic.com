@@ -58,6 +58,8 @@ export function Head(props: HeadProps) {
   return (
     <>
       <SEO type="page" title="404 Not Found" description="Not Found 404 Go Back" image={ogimage} pathname="/404">
+        <title>404 Not Found</title>
+        <meta name="description" content="PubliusLogic 404 Not Found Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </SEO>

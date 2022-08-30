@@ -85,6 +85,8 @@ export function Head(props: HeadProps) {
   return (
     <>
       <SEO type="Profile" title="Profile" description="Github Profile" image={ogimage} pathname="/profile">
+        <title>Profile Page</title>
+        <meta name="description" content="PubliusLogic Profile Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </SEO>

@@ -764,6 +764,7 @@ export function Head(props: HeadProps) {
         })}
       </script>
       <title>Home</title>
+      <meta name="description" content="PubliusLogic Home Page." />
       <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
       <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
     </>
