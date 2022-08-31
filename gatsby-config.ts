@@ -232,7 +232,6 @@ module.exports = {
           'X-Frame-Options: DENY',
           'X-XSS-Protection: 1; mode=block',
           'X-Content-Type-Options: nosniff',
-          'Referrer-Policy: same-origin',
           'Access-Control-Allow-Origin: https://publiuslogic.com/, https://unpkg.com/leaflet@1.8.0/dist/leaflet.css',
           'Access-Control-Allow-Methods: POST; GET; PUT; DELETE; HEAD',
         ],

@@ -17,7 +17,6 @@ import ThemeToggle from '@/components/ThemeToggle'
 import Tooltip from '@/components/Tooltip'
 import Control from '@/components/icons/control'
 import HeaderPopover from '@/components/HeaderPopover'
-import { useGoogleAuth } from '@/components/GoogleAuthProvider'
 
 const navigation = [
   { name: 'About', href: '/blog/about', current: false },
@@ -29,7 +28,6 @@ function classNames(...classes) {
 }
 
 export default function Navigation() {
-  const { signIn } = useGoogleAuth()
   return (
     <>
       <Disclosure as="nav" className="bg-gradient-to-r from-gray-800 via-transparent to-gray-800 sticky top-0 z-40">
@@ -140,18 +138,18 @@ export default function Navigation() {
                       <Menu.Items className="origin-top-right absolute right-0 mt-3 w-48 rounded-md shadow-lg py-1 bg-slate-900 text-slate-200 ring-1 ring-black ring-opacity-5 focus:outline-none opacity-75 hover:opacity-100">
                         <Menu.Item>
                           {({ active }) => (
-                            <button
+                            <Link
                               className={classNames(
                                 active ? 'bg-slate-700' : '',
                                 'block px-3 py-2 rounded-md text-lg font-medium items-center justify-center hover:bg-slate-600/30 hover:text-white'
                               )}
-                              onClick={() => signIn()}
+                              to="/login"
                             >
                               <span className="flex items-center flex-shrink-0 text-lg pr-2">
                                 <LoginIcon className="block h-9 w-9 pr-2 text-red-500" aria-hidden="true" />
                                 <span>Login</span>
                               </span>
-                            </button>
+                            </Link>
                           )}
                         </Menu.Item>
                         <Menu.Item>
