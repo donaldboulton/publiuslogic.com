@@ -47,14 +47,14 @@ const SSRPage = ({ serverData }) => {
                 <p className="mt-2 text-gray-500">
                   See the Doggies! Doggies of all kinds of shapes, sizes and colors. With many different Breeds!
                 </p>
-                <p className="mt-2 text-gray-500">Refresh the Page for More Doggies</p>
+                <p className="mt-2 text-gray-500">SSR Refresh just, "This Component", for More Doggies! Cool!</p>
                 <div>
                   <button
                     type="button"
                     className="p-2 border border-transparent text-sm font-medium rounded-md text-gray-200 bg-fuchsia-500 hover:bg-fuchsia-700 shadow-lg shadow-fuchsia-700/50"
                     onClick={refreshPage}
                   >
-                    Refresh the Page
+                    Refresh Component
                   </button>
                 </div>
               </div>

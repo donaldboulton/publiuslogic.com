@@ -31,7 +31,7 @@ const Login = () => {
       <div className="flex items-center flex-shrink-0">
         {isSignedIn && (
           <div className="sm:flex sm:items-start">
-            <h2>Signed In with Google or to anything associated with you Google account.</h2>
+            <h2>Signed In with Google, or to anything associated with you Google account.</h2>
             <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full sm:mx-0 sm:h-10 sm:w-10">
               <img
                 className="bio-avatar mb-4 ring ring-purple-500 ring-offset-4"
