@@ -116,11 +116,12 @@
     "@types/react": "^17.0.47",
     "@types/react-dom": "^17.0.17",
     "@types/react-paginate": "^7.1.1",
-    "@typescript-eslint/eslint-plugin": "^5.26.0",
-    "@typescript-eslint/parser": "^5.26.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
     "autoprefixer": "^10.4.7",
     "cssnano": "5.1.12",
-    "eslint": "^8.20.0",
+    "eslint": "^8.23.0",
+    "eslint-plugin-mdx": "^2.0.2",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
@@ -139,10 +140,10 @@
     "typescript": "^4.7.4"
   },
   "scripts": {
-    "analyze:lint": "eslint --ext .tsx --ext .js .",
+    "analyze:lint": "eslint --ext .md,.mdx,.tsx --ext .ts",
     "analyze:prettier": "prettier --list-different \"**/*.{css,js,tsx,json,md,mdx}\"",
     "analyze": "npm run analyze:lint && npm run analyze:prettier",
-    "fix:lint": "eslint --ext .tsx --ext .ts . --fix",
+    "fix:lint": "eslint --ext .md,.mdx,.tsx --ext .ts . --fix",
     "fix:prettier": "prettier --write \"**/*.{css,ts,jsx,tsx,json,md,mdx}\"",
     "fix": "npm run fix:lint && npm run fix:prettier",
     "build": "gatsby build",
@@ -154,7 +155,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "type-check": "./node_modules/typescript/bin/tsc --noEmit --skipLibCheck",
     "token": "gatsby-source-google-photos-token",
-    "lint": "eslint . --ignore-path .gitignore --ext .ts,.tsx,.js",
+    "lint": "eslint . --ignore-path .gitignore --ext .md,.mdx,.ts,.tsx,.js",
     "deploy": "gatsby build && gh-pages -d public -b main"
   },
   "engines": {

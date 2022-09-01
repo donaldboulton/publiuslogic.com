@@ -84,7 +84,7 @@ export default Profile
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO type="Profile" title="Profile" description="Github Profile" image={ogimage} pathname="/profile">
+      <SEO type="page" title="Profile" description="Github Profile" image={ogimage} pathname="/profile">
         <title>Profile Page</title>
         <meta name="description" content="PubliusLogic Profile Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -107,7 +107,7 @@ export function Head(props: HeadProps) {
           datePublished: '2020-09-20',
           dateCreated: '2020-08-20',
           dateModified: '2022-08-16',
-          description: 'We love to do stuff to help people and stuff',
+          description: 'We love to do stuff to help people',
           articleBody: 'You can paste your entire post in here, and yes it can get really really long.',
           author: {
             '@type': 'Person',

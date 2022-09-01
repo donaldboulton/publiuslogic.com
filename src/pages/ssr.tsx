@@ -71,9 +71,9 @@ export default SSRPage
 
 export async function getServerData() {
   try {
-    const res = await fetch(`https://dog.ceo/api/breeds/image/random`)
+    const res = await fetch('https://dog.ceo/api/breeds/image/random')
     if (!res.ok) {
-      throw new Error(`Response failed`)
+      throw new Error('Response failed')
     }
     return {
       props: await res.json(),

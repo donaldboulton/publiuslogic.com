@@ -220,7 +220,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-gatsby-cloud`,
+      resolve: 'gatsby-plugin-gatsby-cloud',
       options: {
         headers: {
           '/*': ['Cache-Control: public, max-age=31536000, immutable'],

@@ -59,13 +59,13 @@ Add withUtterances to the file which has component that you want to show utteran
 import withUtterances from 'with-utterances'
 
 class PostPage extends React.Component {
-    //...
+  //...
 }
 
 // Or
 
 const PostPage = () => {
-    //...
+  //...
 }
 
 export default withUtterances(PostPage, 'YOUR_REPO')
@@ -209,7 +209,7 @@ My new trick to get around window or .document module errors, which this 'react-
 First call the offending Module
 
 ```tsx:title=src/components/react-github-btn.tsx {1}
-import GitHubButton from "react-github-btn"
+import GitHubButton from 'react-github-btn'
 ```
 
 Then tell React that, `window !== undefined`.
@@ -217,7 +217,7 @@ Then tell React that, `window !== undefined`.
 ```tsx:title=src/page/page.tsx {2}
 // eslint-disable-next-line valid-typeof
 if (typeof window !== undefined) {
-  require("react-github-btn")
+  require('react-github-btn')
 }
 ```
 

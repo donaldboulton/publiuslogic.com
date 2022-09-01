@@ -7,13 +7,13 @@ export default function AuthRedirect({ location }) {
   const query = qs.parse(location?.search)
 
   useEffect(() => {
-    if (typeof window !== `undefined`) {
-      window.localStorage.setItem(`google:tokens`, query.token)
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('google:tokens', query.token)
     }
 
     // After setting token in localStorage, go to app homepage.
     setTimeout(() => {
-      window.location.assign('/app/status')
+      window.location.assign('/login')
     }, 1000)
   })
 

@@ -1,11 +1,9 @@
 import * as React from 'react'
-import { navigate } from 'gatsby'
 import { useGoogleAuth } from '@/components/GoogleAuthProvider'
 import { LoginIcon, LogoutIcon } from '@heroicons/react/outline'
 
 const Login = () => {
   const { isSignedIn, googleUser, signIn, signOut } = useGoogleAuth()
-
   return (
     <>
       <div className="flex items-center flex-shrink-0 text-lg pr-2">
@@ -33,10 +31,11 @@ const Login = () => {
       <div className="flex items-center flex-shrink-0">
         {isSignedIn && (
           <div>
-            <div className="my-4">
-              <h3>Sign In / Out", anything associated with you Google account.</h3>
+            <div className="mb-4 mt-4">
+              <h3>Sign In / Out, "Anything Associated with your Google Account".</h3>
+              <p>A Complete Backend with no Gatsby routing, just components as variations in views.</p>
             </div>
-            <div className="sm:flex sm:items-start">
+            <div className="sm:flex sm:items-start mt-10">
               <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full sm:mx-0 sm:h-10 sm:w-10">
                 <img
                   className="bio-avatar mb-4 ring ring-purple-500 ring-offset-4"

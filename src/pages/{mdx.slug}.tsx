@@ -145,7 +145,7 @@ export function Head(props: HeadProps<DataProps>) {
   const pathname = '/' + props.data.mdx.slug
   const excerpt = props.data.mdx.excerpt
   const seo = {
-    path: `${siteUrl}${pathname || ``}`,
+    path: `${siteUrl}${pathname || ''}`,
   }
   const Image = props.data.mdx.frontmatter.imageLink
   return (

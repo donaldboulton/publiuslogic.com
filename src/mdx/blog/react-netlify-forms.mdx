@@ -58,7 +58,7 @@ I am using [react-dropZone](https://react-dropzone.js.org/) for image uploads to
 Adding to the form for image upload
 
 ```tsx:title=src/page/page.tsx
-enctype="multipart/form-data"
+enctype='multipart/form-data'
 ```
 
 ## Basic Form
@@ -176,46 +176,46 @@ function Contact() {
             )}
             <div
               style={{
-                display: `inline`,
+                display: 'inline',
                 marginTop: '2em',
-                verticalAlign: `middle`,
-                justifyItems: `center`,
-                justifyContent: `center`,
-                alignItems: `center`,
+                verticalAlign: 'middle',
+                justifyItems: 'center',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
             >
-                <FormInput
-                  type='text'
-                  name='name'
-                  id='name'
-                  onChange={handleChange}
-                  placeholder='Your Name'
-                  className='input'
-                  required
-                  style={{
-                    marginTop: '2em',
-                  }}
-                />
-                  <FormInput
-                    type='email'
-                    name='email'
-                    onChange={handleChange}
-                    className='input'
-                    placeholder='Email Address'
-                    required
-                    style={{
-                      marginTop: '2em',
-                    }}
-                  />
+              <FormInput
+                type='text'
+                name='name'
+                id='name'
+                onChange={handleChange}
+                placeholder='Your Name'
+                className='input'
+                required
+                style={{
+                  marginTop: '2em',
+                }}
+              />
+              <FormInput
+                type='email'
+                name='email'
+                onChange={handleChange}
+                className='input'
+                placeholder='Email Address'
+                required
+                style={{
+                  marginTop: '2em',
+                }}
+              />
             </div>
             <div
               style={{
                 marginTop: '2em',
                 marginRight: '2em',
                 marginLeft: '1.6em',
-                justifyItems: `center`,
-                justifyContent: `center`,
-                alignItems: `center`,
+                justifyItems: 'center',
+                justifyContent: 'center',
+                alignItems: 'center',
                 width: '98%'
               }}
             >
@@ -244,11 +244,11 @@ function Contact() {
             >
               <div {...getRootProps()} className='box'>
                 <input {...getInputProps()} name='file' />
-                  {
-                    isDragActive ?
-                      <p>Drop the files here ...</p> :
-                      <p>Drag 'n' drop some files here, or click to select files</p>
-                  }
+                {
+                  isDragActive ?
+                    <p>Drop the files here ...</p> :
+                    <p>Drag 'n' drop some files here, or click to select files</p>
+                }
               </div>
             </div>
             <div
@@ -348,46 +348,46 @@ function Contact() {
             <input type="hidden" name="form-name" value="contact" />
             <div
               style={{
-                display: `inline`,
+                display: 'inline',
                 marginTop: '2em',
-                verticalAlign: `middle`,
-                justifyItems: `center`,
-                justifyContent: `center`,
-                alignItems: `center`,
+                verticalAlign: 'middle',
+                justifyItems: 'center',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
             >
-                <FormInput
-                  type='text'
-                  name='name'
-                  id='name'
-                  onChange={handleChange}
-                  placeholder='Your Name'
-                  className='input'
-                  required
-                  style={{
-                    marginTop: '2em',
-                  }}
-                />
-                  <FormInput
-                    type='email'
-                    name='email'
-                    onChange={handleChange}
-                    className='input'
-                    placeholder='Email Address'
-                    required
-                    style={{
-                      marginTop: '2em',
-                    }}
-                  />
+              <FormInput
+                type='text'
+                name='name'
+                id='name'
+                onChange={handleChange}
+                placeholder='Your Name'
+                className='input'
+                required
+                style={{
+                  marginTop: '2em',
+                }}
+              />
+              <FormInput
+                type='email'
+                name='email'
+                onChange={handleChange}
+                className='input'
+                placeholder='Email Address'
+                required
+                style={{
+                  marginTop: '2em',
+                }}
+              />
             </div>
             <div
               style={{
                 marginTop: '2em',
                 marginRight: '2em',
                 marginLeft: '1.6em',
-                justifyItems: `center`,
-                justifyContent: `center`,
-                alignItems: `center`,
+                justifyItems: 'center',
+                justifyContent: 'center',
+                alignItems: 'center',
                 width: '98%'
               }}
             >

@@ -123,7 +123,7 @@ const GATSBY_GA_MEASUREMENT_ID = 'XXX-XXXXXXX'
 
 export function onRenderBody({ setHeadComponents, setPreBodyComponents, setHtmlAttributes }) {
   if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') return null
-  setHtmlAttributes({ lang: "en" })
+  setHtmlAttributes({ lang: 'en' })
   setHeadComponents([
     <Partytown key="partytown" forward={['gtag']} />,
     <script key="google-analytics" type="text/partytown" src={`${ORIGIN}/gtag/js?id=${GATSBY_GA_MEASUREMENT_ID}`} />,
@@ -223,16 +223,16 @@ In the next section I’ll explain how you can fire off events containing locati
 
 ```tsx:title=gatsby-browser.tsx {1-4,6-12}
 export const onRouteUpdate = ({ location }) => {
- if (process.env.NODE_ENV !== 'production') {
-   return null;
- }
+  if (process.env.NODE_ENV !== 'production') {
+    return null;
+  }
 
-const pagePath = location ? location.pathname + location.search + location.hash : undefined;
- setTimeout(() => {
-   if (typeof gtag === 'function') {
-     gtag('event', 'page_view', { page_path: pagePath });
-   }
- }, 100);
+  const pagePath = location ? location.pathname + location.search + location.hash : undefined;
+  setTimeout(() => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'page_view', { page_path: pagePath });
+    }
+  }, 100);
 };
 ```
 
