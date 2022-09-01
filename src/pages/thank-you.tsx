@@ -1,19 +1,14 @@
 import * as React from 'react'
 import type { HeadProps } from 'gatsby'
+import { Link } from 'gatsby'
 import Layout from '@/components/Layout'
-import GithubProfile from '@/components/GithubProfile'
-import WavyHr from '@/components/WavyHr'
-import ScrollIndicator from '@/components/ScrollIndicator'
 import SEO from '@/components/Seo'
-import Stars from '@/components/Stars'
+import PageHero from '@/components/PageHero'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import PageHero from '@/components/PageHero'
-import CloudinaryVideo from '@/components/CloudinaryVideo'
-import Center from '@/components/Center'
-import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
-import OGImage from '../../static/images/jpg/dbbg.jpg'
-import Spacer200 from '../../static/img//spacer-200.jpg'
+
+import Image from '../../static/svg/undraw/undraw_about_me_re_82bv.svg'
+import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
 
 const ogimage = {
   src: OGImage,
@@ -21,56 +16,34 @@ const ogimage = {
   height: 450,
 }
 
-function Profile() {
-  const spacer200 = {
-    src: Spacer200,
-    width: 1400,
-    height: 200,
-  }
+const ThankYou = () => {
   return (
     <>
       <Header />
-      <ScrollIndicator />
-      <Stars />
       <Layout>
-        <PageHero title="Profile" description="Github Profile and Repo Info." image={Image} />
-        <ScrollIndicator />
-        <div>
-          <div>
-            <article className="mb-11">
-              <div className="mt-6 mb-6 text-center">
-                <h2 className="text-lg font-bold mt-2 mb-2 leading-tight">Github Profile</h2>
-                <div className="mt-6 mb-6 text-center">
-                  <GithubProfile />
-                </div>
-              </div>
-              <div
-                image={spacer200}
-                className="mb-10 mt-20 pt-10 right-0 w-full absolute overflow-hidden bg-transparent"
-              ></div>
-              <div className="mt-2">
-                <div className="mt-10 pt-10 top-96 right-0 w-full absolute pointer-events-none overflow-hidden bg-transparent transition-all duration-200 left-1/2 transform -translate-x-1/2 scale-x-[-1]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="2560"
-                    height="200"
-                    viewBox="0 0 2560 200"
-                    className="fill-blue-50 stroke-blue-500 dark:fill-transparent"
-                  >
-                    <path
-                      strokeWidth="2"
-                      d="M26 106 0 23-7-1v211h2577V23l-32 118-27-8-27-50-27-19-28 33-27 68-26 15-28-55-26 16-27-27-27-43-27 47-27 18-28-60-25 89-29 8-26-40-27-69-29-32-25-8-27 47-28 38-27-12-27-44h-27l-26 18-27 43-27 15-27-24-28-67-26-28-28-7-25 93-26-32-29-4-28 100-26-24-27 37-27-28-27-16-27 53-28-60-26 23-27-23-27-8-27 42-27 26-27-77-28 17-27-13-26 58-28-11-27 11-27-31-27-22-27 42-27-11-27 28-26 15-27-66-28-13-26-71-27 10-28-21-27 109-27-30-27 8-26 84-27-19-28-93-27-59-26-20-27 68-27-59-27 55-27 35h-27l-28-50-26-8-28 97-27-23-26 51-27-114-26 86-28-102-27 53-27-48-27 27-28 61-27-22-27-8-27 39-27-83-27 44Z"
-                    ></path>
-                  </svg>
-                </div>
-                <Center>
-                  <CloudinaryVideo />
-                </Center>
-              </div>
-              <div className="mb-20">
-                <WavyHr className="text-indigo-600" />
-              </div>
-            </article>
+        <PageHero
+          title="Thank You"
+          description="Thank You for your submission."
+          image={Image}
+        />
+        <div className="mt-10">
+          <div className="mt-6 mb-16 flex flex-col items-center">
+            <div className="text-black dark:text-white">
+              <Link
+                to="/"
+                className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
+              >
+                Back to Home Page
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
+              >
+                Return to Contact Page
+              </Link>
+              <h2 className="text-lg font-bold mt-2 mb-2 leading-tight">thank-you: Not Found</h2>
+              <div>Thank You for your comments!</div>
+            </div>
           </div>
         </div>
       </Layout>
@@ -79,42 +52,17 @@ function Profile() {
   )
 }
 
-export default Profile
+export default ThankYou
 
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO type="page" title="Profile" description="Github Profile" image={ogimage} pathname="/profile">
-        <title>Profile Page</title>
-        <meta name="description" content="PubliusLogic Profile Page." />
+      <SEO type="page" title="Thank You" description="Not Found thank-you Go Back" image={ogimage} pathname="/thank-you">
+        <title>Thank You</title>
+        <meta name="description" content="PubliusLogic Thank You Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="rss" type="application/rss+xml" title="Rss" href="/rss.xml" />
       </SEO>
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'BlogPosting',
-          headline: 'User Github Profile',
-          alternativeHeadline: 'Profile using OctoKit.rest',
-          image: ogimage,
-          award: 'Best Profile page ever built',
-          editor: 'Donald Boulton',
-          genre: 'search engine optimization',
-          keywords: 'github profile user',
-          wordCount: '1120',
-          publisher: 'PubliusLogic',
-          url: 'https://publiuslogic.com/profile',
-          datePublished: '2020-09-20',
-          dateCreated: '2020-08-20',
-          dateModified: '2022-08-16',
-          description: 'We love to do stuff to help people',
-          articleBody: 'You can paste your entire post in here, and yes it can get really really long.',
-          author: {
-            '@type': 'Person',
-            name: 'Donald W. Boulton',
-          },
-        })}
-      </script>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
@@ -131,14 +79,14 @@ export function Head(props: HeadProps) {
           copyrightHolder: {
             '@id': 'https://publiuslogic.com',
           },
-          copyrightYear: '2022',
+          copyrightYear: 2022,
           creator: {
             '@id': 'https://publiuslogic.com',
           },
           description: 'PubliusLogic name means to Publish Logic',
           image: {
             '@type': 'ImageObject',
-            url: ogimage,
+            url: 'https://publiuslogic.com/static/dbbg-f0aac717a5df40ba3d25dc948d4f25ae.jpg',
             width: '1400',
             height: '450',
           },
@@ -147,24 +95,24 @@ export function Head(props: HeadProps) {
           publisher: {
             '@id': 'https://publiuslogic.com',
           },
-          url: 'https://publiuslogic.com',
+          url: 'https://publiuslogic.com',          
         })}
       </script>
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'Github User Profile',
-          url: 'https://publiuslogic.com/profile',
+          name: 'Thank You',
+          url: 'https://publiuslogic.com/thank-you',
           image: {
             '@type': 'ImageObject',
-            url: ogimage,
+            url: 'https://publiuslogic.com/static/images/undraw/undraw_Super_thank_you_re_f8bo.png',
             width: '1400',
             height: '450',
           },
           publisher: {
-            '@type': 'PubliusLogic',
-            name: 'Github User Profile',
+            '@type': 'Organization',
+            name: 'Mansbooks',
           },
           license: 'http://publiuslogic.com/blog/0bsd-licence',
         })}
@@ -186,8 +134,8 @@ export function Head(props: HeadProps) {
             {
               '@type': 'ListItem',
               item: {
-                '@id': 'https://publiuslogic.com/profile',
-                name: 'Github User Profile',
+                '@id': 'https://publiuslogic.com/thank-you',
+                name: 'thank-you',
               },
               position: '2',
             },

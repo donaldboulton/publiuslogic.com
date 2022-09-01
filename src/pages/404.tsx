@@ -95,12 +95,7 @@ export function Head(props: HeadProps) {
           publisher: {
             '@id': 'https://publiuslogic.com',
           },
-          url: 'https://publiuslogic.com',
-          potentialAction: {
-            '@type': 'SearchAction',
-            target: 'http://publiuslogic.com/search?&q={query}',
-            query: 'required',
-          },
+          url: 'https://publiuslogic.com',          
         })}
       </script>
       <script type="application/ld+json">

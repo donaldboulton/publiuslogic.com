@@ -32,7 +32,7 @@ My Works are not for a popularly contest, I seeking the Holy Ones.
 
 ## Biblical Reading Timelines
 
-If you read them in order they have a timely purpose, calling out the evil one's.
+If you read them in order they have a timely purpose, playtime is calling out the evil one's.
 
 <CenterItem>
   <Table />
@@ -54,7 +54,7 @@ Went from sass to styled components now using Tailwind CSS and happy about its e
 
 🍸 This website is built as static HTML with React component-modular Docker Container builds, using React components with GraphQL, Built with WebPack. Including a user data, todo's backend. The data structure is using FaunaDB and Dato CMS.
 
-![Site Structure](../../../static/img/site-driven.png 'site driven structure')
+![Site Structure](../../../static/img/site-driven1.png 'Site Driven Structure')
 
 Served on Netlify via a continuous deployment (CD) workflow. Pull requests are automatically built into preview apps, while commits to the master branch trigger the production build and deploy onto Netlify CDN edge node infrastructure. Since the whole site is just a bunch of static files copied onto multiple CDN nodes around the world, time to first byte (TTFB) is consistently fast at around 1ms to 2ms. Instant Notifications through my Slack Bots or Gmail and phone notifications using Netlify Functions for my Mansbooks.com PubliusLogic.com workspace.
 
@@ -70,7 +70,7 @@ Feel free to reuse any part of this repo to create your own React site.
 
 ## Authentication
 
-Github and Google OAuth v2
+Github and Google OAuth v2 with `react-use-googlelogin`
 
 ## Features
 
@@ -78,15 +78,15 @@ PubliusLogic is a complex Gatsby - React Site and not for React programing begin
 
 > ✔️ Complete Website Suite - Pages = Home, Blog, About, Privacy, Sitemap Index for tags, categories, pages and posts sitemaps, and a Contact form with Slack Notifications and Email.
 
-- 🚋Serverless Functions
-- 🔏Authentication (with Netlify Identity)
-- 🔐Authenticated Serverless Functions (FaunaDB)
-- 😻External Provider login with GitHub, Bitbucket, Google, etc.
-- 🏠Protected Routes
-- 👋🏼Dynamic Client side Pages in React (enabling all the above)
-- 🕵🏼‍♂️Hide API Secrets from being exposed to Frontend
+- 🚋 Serverless Functions
+- 🔏 Authentication (with Google Auth / Octokit)
+- 🔐 Authenticated Serverless Functions (Gatsby Cloud)
+- 😻 External Provider login with GitHub, Bitbucket, Google, etc.
+- 🏠 Protected Routes Locked by Google Auth
+- 👋🏼 Dynamic Client side Pages in React (enabling all the above)
+- 🕵🏼‍♂️ Hide API Secrets from being exposed to Frontend
 
-* Dato CMS for Content and Asset Management
+* Github repos for Content and Asset Management
 * SEO Friendly (Sitemap Index - 4 sitemaps, Schemas, Meta Tags, GTM etc.)
 * Progressive Web App & Offline Support
 * Tag Lists, Categories Listings and a RSS Feed for Blog
@@ -95,7 +95,7 @@ PubliusLogic is a complex Gatsby - React Site and not for React programing begin
 * Share Support (Add if wanted Component Included)
 * Automatic optimization of images in Markdown/MDX posts
 * SVG design (unDraw, Hero Patterns, HeroIcons)
-* Contact Form (Netlify Forms) with Slack and and Email saved on Dato Cms
+* Contact Form with Slack and and Email saved on getForm
 * Full SEO support (via React Helmet) including Open Graph, Twitter Cards and Schema.org via JSON-LD
 * Incremental Netlify Builds
 
@@ -111,7 +111,7 @@ PubliusLogic is a complex Gatsby - React Site and not for React programing begin
 - [unDraw](https://undraw.co/) for illustrations
 - [MDX](https://mdxjs.com/) and [Markdown](https://www.markdownguide.org/)
 - [ESLint](https://eslint.org) for type\*checking
-- [Netlify](https://netlify.com/) email delivery
+- [getForm](https://app.getform.io/) email delivery
 - [Schema.org](https://schema.org/) and [JSON for Linking Data](https://json-ld.org/)
 - [Open Graph](https://ogp.me/) used by [Facebook](https://developers.facebook.com/docs/sharing/webmasters/#markup)
 - [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards)
