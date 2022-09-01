@@ -2,7 +2,6 @@ import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { Disclosure, Transition } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/outline'
-import axios from 'axios'
 
 function GithubProfile() {
   const [user, setUser] = useState(null)
@@ -10,7 +9,7 @@ function GithubProfile() {
 
   useEffect(() => {
     const getGitHubUser = async () => {
-      const response = await axios('https://publiuslogic.com/api/get-github-user', {
+      const response = await fetch('/api/get-github-user', {
         method: 'GET',
       })
 
