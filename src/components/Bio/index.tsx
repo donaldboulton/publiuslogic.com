@@ -18,6 +18,7 @@ const Bio = () => {
             height={48}
             quality={95}
             alt="Profile picture"
+            loading="eager"
           />
         </div>
         <div className="-mt-1 text-center sm:mt-0 sm:ml-4 sm:text-left">

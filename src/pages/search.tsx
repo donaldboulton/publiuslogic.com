@@ -8,8 +8,8 @@ import Search from '@/components/Algolia/search'
 import PageHero from '@/components/PageHero'
 import ScrollIndicator from '@/components/ScrollIndicator'
 import Stars from '@/components/Stars'
-import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
-import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
+import Image from '../../static/svg/undraw/undraw_location_search_re_ttoj.svg'
+import OGImage from '../../static/images/undraw/undraw_Location_search_re_ttoj.png'
 
 const searchIndices = [{ name: 'Posts', title: 'Posts' }]
 

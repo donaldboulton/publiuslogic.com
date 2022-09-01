@@ -95,7 +95,7 @@ export function Head(props: HeadProps) {
           publisher: {
             '@id': 'https://publiuslogic.com',
           },
-          url: 'https://publiuslogic.com',          
+          url: 'https://publiuslogic.com',
         })}
       </script>
       <script type="application/ld+json">

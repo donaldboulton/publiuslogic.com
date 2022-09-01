@@ -61,6 +61,7 @@ export default function Navigation() {
                           aria-describedby="logoTooltipSmall"
                           formats={['auto', 'webp']}
                           quality={95}
+                          loading="eager"
                         />
                       </Tooltip>
                     </Link>
@@ -77,6 +78,7 @@ export default function Navigation() {
                           aria-describedby="logoTooltip"
                           formats={['auto', 'webp']}
                           quality={95}
+                          loading="eager"
                         />
                       </Tooltip>
                     </Link>

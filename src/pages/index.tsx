@@ -165,7 +165,7 @@ const Home = ({ image }: HomeProps) => {
                 <img
                   src={image ? image : defaultImage}
                   alt="featured image"
-                  className="absolute left-0 top-0 w-full h-full z-0"
+                  className="absolute left-0 top-0 w-full h-full z-0 md:scale-75 sm:scale-50"
                 />
                 <motion.div
                   className="p-4 absolute top-16 left-3 z-30"
@@ -197,6 +197,7 @@ const Home = ({ image }: HomeProps) => {
                             src="../../static/img/apple-touch-icon-32x32.png"
                             quality={95}
                             alt="prayer"
+                            loading="eager"
                           />
                         </div>
                         <h6 className="text-xl font-semibold">
@@ -226,6 +227,7 @@ const Home = ({ image }: HomeProps) => {
                             src="../../static/img/prayer-150-150.png"
                             quality={95}
                             alt="prayer"
+                            loading="eager"
                           />
                         </div>
                         <h6 className="text-xl font-semibold">
@@ -258,6 +260,7 @@ const Home = ({ image }: HomeProps) => {
                             src="../../static/img/jamstack-150-150.png"
                             quality={95}
                             alt="prayer"
+                            loading="eager"
                           />
                         </div>
                         <h6 className="text-xl font-semibold">
@@ -288,6 +291,7 @@ const Home = ({ image }: HomeProps) => {
                       quality={95}
                       alt="Profile picture"
                       area-label="My Picture"
+                      loading="eager"
                     />
                   </div>
                   <h2 className="font-bold text-2xl flex justify-center max-w-xs m-auto">Donald W. Boulton</h2>
@@ -433,8 +437,11 @@ const Home = ({ image }: HomeProps) => {
                         <div className="relative flex flex-col min-w-0 break-words text-white w-full mb-6 shadow-lg rounded-lg bg-rose-600">
                           <StaticImage
                             className="w-full align-middle rounded-t-lg"
+                            formats={['auto', 'webp']}
+                            quality={95}
                             src="../../static/img/jesus.jpg"
                             alt="PubliusLogic"
+                            loading="eager"
                           />
                           <div className="relative p-8 mb-4">
                             <svg

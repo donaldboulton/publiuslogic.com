@@ -10,8 +10,8 @@ import ScrollIndicator from '@/components/ScrollIndicator'
 import ScrollDown from '@/components/ScrollDown'
 import Stars from '@/components/Stars'
 
-import Image from '../../static/svg/undraw/undraw_blog_post_re_fy5x.svg'
-import OGImage from '../../static/images/undraw/undraw_Blog_post_re_fy5x.png'
+import Image from '../../static/svg/undraw/undraw_blogging_re_kl0d.svg'
+import OGImage from '../../static/images/undraw/undraw_Blogging_re_kl0d.png'
 
 const ogimage = {
   src: OGImage,

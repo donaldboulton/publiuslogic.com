@@ -7,8 +7,9 @@ import PageHero from '@/components/PageHero'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-import Image from '../../static/svg/undraw/undraw_about_me_re_82bv.svg'
+import Image from '../../static/svg/undraw/undraw_super_thank_you_re_f8bo.svg'
 import OGImage from '../../static/images/undraw/undraw_Super_thank_you_re_f8bo.png'
+import { navigate } from '@gatsbyjs/reach-router'
 
 const ogimage = {
   src: OGImage,
@@ -21,11 +22,7 @@ const ThankYou = () => {
     <>
       <Header />
       <Layout>
-        <PageHero
-          title="Thank You"
-          description="Thank You for your submission."
-          image={Image}
-        />
+        <PageHero title="Thank You" description="Thank You for Your Submission." image={Image} />
         <div className="mt-10">
           <div className="mt-6 mb-16 flex flex-col items-center">
             <div className="text-black dark:text-white">
@@ -33,16 +30,17 @@ const ThankYou = () => {
                 to="/"
                 className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
               >
-                Back to Home Page
+                To Home Page
               </Link>
               <Link
                 to="/contact"
+                replace
                 className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
               >
-                Return to Contact Page
+                Return to Previous Page!
               </Link>
-              <h2 className="text-lg font-bold mt-2 mb-2 leading-tight">thank-you: Not Found</h2>
-              <div>Thank You for your comments!</div>
+              <h2 className="text-lg font-bold mt-2 mb-2 leading-tight">Your Content Has Been Added.</h2>
+              <div>Thank You for your Submission!</div>
             </div>
           </div>
         </div>
@@ -57,7 +55,13 @@ export default ThankYou
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO type="page" title="Thank You" description="Not Found thank-you Go Back" image={ogimage} pathname="/thank-you">
+      <SEO
+        type="page"
+        title="Thank You"
+        description="Thank You for your submission"
+        image={ogimage}
+        pathname="/thank-you"
+      >
         <title>Thank You</title>
         <meta name="description" content="PubliusLogic Thank You Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -95,7 +99,7 @@ export function Head(props: HeadProps) {
           publisher: {
             '@id': 'https://publiuslogic.com',
           },
-          url: 'https://publiuslogic.com',          
+          url: 'https://publiuslogic.com',
         })}
       </script>
       <script type="application/ld+json">

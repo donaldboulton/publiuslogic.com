@@ -14,7 +14,7 @@ const PageHero = ({ title, description, image }: PageHeroProps) => (
     <img
       src={image ? image : defaultImage}
       alt="featured image"
-      className="absolute left-0 top-0 w-full h-full z-0 object-contain"
+      className="absolute left-0 top-0 w-full h-full z-0 object-contain md:scale-75 sm:scale-50 transform-gpu"
     />
 
     <div className="p-4 absolute bottom-0 left-0 z-20">

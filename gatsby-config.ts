@@ -34,6 +34,9 @@ module.exports = {
       github: 'https://github.com/donaldboulton/',
     },
   },
+  flags: {
+    FUNCTIONS: true,
+  },
   plugins: [
     {
       resolve: 'gatsby-plugin-react-leaflet',
