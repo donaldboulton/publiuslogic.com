@@ -26,7 +26,9 @@ function ContactUs() {
     width: 1400,
     height: 450,
   }
-
+  function onSubmit(token) {
+    document.getElementById("contact").submit();
+  }
   const metadata = SiteMetadata().siteMetadata
 
   const contactMethods = [
@@ -87,7 +89,7 @@ function ContactUs() {
               </div>
             </div>
             <div className="mt-5 lg:mt-0 lg:col-span-2 mb-24 rounded-lg bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200">
-              <form action="https://getform.io/f/3b075a47-6772-4658-adfd-2b5f2f7d2355" method="POST" name="contact">
+              <form id='contact' action="https://getform.io/f/3b075a47-6772-4658-adfd-2b5f2f7d2355" method="POST" name="contact">
                 <div className="shadow overflow-hidden sm:rounded-md">
                   <div className="px-4 py-5 text-black dark:text-white sm:p-6">
                     <div className="grid grid-cols-6 gap-6">
@@ -168,7 +170,10 @@ function ContactUs() {
                   <div className="px-4 py-3 text-right sm:px-6 bg-slate-300 dark:bg-slate-900">
                     <button
                       type="submit"
-                      className="inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
+                      className="g-recaptcha inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
+                      data-sitekey="GATSBY_SITE_RECAPTCHA_KEY" 
+                      data-callback='onSubmit' 
+                      data-action='submit'
                     >
                       Send
                     </button>
@@ -188,11 +193,14 @@ export default ContactUs
 
 export function Head(props: HeadProps) {
   return (
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-      crossorigin="anonymous"
-    />
+    <>
+     <script src="https://www.google.com/recaptcha/api.js"></script>
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="anonymous"
+      />
+    </>
   )
 }
