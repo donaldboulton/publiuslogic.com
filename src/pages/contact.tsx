@@ -178,6 +178,7 @@ function ContactUs() {
                       className="g-recaptcha inline-flex justify-center mr-2 py-2 px-4 text-white rounded-md transition ease-in-out delay-150 bg-fuchsia-500 hover:-translate-y-1 hover:scale-110 hover:bg-fuchsia-700 shadow-lg hover:shadow-fuchsia-700/50 duration-300"
                       data-sitekey="RECAPTCHA_SITE_KEY"
                       data-callback="onSubmit"
+                      data-theme="dark"
                       data-action="submit"
                     >
                       Send
@@ -199,6 +200,8 @@ export default ContactUs
 export function Head(props: HeadProps) {
   return (
     <>
+      <title>Contact Us</title>
+      <meta name="description" content="PubliusLogic Contact Page." />
       <script src="https://www.google.com/recaptcha/api.js?render=6Lf0NasUAAAAAAY1WJlMelYekqb_cwziQ4LiNnuk"></script>
       <link
         rel="stylesheet"

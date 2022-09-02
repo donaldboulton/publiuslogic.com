@@ -226,11 +226,11 @@ module.exports = {
       resolve: 'gatsby-plugin-gatsby-cloud',
       options: {
         headers: {
-          '/*': ['Cache-Control: public, max-age=31536000, immutable'],
+          '/*': ['Cache-Control: public, max-age=604800, immutable'],
           '/static/*': ['Cache-Control: public, max-age=31536000, immutable'],
         },
         allPageHeaders: [
-          'Strict-Transport-Security: max-age=31536000; preload',
+          'Strict-Transport-Security: max-age=604800; preload',
           'X-Robots-Tag: index',
           'X-Frame-Options: DENY',
           'X-XSS-Protection: 1; mode=block',
