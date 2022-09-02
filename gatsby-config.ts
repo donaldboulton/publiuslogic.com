@@ -227,15 +227,18 @@ module.exports = {
       options: {
         headers: {
           '/*': ['Cache-Control: public, max-age=604800, immutable'],
-          '/static/*': ['Cache-Control: public, max-age=31536000, immutable'],
+          '/static/*': ['Cache-Control: public, max-age=604800, immutable'],
         },
         allPageHeaders: [
-          'Strict-Transport-Security: max-age=604800; preload',
+          'Referrer-Policy: strict-origin-when-cross-origin'
+          'Strict-Transport-Security: max-age=63072000; preload',
           'X-Robots-Tag: index',
           'X-Frame-Options: DENY',
           'X-XSS-Protection: 1; mode=block',
           'X-Content-Type-Options: nosniff',
-          'Access-Control-Allow-Origin: https://publiuslogic.com/, https://unpkg.com/leaflet@1.8.0/dist/leaflet.css',
+          'Vary: Accept-Encoding',
+          'Set-Cookie: HttpOnly; Secure',
+          'Access-Control-Allow-Origin: *',
           'Access-Control-Allow-Methods: POST; GET; PUT; DELETE; HEAD',
         ],
         mergeSecurityHeaders: true,
