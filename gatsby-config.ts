@@ -230,7 +230,7 @@ module.exports = {
           '/static/*': ['Cache-Control: public, max-age=604800, immutable'],
         },
         allPageHeaders: [
-          'Referrer-Policy: strict-origin-when-cross-origin'
+          'Referrer-Policy: strict-origin-when-cross-origin',
           'Strict-Transport-Security: max-age=63072000; preload',
           'X-Robots-Tag: index',
           'X-Frame-Options: DENY',
