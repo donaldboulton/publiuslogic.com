@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactNode } from 'react'
+import { ReactNode, FC } from 'react'
 import * as CSS from 'csstype'
 import Alert from '@/components/icons/alert'
 import { useInView } from 'react-intersection-observer'
@@ -40,7 +40,7 @@ const calloutDanger: CSS.Properties = {
   boxShadow: '6px 5px 5px #dc2626',
 }
 
-const CalloutDanger: React.FC<CalloutDangerProps> = props => {
+const CalloutDanger: FC<CalloutDangerProps> = props => {
   const { children, ...rest } = props
   const item = {
     initial: { y: 20, opacity: 0 },

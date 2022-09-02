@@ -1,7 +1,8 @@
 import * as React from 'react'
+import { FC } from 'react'
 import { graphql } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
-import Gallery from '@browniebroke/gatsby-image-gallery'
+import Gallery from '@/components/Gallery'
 import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
 import Stars from '@/components/Stars'
@@ -21,7 +22,7 @@ interface ImageSharpEdge {
   }
 }
 
-interface PageProps {
+interface ImageGalleryProps {
   data: {
     images: {
       edges: ImageSharpEdge[]
@@ -30,7 +31,7 @@ interface PageProps {
   }
 }
 const CustomWrapper = ({ children, onClick }) => (
-  <div className="p-1 bg-gray-300 dark:bg-slate-800 text-slate-900 dark:text-slate-200 rounded-lg" onClick={onClick}>
+  <div className="h-32 w-32 p-1 bg-gray-300 dark:bg-slate-800 text-slate-900 dark:text-slate-200 rounded-lg" onClick={onClick}>
     {children}
   </div>
 )
@@ -40,7 +41,7 @@ const ogimage = {
   height: 450,
 }
 
-const ImageGallery: React.FC<PageProps> = ({ data }) => {
+const ImageGallery: FC<ImageGalleryProps> = ({ data }) => {
   const images = data.images.edges.map(({ node }, index) => ({
     ...node.childImageSharp,
     // Generate name based on the index as caption.
@@ -68,13 +69,13 @@ const ImageGallery: React.FC<PageProps> = ({ data }) => {
       <ScrollIndicator />
       <Stars />
       <Layout>
-        <PageHero title="Gallery: Images" description="My personal Images from History!" image={Image} />
+        <PageHero title="Gallery: Images" description="My Kitty Cats Old and New!" image={Image} />
         <div className="mt-10">
-          <div className="max-w-7xl mt-16 mb-32 mx-auto bg-slate-300 dark:bg-slate-900 text-slate-900 dark:text-slate-200 rounded-xl shadow-md overflow-hidden md:max-w-5xl">
-            <div className="md:flex">
-              <div className="container mx-auto">
+          <div className="max-w-7xl mt-16 mb-32 mx-auto text-slate-900 dark:text-slate-200 rounded-xl shadow-md overflow-hidden md:max-w-5xl">
+            <div className="flex justify-center md:flex">
+              <div className="container mx-auto my-auto">
                 <Gallery
-                  className="rounded-lg"
+                  imgClass="rounded-lg h-32 w-32"
                   images={images}
                   lightboxOptions={lightboxOptions}
                   customWrapper={CustomWrapper}
@@ -96,7 +97,7 @@ export const pageQuery = graphql`
       edges {
         node {
           childImageSharp {
-            thumb: gatsbyImageData(width: 250, height: 250, placeholder: BLURRED)
+            thumb: gatsbyImageData(width: 300, height: 300, placeholder: BLURRED)
             full: gatsbyImageData(layout: FULL_WIDTH)
           }
           name
@@ -188,8 +189,8 @@ export function Head(props: HeadProps) {
             {
               '@type': 'ListItem',
               item: {
-                '@id': 'https://publiuslogic.com/dsg',
-                name: 'Differed Static Generation',
+                '@id': 'https://publiuslogic.com/gallery',
+                name: 'Image Gallery',
               },
               position: '2',
             },

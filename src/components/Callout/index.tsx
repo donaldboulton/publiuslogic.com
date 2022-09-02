@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactNode } from 'react'
+import { ReactNode, FC } from 'react'
 import * as CSS from 'csstype'
 import Info from '@/components/icons/info'
 import { useInView } from 'react-intersection-observer'
@@ -41,7 +41,7 @@ const callout: CSS.Properties = {
   opacity: '0.6',
 }
 
-const Callout: React.FC<CalloutProps> = props => {
+const Callout: FC<CalloutProps> = props => {
   const { children, ...rest } = props
 
   const item = {

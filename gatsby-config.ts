@@ -34,9 +34,6 @@ module.exports = {
       github: 'https://github.com/donaldboulton/',
     },
   },
-  flags: {
-    FUNCTIONS: true,
-  },
   plugins: [
     {
       resolve: 'gatsby-plugin-react-leaflet',
@@ -240,7 +237,8 @@ module.exports = {
           'Set-Cookie: HttpOnly; Secure',
           'Access-Control-Allow-Credentials: true',
           'Access-Control-Allow-Origin: https://publiuslogic.com/, https://unpkg.com/leaflet@1.8.0/dist/leaflet.css, https://getform.io/f/3b075a47-6772-4658-adfd-2b5f2f7d2355, https://www.youtube.com, https://www.youtube.de, https://github.com, https://storage.googleapis.com, https://api.github.com, https://res.cloudinary.com, https://www.google.com/recaptcha/api.js, https://api.applause-button.com',
-          'Permission-Policy: accelerometer=(), camera=(), fullscreen=(self), geolocation=(self), gyroscope=(), magnetometer=(), microphone=(), payment=(), sync-xhr=(), usb=()',
+          'Permissions-Policy: geolocation=(self "https://publiuslogic.com"), microphone=()',
+          'Content-Security-Policy: default-src https:',
           'Access-Control-Allow-Methods: POST; GET; PUT; DELETE; HEAD',
         ],
         mergeSecurityHeaders: true,

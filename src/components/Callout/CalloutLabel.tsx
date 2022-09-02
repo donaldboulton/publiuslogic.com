@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ReactNode } from 'react'
+import { ReactNode, FC } from 'react'
 import * as CSS from 'csstype'
 import { useInView } from 'react-intersection-observer'
 import { LazyMotion, m } from 'framer-motion'
@@ -44,7 +44,7 @@ const calloutLabel: CSS.Properties = {
   opacity: '0.6',
 }
 
-const CalloutLabel: React.FC<CalloutLabelProps> = props => {
+const CalloutLabel: FC<CalloutLabelProps> = props => {
   const { children, label, ...rest } = props
   const item = {
     initial: { y: 20, opacity: 0 },
