@@ -6,10 +6,18 @@ import SEO from '@/components/Seo'
 import PageHero from '@/components/PageHero'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Stars from '@/components/Stars'
 
 import Image from '../../static/svg/undraw/undraw_programming_re_kg9v.svg'
+import OGImage from '../../static/images/undraw/undraw_design_inspiration_fmjm.png'
 
 const ogimage = {
+  src: OGImage,
+  width: 1400,
+  height: 450,
+}
+
+const image = {
   src: Image,
   width: 1400,
   height: 450,
@@ -19,6 +27,7 @@ const LoginPage = () => {
   return (
     <>
       <Header />
+      <Stars />
       <Layout>
         <PageHero title="Login" description="Login to PubliusLogic through Google" image={Image} />
         <div className="mt-10">
@@ -40,7 +49,7 @@ export default LoginPage
 export function Head(props: HeadProps) {
   return (
     <>
-      <SEO type="page" title="Login to Profile" description="Google Profile" image={ogimage} pathname="/login">
+      <SEO type="page" title="Login to Profile" description="Google Profile" image={image} pathname="/login">
         <title>Login Page</title>
         <meta name="description" content="PubliusLogic Login Page." />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />

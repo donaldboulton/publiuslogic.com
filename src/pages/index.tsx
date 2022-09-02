@@ -165,7 +165,7 @@ const Home = ({ image }: HomeProps) => {
                 <img
                   src={image ? image : defaultImage}
                   alt="featured image"
-                  className="absolute left-0 top-0 w-full h-full z-0 md:scale-75 sm:scale-50"
+                  className="absolute left-0 top-0 w-full h-full z-0"
                 />
                 <motion.div
                   className="p-4 absolute top-16 left-3 z-30"

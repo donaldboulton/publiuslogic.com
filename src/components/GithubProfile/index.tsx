@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { Disclosure, Transition } from '@headlessui/react'
-import { ChevronUpIcon } from '@heroicons/react/outline'
+import BouncingBall from '@/components/BouncingBall'
 
 function GithubProfile() {
   const [user, setUser] = useState(null)
@@ -23,7 +22,7 @@ function GithubProfile() {
   return (
     <section className="w-full shadow-lg pt-8 mt-10 rounded-lg bg-slate-300 dark:bg-slate-800 mb-6 p-6">
       {isLoading ? (
-        <div>Loading...</div>
+        <div className='flex justify-center'><BouncingBall /></div>
       ) : (
         <>
           <div className="py-6 mb-4 w-full">
